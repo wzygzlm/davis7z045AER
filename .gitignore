@@ -1,0 +1,15 @@
+*.cache
+*.Xil
+*.hw
+*.ioplanning
+*.ip_user_files
+*.runs
+*.sim
+*.swp
+*.log
+*.jor
+*.debug
+*.str
+*.sdk/u-boot*
+*.sdk/BOOT.bin
+*.sdk/image.ub
