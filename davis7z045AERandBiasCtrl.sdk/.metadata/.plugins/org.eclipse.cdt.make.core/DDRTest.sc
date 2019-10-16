@@ -6,11 +6,14 @@
 <includePath path="d:\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/7.2.1/include"/>
 <includePath path="#undef __ARM_FP16_FORMAT_IEEE" removed="true"/>
 <includePath path="d:\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/7.2.1/include-fixed"/>
+<includePath path="#undef __ARM_FEATURE_FP16_VECTOR_ARITHMETIC" removed="true"/>
 <includePath path="#undef __ARM_FP16_FORMAT_ALTERNATIVE" removed="true"/>
 <includePath path="d:\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include"/>
+<includePath path="#undef __ARM_FEATURE_FMA" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_DSP" removed="true"/>
 <includePath path="#undef __ARM_FP16_ARGS" removed="true"/>
 <includePath path="d:\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../arm-none-eabi/libc/usr/include"/>
+<includePath path="#undef __ARM_NEON__" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_QBIT" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_FP16_SCALAR_ARITHMETIC" removed="true"/>
 <definedSymbol symbol="__STDC__=1"/>
@@ -855,8 +858,10 @@
 <includePath path="d:\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/7.2.1/include-fixed"/>
 <includePath path="#undef __ARM_FEATURE_FP16_VECTOR_ARITHMETIC" removed="true"/>
 <includePath path="d:\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include"/>
+<includePath path="#undef __thumb__" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_FMA" removed="true"/>
 <includePath path="d:\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../arm-none-eabi/libc/usr/include"/>
+<includePath path="#undef __thumb2__" removed="true"/>
 <includePath path="#undef __ARM_NEON__" removed="true"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_VERSION__=201112L"/>

@@ -53,7 +53,12 @@ entity testAERDVSSM is
         SPIClock_AI                : in    std_logic;
         SPIMOSI_AI                 : in    std_logic;
         SPIMISO_DZO                : out   std_logic;
-    
+        SPIOutputSRegMode_D_Debug : out std_logic_vector(3 - 1 downto 0);
+        SPIInputSRegMode_D_Debug : out std_logic_vector(3 - 1 downto 0);
+        ParamOutput_DP_Debug   : out std_logic_vector(31 downto 0);
+        SPIBitCount_D_Debug : out unsigned(5 downto 0);
+        ReadOperationReg_SP_Debug : out std_logic;  
+        ConfigLatchInput_S_Debug  : out std_logic;
         
 		ChipBiasEnable_SO          : out   std_logic;
         ChipBiasDiagSelect_SO      : out   std_logic;
@@ -159,6 +164,8 @@ architecture Behavioral of testAERDVSSM is
 	signal NOTSPISlaveSelectSync_SB                   : std_logic;
 	
 begin
+    ConfigLatchInput_S_Debug <= ConfigLatchInput_S;
+    
     LogicClock_C <= LogicClk_CI;
     logiecResetSync : entity work.ResetSynchronizer
     port map(
@@ -321,7 +328,25 @@ begin
 			ConfigParamInput_DI        => ConfigParamInput_D,
 			ConfigLatchInput_SI        => ConfigLatchInput_S,
 			DVSAERConfigParamOutput_DO => DVSAERConfigParamOutput_D);
-			        
+
+	deviceIsMasterBuffer : entity work.SimpleRegister
+		generic map(
+			SIZE => 1)
+		port map(
+			Clock_CI     => LogicClock_C,
+			Reset_RI     => LogicReset_R,
+			Enable_SI    => '1',
+			Input_SI(0)  => DeviceIsMaster_S,
+			Output_SO(0) => DeviceIsMasterBuffer_S);
+
+	systemInfoSPIConfig : entity work.SystemInfoSPIConfig
+		port map(
+			Clock_CI                       => LogicClock_C,
+			Reset_RI                       => LogicReset_R,
+			DeviceIsMaster_SI              => DeviceIsMasterBuffer_S,
+			ConfigParamAddress_DI          => ConfigParamAddress_D,
+			SystemInfoConfigParamOutput_DO => SystemInfoConfigParamOutput_D);
+						        
 	configRegisters : process(LogicClock_C, LogicReset_R) is
         begin
             if LogicReset_R = '1' then
@@ -373,7 +398,6 @@ begin
 		end if;
 	end process configInfoOutRegisters;
 	
-
     spiConfiguration : entity work.SPIConfig
         port map(
             Clock_CI               => LogicClock_C,
@@ -382,6 +406,11 @@ begin
             SPIClock_CI            => SPIClockSync_C,
             SPIMOSI_DI             => SPIMOSISync_D,
             SPIMISO_DZO            => SPIMISO_DZO,
+            SPIOutputSRegMode_D_Debug => SPIOutputSRegMode_D_Debug,
+            SPIInputSRegMode_D_Debug => SPIInputSRegMode_D_Debug,
+            ParamOutput_DP_Debug => ParamOutput_DP_Debug,
+            SPIBitCount_D_Debug => SPIBitCount_D_Debug,
+            ReadOperationReg_SP_Debug => ReadOperationReg_SP_Debug,
             ConfigModuleAddress_DO => ConfigModuleAddress_D,
             ConfigParamAddress_DO  => ConfigParamAddress_D,
             ConfigParamInput_DO    => ConfigParamInput_D,
@@ -425,6 +454,23 @@ begin
             when others => null;
         end case;
     end process spiConfigurationOutputSelect;
-
+    
+	chipBiasSelector : entity work.ChipBiasSelector
+        generic map(
+            ADD_REGISTERS_FOR_TIMING => 2)
+        port map(
+            Clock_CI                 => LogicClock_C,
+            Reset_RI                 => LogicReset_R,
+            ChipBiasDiagSelect_SO    => ChipBiasDiagSelect_SO,
+            ChipBiasAddrSelect_SBO   => ChipBiasAddrSelect_SBO,
+            ChipBiasClock_CBO        => ChipBiasClock_CBO,
+            ChipBiasBitIn_DO         => ChipBiasBitIn_DO,
+            ChipBiasLatch_SBO        => ChipBiasLatch_SBO,
+            ConfigModuleAddress_DI   => ConfigModuleAddress_D,
+            ConfigParamAddress_DI    => ConfigParamAddress_D,
+            ConfigParamInput_DI      => ConfigParamInput_D,
+            ConfigLatchInput_SI      => ConfigLatchInput_S,
+            BiasConfigParamOutput_DO => BiasConfigParamOutput_D,
+            ChipConfigParamOutput_DO => ChipConfigParamOutput_D);
 
 end Behavioral;

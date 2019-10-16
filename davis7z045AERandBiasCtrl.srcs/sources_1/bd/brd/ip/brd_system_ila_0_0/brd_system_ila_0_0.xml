@@ -451,11 +451,11 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Oct 11 15:53:55 UTC 2019</spirit:value>
+            <spirit:value>Mon Oct 14 16:38:24 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:fe8188c6</spirit:value>
+            <spirit:value>8:68e49ab5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -467,7 +467,7 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:6da57152</spirit:value>
+            <spirit:value>8:8c577011</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -482,11 +482,11 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Oct 11 15:56:06 UTC 2019</spirit:value>
+            <spirit:value>Wed Oct 16 17:34:55 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:6da57152</spirit:value>
+            <spirit:value>8:8c577011</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -502,11 +502,11 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Oct 11 15:56:06 UTC 2019</spirit:value>
+            <spirit:value>Wed Oct 16 17:34:55 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:6da57152</spirit:value>
+            <spirit:value>8:8c577011</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -519,7 +519,7 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:fc566e48</spirit:value>
+            <spirit:value>8:3c61fb14</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -535,11 +535,11 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Oct 11 15:56:06 UTC 2019</spirit:value>
+            <spirit:value>Wed Oct 16 17:34:55 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:fc566e48</spirit:value>
+            <spirit:value>8:3c61fb14</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -553,11 +553,11 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Oct 11 16:02:55 UTC 2019</spirit:value>
+            <spirit:value>Wed Oct 16 17:43:02 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:6da57152</spirit:value>
+            <spirit:value>8:8c577011</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -571,11 +571,11 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 12 20:48:30 UTC 2019</spirit:value>
+            <spirit:value>Wed Oct 16 18:23:26 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:fe8188c6</spirit:value>
+            <spirit:value>8:68e49ab5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1524,10 +1524,6 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
       <spirit:enumeration>1</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_list_b2d40591</spirit:name>
-      <spirit:enumeration>60.5</spirit:enumeration>
-    </spirit:choice>
-    <spirit:choice>
       <spirit:name>choice_list_c63ab5b1</spirit:name>
       <spirit:enumeration>0</spirit:enumeration>
       <spirit:enumeration>1</spirit:enumeration>
@@ -1536,6 +1532,10 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
       <spirit:enumeration>4</spirit:enumeration>
       <spirit:enumeration>5</spirit:enumeration>
       <spirit:enumeration>6</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_cf9db0ec</spirit:name>
+      <spirit:enumeration>30.5</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
       <spirit:name>choice_list_d4fc98f8</spirit:name>
@@ -3854,7 +3854,7 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
     <spirit:parameter>
       <spirit:name>C_BRAM_CNT</spirit:name>
       <spirit:displayName>BRAM utilization count</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_BRAM_CNT" spirit:choiceRef="choice_list_b2d40591" spirit:order="9.1038e+07">60.5</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_BRAM_CNT" spirit:choiceRef="choice_list_cf9db0ec" spirit:order="9.1038e+07">30.5</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -35145,27 +35145,27 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
     <spirit:parameter>
       <spirit:name>C_PROBE16_MU_CNT</spirit:name>
       <spirit:displayName>C Probe16 Mu Cnt</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PROBE16_MU_CNT" spirit:order="204200" spirit:minimum="1" spirit:maximum="16" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PROBE16_MU_CNT" spirit:order="204200" spirit:minimum="1" spirit:maximum="1" spirit:rangeType="long">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_PROBE15_MU_CNT</spirit:name>
       <spirit:displayName>C Probe15 Mu Cnt</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PROBE15_MU_CNT" spirit:order="204300" spirit:minimum="1" spirit:maximum="16" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PROBE15_MU_CNT" spirit:order="204300" spirit:minimum="1" spirit:maximum="1" spirit:rangeType="long">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_PROBE14_MU_CNT</spirit:name>
       <spirit:displayName>C Probe14 Mu Cnt</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PROBE14_MU_CNT" spirit:order="204400" spirit:minimum="1" spirit:maximum="16" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PROBE14_MU_CNT" spirit:order="204400" spirit:minimum="1" spirit:maximum="1" spirit:rangeType="long">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_PROBE13_MU_CNT</spirit:name>
       <spirit:displayName>C Probe13 Mu Cnt</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PROBE13_MU_CNT" spirit:order="204500" spirit:minimum="1" spirit:maximum="16" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PROBE13_MU_CNT" spirit:order="204500" spirit:minimum="1" spirit:maximum="1" spirit:rangeType="long">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_PROBE12_MU_CNT</spirit:name>
       <spirit:displayName>C Probe12 Mu Cnt</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PROBE12_MU_CNT" spirit:order="204600" spirit:minimum="1" spirit:maximum="16" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_PROBE12_MU_CNT" spirit:order="204600" spirit:minimum="1" spirit:maximum="1" spirit:rangeType="long">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_PROBE11_MU_CNT</spirit:name>
@@ -36451,6 +36451,11 @@ um {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format 
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_PROBE10_TYPE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_PROBE11_MU_CNT" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_PROBE11_TYPE" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_PROBE12_TYPE" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_PROBE13_TYPE" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_PROBE14_TYPE" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_PROBE15_TYPE" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_PROBE16_TYPE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_PROBE1_MU_CNT" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_PROBE1_TYPE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_PROBE2_MU_CNT" xilinx:valueSource="user"/>

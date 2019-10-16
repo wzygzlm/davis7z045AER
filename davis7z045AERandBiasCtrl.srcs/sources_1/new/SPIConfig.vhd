@@ -14,6 +14,12 @@ entity SPIConfig is
 		SPIMOSI_DI             : in  std_logic;
 		SPIMISO_DZO            : out std_logic;
 
+        SPIOutputSRegMode_D_Debug : out std_logic_vector(SHIFTREGISTER_MODE_SIZE - 1 downto 0);
+        SPIInputSRegMode_D_Debug : out std_logic_vector(SHIFTREGISTER_MODE_SIZE - 1 downto 0);
+        ParamOutput_DP_Debug   : out std_logic_vector(31 downto 0);
+        SPIBitCount_D_Debug : out unsigned(5 downto 0);
+        ReadOperationReg_SP_Debug : out std_logic;
+
 		-- Configuration inputs and outputs
 		ConfigModuleAddress_DO : out unsigned(6 downto 0);
 		ConfigParamAddress_DO  : out unsigned(7 downto 0);
@@ -62,7 +68,13 @@ begin
 	ConfigParamInput_DO    <= ParamInput_DP;
 	ConfigLatchInput_SO    <= LatchInputReg_SP;
 	ParamOutput_DN         <= ConfigParamOutput_DI;
-
+	
+	ReadOperationReg_SP_Debug    <= ReadOperationReg_SP;
+    SPIInputSRegMode_D_Debug <= SPIInputSRegMode_S;
+    SPIOutputSRegMode_D_Debug <= SPIOutputSRegMode_S;
+	ParamOutput_DP_Debug <= ParamOutput_DP;
+	SPIBitCount_D_Debug <= SPIBitCount_D;
+    
 	-- The SPI input lines have already been synchronized to the logic clock at
 	-- this point, so we can use and sample them directly.
 	-- We need to watch falling edges on SPI SlaveSelect to robustly detect when
@@ -190,9 +202,9 @@ begin
 
 					when to_unsigned(16, 6) =>
 						ParamAddressReg_DN <= unsigned(SPIInputContent_D(7 downto 0));
-
+						
 						if ReadOperationReg_SP = '1' then
-							State_DN <= stOutput;
+							State_DN <= stInputLatch;
 						end if;
 
 					when to_unsigned(24, 6) =>
@@ -218,8 +230,11 @@ begin
 				-- to give time to the ParamInput to propagate down to the various'
 				-- modules input registers.
 				LatchInputReg_SN <= '1';
-
-				State_DN <= stIdle;
+                if SPIBitCount_D = to_unsigned(16, 6) then
+                        State_DN <= stOutput;
+                else
+                        State_DN <= stIdle;
+                end if;
 
 			when stOutput =>
 				-- Push out MSB to MISO.
@@ -231,7 +246,7 @@ begin
 					else
 						SPIOutputSRegMode_S <= SHIFTREGISTER_MODE_SHIFT_LEFT;
 					end if;
-
+					
 					SPIBitCounterEnable_S <= '1';
 				end if;
 

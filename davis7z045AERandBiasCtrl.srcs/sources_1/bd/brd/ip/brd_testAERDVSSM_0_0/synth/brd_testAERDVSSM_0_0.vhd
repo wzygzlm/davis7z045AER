@@ -63,6 +63,12 @@ ENTITY brd_testAERDVSSM_0_0 IS
     SPIClock_AI : IN STD_LOGIC;
     SPIMOSI_AI : IN STD_LOGIC;
     SPIMISO_DZO : OUT STD_LOGIC;
+    SPIOutputSRegMode_D_Debug : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SPIInputSRegMode_D_Debug : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+    ParamOutput_DP_Debug : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SPIBitCount_D_Debug : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+    ReadOperationReg_SP_Debug : OUT STD_LOGIC;
+    ConfigLatchInput_S_Debug : OUT STD_LOGIC;
     ChipBiasEnable_SO : OUT STD_LOGIC;
     ChipBiasDiagSelect_SO : OUT STD_LOGIC;
     ChipBiasAddrSelect_SBO : OUT STD_LOGIC;
@@ -103,6 +109,12 @@ ARCHITECTURE brd_testAERDVSSM_0_0_arch OF brd_testAERDVSSM_0_0 IS
       SPIClock_AI : IN STD_LOGIC;
       SPIMOSI_AI : IN STD_LOGIC;
       SPIMISO_DZO : OUT STD_LOGIC;
+      SPIOutputSRegMode_D_Debug : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+      SPIInputSRegMode_D_Debug : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+      ParamOutput_DP_Debug : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      SPIBitCount_D_Debug : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+      ReadOperationReg_SP_Debug : OUT STD_LOGIC;
+      ConfigLatchInput_S_Debug : OUT STD_LOGIC;
       ChipBiasEnable_SO : OUT STD_LOGIC;
       ChipBiasDiagSelect_SO : OUT STD_LOGIC;
       ChipBiasAddrSelect_SBO : OUT STD_LOGIC;
@@ -150,6 +162,12 @@ BEGIN
       SPIClock_AI => SPIClock_AI,
       SPIMOSI_AI => SPIMOSI_AI,
       SPIMISO_DZO => SPIMISO_DZO,
+      SPIOutputSRegMode_D_Debug => SPIOutputSRegMode_D_Debug,
+      SPIInputSRegMode_D_Debug => SPIInputSRegMode_D_Debug,
+      ParamOutput_DP_Debug => ParamOutput_DP_Debug,
+      SPIBitCount_D_Debug => SPIBitCount_D_Debug,
+      ReadOperationReg_SP_Debug => ReadOperationReg_SP_Debug,
+      ConfigLatchInput_S_Debug => ConfigLatchInput_S_Debug,
       ChipBiasEnable_SO => ChipBiasEnable_SO,
       ChipBiasDiagSelect_SO => ChipBiasDiagSelect_SO,
       ChipBiasAddrSelect_SBO => ChipBiasAddrSelect_SBO,

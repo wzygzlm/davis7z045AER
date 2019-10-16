@@ -101,7 +101,7 @@ extern unsigned long  * ps7_peripherals_init_data;
 #define USB1_FREQ  60000000
 #define SDIO_FREQ  100000000
 #define UART_FREQ  100000000
-#define SPI_FREQ  10000000
+#define SPI_FREQ  125000000
 #define I2C_FREQ  108333336
 #define WDT_FREQ  108333336
 #define TTC_FREQ  50000000
@@ -110,7 +110,7 @@ extern unsigned long  * ps7_peripherals_init_data;
 #define TPIU_FREQ  200000000
 #define FPGA0_FREQ  100000000
 #define FPGA1_FREQ  40000000
-#define FPGA2_FREQ  10000000
+#define FPGA2_FREQ  250000000
 #define FPGA3_FREQ  10000000
 
 

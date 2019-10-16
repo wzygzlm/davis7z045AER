@@ -12,11 +12,11 @@
 #include "xil_printf.h"
 
 #include "iic_utils.h"
-#include "app_hdmi.h"
+//#include "app_hdmi.h"
 
 XIicPs IicPs_inst;
-XV_tpg tpg_inst;
-XV_tpg_Config *tpg_config;
+//XV_tpg tpg_inst;
+//XV_tpg_Config *tpg_config;
 
 // Macros
 #define REG_READ(addr) \
@@ -81,23 +81,23 @@ int main()
 //    xil_printf("HDMI Setup Complete!\r\n");
 
     //Initialize the TPG IP
-    Status = XV_tpg_Initialize(&tpg_inst, XPAR_V_TPG_0_DEVICE_ID);
-    if(Status!= XST_SUCCESS)
-    {
-    	xil_printf("TPG configuration failed\r\n");
-    	return(XST_FAILURE);
-    }
+//    Status = XV_tpg_Initialize(&tpg_inst, XPAR_V_TPG_0_DEVICE_ID);
+//    if(Status!= XST_SUCCESS)
+//    {
+//    	xil_printf("TPG configuration failed\r\n");
+//    	return(XST_FAILURE);
+//    }
 
     //Configure the TPG
-    app_hdmi_conf_tpg(&tpg_inst, 600, 800, 0, XTPG_BKGND_TARTAN_COLOR_BARS);
+//    app_hdmi_conf_tpg(&tpg_inst, 600, 800, 0, XTPG_BKGND_TARTAN_COLOR_BARS);
 
     //Configure the moving box of the TPG
 //    app_hdmi_conf_tpg_box(&tpg_inst, 50, 1);
 
     //Start the TPG
-    XV_tpg_EnableAutoRestart(&tpg_inst);
-    XV_tpg_Start(&tpg_inst);
-    xil_printf("TPG started!\r\n");
+//    XV_tpg_EnableAutoRestart(&tpg_inst);
+//    XV_tpg_Start(&tpg_inst);
+//    xil_printf("TPG started!\r\n");
 	
 
 	/* Start of VDMA Configuration */

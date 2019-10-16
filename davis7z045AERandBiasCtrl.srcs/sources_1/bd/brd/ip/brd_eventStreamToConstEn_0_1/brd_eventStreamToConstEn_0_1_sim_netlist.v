@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Sun Oct 13 09:55:26 2019
+// Date        : Sun Oct 13 10:47:08 2019
 // Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               E:/PhD_project/vivado_prjs/davisZynq/davis7z045AERandBiasCtrl/davis7z045AERandBiasCtrl.srcs/sources_1/bd/brd/ip/brd_eventStreamToConstEn_0_1/brd_eventStreamToConstEn_0_1_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top brd_eventStreamToConstEn_0_1 -prefix
+//               brd_eventStreamToConstEn_0_1_ brd_eventStreamToConstEn_0_1_sim_netlist.v
 // Design      : brd_eventStreamToConstEn_0_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -152,7 +152,6 @@ module brd_eventStreamToConstEn_0_1
         .yStream_V_V_TVALID(yStream_V_V_TVALID));
 endmodule
 
-(* ORIG_REF_NAME = "eventStreamToConsbkb" *) 
 module brd_eventStreamToConstEn_0_1_eventStreamToConsbkb
    (ram_reg_0,
     ram_reg_0_0,
@@ -1609,7 +1608,6 @@ module brd_eventStreamToConstEn_0_1_eventStreamToConsbkb_0
         .\yStream_V_V_TDATA[6] (\yStream_V_V_TDATA[6] ));
 endmodule
 
-(* ORIG_REF_NAME = "eventStreamToConsbkb_ram" *) 
 module brd_eventStreamToConstEn_0_1_eventStreamToConsbkb_ram
    (p_Result_61_7_fu_1265_p90,
     \frameStream_V_data_V_1_payload_B_reg[17] ,
@@ -52992,7 +52990,6 @@ module brd_eventStreamToConstEn_0_1_eventStreamToConsbkb_ram_1
         .O(ap_ready));
 endmodule
 
-(* ORIG_REF_NAME = "eventStreamToConstEncntFrameStream" *) 
 module brd_eventStreamToConstEn_0_1_eventStreamToConstEncntFrameStream
    (ap_clk,
     ap_rst_n,

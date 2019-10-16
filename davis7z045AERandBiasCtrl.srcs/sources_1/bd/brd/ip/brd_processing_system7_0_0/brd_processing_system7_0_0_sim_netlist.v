@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Wed Oct  9 15:32:54 2019
+// Date        : Mon Oct 14 14:51:02 2019
 // Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               e:/PhD_project/vivado_prjs/davisZynq/davis7z045AERandBiasCtrl/davis7z045AERandBiasCtrl.srcs/sources_1/bd/brd/ip/brd_processing_system7_0_0/brd_processing_system7_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top brd_processing_system7_0_0 -prefix
+//               brd_processing_system7_0_0_ brd_processing_system7_0_0_sim_netlist.v
 // Design      : brd_processing_system7_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -21,6 +21,20 @@ module brd_processing_system7_0_0
     I2C1_SCL_I,
     I2C1_SCL_O,
     I2C1_SCL_T,
+    SPI0_SCLK_I,
+    SPI0_SCLK_O,
+    SPI0_SCLK_T,
+    SPI0_MOSI_I,
+    SPI0_MOSI_O,
+    SPI0_MOSI_T,
+    SPI0_MISO_I,
+    SPI0_MISO_O,
+    SPI0_MISO_T,
+    SPI0_SS_I,
+    SPI0_SS_O,
+    SPI0_SS1_O,
+    SPI0_SS2_O,
+    SPI0_SS_T,
     USB0_PORT_INDCTL,
     USB0_VBUS_PWRSELECT,
     USB0_VBUS_PWRFAULT,
@@ -113,6 +127,7 @@ module brd_processing_system7_0_0
     S_AXI_HP0_WSTRB,
     FCLK_CLK0,
     FCLK_CLK1,
+    FCLK_CLK2,
     FCLK_RESET0_N,
     MIO,
     DDR_CAS_n,
@@ -141,6 +156,20 @@ module brd_processing_system7_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 IIC_1 SCL_I" *) input I2C1_SCL_I;
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 IIC_1 SCL_O" *) output I2C1_SCL_O;
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 IIC_1 SCL_T" *) output I2C1_SCL_T;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 SCK_I" *) input SPI0_SCLK_I;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 SCK_O" *) output SPI0_SCLK_O;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 SCK_T" *) output SPI0_SCLK_T;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 IO0_I" *) input SPI0_MOSI_I;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 IO0_O" *) output SPI0_MOSI_O;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 IO0_T" *) output SPI0_MOSI_T;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 IO1_I" *) input SPI0_MISO_I;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 IO1_O" *) output SPI0_MISO_O;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 IO1_T" *) output SPI0_MISO_T;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 SS_I" *) input SPI0_SS_I;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 SS_O" *) output SPI0_SS_O;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 SS1_O" *) output SPI0_SS1_O;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 SS2_O" *) output SPI0_SS2_O;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_0 SS_T" *) output SPI0_SS_T;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:usbctrl:1.0 USBIND_0 PORT_INDCTL" *) output [1:0]USB0_PORT_INDCTL;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:usbctrl:1.0 USBIND_0 VBUS_PWRSELECT" *) output USB0_VBUS_PWRSELECT;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:usbctrl:1.0 USBIND_0 VBUS_PWRFAULT" *) input USB0_VBUS_PWRFAULT;
@@ -233,6 +262,7 @@ module brd_processing_system7_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI_HP0 WSTRB" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXI_HP0, NUM_WRITE_OUTSTANDING 8, NUM_READ_OUTSTANDING 8, DATA_WIDTH 64, PROTOCOL AXI3, FREQ_HZ 100000000, ID_WIDTH 6, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, MAX_BURST_LENGTH 8, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *) input [7:0]S_AXI_HP0_WSTRB;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK0 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_CLK0, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK0" *) output FCLK_CLK0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK1 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_CLK1, FREQ_HZ 40000000, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK1" *) output FCLK_CLK1;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK2 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_CLK2, FREQ_HZ 250000000, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK2" *) output FCLK_CLK2;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 FCLK_RESET0_N RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_RESET0_N, POLARITY ACTIVE_LOW" *) output FCLK_RESET0_N;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO" *) inout [53:0]MIO;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) inout DDR_CAS_n;
@@ -275,6 +305,7 @@ module brd_processing_system7_0_0
   wire DDR_WEB;
   wire FCLK_CLK0;
   wire FCLK_CLK1;
+  wire FCLK_CLK2;
   wire FCLK_RESET0_N;
   wire I2C1_SCL_I;
   wire I2C1_SCL_O;
@@ -325,6 +356,20 @@ module brd_processing_system7_0_0
   wire PS_CLK;
   wire PS_PORB;
   wire PS_SRSTB;
+  wire SPI0_MISO_I;
+  wire SPI0_MISO_O;
+  wire SPI0_MISO_T;
+  wire SPI0_MOSI_I;
+  wire SPI0_MOSI_O;
+  wire SPI0_MOSI_T;
+  wire SPI0_SCLK_I;
+  wire SPI0_SCLK_O;
+  wire SPI0_SCLK_T;
+  wire SPI0_SS1_O;
+  wire SPI0_SS2_O;
+  wire SPI0_SS_I;
+  wire SPI0_SS_O;
+  wire SPI0_SS_T;
   wire S_AXI_HP0_ACLK;
   wire [31:0]S_AXI_HP0_ARADDR;
   wire [1:0]S_AXI_HP0_ARBURST;
@@ -421,7 +466,6 @@ module brd_processing_system7_0_0
   wire NLW_inst_ENET1_SOF_RX_UNCONNECTED;
   wire NLW_inst_ENET1_SOF_TX_UNCONNECTED;
   wire NLW_inst_EVENT_EVENTO_UNCONNECTED;
-  wire NLW_inst_FCLK_CLK2_UNCONNECTED;
   wire NLW_inst_FCLK_CLK3_UNCONNECTED;
   wire NLW_inst_FCLK_RESET1_N_UNCONNECTED;
   wire NLW_inst_FCLK_RESET2_N_UNCONNECTED;
@@ -486,16 +530,6 @@ module brd_processing_system7_0_0
   wire NLW_inst_SDIO1_CMD_O_UNCONNECTED;
   wire NLW_inst_SDIO1_CMD_T_UNCONNECTED;
   wire NLW_inst_SDIO1_LED_UNCONNECTED;
-  wire NLW_inst_SPI0_MISO_O_UNCONNECTED;
-  wire NLW_inst_SPI0_MISO_T_UNCONNECTED;
-  wire NLW_inst_SPI0_MOSI_O_UNCONNECTED;
-  wire NLW_inst_SPI0_MOSI_T_UNCONNECTED;
-  wire NLW_inst_SPI0_SCLK_O_UNCONNECTED;
-  wire NLW_inst_SPI0_SCLK_T_UNCONNECTED;
-  wire NLW_inst_SPI0_SS1_O_UNCONNECTED;
-  wire NLW_inst_SPI0_SS2_O_UNCONNECTED;
-  wire NLW_inst_SPI0_SS_O_UNCONNECTED;
-  wire NLW_inst_SPI0_SS_T_UNCONNECTED;
   wire NLW_inst_SPI1_MISO_O_UNCONNECTED;
   wire NLW_inst_SPI1_MISO_T_UNCONNECTED;
   wire NLW_inst_SPI1_MOSI_O_UNCONNECTED;
@@ -656,7 +690,7 @@ module brd_processing_system7_0_0
   (* C_EN_EMIO_TRACE = "0" *) 
   (* C_FCLK_CLK0_BUF = "TRUE" *) 
   (* C_FCLK_CLK1_BUF = "TRUE" *) 
-  (* C_FCLK_CLK2_BUF = "FALSE" *) 
+  (* C_FCLK_CLK2_BUF = "TRUE" *) 
   (* C_FCLK_CLK3_BUF = "FALSE" *) 
   (* C_GP0_EN_MODIFIABLE_TXN = "1" *) 
   (* C_GP1_EN_MODIFIABLE_TXN = "1" *) 
@@ -702,7 +736,7 @@ module brd_processing_system7_0_0
   (* C_USE_S_AXI_HP2 = "0" *) 
   (* C_USE_S_AXI_HP3 = "0" *) 
   (* HW_HANDOFF = "brd_processing_system7_0_0.hwdef" *) 
-  (* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><IO interface={I2C} ioStandard={} bidis={0} ioBank={} clockFreq={108.333336} usageRate={0.5} /><IO interface={I2C} ioStandard={LVCMOS33} bidis={2} ioBank={Vcco_p1} clockFreq={108.333336} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS33} bidis={2} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS33} bidis={6} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS33} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS33} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={NAND} ioStandard={} bidis={14} ioBank={} clockFreq={100.000000} usageRate={0.5} /><PLL domain={Processor} vco={1300.000} /><PLL domain={Memory} vco={1050.000} /><PLL domain={IO} vco={1600.000} /><AXI interface={S_AXI_HP0} dataWidth={64} clockFreq={100} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100} usageRate={0.5} />/>" *) 
+  (* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><IO interface={SPI} ioStandard={} bidis={0} ioBank={} clockFreq={125.000000} usageRate={0.5} /><IO interface={I2C} ioStandard={} bidis={0} ioBank={} clockFreq={108.333336} usageRate={0.5} /><IO interface={I2C} ioStandard={LVCMOS33} bidis={2} ioBank={Vcco_p1} clockFreq={108.333336} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS33} bidis={2} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS33} bidis={6} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS33} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS33} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={NAND} ioStandard={} bidis={14} ioBank={} clockFreq={100.000000} usageRate={0.5} /><PLL domain={Processor} vco={1300.000} /><PLL domain={Memory} vco={1050.000} /><PLL domain={IO} vco={1000.000} /><AXI interface={S_AXI_HP0} dataWidth={64} clockFreq={100} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100} usageRate={0.5} />/>" *) 
   (* USE_TRACE_DATA_EDGE_DETECTOR = "0" *) 
   brd_processing_system7_0_0_processing_system7_v5_5_processing_system7 inst
        (.CAN0_PHY_RX(1'b0),
@@ -823,7 +857,7 @@ module brd_processing_system7_0_0
         .EVENT_STANDBYWFI(NLW_inst_EVENT_STANDBYWFI_UNCONNECTED[1:0]),
         .FCLK_CLK0(FCLK_CLK0),
         .FCLK_CLK1(FCLK_CLK1),
-        .FCLK_CLK2(NLW_inst_FCLK_CLK2_UNCONNECTED),
+        .FCLK_CLK2(FCLK_CLK2),
         .FCLK_CLK3(NLW_inst_FCLK_CLK3_UNCONNECTED),
         .FCLK_CLKTRIG0_N(1'b0),
         .FCLK_CLKTRIG1_N(1'b0),
@@ -1015,20 +1049,20 @@ module brd_processing_system7_0_0
         .SDIO1_DATA_T(NLW_inst_SDIO1_DATA_T_UNCONNECTED[3:0]),
         .SDIO1_LED(NLW_inst_SDIO1_LED_UNCONNECTED),
         .SDIO1_WP(1'b0),
-        .SPI0_MISO_I(1'b0),
-        .SPI0_MISO_O(NLW_inst_SPI0_MISO_O_UNCONNECTED),
-        .SPI0_MISO_T(NLW_inst_SPI0_MISO_T_UNCONNECTED),
-        .SPI0_MOSI_I(1'b0),
-        .SPI0_MOSI_O(NLW_inst_SPI0_MOSI_O_UNCONNECTED),
-        .SPI0_MOSI_T(NLW_inst_SPI0_MOSI_T_UNCONNECTED),
-        .SPI0_SCLK_I(1'b0),
-        .SPI0_SCLK_O(NLW_inst_SPI0_SCLK_O_UNCONNECTED),
-        .SPI0_SCLK_T(NLW_inst_SPI0_SCLK_T_UNCONNECTED),
-        .SPI0_SS1_O(NLW_inst_SPI0_SS1_O_UNCONNECTED),
-        .SPI0_SS2_O(NLW_inst_SPI0_SS2_O_UNCONNECTED),
-        .SPI0_SS_I(1'b0),
-        .SPI0_SS_O(NLW_inst_SPI0_SS_O_UNCONNECTED),
-        .SPI0_SS_T(NLW_inst_SPI0_SS_T_UNCONNECTED),
+        .SPI0_MISO_I(SPI0_MISO_I),
+        .SPI0_MISO_O(SPI0_MISO_O),
+        .SPI0_MISO_T(SPI0_MISO_T),
+        .SPI0_MOSI_I(SPI0_MOSI_I),
+        .SPI0_MOSI_O(SPI0_MOSI_O),
+        .SPI0_MOSI_T(SPI0_MOSI_T),
+        .SPI0_SCLK_I(SPI0_SCLK_I),
+        .SPI0_SCLK_O(SPI0_SCLK_O),
+        .SPI0_SCLK_T(SPI0_SCLK_T),
+        .SPI0_SS1_O(SPI0_SS1_O),
+        .SPI0_SS2_O(SPI0_SS2_O),
+        .SPI0_SS_I(SPI0_SS_I),
+        .SPI0_SS_O(SPI0_SS_O),
+        .SPI0_SS_T(SPI0_SS_T),
         .SPI1_MISO_I(1'b0),
         .SPI1_MISO_O(NLW_inst_SPI1_MISO_O_UNCONNECTED),
         .SPI1_MISO_T(NLW_inst_SPI1_MISO_T_UNCONNECTED),
@@ -1395,7 +1429,7 @@ endmodule
 (* C_DM_WIDTH = "4" *) (* C_DQS_WIDTH = "4" *) (* C_DQ_WIDTH = "32" *) 
 (* C_EMIO_GPIO_WIDTH = "64" *) (* C_EN_EMIO_ENET0 = "0" *) (* C_EN_EMIO_ENET1 = "0" *) 
 (* C_EN_EMIO_PJTAG = "0" *) (* C_EN_EMIO_TRACE = "0" *) (* C_FCLK_CLK0_BUF = "TRUE" *) 
-(* C_FCLK_CLK1_BUF = "TRUE" *) (* C_FCLK_CLK2_BUF = "FALSE" *) (* C_FCLK_CLK3_BUF = "FALSE" *) 
+(* C_FCLK_CLK1_BUF = "TRUE" *) (* C_FCLK_CLK2_BUF = "TRUE" *) (* C_FCLK_CLK3_BUF = "FALSE" *) 
 (* C_GP0_EN_MODIFIABLE_TXN = "1" *) (* C_GP1_EN_MODIFIABLE_TXN = "1" *) (* C_INCLUDE_ACP_TRANS_CHECK = "0" *) 
 (* C_INCLUDE_TRACE_BUFFER = "0" *) (* C_IRQ_F2P_MODE = "DIRECT" *) (* C_MIO_PRIMITIVE = "54" *) 
 (* C_M_AXI_GP0_ENABLE_STATIC_REMAP = "0" *) (* C_M_AXI_GP0_ID_WIDTH = "12" *) (* C_M_AXI_GP0_THREAD_ID_WIDTH = "12" *) 
@@ -1410,8 +1444,8 @@ endmodule
 (* C_USE_DEFAULT_ACP_USER_VAL = "0" *) (* C_USE_M_AXI_GP0 = "1" *) (* C_USE_M_AXI_GP1 = "0" *) 
 (* C_USE_S_AXI_ACP = "0" *) (* C_USE_S_AXI_GP0 = "0" *) (* C_USE_S_AXI_GP1 = "0" *) 
 (* C_USE_S_AXI_HP0 = "1" *) (* C_USE_S_AXI_HP1 = "0" *) (* C_USE_S_AXI_HP2 = "0" *) 
-(* C_USE_S_AXI_HP3 = "0" *) (* HW_HANDOFF = "brd_processing_system7_0_0.hwdef" *) (* ORIG_REF_NAME = "processing_system7_v5_5_processing_system7" *) 
-(* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><IO interface={I2C} ioStandard={} bidis={0} ioBank={} clockFreq={108.333336} usageRate={0.5} /><IO interface={I2C} ioStandard={LVCMOS33} bidis={2} ioBank={Vcco_p1} clockFreq={108.333336} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS33} bidis={2} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS33} bidis={6} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS33} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS33} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={NAND} ioStandard={} bidis={14} ioBank={} clockFreq={100.000000} usageRate={0.5} /><PLL domain={Processor} vco={1300.000} /><PLL domain={Memory} vco={1050.000} /><PLL domain={IO} vco={1600.000} /><AXI interface={S_AXI_HP0} dataWidth={64} clockFreq={100} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100} usageRate={0.5} />/>" *) (* USE_TRACE_DATA_EDGE_DETECTOR = "0" *) 
+(* C_USE_S_AXI_HP3 = "0" *) (* HW_HANDOFF = "brd_processing_system7_0_0.hwdef" *) (* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><IO interface={SPI} ioStandard={} bidis={0} ioBank={} clockFreq={125.000000} usageRate={0.5} /><IO interface={I2C} ioStandard={} bidis={0} ioBank={} clockFreq={108.333336} usageRate={0.5} /><IO interface={I2C} ioStandard={LVCMOS33} bidis={2} ioBank={Vcco_p1} clockFreq={108.333336} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS33} bidis={2} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS33} bidis={6} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS33} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS33} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={NAND} ioStandard={} bidis={14} ioBank={} clockFreq={100.000000} usageRate={0.5} /><PLL domain={Processor} vco={1300.000} /><PLL domain={Memory} vco={1050.000} /><PLL domain={IO} vco={1000.000} /><AXI interface={S_AXI_HP0} dataWidth={64} clockFreq={100} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100} usageRate={0.5} />/>" *) 
+(* USE_TRACE_DATA_EDGE_DETECTOR = "0" *) 
 module brd_processing_system7_0_0_processing_system7_v5_5_processing_system7
    (CAN0_PHY_TX,
     CAN0_PHY_RX,
@@ -2892,7 +2926,7 @@ module brd_processing_system7_0_0_processing_system7_v5_5_processing_system7
   wire FCLK_CLK1;
   wire FCLK_CLK2;
   wire FCLK_CLK3;
-  wire [1:0]FCLK_CLK_unbuffered;
+  wire [2:0]FCLK_CLK_unbuffered;
   wire FCLK_RESET0_N;
   wire FCLK_RESET1_N;
   wire FCLK_RESET2_N;
@@ -4172,7 +4206,7 @@ module brd_processing_system7_0_0_processing_system7_v5_5_processing_system7
         .EVENTEVENTO(EVENT_EVENTO),
         .EVENTSTANDBYWFE(EVENT_STANDBYWFE),
         .EVENTSTANDBYWFI(EVENT_STANDBYWFI),
-        .FCLKCLK({FCLK_CLK3,FCLK_CLK2,FCLK_CLK_unbuffered}),
+        .FCLKCLK({FCLK_CLK3,FCLK_CLK_unbuffered}),
         .FCLKCLKTRIGN({1'b0,1'b0,1'b0,1'b0}),
         .FCLKRESETN({FCLK_RESET3_N,FCLK_RESET2_N,FCLK_RESET1_N,FCLK_RESET0_N}),
         .FPGAIDLEN(FPGA_IDLE_N),
@@ -4690,6 +4724,10 @@ module brd_processing_system7_0_0_processing_system7_v5_5_processing_system7
   BUFG \buffer_fclk_clk_1.FCLK_CLK_1_BUFG 
        (.I(FCLK_CLK_unbuffered[1]),
         .O(FCLK_CLK1));
+  (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFG \buffer_fclk_clk_2.FCLK_CLK_2_BUFG 
+       (.I(FCLK_CLK_unbuffered[2]),
+        .O(FCLK_CLK2));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BIBUF \genblk13[0].MIO_BIBUF 
        (.IO(buffered_MIO[0]),

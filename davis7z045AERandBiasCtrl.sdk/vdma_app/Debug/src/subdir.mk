@@ -7,19 +7,16 @@ LD_SRCS += \
 ../src/lscript.ld 
 
 C_SRCS += \
-../src/app_hdmi.c \
 ../src/iic_utils.c \
 ../src/platform.c \
 ../src/vdma_app_davis7z045.c 
 
 OBJS += \
-./src/app_hdmi.o \
 ./src/iic_utils.o \
 ./src/platform.o \
 ./src/vdma_app_davis7z045.o 
 
 C_DEPS += \
-./src/app_hdmi.d \
 ./src/iic_utils.d \
 ./src/platform.d \
 ./src/vdma_app_davis7z045.d 

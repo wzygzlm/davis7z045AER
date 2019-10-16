@@ -683,6 +683,20 @@
   I2C1_SCL_I,
   I2C1_SCL_O,
   I2C1_SCL_T,
+  SPI0_SCLK_I,
+  SPI0_SCLK_O,
+  SPI0_SCLK_T,
+  SPI0_MOSI_I,
+  SPI0_MOSI_O,
+  SPI0_MOSI_T,
+  SPI0_MISO_I,
+  SPI0_MISO_O,
+  SPI0_MISO_T,
+  SPI0_SS_I,
+  SPI0_SS_O,
+  SPI0_SS1_O,
+  SPI0_SS2_O,
+  SPI0_SS_T,
   USB0_PORT_INDCTL,
   USB0_VBUS_PWRSELECT,
   USB0_VBUS_PWRFAULT,
@@ -775,6 +789,7 @@
   S_AXI_HP0_WSTRB,
   FCLK_CLK0,
   FCLK_CLK1,
+  FCLK_CLK2,
   FCLK_RESET0_N,
   MIO,
   DDR_CAS_n,
@@ -852,7 +867,7 @@
       parameter C_PS7_SI_REV = "PRODUCTION";
       parameter C_FCLK_CLK0_BUF = "TRUE";
       parameter C_FCLK_CLK1_BUF = "TRUE";
-      parameter C_FCLK_CLK2_BUF = "FALSE";
+      parameter C_FCLK_CLK2_BUF = "TRUE";
       parameter C_FCLK_CLK3_BUF = "FALSE";
       parameter C_PACKAGE_NAME = "ffg900";
       parameter C_GP0_EN_MODIFIABLE_TXN = "1";
@@ -866,6 +881,20 @@
       input  I2C1_SCL_I;
       output  I2C1_SCL_O;
       output  I2C1_SCL_T;
+      input  SPI0_SCLK_I;
+      output  SPI0_SCLK_O;
+      output  SPI0_SCLK_T;
+      input  SPI0_MOSI_I;
+      output  SPI0_MOSI_O;
+      output  SPI0_MOSI_T;
+      input  SPI0_MISO_I;
+      output  SPI0_MISO_O;
+      output  SPI0_MISO_T;
+      input  SPI0_SS_I;
+      output  SPI0_SS_O;
+      output  SPI0_SS1_O;
+      output  SPI0_SS2_O;
+      output  SPI0_SS_T;
       output  [1 : 0] USB0_PORT_INDCTL;
       output  USB0_VBUS_PWRSELECT;
       input  USB0_VBUS_PWRFAULT;
@@ -958,6 +987,7 @@
       input  [7 : 0] S_AXI_HP0_WSTRB;
       output  FCLK_CLK0;
       output  FCLK_CLK1;
+      output  FCLK_CLK2;
       output  FCLK_RESET0_N;
       inout  [53 : 0] MIO;
       inout  DDR_CAS_n;
@@ -987,6 +1017,16 @@
       reg I2C1_SDA_T;
       reg I2C1_SCL_O;
       reg I2C1_SCL_T;
+      reg SPI0_SCLK_O;
+      reg SPI0_SCLK_T;
+      reg SPI0_MOSI_O;
+      reg SPI0_MOSI_T;
+      reg SPI0_MISO_O;
+      reg SPI0_MISO_T;
+      reg SPI0_SS_O;
+      reg SPI0_SS1_O;
+      reg SPI0_SS2_O;
+      reg SPI0_SS_T;
       reg [1 : 0] USB0_PORT_INDCTL;
       reg USB0_VBUS_PWRSELECT;
       reg [1 : 0] USB1_PORT_INDCTL;
@@ -1035,6 +1075,7 @@
       reg [5 : 0] S_AXI_HP0_WACOUNT;
       reg FCLK_CLK0;
       reg FCLK_CLK1;
+      reg FCLK_CLK2;
       reg FCLK_RESET0_N;
       string ip_name;
       reg disable_port;
@@ -1048,6 +1089,7 @@ import "DPI-C" function void ps7_init_m_axi_gp0(input int M_AXI_GP0_AWID_size,in
 import "DPI-C" function void ps7_init_s_axi_hp0(input int S_AXI_HP0_AWID_size,input int S_AXI_HP0_AWADDR_size,input int S_AXI_HP0_AWLEN_size,input int S_AXI_HP0_AWSIZE_size,input int S_AXI_HP0_AWBURST_size,input int S_AXI_HP0_AWLOCK_size,input int S_AXI_HP0_AWCACHE_size,input int S_AXI_HP0_AWPROT_size,input int S_AXI_HP0_AWQOS_size,input int S_AXI_HP0_AWVALID_size,input int S_AXI_HP0_AWREADY_size,input int S_AXI_HP0_WID_size,input int S_AXI_HP0_WDATA_size,input int S_AXI_HP0_WSTRB_size,input int S_AXI_HP0_WLAST_size,input int S_AXI_HP0_WVALID_size,input int S_AXI_HP0_WREADY_size,input int S_AXI_HP0_BID_size,input int S_AXI_HP0_BRESP_size,input int S_AXI_HP0_BVALID_size,input int S_AXI_HP0_BREADY_size,input int S_AXI_HP0_ARID_size,input int S_AXI_HP0_ARADDR_size,input int S_AXI_HP0_ARLEN_size,input int S_AXI_HP0_ARSIZE_size,input int S_AXI_HP0_ARBURST_size,input int S_AXI_HP0_ARLOCK_size,input int S_AXI_HP0_ARCACHE_size,input int S_AXI_HP0_ARPROT_size,input int S_AXI_HP0_ARQOS_size,input int S_AXI_HP0_ARVALID_size,input int S_AXI_HP0_ARREADY_size,input int S_AXI_HP0_RID_size,input int S_AXI_HP0_RDATA_size,input int S_AXI_HP0_RRESP_size,input int S_AXI_HP0_RLAST_size,input int S_AXI_HP0_RVALID_size,input int S_AXI_HP0_RREADY_size);
 import "DPI-C" function void ps7_simulate_single_cycle_FCLK_CLK0();
 import "DPI-C" function void ps7_simulate_single_cycle_FCLK_CLK1();
+import "DPI-C" function void ps7_simulate_single_cycle_FCLK_CLK2();
 import "DPI-C" function void ps7_simulate_single_cycle_M_AXI_GP0_ACLK();
 import "DPI-C" function void ps7_set_inputs_m_axi_gp0_M_AXI_GP0_ACLK(
 input bit M_AXI_GP0_AWREADY,
@@ -1259,6 +1301,19 @@ output bit S_AXI_HP0_RVALID
   begin
    ps7_set_ip_context(ip_name);
    ps7_simulate_single_cycle_FCLK_CLK1();
+  end
+
+  initial
+  begin
+     FCLK_CLK2 = 1'b0;
+  end
+
+  always #(2.0) FCLK_CLK2 <= ~FCLK_CLK2;
+
+  always@(posedge FCLK_CLK2)
+  begin
+   ps7_set_ip_context(ip_name);
+   ps7_simulate_single_cycle_FCLK_CLK2();
   end
 
 

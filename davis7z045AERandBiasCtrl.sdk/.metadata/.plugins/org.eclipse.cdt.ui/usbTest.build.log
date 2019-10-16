@@ -1,4 +1,36 @@
+13:29:23 **** Incremental Build of configuration Debug for project usbTest ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xusb_cp9.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xusb_cp9.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../helloworld_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/xusb_cp9.d" -MT"src/xusb_cp9.o" -o "src/xusb_cp9.o" "../src/xusb_cp9.c"
+'Finished building: ../src/xusb_cp9.c'
+' '
+'Building file: ../src/xusb_dma_intr_storage.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xusb_dma_intr_storage.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../helloworld_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/xusb_dma_intr_storage.d" -MT"src/xusb_dma_intr_storage.o" -o "src/xusb_dma_intr_storage.o" "../src/xusb_dma_intr_storage.c"
+../src/xusb_dma_intr_storage.c: In function 'main':
+../src/xusb_dma_intr_storage.c:86:24: error: 'XPAR_USB_0_DEVICE_ID' undeclared (first use in this function); did you mean 'XPAR_XUSBPS_0_DEVICE_ID'?
+ #define USB_DEVICE_ID  XPAR_USB_0_DEVICE_ID
+                        ^
+../src/xusb_dma_intr_storage.c:160:35: note: in expansion of macro 'USB_DEVICE_ID'
+  UsbConfigPtr = XUsb_LookupConfig(USB_DEVICE_ID);
+                                   ^~~~~~~~~~~~~
+../src/xusb_dma_intr_storage.c:86:24: note: each undeclared identifier is reported only once for each function it appears in
+ #define USB_DEVICE_ID  XPAR_USB_0_DEVICE_ID
+                        ^
+../src/xusb_dma_intr_storage.c:160:35: note: in expansion of macro 'USB_DEVICE_ID'
+  UsbConfigPtr = XUsb_LookupConfig(USB_DEVICE_ID);
+                                   ^~~~~~~~~~~~~
+../src/xusb_dma_intr_storage.c: In function 'SetupInterruptSystem':
+../src/xusb_dma_intr_storage.c:94:20: error: 'XPAR_FABRIC_AXI_USB2_DEVICE_1_USB_IRPT_INTR' undeclared (first use in this function)
+ #define USB_INTR   XPAR_FABRIC_AXI_USB2_DEVICE_1_USB_IRPT_INTR
+                    ^
+../src/xusb_dma_intr_storage.c:94:20: note: in definition of macro 'USB_INTR'
+ #define USB_INTR   XPAR_FABRIC_AXI_USB2_DEVICE_1_USB_IRPT_INTR
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/xusb_dma_intr_storage.o] Error 1
 
-****  of configuration Debug for project usbTest ****
+13:29:24 Build Finished (took 971ms)
 
-Nothing to build for project usbTest

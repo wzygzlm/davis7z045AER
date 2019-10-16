@@ -13,3 +13,4 @@
 *.sdk/u-boot*
 *.sdk/BOOT.bin
 *.sdk/image.ub
+*.sdk

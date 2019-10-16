@@ -1,8 +1,8 @@
-10:08:41 **** Clean-only build of configuration Debug for project vdma_app ****
+20:52:13 **** Clean-only build of configuration Debug for project DDRTest_bsp_xspips_eeprom_polled_example_1 ****
 make clean 
-rm -rf  ./src/app_hdmi.o ./src/iic_utils.o ./src/platform.o ./src/vdma_app_davis7z045.o  ./src/app_hdmi.d ./src/iic_utils.d ./src/platform.d ./src/vdma_app_davis7z045.d  vdma_app.elf.size  vdma_app.elf
+rm -rf  ./src/xspips_eeprom_polled_example.o  ./src/xspips_eeprom_polled_example.d  DDRTest_bsp_xspips_eeprom_polled_example_1.elf.size  DDRTest_bsp_xspips_eeprom_polled_example_1.elf
 ' '
-10:08:41 **** Clean-only build of project helloworld_bsp ****
+20:52:14 **** Clean-only build of project DDRTest_bsp ****
 make -k clean 
 make -C ps7_cortexa9_0/libsrc/axivdma_v6_5/src -s clean 
 make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s clean 
@@ -17,14 +17,13 @@ make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s clean
 make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s clean 
 make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s clean 
 make -C ps7_cortexa9_0/libsrc/sdps_v3_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/spips_v3_0/src -s clean 
 make -C ps7_cortexa9_0/libsrc/standalone_v6_6/src -s clean 
 make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s clean 
 make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s clean 
-make -C ps7_cortexa9_0/libsrc/v_tpg_v8_0/src -s clean 
-make -C ps7_cortexa9_0/libsrc/video_common_v4_3/src -s clean 
 make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s clean 
 rm -f ps7_cortexa9_0/lib/libxil.a
-10:08:44 **** Build of project helloworld_bsp ****
+20:52:19 **** Build of project DDRTest_bsp ****
 make -k all 
 "Running Make include in ps7_cortexa9_0/libsrc/axivdma_v6_5/src"
 make -C ps7_cortexa9_0/libsrc/axivdma_v6_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
@@ -52,16 +51,14 @@ make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILE
 make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_4/src"
 make -C ps7_cortexa9_0/libsrc/sdps_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/spips_v3_0/src"
+make -C ps7_cortexa9_0/libsrc/spips_v3_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_6/src"
 make -C ps7_cortexa9_0/libsrc/standalone_v6_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_6/src"
 make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
 make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/v_tpg_v8_0/src"
-make -C ps7_cortexa9_0/libsrc/v_tpg_v8_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/video_common_v4_3/src"
-make -C ps7_cortexa9_0/libsrc/video_common_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
 make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Running Make libs in ps7_cortexa9_0/libsrc/axivdma_v6_5/src"
@@ -110,6 +107,9 @@ xsdps.c:1272:11: warning: this statement may fall through [-Wimplicit-fallthroug
 xsdps.c:1273:3: note: here
    case ACMD41:
    ^~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/spips_v3_0/src"
+make -C ps7_cortexa9_0/libsrc/spips_v3_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling spips"
 "Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_6/src"
 make -C ps7_cortexa9_0/libsrc/standalone_v6_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Compiling standalone"
@@ -119,82 +119,47 @@ make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm
 "Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
 make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Compiling usbps"
-"Running Make libs in ps7_cortexa9_0/libsrc/v_tpg_v8_0/src"
-make -C ps7_cortexa9_0/libsrc/v_tpg_v8_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling v_tpg"
-"Running Make libs in ps7_cortexa9_0/libsrc/video_common_v4_3/src"
-make -C ps7_cortexa9_0/libsrc/video_common_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling video_common"
 "Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
 make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Compiling xadcps"
 'Finished building libraries'
-10:09:13 **** Auto Build of configuration Debug for project helloworld ****
+20:52:45 **** Build of configuration Debug for project DDRTest_bsp_xspips_eeprom_polled_example_1 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
-'Building file: ../src/helloworld.c'
+'Building file: ../src/xspips_eeprom_polled_example.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../helloworld_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-'Finished building: ../src/helloworld.c'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xspips_eeprom_polled_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../DDRTest_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/xspips_eeprom_polled_example.d" -MT"src/xspips_eeprom_polled_example.o" -o "src/xspips_eeprom_polled_example.o" "../src/xspips_eeprom_polled_example.c"
+'Finished building: ../src/xspips_eeprom_polled_example.c'
 ' '
-'Building file: ../src/platform.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../helloworld_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
-'Building target: helloworld.elf'
+'Building target: DDRTest_bsp_xspips_eeprom_polled_example_1.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../helloworld_bsp/ps7_cortexa9_0/lib -o "helloworld.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: helloworld.elf'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../DDRTest_bsp/ps7_cortexa9_0/lib -o "DDRTest_bsp_xspips_eeprom_polled_example_1.elf"  ./src/xspips_eeprom_polled_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: DDRTest_bsp_xspips_eeprom_polled_example_1.elf'
 ' '
 'Invoking: ARM v7 Print Size'
-arm-none-eabi-size helloworld.elf  |tee "helloworld.elf.size"
+arm-none-eabi-size DDRTest_bsp_xspips_eeprom_polled_example_1.elf  |tee "DDRTest_bsp_xspips_eeprom_polled_example_1.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  19316	   1144	  62504	  82964	  14414	helloworld.elf
-'Finished building: helloworld.elf.size'
+  27596	   1160	  66680	  95436	  174cc	DDRTest_bsp_xspips_eeprom_polled_example_1.elf
+'Finished building: DDRTest_bsp_xspips_eeprom_polled_example_1.elf.size'
 ' '
-
-****  of configuration Debug for project usbTest ****
-
-Nothing to build for project usbTest
-10:09:16 **** Build of configuration Debug for project vdma_app ****
+20:54:01 **** Incremental Build of configuration Debug for project DDRTest_bsp_xspips_eeprom_polled_example_1 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
-'Building file: ../src/app_hdmi.c'
+'Building file: ../src/xspips_eeprom_polled_example.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/app_hdmi.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../helloworld_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/app_hdmi.d" -MT"src/app_hdmi.o" -o "src/app_hdmi.o" "../src/app_hdmi.c"
-'Finished building: ../src/app_hdmi.c'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xspips_eeprom_polled_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../DDRTest_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/xspips_eeprom_polled_example.d" -MT"src/xspips_eeprom_polled_example.o" -o "src/xspips_eeprom_polled_example.o" "../src/xspips_eeprom_polled_example.c"
+'Finished building: ../src/xspips_eeprom_polled_example.c'
 ' '
-'Building file: ../src/iic_utils.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/iic_utils.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../helloworld_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/iic_utils.d" -MT"src/iic_utils.o" -o "src/iic_utils.o" "../src/iic_utils.c"
-'Finished building: ../src/iic_utils.c'
-' '
-'Building file: ../src/platform.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../helloworld_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
-'Building file: ../src/vdma_app_davis7z045.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/vdma_app_davis7z045.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../helloworld_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/vdma_app_davis7z045.d" -MT"src/vdma_app_davis7z045.o" -o "src/vdma_app_davis7z045.o" "../src/vdma_app_davis7z045.c"
-'Finished building: ../src/vdma_app_davis7z045.c'
-' '
-'Building target: vdma_app.elf'
+'Building target: DDRTest_bsp_xspips_eeprom_polled_example_1.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../helloworld_bsp/ps7_cortexa9_0/lib -o "vdma_app.elf"  ./src/app_hdmi.o ./src/iic_utils.o ./src/platform.o ./src/vdma_app_davis7z045.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: vdma_app.elf'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../DDRTest_bsp/ps7_cortexa9_0/lib -o "DDRTest_bsp_xspips_eeprom_polled_example_1.elf"  ./src/xspips_eeprom_polled_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: DDRTest_bsp_xspips_eeprom_polled_example_1.elf'
 ' '
 'Invoking: ARM v7 Print Size'
-arm-none-eabi-size vdma_app.elf  |tee "vdma_app.elf.size"
+arm-none-eabi-size DDRTest_bsp_xspips_eeprom_polled_example_1.elf  |tee "DDRTest_bsp_xspips_eeprom_polled_example_1.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  38388	   1208	  62616	 102212	  18f44	vdma_app.elf
-'Finished building: vdma_app.elf.size'
+  27596	   1160	  66680	  95436	  174cc	DDRTest_bsp_xspips_eeprom_polled_example_1.elf
+'Finished building: DDRTest_bsp_xspips_eeprom_polled_example_1.elf.size'
 ' '
-10:09:21 **** Incremental Build of configuration Debug for project vdma_app ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-make: Nothing to be done for `main-build'.

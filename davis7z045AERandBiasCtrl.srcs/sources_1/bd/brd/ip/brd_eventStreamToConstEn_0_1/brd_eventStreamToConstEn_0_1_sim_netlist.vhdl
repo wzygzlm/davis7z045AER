@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Sun Oct 13 09:55:26 2019
+-- Date        : Sun Oct 13 10:47:09 2019
 -- Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               E:/PhD_project/vivado_prjs/davisZynq/davis7z045AERandBiasCtrl/davis7z045AERandBiasCtrl.srcs/sources_1/bd/brd/ip/brd_eventStreamToConstEn_0_1/brd_eventStreamToConstEn_0_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top brd_eventStreamToConstEn_0_1 -prefix
+--               brd_eventStreamToConstEn_0_1_ brd_eventStreamToConstEn_0_1_sim_netlist.vhdl
 -- Design      : brd_eventStreamToConstEn_0_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -187,8 +187,6 @@ entity brd_eventStreamToConstEn_0_1_eventStreamToConsbkb_ram is
     currentStoreSliceIdx_1_reg_2149 : in STD_LOGIC;
     ap_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of brd_eventStreamToConstEn_0_1_eventStreamToConsbkb_ram : entity is "eventStreamToConsbkb_ram";
 end brd_eventStreamToConstEn_0_1_eventStreamToConsbkb_ram;
 
 architecture STRUCTURE of brd_eventStreamToConstEn_0_1_eventStreamToConsbkb_ram is
@@ -63801,8 +63799,6 @@ entity brd_eventStreamToConstEn_0_1_eventStreamToConsbkb is
     p_Result_61_7_fu_1265_p90 : in STD_LOGIC;
     ap_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of brd_eventStreamToConstEn_0_1_eventStreamToConsbkb : entity is "eventStreamToConsbkb";
 end brd_eventStreamToConstEn_0_1_eventStreamToConsbkb;
 
 architecture STRUCTURE of brd_eventStreamToConstEn_0_1_eventStreamToConsbkb is
@@ -64399,8 +64395,6 @@ entity brd_eventStreamToConstEn_0_1_eventStreamToConstEncntFrameStream is
     frameStream_TID : out STD_LOGIC_VECTOR ( 0 to 0 );
     frameStream_TDEST : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of brd_eventStreamToConstEn_0_1_eventStreamToConstEncntFrameStream : entity is "eventStreamToConstEncntFrameStream";
 end brd_eventStreamToConstEn_0_1_eventStreamToConstEncntFrameStream;
 
 architecture STRUCTURE of brd_eventStreamToConstEn_0_1_eventStreamToConstEncntFrameStream is

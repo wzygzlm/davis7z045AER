@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
---Date        : Sun Oct 13 09:53:08 2019
+--Date        : Wed Oct 16 20:33:42 2019
 --Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 --Command     : generate_target brd_wrapper.bd
 --Design      : brd_wrapper
@@ -48,10 +48,6 @@ entity brd_wrapper is
     IMUData_DZIO_0 : inout STD_LOGIC;
     IMUFSync_SO_0 : out STD_LOGIC;
     IMUInterrupt_AI_0 : in STD_LOGIC;
-    SPIClock_AI_0 : in STD_LOGIC;
-    SPIMISO_DZO_0 : out STD_LOGIC;
-    SPIMOSI_AI_0 : in STD_LOGIC;
-    SPISlaveSelect_ABI_0 : in STD_LOGIC;
     SyncInClock_AI_0 : in STD_LOGIC;
     SyncInSignal1_AI_0 : in STD_LOGIC;
     SyncInSignal2_AI_0 : in STD_LOGIC;
@@ -94,9 +90,6 @@ architecture STRUCTURE of brd_wrapper is
     IMUInterrupt_AI_0 : in STD_LOGIC;
     led_0 : out STD_LOGIC_VECTOR ( 5 downto 0 );
     IMUData_DZIO_0 : inout STD_LOGIC;
-    SPIClock_AI_0 : in STD_LOGIC;
-    SPIMOSI_AI_0 : in STD_LOGIC;
-    SPISlaveSelect_ABI_0 : in STD_LOGIC;
     SyncInClock_AI_0 : in STD_LOGIC;
     SyncInSignal1_AI_0 : in STD_LOGIC;
     SyncInSignal2_AI_0 : in STD_LOGIC;
@@ -111,7 +104,6 @@ architecture STRUCTURE of brd_wrapper is
     DVSAERReset_SBO_0 : out STD_LOGIC;
     IMUClock_CZO_0 : out STD_LOGIC;
     IMUFSync_SO_0 : out STD_LOGIC;
-    SPIMISO_DZO_0 : out STD_LOGIC;
     SyncOutClock_CO_0 : out STD_LOGIC;
     SyncOutSignal_SO_0 : out STD_LOGIC;
     vid_data : out STD_LOGIC_VECTOR ( 23 downto 0 );
@@ -157,10 +149,6 @@ brd_i: component brd
       IMUData_DZIO_0 => IMUData_DZIO_0,
       IMUFSync_SO_0 => IMUFSync_SO_0,
       IMUInterrupt_AI_0 => IMUInterrupt_AI_0,
-      SPIClock_AI_0 => SPIClock_AI_0,
-      SPIMISO_DZO_0 => SPIMISO_DZO_0,
-      SPIMOSI_AI_0 => SPIMOSI_AI_0,
-      SPISlaveSelect_ABI_0 => SPISlaveSelect_ABI_0,
       SyncInClock_AI_0 => SyncInClock_AI_0,
       SyncInSignal1_AI_0 => SyncInSignal1_AI_0,
       SyncInSignal2_AI_0 => SyncInSignal2_AI_0,

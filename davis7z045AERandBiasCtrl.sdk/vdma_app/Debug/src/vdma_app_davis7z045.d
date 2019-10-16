@@ -17,9 +17,7 @@ src/vdma_app_davis7z045.o src/vdma_app_davis7z045.o: \
  ../../helloworld_bsp/ps7_cortexa9_0/include/xreg_cortexa9.h \
  ../../helloworld_bsp/ps7_cortexa9_0/include/xpseudo_asm_gcc.h \
  ../../helloworld_bsp/ps7_cortexa9_0/include/xplatform_info.h \
- ../../helloworld_bsp/ps7_cortexa9_0/include/sleep.h ../src/zc702_hw.h \
- ../src/app_hdmi.h ../../helloworld_bsp/ps7_cortexa9_0/include/xv_tpg.h \
- ../../helloworld_bsp/ps7_cortexa9_0/include/xv_tpg_hw.h
+ ../../helloworld_bsp/ps7_cortexa9_0/include/sleep.h ../src/zc702_hw.h
 
 ../src/platform.h:
 
@@ -62,9 +60,3 @@ src/vdma_app_davis7z045.o src/vdma_app_davis7z045.o: \
 ../../helloworld_bsp/ps7_cortexa9_0/include/sleep.h:
 
 ../src/zc702_hw.h:
-
-../src/app_hdmi.h:
-
-../../helloworld_bsp/ps7_cortexa9_0/include/xv_tpg.h:
-
-../../helloworld_bsp/ps7_cortexa9_0/include/xv_tpg_hw.h:
