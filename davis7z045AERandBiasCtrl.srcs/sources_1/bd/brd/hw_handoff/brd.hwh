@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Oct 17 20:49:23 2019" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Oct 18 11:04:14 2019" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z045" NAME="brd" PACKAGE="ffg900" SPEEDGRADE="-1"/>
 
@@ -5631,11 +5631,11 @@
             <CONNECTION INSTANCE="EVRawStreamToXYTSStr_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="eventStreamToConstEn_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="system_ila_0" PORT="clk"/>
+            <CONNECTION INSTANCE="system_ila_1" PORT="clk"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_ACLK"/>
-            <CONNECTION INSTANCE="system_ila_1" PORT="clk"/>
             <CONNECTION INSTANCE="testAERDVSSM_0" PORT="USBClock_CI"/>
             <CONNECTION INSTANCE="testAERDVSSM_0" PORT="LogicClk_CI"/>
             <CONNECTION INSTANCE="testAERDVSSM_0" PORT="ADCClk_CI"/>

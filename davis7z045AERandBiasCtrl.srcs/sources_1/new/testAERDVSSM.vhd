@@ -371,8 +371,8 @@ begin
                 ExtInputConfigReg2_D    <= ExtInputConfigReg_D;
                 FX3ConfigReg2_D         <= FX3ConfigReg_D;
     
-                MultiplexerConfigReg_D <= tMultiplexerMyConfig;
-                DVSAERConfigReg_D      <= tDVSAERMyConfigDefault;
+                MultiplexerConfigReg_D <= MultiplexerConfig_D;
+                DVSAERConfigReg_D      <= DVSAERConfig_D;
                 APSADCConfigReg_D      <= APSADCConfig_D;
                 IMUConfigReg_D         <= IMUConfig_D;
                 ExtInputConfigReg_D    <= ExtInputConfig_D;
