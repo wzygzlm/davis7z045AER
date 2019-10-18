@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
---Date        : Wed Oct 16 20:33:42 2019
+--Date        : Thu Oct 17 20:49:05 2019
 --Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 --Command     : generate_target brd.bd
 --Design      : brd
@@ -1879,7 +1879,6 @@ architecture STRUCTURE of brd is
   signal processing_system7_0_DDR_WE_N : STD_LOGIC;
   signal processing_system7_0_FCLK_CLK0 : STD_LOGIC;
   signal processing_system7_0_FCLK_CLK1 : STD_LOGIC;
-  signal processing_system7_0_FCLK_CLK2 : STD_LOGIC;
   signal processing_system7_0_FCLK_RESET0_N : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_DDR_VRN : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_DDR_VRP : STD_LOGIC;
@@ -2040,6 +2039,7 @@ architecture STRUCTURE of brd is
   signal NLW_proc_sys_reset_1_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_proc_sys_reset_1_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_proc_sys_reset_1_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_processing_system7_0_FCLK_CLK2_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_I2C1_SCL_O_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_I2C1_SCL_T_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_I2C1_SDA_O_UNCONNECTED : STD_LOGIC;
@@ -2418,7 +2418,7 @@ processing_system7_0: component brd_processing_system7_0_0
       DDR_WEB => DDR_we_n,
       FCLK_CLK0 => processing_system7_0_FCLK_CLK0,
       FCLK_CLK1 => processing_system7_0_FCLK_CLK1,
-      FCLK_CLK2 => processing_system7_0_FCLK_CLK2,
+      FCLK_CLK2 => NLW_processing_system7_0_FCLK_CLK2_UNCONNECTED,
       FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N,
       I2C1_SCL_I => '0',
       I2C1_SCL_O => NLW_processing_system7_0_I2C1_SCL_O_UNCONNECTED,
@@ -2649,7 +2649,7 @@ system_ila_0: component brd_system_ila_0_0
     );
 system_ila_1: component brd_system_ila_1_0
      port map (
-      clk => processing_system7_0_FCLK_CLK2,
+      clk => processing_system7_0_FCLK_CLK0,
       probe0(0) => processing_system7_0_SPI0_SCLK_O,
       probe1(0) => processing_system7_0_SPI0_MOSI_O,
       probe2(0) => processing_system7_0_SPI0_SS1_O,

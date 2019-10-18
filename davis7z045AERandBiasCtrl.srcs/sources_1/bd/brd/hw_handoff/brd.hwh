@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Oct 16 20:33:58 2019" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Oct 17 20:49:23 2019" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z045" NAME="brd" PACKAGE="ffg900" SPEEDGRADE="-1"/>
 
@@ -5635,6 +5635,7 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_ACLK"/>
+            <CONNECTION INSTANCE="system_ila_1" PORT="clk"/>
             <CONNECTION INSTANCE="testAERDVSSM_0" PORT="USBClock_CI"/>
             <CONNECTION INSTANCE="testAERDVSSM_0" PORT="LogicClk_CI"/>
             <CONNECTION INSTANCE="testAERDVSSM_0" PORT="ADCClk_CI"/>
@@ -5648,11 +5649,7 @@
             <CONNECTION INSTANCE="v_axi4s_vid_out_0" PORT="vid_io_out_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="250000000" DIR="O" NAME="FCLK_CLK2" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK2">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="system_ila_1" PORT="clk"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT CLKFREQUENCY="250000000" DIR="O" NAME="FCLK_CLK2" SIGIS="clk"/>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
           <CONNECTIONS>
             <CONNECTION INSTANCE="proc_sys_reset_0" PORT="ext_reset_in"/>
@@ -14544,9 +14541,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK2">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK2"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_SPI0_SCLK_O">

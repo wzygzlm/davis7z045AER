@@ -31,7 +31,7 @@ end entity SPIConfig;
 architecture Behavioral of SPIConfig is
 	attribute syn_enum_encoding : string;
 
-	type tState is (stIdle, stInput, stInputLatch, stOutput);
+	type tState is (stIdle, stInput, stOutput, stInputLatch);
 	attribute syn_enum_encoding of tState : type is "onehot";
 
 	-- present and next state
@@ -68,7 +68,7 @@ begin
 	ConfigParamInput_DO    <= ParamInput_DP;
 	ConfigLatchInput_SO    <= LatchInputReg_SP;
 	ParamOutput_DN         <= ConfigParamOutput_DI;
-	
+
 	ReadOperationReg_SP_Debug    <= ReadOperationReg_SP;
     SPIInputSRegMode_D_Debug <= SPIInputSRegMode_S;
     SPIOutputSRegMode_D_Debug <= SPIOutputSRegMode_S;
@@ -202,9 +202,9 @@ begin
 
 					when to_unsigned(16, 6) =>
 						ParamAddressReg_DN <= unsigned(SPIInputContent_D(7 downto 0));
-						
+
 						if ReadOperationReg_SP = '1' then
-							State_DN <= stInputLatch;
+							State_DN <= stOutput;
 						end if;
 
 					when to_unsigned(24, 6) =>
@@ -230,11 +230,8 @@ begin
 				-- to give time to the ParamInput to propagate down to the various'
 				-- modules input registers.
 				LatchInputReg_SN <= '1';
-                if SPIBitCount_D = to_unsigned(16, 6) then
-                        State_DN <= stOutput;
-                else
-                        State_DN <= stIdle;
-                end if;
+
+				State_DN <= stIdle;
 
 			when stOutput =>
 				-- Push out MSB to MISO.
@@ -246,7 +243,7 @@ begin
 					else
 						SPIOutputSRegMode_S <= SHIFTREGISTER_MODE_SHIFT_LEFT;
 					end if;
-					
+
 					SPIBitCounterEnable_S <= '1';
 				end if;
 

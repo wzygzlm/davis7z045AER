@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<section name="Workbench">
-	<item value="Auto Detect" key="brd_wrapper_hw_platform_0-device"/>
-	<item value="" key="brd_wrapper_hw_platform_0-bmmFile"/>
-	<item value="E:\PhD_project\vivado_prjs\davisZynq\davis7z045AERandBiasCtrl\davis7z045AERandBiasCtrl.runs\impl_1\brd_wrapper.bit" key="brd_wrapper_hw_platform_0-bitFile"/>
-	<item value="brd_wrapper_hw_platform_0" key="programfpga.hwplatform"/>
-	<item value="Local" key="brd_wrapper_hw_platform_0-target"/>
-	<item value="false" key="brd_wrapper_hw_platform_0-partial_bit"/>
-</section>
