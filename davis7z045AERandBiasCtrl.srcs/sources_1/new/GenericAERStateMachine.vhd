@@ -31,7 +31,7 @@ end GenericAERStateMachine;
 architecture Behavioral of GenericAERStateMachine is
 	attribute syn_enum_encoding : string;
 
-	type tState is (stIdle, stAERHandle, stAERAck, stFIFOFull);
+	type tState is (stIdle, stAERCapture, stAERWrite, stAERAck, stFIFOFull);
 	attribute syn_enum_encoding of tState : type is "onehot";
 
 	-- present and next state
@@ -42,9 +42,12 @@ architecture Behavioral of GenericAERStateMachine is
 	signal AckLimit_D            : unsigned(GENERIC_AER_ACK_COUNTER_WIDTH - 1 downto 0);
 
 	-- Data incoming from AER bus.
-	signal AEREventDataRegEnable_S : std_logic;
-	signal AEREventDataReg_D       : std_logic_vector(EVENT_WIDTH - 1 downto 0);
-	signal AEREventValidReg_S      : std_logic;
+	signal ChipAERDataCapture_S : std_logic;
+	signal ChipAERData_D        : std_logic_vector(AER_BUS_WIDTH - 1 downto 0);
+
+	-- AER event.
+	signal AEREventDataReg_D  : std_logic_vector(EVENT_WIDTH - 1 downto 0);
+	signal AEREventValidReg_S : std_logic;
 
 	-- Register outputs to AER bus.
 	signal AERAckReg_SB   : std_logic;
@@ -70,13 +73,14 @@ begin
 		         Overflow_SO  => AckDone_S,
 		         Data_DO      => open);
 
-	handleAERComb : process(State_DP, OutFifoControl_SI, AERReq_SBI, AERData_DI, AERConfigReg_D, AckDone_S)
+	handleAERComb : process(State_DP, OutFifoControl_SI, AERReq_SBI, AERConfigReg_D, AckDone_S, ChipAERData_D)
 	begin
 		State_DN <= State_DP;           -- Keep current state by default.
 
-		AEREventValidReg_S      <= '0';
-		AEREventDataRegEnable_S <= '0';
-		AEREventDataReg_D       <= (others => '0');
+		AEREventValidReg_S <= '0';
+		AEREventDataReg_D  <= (others => '0');
+
+		ChipAERDataCapture_S <= '0';
 
 		AERAckReg_SB   <= '1';          -- No AER ACK by default.
 		AERResetReg_SB <= '1';          -- Keep AER bus out of reset by default, so we don't have to repeat this in every state.
@@ -90,13 +94,13 @@ begin
 		case State_DP is
 			when stIdle =>
 				-- Only exit idle state if AER bus data producer is active.
-				if AERConfigReg_D.Run_S = '1' then
-					if AERReq_SBI = '0' then
-						if OutFifoControl_SI.Full_S = '0' then
+				if AERConfigReg_D.Run_S then
+					if not AERReq_SBI then
+						if not OutFifoControl_SI.Full_S then
 							-- Got a request on the AER bus, let's get the data.
 							-- We do have space in the output FIFO for it.
-							State_DN <= stAERHandle;
-						elsif AERConfigReg_D.WaitOnTransferStall_S = '0' then
+							State_DN <= stAERCapture;
+						elsif not AERConfigReg_D.WaitOnTransferStall_S then
 							-- FIFO full, keep ACKing.
 							State_DN <= stFIFOFull;
 
@@ -104,14 +108,14 @@ begin
 						end if;
 					end if;
 				else
-					if AERConfigReg_D.ExternalAERControl_S = '1' then
+					if AERConfigReg_D.ExternalAERControl_S then
 						-- Support handing off control of AER to external systems connected through the CAVIAR
 						-- connector on the board. This ensures the chip is kept out of reset and the ACK is
 						-- not driven from our logic.
 						AERAckReg_SB   <= 'Z';
 						AERResetReg_SB <= '1';
 					else
-						-- Keep the DVS in reset if data producer turned off.
+						-- Keep the AER bus in reset if data producer turned off.
 						AERResetReg_SB <= '0';
 					end if;
 				end if;
@@ -124,40 +128,44 @@ begin
 
 				-- Only go back to idle when FIFO has space again, and when
 				-- the sender is not requesting (to avoid AER races).
-				if OutFifoControl_SI.Full_S = '0' and AERReq_SBI = '1' then
+				if not OutFifoControl_SI.Full_S and AERReq_SBI then
 					State_DN <= stIdle;
 				end if;
 
-			when stAERHandle =>
+			when stAERCapture =>
 				AckLimit_D <= AERConfigReg_D.AckDelay_D;
 
-				-- We might need to delay the ACK.
-				if AckDone_S = '1' then
-					-- AER address.
-					AEREventDataReg_D(EVENT_WIDTH - 1 downto EVENT_WIDTH - 3) <= EVENT_CODE_Y_ADDR;
-					AEREventDataReg_D(AER_BUS_WIDTH - 1 downto 0)             <= AERData_DI;
+				-- We might need to delay the data capture and subsequent ACK.
+				if AckDone_S then
+					ChipAERDataCapture_S <= '1';
 
-					AEREventValidReg_S      <= '1';
-					AEREventDataRegEnable_S <= '1';
-
-					StatisticsEvents_SN <= '1';
-
-					AERAckReg_SB <= '0';
-					State_DN     <= stAERAck;
+					State_DN <= stAERWrite;
 				end if;
 
 				AckCount_S <= '1';
 
-			when stAERAck =>
-				AckLimit_D <= AERConfigReg_D.AckExtension_D;
-
+			when stAERWrite =>
 				AERAckReg_SB <= '0';
 
-				if AERReq_SBI = '1' then
+				-- AER address.
+				AEREventDataReg_D(EVENT_WIDTH - 1 downto EVENT_WIDTH - 3) <= EVENT_CODE_Y_ADDR;
+				AEREventDataReg_D(AER_BUS_WIDTH - 1 downto 0)             <= ChipAERData_D;
+
+				AEREventValidReg_S <= '1';
+
+				StatisticsEvents_SN <= '1';
+
+				State_DN <= stAERAck;
+
+			when stAERAck =>
+				AERAckReg_SB <= '0';
+
+				AckLimit_D <= AERConfigReg_D.AckExtension_D;
+
+				if AERReq_SBI then
 					-- We might need to extend the ACK period.
-					if AckDone_S = '1' then
-						AERAckReg_SB <= '1';
-						State_DN     <= stIdle;
+					if AckDone_S then
+						State_DN <= stIdle;
 					end if;
 
 					AckCount_S <= '1';
@@ -170,7 +178,7 @@ begin
 	-- Change state on clock edge (synchronous).
 	handleAERRegisterUpdate : process(Clock_CI, Reset_RI)
 	begin
-		if Reset_RI = '1' then          -- asynchronous reset (active-high for FPGAs)
+		if Reset_RI then                -- asynchronous reset (active-high for FPGAs)
 			State_DP <= stIdle;
 
 			AERAck_SBO   <= '1';
@@ -187,13 +195,23 @@ begin
 		end if;
 	end process handleAERRegisterUpdate;
 
+	chipAERDataRegister : entity work.SimpleRegister
+		generic map(
+			SIZE => AER_BUS_WIDTH)
+		port map(
+			Clock_CI  => Clock_CI,
+			Reset_RI  => Reset_RI,
+			Enable_SI => ChipAERDataCapture_S,
+			Input_SI  => AERData_DI,
+			Output_SO => ChipAERData_D);
+
 	aerEventDataRegister : entity work.SimpleRegister
 		generic map(
 			SIZE => EVENT_WIDTH)
 		port map(
 			Clock_CI  => Clock_CI,
 			Reset_RI  => Reset_RI,
-			Enable_SI => AEREventDataRegEnable_S,
+			Enable_SI => AEREventValidReg_S,
 			Input_SI  => AEREventDataReg_D,
 			Output_SO => OutFifoData_DO);
 
@@ -207,7 +225,7 @@ begin
 			Input_SI(0)  => AEREventValidReg_S,
 			Output_SO(0) => OutFifoControl_SO.Write_S);
 
-	statisticsSupport : if ENABLE_STATISTICS = true generate
+	statisticsSupport : if ENABLE_STATISTICS generate
 		StatisticsEventsReg : entity work.SimpleRegister
 			generic map(
 				SIZE => 1)

@@ -10,11 +10,12 @@ use work.Settings.LOGIC_CLOCK_FREQ_REAL;
 -- Those generate a precise 30 MHz clock, and can thus be used directly
 -- to generate the needed 1us timestamp increase signals.
 -- On our newer MachXO3 and ECP3 based boards, we use an FX3 chip instead.
--- This one generates a clock that is not exactly as we expect it, instead of
--- 100 MHz it's 100.8 MHz, so off by a factor of 1.008. This must be taken
--- into account when generating timestamp increase signals, so that the device
--- time as reported for events and real-time, as well as the sync signals,
--- don't diverge after some time the device is running.
+-- This one generates a clock that is not exactly round, instead of 100 MHz
+-- it's 100.8 MHz, so off by a factor of 1.008 when we use a 19.2 MHz crystal
+-- When using a 26 MHz oscillator, it's 104 MHz, off by factor 1.04.
+-- This must be taken into account when generating timestamp increase signals,
+-- so that the device time as reported for events and real-time, as well as
+-- the sync signals, don't drift apart after some time the device is running.
 entity TimestampSynchronizer is
 	port(
 		Clock_CI          : in  std_logic;
@@ -42,15 +43,15 @@ architecture Behavioral of TimestampSynchronizer is
 	signal State_DP, State_DN : tState;
 
 	-- Time constants for synchronization.
-	constant SYNC_SQUARE_WAVE_HIGH_TIME        : integer := 50; -- 50 microseconds (50% duty cycle)
-	constant SYNC_SQUARE_WAVE_PERIOD           : integer := 100; -- 100 microseconds (10 KHz clock)
-	constant SYNC_SQUARE_WAVE_HIGH_TIME_CYCLES : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * real(SYNC_SQUARE_WAVE_HIGH_TIME))); -- corresponds to 50 microseconds
-	constant SYNC_SQUARE_WAVE_PERIOD_CYCLES    : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * real(SYNC_SQUARE_WAVE_PERIOD))); -- corresponds to 100 microseconds
-	constant SYNC_SLAVE_RESET_CYCLES           : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * 200.0)); -- corresponds to 200 microseconds (reset pulse)
-	constant TS_COUNTER_INCREASE_CYCLES        : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * 1.0)); -- corresponds to 1 microsecond
-	constant SYNC_SLAVE_TIMEOUT_CYCLES         : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * 10.0)); -- corresponds to 10 microseconds
-	constant SYNC_SLAVE_CONFIRMATION_CYCLES    : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * real(SYNC_SQUARE_WAVE_HIGH_TIME - 1))); -- corresponds to 49 microseconds
-	constant SYNC_SLAVE_WAIT_CYCLES            : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * real(SYNC_SQUARE_WAVE_PERIOD - 1))); -- corresponds to 99 microseconds
+    constant SYNC_SQUARE_WAVE_HIGH_TIME        : integer := 50; -- 50 microseconds (50% duty cycle)
+    constant SYNC_SQUARE_WAVE_PERIOD           : integer := 100; -- 100 microseconds (10 KHz clock)
+    constant SYNC_SQUARE_WAVE_HIGH_TIME_CYCLES : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * real(SYNC_SQUARE_WAVE_HIGH_TIME))); -- corresponds to 50 microseconds
+    constant SYNC_SQUARE_WAVE_PERIOD_CYCLES    : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * real(SYNC_SQUARE_WAVE_PERIOD))); -- corresponds to 100 microseconds
+    constant SYNC_SLAVE_RESET_CYCLES           : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * 200.0)); -- corresponds to 200 microseconds (reset pulse)
+    constant TS_COUNTER_INCREASE_CYCLES        : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * 1.0)); -- corresponds to 1 microsecond
+    constant SYNC_SLAVE_TIMEOUT_CYCLES         : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * 10.0)); -- corresponds to 10 microseconds
+    constant SYNC_SLAVE_CONFIRMATION_CYCLES    : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * real(SYNC_SQUARE_WAVE_HIGH_TIME - 1))); -- corresponds to 49 microseconds
+    constant SYNC_SLAVE_WAIT_CYCLES            : integer := integer(floor(LOGIC_CLOCK_FREQ_REAL * real(SYNC_SQUARE_WAVE_PERIOD - 1))); -- corresponds to 99 microseconds
 
 	-- Counters used to produce different timestamp ticks and to remain in a certain state
 	-- for a certain amount of time. Divider keeps track of local timestamp increases,

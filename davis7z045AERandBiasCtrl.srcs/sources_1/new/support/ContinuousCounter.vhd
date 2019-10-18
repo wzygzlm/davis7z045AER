@@ -2,7 +2,6 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.Functions.BooleanToStdLogic;
-use work.Settings.DEVICE_FAMILY;
 
 -- Variable width counter that just cycles thorugh all binary values,
 -- incrementing by one each time its enable signal is asserted,

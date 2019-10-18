@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Fri Oct 18 11:06:05 2019
+// Date        : Fri Oct 18 20:29:47 2019
 // Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               E:/PhD_project/vivado_prjs/davisZynq/davis7z045AERandBiasCtrl/davis7z045AERandBiasCtrl.srcs/sources_1/bd/brd/ip/brd_testAERDVSSM_0_0/brd_testAERDVSSM_0_0_stub.v
@@ -15,15 +15,13 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "testAERDVSSM,Vivado 2018.1" *)
 module brd_testAERDVSSM_0_0(USBClock_CI, LogicClk_CI, ADCClk_CI, Reset_RI, 
-  SPISlaveSelect_ABI, SPIClock_AI, SPIMOSI_AI, SPIMISO_DZO, SPIOutputSRegMode_D_Debug, 
-  SPIInputSRegMode_D_Debug, ParamOutput_DP_Debug, SPIBitCount_D_Debug, 
-  ReadOperationReg_SP_Debug, ConfigLatchInput_S_Debug, ChipBiasEnable_SO, 
+  SPISlaveSelect_ABI, SPIClock_AI, SPIMOSI_AI, SPIMISO_DZO, ChipBiasEnable_SO, 
   ChipBiasDiagSelect_SO, ChipBiasAddrSelect_SBO, ChipBiasClock_CBO, ChipBiasBitIn_DO, 
   ChipBiasLatch_SBO, DVSAERData_AI, DVSAERReq_ABI, DVSAERAck_SBO, DVSAERReset_SBO, 
   IMUClock_CZO, IMUData_DZIO, IMUInterrupt_AI, IMUFSync_SO, SyncOutClock_CO, 
   SyncOutSignal_SO, SyncInClock_AI, SyncInSignal_AI, SyncInSignal1_AI, SyncInSignal2_AI, 
   AERSMFifoAlmostFull_AI, AERSMFifoFull_AI, AERSMOutFifoWrite_SO, AERSMOutFifoData_DO)
-/* synthesis syn_black_box black_box_pad_pin="USBClock_CI,LogicClk_CI,ADCClk_CI,Reset_RI,SPISlaveSelect_ABI,SPIClock_AI,SPIMOSI_AI,SPIMISO_DZO,SPIOutputSRegMode_D_Debug[2:0],SPIInputSRegMode_D_Debug[2:0],ParamOutput_DP_Debug[31:0],SPIBitCount_D_Debug[5:0],ReadOperationReg_SP_Debug,ConfigLatchInput_S_Debug,ChipBiasEnable_SO,ChipBiasDiagSelect_SO,ChipBiasAddrSelect_SBO,ChipBiasClock_CBO,ChipBiasBitIn_DO,ChipBiasLatch_SBO,DVSAERData_AI[10:0],DVSAERReq_ABI,DVSAERAck_SBO,DVSAERReset_SBO,IMUClock_CZO,IMUData_DZIO,IMUInterrupt_AI,IMUFSync_SO,SyncOutClock_CO,SyncOutSignal_SO,SyncInClock_AI,SyncInSignal_AI,SyncInSignal1_AI,SyncInSignal2_AI,AERSMFifoAlmostFull_AI,AERSMFifoFull_AI,AERSMOutFifoWrite_SO,AERSMOutFifoData_DO[15:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="USBClock_CI,LogicClk_CI,ADCClk_CI,Reset_RI,SPISlaveSelect_ABI,SPIClock_AI,SPIMOSI_AI,SPIMISO_DZO,ChipBiasEnable_SO,ChipBiasDiagSelect_SO,ChipBiasAddrSelect_SBO,ChipBiasClock_CBO,ChipBiasBitIn_DO,ChipBiasLatch_SBO,DVSAERData_AI[10:0],DVSAERReq_ABI,DVSAERAck_SBO,DVSAERReset_SBO,IMUClock_CZO,IMUData_DZIO,IMUInterrupt_AI,IMUFSync_SO,SyncOutClock_CO,SyncOutSignal_SO,SyncInClock_AI,SyncInSignal_AI,SyncInSignal1_AI,SyncInSignal2_AI,AERSMFifoAlmostFull_AI,AERSMFifoFull_AI,AERSMOutFifoWrite_SO,AERSMOutFifoData_DO[15:0]" */;
   input USBClock_CI;
   input LogicClk_CI;
   input ADCClk_CI;
@@ -32,12 +30,6 @@ module brd_testAERDVSSM_0_0(USBClock_CI, LogicClk_CI, ADCClk_CI, Reset_RI,
   input SPIClock_AI;
   input SPIMOSI_AI;
   output SPIMISO_DZO;
-  output [2:0]SPIOutputSRegMode_D_Debug;
-  output [2:0]SPIInputSRegMode_D_Debug;
-  output [31:0]ParamOutput_DP_Debug;
-  output [5:0]SPIBitCount_D_Debug;
-  output ReadOperationReg_SP_Debug;
-  output ConfigLatchInput_S_Debug;
   output ChipBiasEnable_SO;
   output ChipBiasDiagSelect_SO;
   output ChipBiasAddrSelect_SBO;

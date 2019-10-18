@@ -53,12 +53,12 @@ entity testAERDVSSM is
         SPIClock_AI                : in    std_logic;
         SPIMOSI_AI                 : in    std_logic;
         SPIMISO_DZO                : out   std_logic;
-        SPIOutputSRegMode_D_Debug : out std_logic_vector(3 - 1 downto 0);
-        SPIInputSRegMode_D_Debug : out std_logic_vector(3 - 1 downto 0);
-        ParamOutput_DP_Debug   : out std_logic_vector(31 downto 0);
-        SPIBitCount_D_Debug : out unsigned(5 downto 0);
-        ReadOperationReg_SP_Debug : out std_logic;  
-        ConfigLatchInput_S_Debug  : out std_logic;
+--        SPIOutputSRegMode_D_Debug : out std_logic_vector(3 - 1 downto 0);
+--        SPIInputSRegMode_D_Debug : out std_logic_vector(3 - 1 downto 0);
+--        ParamOutput_DP_Debug   : out std_logic_vector(31 downto 0);
+--        SPIBitCount_D_Debug : out unsigned(5 downto 0);
+--        ReadOperationReg_SP_Debug : out std_logic;  
+--        ConfigLatchInput_S_Debug  : out std_logic;
         
 		ChipBiasEnable_SO          : out   std_logic;
         ChipBiasDiagSelect_SO      : out   std_logic;
@@ -164,7 +164,7 @@ architecture Behavioral of testAERDVSSM is
 	signal NOTSPISlaveSelectSync_SB                   : std_logic;
 	
 begin
-    ConfigLatchInput_S_Debug <= ConfigLatchInput_S;
+--    ConfigLatchInput_S_Debug <= ConfigLatchInput_S;
     
     LogicClock_C <= LogicClk_CI;
     logiecResetSync : entity work.ResetSynchronizer
@@ -222,29 +222,29 @@ begin
 	In4Timestamp_S <= '1';
 	
 	LogicUSBFifoControlOut_S.WriteSide.AlmostFull_S <= AERSMFifoAlmostFull_AI;
-	LogicUSBFifoControlOut_S.WriteSide.Full_S <= AERSMFifoFull_AI; 
-	AERSMOutFifoWrite_SO <= LogicUSBFifoControlIn_S.WriteSide.Write_S;
-	multiplexerSM : entity work.MultiplexerStateMachine
-		generic map(
-			ENABLE_STATISTICS => true)
-		port map(
-			Clock_CI                    => LogicClock_C,
-			Reset_RI                    => LogicReset_R,
-			SyncInClock_CI              => SyncInClockSync_C,
-			SyncOutClock_CO             => SyncOutClock_CO,
-			DeviceIsMaster_SO           => DeviceIsMaster_S,
-			OutFifoControl_SI           => LogicUSBFifoControlOut_S.WriteSide,
-			OutFifoControl_SO           => LogicUSBFifoControlIn_S.WriteSide,
-			OutFifoData_DO              => AERSMOutFifoData_DO,
-			In1FifoControl_SI           => DVSAERFifoControlOut_S.ReadSide,
-			In1FifoControl_SO           => DVSAERFifoControlIn_S.ReadSide,
-			In1FifoData_DI              => DVSAERFifoDataOut_D,
-			In1Timestamp_SI             => In1Timestamp_S,
-			In2FifoControl_SI           => (others => '1'),
-			In2FifoControl_SO           => open,
-			In2FifoData_DI              => (others => '0'),
-			In2Timestamp_SI             => '0',
-			In3FifoControl_SI           => (others => '1'),
+    LogicUSBFifoControlOut_S.WriteSide.Full_S <= AERSMFifoFull_AI; 
+    AERSMOutFifoWrite_SO <= LogicUSBFifoControlIn_S.WriteSide.Write_S;
+    multiplexerSM : entity work.MultiplexerStateMachine
+        generic map(
+            ENABLE_STATISTICS => true)
+        port map(
+            Clock_CI                    => LogicClock_C,
+            Reset_RI                    => LogicReset_R,
+            SyncInClock_CI              => SyncInClockSync_C,
+            SyncOutClock_CO             => SyncOutClock_CO,
+            DeviceIsMaster_SO           => DeviceIsMaster_S,
+            OutFifoControl_SI           => LogicUSBFifoControlOut_S.WriteSide,
+            OutFifoControl_SO           => LogicUSBFifoControlIn_S.WriteSide,
+            OutFifoData_DO              => AERSMOutFifoData_DO,
+            In1FifoControl_SI           => DVSAERFifoControlOut_S.ReadSide,
+            In1FifoControl_SO           => DVSAERFifoControlIn_S.ReadSide,
+            In1FifoData_DI              => DVSAERFifoDataOut_D,
+            In1Timestamp_SI             => In1Timestamp_S,
+            In2FifoControl_SI           => (others => '1'),
+            In2FifoControl_SO           => open,
+            In2FifoData_DI              => (others => '0'),
+            In2Timestamp_SI             => '0',
+            In3FifoControl_SI           => (others => '1'),
             In3FifoControl_SO           => open,
             In3FifoData_DI              => (others => '0'),
             In3Timestamp_SI             => '0',
@@ -252,16 +252,16 @@ begin
             In4FifoControl_SO           => open,
             In4FifoData_DI              => (others => '0'),
             In4Timestamp_SI             => '0',
-			In5FifoControl_SI           => (others => '1'),
-			In5FifoControl_SO           => open,
-			In5FifoData_DI              => (others => '0'),
-			In5Timestamp_SI             => '0',
-			In6FifoControl_SI           => (others => '1'),
-			In6FifoControl_SO           => open,
-			In6FifoData_DI              => (others => '0'),
-			In6Timestamp_SI             => '0',
-			MultiplexerConfig_DI        => MultiplexerConfigReg2_D,
-			MultiplexerConfigInfoOut_DO => MultiplexerConfigInfoOutReg2_D);
+            In5FifoControl_SI           => (others => '1'),
+            In5FifoControl_SO           => open,
+            In5FifoData_DI              => (others => '0'),
+            In5Timestamp_SI             => '0',
+            In6FifoControl_SI           => (others => '1'),
+            In6FifoControl_SO           => open,
+            In6FifoData_DI              => (others => '0'),
+            In6Timestamp_SI             => '0',
+            MultiplexerConfig_DI        => MultiplexerConfigReg2_D,
+            MultiplexerConfigInfoOut_DO => MultiplexerConfigInfoOutReg2_D);
 
 	multiplexerSPIConfig : entity work.MultiplexerSPIConfig
 		generic map(
@@ -406,11 +406,6 @@ begin
             SPIClock_CI            => SPIClockSync_C,
             SPIMOSI_DI             => SPIMOSISync_D,
             SPIMISO_DZO            => SPIMISO_DZO,
-            SPIOutputSRegMode_D_Debug => SPIOutputSRegMode_D_Debug,
-            SPIInputSRegMode_D_Debug => SPIInputSRegMode_D_Debug,
-            ParamOutput_DP_Debug => ParamOutput_DP_Debug,
-            SPIBitCount_D_Debug => SPIBitCount_D_Debug,
-            ReadOperationReg_SP_Debug => ReadOperationReg_SP_Debug,
             ConfigModuleAddress_DO => ConfigModuleAddress_D,
             ConfigParamAddress_DO  => ConfigParamAddress_D,
             ConfigParamInput_DO    => ConfigParamInput_D,
@@ -429,13 +424,13 @@ begin
             when DVSAERCONFIG_MODULE_ADDRESS =>
                 ConfigParamOutput_D <= DVSAERConfigParamOutput_D;
 
-            when APSADCCONFIG_MODULE_ADDRESS =>
+            when APS_CONFIG_MODULE_ADDRESS =>
                 ConfigParamOutput_D <= APSADCConfigParamOutput_D;
 
             when IMUCONFIG_MODULE_ADDRESS =>
                 ConfigParamOutput_D <= IMUConfigParamOutput_D;
 
-            when EXTINPUTCONFIG_MODULE_ADDRESS =>
+            when EXTINPUT_CONFIG_MODULE_ADDRESS =>
                 ConfigParamOutput_D <= ExtInputConfigParamOutput_D;
 
             when CHIPBIASCONFIG_MODULE_ADDRESS =>
@@ -445,10 +440,10 @@ begin
                     ConfigParamOutput_D <= ChipConfigParamOutput_D;
                 end if;
 
-            when SYSTEMINFOCONFIG_MODULE_ADDRESS =>
+            when SYSTEM_INFO_CONFIG_MODULE_ADDRESS =>
                 ConfigParamOutput_D <= SystemInfoConfigParamOutput_D;
 
-            when FX3CONFIG_MODULE_ADDRESS =>
+            when FX3_CONFIG_MODULE_ADDRESS =>
                 ConfigParamOutput_D <= FX3ConfigParamOutput_D;
 
             when others => null;

@@ -14,7 +14,7 @@ entity BlockRAM is
 		ADDRESS_DEPTH : integer;
 		ADDRESS_WIDTH : integer;
 		DATA_WIDTH    : integer;
-		WE_WIDTH      : integer;
+--		WE_WIDTH      : integer;
 		-- Write mode for EBR memory, can be: "normal",  "writethrough", "readbeforewrite".
 		WRITE_MODE    : string := "normal");
 	port(

@@ -25,7 +25,7 @@ begin
 	FX2Config_DO            <= FX2ConfigReg_DP;
 	FX2ConfigParamOutput_DO <= FX2Output_DP;
 
-	LatchFX2Reg_S <= '1' when ConfigModuleAddress_DI = FX2CONFIG_MODULE_ADDRESS else '0';
+	LatchFX2Reg_S <= '1' when (ConfigModuleAddress_DI = FX2_CONFIG_MODULE_ADDRESS) else '0';
 
 	fx2IO : process(ConfigParamAddress_DI, ConfigParamInput_DI, FX2ConfigReg_DP)
 	begin
@@ -33,11 +33,11 @@ begin
 		FX2Output_DN    <= (others => '0');
 
 		case ConfigParamAddress_DI is
-			when FX2CONFIG_PARAM_ADDRESSES.Run_S =>
+			when FX2_CONFIG_PARAM_ADDRESSES.Run_S =>
 				FX2ConfigReg_DN.Run_S <= ConfigParamInput_DI(0);
 				FX2Output_DN(0)       <= FX2ConfigReg_DP.Run_S;
 
-			when FX2CONFIG_PARAM_ADDRESSES.EarlyPacketDelay_D =>
+			when FX2_CONFIG_PARAM_ADDRESSES.EarlyPacketDelay_D =>
 				FX2ConfigReg_DN.EarlyPacketDelay_D                <= unsigned(ConfigParamInput_DI(tFX2Config.EarlyPacketDelay_D'range));
 				FX2Output_DN(tFX2Config.EarlyPacketDelay_D'range) <= std_logic_vector(FX2ConfigReg_DP.EarlyPacketDelay_D);
 
@@ -47,14 +47,14 @@ begin
 
 	fx2Update : process(Clock_CI, Reset_RI) is
 	begin
-		if Reset_RI = '1' then          -- asynchronous reset (active high)
+		if Reset_RI then                -- asynchronous reset (active high)
 			FX2Output_DP <= (others => '0');
 
 			FX2ConfigReg_DP <= tFX2ConfigDefault;
 		elsif rising_edge(Clock_CI) then -- rising clock edge
 			FX2Output_DP <= FX2Output_DN;
 
-			if LatchFX2Reg_S = '1' and ConfigLatchInput_SI = '1' then
+			if LatchFX2Reg_S and ConfigLatchInput_SI then
 				FX2ConfigReg_DP <= FX2ConfigReg_DN;
 			end if;
 		end if;

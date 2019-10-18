@@ -45,71 +45,17 @@ architecture Behavioral of DVSBAFilterStateMachine is
 
 	constant BA_COLUMN_ADDRESS_WIDTH : integer := DVS_COLUMN_ADDRESS_WIDTH - BA_FILTER_SUBSAMPLE_COLUMN;
 	constant BA_ROW_ADDRESS_WIDTH    : integer := DVS_ROW_ADDRESS_WIDTH - BA_FILTER_SUBSAMPLE_ROW;
-	constant BA_COLUMN_CELL_NUMBER   : integer := integer(ceil(real(to_integer(CHIP_DVS_SIZE_COLUMNS)) /(2.0 ** real(BA_FILTER_SUBSAMPLE_COLUMN))));
-	constant BA_ROW_CELL_NUMBER      : integer := integer(ceil(real(to_integer(CHIP_DVS_SIZE_ROWS)) /(2.0 ** real(BA_FILTER_SUBSAMPLE_ROW))));
-	constant BA_COLUMN_CELL_ADDRESS  : integer := integer(ceil(real(BA_COLUMN_CELL_NUMBER) / 2.0));
-	constant BA_ROW_CELL_ADDRESS     : integer := integer(ceil(real(BA_ROW_CELL_NUMBER) / 2.0));
-	constant BA_ADDRESS_DEPTH        : integer := BA_COLUMN_CELL_ADDRESS * BA_ROW_CELL_ADDRESS;
+	constant BA_COLUMN_CELL_NUMBER   : integer := integer(ceil(real(to_integer(CHIP_DVS_SIZE_COLUMNS)) / (2.0 ** real(BA_FILTER_SUBSAMPLE_COLUMN))));
+	constant BA_ROW_CELL_NUMBER      : integer := integer(ceil(real(to_integer(CHIP_DVS_SIZE_ROWS)) / (2.0 ** real(BA_FILTER_SUBSAMPLE_ROW))));
+	constant BA_ADDRESS_DEPTH        : integer := BA_COLUMN_CELL_NUMBER * BA_ROW_CELL_NUMBER;
 	constant BA_ADDRESS_WIDTH        : integer := integer(ceil(log2(real(BA_ADDRESS_DEPTH))));
 	constant BA_TIMESTAMP_WIDTH      : integer := 18;
-	constant BA_WE_WIDTH             : integer := integer(ceil(log2(real(BA_TIMESTAMP_WIDTH))));
-
-	signal TimestampMap0_DP, TimestampMap0_DN : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
-	signal TimestampMap1_DP, TimestampMap1_DN : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
-	signal TimestampMap2_DP, TimestampMap2_DN : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
-	signal TimestampMap3_DP, TimestampMap3_DN : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
-
-	signal TimestampMap0En_S, TimestampMap0WrEn_S : std_logic;
-	signal TimestampMap1En_S, TimestampMap1WrEn_S : std_logic;
-	signal TimestampMap2En_S, TimestampMap2WrEn_S : std_logic;
-	signal TimestampMap3En_S, TimestampMap3WrEn_S : std_logic;
-
-	signal TimestampMap0Address_D : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-	signal TimestampMap1Address_D : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-	signal TimestampMap2Address_D : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-	signal TimestampMap3Address_D : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-
-	signal TimestampMapCenter_DP, TimestampMapCenter_DN : unsigned(1 downto 0);
-
-	signal TimestampMapSelectLeft_SP, TimestampMapSelectLeft_SN           : std_logic;
-	signal TimestampMapSelectRight_SP, TimestampMapSelectRight_SN         : std_logic;
-	signal TimestampMapSelectDown_SP, TimestampMapSelectDown_SN           : std_logic;
-	signal TimestampMapSelectDownLeft_SP, TimestampMapSelectDownLeft_SN   : std_logic;
-	signal TimestampMapSelectDownRight_SP, TimestampMapSelectDownRight_SN : std_logic;
-	signal TimestampMapSelectUp_SP, TimestampMapSelectUp_SN               : std_logic;
-	signal TimestampMapSelectUpLeft_SP, TimestampMapSelectUpLeft_SN       : std_logic;
-	signal TimestampMapSelectUpRight_SP, TimestampMapSelectUpRight_SN     : std_logic;
-
-	signal TimestampMapAddressCenter_DP, TimestampMapAddressCenter_DN       : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-	signal TimestampMapAddressLeft_DP, TimestampMapAddressLeft_DN           : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-	signal TimestampMapAddressRight_DP, TimestampMapAddressRight_DN         : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-	signal TimestampMapAddressDown_DP, TimestampMapAddressDown_DN           : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-	signal TimestampMapAddressDownLeft_DP, TimestampMapAddressDownLeft_DN   : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-	signal TimestampMapAddressDownRight_DP, TimestampMapAddressDownRight_DN : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-	signal TimestampMapAddressUp_DP, TimestampMapAddressUp_DN               : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-	signal TimestampMapAddressUpLeft_DP, TimestampMapAddressUpLeft_DN       : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-	signal TimestampMapAddressUpRight_DP, TimestampMapAddressUpRight_DN     : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
-
-	-- Generate continuous timestamp value, expanded to N microseconds per tick.
-	constant TICK_EXPANSION : integer := 250;
-	constant TS_TICK        : integer := LOGIC_CLOCK_FREQ * TICK_EXPANSION;
-	constant TS_TICK_SIZE   : integer := integer(ceil(log2(real(TS_TICK))));
-
-	signal TimestampTick_S          : std_logic;
-	signal Timestamp_D              : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
-	signal TimestampBuffer_D        : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
-	signal TimestampBufferRefresh_S : std_logic;
-
-	signal TimestampDifference0_DP, TimestampDifference0_DN : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
-	signal TimestampDifference1_DP, TimestampDifference1_DN : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
-	signal TimestampDifference2_DP, TimestampDifference2_DN : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
-	signal TimestampDifference3_DP, TimestampDifference3_DN : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
 
 	signal LastRowAddress_DP, LastRowAddress_DN : unsigned(DVS_ROW_ADDRESS_WIDTH - 1 downto 0);
 
 	attribute syn_enum_encoding : string;
 
-	type tState is (stIdle, stLookup0, stLookup1, stLookup2Results0, stLookup3Results1DecideRefractory, stResults2, stResults3, stDecideBA);
+	type tState is (stIdle, stLookup0, stLookup1, stLookup2Results0, stLookup3Results1, stResults2, stResults3);
 	attribute syn_enum_encoding of tState : type is "onehot";
 
 	-- Present and next state (state machine).
@@ -118,91 +64,121 @@ architecture Behavioral of DVSBAFilterStateMachine is
 	-- Is the filter running at all?
 	signal FilterIsEnabled_S : std_logic;
 
-	-- Keep track of BAFilter results, we can only verify at the end of all lookups
-	-- because the question we need to answer is "did any of the neighbors spike
-	-- within the time period?", and we need to read them all to do that.
-	-- The lookup 0 results also track the refractory period filter result, so 3 bits.
-	signal BAFilterLookup0Results_DP, BAFilterLookup0Results_DN : std_logic_vector(2 downto 0);
-	signal BAFilterLookup1Results_DP, BAFilterLookup1Results_DN : std_logic_vector(1 downto 0);
-	signal BAFilterLookup2Results_DP, BAFilterLookup2Results_DN : std_logic_vector(1 downto 0);
-	signal BAFilterLookup3Results_DP, BAFilterLookup3Results_DN : std_logic_vector(1 downto 0);
+	-- Lookup information.
+	constant PX_TYPE_CENTER           : std_logic_vector(1 downto 0) := "00";
+	constant PX_TYPE_EDGE             : std_logic_vector(1 downto 0) := "01";
+	constant PX_TYPE_CORNER           : std_logic_vector(1 downto 0) := "10";
+	signal PixelType_DP, PixelType_DN : std_logic_vector(1 downto 0);
+
+	signal LookupAddress0_DP, LookupAddress0_DN : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
+	signal LookupAddress1_DP, LookupAddress1_DN : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
+	signal LookupAddress2_DP, LookupAddress2_DN : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
+	signal LookupAddress3_DP, LookupAddress3_DN : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
+
+	signal LookupValid1_DP, LookupValid1_DN : std_logic;
+	signal LookupValid2_DP, LookupValid2_DN : std_logic;
+	signal LookupValid3_DP, LookupValid3_DN : std_logic;
+
+	-- Timestamp map lookup.
+	signal TimestampMapEn_S, TimestampMapWr_S : std_logic;
+	signal TimestampMapAddress_D              : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
+	signal TimestampMap_DP, TimestampMap_DN   : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
+	signal LookupResult_D                     : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
+
+	-- Generate continuous timestamp value, expanded to N microseconds per tick.
+	constant TICK_EXPANSION : integer := 250;
+	constant TS_TICK        : integer := LOGIC_CLOCK_FREQ * TICK_EXPANSION;
+	constant TS_TICK_SIZE   : integer := integer(ceil(log2(real(TS_TICK))));
+
+	signal TimestampRefresh_S : std_logic;
+	signal TimestampTick_S    : std_logic;
+	signal Timestamp_D        : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
+	signal TimestampBuffer_D  : unsigned(BA_TIMESTAMP_WIDTH - 1 downto 0);
+
+	-- Calculations.
+	signal ColumnAddress_D : unsigned(BA_COLUMN_ADDRESS_WIDTH - 1 downto 0);
+	signal RowAddress_D    : unsigned(BA_ROW_ADDRESS_WIDTH - 1 downto 0);
+
+	signal SubSampledColumnAddress_D : unsigned(BA_FILTER_SUBSAMPLE_COLUMN - 1 downto 0);
+	signal SubSampledRowAddress_D    : unsigned(BA_FILTER_SUBSAMPLE_ROW - 1 downto 0);
+
+	signal TimestampAddress_D : unsigned(BA_ADDRESS_WIDTH - 1 downto 0);
+
+	signal IsEdgeLeft_S  : std_logic;
+	signal IsEdgeRight_S : std_logic;
+	signal IsEdgeUp_S    : std_logic;
+	signal IsEdgeDown_S  : std_logic;
+
+	signal IsCornerUpLeft_S    : std_logic;
+	signal IsCornerRightUp_S   : std_logic;
+	signal IsCornerDownRight_S : std_logic;
+	signal IsCornerLeftDown_S  : std_logic;
+
+	signal IsMapEdgeLeft_S  : std_logic;
+	signal IsMapEdgeRight_S : std_logic;
+	signal IsMapEdgeUp_S    : std_logic;
+	signal IsMapEdgeDown_S  : std_logic;
+
+	signal RefractoryResult_S         : std_logic;
+	signal BackgroundActivityResult_S : std_logic;
 	
 	signal NOTFilterIsEnabled_S : std_logic;
 begin
-	-- The next value, if and when we're going to write to a RAM address, is
-	-- always going to be the current timestamp. So we can just hardcode that.
-	TimestampMap0_DN <= TimestampBuffer_D;
-	TimestampMap1_DN <= TimestampBuffer_D;
-	TimestampMap2_DN <= TimestampBuffer_D;
-	TimestampMap3_DN <= TimestampBuffer_D;
-
-	TimestampDifference0_DN <= (TimestampBuffer_D - TimestampMap0_DP);
-	TimestampDifference1_DN <= (TimestampBuffer_D - TimestampMap1_DP);
-	TimestampDifference2_DN <= (TimestampBuffer_D - TimestampMap2_DP);
-	TimestampDifference3_DN <= (TimestampBuffer_D - TimestampMap3_DP);
+	assert (BA_FILTER_SUBSAMPLE_COLUMN >= 1) report "BA_FILTER_SUBSAMPLE_COLUMN must be bigger or equal to 1." severity FAILURE;
+	assert (BA_FILTER_SUBSAMPLE_ROW >= 1) report "BA_FILTER_SUBSAMPLE_ROW must be bigger or equal to 1." severity FAILURE;
 
 	FilterIsEnabled_S <= FilterBackgroundActivity_SI or FilterRefractoryPeriod_SI;
 
-	baFilterLogic : process(State_DP, LastRowAddress_DP, BAFilterInputData_DI, BAFilterInputValid_SI, TimestampMapAddressDownLeft_DP, TimestampMapAddressDownRight_DP, TimestampMapAddressDown_DP, TimestampMapAddressLeft_DP, TimestampMapAddressRight_DP, TimestampMapAddressUpLeft_DP, TimestampMapAddressUpRight_DP, TimestampMapAddressUp_DP, TimestampMapAddressCenter_DP, TimestampMapCenter_DP, FilterIsEnabled_S, TimestampMapSelectDownLeft_SP, TimestampMapSelectDownRight_SP, TimestampMapSelectDown_SP, TimestampMapSelectLeft_SP, TimestampMapSelectRight_SP, TimestampMapSelectUpLeft_SP, TimestampMapSelectUpRight_SP, TimestampMapSelectUp_SP, FilterBackgroundActivityTime_DI, FilterRefractoryPeriodTime_DI, FilterBackgroundActivity_SI, FilterRefractoryPeriod_SI, BAFilterLookup0Results_DP, BAFilterLookup1Results_DP, BAFilterLookup2Results_DP, BAFilterLookup3Results_DP, TimestampDifference0_DP, TimestampDifference1_DP, TimestampDifference2_DP, TimestampDifference3_DP)
-		variable ColumnAddress_D : unsigned(BA_COLUMN_ADDRESS_WIDTH - 1 downto 0) := (others => '0');
-		variable RowAddress_D    : unsigned(BA_ROW_ADDRESS_WIDTH - 1 downto 0)    := (others => '0');
+	-- This is a column address, save it and calculate all map-related
+	-- lookup information, so then we can execute all the lookup states.
+	ColumnAddress_D <= unsigned(BAFilterInputData_DI(DVS_COLUMN_ADDRESS_WIDTH - 1 downto BA_FILTER_SUBSAMPLE_COLUMN));
+	RowAddress_D    <= LastRowAddress_DP(DVS_ROW_ADDRESS_WIDTH - 1 downto BA_FILTER_SUBSAMPLE_ROW);
 
-		variable BorderLeft_S  : std_logic := '0';
-		variable BorderDown_S  : std_logic := '0';
-		variable BorderRight_S : std_logic := '0';
-		variable BorderUp_S    : std_logic := '0';
+	-- Use only one multiplication, add/sub for other addresses.
+	TimestampAddress_D <= resize(RowAddress_D * to_unsigned(BA_COLUMN_CELL_NUMBER, BA_ADDRESS_WIDTH) + ColumnAddress_D, BA_ADDRESS_WIDTH);
 
-		variable TimestampMapAddress_D     : unsigned(BA_ADDRESS_WIDTH - 1 downto 0) := (others => '0');
-		variable TimestampMapAddressDown_D : unsigned(BA_ADDRESS_WIDTH - 1 downto 0) := (others => '0');
-		variable TimestampMapAddressUp_D   : unsigned(BA_ADDRESS_WIDTH - 1 downto 0) := (others => '0');
+	SubSampledColumnAddress_D <= unsigned(BAFilterInputData_DI(BA_FILTER_SUBSAMPLE_COLUMN - 1 downto 0));
+	SubSampledRowAddress_D    <= LastRowAddress_DP(BA_FILTER_SUBSAMPLE_ROW - 1 downto 0);
+
+	IsEdgeLeft_S  <= BooleanToStdLogic(SubSampledColumnAddress_D = (SubSampledColumnAddress_D'range => '0'));
+	IsEdgeRight_S <= BooleanToStdLogic(SubSampledColumnAddress_D = (SubSampledColumnAddress_D'range => '1'));
+	IsEdgeUp_S    <= BooleanToStdLogic(SubSampledRowAddress_D = (SubSampledRowAddress_D'range => '0'));
+	IsEdgeDown_S  <= BooleanToStdLogic(SubSampledRowAddress_D = (SubSampledRowAddress_D'range => '1'));
+
+	IsCornerUpLeft_S    <= IsEdgeUp_S and IsEdgeLeft_S;
+	IsCornerRightUp_S   <= IsEdgeRight_S and IsEdgeUp_S;
+	IsCornerDownRight_S <= IsEdgeDown_S and IsEdgeRight_S;
+	IsCornerLeftDown_S  <= IsEdgeLeft_S and IsEdgeDown_S;
+
+	IsMapEdgeLeft_S  <= BooleanToStdLogic(ColumnAddress_D = to_unsigned(0, BA_COLUMN_ADDRESS_WIDTH));
+	IsMapEdgeRight_S <= BooleanToStdLogic(ColumnAddress_D = to_unsigned(BA_COLUMN_CELL_NUMBER - 1, BA_COLUMN_ADDRESS_WIDTH));
+	IsMapEdgeUp_S    <= BooleanToStdLogic(RowAddress_D = to_unsigned(0, BA_ROW_ADDRESS_WIDTH));
+	IsMapEdgeDown_S  <= BooleanToStdLogic(RowAddress_D = to_unsigned(BA_ROW_CELL_NUMBER - 1, BA_ROW_ADDRESS_WIDTH));
+
+	RefractoryResult_S         <= BooleanToStdLogic(LookupResult_D < FilterRefractoryPeriodTime_DI);
+	BackgroundActivityResult_S <= BooleanToStdLogic(LookupResult_D > FilterBackgroundActivityTime_DI);
+
+	baFilterLogic : process(State_DP, LastRowAddress_DP, FilterIsEnabled_S, BAFilterInputData_DI, BAFilterInputValid_SI, PixelType_DP, LookupAddress0_DP, LookupAddress1_DP, LookupAddress2_DP, LookupAddress3_DP, FilterBackgroundActivity_SI, FilterRefractoryPeriod_SI, IsCornerDownRight_S, IsCornerLeftDown_S, IsCornerRightUp_S, IsCornerUpLeft_S, IsEdgeDown_S, IsEdgeLeft_S, IsEdgeRight_S, IsEdgeUp_S, TimestampAddress_D, LookupValid1_DP, LookupValid2_DP, LookupValid3_DP, IsMapEdgeDown_S, IsMapEdgeLeft_S, IsMapEdgeRight_S, IsMapEdgeUp_S, BackgroundActivityResult_S, RefractoryResult_S)
 	begin
 		State_DN <= State_DP;           -- Keep current state by default.
 
 		LastRowAddress_DN <= LastRowAddress_DP;
 
-		TimestampMapCenter_DN <= TimestampMapCenter_DP;
+		PixelType_DN      <= PixelType_DP;
+		LookupAddress0_DN <= LookupAddress0_DP;
+		LookupAddress1_DN <= LookupAddress1_DP;
+		LookupAddress2_DN <= LookupAddress2_DP;
+		LookupAddress3_DN <= LookupAddress3_DP;
 
-		TimestampMapSelectLeft_SN      <= TimestampMapSelectLeft_SP;
-		TimestampMapSelectRight_SN     <= TimestampMapSelectRight_SP;
-		TimestampMapSelectDown_SN      <= TimestampMapSelectDown_SP;
-		TimestampMapSelectDownLeft_SN  <= TimestampMapSelectDownLeft_SP;
-		TimestampMapSelectDownRight_SN <= TimestampMapSelectDownRight_SP;
-		TimestampMapSelectUp_SN        <= TimestampMapSelectUp_SP;
-		TimestampMapSelectUpLeft_SN    <= TimestampMapSelectUpLeft_SP;
-		TimestampMapSelectUpRight_SN   <= TimestampMapSelectUpRight_SP;
+		LookupValid1_DN <= LookupValid1_DP;
+		LookupValid2_DN <= LookupValid2_DP;
+		LookupValid3_DN <= LookupValid3_DP;
 
-		TimestampMapAddressCenter_DN    <= TimestampMapAddressCenter_DP;
-		TimestampMapAddressLeft_DN      <= TimestampMapAddressLeft_DP;
-		TimestampMapAddressRight_DN     <= TimestampMapAddressRight_DP;
-		TimestampMapAddressDown_DN      <= TimestampMapAddressDown_DP;
-		TimestampMapAddressDownLeft_DN  <= TimestampMapAddressDownLeft_DP;
-		TimestampMapAddressDownRight_DN <= TimestampMapAddressDownRight_DP;
-		TimestampMapAddressUp_DN        <= TimestampMapAddressUp_DP;
-		TimestampMapAddressUpLeft_DN    <= TimestampMapAddressUpLeft_DP;
-		TimestampMapAddressUpRight_DN   <= TimestampMapAddressUpRight_DP;
+		TimestampMapEn_S      <= '0';
+		TimestampMapWr_S      <= '0';
+		TimestampMapAddress_D <= (others => '0');
 
-		TimestampBufferRefresh_S <= '0';
-
-		TimestampMap0En_S <= '0';
-		TimestampMap1En_S <= '0';
-		TimestampMap2En_S <= '0';
-		TimestampMap3En_S <= '0';
-
-		TimestampMap0WrEn_S <= '0';
-		TimestampMap1WrEn_S <= '0';
-		TimestampMap2WrEn_S <= '0';
-		TimestampMap3WrEn_S <= '0';
-
-		TimestampMap0Address_D <= (others => '0');
-		TimestampMap1Address_D <= (others => '0');
-		TimestampMap2Address_D <= (others => '0');
-		TimestampMap3Address_D <= (others => '0');
-
-		-- Keep track of BAFilter results.
-		BAFilterLookup0Results_DN <= BAFilterLookup0Results_DP;
-		BAFilterLookup1Results_DN <= BAFilterLookup1Results_DP;
-		BAFilterLookup2Results_DN <= BAFilterLookup2Results_DP;
-		BAFilterLookup3Results_DN <= BAFilterLookup3Results_DP;
+		TimestampRefresh_S <= '0';
 
 		-- Nothing is being filtered out by default.
 		StatisticsFilteredBackgroundActivity_SO <= '0';
@@ -219,47 +195,75 @@ begin
 							-- This is a row address, we just save it for later and forward it.
 							LastRowAddress_DN <= unsigned(BAFilterInputData_DI(DVS_ROW_ADDRESS_WIDTH - 1 downto 0));
 
-							BAFilterOutputValid_SO <= BAFilterInputValid_SI;
+							BAFilterOutputValid_SO <= '1'; -- Must be valid due to if-condition above.
 						else
-							-- This is a column address, save it and calculate all map-related
-							-- lookup information, so then we can execute all the lookup states.
-							ColumnAddress_D := unsigned(BAFilterInputData_DI(DVS_COLUMN_ADDRESS_WIDTH - 1 downto BA_FILTER_SUBSAMPLE_COLUMN));
-							RowAddress_D    := LastRowAddress_DP(DVS_ROW_ADDRESS_WIDTH - 1 downto BA_FILTER_SUBSAMPLE_ROW);
+							LookupAddress0_DN <= TimestampAddress_D;
 
-							BorderLeft_S  := BooleanToStdLogic(ColumnAddress_D = 0);
-							BorderDown_S  := BooleanToStdLogic(RowAddress_D = (BA_ROW_CELL_NUMBER - 1));
-							BorderRight_S := BooleanToStdLogic(ColumnAddress_D = (BA_COLUMN_CELL_NUMBER - 1));
-							BorderUp_S    := BooleanToStdLogic(RowAddress_D = 0);
+							if IsCornerUpLeft_S = '1' or IsCornerRightUp_S = '1' or IsCornerDownRight_S = '1' or IsCornerLeftDown_S = '1' then
+								-- Is a corner pixel!
+								PixelType_DN <= PX_TYPE_CORNER;
 
-							TimestampMapCenter_DN <= RowAddress_D(0) & ColumnAddress_D(0);
+								if IsCornerUpLeft_S = '1' then
+									LookupAddress1_DN <= TimestampAddress_D - 1;
+									LookupAddress2_DN <= TimestampAddress_D - to_unsigned(BA_COLUMN_CELL_NUMBER, BA_ADDRESS_WIDTH) - 1;
+									LookupAddress3_DN <= TimestampAddress_D - to_unsigned(BA_COLUMN_CELL_NUMBER, BA_ADDRESS_WIDTH);
 
-							TimestampMapSelectLeft_SN      <= not BorderLeft_S;
-							TimestampMapSelectRight_SN     <= not BorderRight_S;
-							TimestampMapSelectDown_SN      <= not BorderDown_S;
-							TimestampMapSelectDownLeft_SN  <= not BorderLeft_S and not BorderDown_S;
-							TimestampMapSelectDownRight_SN <= not BorderRight_S and not BorderDown_S;
-							TimestampMapSelectUp_SN        <= not BorderUp_S;
-							TimestampMapSelectUpLeft_SN    <= not BorderLeft_S and not BorderUp_S;
-							TimestampMapSelectUpRight_SN   <= not BorderRight_S and not BorderUp_S;
+									LookupValid1_DN <= not IsMapEdgeLeft_S;
+									LookupValid2_DN <= not IsMapEdgeLeft_S and not IsMapEdgeUp_S;
+									LookupValid3_DN <= not IsMapEdgeUp_S;
+								elsif IsCornerRightUp_S = '1' then
+									LookupAddress1_DN <= TimestampAddress_D - to_unsigned(BA_COLUMN_CELL_NUMBER, BA_ADDRESS_WIDTH);
+									LookupAddress2_DN <= TimestampAddress_D - to_unsigned(BA_COLUMN_CELL_NUMBER, BA_ADDRESS_WIDTH) + 1;
+									LookupAddress3_DN <= TimestampAddress_D + 1;
 
-							-- Use only one multiplication, add/sub for up/down after.
-							TimestampMapAddress_D        := resize(RowAddress_D(BA_ROW_ADDRESS_WIDTH - 1 downto 1) * to_unsigned(BA_COLUMN_CELL_ADDRESS, BA_COLUMN_ADDRESS_WIDTH) + ColumnAddress_D(BA_COLUMN_ADDRESS_WIDTH - 1 downto 1), BA_ADDRESS_WIDTH);
-							TimestampMapAddressCenter_DN <= TimestampMapAddress_D;
-							TimestampMapAddressLeft_DN   <= TimestampMapAddress_D - 1;
-							TimestampMapAddressRight_DN  <= TimestampMapAddress_D + 1;
+									LookupValid1_DN <= not IsMapEdgeUp_S;
+									LookupValid2_DN <= not IsMapEdgeUp_S and not IsMapEdgeRight_S;
+									LookupValid3_DN <= not IsMapEdgeRight_S;
+								elsif IsCornerDownRight_S = '1' then
+									LookupAddress1_DN <= TimestampAddress_D + 1;
+									LookupAddress2_DN <= TimestampAddress_D + to_unsigned(BA_COLUMN_CELL_NUMBER, BA_ADDRESS_WIDTH) + 1;
+									LookupAddress3_DN <= TimestampAddress_D + to_unsigned(BA_COLUMN_CELL_NUMBER, BA_ADDRESS_WIDTH);
 
-							TimestampMapAddressDown_D       := TimestampMapAddress_D + to_unsigned(BA_COLUMN_CELL_ADDRESS, BA_COLUMN_ADDRESS_WIDTH);
-							TimestampMapAddressDown_DN      <= TimestampMapAddressDown_D;
-							TimestampMapAddressDownLeft_DN  <= TimestampMapAddressDown_D - 1;
-							TimestampMapAddressDownRight_DN <= TimestampMapAddressDown_D + 1;
+									LookupValid1_DN <= not IsMapEdgeRight_S;
+									LookupValid2_DN <= not IsMapEdgeRight_S and not IsMapEdgeDown_S;
+									LookupValid3_DN <= not IsMapEdgeDown_S;
+								else
+									LookupAddress1_DN <= TimestampAddress_D + to_unsigned(BA_COLUMN_CELL_NUMBER, BA_ADDRESS_WIDTH);
+									LookupAddress2_DN <= TimestampAddress_D + to_unsigned(BA_COLUMN_CELL_NUMBER, BA_ADDRESS_WIDTH) - 1;
+									LookupAddress3_DN <= TimestampAddress_D - 1;
 
-							TimestampMapAddressUp_D       := TimestampMapAddress_D - to_unsigned(BA_COLUMN_CELL_ADDRESS, BA_COLUMN_ADDRESS_WIDTH);
-							TimestampMapAddressUp_DN      <= TimestampMapAddressUp_D;
-							TimestampMapAddressUpLeft_DN  <= TimestampMapAddressUp_D - 1;
-							TimestampMapAddressUpRight_DN <= TimestampMapAddressUp_D + 1;
+									LookupValid1_DN <= not IsMapEdgeDown_S;
+									LookupValid2_DN <= not IsMapEdgeDown_S and not IsMapEdgeLeft_S;
+									LookupValid3_DN <= not IsMapEdgeLeft_S;
+								end if;
+							elsif IsEdgeLeft_S = '1' or IsEdgeRight_S = '1' or IsEdgeUp_S = '1' or IsEdgeDown_S = '1' then
+								-- Is an edge pixel then, if any edge is ON but not a corner.
+								PixelType_DN <= PX_TYPE_EDGE;
+
+								if IsEdgeLeft_S = '1' then
+									LookupAddress1_DN <= TimestampAddress_D - 1;
+
+									LookupValid1_DN <= not IsMapEdgeLeft_S;
+								elsif IsEdgeRight_S = '1' then
+									LookupAddress1_DN <= TimestampAddress_D + 1;
+
+									LookupValid1_DN <= not IsMapEdgeRight_S;
+								elsif IsEdgeUp_S = '1' then
+									LookupAddress1_DN <= TimestampAddress_D - to_unsigned(BA_COLUMN_CELL_NUMBER, BA_ADDRESS_WIDTH);
+
+									LookupValid1_DN <= not IsMapEdgeUp_S;
+								else
+									LookupAddress1_DN <= TimestampAddress_D + to_unsigned(BA_COLUMN_CELL_NUMBER, BA_ADDRESS_WIDTH);
+
+									LookupValid1_DN <= not IsMapEdgeDown_S;
+								end if;
+							else
+								-- Not a corner or an edge, must be a center pixel.
+								PixelType_DN <= PX_TYPE_CENTER;
+							end if;
 
 							-- Fix timestamp for the subsequent series of lookups and comparisons.
-							TimestampBufferRefresh_S <= '1';
+							TimestampRefresh_S <= '1';
 
 							-- Go do first lookup. No data/valid output here, only if all filter stages
 							-- work out do we send out the column address with a valid bit.
@@ -271,360 +275,120 @@ begin
 					BAFilterOutputValid_SO <= BAFilterInputValid_SI;
 				end if;
 
-			-- Lookups are to be done in the following sequence:
-			-- +---+---+---+
-			-- | 2 | 3 | 0 |
-			-- +---+---+---+
-			-- | 0 |w0w| 1 |
-			-- +---+---+---+
-			-- | 1 | 2 | 3 |
-			-- +---+---+---+
-			-- stLookup0 will do the ones marked 0, stLookup1 the ones marked 1 and so on.
-			-- The next-next state is always responsible for checking the prev-prev state's
-			-- results, so stLookup2 will check the 0 cells, stLookup3 the 1 cells and so on.
-			-- If a concrete filtering decision can be taken early, it will be.
-			-- A final stDecide state checks number 3 cells and returns to stIdle.
-			-- The central cell, which is also being written with the new up-to-date timestamp,
-			-- is checked right at the start, to allow an early exit for the refractory case.
 			when stLookup0 =>
-				-- Prepare lookup for Center (write), Left and UpRight.
-				case TimestampMapCenter_DP is
-					when "00" =>
-						TimestampMap0En_S      <= '1';
-						TimestampMap0WrEn_S    <= '1';
-						TimestampMap0Address_D <= TimestampMapAddressCenter_DP;
-
-						TimestampMap1En_S      <= TimestampMapSelectLeft_SP;
-						TimestampMap1Address_D <= TimestampMapAddressLeft_DP;
-
-						TimestampMap3En_S      <= TimestampMapSelectUpRight_SP;
-						TimestampMap3Address_D <= TimestampMapAddressUpRight_DP;
-
-					when "01" =>
-						TimestampMap1En_S      <= '1';
-						TimestampMap1WrEn_S    <= '1';
-						TimestampMap1Address_D <= TimestampMapAddressCenter_DP;
-
-						TimestampMap0En_S      <= TimestampMapSelectLeft_SP;
-						TimestampMap0Address_D <= TimestampMapAddressLeft_DP;
-
-						TimestampMap2En_S      <= TimestampMapSelectUpRight_SP;
-						TimestampMap2Address_D <= TimestampMapAddressUpRight_DP;
-
-					when "10" =>
-						TimestampMap2En_S      <= '1';
-						TimestampMap2WrEn_S    <= '1';
-						TimestampMap2Address_D <= TimestampMapAddressCenter_DP;
-
-						TimestampMap3En_S      <= TimestampMapSelectLeft_SP;
-						TimestampMap3Address_D <= TimestampMapAddressLeft_DP;
-
-						TimestampMap1En_S      <= TimestampMapSelectUpRight_SP;
-						TimestampMap1Address_D <= TimestampMapAddressUpRight_DP;
-
-					when "11" =>
-						TimestampMap3En_S      <= '1';
-						TimestampMap3WrEn_S    <= '1';
-						TimestampMap3Address_D <= TimestampMapAddressCenter_DP;
-
-						TimestampMap2En_S      <= TimestampMapSelectLeft_SP;
-						TimestampMap2Address_D <= TimestampMapAddressLeft_DP;
-
-						TimestampMap0En_S      <= TimestampMapSelectUpRight_SP;
-						TimestampMap0Address_D <= TimestampMapAddressUpRight_DP;
-
-					when others => null;
-				end case;
+				TimestampMapEn_S      <= '1';
+				TimestampMapWr_S      <= '1';
+				TimestampMapAddress_D <= LookupAddress0_DP;
 
 				State_DN <= stLookup1;
 
 			when stLookup1 =>
-				-- Prepare lookup for DownLeft and Right.
-				case TimestampMapCenter_DP is
-					when "00" =>
-						TimestampMap3En_S      <= TimestampMapSelectDownLeft_SP;
-						TimestampMap3Address_D <= TimestampMapAddressDownLeft_DP;
-
-						TimestampMap1En_S      <= TimestampMapSelectRight_SP;
-						TimestampMap1Address_D <= TimestampMapAddressRight_DP;
-
-					when "01" =>
-						TimestampMap2En_S      <= TimestampMapSelectDownLeft_SP;
-						TimestampMap2Address_D <= TimestampMapAddressDownLeft_DP;
-
-						TimestampMap0En_S      <= TimestampMapSelectRight_SP;
-						TimestampMap0Address_D <= TimestampMapAddressRight_DP;
-
-					when "10" =>
-						TimestampMap1En_S      <= TimestampMapSelectDownLeft_SP;
-						TimestampMap1Address_D <= TimestampMapAddressDownLeft_DP;
-
-						TimestampMap3En_S      <= TimestampMapSelectRight_SP;
-						TimestampMap3Address_D <= TimestampMapAddressRight_DP;
-
-					when "11" =>
-						TimestampMap0En_S      <= TimestampMapSelectDownLeft_SP;
-						TimestampMap0Address_D <= TimestampMapAddressDownLeft_DP;
-
-						TimestampMap2En_S      <= TimestampMapSelectRight_SP;
-						TimestampMap2Address_D <= TimestampMapAddressRight_DP;
-
-					when others => null;
-				end case;
+				TimestampMapEn_S      <= '1';
+				TimestampMapWr_S      <= '0';
+				TimestampMapAddress_D <= LookupAddress1_DP;
 
 				State_DN <= stLookup2Results0;
 
 			when stLookup2Results0 =>
-				-- Verify lookup 0 results for Center, Left and UpRight.
-				case TimestampMapCenter_DP is
-					when "00" =>
-						-- Center result. REFR: '0' means invalid.
-						BAFilterLookup0Results_DN(2) <= BooleanToStdLogic(TimestampDifference0_DP >= FilterRefractoryPeriodTime_DI);
+				TimestampMapEn_S      <= '1';
+				TimestampMapWr_S      <= '0';
+				TimestampMapAddress_D <= LookupAddress2_DP;
 
-						-- Left result. BA: '0' means invalid.
-						BAFilterLookup0Results_DN(0) <= TimestampMapSelectLeft_SP and BooleanToStdLogic(TimestampDifference1_DP <= FilterBackgroundActivityTime_DI);
-
-						-- UpRight result. BA: '0' means invalid.
-						BAFilterLookup0Results_DN(1) <= TimestampMapSelectUpRight_SP and BooleanToStdLogic(TimestampDifference3_DP <= FilterBackgroundActivityTime_DI);
-
-					when "01" =>
-						-- Center result. REFR: '0' means invalid.
-						BAFilterLookup0Results_DN(2) <= BooleanToStdLogic(TimestampDifference1_DP >= FilterRefractoryPeriodTime_DI);
-
-						-- Left result. BA: '0' means invalid.
-						BAFilterLookup0Results_DN(0) <= TimestampMapSelectLeft_SP and BooleanToStdLogic(TimestampDifference0_DP <= FilterBackgroundActivityTime_DI);
-
-						-- UpRight result. BA: '0' means invalid.
-						BAFilterLookup0Results_DN(1) <= TimestampMapSelectUpRight_SP and BooleanToStdLogic(TimestampDifference2_DP <= FilterBackgroundActivityTime_DI);
-
-					when "10" =>
-						-- Center result. REFR: '0' means invalid.
-						BAFilterLookup0Results_DN(2) <= BooleanToStdLogic(TimestampDifference2_DP >= FilterRefractoryPeriodTime_DI);
-
-						-- Left result. BA: '0' means invalid.
-						BAFilterLookup0Results_DN(0) <= TimestampMapSelectLeft_SP and BooleanToStdLogic(TimestampDifference3_DP <= FilterBackgroundActivityTime_DI);
-
-						-- UpRight result. BA: '0' means invalid.
-						BAFilterLookup0Results_DN(1) <= TimestampMapSelectUpRight_SP and BooleanToStdLogic(TimestampDifference1_DP <= FilterBackgroundActivityTime_DI);
-
-					when "11" =>
-						-- Center result. REFR: '0' means invalid.
-						BAFilterLookup0Results_DN(2) <= BooleanToStdLogic(TimestampDifference3_DP >= FilterRefractoryPeriodTime_DI);
-
-						-- Left result. BA: '0' means invalid.
-						BAFilterLookup0Results_DN(0) <= TimestampMapSelectLeft_SP and BooleanToStdLogic(TimestampDifference2_DP <= FilterBackgroundActivityTime_DI);
-
-						-- UpRight result. BA: '0' means invalid.
-						BAFilterLookup0Results_DN(1) <= TimestampMapSelectUpRight_SP and BooleanToStdLogic(TimestampDifference0_DP <= FilterBackgroundActivityTime_DI);
-
-					when others => null;
-				end case;
-
-				-- Prepare lookup for UpLeft and Down.
-				case TimestampMapCenter_DP is
-					when "00" =>
-						TimestampMap3En_S      <= TimestampMapSelectUpLeft_SP;
-						TimestampMap3Address_D <= TimestampMapAddressUpLeft_DP;
-
-						TimestampMap2En_S      <= TimestampMapSelectDown_SP;
-						TimestampMap2Address_D <= TimestampMapAddressDown_DP;
-
-					when "01" =>
-						TimestampMap2En_S      <= TimestampMapSelectUpLeft_SP;
-						TimestampMap2Address_D <= TimestampMapAddressUpLeft_DP;
-
-						TimestampMap3En_S      <= TimestampMapSelectDown_SP;
-						TimestampMap3Address_D <= TimestampMapAddressDown_DP;
-
-					when "10" =>
-						TimestampMap1En_S      <= TimestampMapSelectUpLeft_SP;
-						TimestampMap1Address_D <= TimestampMapAddressUpLeft_DP;
-
-						TimestampMap0En_S      <= TimestampMapSelectDown_SP;
-						TimestampMap0Address_D <= TimestampMapAddressDown_DP;
-
-					when "11" =>
-						TimestampMap0En_S      <= TimestampMapSelectUpLeft_SP;
-						TimestampMap0Address_D <= TimestampMapAddressUpLeft_DP;
-
-						TimestampMap1En_S      <= TimestampMapSelectDown_SP;
-						TimestampMap1Address_D <= TimestampMapAddressDown_DP;
-
-					when others => null;
-				end case;
-
-				State_DN <= stLookup3Results1DecideRefractory;
-
-			when stLookup3Results1DecideRefractory =>
-				-- Verify lookup 1 results for DownLeft and Right.
-				case TimestampMapCenter_DP is
-					when "00" =>
-						-- DownLeft result.
-						BAFilterLookup1Results_DN(0) <= TimestampMapSelectDownLeft_SP and BooleanToStdLogic(TimestampDifference3_DP <= FilterBackgroundActivityTime_DI);
-
-						-- Right result.
-						BAFilterLookup1Results_DN(1) <= TimestampMapSelectRight_SP and BooleanToStdLogic(TimestampDifference1_DP <= FilterBackgroundActivityTime_DI);
-
-					when "01" =>
-						-- DownLeft result.
-						BAFilterLookup1Results_DN(0) <= TimestampMapSelectDownLeft_SP and BooleanToStdLogic(TimestampDifference2_DP <= FilterBackgroundActivityTime_DI);
-
-						-- Right result.
-						BAFilterLookup1Results_DN(1) <= TimestampMapSelectRight_SP and BooleanToStdLogic(TimestampDifference0_DP <= FilterBackgroundActivityTime_DI);
-
-					when "10" =>
-						-- DownLeft result.
-						BAFilterLookup1Results_DN(0) <= TimestampMapSelectDownLeft_SP and BooleanToStdLogic(TimestampDifference1_DP <= FilterBackgroundActivityTime_DI);
-
-						-- Right result.
-						BAFilterLookup1Results_DN(1) <= TimestampMapSelectRight_SP and BooleanToStdLogic(TimestampDifference3_DP <= FilterBackgroundActivityTime_DI);
-
-					when "11" =>
-						-- DownLeft result.
-						BAFilterLookup1Results_DN(0) <= TimestampMapSelectDownLeft_SP and BooleanToStdLogic(TimestampDifference0_DP <= FilterBackgroundActivityTime_DI);
-
-						-- Right result.
-						BAFilterLookup1Results_DN(1) <= TimestampMapSelectRight_SP and BooleanToStdLogic(TimestampDifference2_DP <= FilterBackgroundActivityTime_DI);
-
-					when others => null;
-				end case;
-
-				-- Prepare lookup for Up and DownRight.
-				case TimestampMapCenter_DP is
-					when "00" =>
-						TimestampMap2En_S      <= TimestampMapSelectUp_SP;
-						TimestampMap2Address_D <= TimestampMapAddressUp_DP;
-
-						TimestampMap3En_S      <= TimestampMapSelectDownRight_SP;
-						TimestampMap3Address_D <= TimestampMapAddressDownRight_DP;
-
-					when "01" =>
-						TimestampMap3En_S      <= TimestampMapSelectUp_SP;
-						TimestampMap3Address_D <= TimestampMapAddressUp_DP;
-
-						TimestampMap2En_S      <= TimestampMapSelectDownRight_SP;
-						TimestampMap2Address_D <= TimestampMapAddressDownRight_DP;
-
-					when "10" =>
-						TimestampMap0En_S      <= TimestampMapSelectUp_SP;
-						TimestampMap0Address_D <= TimestampMapAddressUp_DP;
-
-						TimestampMap1En_S      <= TimestampMapSelectDownRight_SP;
-						TimestampMap1Address_D <= TimestampMapAddressDownRight_DP;
-
-					when "11" =>
-						TimestampMap1En_S      <= TimestampMapSelectUp_SP;
-						TimestampMap1Address_D <= TimestampMapAddressUp_DP;
-
-						TimestampMap0En_S      <= TimestampMapSelectDownRight_SP;
-						TimestampMap0Address_D <= TimestampMapAddressDownRight_DP;
-
-					when others => null;
-				end case;
-
-				-- If true, time between spikes is smaller than limit, so the event is
-				-- filtered out (if RefractoryFilter enabled). Return to idle, doing
-				-- the other lookups and checks makes no sense.
-				if FilterRefractoryPeriod_SI = '1' and BAFilterLookup0Results_DP(2) = '0' then
+				if FilterRefractoryPeriod_SI = '1' and RefractoryResult_S = '1' then
+					-- Refractory filter failure.
 					State_DN <= stIdle;
 
 					StatisticsFilteredRefractoryPeriod_SO <= '1';
-				elsif FilterBackgroundActivity_SI = '1' then
-					-- Only continue with BA filtering if really enabled.
-					State_DN <= stResults2;
+				elsif FilterBackgroundActivity_SI = '1' and BackgroundActivityResult_S = '1' then
+					-- Background-activity filter failure.
+					if PixelType_DP = PX_TYPE_CENTER then
+						-- Not supported, and this is a Center-type pixel, so we only do lookup 0.
+						-- At this point, this event is invalid.
+						State_DN <= stIdle;
+
+						StatisticsFilteredBackgroundActivity_SO <= '1';
+					else
+						-- Edge or Corner pixel, could have others supporting him, do next lookups.
+						State_DN <= stLookup3Results1;
+					end if;
 				else
-					-- Both filters turend off in the meantime, or only refractory enabled
-					-- but with a valid event, so pass the current event.
+					-- Both filters turend off in the meantime, or refractory/background-activity
+					-- enabled but with a valid event, so pass the current event.
 					State_DN <= stIdle;
 
 					BAFilterOutputValid_SO <= '1';
 				end if;
 
-			when stResults2 =>
-				-- Verify lookup 2 results for UpLeft and Down.
-				case TimestampMapCenter_DP is
-					when "00" =>
-						-- UpLeft result.
-						BAFilterLookup2Results_DN(0) <= TimestampMapSelectUpLeft_SP and BooleanToStdLogic(TimestampDifference3_DP <= FilterBackgroundActivityTime_DI);
+			when stLookup3Results1 =>
+				TimestampMapEn_S      <= '1';
+				TimestampMapWr_S      <= '0';
+				TimestampMapAddress_D <= LookupAddress3_DP;
 
-						-- Down result.
-						BAFilterLookup2Results_DN(1) <= TimestampMapSelectDown_SP and BooleanToStdLogic(TimestampDifference2_DP <= FilterBackgroundActivityTime_DI);
+				if LookupValid1_DP = '1' then
+					if BackgroundActivityResult_S = '1' then
+						if PixelType_DP = PX_TYPE_EDGE then
+							-- Not supported, and this is an Edge-type pixel, so we only do lookup 0 and 1.
+							-- At this point, this event is invalid.
+							State_DN <= stIdle;
 
-					when "01" =>
-						-- UpLeft result.
-						BAFilterLookup2Results_DN(0) <= TimestampMapSelectUpLeft_SP and BooleanToStdLogic(TimestampDifference2_DP <= FilterBackgroundActivityTime_DI);
+							StatisticsFilteredBackgroundActivity_SO <= '1';
+						else
+							-- Corner pixel, could have others supporting him, do next lookups.
+							State_DN <= stResults2;
+						end if;
+					else
+						-- Background-activity with a valid event, so pass the current event.
+						State_DN <= stIdle;
 
-						-- Down result.
-						BAFilterLookup2Results_DN(1) <= TimestampMapSelectDown_SP and BooleanToStdLogic(TimestampDifference3_DP <= FilterBackgroundActivityTime_DI);
-
-					when "10" =>
-						-- UpLeft result.
-						BAFilterLookup2Results_DN(0) <= TimestampMapSelectUpLeft_SP and BooleanToStdLogic(TimestampDifference1_DP <= FilterBackgroundActivityTime_DI);
-
-						-- Down result.
-						BAFilterLookup2Results_DN(1) <= TimestampMapSelectDown_SP and BooleanToStdLogic(TimestampDifference0_DP <= FilterBackgroundActivityTime_DI);
-
-					when "11" =>
-						-- UpLeft result.
-						BAFilterLookup2Results_DN(0) <= TimestampMapSelectUpLeft_SP and BooleanToStdLogic(TimestampDifference0_DP <= FilterBackgroundActivityTime_DI);
-
-						-- Down result.
-						BAFilterLookup2Results_DN(1) <= TimestampMapSelectDown_SP and BooleanToStdLogic(TimestampDifference1_DP <= FilterBackgroundActivityTime_DI);
-
-					when others => null;
-				end case;
-
-				State_DN <= stResults3;
-
-			when stResults3 =>
-				-- Verify lookup 3 results for Up and DownRight.
-				case TimestampMapCenter_DP is
-					when "00" =>
-						-- Up result.
-						BAFilterLookup3Results_DN(0) <= TimestampMapSelectUp_SP and BooleanToStdLogic(TimestampDifference2_DP <= FilterBackgroundActivityTime_DI);
-
-						-- DownRight result.
-						BAFilterLookup3Results_DN(1) <= TimestampMapSelectDownRight_SP and BooleanToStdLogic(TimestampDifference3_DP <= FilterBackgroundActivityTime_DI);
-
-					when "01" =>
-						-- Up result.
-						BAFilterLookup3Results_DN(0) <= TimestampMapSelectUp_SP and BooleanToStdLogic(TimestampDifference3_DP <= FilterBackgroundActivityTime_DI);
-
-						-- DownRight result.
-						BAFilterLookup3Results_DN(1) <= TimestampMapSelectDownRight_SP and BooleanToStdLogic(TimestampDifference2_DP <= FilterBackgroundActivityTime_DI);
-
-					when "10" =>
-						-- Up result.
-						BAFilterLookup3Results_DN(0) <= TimestampMapSelectUp_SP and BooleanToStdLogic(TimestampDifference0_DP <= FilterBackgroundActivityTime_DI);
-
-						-- DownRight result.
-						BAFilterLookup3Results_DN(1) <= TimestampMapSelectDownRight_SP and BooleanToStdLogic(TimestampDifference1_DP <= FilterBackgroundActivityTime_DI);
-
-					when "11" =>
-						-- Up result.
-						BAFilterLookup3Results_DN(0) <= TimestampMapSelectUp_SP and BooleanToStdLogic(TimestampDifference1_DP <= FilterBackgroundActivityTime_DI);
-
-						-- DownRight result.
-						BAFilterLookup3Results_DN(1) <= TimestampMapSelectDownRight_SP and BooleanToStdLogic(TimestampDifference0_DP <= FilterBackgroundActivityTime_DI);
-
-					when others => null;
-				end case;
-
-				State_DN <= stDecideBA;
-
-			when stDecideBA =>
-				-- If all lookup results are zero, no neighbor spiked within the time limit,
-				-- so we must suppress this event (only if BAFilter enabled).
-				if FilterBackgroundActivity_SI = '1' and BAFilterLookup0Results_DP(1 downto 0) = "00" and BAFilterLookup1Results_DP = "00" and BAFilterLookup2Results_DP = "00" and BAFilterLookup3Results_DP = "00" then
-					-- Invalid event, don't pass it on.
-					StatisticsFilteredBackgroundActivity_SO <= '1';
+						BAFilterOutputValid_SO <= '1';
+					end if;
 				else
-					-- Filter was turend off in the meantime, or is enabled
-					-- but with a valid event, so pass the current event.
-					BAFilterOutputValid_SO <= '1';
+					-- Lookup invalid, no information, same as no support.
+					if PixelType_DP = PX_TYPE_EDGE then
+						-- Not supported, and this is an Edge-type pixel, so we only do lookup 0 and 1.
+						-- At this point, this event is invalid.
+						State_DN <= stIdle;
+
+						StatisticsFilteredBackgroundActivity_SO <= '1';
+					else
+						-- Corner pixel, could have others supporting him, do next lookups.
+						State_DN <= stResults2;
+					end if;
 				end if;
 
+			when stResults2 =>
+				if LookupValid2_DP = '1' then
+					if BackgroundActivityResult_S = '1' then
+						-- Not supported, and this is a Corner pixel, could have one other supporting him, do last lookup check.
+						State_DN <= stResults3;
+					else
+						-- Background-activity with a valid event, so pass the current event.
+						State_DN <= stIdle;
+
+						BAFilterOutputValid_SO <= '1';
+					end if;
+				else
+					-- Lookup invalid, no information, same as no support.
+					-- Not supported, and this is a Corner pixel, could have one other supporting him, do last lookup check.
+					State_DN <= stResults3;
+				end if;
+
+			when stResults3 =>
 				State_DN <= stIdle;
+
+				if LookupValid3_DP = '1' then
+					if BackgroundActivityResult_S = '1' then
+						-- Not supported on last check, must be invalid.
+						StatisticsFilteredBackgroundActivity_SO <= '1';
+					else
+						-- Background-activity with a valid event, so pass the current event.
+						BAFilterOutputValid_SO <= '1';
+					end if;
+				else
+					-- Lookup invalid, no information, same as no support.
+					-- Not supported on last check, must be invalid.
+					StatisticsFilteredBackgroundActivity_SO <= '1';
+				end if;
 
 			when others => null;
 		end case;
@@ -635,299 +399,66 @@ begin
 	begin
 		if Reset_RI = '1' then          -- asynchronous reset (active-high for FPGAs)
 			State_DP <= stIdle;
+
+			LastRowAddress_DP <= (others => '0');
+
+			PixelType_DP      <= PX_TYPE_CENTER;
+			LookupAddress0_DP <= (others => '0');
+			LookupAddress1_DP <= (others => '0');
+			LookupAddress2_DP <= (others => '0');
+			LookupAddress3_DP <= (others => '0');
+
+			LookupValid1_DP <= '0';
+			LookupValid2_DP <= '0';
+			LookupValid3_DP <= '0';
 		elsif rising_edge(Clock_CI) then
 			State_DP <= State_DN;
+
+			LastRowAddress_DP <= LastRowAddress_DN;
+
+			PixelType_DP      <= PixelType_DN;
+			LookupAddress0_DP <= LookupAddress0_DN;
+			LookupAddress1_DP <= LookupAddress1_DN;
+			LookupAddress2_DP <= LookupAddress2_DN;
+			LookupAddress3_DP <= LookupAddress3_DN;
+
+			LookupValid1_DP <= LookupValid1_DN;
+			LookupValid2_DP <= LookupValid2_DN;
+			LookupValid3_DP <= LookupValid3_DN;
 		end if;
 	end process baFilterRegUpdate;
 
-	TSMap0 : entity work.BlockRAM
+	-- The next value, if and when we're going to write to a RAM address, is
+	-- always going to be the current timestamp. So we can just hardcode that.
+	TSMap : entity work.BlockRAM
 		generic map(
 			ADDRESS_DEPTH => BA_ADDRESS_DEPTH,
 			ADDRESS_WIDTH => BA_ADDRESS_WIDTH,
 			DATA_WIDTH    => BA_TIMESTAMP_WIDTH,
-			WE_WIDTH      => BA_WE_WIDTH,
 			WRITE_MODE    => "readbeforewrite")
 		port map(
 			Clock_CI          => Clock_CI,
 			Reset_RI          => Reset_RI,
-			Address_DI        => TimestampMap0Address_D,
-			Enable_SI         => TimestampMap0En_S,
-			WriteEnable_SI    => TimestampMap0WrEn_S,
-			Data_DI           => std_logic_vector(TimestampMap0_DN),
-			unsigned(Data_DO) => TimestampMap0_DP,
+			Address_DI        => TimestampMapAddress_D,
+			Enable_SI         => TimestampMapEn_S,
+			WriteEnable_SI    => TimestampMapWr_S,
+			Data_DI           => std_logic_vector(TimestampBuffer_D),
+			unsigned(Data_DO) => TimestampMap_DN,
 			DataValid_SO      => open);
 
-	TSMap1 : entity work.BlockRAM
-		generic map(
-			ADDRESS_DEPTH => BA_ADDRESS_DEPTH,
-            ADDRESS_WIDTH => BA_ADDRESS_WIDTH,
-            DATA_WIDTH    => BA_TIMESTAMP_WIDTH,
-            WE_WIDTH      => BA_WE_WIDTH,
-			WRITE_MODE    => "readbeforewrite")
-		port map(
-			Clock_CI          => Clock_CI,
-			Reset_RI          => Reset_RI,
-			Address_DI        => TimestampMap1Address_D,
-			Enable_SI         => TimestampMap1En_S,
-			WriteEnable_SI    => TimestampMap1WrEn_S,
-			Data_DI           => std_logic_vector(TimestampMap1_DN),
-			unsigned(Data_DO) => TimestampMap1_DP,
-			DataValid_SO      => open);
-
-	TSMap2 : entity work.BlockRAM
-		generic map(
-			ADDRESS_DEPTH => BA_ADDRESS_DEPTH,
-            ADDRESS_WIDTH => BA_ADDRESS_WIDTH,
-            DATA_WIDTH    => BA_TIMESTAMP_WIDTH,
-            WE_WIDTH      => BA_WE_WIDTH,
-			WRITE_MODE    => "readbeforewrite")
-		port map(
-			Clock_CI          => Clock_CI,
-			Reset_RI          => Reset_RI,
-			Address_DI        => TimestampMap2Address_D,
-			Enable_SI         => TimestampMap2En_S,
-			WriteEnable_SI    => TimestampMap2WrEn_S,
-			Data_DI           => std_logic_vector(TimestampMap2_DN),
-			unsigned(Data_DO) => TimestampMap2_DP,
-			DataValid_SO      => open);
-
-	TSMap3 : entity work.BlockRAM
-		generic map(
-			ADDRESS_DEPTH => BA_ADDRESS_DEPTH,
-			ADDRESS_WIDTH => BA_ADDRESS_WIDTH,
-			DATA_WIDTH    => BA_TIMESTAMP_WIDTH,
-			WE_WIDTH      => BA_WE_WIDTH,
-			WRITE_MODE    => "readbeforewrite")
-		port map(
-			Clock_CI          => Clock_CI,
-			Reset_RI          => Reset_RI,
-			Address_DI        => TimestampMap3Address_D,
-			Enable_SI         => TimestampMap3En_S,
-			WriteEnable_SI    => TimestampMap3WrEn_S,
-			Data_DI           => std_logic_vector(TimestampMap3_DN),
-			unsigned(Data_DO) => TimestampMap3_DP,
-			DataValid_SO      => open);
-
-	TSDifference0 : entity work.SimpleRegister
+	TSMapBuffer : entity work.SimpleRegister
 		generic map(
 			SIZE => BA_TIMESTAMP_WIDTH)
 		port map(
 			Clock_CI            => Clock_CI,
 			Reset_RI            => Reset_RI,
 			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampDifference0_DN),
-			unsigned(Output_SO) => TimestampDifference0_DP);
+			Input_SI            => std_logic_vector(TimestampMap_DN),
+			unsigned(Output_SO) => TimestampMap_DP);
 
-	TSDifference1 : entity work.SimpleRegister
-		generic map(
-			SIZE => BA_TIMESTAMP_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampDifference1_DN),
-			unsigned(Output_SO) => TimestampDifference1_DP);
-
-	TSDifference2 : entity work.SimpleRegister
-		generic map(
-			SIZE => BA_TIMESTAMP_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampDifference2_DN),
-			unsigned(Output_SO) => TimestampDifference2_DP);
-
-	TSDifference3 : entity work.SimpleRegister
-		generic map(
-			SIZE => BA_TIMESTAMP_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampDifference3_DN),
-			unsigned(Output_SO) => TimestampDifference3_DP);
-
-	TSMapCenter : entity work.SimpleRegister
-		generic map(
-			SIZE => 2)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampMapCenter_DN),
-			unsigned(Output_SO) => TimestampMapCenter_DP);
-
-	TSMapSelectLeft : entity work.SimpleRegister
-		generic map(
-			SIZE => 1)
-		port map(
-			Clock_CI     => Clock_CI,
-			Reset_RI     => Reset_RI,
-			Enable_SI    => '1',
-			Input_SI(0)  => TimestampMapSelectLeft_SN,
-			Output_SO(0) => TimestampMapSelectLeft_SP);
-
-	TSMapSelectRight : entity work.SimpleRegister
-		generic map(
-			SIZE => 1)
-		port map(
-			Clock_CI     => Clock_CI,
-			Reset_RI     => Reset_RI,
-			Enable_SI    => '1',
-			Input_SI(0)  => TimestampMapSelectRight_SN,
-			Output_SO(0) => TimestampMapSelectRight_SP);
-
-	TSMapSelectDown : entity work.SimpleRegister
-		generic map(
-			SIZE => 1)
-		port map(
-			Clock_CI     => Clock_CI,
-			Reset_RI     => Reset_RI,
-			Enable_SI    => '1',
-			Input_SI(0)  => TimestampMapSelectDown_SN,
-			Output_SO(0) => TimestampMapSelectDown_SP);
-
-	TSMapSelectDownLeft : entity work.SimpleRegister
-		generic map(
-			SIZE => 1)
-		port map(
-			Clock_CI     => Clock_CI,
-			Reset_RI     => Reset_RI,
-			Enable_SI    => '1',
-			Input_SI(0)  => TimestampMapSelectDownLeft_SN,
-			Output_SO(0) => TimestampMapSelectDownLeft_SP);
-
-	TSMapSelectDownRight : entity work.SimpleRegister
-		generic map(
-			SIZE => 1)
-		port map(
-			Clock_CI     => Clock_CI,
-			Reset_RI     => Reset_RI,
-			Enable_SI    => '1',
-			Input_SI(0)  => TimestampMapSelectDownRight_SN,
-			Output_SO(0) => TimestampMapSelectDownRight_SP);
-
-	TSMapSelectUp : entity work.SimpleRegister
-		generic map(
-			SIZE => 1)
-		port map(
-			Clock_CI     => Clock_CI,
-			Reset_RI     => Reset_RI,
-			Enable_SI    => '1',
-			Input_SI(0)  => TimestampMapSelectUp_SN,
-			Output_SO(0) => TimestampMapSelectUp_SP);
-
-	TSMapSelectUpLeft : entity work.SimpleRegister
-		generic map(
-			SIZE => 1)
-		port map(
-			Clock_CI     => Clock_CI,
-			Reset_RI     => Reset_RI,
-			Enable_SI    => '1',
-			Input_SI(0)  => TimestampMapSelectUpLeft_SN,
-			Output_SO(0) => TimestampMapSelectUpLeft_SP);
-
-	TSMapSelectUpRight : entity work.SimpleRegister
-		generic map(
-			SIZE => 1)
-		port map(
-			Clock_CI     => Clock_CI,
-			Reset_RI     => Reset_RI,
-			Enable_SI    => '1',
-			Input_SI(0)  => TimestampMapSelectUpRight_SN,
-			Output_SO(0) => TimestampMapSelectUpRight_SP);
-
-	TSMapAddressCenter : entity work.SimpleRegister
-		generic map(
-			SIZE => BA_ADDRESS_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampMapAddressCenter_DN),
-			unsigned(Output_SO) => TimestampMapAddressCenter_DP);
-
-	TSMapAddressLeft : entity work.SimpleRegister
-		generic map(
-			SIZE => BA_ADDRESS_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampMapAddressLeft_DN),
-			unsigned(Output_SO) => TimestampMapAddressLeft_DP);
-
-	TSMapAddressRight : entity work.SimpleRegister
-		generic map(
-			SIZE => BA_ADDRESS_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampMapAddressRight_DN),
-			unsigned(Output_SO) => TimestampMapAddressRight_DP);
-
-	TSMapAddressDown : entity work.SimpleRegister
-		generic map(
-			SIZE => BA_ADDRESS_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampMapAddressDown_DN),
-			unsigned(Output_SO) => TimestampMapAddressDown_DP);
-
-	TSMapAddressDownLeft : entity work.SimpleRegister
-		generic map(
-			SIZE => BA_ADDRESS_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampMapAddressDownLeft_DN),
-			unsigned(Output_SO) => TimestampMapAddressDownLeft_DP);
-
-	TSMapAddressDownRight : entity work.SimpleRegister
-		generic map(
-			SIZE => BA_ADDRESS_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampMapAddressDownRight_DN),
-			unsigned(Output_SO) => TimestampMapAddressDownRight_DP);
-
-	TSMapAddressUp : entity work.SimpleRegister
-		generic map(
-			SIZE => BA_ADDRESS_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampMapAddressUp_DN),
-			unsigned(Output_SO) => TimestampMapAddressUp_DP);
-
-	TSMapAddressUpLeft : entity work.SimpleRegister
-		generic map(
-			SIZE => BA_ADDRESS_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampMapAddressUpLeft_DN),
-			unsigned(Output_SO) => TimestampMapAddressUpLeft_DP);
-
-	TSMapAddressUpRight : entity work.SimpleRegister
-		generic map(
-			SIZE => BA_ADDRESS_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(TimestampMapAddressUpRight_DN),
-			unsigned(Output_SO) => TimestampMapAddressUpRight_DP);
-
+	-- Final output is the timestamp difference.
+	LookupResult_D <= (TimestampBuffer_D - TimestampMap_DP);
+	
 	NOTFilterIsEnabled_S <= not FilterIsEnabled_S;
 	baFilterTSTick : entity work.ContinuousCounter
 		generic map(
@@ -957,57 +488,7 @@ begin
 		port map(
 			Clock_CI            => Clock_CI,
 			Reset_RI            => Reset_RI,
-			Enable_SI           => TimestampBufferRefresh_S,
+			Enable_SI           => TimestampRefresh_S,
 			Input_SI            => std_logic_vector(Timestamp_D),
 			unsigned(Output_SO) => TimestampBuffer_D);
-
-	baFilterLastRowAddressRegister : entity work.SimpleRegister
-		generic map(
-			SIZE => DVS_ROW_ADDRESS_WIDTH)
-		port map(
-			Clock_CI            => Clock_CI,
-			Reset_RI            => Reset_RI,
-			Enable_SI           => '1',
-			Input_SI            => std_logic_vector(LastRowAddress_DN),
-			unsigned(Output_SO) => LastRowAddress_DP);
-
-	baFilterLookup0ResultsRegister : entity work.SimpleRegister
-		generic map(
-			SIZE => 3)
-		port map(
-			Clock_CI  => Clock_CI,
-			Reset_RI  => Reset_RI,
-			Enable_SI => '1',
-			Input_SI  => BAFilterLookup0Results_DN,
-			Output_SO => BAFilterLookup0Results_DP);
-
-	baFilterLookup1ResultsRegister : entity work.SimpleRegister
-		generic map(
-			SIZE => 2)
-		port map(
-			Clock_CI  => Clock_CI,
-			Reset_RI  => Reset_RI,
-			Enable_SI => '1',
-			Input_SI  => BAFilterLookup1Results_DN,
-			Output_SO => BAFilterLookup1Results_DP);
-
-	baFilterLookup2ResultsRegister : entity work.SimpleRegister
-		generic map(
-			SIZE => 2)
-		port map(
-			Clock_CI  => Clock_CI,
-			Reset_RI  => Reset_RI,
-			Enable_SI => '1',
-			Input_SI  => BAFilterLookup2Results_DN,
-			Output_SO => BAFilterLookup2Results_DP);
-
-	baFilterLookup3ResultsRegister : entity work.SimpleRegister
-		generic map(
-			SIZE => 2)
-		port map(
-			Clock_CI  => Clock_CI,
-			Reset_RI  => Reset_RI,
-			Enable_SI => '1',
-			Input_SI  => BAFilterLookup3Results_DN,
-			Output_SO => BAFilterLookup3Results_DP);
 end architecture Behavioral;

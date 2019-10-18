@@ -31,19 +31,19 @@ begin
 		SystemInfoOutput_DN <= (others => '0');
 
 		case ConfigParamAddress_DI is
-			when SYSTEMINFOCONFIG_PARAM_ADDRESSES.LogicVersion_D =>
+			when SYSTEM_INFO_CONFIG_PARAM_ADDRESSES.LogicVersion_D =>
 				SystemInfoOutput_DN(LOGIC_VERSION'range) <= std_logic_vector(LOGIC_VERSION);
 
-			when SYSTEMINFOCONFIG_PARAM_ADDRESSES.ChipIdentifier_D =>
+			when SYSTEM_INFO_CONFIG_PARAM_ADDRESSES.ChipIdentifier_D =>
 				SystemInfoOutput_DN(CHIP_IDENTIFIER'range) <= std_logic_vector(CHIP_IDENTIFIER);
 
-			when SYSTEMINFOCONFIG_PARAM_ADDRESSES.DeviceIsMaster_S =>
+			when SYSTEM_INFO_CONFIG_PARAM_ADDRESSES.DeviceIsMaster_S =>
 				SystemInfoOutput_DN(0) <= DeviceIsMasterBuffer_S;
 
-			when SYSTEMINFOCONFIG_PARAM_ADDRESSES.LogicClock_D =>
+			when SYSTEM_INFO_CONFIG_PARAM_ADDRESSES.LogicClock_D =>
 				SystemInfoOutput_DN(9 downto 0) <= std_logic_vector(to_unsigned(LOGIC_CLOCK_FREQ, 10));
 
-			when SYSTEMINFOCONFIG_PARAM_ADDRESSES.ADCClock_D =>
+			when SYSTEM_INFO_CONFIG_PARAM_ADDRESSES.ADCClock_D =>
 				SystemInfoOutput_DN(9 downto 0) <= std_logic_vector(to_unsigned(ADC_CLOCK_FREQ, 10));
 
 			when others => null;

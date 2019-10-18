@@ -66,7 +66,7 @@ begin
 					State_DN         <= stWaitRead;
 				end if;
 
-			when stWaitRead =>		
+			when stWaitRead =>
 				if OutFifoControl_SI.Read_S = '1' then
 					if InFifoControl_SI.Empty_S = '0' then
 						InFifoControl_SO.Read_S <= '1';

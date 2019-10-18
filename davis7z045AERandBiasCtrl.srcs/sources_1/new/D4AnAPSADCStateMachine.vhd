@@ -1,12 +1,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.math_real.ceil;
-use ieee.math_real.log2;
+use work.Functions.SizeCountUpToN;
 use work.EventCodes.all;
 use work.FIFORecords.all;
 use work.D4AAPSADCConfigRecords.all;
-use work.Settings.ADC_CLOCK_FREQ;
 use work.ChipGeometry.AXES_KEEP;
 use work.ChipGeometry.AXES_INVERT;
 use work.Settings.CHIP_APS_SIZE_COLUMNS;
@@ -14,6 +12,7 @@ use work.Settings.CHIP_APS_SIZE_ROWS;
 use work.Settings.CHIP_APS_STREAM_START;
 use work.Settings.CHIP_APS_AXES_INVERT;
 use work.Settings.APS_ADC_BUS_WIDTH;
+use work.Settings.ADC_CLOCK_FREQ;
 
 -- Region Of Interest (ROI) support: both global and rolling shutter modes support specifying
 -- a region of the full image to be scanned, instead of the full image. This enables skipping
@@ -35,8 +34,6 @@ use work.Settings.APS_ADC_BUS_WIDTH;
 -- advantages of ROI stated above, but is unavoidable with the current scheme.
 
 entity D4AnAPSADCStateMachine is
-	generic(
-		ENABLE_QUAD_ROI : boolean := false);
 	port(
 		Clock_CI                 : in  std_logic; -- Clock for logic and chip internal ADC.
 		Reset_RI                 : in  std_logic; -- This reset must be synchronized to the above clock.
@@ -46,8 +43,6 @@ entity D4AnAPSADCStateMachine is
 		OutFifoControl_SO        : out tToFifoWriteSide;
 		OutFifoData_DO           : out std_logic_vector(EVENT_WIDTH - 1 downto 0);
 
-		APSChipColSRClock_CO     : out std_logic;
-		APSChipColSRIn_SO        : out std_logic;
 		APSChipRowSRClock_CO     : out std_logic;
 		APSChipRowSRIn_SO        : out std_logic;
 		APSChipOverflowGate_SO   : out std_logic;
@@ -62,8 +57,7 @@ entity D4AnAPSADCStateMachine is
 		ChipADCScanClock_CO      : out std_logic;
 		ChipADCScanControl_SO    : out std_logic;
 		ChipADCSample_SO         : out std_logic;
-		ChipADCGrayCounter_DO    : out std_logic_vector(APS_ADC_BUS_WIDTH - 1 downto 0);
-
+	
 		-- Configuration input
 		D4AAPSADCConfig_DI       : in  tD4AAPSADCConfig);
 end entity D4AnAPSADCStateMachine;
@@ -71,14 +65,11 @@ end entity D4AnAPSADCStateMachine;
 architecture Behavioral of D4AnAPSADCStateMachine is
 	attribute syn_enum_encoding : string;
 
-	type tColumnState is (stIdle, stStartFrame, stEndFrame, stWaitFrameDelay, stRSIdle, stRSReadoutFeedOne1, stRSReadoutFeedOne1Tick, stRSReadoutFeedOne2, stRSReadoutFeedOne2Tick, stRSReadoutFeedOne3, stRSReadoutFeedOne3Tick, stRSFDSettle, stRSSample1Start, stRSSample1Done,
+	type tColumnState is (stIdle, stStartFrame, stEndFrame, stWaitFrameInterval, stRSIdle, stRSReadoutFeedOne1, stRSReadoutFeedOne1Tick, stRSReadoutFeedOne2, stRSReadoutFeedOne2Tick, stRSReadoutFeedOne3, stRSReadoutFeedOne3Tick, stRSFDSettle, stRSSample1Start, stRSSample1Done,
 	                      stRSChargeTransfer, stRSSample2Start, stRSSample2Done, stRSFeed, stRSFeedTick, stGSIdle, stGSPDReset, stGSExposureStart, stGSResetFallTime, stGSChargeTransfer, stGSExposureEnd, stGSSwitchToReadout1, stGSSwitchToReadout2, stGSReadoutFeedOne,
 	                      stGSReadoutFeedOneTick, stGSReadoutFeedZero, stGSReadoutFeedZeroTick, stGSSample1Start, stGSSample1Done, stGSFDReset, stGSSample2Start, stGSSample2Done,
-	                      stROI0Info, stROI0InfoStartCol1, stROI0InfoStartCol2, stROI0InfoStartRow1, stROI0InfoStartRow2, stROI0InfoEndCol1, stROI0InfoEndCol2, stROI0InfoEndRow1, stROI0InfoEndRow2,
-	                      stROI1Info, stROI1InfoStartCol1, stROI1InfoStartCol2, stROI1InfoStartRow1, stROI1InfoStartRow2, stROI1InfoEndCol1, stROI1InfoEndCol2, stROI1InfoEndRow1, stROI1InfoEndRow2,
-	                      stROI2Info, stROI2InfoStartCol1, stROI2InfoStartCol2, stROI2InfoStartRow1, stROI2InfoStartRow2, stROI2InfoEndCol1, stROI2InfoEndCol2, stROI2InfoEndRow1, stROI2InfoEndRow2,
-	                      stROI3Info, stROI3InfoStartCol1, stROI3InfoStartCol2, stROI3InfoStartRow1, stROI3InfoStartRow2, stROI3InfoEndCol1, stROI3InfoEndCol2, stROI3InfoEndRow1, stROI3InfoEndRow2,
-	                      stExposureInfo, stExposureValue0, stExposureValue1, stExposureValue2);
+	                      stROI0InfoStartCol1, stROI0InfoStartCol2, stROI0InfoStartRow1, stROI0InfoStartRow2, stROI0InfoEndCol1, stROI0InfoEndCol2, stROI0InfoEndRow1, stROI0InfoEndRow2,
+	                      stExposureValue0, stExposureValue1, stExposureValue2, stRSStartExposureEvent, stGSStartExposureEvent, stGSEndExposureEvent, stRSEndExposureEvent);
 	attribute syn_enum_encoding of tColumnState : type is "onehot";
 
 	-- present and next state
@@ -97,10 +88,12 @@ architecture Behavioral of D4AnAPSADCStateMachine is
 	-- Exposure time counter.
 	signal ExposureClear_S, ExposureDone_S : std_logic;
 
-	-- Frame delay (between consecutive frames) counter.
-	signal FrameDelayCount_S, FrameDelayDone_S : std_logic;
+	-- Frame interval (between start of consecutive frames) counter.
+	signal FrameIntervalClear_S, FrameIntervalDone_S : std_logic;
 
 	-- Row settle time counter (at start of "column", but called "row" because of inverted layout).
+	constant APS_ROWSETTLETIME                       : integer := integer(ADC_CLOCK_FREQ / 3.0);
+	constant APS_ROWSETTLETIME_SIZE                  : integer := SizeCountUpToN(APS_ROWSETTLETIME);
 	signal RowSettleTimeCount_S, RowSettleTimeDone_S : std_logic;
 
 	-- Charge transfer time counter.
@@ -152,35 +145,18 @@ architecture Behavioral of D4AnAPSADCStateMachine is
 	signal CurrentColumnValid_S : std_logic;
 	signal CurrentRowValid_S    : std_logic;
 
-	-- Track which column is being read right now, for correct Quad-ROI support.
-	signal CurrentReadColumnPosition_D : unsigned(CHIP_APS_SIZE_COLUMNS'range);
-
 	-- ROI size information.
 	signal ROI0StartColumn_D : unsigned(15 downto 0);
 	signal ROI0StartRow_D    : unsigned(15 downto 0);
 	signal ROI0EndColumn_D   : unsigned(15 downto 0);
 	signal ROI0EndRow_D      : unsigned(15 downto 0);
-	signal ROI1StartColumn_D : unsigned(15 downto 0);
-	signal ROI1StartRow_D    : unsigned(15 downto 0);
-	signal ROI1EndColumn_D   : unsigned(15 downto 0);
-	signal ROI1EndRow_D      : unsigned(15 downto 0);
-	signal ROI2StartColumn_D : unsigned(15 downto 0);
-	signal ROI2StartRow_D    : unsigned(15 downto 0);
-	signal ROI2EndColumn_D   : unsigned(15 downto 0);
-	signal ROI2EndRow_D      : unsigned(15 downto 0);
-	signal ROI3StartColumn_D : unsigned(15 downto 0);
-	signal ROI3StartRow_D    : unsigned(15 downto 0);
-	signal ROI3EndColumn_D   : unsigned(15 downto 0);
-	signal ROI3EndRow_D      : unsigned(15 downto 0);
 
 	-- Register outputs to FIFO.
-	signal OutFifoWriteReg_S, OutFifoWriteRegCol_S, OutFifoWriteRegRow_S                : std_logic;
-	signal OutFifoDataRegEnable_S, OutFifoDataRegColEnable_S, OutFifoDataRegRowEnable_S : std_logic;
-	signal OutFifoDataReg_D, OutFifoDataRegCol_D, OutFifoDataRegRow_D                   : std_logic_vector(EVENT_WIDTH - 1 downto 0);
+	signal OutFifoWriteReg_S, OutFifoWriteRegCol_S, OutFifoWriteRegRow_S : std_logic;
+	signal OutFifoDataReg_D, OutFifoDataRegCol_D, OutFifoDataRegRow_D    : std_logic_vector(EVENT_WIDTH - 1 downto 0);
 
 	-- Register all outputs to chip APS control for clean transitions.
 	signal APSChipColSRClockReg_C, APSChipColSRInReg_S            : std_logic;
-	signal APSChipRowSRClockReg_C, APSChipRowSRInReg_S            : std_logic;
 	signal APSChipOverflowGateReg_SP, APSChipOverflowGateReg_SN   : std_logic;
 	signal APSChipTXGateReg_SP, APSChipTXGateReg_SN               : std_logic;
 	signal APSChipResetReg_SP, APSChipResetReg_SN                 : std_logic;
@@ -216,9 +192,13 @@ architecture Behavioral of D4AnAPSADCStateMachine is
 	signal RampTickCount_S, RampTickDone_S : std_logic;
 
 	-- Sample time settle counter.
+	constant APS_SAMPLESETTLETIME                          : integer := integer(ADC_CLOCK_FREQ * 2.0);
+	constant APS_SAMPLESETTLETIME_SIZE                     : integer := SizeCountUpToN(APS_SAMPLESETTLETIME);
 	signal SampleSettleTimeCount_S, SampleSettleTimeDone_S : std_logic;
 
 	-- Ramp reset time counter.
+	constant APS_RAMPRESETTIME                       : integer := integer(ADC_CLOCK_FREQ / 3.0);
+	constant APS_RAMPRESETTIME_SIZE                  : integer := SizeCountUpToN(APS_RAMPRESETTIME);
 	signal RampResetTimeCount_S, RampResetTimeDone_S : std_logic;
 
 	-- Scan control constants.
@@ -241,21 +221,10 @@ architecture Behavioral of D4AnAPSADCStateMachine is
 	signal TimingReadSample_DP, TimingReadSample_DN : std_logic_vector(1 downto 0);
 	signal TimingReadRamp_DP, TimingReadRamp_DN     : std_logic_vector(1 downto 0);
 
-	-- And again to keep track of which column we're reading, which we need for Quad-ROI support
-	-- to be able to know if a pixel needs to be read-out because its row is enabled AND also
-	-- part of some column that needs to be read-out.
-	signal CurrentReadColumnPositionSample_DP, CurrentReadColumnPositionSample_DN : unsigned(CHIP_APS_SIZE_COLUMNS'range);
-	signal CurrentReadColumnPositionRamp_DP, CurrentReadColumnPositionRamp_DN     : unsigned(CHIP_APS_SIZE_COLUMNS'range);
-	signal CurrentReadColumnPositionScan_DP, CurrentReadColumnPositionScan_DN     : unsigned(CHIP_APS_SIZE_COLUMNS'range);
-
 	-- We also need two additional registers for the two new SMs to notify when they
 	-- are actually running and control them.
 	signal RampInProgress_SP, RampStart_SN, RampDone_SN : std_logic;
 	signal ScanInProgress_SP, ScanStart_SN, ScanDone_SN : std_logic;
-
-	-- Variable ramp length.
-	signal RampIsResetRead_S : std_logic;
-	signal RampLimit_D       : unsigned(APS_ADC_BUS_WIDTH - 1 downto 0);
 
 	-- Double register configuration input, since it comes from a different clock domain (LogicClock), it
 	-- needs to go through a double-flip-flop synchronizer to guarantee correctness.
@@ -289,16 +258,17 @@ begin
 			Overflow_SO  => ExposureDone_S,
 			Data_DO      => open);
 
-	frameDelayCounter : entity work.ContinuousCounter
+	frameIntervalCounter : entity work.ContinuousCounter
 		generic map(
-			SIZE => APS_FRAMEDELAY_SIZE)
+			SIZE              => APS_FRAME_INTERVAL_SIZE,
+			RESET_ON_OVERFLOW => false)
 		port map(
 			Clock_CI     => Clock_CI,
 			Reset_RI     => Reset_RI,
-			Clear_SI     => '0',
-			Enable_SI    => FrameDelayCount_S,
-			DataLimit_DI => D4AAPSADCConfigReg_D.FrameDelay_D,
-			Overflow_SO  => FrameDelayDone_S,
+			Clear_SI     => FrameIntervalClear_S,
+			Enable_SI    => '1',
+			DataLimit_DI => D4AAPSADCConfigReg_D.FrameInterval_D,
+			Overflow_SO  => FrameIntervalDone_S,
 			Data_DO      => open);
 
 	TransferTimeCounter : entity work.ContinuousCounter
@@ -376,30 +346,29 @@ begin
 	-- Lenghten clock cycles when feeding ones into registers.
 	clockSlowDownCounter : entity work.ContinuousCounter
 		generic map(
-			SIZE => 6)
+			SIZE => 4)
 		port map(
 			Clock_CI     => Clock_CI,
 			Reset_RI     => Reset_RI,
 			Clear_SI     => '0',
 			Enable_SI    => ClockSlowDownCount_S,
-			DataLimit_DI => to_unsigned(ADC_CLOCK_FREQ / 6, 6),
+			DataLimit_DI => to_unsigned(integer(ADC_CLOCK_FREQ / 6.0), 4),
 			Overflow_SO  => ClockSlowDownDone_S,
 			Data_DO      => open);
 
-	columnMainStateMachine : process(ColState_DP, D4AAPSADCConfigReg_D, APSChipGlobalShutterReg_SP, APSChipOverflowGateReg_SP, APSChipResetReg_SP, APSChipTXGateReg_SP, ClockSlowDownDone_S, ColumnReadPosition_D, CurrentColumnValid_S, ExposureDone_S, FrameDelayDone_S, GSFDResetTimeDone_S, GSPDResetTimeDone_S, GSResetFallTimeDone_S, GSTXFallTimeDone_S, OutFifoControl_SI.AlmostFull_S, RSFDSettleTimeDone_S, ReadBSRStatus_DP, RowReadInProgress_SP, RowReadsAllDone_S, TransferTimeDone_S, ROI0StartColumn_D, ROI0StartRow_D, ROI0EndColumn_D, ROI0EndRow_D, ROI1StartColumn_D, ROI1StartRow_D, ROI1EndColumn_D, ROI1EndRow_D, ROI2StartColumn_D, ROI2StartRow_D, ROI2EndColumn_D, ROI2EndRow_D, ROI3StartColumn_D, ROI3StartRow_D, ROI3EndColumn_D, ROI3EndRow_D)
+	columnMainStateMachine : process(ColState_DP, D4AAPSADCConfigReg_D, APSChipGlobalShutterReg_SP, APSChipOverflowGateReg_SP, APSChipResetReg_SP, APSChipTXGateReg_SP, ClockSlowDownDone_S, ColumnReadPosition_D, CurrentColumnValid_S, ExposureDone_S, FrameIntervalDone_S, GSFDResetTimeDone_S, GSPDResetTimeDone_S, GSResetFallTimeDone_S, GSTXFallTimeDone_S, OutFifoControl_SI.AlmostFull_S, RSFDSettleTimeDone_S, ReadBSRStatus_DP, RowReadInProgress_SP, RowReadsAllDone_S, TransferTimeDone_S, OutFifoWriteRegRow_S)
 	begin
 		ColState_DN <= ColState_DP;     -- Keep current state by default.
 
-		OutFifoWriteRegCol_S      <= '0';
-		OutFifoDataRegColEnable_S <= '0';
-		OutFifoDataRegCol_D       <= (others => '0');
+		OutFifoWriteRegCol_S <= '0';
+		OutFifoDataRegCol_D  <= (others => '0');
 
 		APSChipColSRClockReg_C <= '0';
 		APSChipColSRInReg_S    <= '0';
 
 		ExposureClear_S <= '0';
 
-		FrameDelayCount_S <= '0';
+		FrameIntervalClear_S <= '0';
 
 		-- Colum counters.
 		ColumnReadPositionZero_S <= '0';
@@ -436,91 +405,69 @@ begin
 
 		case ColState_DP is
 			when stIdle =>
-				if D4AAPSADCConfigReg_D.Run_S = '1' then
-					ColState_DN <= stExposureInfo;
-				else
-					-- Update config, so that we get changes to Run_S especially.
-					D4AAPSADCConfigRegEnable_S <= '1';
+				-- Update config, so that we get changes to Run_S especially.
+				D4AAPSADCConfigRegEnable_S <= '1';
+
+				-- Clear frame interval so next frame capture is on time (best effort).
+				FrameIntervalClear_S <= '1';
+
+				if D4AAPSADCConfigReg_D.Run_S then
+					ColState_DN <= stStartFrame;
 				end if;
 
-			when stExposureInfo =>
-				-- Write out Exposure information. Up to 30 bits value, divided in three parts.
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_INFO_EXPOSURE;
+			when stStartFrame =>
+				-- Write out start of frame marker. This and the end of frame marker are the only
+				-- two events from this SM that always have to be committed and are never dropped.
+				if not OutFifoControl_SI.AlmostFull_S then
+					if D4AAPSADCConfigReg_D.GlobalShutter_S then
+						OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_STARTFRAME_GS;
+					else
+						OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_STARTFRAME_RS;
+					end if;
 
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+					OutFifoWriteRegCol_S <= '1';
 
 					ColState_DN <= stExposureValue0;
 				end if;
 
 			when stExposureValue0 =>
 				-- Write out Exposure information. Up to 30 bits value, divided in three parts.
-				if OutFifoControl_SI.AlmostFull_S = '0' then
+				if not OutFifoControl_SI.AlmostFull_S then
 					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA10 & EVENT_CODE_MISC_DATA10_APS_EXPOSURE & std_logic_vector(D4AAPSADCConfigReg_D.Exposure_D(9 downto 0));
 
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+					OutFifoWriteRegCol_S <= '1';
 
 					ColState_DN <= stExposureValue1;
 				end if;
 
 			when stExposureValue1 =>
 				-- Write out Exposure information. Up to 30 bits value, divided in three parts.
-				if OutFifoControl_SI.AlmostFull_S = '0' then
+				if not OutFifoControl_SI.AlmostFull_S then
 					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA10 & EVENT_CODE_MISC_DATA10_APS_EXPOSURE & std_logic_vector(D4AAPSADCConfigReg_D.Exposure_D(19 downto 10));
 
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+					OutFifoWriteRegCol_S <= '1';
 
 					ColState_DN <= stExposureValue2;
 				end if;
 
 			when stExposureValue2 =>
 				-- Write out Exposure information. Up to 30 bits value, divided in three parts.
-				if OutFifoControl_SI.AlmostFull_S = '0' then
+				if not OutFifoControl_SI.AlmostFull_S then
 					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA10 & EVENT_CODE_MISC_DATA10_APS_EXPOSURE & std_logic_vector(resize(D4AAPSADCConfigReg_D.Exposure_D(APS_EXPOSURE_SIZE - 1 downto 20), 10));
 
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+					OutFifoWriteRegCol_S <= '1';
 
-					ColState_DN <= stROI0Info;
-				end if;
-
-			when stROI0Info =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					if D4AAPSADCConfigReg_D.ROI0Enabled_S = '1' then
-						OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_INFO_ROI0_ON;
-					else
-						OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_INFO_ROI0_OFF;
-					end if;
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					if D4AAPSADCConfigReg_D.ROI0Enabled_S = '1' then
-						ColState_DN <= stROI0InfoStartCol1;
-					else
-						if ENABLE_QUAD_ROI = true then
-							ColState_DN <= stROI1Info;
-						else
-							ColState_DN <= stStartFrame;
-						end if;
-					end if;
+					ColState_DN <= stROI0InfoStartCol1;
 				end if;
 
 			when stROI0InfoStartCol1 =>
 				-- Write out APS frame size markers. The different ROI regions are notified separately.
 				-- One size result is split into two, to support sizes up to 16 bits per side.
 				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI0StartColumn_D(15 downto 8));
+				if not OutFifoControl_SI.AlmostFull_S then
+					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(resize(D4AAPSADCConfigReg_D.StartColumn0_D, 16)(15 downto 8));
 
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+					OutFifoWriteRegCol_S <= '1';
 
 					ColState_DN <= stROI0InfoStartCol2;
 				end if;
@@ -529,11 +476,10 @@ begin
 				-- Write out APS frame size markers. The different ROI regions are notified separately.
 				-- One size result is split into two, to support sizes up to 16 bits per side.
 				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI0StartColumn_D(7 downto 0));
+				if not OutFifoControl_SI.AlmostFull_S then
+					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(resize(D4AAPSADCConfigReg_D.StartColumn0_D, 16)(7 downto 0));
 
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+					OutFifoWriteRegCol_S <= '1';
 
 					ColState_DN <= stROI0InfoStartRow1;
 				end if;
@@ -542,11 +488,10 @@ begin
 				-- Write out APS frame size markers. The different ROI regions are notified separately.
 				-- One size result is split into two, to support sizes up to 16 bits per side.
 				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI0StartRow_D(15 downto 8));
+				if not OutFifoControl_SI.AlmostFull_S then
+					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(resize(D4AAPSADCConfigReg_D.StartRow0_D, 16)(15 downto 8));
 
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+					OutFifoWriteRegCol_S <= '1';
 
 					ColState_DN <= stROI0InfoStartRow2;
 				end if;
@@ -555,11 +500,10 @@ begin
 				-- Write out APS frame size markers. The different ROI regions are notified separately.
 				-- One size result is split into two, to support sizes up to 16 bits per side.
 				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI0StartRow_D(7 downto 0));
+				if not OutFifoControl_SI.AlmostFull_S then
+					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(resize(D4AAPSADCConfigReg_D.StartRow0_D, 16)(7 downto 0));
 
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+					OutFifoWriteRegCol_S <= '1';
 
 					ColState_DN <= stROI0InfoEndCol1;
 				end if;
@@ -568,11 +512,10 @@ begin
 				-- Write out APS frame size markers. The different ROI regions are notified separately.
 				-- One size result is split into two, to support sizes up to 16 bits per side.
 				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI0EndColumn_D(15 downto 8));
+				if not OutFifoControl_SI.AlmostFull_S then
+					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(resize(D4AAPSADCConfigReg_D.EndColumn0_D, 16)(15 downto 8));
 
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+					OutFifoWriteRegCol_S <= '1';
 
 					ColState_DN <= stROI0InfoEndCol2;
 				end if;
@@ -581,11 +524,10 @@ begin
 				-- Write out APS frame size markers. The different ROI regions are notified separately.
 				-- One size result is split into two, to support sizes up to 16 bits per side.
 				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI0EndColumn_D(7 downto 0));
+				if not OutFifoControl_SI.AlmostFull_S then
+					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(resize(D4AAPSADCConfigReg_D.EndColumn0_D, 16)(7 downto 0));
 
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+					OutFifoWriteRegCol_S <= '1';
 
 					ColState_DN <= stROI0InfoEndRow1;
 				end if;
@@ -594,11 +536,10 @@ begin
 				-- Write out APS frame size markers. The different ROI regions are notified separately.
 				-- One size result is split into two, to support sizes up to 16 bits per side.
 				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI0EndRow_D(15 downto 8));
+				if not OutFifoControl_SI.AlmostFull_S then
+					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(resize(D4AAPSADCConfigReg_D.EndRow0_D, 16)(15 downto 8));
 
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+					OutFifoWriteRegCol_S <= '1';
 
 					ColState_DN <= stROI0InfoEndRow2;
 				end if;
@@ -607,418 +548,16 @@ begin
 				-- Write out APS frame size markers. The different ROI regions are notified separately.
 				-- One size result is split into two, to support sizes up to 16 bits per side.
 				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI0EndRow_D(7 downto 0));
+				if not OutFifoControl_SI.AlmostFull_S then
+					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(resize(D4AAPSADCConfigReg_D.EndRow0_D, 16)(7 downto 0));
 
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+					OutFifoWriteRegCol_S <= '1';
 
-					if ENABLE_QUAD_ROI = true then
-						ColState_DN <= stROI1Info;
-					else
-						ColState_DN <= stStartFrame;
-					end if;
-				end if;
-
-			when stROI1Info =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					if D4AAPSADCConfigReg_D.ROI1Enabled_S = '1' then
-						OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_INFO_ROI1_ON;
-					else
-						OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_INFO_ROI1_OFF;
-					end if;
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					if D4AAPSADCConfigReg_D.ROI1Enabled_S = '1' then
-						ColState_DN <= stROI1InfoStartCol1;
-					else
-						ColState_DN <= stROI2Info;
-					end if;
-				end if;
-
-			when stROI1InfoStartCol1 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI1StartColumn_D(15 downto 8));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI1InfoStartCol2;
-				end if;
-
-			when stROI1InfoStartCol2 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI1StartColumn_D(7 downto 0));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI1InfoStartRow1;
-				end if;
-
-			when stROI1InfoStartRow1 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI1StartRow_D(15 downto 8));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI1InfoStartRow2;
-				end if;
-
-			when stROI1InfoStartRow2 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI1StartRow_D(7 downto 0));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI1InfoEndCol1;
-				end if;
-
-			when stROI1InfoEndCol1 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI1EndColumn_D(15 downto 8));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI1InfoEndCol2;
-				end if;
-
-			when stROI1InfoEndCol2 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI1EndColumn_D(7 downto 0));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI1InfoEndRow1;
-				end if;
-
-			when stROI1InfoEndRow1 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI1EndRow_D(15 downto 8));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI1InfoEndRow2;
-				end if;
-
-			when stROI1InfoEndRow2 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI1EndRow_D(7 downto 0));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI2Info;
-				end if;
-
-			when stROI2Info =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					if D4AAPSADCConfigReg_D.ROI2Enabled_S = '1' then
-						OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_INFO_ROI2_ON;
-					else
-						OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_INFO_ROI2_OFF;
-					end if;
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					if D4AAPSADCConfigReg_D.ROI2Enabled_S = '1' then
-						ColState_DN <= stROI2InfoStartCol1;
-					else
-						ColState_DN <= stROI3Info;
-					end if;
-				end if;
-
-			when stROI2InfoStartCol1 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI2StartColumn_D(15 downto 8));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI2InfoStartCol2;
-				end if;
-
-			when stROI2InfoStartCol2 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI2StartColumn_D(7 downto 0));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI2InfoStartRow1;
-				end if;
-
-			when stROI2InfoStartRow1 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI2StartRow_D(15 downto 8));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI2InfoStartRow2;
-				end if;
-
-			when stROI2InfoStartRow2 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI2StartRow_D(7 downto 0));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI2InfoEndCol1;
-				end if;
-
-			when stROI2InfoEndCol1 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI2EndColumn_D(15 downto 8));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI2InfoEndCol2;
-				end if;
-
-			when stROI2InfoEndCol2 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI2EndColumn_D(7 downto 0));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI2InfoEndRow1;
-				end if;
-
-			when stROI2InfoEndRow1 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI2EndRow_D(15 downto 8));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI2InfoEndRow2;
-				end if;
-
-			when stROI2InfoEndRow2 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI2EndRow_D(7 downto 0));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI3Info;
-				end if;
-
-			when stROI3Info =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					if D4AAPSADCConfigReg_D.ROI3Enabled_S = '1' then
-						OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_INFO_ROI3_ON;
-					else
-						OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_INFO_ROI3_OFF;
-					end if;
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					if D4AAPSADCConfigReg_D.ROI3Enabled_S = '1' then
-						ColState_DN <= stROI3InfoStartCol1;
-					else
-						ColState_DN <= stStartFrame;
-					end if;
-				end if;
-
-			when stROI3InfoStartCol1 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI3StartColumn_D(15 downto 8));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI3InfoStartCol2;
-				end if;
-
-			when stROI3InfoStartCol2 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI3StartColumn_D(7 downto 0));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI3InfoStartRow1;
-				end if;
-
-			when stROI3InfoStartRow1 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI3StartRow_D(15 downto 8));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI3InfoStartRow2;
-				end if;
-
-			when stROI3InfoStartRow2 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI3StartRow_D(7 downto 0));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI3InfoEndCol1;
-				end if;
-
-			when stROI3InfoEndCol1 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI3EndColumn_D(15 downto 8));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI3InfoEndCol2;
-				end if;
-
-			when stROI3InfoEndCol2 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI3EndColumn_D(7 downto 0));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI3InfoEndRow1;
-				end if;
-
-			when stROI3InfoEndRow1 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_0 & std_logic_vector(ROI3EndRow_D(15 downto 8));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stROI3InfoEndRow2;
-				end if;
-
-			when stROI3InfoEndRow2 =>
-				-- Write out APS frame size markers. The different ROI regions are notified separately.
-				-- One size result is split into two, to support sizes up to 16 bits per side.
-				-- This event is always delivered, like Start/End events!
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					OutFifoDataRegCol_D <= EVENT_CODE_MISC_DATA8 & EVENT_CODE_MISC_DATA8_APS_ROISIZE_1 & std_logic_vector(ROI3EndRow_D(7 downto 0));
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
-
-					ColState_DN <= stStartFrame;
-				end if;
-
-			when stStartFrame =>
-				-- Write out start of frame marker. This and the end of frame marker are the only
-				-- two events from this SM that always have to be committed and are never dropped.
-				if OutFifoControl_SI.AlmostFull_S = '0' then
-					if D4AAPSADCConfigReg_D.GlobalShutter_S = '1' then
-						if D4AAPSADCConfigReg_D.ResetRead_S = '1' then
-							OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_STARTFRAME_GS;
-						else
-							OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_STARTFRAME_GS_NORST;
-						end if;
-
+					if D4AAPSADCConfigReg_D.GlobalShutter_S then
 						ColState_DN <= stGSIdle;
 					else
-						if D4AAPSADCConfigReg_D.ResetRead_S = '1' then
-							OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_STARTFRAME_RS;
-						else
-							OutFifoDataRegCol_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_STARTFRAME_RS_NORST;
-						end if;
-
 						ColState_DN <= stRSIdle;
 					end if;
-
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
 				end if;
 
 			when stRSIdle =>
@@ -1038,7 +577,7 @@ begin
 
 				ClockSlowDownCount_S <= '1';
 
-				if ClockSlowDownDone_S = '1' then
+				if ClockSlowDownDone_S then
 					ColState_DN <= stRSReadoutFeedOne1Tick;
 				end if;
 
@@ -1049,7 +588,7 @@ begin
 
 				ClockSlowDownCount_S <= '1';
 
-				if ClockSlowDownDone_S = '1' then
+				if ClockSlowDownDone_S then
 					ColState_DN <= stRSReadoutFeedOne2;
 				end if;
 
@@ -1060,7 +599,7 @@ begin
 
 				ClockSlowDownCount_S <= '1';
 
-				if ClockSlowDownDone_S = '1' then
+				if ClockSlowDownDone_S then
 					ColState_DN <= stRSReadoutFeedOne2Tick;
 				end if;
 
@@ -1071,7 +610,7 @@ begin
 
 				ClockSlowDownCount_S <= '1';
 
-				if ClockSlowDownDone_S = '1' then
+				if ClockSlowDownDone_S then
 					ColState_DN <= stRSReadoutFeedOne3;
 				end if;
 
@@ -1082,7 +621,7 @@ begin
 
 				ClockSlowDownCount_S <= '1';
 
-				if ClockSlowDownDone_S = '1' then
+				if ClockSlowDownDone_S then
 					ColState_DN <= stRSReadoutFeedOne3Tick;
 				end if;
 
@@ -1093,22 +632,15 @@ begin
 
 				ClockSlowDownCount_S <= '1';
 
-				if ClockSlowDownDone_S = '1' then
+				if ClockSlowDownDone_S then
 					ColState_DN <= stRSFDSettle;
 				end if;
 
 			when stRSFDSettle =>
 				RSFDSettleTimeCount_S <= '1';
 
-				if RSFDSettleTimeDone_S = '1' then
-					if D4AAPSADCConfigReg_D.ResetRead_S = '1' then
-						ColState_DN <= stRSSample1Start;
-					else
-						-- Do the same operations that the FDReset read would.
-						APSChipResetReg_SN <= '0'; -- Turn off reset.
-
-						ColState_DN <= stRSChargeTransfer;
-					end if;
+				if RSFDSettleTimeDone_S then
+					ColState_DN <= stRSSample1Start;
 				end if;
 
 			when stRSSample1Start =>
@@ -1126,7 +658,7 @@ begin
 					APSSampleTypeReg_DN <= SAMPLETYPE_FDRESET;
 				end if;
 
-				if RowReadInProgress_SP = '0' then
+				if not RowReadInProgress_SP then
 					ColState_DN <= stRSChargeTransfer;
 				end if;
 
@@ -1135,20 +667,30 @@ begin
 
 				TransferTimeCount_S <= '1';
 
-				if TransferTimeDone_S = '1' then
+				if TransferTimeDone_S then
 					ColState_DN <= stRSSample2Start;
 				end if;
 
 			when stRSSample2Start =>
 				APSChipTXGateReg_SN <= '0'; -- Turn off again.
 
-				if ReadBSRStatus_DP = RBSTAT_NEED_ZERO_ONE then
-					ExposureClear_S <= '1';
-				end if;
-
 				RowReadStart_SN <= '1';
 
 				ColState_DN <= stRSSample2Done;
+
+				if ReadBSRStatus_DP = RBSTAT_NEED_ZERO_ONE then
+					ExposureClear_S <= '1';
+
+					ColState_DN <= stRSStartExposureEvent;
+				end if;
+
+			when stRSStartExposureEvent =>
+				if not OutFifoControl_SI.AlmostFull_S and not OutFifoWriteRegRow_S then
+					OutFifoDataRegCol_D  <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_STARTEXPOSURE;
+					OutFifoWriteRegCol_S <= '1';
+
+					ColState_DN <= stRSSample2Done;
+				end if;
 
 			when stRSSample2Done =>
 				if ReadBSRStatus_DP /= RBSTAT_NORMAL or CurrentColumnValid_S = '0' then
@@ -1158,7 +700,7 @@ begin
 					APSSampleTypeReg_DN <= SAMPLETYPE_SIGNAL;
 				end if;
 
-				if RowReadInProgress_SP = '0' then
+				if not RowReadInProgress_SP then
 					APSChipResetReg_SN <= '1';
 
 					-- If exposure time hasn't expired or we haven't yet even shifted in one
@@ -1172,7 +714,7 @@ begin
 						elsif ReadBSRStatus_DP = RBSTAT_NEED_ZERO_TWO then
 							-- Shift in the second 0 (the one after the 1) that is needed
 							-- for a read of the very first column to work.
-							ColState_DN      <= stRSFeed;
+							ColState_DN      <= stRSEndExposureEvent;
 							ReadBSRStatus_DN <= RBSTAT_NORMAL;
 						else
 							-- Finally, reads are happening, their position is increasing.
@@ -1183,6 +725,14 @@ begin
 						-- Just shift in a zero.
 						ColState_DN <= stRSFeed;
 					end if;
+				end if;
+
+			when stRSEndExposureEvent =>
+				if not OutFifoControl_SI.AlmostFull_S and not OutFifoWriteRegRow_S then
+					OutFifoDataRegCol_D  <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_ENDEXPOSURE;
+					OutFifoWriteRegCol_S <= '1';
+
+					ColState_DN <= stRSFeed;
 				end if;
 
 			when stRSFeed =>
@@ -1222,8 +772,16 @@ begin
 			when stGSPDReset =>
 				GSPDResetTimeCount_S <= '1';
 
-				if GSPDResetTimeDone_S = '1' then
+				if GSPDResetTimeDone_S then
 					ExposureClear_S <= '1';
+
+					ColState_DN <= stGSStartExposureEvent;
+				end if;
+
+			when stGSStartExposureEvent =>
+				if not OutFifoControl_SI.AlmostFull_S and not OutFifoWriteRegRow_S then
+					OutFifoDataRegCol_D  <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_STARTEXPOSURE;
+					OutFifoWriteRegCol_S <= '1';
 
 					ColState_DN <= stGSExposureStart;
 				end if;
@@ -1231,7 +789,15 @@ begin
 			when stGSExposureStart =>
 				APSChipOverflowGateReg_SN <= '0';
 
-				if ExposureDone_S = '1' then
+				if ExposureDone_S then
+					ColState_DN <= stGSEndExposureEvent;
+				end if;
+
+			when stGSEndExposureEvent =>
+				if not OutFifoControl_SI.AlmostFull_S and not OutFifoWriteRegRow_S then
+					OutFifoDataRegCol_D  <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_ENDEXPOSURE;
+					OutFifoWriteRegCol_S <= '1';
+
 					ColState_DN <= stGSResetFallTime;
 				end if;
 
@@ -1240,7 +806,7 @@ begin
 
 				GSResetFallTimeCount_S <= '1';
 
-				if GSResetFallTimeDone_S = '1' then
+				if GSResetFallTimeDone_S then
 					ColState_DN <= stGSChargeTransfer;
 				end if;
 
@@ -1249,7 +815,7 @@ begin
 
 				TransferTimeCount_S <= '1';
 
-				if TransferTimeDone_S = '1' then
+				if TransferTimeDone_S then
 					ColState_DN <= stGSExposureEnd;
 				end if;
 
@@ -1258,7 +824,7 @@ begin
 
 				GSTXFallTimeCount_S <= '1';
 
-				if GSTXFallTimeDone_S = '1' then
+				if GSTXFallTimeDone_S then
 					ColState_DN <= stGSSwitchToReadout1;
 				end if;
 
@@ -1282,7 +848,7 @@ begin
 
 				ClockSlowDownCount_S <= '1';
 
-				if ClockSlowDownDone_S = '1' then
+				if ClockSlowDownDone_S then
 					ColState_DN <= stGSReadoutFeedOneTick;
 				end if;
 
@@ -1293,7 +859,7 @@ begin
 
 				ClockSlowDownCount_S <= '1';
 
-				if ClockSlowDownDone_S = '1' then
+				if ClockSlowDownDone_S then
 					ColState_DN <= stGSReadoutFeedZero;
 				end if;
 
@@ -1317,7 +883,7 @@ begin
 				end if;
 
 			when stGSSample1Start =>
-				if CurrentColumnValid_S = '1' then
+				if CurrentColumnValid_S then
 					RowReadStart_SN <= '1';
 
 					ColState_DN <= stGSSample1Done;
@@ -1331,7 +897,7 @@ begin
 			when stGSSample1Done =>
 				APSSampleTypeReg_DN <= SAMPLETYPE_SIGNAL;
 
-				if RowReadInProgress_SP = '0' then
+				if not RowReadInProgress_SP then
 					ColState_DN <= stGSFDReset;
 				end if;
 
@@ -1340,18 +906,8 @@ begin
 
 				GSFDResetTimeCount_S <= '1';
 
-				if GSFDResetTimeDone_S = '1' then
-					if D4AAPSADCConfigReg_D.ResetRead_S = '1' then
-						ColState_DN <= stGSSample2Start;
-					else
-						-- Do the same operations that the FDReset read would.
-						APSChipResetReg_SN <= '0'; -- Turn off again.
-
-						-- Increase column count, now that we're done with last read.
-						ColumnReadPositionInc_S <= '1';
-
-						ColState_DN <= stGSReadoutFeedZero;
-					end if;
+				if GSFDResetTimeDone_S then
+					ColState_DN <= stGSSample2Start;
 				end if;
 
 			when stGSSample2Start =>
@@ -1364,7 +920,7 @@ begin
 			when stGSSample2Done =>
 				APSSampleTypeReg_DN <= SAMPLETYPE_FDRESET;
 
-				if RowReadInProgress_SP = '0' then
+				if not RowReadInProgress_SP then
 					-- Increase column count, now that we're done with last read.
 					ColumnReadPositionInc_S <= '1';
 
@@ -1377,24 +933,21 @@ begin
 
 				-- Write out end of frame marker. This and the start of frame marker are the only
 				-- two events from this SM that always have to be committed and are never dropped.
-				if OutFifoControl_SI.AlmostFull_S = '0' and RowReadsAllDone_S = '1' then
-					OutFifoDataRegCol_D       <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_ENDFRAME;
-					OutFifoDataRegColEnable_S <= '1';
-					OutFifoWriteRegCol_S      <= '1';
+				if not OutFifoControl_SI.AlmostFull_S and RowReadsAllDone_S then
+					OutFifoDataRegCol_D  <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_ENDFRAME;
+					OutFifoWriteRegCol_S <= '1';
 
-					ColState_DN <= stWaitFrameDelay;
+					ColState_DN <= stWaitFrameInterval;
 				end if;
 
-			when stWaitFrameDelay =>
+			when stWaitFrameInterval =>
 				-- Wait until enough time has passed between frames.
-				if FrameDelayDone_S = '1' then
+				if FrameIntervalDone_S then
 					ColState_DN <= stIdle;
 
 					-- Ensure config reg is up-to-date when entering Idle state.
 					D4AAPSADCConfigRegEnable_S <= '1';
 				end if;
-
-				FrameDelayCount_S <= '1';
 
 			when others => null;
 		end case;
@@ -1409,22 +962,6 @@ begin
 		ROI0StartRow_D    <= resize(D4AAPSADCConfigReg_D.StartRow0_D, 16);
 		ROI0EndColumn_D   <= resize(D4AAPSADCConfigReg_D.EndColumn0_D, 16);
 		ROI0EndRow_D      <= resize(D4AAPSADCConfigReg_D.EndRow0_D, 16);
-
-		apsQuadROISizes : if ENABLE_QUAD_ROI = true generate
-		begin
-			ROI1StartColumn_D <= resize(D4AAPSADCConfigReg_D.StartColumn1_D, 16);
-			ROI1StartRow_D    <= resize(D4AAPSADCConfigReg_D.StartRow1_D, 16);
-			ROI1EndColumn_D   <= resize(D4AAPSADCConfigReg_D.EndColumn1_D, 16);
-			ROI1EndRow_D      <= resize(D4AAPSADCConfigReg_D.EndRow1_D, 16);
-			ROI2StartColumn_D <= resize(D4AAPSADCConfigReg_D.StartColumn2_D, 16);
-			ROI2StartRow_D    <= resize(D4AAPSADCConfigReg_D.StartRow2_D, 16);
-			ROI2EndColumn_D   <= resize(D4AAPSADCConfigReg_D.EndColumn2_D, 16);
-			ROI2EndRow_D      <= resize(D4AAPSADCConfigReg_D.EndRow2_D, 16);
-			ROI3StartColumn_D <= resize(D4AAPSADCConfigReg_D.StartColumn3_D, 16);
-			ROI3StartRow_D    <= resize(D4AAPSADCConfigReg_D.StartRow3_D, 16);
-			ROI3EndColumn_D   <= resize(D4AAPSADCConfigReg_D.EndColumn3_D, 16);
-			ROI3EndRow_D      <= resize(D4AAPSADCConfigReg_D.EndRow3_D, 16);
-		end generate apsQuadROISizes;
 	end generate axesNormal;
 
 	axesInverted : if CHIP_APS_AXES_INVERT = AXES_INVERT generate
@@ -1433,193 +970,52 @@ begin
 		ROI0StartRow_D    <= resize(D4AAPSADCConfigReg_D.StartColumn0_D, 16);
 		ROI0EndColumn_D   <= resize(D4AAPSADCConfigReg_D.EndRow0_D, 16);
 		ROI0EndRow_D      <= resize(D4AAPSADCConfigReg_D.EndColumn0_D, 16);
-
-		apsQuadROISizes : if ENABLE_QUAD_ROI = true generate
-		begin
-			ROI1StartColumn_D <= resize(D4AAPSADCConfigReg_D.StartRow1_D, 16);
-			ROI1StartRow_D    <= resize(D4AAPSADCConfigReg_D.StartColumn1_D, 16);
-			ROI1EndColumn_D   <= resize(D4AAPSADCConfigReg_D.EndRow1_D, 16);
-			ROI1EndRow_D      <= resize(D4AAPSADCConfigReg_D.EndColumn1_D, 16);
-			ROI2StartColumn_D <= resize(D4AAPSADCConfigReg_D.StartRow2_D, 16);
-			ROI2StartRow_D    <= resize(D4AAPSADCConfigReg_D.StartColumn2_D, 16);
-			ROI2EndColumn_D   <= resize(D4AAPSADCConfigReg_D.EndRow2_D, 16);
-			ROI2EndRow_D      <= resize(D4AAPSADCConfigReg_D.EndColumn2_D, 16);
-			ROI3StartColumn_D <= resize(D4AAPSADCConfigReg_D.StartRow3_D, 16);
-			ROI3StartRow_D    <= resize(D4AAPSADCConfigReg_D.StartColumn3_D, 16);
-			ROI3EndColumn_D   <= resize(D4AAPSADCConfigReg_D.EndRow3_D, 16);
-			ROI3EndRow_D      <= resize(D4AAPSADCConfigReg_D.EndColumn3_D, 16);
-		end generate apsQuadROISizes;
 	end generate axesInverted;
 
-	apsStandardROI : if ENABLE_QUAD_ROI = false generate
+	-- Concurrently calculate if the current column or row has to be read out or not.
+	-- If not (like with ROI), we can just fast jump past it.
+	apsColumnROI : if CHIP_APS_STREAM_START(1) = '0' generate
 	begin
-		-- Concurrently calculate if the current column or row has to be read out or not.
-		-- If not (like with ROI), we can just fast jump past it.
-		apsColumnROI : if CHIP_APS_STREAM_START(1) = '0' generate
-		begin
-			CurrentColumnValid_S <= '1' when (ColumnReadPosition_D >= ROI0StartColumn_D and ColumnReadPosition_D <= ROI0EndColumn_D and D4AAPSADCConfigReg_D.ROI0Enabled_S = '1') else '0';
-		end generate apsColumnROI;
+		CurrentColumnValid_S <= '1' when (ColumnReadPosition_D >= ROI0StartColumn_D and ColumnReadPosition_D <= ROI0EndColumn_D) else '0';
+	end generate apsColumnROI;
 
-		apsColumnROIInverted : if CHIP_APS_STREAM_START(1) = '1' generate
-			signal StartColumn0Inverted_S : unsigned(15 downto 0);
-			signal EndColumn0Inverted_S   : unsigned(15 downto 0);
-		begin
-			StartColumn0Inverted_S <= resize(CHIP_APS_SIZE_COLUMNS - 1, 16) - ROI0StartColumn_D;
-			EndColumn0Inverted_S   <= resize(CHIP_APS_SIZE_COLUMNS - 1, 16) - ROI0EndColumn_D;
-
-			CurrentColumnValid_S <= '1' when (ColumnReadPosition_D >= EndColumn0Inverted_S and ColumnReadPosition_D <= StartColumn0Inverted_S and D4AAPSADCConfigReg_D.ROI0Enabled_S = '1') else '0';
-		end generate apsColumnROIInverted;
-
-		apsRowROI : if CHIP_APS_STREAM_START(0) = '0' generate
-		begin
-			CurrentRowValid_S <= '1' when (ROIRowReadPosition_D >= ROI0StartRow_D and ROIRowReadPosition_D <= ROI0EndRow_D) else '0';
-		end generate apsRowROI;
-
-		apsRowROIInverted : if CHIP_APS_STREAM_START(0) = '1' generate
-			signal StartRow0Inverted_S : unsigned(15 downto 0);
-			signal EndRow0Inverted_S   : unsigned(15 downto 0);
-		begin
-			StartRow0Inverted_S <= resize(CHIP_APS_SIZE_ROWS - 1, 16) - ROI0StartRow_D;
-			EndRow0Inverted_S   <= resize(CHIP_APS_SIZE_ROWS - 1, 16) - ROI0EndRow_D;
-
-			CurrentRowValid_S <= '1' when (ROIRowReadPosition_D >= EndRow0Inverted_S and ROIRowReadPosition_D <= StartRow0Inverted_S) else '0';
-		end generate apsRowROIInverted;
-	end generate apsStandardROI;
-
-	apsQuadROI : if ENABLE_QUAD_ROI = true generate
-		signal Column0Valid_S : boolean := false;
-		signal Column1Valid_S : boolean := false;
-		signal Column2Valid_S : boolean := false;
-		signal Column3Valid_S : boolean := false;
-
-		signal Row0Valid_S : boolean := false;
-		signal Row1Valid_S : boolean := false;
-		signal Row2Valid_S : boolean := false;
-		signal Row3Valid_S : boolean := false;
-
-		signal Column0IsValidForRow_S : boolean := false;
-		signal Column1IsValidForRow_S : boolean := false;
-		signal Column2IsValidForRow_S : boolean := false;
-		signal Column3IsValidForRow_S : boolean := false;
+	apsColumnROIInverted : if CHIP_APS_STREAM_START(1) = '1' generate
+		signal StartColumn0Inverted_S : unsigned(15 downto 0);
+		signal EndColumn0Inverted_S   : unsigned(15 downto 0);
 	begin
-		-- Concurrently calculate if the current column or row has to be read out or not.
-		-- If not (like with ROI), we can just fast jump past it.
-		apsColumnROI : if CHIP_APS_STREAM_START(1) = '0' generate
-		begin
-			Column0Valid_S         <= ColumnReadPosition_D >= ROI0StartColumn_D and ColumnReadPosition_D <= ROI0EndColumn_D and D4AAPSADCConfigReg_D.ROI0Enabled_S = '1';
-			Column0IsValidForRow_S <= CurrentReadColumnPosition_D >= ROI0StartColumn_D and CurrentReadColumnPosition_D <= ROI0EndColumn_D and D4AAPSADCConfigReg_D.ROI0Enabled_S = '1';
+		StartColumn0Inverted_S <= resize(CHIP_APS_SIZE_COLUMNS - 1, 16) - ROI0StartColumn_D;
+		EndColumn0Inverted_S   <= resize(CHIP_APS_SIZE_COLUMNS - 1, 16) - ROI0EndColumn_D;
 
-			Column1Valid_S         <= ColumnReadPosition_D >= ROI1StartColumn_D and ColumnReadPosition_D <= ROI1EndColumn_D and D4AAPSADCConfigReg_D.ROI1Enabled_S = '1';
-			Column1IsValidForRow_S <= CurrentReadColumnPosition_D >= ROI1StartColumn_D and CurrentReadColumnPosition_D <= ROI1EndColumn_D and D4AAPSADCConfigReg_D.ROI1Enabled_S = '1';
+		CurrentColumnValid_S <= '1' when (ColumnReadPosition_D >= EndColumn0Inverted_S and ColumnReadPosition_D <= StartColumn0Inverted_S) else '0';
+	end generate apsColumnROIInverted;
 
-			Column2Valid_S         <= ColumnReadPosition_D >= ROI2StartColumn_D and ColumnReadPosition_D <= ROI2EndColumn_D and D4AAPSADCConfigReg_D.ROI2Enabled_S = '1';
-			Column2IsValidForRow_S <= CurrentReadColumnPosition_D >= ROI2StartColumn_D and CurrentReadColumnPosition_D <= ROI2EndColumn_D and D4AAPSADCConfigReg_D.ROI2Enabled_S = '1';
+	apsRowROI : if CHIP_APS_STREAM_START(0) = '0' generate
+	begin
+		CurrentRowValid_S <= '1' when (ROIRowReadPosition_D >= ROI0StartRow_D and ROIRowReadPosition_D <= ROI0EndRow_D) else '0';
+	end generate apsRowROI;
 
-			Column3Valid_S         <= ColumnReadPosition_D >= ROI3StartColumn_D and ColumnReadPosition_D <= ROI3EndColumn_D and D4AAPSADCConfigReg_D.ROI3Enabled_S = '1';
-			Column3IsValidForRow_S <= CurrentReadColumnPosition_D >= ROI3StartColumn_D and CurrentReadColumnPosition_D <= ROI3EndColumn_D and D4AAPSADCConfigReg_D.ROI3Enabled_S = '1';
+	apsRowROIInverted : if CHIP_APS_STREAM_START(0) = '1' generate
+		signal StartRow0Inverted_S : unsigned(15 downto 0);
+		signal EndRow0Inverted_S   : unsigned(15 downto 0);
+	begin
+		StartRow0Inverted_S <= resize(CHIP_APS_SIZE_ROWS - 1, 16) - ROI0StartRow_D;
+		EndRow0Inverted_S   <= resize(CHIP_APS_SIZE_ROWS - 1, 16) - ROI0EndRow_D;
 
-			CurrentColumnValid_S <= '1' when (Column0Valid_S or Column1Valid_S or Column2Valid_S or Column3Valid_S) else '0';
-		end generate apsColumnROI;
-
-		apsColumnROIInverted : if CHIP_APS_STREAM_START(1) = '1' generate
-			signal StartColumn0Inverted_S : unsigned(15 downto 0);
-			signal EndColumn0Inverted_S   : unsigned(15 downto 0);
-
-			signal StartColumn1Inverted_S : unsigned(15 downto 0);
-			signal EndColumn1Inverted_S   : unsigned(15 downto 0);
-
-			signal StartColumn2Inverted_S : unsigned(15 downto 0);
-			signal EndColumn2Inverted_S   : unsigned(15 downto 0);
-
-			signal StartColumn3Inverted_S : unsigned(15 downto 0);
-			signal EndColumn3Inverted_S   : unsigned(15 downto 0);
-		begin
-			StartColumn0Inverted_S <= resize(CHIP_APS_SIZE_COLUMNS - 1, 16) - ROI0StartColumn_D;
-			EndColumn0Inverted_S   <= resize(CHIP_APS_SIZE_COLUMNS - 1, 16) - ROI0EndColumn_D;
-
-			Column0Valid_S         <= ColumnReadPosition_D >= EndColumn0Inverted_S and ColumnReadPosition_D <= StartColumn0Inverted_S and D4AAPSADCConfigReg_D.ROI0Enabled_S = '1';
-			Column0IsValidForRow_S <= CurrentReadColumnPosition_D >= EndColumn0Inverted_S and CurrentReadColumnPosition_D <= StartColumn0Inverted_S and D4AAPSADCConfigReg_D.ROI0Enabled_S = '1';
-
-			StartColumn1Inverted_S <= resize(CHIP_APS_SIZE_COLUMNS - 1, 16) - ROI1StartColumn_D;
-			EndColumn1Inverted_S   <= resize(CHIP_APS_SIZE_COLUMNS - 1, 16) - ROI1EndColumn_D;
-
-			Column1Valid_S         <= ColumnReadPosition_D >= EndColumn1Inverted_S and ColumnReadPosition_D <= StartColumn1Inverted_S and D4AAPSADCConfigReg_D.ROI1Enabled_S = '1';
-			Column1IsValidForRow_S <= CurrentReadColumnPosition_D >= EndColumn1Inverted_S and CurrentReadColumnPosition_D <= StartColumn1Inverted_S and D4AAPSADCConfigReg_D.ROI1Enabled_S = '1';
-
-			StartColumn2Inverted_S <= resize(CHIP_APS_SIZE_COLUMNS - 1, 16) - ROI2StartColumn_D;
-			EndColumn2Inverted_S   <= resize(CHIP_APS_SIZE_COLUMNS - 1, 16) - ROI2EndColumn_D;
-
-			Column2Valid_S         <= ColumnReadPosition_D >= EndColumn2Inverted_S and ColumnReadPosition_D <= StartColumn2Inverted_S and D4AAPSADCConfigReg_D.ROI2Enabled_S = '1';
-			Column2IsValidForRow_S <= CurrentReadColumnPosition_D >= EndColumn2Inverted_S and CurrentReadColumnPosition_D <= StartColumn2Inverted_S and D4AAPSADCConfigReg_D.ROI2Enabled_S = '1';
-
-			StartColumn3Inverted_S <= resize(CHIP_APS_SIZE_COLUMNS - 1, 16) - ROI3StartColumn_D;
-			EndColumn3Inverted_S   <= resize(CHIP_APS_SIZE_COLUMNS - 1, 16) - ROI3EndColumn_D;
-
-			Column3Valid_S         <= ColumnReadPosition_D >= EndColumn3Inverted_S and ColumnReadPosition_D <= StartColumn3Inverted_S and D4AAPSADCConfigReg_D.ROI3Enabled_S = '1';
-			Column3IsValidForRow_S <= CurrentReadColumnPosition_D >= EndColumn3Inverted_S and CurrentReadColumnPosition_D <= StartColumn3Inverted_S and D4AAPSADCConfigReg_D.ROI3Enabled_S = '1';
-
-			CurrentColumnValid_S <= '1' when (Column0Valid_S or Column1Valid_S or Column2Valid_S or Column3Valid_S) else '0';
-		end generate apsColumnROIInverted;
-
-		apsRowROI : if CHIP_APS_STREAM_START(0) = '0' generate
-		begin
-			Row0Valid_S <= ROIRowReadPosition_D >= ROI0StartRow_D and ROIRowReadPosition_D <= ROI0EndRow_D and Column0IsValidForRow_S;
-			Row1Valid_S <= ROIRowReadPosition_D >= ROI1StartRow_D and ROIRowReadPosition_D <= ROI1EndRow_D and Column1IsValidForRow_S;
-			Row2Valid_S <= ROIRowReadPosition_D >= ROI2StartRow_D and ROIRowReadPosition_D <= ROI2EndRow_D and Column2IsValidForRow_S;
-			Row3Valid_S <= ROIRowReadPosition_D >= ROI3StartRow_D and ROIRowReadPosition_D <= ROI3EndRow_D and Column3IsValidForRow_S;
-
-			CurrentRowValid_S <= '1' when (Row0Valid_S or Row1Valid_S or Row2Valid_S or Row3Valid_S) else '0';
-		end generate apsRowROI;
-
-		apsRowROIInverted : if CHIP_APS_STREAM_START(0) = '1' generate
-			signal StartRow0Inverted_S : unsigned(15 downto 0);
-			signal EndRow0Inverted_S   : unsigned(15 downto 0);
-
-			signal StartRow1Inverted_S : unsigned(15 downto 0);
-			signal EndRow1Inverted_S   : unsigned(15 downto 0);
-
-			signal StartRow2Inverted_S : unsigned(15 downto 0);
-			signal EndRow2Inverted_S   : unsigned(15 downto 0);
-
-			signal StartRow3Inverted_S : unsigned(15 downto 0);
-			signal EndRow3Inverted_S   : unsigned(15 downto 0);
-		begin
-			StartRow0Inverted_S <= resize(CHIP_APS_SIZE_ROWS - 1, 16) - ROI0StartRow_D;
-			EndRow0Inverted_S   <= resize(CHIP_APS_SIZE_ROWS - 1, 16) - ROI0EndRow_D;
-
-			Row0Valid_S <= ROIRowReadPosition_D >= EndRow0Inverted_S and ROIRowReadPosition_D <= StartRow0Inverted_S and Column0IsValidForRow_S;
-
-			StartRow1Inverted_S <= resize(CHIP_APS_SIZE_ROWS - 1, 16) - ROI1StartRow_D;
-			EndRow1Inverted_S   <= resize(CHIP_APS_SIZE_ROWS - 1, 16) - ROI1EndRow_D;
-
-			Row1Valid_S <= ROIRowReadPosition_D >= EndRow1Inverted_S and ROIRowReadPosition_D <= StartRow1Inverted_S and Column1IsValidForRow_S;
-
-			StartRow2Inverted_S <= resize(CHIP_APS_SIZE_ROWS - 1, 16) - ROI2StartRow_D;
-			EndRow2Inverted_S   <= resize(CHIP_APS_SIZE_ROWS - 1, 16) - ROI2EndRow_D;
-
-			Row2Valid_S <= ROIRowReadPosition_D >= EndRow2Inverted_S and ROIRowReadPosition_D <= StartRow2Inverted_S and Column2IsValidForRow_S;
-
-			StartRow3Inverted_S <= resize(CHIP_APS_SIZE_ROWS - 1, 16) - ROI3StartRow_D;
-			EndRow3Inverted_S   <= resize(CHIP_APS_SIZE_ROWS - 1, 16) - ROI3EndRow_D;
-
-			Row3Valid_S <= ROIRowReadPosition_D >= EndRow3Inverted_S and ROIRowReadPosition_D <= StartRow3Inverted_S and Column3IsValidForRow_S;
-
-			CurrentRowValid_S <= '1' when (Row0Valid_S or Row1Valid_S or Row2Valid_S or Row3Valid_S) else '0';
-		end generate apsRowROIInverted;
-	end generate apsQuadROI;
+		CurrentRowValid_S <= '1' when (ROIRowReadPosition_D >= EndRow0Inverted_S and ROIRowReadPosition_D <= StartRow0Inverted_S) else '0';
+	end generate apsRowROIInverted;
 
 	-- Special counter for ROI position, follows ADC ordering.
 	roiSpecialRowReadPosition : process(Clock_CI, Reset_RI) is
 	begin
-		if Reset_RI = '1' then
+		if Reset_RI then
 			ROIRowReadPosition_D  <= (others => '0');
 			ROIRowReadDirection_S <= '0';
 		elsif rising_edge(Clock_CI) then
-			if ROIRowReadPositionZero_S = '1' then
+			if ROIRowReadPositionZero_S then
 				ROIRowReadPosition_D  <= (others => '0');
 				ROIRowReadDirection_S <= '0';
-			elsif ROIRowReadPositionInc_S = '1' then
-				if ROIRowReadDirection_S = '0' then
+			elsif ROIRowReadPositionInc_S then
+				if not ROIRowReadDirection_S then
 					-- Increasing, first even pass.
 					ROIRowReadPosition_D <= ROIRowReadPosition_D + 2;
 				else
@@ -1639,18 +1035,9 @@ begin
 		end if;
 	end process roiSpecialRowReadPosition;
 
-	-- Don't generate any external gray-code. Internal gray-counter works.
-	ChipADCGrayCounter_DO <= (others => '0');
-
 	-- Signal when all row-reads are done and we can send EOF.
 	-- For pipelined ADC, this needs to make sure all three phases are completed.
 	RowReadsAllDone_S <= not RowReadInProgress_SP and not RampInProgress_SP and not ScanInProgress_SP;
-
-	-- Don't do the full ramp on reset reads. The value must be pretty high
-	-- anyway, near AdcHigh, so just half the ramp should always be enough
-	-- to hit a good value.
-	RampIsResetRead_S <= '1' when (APSSampleTypeRegRamp_DP = SAMPLETYPE_FDRESET or TimingReadRamp_DP = SAMPLETYPE_FDRESET) else '0';
-	RampLimit_D       <= to_unsigned(511, APS_ADC_BUS_WIDTH) when (D4AAPSADCConfigReg_D.RampShortReset_S = '1' and RampIsResetRead_S = '1') else to_unsigned(1021, APS_ADC_BUS_WIDTH);
 
 	rampTickCounter : entity work.ContinuousCounter
 		generic map(
@@ -1660,7 +1047,7 @@ begin
 			Reset_RI     => Reset_RI,
 			Clear_SI     => '0',
 			Enable_SI    => RampTickCount_S,
-			DataLimit_DI => RampLimit_D,
+			DataLimit_DI => to_unsigned(1021, APS_ADC_BUS_WIDTH),
 			Overflow_SO  => RampTickDone_S,
 			Data_DO      => open);
 
@@ -1672,7 +1059,7 @@ begin
 			Reset_RI     => Reset_RI,
 			Clear_SI     => '0',
 			Enable_SI    => SampleSettleTimeCount_S,
-			DataLimit_DI => D4AAPSADCConfigReg_D.SampleSettle_D,
+			DataLimit_DI => to_unsigned(APS_SAMPLESETTLETIME, APS_SAMPLESETTLETIME_SIZE),
 			Overflow_SO  => SampleSettleTimeDone_S,
 			Data_DO      => open);
 
@@ -1684,7 +1071,7 @@ begin
 			Reset_RI     => Reset_RI,
 			Clear_SI     => '0',
 			Enable_SI    => RampResetTimeCount_S,
-			DataLimit_DI => D4AAPSADCConfigReg_D.RampReset_D,
+			DataLimit_DI => to_unsigned(APS_RAMPRESETTIME, APS_RAMPRESETTIME_SIZE),
 			Overflow_SO  => RampResetTimeDone_S,
 			Data_DO      => open);
 
@@ -1696,7 +1083,7 @@ begin
 			Reset_RI     => Reset_RI,
 			Clear_SI     => '0',
 			Enable_SI    => RowSettleTimeCount_S,
-			DataLimit_DI => D4AAPSADCConfigReg_D.RowSettle_D,
+			DataLimit_DI => to_unsigned(APS_ROWSETTLETIME, APS_ROWSETTLETIME_SIZE),
 			Overflow_SO  => RowSettleTimeDone_S,
 			Data_DO      => open);
 
@@ -1714,13 +1101,9 @@ begin
 			Overflow_SO  => open,
 			Data_DO      => RowReadPosition_D);
 
-	chipADCRowReadoutSampleStateMachine : process(ChipRowSampleState_DP, RowSettleTimeDone_S, RampInProgress_SP, RowReadInProgress_SP, SampleSettleTimeDone_S, APSSampleTypeRegSample_DP, APSSampleTypeReg_DP, TimingReadSample_DP, TimingRead_DP, ColumnReadPosition_D, CurrentReadColumnPositionSample_DP)
+	chipADCRowReadoutSampleStateMachine : process(ChipRowSampleState_DP, RowSettleTimeDone_S, RampInProgress_SP, RowReadInProgress_SP, SampleSettleTimeDone_S, APSSampleTypeRegSample_DP, APSSampleTypeReg_DP, TimingReadSample_DP, TimingRead_DP)
 	begin
 		ChipRowSampleState_DN <= ChipRowSampleState_DP;
-
-		-- Never used due to internal ADC!
-		APSChipRowSRClockReg_C <= '0';
-		APSChipRowSRInReg_S    <= '0';
 
 		-- Settle times counters.
 		RowSettleTimeCount_S    <= '0';
@@ -1736,15 +1119,13 @@ begin
 		APSSampleTypeRegSample_DN <= APSSampleTypeRegSample_DP;
 		TimingReadSample_DN       <= TimingReadSample_DP;
 
-		CurrentReadColumnPositionSample_DN <= CurrentReadColumnPositionSample_DP;
-
 		-- On-chip ADC.
 		ChipADCSampleReg_S <= '0';
 
 		case ChipRowSampleState_DP is
 			when stIdle =>
 				-- Wait until the main column state machine signals us to do a row read.
-				if RowReadInProgress_SP = '1' then
+				if RowReadInProgress_SP then
 					ChipRowSampleState_DN <= stCaptureColMode;
 				end if;
 
@@ -1754,17 +1135,11 @@ begin
 				APSSampleTypeRegSample_DN <= APSSampleTypeReg_DP;
 				TimingReadSample_DN       <= TimingRead_DP;
 
-				if APSSampleTypeReg_DP /= SAMPLETYPE_NULL then
-					CurrentReadColumnPositionSample_DN <= ColumnReadPosition_D;
-				else
-					CurrentReadColumnPositionSample_DN <= CHIP_APS_SIZE_COLUMNS;
-				end if;
-
 				ChipRowSampleState_DN <= stRowSettleWait;
 
 			when stRowSettleWait =>
 				-- Additional wait for the row selection to be valid.
-				if RowSettleTimeDone_S = '1' then
+				if RowSettleTimeDone_S then
 					ChipRowSampleState_DN <= stRowSampleWait;
 				end if;
 
@@ -1772,7 +1147,7 @@ begin
 
 			when stRowSampleWait =>
 				-- Wait for old ramp to be finished before sampling the new value.
-				if RampInProgress_SP = '0' then
+				if not RampInProgress_SP then
 					ChipRowSampleState_DN <= stRowSample;
 				end if;
 
@@ -1780,7 +1155,7 @@ begin
 				-- Do sample now!
 				ChipADCSampleReg_S <= '1';
 
-				if SampleSettleTimeDone_S = '1' then
+				if SampleSettleTimeDone_S then
 					ChipRowSampleState_DN <= stDone;
 				end if;
 
@@ -1801,7 +1176,7 @@ begin
 		end case;
 	end process chipADCRowReadoutSampleStateMachine;
 
-	chipADCRowReadoutRampStateMachine : process(ChipRowRampState_DP, RampInProgress_SP, RampResetTimeDone_S, RampTickDone_S, ScanInProgress_SP, APSSampleTypeRegRamp_DP, APSSampleTypeRegSample_DP, TimingReadRamp_DP, TimingReadSample_DP, CurrentReadColumnPositionRamp_DP, CurrentReadColumnPositionSample_DP)
+	chipADCRowReadoutRampStateMachine : process(ChipRowRampState_DP, RampInProgress_SP, RampResetTimeDone_S, RampTickDone_S, ScanInProgress_SP, APSSampleTypeRegRamp_DP, APSSampleTypeRegSample_DP, TimingReadRamp_DP, TimingReadSample_DP)
 	begin
 		ChipRowRampState_DN <= ChipRowRampState_DP;
 
@@ -1821,8 +1196,6 @@ begin
 		APSSampleTypeRegRamp_DN <= APSSampleTypeRegRamp_DP;
 		TimingReadRamp_DN       <= TimingReadRamp_DP;
 
-		CurrentReadColumnPositionRamp_DN <= CurrentReadColumnPositionRamp_DP;
-
 		-- On-chip ADC.
 		ChipADCRampClearReg_S   <= '1'; -- Clear ramp by default.
 		ChipADCRampClockReg_C   <= '0';
@@ -1837,14 +1210,12 @@ begin
 		case ChipRowRampState_DP is
 			when stIdle =>
 				-- Wait until the sample state machine signals us to start the ramp.
-				if RampInProgress_SP = '1' then
+				if RampInProgress_SP then
 					ChipRowRampState_DN <= stRowRampFeed;
 
 					-- Update the readout type register, which is used to pass this value down to the other SMs.
 					APSSampleTypeRegRamp_DN <= APSSampleTypeRegSample_DP;
 					TimingReadRamp_DN       <= TimingReadSample_DP;
-
-					CurrentReadColumnPositionRamp_DN <= CurrentReadColumnPositionSample_DP;
 				end if;
 
 			when stRowRampFeed =>
@@ -1869,7 +1240,7 @@ begin
 				-- Do not clear Ramp while in use!
 				ChipADCRampClearReg_S <= '0';
 
-				if RampResetTimeDone_S = '1' then
+				if RampResetTimeDone_S then
 					ChipRowRampState_DN <= stRowRampClockLow;
 				end if;
 
@@ -1892,7 +1263,7 @@ begin
 				-- Increase counter and stop ramping when maximum reached.
 				RampTickCount_S <= '1';
 
-				if RampTickDone_S = '1' then
+				if RampTickDone_S then
 					ChipRowRampState_DN <= stRowScanWait;
 				else
 					ChipRowRampState_DN <= stRowRampClockLow;
@@ -1903,7 +1274,7 @@ begin
 				ChipADCRampClearReg_S <= '0';
 
 				-- Wait for old scan to be finished before copying over the new value.
-				if ScanInProgress_SP = '0' then
+				if not ScanInProgress_SP then
 					ChipRowRampState_DN <= stRowScanSelect;
 				end if;
 
@@ -1939,13 +1310,12 @@ begin
 		end case;
 	end process chipADCRowReadoutRampStateMachine;
 
-	chipADCRowReadoutScanStateMachine : process(ChipRowScanState_DP, D4AAPSADCConfigReg_D, OutFifoControl_SI, ChipADCData_DI, RowReadPosition_D, CurrentRowValid_S, ScanInProgress_SP, APSSampleTypeRegRamp_DP, APSSampleTypeRegScan_DP, CurrentReadColumnPositionRamp_DP, CurrentReadColumnPositionScan_DP)
+	chipADCRowReadoutScanStateMachine : process(ChipRowScanState_DP, D4AAPSADCConfigReg_D, OutFifoControl_SI, ChipADCData_DI, RowReadPosition_D, CurrentRowValid_S, ScanInProgress_SP, APSSampleTypeRegRamp_DP, APSSampleTypeRegScan_DP)
 	begin
 		ChipRowScanState_DN <= ChipRowScanState_DP;
 
-		OutFifoWriteRegRow_S      <= '0';
-		OutFifoDataRegRowEnable_S <= '0';
-		OutFifoDataRegRow_D       <= (others => '0');
+		OutFifoWriteRegRow_S <= '0';
+		OutFifoDataRegRow_D  <= (others => '0');
 
 		-- Row counters.
 		RowReadPositionZero_S <= '0';
@@ -1960,22 +1330,17 @@ begin
 		-- Keep track of current readout type.
 		APSSampleTypeRegScan_DN <= APSSampleTypeRegScan_DP;
 
-		CurrentReadColumnPositionScan_DN <= CurrentReadColumnPositionScan_DP;
-		CurrentReadColumnPosition_D      <= CurrentReadColumnPositionScan_DP;
-
 		-- On-chip ADC.
 		ChipADCScanClockReg2_C <= '0';
 
 		case ChipRowScanState_DP is
 			when stIdle =>
 				-- Wait until the ramp state machine signals us to start the scan.
-				if ScanInProgress_SP = '1' then
+				if ScanInProgress_SP then
 					ChipRowScanState_DN <= stRowStart;
 
 					-- Update the readout type register, which is used to decide the type of events to output.
 					APSSampleTypeRegScan_DN <= APSSampleTypeRegRamp_DP;
-
-					CurrentReadColumnPositionScan_DN <= CurrentReadColumnPositionRamp_DP;
 				end if;
 
 			when stRowStart =>
@@ -1987,13 +1352,13 @@ begin
 					else
 						OutFifoDataRegRow_D <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_STARTSIGNALCOL;
 					end if;
-					OutFifoDataRegRowEnable_S <= '1';
-					OutFifoWriteRegRow_S      <= '1';
+
+					OutFifoWriteRegRow_S <= '1';
 				end if;
 
 				if OutFifoControl_SI.AlmostFull_S = '0' or APSSampleTypeRegScan_DP = SAMPLETYPE_NULL or D4AAPSADCConfigReg_D.WaitOnTransferStall_S = '0' then
 					-- Same check as in stRowScanNextValue needed here.
-					if CurrentRowValid_S = '1' then
+					if CurrentRowValid_S then
 						ChipRowScanState_DN <= stRowScanReadValue;
 					else
 						ChipRowScanState_DN <= stRowScanJumpValue;
@@ -2019,8 +1384,7 @@ begin
 					OutFifoDataRegRow_D(1) <= not (ChipADCData_DI(1) xor ChipADCData_DI(2) xor ChipADCData_DI(3) xor ChipADCData_DI(4) xor ChipADCData_DI(5) xor ChipADCData_DI(6) xor ChipADCData_DI(7) xor ChipADCData_DI(8) xor ChipADCData_DI(9));
 					OutFifoDataRegRow_D(0) <= not (ChipADCData_DI(0) xor ChipADCData_DI(1) xor ChipADCData_DI(2) xor ChipADCData_DI(3) xor ChipADCData_DI(4) xor ChipADCData_DI(5) xor ChipADCData_DI(6) xor ChipADCData_DI(7) xor ChipADCData_DI(8) xor ChipADCData_DI(9));
 
-					OutFifoDataRegRowEnable_S <= '1';
-					OutFifoWriteRegRow_S      <= '1';
+					OutFifoWriteRegRow_S <= '1';
 				end if;
 
 				if OutFifoControl_SI.AlmostFull_S = '0' or APSSampleTypeRegScan_DP = SAMPLETYPE_NULL or D4AAPSADCConfigReg_D.WaitOnTransferStall_S = '0' then
@@ -2044,7 +1408,7 @@ begin
 					RowReadPositionZero_S    <= '1';
 					ROIRowReadPositionZero_S <= '1';
 				else
-					if CurrentRowValid_S = '1' then
+					if CurrentRowValid_S then
 						ChipRowScanState_DN <= stRowScanReadValue;
 					else
 						ChipRowScanState_DN <= stRowScanJumpValue;
@@ -2054,9 +1418,8 @@ begin
 			when stRowDone =>
 				-- Write event only if FIFO has place, else wait.
 				if OutFifoControl_SI.AlmostFull_S = '0' and APSSampleTypeRegScan_DP /= SAMPLETYPE_NULL then
-					OutFifoDataRegRow_D       <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_ENDCOL;
-					OutFifoDataRegRowEnable_S <= '1';
-					OutFifoWriteRegRow_S      <= '1';
+					OutFifoDataRegRow_D  <= EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_APS_ENDCOL;
+					OutFifoWriteRegRow_S <= '1';
 				end if;
 
 				if OutFifoControl_SI.AlmostFull_S = '0' or APSSampleTypeRegScan_DP = SAMPLETYPE_NULL or D4AAPSADCConfigReg_D.WaitOnTransferStall_S = '0' then
@@ -2073,7 +1436,7 @@ begin
 
 	chipADCRegisterUpdate : process(Clock_CI, Reset_RI) is
 	begin
-		if Reset_RI = '1' then
+		if Reset_RI then
 			ChipRowSampleState_DP <= stIdle;
 			ChipRowRampState_DP   <= stIdle;
 			ChipRowScanState_DP   <= stIdle;
@@ -2087,10 +1450,6 @@ begin
 
 			TimingReadSample_DP <= SAMPLETYPE_NULL;
 			TimingReadRamp_DP   <= SAMPLETYPE_NULL;
-
-			CurrentReadColumnPositionSample_DP <= (others => '0');
-			CurrentReadColumnPositionRamp_DP   <= (others => '0');
-			CurrentReadColumnPositionScan_DP   <= (others => '0');
 
 			ChipADCRampClear_SO   <= '1'; -- Clear ramp by default.
 			ChipADCRampClock_CO   <= '0';
@@ -2113,24 +1472,19 @@ begin
 			TimingReadSample_DP <= TimingReadSample_DN;
 			TimingReadRamp_DP   <= TimingReadRamp_DN;
 
-			CurrentReadColumnPositionSample_DP <= CurrentReadColumnPositionSample_DN;
-			CurrentReadColumnPositionRamp_DP   <= CurrentReadColumnPositionRamp_DN;
-			CurrentReadColumnPositionScan_DP   <= CurrentReadColumnPositionScan_DN;
-
 			ChipADCRampClear_SO   <= ChipADCRampClearReg_S;
 			ChipADCRampClock_CO   <= ChipADCRampClockReg_C;
 			ChipADCRampBitIn_SO   <= ChipADCRampBitInReg_S;
 			ChipADCScanClock_CO   <= ChipADCScanClockReg1_C or ChipADCScanClockReg2_C;
 			ChipADCScanControl_SO <= ChipADCScanControlReg_S;
-			ChipADCSample_SO      <= D4AAPSADCConfigReg_D.SampleEnable_S and ChipADCSampleReg_S;
+			ChipADCSample_SO      <= ChipADCSampleReg_S;
 		end if;
 	end process chipADCRegisterUpdate;
 
 	-- FIFO output can be driven by both the column or the row state machines.
 	-- Care must be taken to never have both at the same time output meaningful data.
-	OutFifoWriteReg_S      <= OutFifoWriteRegCol_S or OutFifoWriteRegRow_S;
-	OutFifoDataRegEnable_S <= OutFifoDataRegColEnable_S or OutFifoDataRegRowEnable_S;
-	OutFifoDataReg_D       <= OutFifoDataRegCol_D or OutFifoDataRegRow_D;
+	OutFifoWriteReg_S <= OutFifoWriteRegCol_S or OutFifoWriteRegRow_S;
+	OutFifoDataReg_D  <= OutFifoDataRegCol_D or OutFifoDataRegRow_D;
 
 	outputDataRegister : entity work.SimpleRegister
 		generic map(
@@ -2138,14 +1492,14 @@ begin
 		port map(
 			Clock_CI  => Clock_CI,
 			Reset_RI  => Reset_RI,
-			Enable_SI => OutFifoDataRegEnable_S,
+			Enable_SI => OutFifoWriteReg_S,
 			Input_SI  => OutFifoDataReg_D,
 			Output_SO => OutFifoData_DO);
 
 	-- Change state on clock edge (synchronous).
 	registerUpdate : process(Clock_CI, Reset_RI)
 	begin
-		if Reset_RI = '1' then          -- asynchronous reset (active-high for FPGAs)
+		if Reset_RI then                -- asynchronous reset (active-high for FPGAs)
 			ColState_DP <= stIdle;
 
 			RowReadInProgress_SP <= '0';
@@ -2156,8 +1510,6 @@ begin
 
 			OutFifoControl_SO.Write_S <= '0';
 
-			APSChipColSRClock_CO <= '0';
-			APSChipColSRIn_SO    <= '0';
 			APSChipRowSRClock_CO <= '0';
 			APSChipRowSRIn_SO    <= '0';
 
@@ -2186,8 +1538,6 @@ begin
 			-- BUT with this rotation, unlike the other chips, it also aligned its internal nomenclature
 			-- and renamed the signals accordingly. Since we use the legacy naming from DAVIS240 in the
 			-- APS ADC state-machines, we have to invert it here.
-			APSChipColSRClock_CO <= APSChipRowSRClockReg_C;
-			APSChipColSRIn_SO    <= APSChipRowSRInReg_S;
 			APSChipRowSRClock_CO <= APSChipColSRClockReg_C;
 			APSChipRowSRIn_SO    <= APSChipColSRInReg_S;
 
@@ -2197,7 +1547,7 @@ begin
 			APSChipGlobalShutterReg_SP <= APSChipGlobalShutterReg_SN;
 
 			-- APS ADC config from another clock domain.
-			if D4AAPSADCConfigRegEnable_S = '1' then
+			if D4AAPSADCConfigRegEnable_S then
 				D4AAPSADCConfigReg_D <= D4AAPSADCConfigSyncReg_D;
 			end if;
 			D4AAPSADCConfigSyncReg_D <= D4AAPSADCConfig_DI;
@@ -2206,8 +1556,8 @@ begin
 
 	-- The output of this register goes to an intermediate signal, since we need to access it
 	-- inside this module. That's not possible with 'out' signal directly.
-	APSChipOverflowGate_SO   <= APSChipOverflowGateReg_SP when (D4AAPSADCConfigReg_D.ADCTestMode_S = '0') else '1';
-	APSChipTXGate_SO         <= APSChipTXGateReg_SP when (D4AAPSADCConfigReg_D.ADCTestMode_S = '0') else '0';
-	APSChipReset_SO          <= APSChipResetReg_SP when (D4AAPSADCConfigReg_D.ADCTestMode_S = '0') else '1';
-	APSChipGlobalShutter_SBO <= not APSChipGlobalShutterReg_SP when (D4AAPSADCConfigReg_D.ADCTestMode_S = '0') else '0';
+	APSChipOverflowGate_SO   <= APSChipOverflowGateReg_SP;
+	APSChipTXGate_SO         <= APSChipTXGateReg_SP;
+	APSChipReset_SO          <= APSChipResetReg_SP;
+	APSChipGlobalShutter_SBO <= not APSChipGlobalShutterReg_SP;
 end architecture Behavioral;

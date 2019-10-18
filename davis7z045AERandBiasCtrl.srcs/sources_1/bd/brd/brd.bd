@@ -1083,7 +1083,7 @@
           <spirit:configurableElementValue spirit:referenceId="C_PROBE2_TYPE">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE0_TYPE">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_DATA_DEPTH">32768</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_NUM_OF_PROBES">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_NUM_OF_PROBES">4</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_MON_TYPE">NATIVE</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
@@ -1630,36 +1630,6 @@
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="SPI0_SS1_O"/>
         <spirit:internalPortReference spirit:componentRef="system_ila_1" spirit:portRef="probe2"/>
         <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="SPISlaveSelect_ABI"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>testAERDVSSM_0_SPIOutputSRegMode_D_Debug</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="SPIOutputSRegMode_D_Debug"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_1" spirit:portRef="probe4"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>testAERDVSSM_0_ParamOutput_DP_Debug</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="ParamOutput_DP_Debug"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_1" spirit:portRef="probe5"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>testAERDVSSM_0_SPIBitCount_D_Debug</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="SPIBitCount_D_Debug"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_1" spirit:portRef="probe6"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>testAERDVSSM_0_SPIInputSRegMode_D_Debug</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="SPIInputSRegMode_D_Debug"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_1" spirit:portRef="probe7"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>testAERDVSSM_0_ReadOperationReg_SP_Debug</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="ReadOperationReg_SP_Debug"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_1" spirit:portRef="probe8"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>testAERDVSSM_0_ConfigLatchInput_S_Debug</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="ConfigLatchInput_S_Debug"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_1" spirit:portRef="probe9"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

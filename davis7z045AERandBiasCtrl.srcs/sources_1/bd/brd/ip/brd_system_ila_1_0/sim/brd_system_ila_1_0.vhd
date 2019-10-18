@@ -59,13 +59,7 @@ ENTITY brd_system_ila_1_0 IS
     probe0 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     probe1 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     probe2 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    probe3 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    probe4 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-    probe5 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    probe6 : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-    probe7 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-    probe8 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    probe9 : IN STD_LOGIC_VECTOR(0 DOWNTO 0)
+    probe3 : IN STD_LOGIC_VECTOR(0 DOWNTO 0)
   );
 END brd_system_ila_1_0;
 
@@ -78,13 +72,7 @@ ARCHITECTURE brd_system_ila_1_0_arch OF brd_system_ila_1_0 IS
       probe0 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       probe1 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       probe2 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-      probe3 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-      probe4 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-      probe5 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      probe6 : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-      probe7 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-      probe8 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-      probe9 : IN STD_LOGIC_VECTOR(0 DOWNTO 0)
+      probe3 : IN STD_LOGIC_VECTOR(0 DOWNTO 0)
     );
   END COMPONENT bd_d3b5;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -98,12 +86,6 @@ BEGIN
       probe0 => probe0,
       probe1 => probe1,
       probe2 => probe2,
-      probe3 => probe3,
-      probe4 => probe4,
-      probe5 => probe5,
-      probe6 => probe6,
-      probe7 => probe7,
-      probe8 => probe8,
-      probe9 => probe9
+      probe3 => probe3
     );
 END brd_system_ila_1_0_arch;

@@ -7,13 +7,13 @@ use work.ChipGeometry.all;
 use work.DAVIS346b.all;
 
 package Settings is
-	constant DEVICE_FAMILY : string := "ECP3";
+	constant DEVICE_FAMILY : string := "Zynq7000";
 
 	constant USB_CLOCK_FREQ         : integer := 80; -- 50, 80 or 100 are viable settings, depending on FX3 and routing.
 	constant USB_FIFO_WIDTH         : integer := 16;
 	constant USB_BURST_WRITE_LENGTH : integer := 8;
 
-	constant LOGIC_CLOCK_FREQ : integer := 120; -- PLL can generate between 5 and 500 MHz here.
+	constant LOGIC_CLOCK_FREQ : integer := 100; -- PLL can generate between 5 and 500 MHz here.
 
 	constant ADC_CLOCK_FREQ : integer := 60;
 
@@ -43,7 +43,7 @@ package Settings is
 	constant EXT_INPUT_FIFO_ALMOST_EMPTY_SIZE : integer := 2;
 	constant EXT_INPUT_FIFO_ALMOST_FULL_SIZE  : integer := 2; -- FIFOOUT REG
 
-	constant LOGIC_VERSION : unsigned(13 downto 0) := to_unsigned(9912, 14);
+	constant LOGIC_VERSION : unsigned(13 downto 0) := to_unsigned(18, 14);
 
 	-- The idea behing common-source/ is to have generic implementations of features, that can
 	-- easily be adapted to a specific platform+chip combination. As such, only Settings.vhd and

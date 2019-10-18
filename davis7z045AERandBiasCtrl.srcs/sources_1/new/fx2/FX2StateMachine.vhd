@@ -1,8 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.math_real.ceil;
-use ieee.math_real.log2;
+use work.Functions.SizeCountNTimes;
 use work.Settings.USB_BURST_WRITE_LENGTH;
 use work.FIFORecords.all;
 use work.FX2ConfigRecords.all;
@@ -39,7 +38,7 @@ architecture Behavioral of FX2Statemachine is
 
 	-- number of intermediate writes to perform
 	constant USB_BURST_WRITE_CYCLES : integer := USB_BURST_WRITE_LENGTH - 2;
-	constant USB_BURST_WRITE_WIDTH  : integer := integer(ceil(log2(real(USB_BURST_WRITE_CYCLES))));
+	constant USB_BURST_WRITE_WIDTH  : integer := SizeCountNTimes(USB_BURST_WRITE_CYCLES);
 
 	-- write burst counter
 	signal CyclesCount_S, CyclesNotify_S : std_logic;
@@ -100,7 +99,8 @@ begin
 			-- those supplementary states, since by switching between two
 			-- threads, there is no case in which it fills a buffer and queries
 			-- its state within the problematic time-frame, which on the other
-			-- hand is the case for the FX2, as it does no switching.
+			-- hand is the case for the FX2, as it does no switching because there
+			-- is only one buffer/thread.
 			when stFullFlagWait1 =>
 				State_DN <= stFullFlagWait2;
 
@@ -108,17 +108,17 @@ begin
 				State_DN <= stIdle;
 
 			when stIdle =>
-				if FX2ConfigReg_D.Run_S = '1' then
-					if USBFifoEP2Full_SI = '0' then
-						if EarlyPacketNotify_S = '1' then
+				if FX2ConfigReg_D.Run_S then
+					if not USBFifoEP2Full_SI then
+						if EarlyPacketNotify_S then
 							State_DN <= stPrepareEarlyPacket;
-						elsif InFifoControl_SI.AlmostEmpty_S = '0' then
+						elsif not InFifoControl_SI.AlmostEmpty_S then
 							State_DN <= stPrepareWrite;
 						end if;
 					end if;
 				else
 					-- If not running, just drain the FIFO.
-					if InFifoControl_SI.Empty_S = '0' then
+					if not InFifoControl_SI.Empty_S then
 						InFifoControl_SO.Read_S <= '1';
 					end if;
 
@@ -130,7 +130,7 @@ begin
 				State_DN <= stEarlyPacket;
 
 				-- If available, read one element more and then send off the short packet.
-				if InFifoControl_SI.Empty_S = '0' then
+				if not InFifoControl_SI.Empty_S then
 					InFifoControl_SO.Read_S <= '1';
 					USBFifoWriteReg_SB      <= '0';
 				end if;
@@ -146,7 +146,7 @@ begin
 				USBFifoWriteReg_SB      <= '0';
 
 			when stWriteFirst =>
-				if USBFifoEP2AlmostFull_SI = '1' then
+				if USBFifoEP2AlmostFull_SI then
 					State_DN <= stPrepareSwitch;
 				else
 					State_DN <= stWriteMiddle;
@@ -156,7 +156,7 @@ begin
 				USBFifoWriteReg_SB      <= '0';
 
 			when stWriteMiddle =>
-				if CyclesNotify_S = '1' then
+				if CyclesNotify_S then
 					State_DN <= stWriteLast;
 				end if;
 
@@ -166,7 +166,7 @@ begin
 				USBFifoWriteReg_SB      <= '0';
 
 			when stWriteLast =>
-				if InFifoControl_SI.AlmostEmpty_S = '1' then
+				if InFifoControl_SI.AlmostEmpty_S or not FX2ConfigReg_D.Run_S then
 					State_DN <= stIdle;
 				else
 					State_DN                <= stWriteFirst;
@@ -175,7 +175,7 @@ begin
 				end if;
 
 			when stPrepareSwitch =>
-				if CyclesNotify_S = '1' then
+				if CyclesNotify_S then
 					State_DN <= stSwitch;
 				end if;
 
@@ -195,7 +195,7 @@ begin
 	-- Change state on clock edge (synchronous).
 	p_memoryzing : process(Clock_CI, Reset_RI)
 	begin
-		if Reset_RI = '1' then          -- asynchronous reset (active-high for FPGAs)
+		if Reset_RI then                -- asynchronous reset (active-high for FPGAs)
 			State_DP          <= stIdle;
 			USBFifoWrite_SBO  <= '1';
 			USBFifoPktEnd_SBO <= '1';

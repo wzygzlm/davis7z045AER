@@ -1,8 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.math_real.ceil;
-use ieee.math_real.log2;
+use work.Functions.SizeCountNTimes;
 use work.EventCodes.all;
 use work.Settings.CHIP_DVS_SIZE_ROWS;
 use work.Settings.CHIP_DVS_SIZE_COLUMNS;
@@ -34,8 +33,8 @@ architecture Behavioral of DVSSerialToParallel is
 	attribute syn_enum_encoding of tState : type is "onehot";
 
 	-- Bits needed for each address.
-	constant DVS_ROW_ADDRESS_WIDTH    : integer := integer(ceil(log2(real(to_integer(CHIP_DVS_SIZE_ROWS)))));
-	constant DVS_COLUMN_ADDRESS_WIDTH : integer := integer(ceil(log2(real(to_integer(CHIP_DVS_SIZE_COLUMNS)))));
+	constant DVS_ROW_ADDRESS_WIDTH    : integer := SizeCountNTimes(CHIP_DVS_SIZE_ROWS);
+	constant DVS_COLUMN_ADDRESS_WIDTH : integer := SizeCountNTimes(CHIP_DVS_SIZE_COLUMNS);
 
 	signal State_DP, State_DN : tState;
 	signal LastY_DP, LastY_DN : unsigned(DVS_ROW_ADDRESS_WIDTH - 1 downto 0);
@@ -54,7 +53,7 @@ begin                                   -- architecture Behavioral
 
 		case State_DP is
 			when stIdle =>
-				if DVSAERFifoControl_SI.Empty_S = '0' then
+				if not DVSAERFifoControl_SI.Empty_S then
 					State_DN <= stReadOut;
 				end if;
 
@@ -64,6 +63,7 @@ begin                                   -- architecture Behavioral
 				else
 					-- Valid, X, Y, Polarity.
 					DVSAERParallelValid_SO <= '1';
+
 					if CHIP_DVS_AXES_INVERT = AXES_KEEP then
 						DVSAERParallelColumn_DO(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0) <= unsigned(DVSAERFifoData_DI(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0));
 						DVSAERParallelRow_DO(DVS_ROW_ADDRESS_WIDTH - 1 downto 0)       <= LastY_DP;
@@ -72,6 +72,7 @@ begin                                   -- architecture Behavioral
 						DVSAERParallelRow_DO(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0) <= unsigned(DVSAERFifoData_DI(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0));
 						DVSAERParallelColumn_DO(DVS_ROW_ADDRESS_WIDTH - 1 downto 0) <= LastY_DP;
 					end if;
+
 					DVSAERParallelPolarity_SO <= DVSAERFifoData_DI(12);
 				end if;
 
@@ -85,7 +86,7 @@ begin                                   -- architecture Behavioral
 
 	dvsSerialToParallelRegUpdate : process(Clock_CI, Reset_RI) is
 	begin
-		if Reset_RI = '1' then
+		if Reset_RI then
 			State_DP <= stIdle;
 			LastY_DP <= (others => '0');
 		elsif rising_edge(Clock_CI) then

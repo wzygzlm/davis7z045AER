@@ -93,5 +93,3 @@ begin
         );
 	OutClock_CO <= OutClock_C;
 end architecture Structural;
-
-

@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Fri Oct 18 11:06:05 2019
+-- Date        : Fri Oct 18 20:29:47 2019
 -- Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               E:/PhD_project/vivado_prjs/davisZynq/davis7z045AERandBiasCtrl/davis7z045AERandBiasCtrl.srcs/sources_1/bd/brd/ip/brd_testAERDVSSM_0_0/brd_testAERDVSSM_0_0_stub.vhdl
@@ -22,12 +22,6 @@ entity brd_testAERDVSSM_0_0 is
     SPIClock_AI : in STD_LOGIC;
     SPIMOSI_AI : in STD_LOGIC;
     SPIMISO_DZO : out STD_LOGIC;
-    SPIOutputSRegMode_D_Debug : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    SPIInputSRegMode_D_Debug : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    ParamOutput_DP_Debug : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    SPIBitCount_D_Debug : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    ReadOperationReg_SP_Debug : out STD_LOGIC;
-    ConfigLatchInput_S_Debug : out STD_LOGIC;
     ChipBiasEnable_SO : out STD_LOGIC;
     ChipBiasDiagSelect_SO : out STD_LOGIC;
     ChipBiasAddrSelect_SBO : out STD_LOGIC;
@@ -60,7 +54,7 @@ architecture stub of brd_testAERDVSSM_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "USBClock_CI,LogicClk_CI,ADCClk_CI,Reset_RI,SPISlaveSelect_ABI,SPIClock_AI,SPIMOSI_AI,SPIMISO_DZO,SPIOutputSRegMode_D_Debug[2:0],SPIInputSRegMode_D_Debug[2:0],ParamOutput_DP_Debug[31:0],SPIBitCount_D_Debug[5:0],ReadOperationReg_SP_Debug,ConfigLatchInput_S_Debug,ChipBiasEnable_SO,ChipBiasDiagSelect_SO,ChipBiasAddrSelect_SBO,ChipBiasClock_CBO,ChipBiasBitIn_DO,ChipBiasLatch_SBO,DVSAERData_AI[10:0],DVSAERReq_ABI,DVSAERAck_SBO,DVSAERReset_SBO,IMUClock_CZO,IMUData_DZIO,IMUInterrupt_AI,IMUFSync_SO,SyncOutClock_CO,SyncOutSignal_SO,SyncInClock_AI,SyncInSignal_AI,SyncInSignal1_AI,SyncInSignal2_AI,AERSMFifoAlmostFull_AI,AERSMFifoFull_AI,AERSMOutFifoWrite_SO,AERSMOutFifoData_DO[15:0]";
+attribute black_box_pad_pin of stub : architecture is "USBClock_CI,LogicClk_CI,ADCClk_CI,Reset_RI,SPISlaveSelect_ABI,SPIClock_AI,SPIMOSI_AI,SPIMISO_DZO,ChipBiasEnable_SO,ChipBiasDiagSelect_SO,ChipBiasAddrSelect_SBO,ChipBiasClock_CBO,ChipBiasBitIn_DO,ChipBiasLatch_SBO,DVSAERData_AI[10:0],DVSAERReq_ABI,DVSAERAck_SBO,DVSAERReset_SBO,IMUClock_CZO,IMUData_DZIO,IMUInterrupt_AI,IMUFSync_SO,SyncOutClock_CO,SyncOutSignal_SO,SyncInClock_AI,SyncInSignal_AI,SyncInSignal1_AI,SyncInSignal2_AI,AERSMFifoAlmostFull_AI,AERSMFifoFull_AI,AERSMOutFifoWrite_SO,AERSMOutFifoData_DO[15:0]";
 attribute x_core_info : string;
 attribute x_core_info of stub : architecture is "testAERDVSSM,Vivado 2018.1";
 begin

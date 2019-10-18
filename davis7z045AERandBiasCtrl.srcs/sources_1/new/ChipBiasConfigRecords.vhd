@@ -19,25 +19,33 @@ package ChipBiasConfigRecords is
 
 	type tChipBiasGenericConfigParamAddresses is record
 		Bias_D      : unsigned(7 downto 0);
+		BiasWrite_S : unsigned(7 downto 0);
 		ChipLower_D : unsigned(7 downto 0);
 		ChipUpper_D : unsigned(7 downto 0);
+		ChipWrite_S : unsigned(7 downto 0);
 	end record tChipBiasGenericConfigParamAddresses;
 
 	constant CHIPBIAS_GENERIC_CONFIG_PARAM_ADDRESSES : tChipBiasGenericConfigParamAddresses := (
 		Bias_D      => to_unsigned(0, 8),
-		ChipLower_D => to_unsigned(1, 8),
-		ChipUpper_D => to_unsigned(2, 8));
+		BiasWrite_S => to_unsigned(1, 8),
+		ChipLower_D => to_unsigned(2, 8),
+		ChipUpper_D => to_unsigned(3, 8),
+		ChipWrite_S => to_unsigned(4, 8));
 
 	type tChipBiasGenericConfig is record
 		Bias_D      : std_logic_vector(BIASADDR_REG_LENGTH + BIAS_REG_LENGTH - 1 downto 0);
+		BiasWrite_S : std_logic;
 		ChipLower_D : std_logic_vector(32 - 1 downto 0);
 		ChipUpper_D : std_logic_vector(CHIP_REG_LENGTH_DEFAULT - 32 - 1 downto 0);
+		ChipWrite_S : std_logic;
 	end record tChipBiasGenericConfig;
 
 	constant tChipBiasGenericConfigDefault : tChipBiasGenericConfig := (
 		Bias_D      => (others => '0'),
+		BiasWrite_S => '0',
 		ChipLower_D => (others => '0'),
-		ChipUpper_D => (others => '0'));
+		ChipUpper_D => (others => '0'),
+		ChipWrite_S => '0');
 
 	function BiasGenerateCoarseFine(CFBIAS : in std_logic_vector(BIAS_CF_LENGTH - 1 downto 0)) return std_logic_vector;
 

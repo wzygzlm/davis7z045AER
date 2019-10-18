@@ -31,8 +31,8 @@ architecture Behavioral of DAVIS346StateMachine is
 	attribute syn_enum_encoding : string;
 
 	type tState is (stIdle, stAckAndLoadBias0, stAckAndLoadBias1, stAckAndLoadBias2, stAckAndLoadBias3, stAckAndLoadBias4, stAckAndLoadBias8, stAckAndLoadBias9, stAckAndLoadBias10, stAckAndLoadBias11, stAckAndLoadBias12, stAckAndLoadBias13, stAckAndLoadBias14, stAckAndLoadBias15, stAckAndLoadBias16,
-		            stAckAndLoadBias17, stAckAndLoadBias18, stAckAndLoadBias19, stAckAndLoadBias20, stAckAndLoadBias21, stAckAndLoadBias22, stAckAndLoadBias23, stAckAndLoadBias24, stAckAndLoadBias25, stAckAndLoadBias26, stAckAndLoadBias27, stAckAndLoadBias34, stAckAndLoadBias35, stAckAndLoadBias36,
-		            stPrepareSendBiasAddress, stSendBiasAddress, stPrepareSendBias, stSendBias, stAckAndLoadChip, stPrepareSendChip, stSendChip, stLatchBiasAddress, stLatchBias, stLatchChip, stEndChip, stDelay);
+	                stAckAndLoadBias17, stAckAndLoadBias18, stAckAndLoadBias19, stAckAndLoadBias20, stAckAndLoadBias21, stAckAndLoadBias22, stAckAndLoadBias23, stAckAndLoadBias24, stAckAndLoadBias25, stAckAndLoadBias26, stAckAndLoadBias27, stAckAndLoadBias34, stAckAndLoadBias35, stAckAndLoadBias36,
+	                stPrepareSendBiasAddress, stSendBiasAddress, stPrepareSendBias, stSendBias, stAckAndLoadChip, stPrepareSendChip, stSendChip, stLatchBiasAddress, stLatchBias, stLatchChip, stEndChip, stDelay);
 	attribute syn_enum_encoding of tState : type is "onehot";
 
 	signal State_DP, State_DN : tState;
@@ -1272,7 +1272,7 @@ begin
 	-- Put all chip register configuration parameters together, and then detect changes
 	-- on the whole lot of them. This is easier to handle and slightly more efficient.
 	ChipChangedInput_D <= std_logic_vector(ChipConfigReg_D.DigitalMux0_D) & std_logic_vector(ChipConfigReg_D.DigitalMux1_D) & std_logic_vector(ChipConfigReg_D.DigitalMux2_D) & std_logic_vector(ChipConfigReg_D.DigitalMux3_D) & std_logic_vector(ChipConfigReg_D.AnalogMux0_D) & std_logic_vector(
-			ChipConfigReg_D.AnalogMux1_D) & std_logic_vector(ChipConfigReg_D.AnalogMux2_D) & std_logic_vector(ChipConfigReg_D.BiasMux0_D) & ChipConfigReg_D.ResetCalibNeuron_S & ChipConfigReg_D.TypeNCalibNeuron_S & ChipConfigReg_D.ResetTestPixel_S & ChipConfigReg_D.AERnArow_S & ChipConfigReg_D.UseAOut_S
+		ChipConfigReg_D.AnalogMux1_D) & std_logic_vector(ChipConfigReg_D.AnalogMux2_D) & std_logic_vector(ChipConfigReg_D.BiasMux0_D) & ChipConfigReg_D.ResetCalibNeuron_S & ChipConfigReg_D.TypeNCalibNeuron_S & ChipConfigReg_D.ResetTestPixel_S & ChipConfigReg_D.AERnArow_S & ChipConfigReg_D.UseAOut_S
 		& ChipConfigReg_D.GlobalShutter_S & ChipConfigReg_D.TestADC_S & ChipConfigReg_D.SelectGrayCounter_S;
 
 	detectChipChange : entity work.ChangeDetector

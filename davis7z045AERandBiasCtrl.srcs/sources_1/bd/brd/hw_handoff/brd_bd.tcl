@@ -1094,10 +1094,10 @@ proc create_root_design { parentCell } {
   # Create instance: system_ila_1, and set properties
   set system_ila_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_1 ]
   set_property -dict [ list \
-   CONFIG.C_BRAM_CNT {9} \
+   CONFIG.C_BRAM_CNT {4} \
    CONFIG.C_DATA_DEPTH {32768} \
    CONFIG.C_MON_TYPE {NATIVE} \
-   CONFIG.C_NUM_OF_PROBES {10} \
+   CONFIG.C_NUM_OF_PROBES {4} \
    CONFIG.C_PROBE0_TYPE {0} \
    CONFIG.C_PROBE2_TYPE {0} \
  ] $system_ila_1
@@ -1251,17 +1251,11 @@ HDL_ATTRIBUTE.DEBUG {true} \
   connect_bd_net -net testAERDVSSM_0_ChipBiasDiagSelect_SO [get_bd_ports ChipBiasDiagSelect_SO_0] [get_bd_pins testAERDVSSM_0/ChipBiasDiagSelect_SO]
   connect_bd_net -net testAERDVSSM_0_ChipBiasEnable_SO [get_bd_ports ChipBiasEnable_SO_0] [get_bd_pins testAERDVSSM_0/ChipBiasEnable_SO]
   connect_bd_net -net testAERDVSSM_0_ChipBiasLatch_SBO [get_bd_ports ChipBiasLatch_SBO_0] [get_bd_pins testAERDVSSM_0/ChipBiasLatch_SBO]
-  connect_bd_net -net testAERDVSSM_0_ConfigLatchInput_S_Debug [get_bd_pins system_ila_1/probe9] [get_bd_pins testAERDVSSM_0/ConfigLatchInput_S_Debug]
   connect_bd_net -net testAERDVSSM_0_DVSAERAck_SBO [get_bd_ports DVSAERAck_SBO_0] [get_bd_pins testAERDVSSM_0/DVSAERAck_SBO]
   connect_bd_net -net testAERDVSSM_0_DVSAERReset_SBO [get_bd_ports DVSAERReset_SBO_0] [get_bd_pins testAERDVSSM_0/DVSAERReset_SBO]
   connect_bd_net -net testAERDVSSM_0_IMUClock_CZO [get_bd_ports IMUClock_CZO_0] [get_bd_pins testAERDVSSM_0/IMUClock_CZO]
   connect_bd_net -net testAERDVSSM_0_IMUFSync_SO [get_bd_ports IMUFSync_SO_0] [get_bd_pins testAERDVSSM_0/IMUFSync_SO]
-  connect_bd_net -net testAERDVSSM_0_ParamOutput_DP_Debug [get_bd_pins system_ila_1/probe5] [get_bd_pins testAERDVSSM_0/ParamOutput_DP_Debug]
-  connect_bd_net -net testAERDVSSM_0_ReadOperationReg_SP_Debug [get_bd_pins system_ila_1/probe8] [get_bd_pins testAERDVSSM_0/ReadOperationReg_SP_Debug]
-  connect_bd_net -net testAERDVSSM_0_SPIBitCount_D_Debug [get_bd_pins system_ila_1/probe6] [get_bd_pins testAERDVSSM_0/SPIBitCount_D_Debug]
-  connect_bd_net -net testAERDVSSM_0_SPIInputSRegMode_D_Debug [get_bd_pins system_ila_1/probe7] [get_bd_pins testAERDVSSM_0/SPIInputSRegMode_D_Debug]
   connect_bd_net -net testAERDVSSM_0_SPIMISO_DZO [get_bd_pins processing_system7_0/SPI0_MISO_I] [get_bd_pins system_ila_1/probe3] [get_bd_pins testAERDVSSM_0/SPIMISO_DZO]
-  connect_bd_net -net testAERDVSSM_0_SPIOutputSRegMode_D_Debug [get_bd_pins system_ila_1/probe4] [get_bd_pins testAERDVSSM_0/SPIOutputSRegMode_D_Debug]
   connect_bd_net -net testAERDVSSM_0_SyncOutClock_CO [get_bd_ports SyncOutClock_CO_0] [get_bd_pins testAERDVSSM_0/SyncOutClock_CO]
   connect_bd_net -net testAERDVSSM_0_SyncOutSignal_SO [get_bd_ports SyncOutSignal_SO_0] [get_bd_pins testAERDVSSM_0/SyncOutSignal_SO]
   connect_bd_net -net tsStreamOut_V_V_TDATA [get_bd_pins EVRawStreamToXYTSStr_0/tsStreamOut_V_V_TDATA]

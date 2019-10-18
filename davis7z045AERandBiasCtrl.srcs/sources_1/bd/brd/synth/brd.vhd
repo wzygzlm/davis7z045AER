@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
---Date        : Fri Oct 18 11:03:56 2019
+--Date        : Fri Oct 18 20:27:45 2019
 --Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 --Command     : generate_target brd.bd
 --Design      : brd
@@ -1663,13 +1663,7 @@ architecture STRUCTURE of brd is
     probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe4 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe5 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    probe7 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe8 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe9 : in STD_LOGIC_VECTOR ( 0 to 0 )
+    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component brd_system_ila_1_0;
   component brd_testAERDVSSM_0_0 is
@@ -1682,12 +1676,6 @@ architecture STRUCTURE of brd is
     SPIClock_AI : in STD_LOGIC;
     SPIMOSI_AI : in STD_LOGIC;
     SPIMISO_DZO : out STD_LOGIC;
-    SPIOutputSRegMode_D_Debug : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    SPIInputSRegMode_D_Debug : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    ParamOutput_DP_Debug : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    SPIBitCount_D_Debug : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    ReadOperationReg_SP_Debug : out STD_LOGIC;
-    ConfigLatchInput_S_Debug : out STD_LOGIC;
     ChipBiasEnable_SO : out STD_LOGIC;
     ChipBiasDiagSelect_SO : out STD_LOGIC;
     ChipBiasAddrSelect_SBO : out STD_LOGIC;
@@ -1984,17 +1972,11 @@ architecture STRUCTURE of brd is
   signal testAERDVSSM_0_ChipBiasDiagSelect_SO : STD_LOGIC;
   signal testAERDVSSM_0_ChipBiasEnable_SO : STD_LOGIC;
   signal testAERDVSSM_0_ChipBiasLatch_SBO : STD_LOGIC;
-  signal testAERDVSSM_0_ConfigLatchInput_S_Debug : STD_LOGIC;
   signal testAERDVSSM_0_DVSAERAck_SBO : STD_LOGIC;
   signal testAERDVSSM_0_DVSAERReset_SBO : STD_LOGIC;
   signal testAERDVSSM_0_IMUClock_CZO : STD_LOGIC;
   signal testAERDVSSM_0_IMUFSync_SO : STD_LOGIC;
-  signal testAERDVSSM_0_ParamOutput_DP_Debug : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal testAERDVSSM_0_ReadOperationReg_SP_Debug : STD_LOGIC;
-  signal testAERDVSSM_0_SPIBitCount_D_Debug : STD_LOGIC_VECTOR ( 5 downto 0 );
-  signal testAERDVSSM_0_SPIInputSRegMode_D_Debug : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal testAERDVSSM_0_SPIMISO_DZO : STD_LOGIC;
-  signal testAERDVSSM_0_SPIOutputSRegMode_D_Debug : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal testAERDVSSM_0_SyncOutClock_CO : STD_LOGIC;
   signal testAERDVSSM_0_SyncOutSignal_SO : STD_LOGIC;
   signal tsStreamOut_V_V_TDATA : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -2653,13 +2635,7 @@ system_ila_1: component brd_system_ila_1_0
       probe0(0) => processing_system7_0_SPI0_SCLK_O,
       probe1(0) => processing_system7_0_SPI0_MOSI_O,
       probe2(0) => processing_system7_0_SPI0_SS1_O,
-      probe3(0) => testAERDVSSM_0_SPIMISO_DZO,
-      probe4(2 downto 0) => testAERDVSSM_0_SPIOutputSRegMode_D_Debug(2 downto 0),
-      probe5(31 downto 0) => testAERDVSSM_0_ParamOutput_DP_Debug(31 downto 0),
-      probe6(5 downto 0) => testAERDVSSM_0_SPIBitCount_D_Debug(5 downto 0),
-      probe7(2 downto 0) => testAERDVSSM_0_SPIInputSRegMode_D_Debug(2 downto 0),
-      probe8(0) => testAERDVSSM_0_ReadOperationReg_SP_Debug,
-      probe9(0) => testAERDVSSM_0_ConfigLatchInput_S_Debug
+      probe3(0) => testAERDVSSM_0_SPIMISO_DZO
     );
 testAERDVSSM_0: component brd_testAERDVSSM_0_0
      port map (
@@ -2674,7 +2650,6 @@ testAERDVSSM_0: component brd_testAERDVSSM_0_0
       ChipBiasDiagSelect_SO => testAERDVSSM_0_ChipBiasDiagSelect_SO,
       ChipBiasEnable_SO => testAERDVSSM_0_ChipBiasEnable_SO,
       ChipBiasLatch_SBO => testAERDVSSM_0_ChipBiasLatch_SBO,
-      ConfigLatchInput_S_Debug => testAERDVSSM_0_ConfigLatchInput_S_Debug,
       DVSAERAck_SBO => testAERDVSSM_0_DVSAERAck_SBO,
       DVSAERData_AI(10 downto 0) => DVSAERData_AI_0_1(10 downto 0),
       DVSAERReq_ABI => DVSAERReq_ABI_0_1,
@@ -2684,15 +2659,10 @@ testAERDVSSM_0: component brd_testAERDVSSM_0_0
       IMUFSync_SO => testAERDVSSM_0_IMUFSync_SO,
       IMUInterrupt_AI => IMUInterrupt_AI_0_1,
       LogicClk_CI => processing_system7_0_FCLK_CLK0,
-      ParamOutput_DP_Debug(31 downto 0) => testAERDVSSM_0_ParamOutput_DP_Debug(31 downto 0),
-      ReadOperationReg_SP_Debug => testAERDVSSM_0_ReadOperationReg_SP_Debug,
       Reset_RI => xlslice_0_Dout(0),
-      SPIBitCount_D_Debug(5 downto 0) => testAERDVSSM_0_SPIBitCount_D_Debug(5 downto 0),
       SPIClock_AI => processing_system7_0_SPI0_SCLK_O,
-      SPIInputSRegMode_D_Debug(2 downto 0) => testAERDVSSM_0_SPIInputSRegMode_D_Debug(2 downto 0),
       SPIMISO_DZO => testAERDVSSM_0_SPIMISO_DZO,
       SPIMOSI_AI => processing_system7_0_SPI0_MOSI_O,
-      SPIOutputSRegMode_D_Debug(2 downto 0) => testAERDVSSM_0_SPIOutputSRegMode_D_Debug(2 downto 0),
       SPISlaveSelect_ABI => processing_system7_0_SPI0_SS1_O,
       SyncInClock_AI => SyncInClock_AI_0_1,
       SyncInSignal1_AI => SyncInSignal1_AI_0_1,

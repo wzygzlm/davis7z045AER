@@ -14,12 +14,6 @@ entity SPIConfig is
 		SPIMOSI_DI             : in  std_logic;
 		SPIMISO_DZO            : out std_logic;
 
-        SPIOutputSRegMode_D_Debug : out std_logic_vector(SHIFTREGISTER_MODE_SIZE - 1 downto 0);
-        SPIInputSRegMode_D_Debug : out std_logic_vector(SHIFTREGISTER_MODE_SIZE - 1 downto 0);
-        ParamOutput_DP_Debug   : out std_logic_vector(31 downto 0);
-        SPIBitCount_D_Debug : out unsigned(5 downto 0);
-        ReadOperationReg_SP_Debug : out std_logic;
-
 		-- Configuration inputs and outputs
 		ConfigModuleAddress_DO : out unsigned(6 downto 0);
 		ConfigParamAddress_DO  : out unsigned(7 downto 0);
@@ -69,12 +63,6 @@ begin
 	ConfigLatchInput_SO    <= LatchInputReg_SP;
 	ParamOutput_DN         <= ConfigParamOutput_DI;
 
-	ReadOperationReg_SP_Debug    <= ReadOperationReg_SP;
-    SPIInputSRegMode_D_Debug <= SPIInputSRegMode_S;
-    SPIOutputSRegMode_D_Debug <= SPIOutputSRegMode_S;
-	ParamOutput_DP_Debug <= ParamOutput_DP;
-	SPIBitCount_D_Debug <= SPIBitCount_D;
-    
 	-- The SPI input lines have already been synchronized to the logic clock at
 	-- this point, so we can use and sample them directly.
 	-- We need to watch falling edges on SPI SlaveSelect to robustly detect when

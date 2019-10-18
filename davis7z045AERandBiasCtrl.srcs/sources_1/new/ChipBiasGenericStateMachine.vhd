@@ -5,7 +5,7 @@ use ieee.math_real.ceil;
 use ieee.math_real.log2;
 use work.ShiftRegisterModes.all;
 use work.Functions.BooleanToStdLogic;
-use work.Settings.LOGIC_CLOCK_FREQ_REAL;
+use work.Settings.LOGIC_CLOCK_FREQ;
 use work.ChipBiasConfigRecords.all;
 
 -- This is a minimal, generic bias and chip configuration state machine for
@@ -52,7 +52,7 @@ architecture Behavioral of ChipBiasGenericStateMachine is
 	constant LATCH_LENGTH : integer := 10;
 
 	-- Calculated values in cycles.
-	constant BIAS_CLOCK_CYCLES : integer := integer((LOGIC_CLOCK_FREQ_REAL * 1000.0) / BIAS_CLOCK_FREQ);
+	constant BIAS_CLOCK_CYCLES : integer := integer((LOGIC_CLOCK_FREQ * 1000.0) / BIAS_CLOCK_FREQ);
 	constant LATCH_CYCLES      : integer := BIAS_CLOCK_CYCLES * LATCH_LENGTH;
 
 	-- Calcualted length of cycles counter. Based on latch cycles, since biggest value.
@@ -82,10 +82,10 @@ architecture Behavioral of ChipBiasGenericStateMachine is
 	-- Register configuration inputs.
 	signal LatchConfigReg_S                           : std_logic;
 	signal ChipBiasConfigReg_DP, ChipBiasConfigReg_DN : tChipBiasGenericConfig;
+	signal ChipBiasConfig_D                           : tChipBiasGenericConfig;
 
-	signal ConfigWritten_S  : std_logic;
-	signal BiasWritten_S    : std_logic;
-	signal ChipBiasConfig_D : tChipBiasGenericConfig;
+	signal BiasWriteOut_S : std_logic;
+	signal ChipWriteOut_S : std_logic;
 
 	-- Register all outputs.
 	signal ChipBiasDiagSelectReg_S  : std_logic;
@@ -94,7 +94,7 @@ architecture Behavioral of ChipBiasGenericStateMachine is
 	signal ChipBiasBitInReg_D       : std_logic;
 	signal ChipBiasLatchReg_SB      : std_logic;
 begin
-	biasSM : process(State_DP, BiasAddrSROutput_D, BiasSROutput_D, ChipSROutput_D, SentBitsCounterData_D, WaitCyclesCounterData_D, BiasWritten_S, ConfigWritten_S)
+	biasSM : process(State_DP, BiasAddrSROutput_D, BiasSROutput_D, ChipSROutput_D, SentBitsCounterData_D, WaitCyclesCounterData_D, BiasWriteOut_S, ChipWriteOut_S)
 	begin
 		-- Keep state by default.
 		State_DN <= State_DP;
@@ -118,12 +118,10 @@ begin
 
 		case State_DP is
 			when stIdle =>
-				if ConfigWritten_S = '1' then
-					if BiasWritten_S = '1' then
-						State_DN <= stPrepareSendBiasAddress;
-					else
-						State_DN <= stPrepareSendChip;
-					end if;
+				if BiasWriteOut_S = '1' then
+					State_DN <= stPrepareSendBiasAddress;
+				elsif ChipWriteOut_S = '1' then
+					State_DN <= stPrepareSendChip;
 				end if;
 
 			when stPrepareSendBiasAddress =>
@@ -371,11 +369,17 @@ begin
 			when CHIPBIAS_GENERIC_CONFIG_PARAM_ADDRESSES.Bias_D =>
 				ChipBiasConfigReg_DN.Bias_D <= ConfigParamInput_DI(tChipBiasGenericConfig.Bias_D'range);
 
+			when CHIPBIAS_GENERIC_CONFIG_PARAM_ADDRESSES.BiasWrite_S =>
+				ChipBiasConfigReg_DN.BiasWrite_S <= ConfigParamInput_DI(0);
+
 			when CHIPBIAS_GENERIC_CONFIG_PARAM_ADDRESSES.ChipLower_D =>
 				ChipBiasConfigReg_DN.ChipLower_D <= ConfigParamInput_DI(tChipBiasGenericConfig.ChipLower_D'range);
 
 			when CHIPBIAS_GENERIC_CONFIG_PARAM_ADDRESSES.ChipUpper_D =>
 				ChipBiasConfigReg_DN.ChipUpper_D <= ConfigParamInput_DI(tChipBiasGenericConfig.ChipUpper_D'range);
+
+			when CHIPBIAS_GENERIC_CONFIG_PARAM_ADDRESSES.ChipWrite_S =>
+				ChipBiasConfigReg_DN.ChipWrite_S <= ConfigParamInput_DI(0);
 
 			when others => null;
 		end case;
@@ -434,6 +438,22 @@ begin
 			ParallelWrite_DI => ChipBiasConfig_D.ChipUpper_D & ChipBiasConfig_D.ChipLower_D,
 			ParallelRead_DO  => ChipSROutput_D);
 
+	biasWriteCommand : entity work.EdgeDetector
+		port map(
+			Clock_CI               => Clock_CI,
+			Reset_RI               => Reset_RI,
+			InputSignal_SI         => ChipBiasConfig_D.BiasWrite_S,
+			RisingEdgeDetected_SO  => open,
+			FallingEdgeDetected_SO => BiasWriteOut_S);
+
+	chipWriteCommand : entity work.EdgeDetector
+		port map(
+			Clock_CI               => Clock_CI,
+			Reset_RI               => Reset_RI,
+			InputSignal_SI         => ChipBiasConfig_D.ChipWrite_S,
+			RisingEdgeDetected_SO  => open,
+			FallingEdgeDetected_SO => ChipWriteOut_S);
+
 	regUpdate : process(Clock_CI, Reset_RI) is
 	begin
 		if Reset_RI = '1' then
@@ -441,9 +461,6 @@ begin
 
 			ChipBiasConfigReg_DP <= tChipBiasGenericConfigDefault;
 			ChipBiasConfig_D     <= tChipBiasGenericConfigDefault;
-
-			ConfigWritten_S <= '0';
-			BiasWritten_S   <= '0';
 
 			ChipBiasDiagSelect_SO  <= '0';
 			ChipBiasAddrSelect_SBO <= '1';
@@ -457,9 +474,6 @@ begin
 				ChipBiasConfigReg_DP <= ChipBiasConfigReg_DN;
 			end if;
 			ChipBiasConfig_D <= ChipBiasConfigReg_DP;
-
-			ConfigWritten_S <= LatchConfigReg_S and not BooleanToStdLogic(ConfigParamAddress_DI = CHIPBIAS_GENERIC_CONFIG_PARAM_ADDRESSES.ChipLower_D);
-			BiasWritten_S   <= BooleanToStdLogic(ConfigParamAddress_DI = CHIPBIAS_GENERIC_CONFIG_PARAM_ADDRESSES.Bias_D);
 
 			ChipBiasDiagSelect_SO  <= ChipBiasDiagSelectReg_S;
 			ChipBiasAddrSelect_SBO <= ChipBiasAddrSelectReg_SB;
