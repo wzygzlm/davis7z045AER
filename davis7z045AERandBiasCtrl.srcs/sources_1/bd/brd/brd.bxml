@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="35">
   <CompositeFile CompositeFileTopName="brd" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1571423282"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1571423282"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1571423282"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1571423282"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1571425780"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1571425780"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1571425780"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1571425780"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\brd_EVRawStreamToXYTSStr_0_0\brd_EVRawStreamToXYTSStr_0_0.xci" Type="IP">
         <Instance HierarchyPath="EVRawStreamToXYTSStr_0"/>

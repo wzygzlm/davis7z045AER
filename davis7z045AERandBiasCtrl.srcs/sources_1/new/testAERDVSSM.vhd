@@ -421,7 +421,7 @@ begin
             when MULTIPLEXERCONFIG_MODULE_ADDRESS =>
                 ConfigParamOutput_D <= MultiplexerConfigParamOutput_D;
 
-            when DVSAERCONFIG_MODULE_ADDRESS =>
+            when DVS_CONFIG_MODULE_ADDRESS =>
                 ConfigParamOutput_D <= DVSAERConfigParamOutput_D;
 
             when APS_CONFIG_MODULE_ADDRESS =>

@@ -1,13 +1,11 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.math_real.ceil;
-use ieee.math_real.log2;
-use ieee.math_real."**";
+use work.Functions.SizeCountNTimes;
+use work.Functions.BooleanToStdLogic;
 use work.EventCodes.all;
 use work.FIFORecords.all;
 use work.DVSAERConfigRecords.all;
-use work.Functions.BooleanToStdLogic;
 use work.ChipGeometry.AXES_KEEP;
 use work.ChipGeometry.AXES_INVERT;
 use work.Settings.DVS_AER_BUS_WIDTH;
@@ -15,7 +13,6 @@ use work.Settings.CHIP_DVS_ORIGIN_POINT;
 use work.Settings.CHIP_DVS_AXES_INVERT;
 use work.Settings.CHIP_DVS_SIZE_ROWS;
 use work.Settings.CHIP_DVS_SIZE_COLUMNS;
-use work.Settings.LOGIC_CLOCK_FREQ;
 
 entity DVSAERStateMachine is
 	generic(
@@ -24,7 +21,8 @@ entity DVSAERStateMachine is
 		ENABLE_BA_REFR_FILTERING   : boolean := false;
 		BA_FILTER_SUBSAMPLE_COLUMN : integer := 2;
 		BA_FILTER_SUBSAMPLE_ROW    : integer := 2;
-		ENABLE_TEST_GENERATOR      : boolean := false;
+		ENABLE_SKIP_FILTERING      : boolean := false;
+		ENABLE_POLARITY_FILTERING  : boolean := false;
 		ENABLE_STATISTICS          : boolean := false);
 	port(
 		Clock_CI               : in  std_logic;
@@ -48,25 +46,31 @@ end DVSAERStateMachine;
 architecture Behavioral of DVSAERStateMachine is
 	attribute syn_enum_encoding : string;
 
-	type tState is (stIdle, stDifferentiateRowCol, stAERHandleRow, stAERAckRow, stAERHandleCol, stAERAckCol, stFIFOFull);
+	type tState is (stIdle, stDifferentiateRowCol, stAERCaptureRow, stAERWriteRow, stAERCaptureCol, stAERWriteCol, stAERAck, stFIFOFull);
 	attribute syn_enum_encoding of tState : type is "onehot";
 
 	-- present and next state
 	signal State_DP, State_DN : tState;
 
 	-- Counter to influence acknowledge delays.
-	signal AckCount_S, AckDone_S : std_logic;
-	signal AckLimit_D            : unsigned(DVS_AER_ACK_COUNTER_WIDTH - 1 downto 0);
+	constant ROW_CAPTURE_DELAY_COUNTER_WIDTH             : integer := 2;
+	signal RowCaptureDelayCount_S, RowCaptureDelayDone_S : std_logic;
 
 	-- Bits needed for each address.
-	constant DVS_ROW_ADDRESS_WIDTH    : integer := integer(ceil(log2(real(to_integer(CHIP_DVS_SIZE_ROWS)))));
-	constant DVS_COLUMN_ADDRESS_WIDTH : integer := integer(ceil(log2(real(to_integer(CHIP_DVS_SIZE_COLUMNS)))));
+	constant DVS_ROW_ADDRESS_WIDTH    : integer := SizeCountNTimes(CHIP_DVS_SIZE_ROWS);
+	constant DVS_COLUMN_ADDRESS_WIDTH : integer := SizeCountNTimes(CHIP_DVS_SIZE_COLUMNS);
+
+	constant IS_ROW_ADDR : std_logic := '0';
 
 	-- Data incoming from DVS.
-	signal DVSEventDataReg_D       : std_logic_vector(EVENT_WIDTH - 1 downto 0);
-	signal DVSEventValidReg_S      : std_logic;
-	signal DVSEventOutDataReg_D    : std_logic_vector(EVENT_WIDTH - 1 downto 0);
-	signal DVSEventOutValidReg_S   : std_logic;
+	signal ChipAERDataCapture_S : std_logic;
+	signal ChipAERData_D        : std_logic_vector(DVS_AER_BUS_WIDTH - 1 downto 0);
+
+	-- DVS event.
+	signal DVSEventDataReg_D     : std_logic_vector(EVENT_WIDTH - 1 downto 0);
+	signal DVSEventValidReg_S    : std_logic;
+	signal DVSEventOutDataReg_D  : std_logic_vector(EVENT_WIDTH - 1 downto 0);
+	signal DVSEventOutValidReg_S : std_logic;
 
 	-- Register outputs to DVS.
 	signal DVSAERAckReg_SB   : std_logic;
@@ -74,6 +78,12 @@ architecture Behavioral of DVSAERStateMachine is
 
 	-- Register configuration input and output.
 	signal DVSAERConfigReg_D : tDVSAERConfig;
+
+	-- Polarity filtering support.
+	signal PolarityFilterInDataReg_D   : std_logic_vector(EVENT_WIDTH - 1 downto 0);
+	signal PolarityFilterInValidReg_S  : std_logic;
+	signal PolarityFilterOutDataReg_D  : std_logic_vector(EVENT_WIDTH - 1 downto 0);
+	signal PolarityFilterOutValidReg_S : std_logic;
 
 	-- ROI filtering support.
 	signal ROIFilterInDataReg_D   : std_logic_vector(EVENT_WIDTH - 1 downto 0);
@@ -93,6 +103,12 @@ architecture Behavioral of DVSAERStateMachine is
 	signal BARefrFilterOutDataReg_D  : std_logic_vector(EVENT_WIDTH - 1 downto 0);
 	signal BARefrFilterOutValidReg_S : std_logic;
 
+	-- Skip filtering support.
+	signal SkipFilterInDataReg_D   : std_logic_vector(EVENT_WIDTH - 1 downto 0);
+	signal SkipFilterInValidReg_S  : std_logic;
+	signal SkipFilterOutDataReg_D  : std_logic_vector(EVENT_WIDTH - 1 downto 0);
+	signal SkipFilterOutValidReg_S : std_logic;
+
 	-- Row Only filtering support (at end to catch all the row-only events that
 	-- are generated from the other filters due to dropping column events).
 	signal RowOnlyFilterInDataReg_D   : std_logic_vector(EVENT_WIDTH - 1 downto 0);
@@ -100,10 +116,6 @@ architecture Behavioral of DVSAERStateMachine is
 	signal RowOnlyFilterOutDataReg_D  : std_logic_vector(EVENT_WIDTH - 1 downto 0);
 	signal RowOnlyFilterOutValidReg_S : std_logic;
 	signal RowOnlyFilterPassRow_S     : std_logic;
-
-	-- Test Event Generator support (generates fake sequential addresses).
-	signal TestDVSEventDataReg_D       : std_logic_vector(EVENT_WIDTH - 1 downto 0);
-	signal TestDVSEventValidReg_S      : std_logic;
 
 	-- Statistics support.
 	signal StatisticsEventsRow_SP, StatisticsEventsRow_SN                                   : std_logic;
@@ -113,34 +125,32 @@ architecture Behavioral of DVSAERStateMachine is
 	signal StatisticsFilteredBackgroundActivity_SP, StatisticsFilteredBackgroundActivity_SN : std_logic;
 	signal StatisticsFilteredRefractoryPeriod_SP, StatisticsFilteredRefractoryPeriod_SN     : std_logic;
 	
-	-- Added by Min Liu
-	signal DVSEventValidReg_SORTestDVSEventValidReg_S : std_logic;
-	signal DVSEventDataReg_DORTestDVSEventDataReg_D : std_logic_vector(EVENT_WIDTH - 1 downto 0);
 	signal NOTDVSAERConfigReg_DRun_S : std_logic;
 begin
-	aerAckCounter : entity work.ContinuousCounter
+	rowCaptureDelayCounter : entity work.ContinuousCounter
 		generic map(
-			SIZE => DVS_AER_ACK_COUNTER_WIDTH)
+			SIZE => ROW_CAPTURE_DELAY_COUNTER_WIDTH)
 		port map(Clock_CI     => Clock_CI,
 		         Reset_RI     => Reset_RI,
 		         Clear_SI     => '0',
-		         Enable_SI    => AckCount_S,
-		         DataLimit_DI => AckLimit_D,
-		         Overflow_SO  => AckDone_S,
+		         Enable_SI    => RowCaptureDelayCount_S,
+		         DataLimit_DI => to_unsigned(3, ROW_CAPTURE_DELAY_COUNTER_WIDTH),
+		         Overflow_SO  => RowCaptureDelayDone_S,
 		         Data_DO      => open);
 
-	dvsHandleAERComb : process(State_DP, OutFifoControl_SI, DVSAERReq_SBI, DVSAERData_DI, DVSAERConfigReg_D, AckDone_S)
+	dvsHandleAERComb : process(State_DP, OutFifoControl_SI, DVSAERReq_SBI, DVSAERData_DI, DVSAERConfigReg_D, RowCaptureDelayDone_S, ChipAERData_D)
 	begin
 		State_DN <= State_DP;           -- Keep current state by default.
 
-		DVSEventValidReg_S      <= '0';
-		DVSEventDataReg_D       <= (others => '0');
+		DVSEventValidReg_S <= '0';
+		DVSEventDataReg_D  <= (others => '0');
+
+		ChipAERDataCapture_S <= '0';
 
 		DVSAERAckReg_SB   <= '1';       -- No AER ACK by default.
 		DVSAERResetReg_SB <= '1';       -- Keep DVS out of reset by default, so we don't have to repeat this in every state.
 
-		AckCount_S <= '0';
-		AckLimit_D <= (others => '1');
+		RowCaptureDelayCount_S <= '0';
 
 		StatisticsEventsRow_SN     <= '0';
 		StatisticsEventsColumn_SN  <= '0';
@@ -150,12 +160,12 @@ begin
 			when stIdle =>
 				-- Only exit idle state if DVS data producer is active.
 				if DVSAERConfigReg_D.Run_S = '1' then
-					if DVSAERReq_SBI = '0' then
-						if OutFifoControl_SI.AlmostFull_S = '0' then
+					if not DVSAERReq_SBI = '1' then
+						if not OutFifoControl_SI.AlmostFull_S = '1' then
 							-- Got a request on the AER bus, let's get the data.
 							-- We do have space in the output FIFO for it.
 							State_DN <= stDifferentiateRowCol;
-						elsif DVSAERConfigReg_D.WaitOnTransferStall_S = '0' then
+						elsif not DVSAERConfigReg_D.WaitOnTransferStall_S = '1' then
 							-- FIFO full, keep ACKing.
 							State_DN <= stFIFOFull;
 
@@ -183,95 +193,75 @@ begin
 
 				-- Only go back to idle when FIFO has space again, and when
 				-- the sender is not requesting (to avoid AER races).
-				if OutFifoControl_SI.AlmostFull_S = '0' and DVSAERReq_SBI = '1' then
+				if not OutFifoControl_SI.AlmostFull_S = '1' and DVSAERReq_SBI = '1' then
 					State_DN <= stIdle;
 				end if;
-                
+
 			when stDifferentiateRowCol =>
 				-- Get data and format it. AER(WIDTH-1) holds the axis.
-				if DVSAERData_DI(DVS_AER_BUS_WIDTH - 1) = '0' then
+				if DVSAERData_DI(DVS_AER_BUS_WIDTH - 1) = IS_ROW_ADDR then
 					-- This is an Y address.
-					State_DN <= stAERHandleRow;
+					State_DN <= stAERCaptureRow;
 				else
-					State_DN <= stAERHandleCol;
+					State_DN <= stAERCaptureCol;
 				end if;
 
-			when stAERHandleRow =>
-				AckLimit_D <= DVSAERConfigReg_D.AckDelayRow_D;
-
+			when stAERCaptureRow =>
 				-- We might need to delay the ACK.
-				if AckDone_S = '1' then
-					-- Row address (Y).
-					DVSEventDataReg_D(EVENT_WIDTH - 1 downto EVENT_WIDTH - 3) <= EVENT_CODE_Y_ADDR;
+				if RowCaptureDelayDone_S = '1' then
+					ChipAERDataCapture_S <= '1';
 
-					if CHIP_DVS_ORIGIN_POINT(0) = '1' then
-						DVSEventDataReg_D(DVS_ROW_ADDRESS_WIDTH - 1 downto 0) <= std_logic_vector(resize(CHIP_DVS_SIZE_ROWS - 1, DVS_ROW_ADDRESS_WIDTH) - unsigned(DVSAERData_DI(DVS_ROW_ADDRESS_WIDTH - 1 downto 0)));
-					else
-						DVSEventDataReg_D(DVS_ROW_ADDRESS_WIDTH - 1 downto 0) <= DVSAERData_DI(DVS_ROW_ADDRESS_WIDTH - 1 downto 0);
-					end if;
-
-					DVSEventValidReg_S <= '1';
-
-					StatisticsEventsRow_SN <= '1';
-
-					DVSAERAckReg_SB <= '0';
-					State_DN        <= stAERAckRow;
+					State_DN <= stAERWriteRow;
 				end if;
 
-				AckCount_S <= '1';
+				RowCaptureDelayCount_S <= '1';
 
-			when stAERAckRow =>
-				AckLimit_D <= DVSAERConfigReg_D.AckExtensionRow_D;
+			when stAERWriteRow =>
+				DVSAERAckReg_SB <= '0';
 
+				-- Row address (Y).
+				DVSEventDataReg_D(EVENT_WIDTH - 1 downto EVENT_WIDTH - 3) <= EVENT_CODE_Y_ADDR;
+
+				if CHIP_DVS_ORIGIN_POINT(0) = '1' then
+					DVSEventDataReg_D(DVS_ROW_ADDRESS_WIDTH - 1 downto 0) <= std_logic_vector(resize(CHIP_DVS_SIZE_ROWS - 1, DVS_ROW_ADDRESS_WIDTH) - unsigned(ChipAERData_D(DVS_ROW_ADDRESS_WIDTH - 1 downto 0)));
+				else
+					DVSEventDataReg_D(DVS_ROW_ADDRESS_WIDTH - 1 downto 0) <= ChipAERData_D(DVS_ROW_ADDRESS_WIDTH - 1 downto 0);
+				end if;
+
+				DVSEventValidReg_S <= '1';
+
+				StatisticsEventsRow_SN <= '1';
+
+				State_DN <= stAERAck;
+
+			when stAERCaptureCol =>
+				ChipAERDataCapture_S <= '1';
+
+				State_DN <= stAERWriteCol;
+
+			when stAERWriteCol =>
+				DVSAERAckReg_SB <= '0';
+
+				-- Column address (X).
+				DVSEventDataReg_D(EVENT_WIDTH - 1 downto EVENT_WIDTH - 3) <= EVENT_CODE_X_ADDR & ChipAERData_D(0);
+
+				if CHIP_DVS_ORIGIN_POINT(1) = '1' then
+					DVSEventDataReg_D(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0) <= std_logic_vector(resize(CHIP_DVS_SIZE_COLUMNS - 1, DVS_COLUMN_ADDRESS_WIDTH) - unsigned(ChipAERData_D(DVS_COLUMN_ADDRESS_WIDTH downto 1)));
+				else
+					DVSEventDataReg_D(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0) <= ChipAERData_D(DVS_COLUMN_ADDRESS_WIDTH downto 1);
+				end if;
+
+				DVSEventValidReg_S <= '1';
+
+				StatisticsEventsColumn_SN <= '1';
+
+				State_DN <= stAERAck;
+
+			when stAERAck =>
 				DVSAERAckReg_SB <= '0';
 
 				if DVSAERReq_SBI = '1' then
-					-- We might need to extend the ACK period.
-					if AckDone_S = '1' then
-						DVSAERAckReg_SB <= '1';
-						State_DN        <= stIdle;
-					end if;
-
-					AckCount_S <= '1';
-				end if;
-
-			when stAERHandleCol =>
-				AckLimit_D <= DVSAERConfigReg_D.AckDelayColumn_D;
-
-				-- We might need to delay the ACK.
-				if AckDone_S = '1' then
-					-- Column address (X).
-					DVSEventDataReg_D(EVENT_WIDTH - 1 downto EVENT_WIDTH - 3) <= EVENT_CODE_X_ADDR & DVSAERData_DI(0);
-
-					if CHIP_DVS_ORIGIN_POINT(1) = '1' then
-						DVSEventDataReg_D(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0) <= std_logic_vector(resize(CHIP_DVS_SIZE_COLUMNS - 1, DVS_COLUMN_ADDRESS_WIDTH) - unsigned(DVSAERData_DI(DVS_COLUMN_ADDRESS_WIDTH downto 1)));
-					else
-						DVSEventDataReg_D(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0) <= DVSAERData_DI(DVS_COLUMN_ADDRESS_WIDTH downto 1);
-					end if;
-
-					DVSEventValidReg_S <= '1';
-
-					StatisticsEventsColumn_SN <= '1';
-
-					DVSAERAckReg_SB <= '0';
-					State_DN        <= stAERAckCol;
-				end if;
-
-				AckCount_S <= '1';
-
-			when stAERAckCol =>
-				AckLimit_D <= DVSAERConfigReg_D.AckExtensionColumn_D;
-
-				DVSAERAckReg_SB <= '0';
-
-				if DVSAERReq_SBI = '1' then
-					-- We might need to extend the ACK period.
-					if AckDone_S = '1' then
-						DVSAERAckReg_SB <= '1';
-						State_DN        <= stIdle;
-					end if;
-
-					AckCount_S <= '1';
+					State_DN <= stIdle;
 				end if;
 
 			when others => null;
@@ -281,7 +271,7 @@ begin
 	-- Change state on clock edge (synchronous).
 	dvsHandleAERRegisterUpdate : process(Clock_CI, Reset_RI)
 	begin
-		if Reset_RI = '1' then          -- asynchronous reset (active-high for FPGAs)
+		if Reset_RI = '1' then                -- asynchronous reset (active-high for FPGAs)
 			State_DP <= stIdle;
 
 			DVSAERAck_SBO   <= '1';
@@ -298,156 +288,25 @@ begin
 		end if;
 	end process dvsHandleAERRegisterUpdate;
 
-	testGeneratorProcesses : if ENABLE_TEST_GENERATOR = true generate
-		attribute syn_enum_encoding : string;
+	dvsChipAERDataRegister : entity work.SimpleRegister
+		generic map(
+			SIZE => DVS_AER_BUS_WIDTH)
+		port map(
+			Clock_CI  => Clock_CI,
+			Reset_RI  => Reset_RI,
+			Enable_SI => ChipAERDataCapture_S,
+			Input_SI  => DVSAERData_DI,
+			Output_SO => ChipAERData_D);
 
-		type tTestState is (stIdle, stTestGenerateAddressRow, stTestGenerateAddressColOn, stTestGenerateAddressColOff);
-		attribute syn_enum_encoding of tTestState : type is "onehot";
-
-		-- present and next state
-		signal TestState_DP, TestState_DN : tTestState;
-
-		-- Test Event Generator support (generates fake sequential addresses).
-		signal TestGeneratorRowCount_S    : std_logic;
-		signal TestGeneratorRowDone_S     : std_logic;
-		signal TestGeneratorRow_D         : unsigned(DVS_ROW_ADDRESS_WIDTH - 1 downto 0);
-		signal TestGeneratorColumnCount_S : std_logic;
-		signal TestGeneratorColumnDone_S  : std_logic;
-		signal TestGeneratorColumn_D      : unsigned(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0);
-	begin
-		dvsTestGeneratorComb : process(TestState_DP, OutFifoControl_SI, DVSAERConfigReg_D, TestGeneratorColumnDone_S, TestGeneratorColumn_D, TestGeneratorRowDone_S, TestGeneratorRow_D)
-		begin
-			TestState_DN <= TestState_DP; -- Keep current state by default.
-
-			-- Test Event Generator always disabled in normal operation.
-			TestGeneratorRowCount_S    <= '0';
-			TestGeneratorColumnCount_S <= '0';
-
-			TestDVSEventValidReg_S      <= '0';
-			TestDVSEventDataReg_D       <= (others => '0');
-
-			case TestState_DP is
-				when stIdle =>
-					-- If requested, produce fake events that sequentially span the whole array size.
-					if DVSAERConfigReg_D.TestEventGeneratorEnable_S = '1' and DVSAERConfigReg_D.Run_S = '0' and DVSAERConfigReg_D.ExternalAERControl_S = '0' then
-						-- Inject fake address.
-						TestState_DN <= stTestGenerateAddressRow;
-					end if;
-
-				when stTestGenerateAddressRow =>
-					if OutFifoControl_SI.AlmostFull_S = '0' then
-						-- Send out fake row address (Y).
-						TestDVSEventDataReg_D(EVENT_WIDTH - 1 downto EVENT_WIDTH - 3) <= EVENT_CODE_Y_ADDR;
-						TestDVSEventDataReg_D(DVS_ROW_ADDRESS_WIDTH - 1 downto 0)     <= std_logic_vector(TestGeneratorRow_D);
-						TestDVSEventValidReg_S                                        <= '1';
-
-						-- Increase row count for next pass.
-						TestGeneratorRowCount_S <= '1';
-
-						if TestGeneratorRowDone_S = '1' then
-							-- Once done, go back to Idle state.
-							TestState_DN <= stIdle;
-
-							-- Don't forward at this point due to maximum address reached.
-							TestDVSEventValidReg_S <= '0';
-						else
-							-- Go to send all columns for this row.
-							TestState_DN <= stTestGenerateAddressColOn;
-						end if;
-					end if;
-
-				when stTestGenerateAddressColOn =>
-					if OutFifoControl_SI.AlmostFull_S = '0' then
-						-- Send out fake column address (X) with ON polarity.
-						TestDVSEventDataReg_D(EVENT_WIDTH - 1 downto EVENT_WIDTH - 3) <= EVENT_CODE_X_ADDR_POL_ON;
-						TestDVSEventDataReg_D(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0)  <= std_logic_vector(TestGeneratorColumn_D);
-						TestDVSEventValidReg_S                                        <= '1';
-
-						-- Increase column count for next pass.
-						TestGeneratorColumnCount_S <= '1';
-
-						-- Send next column ON value, or when maximum reached, go and send OFF events for all columns.
-						if TestGeneratorColumnDone_S = '1' then
-							TestState_DN <= stTestGenerateAddressColOff;
-						else
-							TestState_DN <= stTestGenerateAddressColOn;
-						end if;
-					end if;
-
-				when stTestGenerateAddressColOff =>
-					if OutFifoControl_SI.AlmostFull_S = '0' then
-						-- Send out fake column address (X) with OFF polarity.
-						TestDVSEventDataReg_D(EVENT_WIDTH - 1 downto EVENT_WIDTH - 3) <= EVENT_CODE_X_ADDR_POL_OFF;
-						TestDVSEventDataReg_D(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0)  <= std_logic_vector(TestGeneratorColumn_D);
-						TestDVSEventValidReg_S                                        <= '1';
-
-						-- Increase column count for next pass.
-						TestGeneratorColumnCount_S <= '1';
-
-						-- Send next column OFF value, or when maximum reached, go to next row.
-						if TestGeneratorColumnDone_S = '1' then
-							TestState_DN <= stTestGenerateAddressRow;
-						else
-							TestState_DN <= stTestGenerateAddressColOff;
-						end if;
-					end if;
-
-				when others => null;
-			end case;
-		end process dvsTestGeneratorComb;
-
-		-- Change state on clock edge (synchronous).
-		dvsTestGeneratorRegisterUpdate : process(Clock_CI, Reset_RI)
-		begin
-			if Reset_RI = '1' then      -- asynchronous reset (active-high for FPGAs)
-				TestState_DP <= stIdle;
-			elsif rising_edge(Clock_CI) then
-				TestState_DP <= TestState_DN;
-			end if;
-		end process dvsTestGeneratorRegisterUpdate;
-
-		testGeneratorRowCounter : entity work.ContinuousCounter
-			generic map(
-				SIZE => CHIP_DVS_SIZE_ROWS'length)
-			port map(
-				Clock_CI     => Clock_CI,
-				Reset_RI     => Reset_RI,
-				Clear_SI     => '0',
-				Enable_SI    => TestGeneratorRowCount_S,
-				DataLimit_DI => CHIP_DVS_SIZE_ROWS,
-				Overflow_SO  => TestGeneratorRowDone_S,
-				Data_DO      => TestGeneratorRow_D);
-
-		testGeneratorColumnCounter : entity work.ContinuousCounter
-			generic map(
-				SIZE => DVS_COLUMN_ADDRESS_WIDTH)
-			port map(
-				Clock_CI     => Clock_CI,
-				Reset_RI     => Reset_RI,
-				Clear_SI     => '0',
-				Enable_SI    => TestGeneratorColumnCount_S,
-				DataLimit_DI => CHIP_DVS_SIZE_COLUMNS - 1,
-				Overflow_SO  => TestGeneratorColumnDone_S,
-				Data_DO      => TestGeneratorColumn_D);
-	end generate testGeneratorProcesses;
-
-	testGeneratorDisabled : if ENABLE_TEST_GENERATOR = false generate
-	begin
-		TestDVSEventValidReg_S      <= '0';
-		TestDVSEventDataReg_D       <= (others => '0');
-	end generate testGeneratorDisabled;
-
-    DVSEventValidReg_SORTestDVSEventValidReg_S <= DVSEventValidReg_S or TestDVSEventValidReg_S;
-    DVSEventDataReg_DORTestDVSEventDataReg_D <= DVSEventDataReg_D or TestDVSEventDataReg_D;
 	dvsEventDataRegister : entity work.SimpleRegister
 		generic map(
 			SIZE => EVENT_WIDTH)
 		port map(
-			Clock_CI                            => Clock_CI,
-			Reset_RI                            => Reset_RI,
-			Enable_SI                           => DVSEventValidReg_SORTestDVSEventValidReg_S,
-			Input_SI(EVENT_WIDTH - 1 downto 0)  => DVSEventDataReg_DORTestDVSEventDataReg_D,
-			Output_SO(EVENT_WIDTH - 1 downto 0) => DVSEventOutDataReg_D);
+			Clock_CI  => Clock_CI,
+			Reset_RI  => Reset_RI,
+			Enable_SI => DVSEventValidReg_S,
+			Input_SI  => DVSEventDataReg_D,
+			Output_SO => DVSEventOutDataReg_D);
 
 	dvsEventValidRegister : entity work.SimpleRegister
 		generic map(
@@ -456,19 +315,73 @@ begin
 			Clock_CI     => Clock_CI,
 			Reset_RI     => Reset_RI,
 			Enable_SI    => '1',
-			Input_SI(0)  => DVSEventValidReg_SORTestDVSEventValidReg_S,
+			Input_SI(0)  => DVSEventValidReg_S,
 			Output_SO(0) => DVSEventOutValidReg_S);
 
-	roiFilterSupportDisabled : if ENABLE_ROI_FILTERING = false generate
+	polarityFilterSupportDisabled : if not ENABLE_POLARITY_FILTERING generate
 	begin
-		ROIFilterInDataReg_D  <= DVSEventOutDataReg_D;
-		ROIFilterInValidReg_S <= DVSEventOutValidReg_S;
+		PolarityFilterInDataReg_D  <= DVSEventOutDataReg_D;
+		PolarityFilterInValidReg_S <= DVSEventOutValidReg_S;
+
+		PolarityFilterOutDataReg_D  <= PolarityFilterInDataReg_D;
+		PolarityFilterOutValidReg_S <= PolarityFilterInValidReg_S;
+	end generate polarityFilterSupportDisabled;
+
+	polarityFilterSupportEnabled : if ENABLE_POLARITY_FILTERING generate
+		polarityFilter : process(DVSEventOutDataReg_D, DVSEventOutValidReg_S, DVSAERConfigReg_D)
+		begin
+			PolarityFilterInDataReg_D  <= DVSEventOutDataReg_D;
+			PolarityFilterInValidReg_S <= DVSEventOutValidReg_S;
+
+			if DVSEventOutValidReg_S = '1' then
+				if DVSEventOutDataReg_D(EVENT_WIDTH - 2) = '1' then
+					-- This is a column address, it carries the polarity information.
+					-- Flatten: converts all polarities to OFF.
+					if(DVSAERConfigReg_D.FilterPolarityFlatten_S = '1') then
+                        PolarityFilterInDataReg_D(EVENT_WIDTH - 3) <= '0'; 
+                    else 
+                        PolarityFilterInDataReg_D(EVENT_WIDTH - 3) <= DVSEventOutDataReg_D(EVENT_WIDTH - 3);
+                    end if;
+					
+					-- Suppress: removes one type of polarity.
+					if DVSAERConfigReg_D.FilterPolaritySuppress_S = '1' then
+						PolarityFilterInValidReg_S <= BooleanToStdLogic(DVSEventOutDataReg_D(EVENT_WIDTH - 3) /= DVSAERConfigReg_D.FilterPolaritySuppressType_S);
+					end if;
+				end if;
+			end if;
+		end process polarityFilter;
+
+		polarityFilterDataRegister : entity work.SimpleRegister
+			generic map(
+				SIZE => EVENT_WIDTH)
+			port map(
+				Clock_CI  => Clock_CI,
+				Reset_RI  => Reset_RI,
+				Enable_SI => PolarityFilterInValidReg_S,
+				Input_SI  => PolarityFilterInDataReg_D,
+				Output_SO => PolarityFilterOutDataReg_D);
+
+		polarityFilterValidRegister : entity work.SimpleRegister
+			generic map(
+				SIZE => 1)
+			port map(
+				Clock_CI     => Clock_CI,
+				Reset_RI     => Reset_RI,
+				Enable_SI    => '1',
+				Input_SI(0)  => PolarityFilterInValidReg_S,
+				Output_SO(0) => PolarityFilterOutValidReg_S);
+	end generate polarityFilterSupportEnabled;
+
+	roiFilterSupportDisabled : if not ENABLE_ROI_FILTERING generate
+	begin
+		ROIFilterInDataReg_D  <= PolarityFilterOutDataReg_D;
+		ROIFilterInValidReg_S <= PolarityFilterOutValidReg_S;
 
 		ROIFilterOutDataReg_D  <= ROIFilterInDataReg_D;
 		ROIFilterOutValidReg_S <= ROIFilterInValidReg_S;
 	end generate roiFilterSupportDisabled;
 
-	roiFilterSupportEnabled : if ENABLE_ROI_FILTERING = true generate
+	roiFilterSupportEnabled : if ENABLE_ROI_FILTERING generate
 		signal LastRowAddress_DP, LastRowAddress_DN : unsigned(DVS_ROW_ADDRESS_WIDTH - 1 downto 0);
 
 		signal FilterROIStartColumn_D : unsigned(EVENT_DATA_WIDTH_MAX - 1 downto 0);
@@ -502,7 +415,7 @@ begin
 			FilterROIEndRow_D      <= resize(DVSAERConfigReg_D.FilterROIEndColumn_D, EVENT_DATA_WIDTH_MAX);
 		end generate axesInverted;
 
-		roiFilter : process(DVSEventOutDataReg_D, DVSEventOutValidReg_S, LastRowAddress_DP, FilterROIEndColumn_D, FilterROIEndRow_D, FilterROIStartColumn_D, FilterROIStartRow_D)
+		roiFilter : process(PolarityFilterOutDataReg_D, PolarityFilterOutValidReg_S, LastRowAddress_DP, FilterROIEndColumn_D, FilterROIEndRow_D, FilterROIStartColumn_D, FilterROIStartRow_D)
 			variable ColumnAddress_D : unsigned(EVENT_DATA_WIDTH_MAX - 1 downto 0) := (others => '0');
 			variable RowAddress_D    : unsigned(EVENT_DATA_WIDTH_MAX - 1 downto 0) := (others => '0');
 
@@ -510,12 +423,12 @@ begin
 			variable RowValid_S       : boolean := false;
 			variable ROIFilterValid_S : boolean := false;
 		begin
-			ROIFilterInDataReg_D  <= DVSEventOutDataReg_D;
-			ROIFilterInValidReg_S <= DVSEventOutValidReg_S;
+			ROIFilterInDataReg_D  <= PolarityFilterOutDataReg_D;
+			ROIFilterInValidReg_S <= PolarityFilterOutValidReg_S;
 
 			LastRowAddress_DN <= LastRowAddress_DP;
 
-			ColumnAddress_D := resize(unsigned(DVSEventOutDataReg_D(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0)), EVENT_DATA_WIDTH_MAX);
+			ColumnAddress_D := resize(unsigned(PolarityFilterOutDataReg_D(DVS_COLUMN_ADDRESS_WIDTH - 1 downto 0)), EVENT_DATA_WIDTH_MAX);
 			RowAddress_D    := resize(LastRowAddress_DP, EVENT_DATA_WIDTH_MAX);
 
 			ColumnValid_S := ColumnAddress_D >= FilterROIStartColumn_D and ColumnAddress_D <= FilterROIEndColumn_D;
@@ -523,10 +436,10 @@ begin
 
 			ROIFilterValid_S := ColumnValid_S and RowValid_S;
 
-			if DVSEventOutValidReg_S = '1' then
-				if DVSEventOutDataReg_D(EVENT_WIDTH - 2) = '0' then
+			if PolarityFilterOutValidReg_S = '1' then
+				if PolarityFilterOutDataReg_D(EVENT_WIDTH - 2) = '0' then
 					-- This is a row address, we just save it.
-					LastRowAddress_DN <= unsigned(DVSEventOutDataReg_D(DVS_ROW_ADDRESS_WIDTH - 1 downto 0));
+					LastRowAddress_DN <= unsigned(PolarityFilterOutDataReg_D(DVS_ROW_ADDRESS_WIDTH - 1 downto 0));
 				else
 					-- This is a column address, we use the full comparison at this point.
 					-- If it matches any of the pixels that should be filtered, we set the column
@@ -557,7 +470,7 @@ begin
 				Output_SO(0) => ROIFilterOutValidReg_S);
 	end generate roiFilterSupportEnabled;
 
-	pixelFilterSupportDisabled : if ENABLE_PIXEL_FILTERING = false generate
+	pixelFilterSupportDisabled : if not ENABLE_PIXEL_FILTERING generate
 	begin
 		PixelFilterInDataReg_D  <= ROIFilterOutDataReg_D;
 		PixelFilterInValidReg_S <= ROIFilterOutValidReg_S;
@@ -566,7 +479,7 @@ begin
 		PixelFilterOutValidReg_S <= PixelFilterInValidReg_S;
 	end generate pixelFilterSupportDisabled;
 
-	pixelFilterSupportEnabled : if ENABLE_PIXEL_FILTERING = true generate
+	pixelFilterSupportEnabled : if ENABLE_PIXEL_FILTERING generate
 		signal LastRowAddress_DP, LastRowAddress_DN : unsigned(DVS_ROW_ADDRESS_WIDTH - 1 downto 0);
 
 		signal FilterPixel0Row_D    : unsigned(EVENT_DATA_WIDTH_MAX - 1 downto 0);
@@ -708,7 +621,7 @@ begin
 				Output_SO(0) => PixelFilterOutValidReg_S);
 	end generate pixelFilterSupportEnabled;
 
-	baRefrFilterSupportDisabled : if ENABLE_BA_REFR_FILTERING = false generate
+	baRefrFilterSupportDisabled : if not ENABLE_BA_REFR_FILTERING generate
 	begin
 		BARefrFilterInDataReg_D  <= PixelFilterOutDataReg_D;
 		BARefrFilterInValidReg_S <= PixelFilterOutValidReg_S;
@@ -717,7 +630,7 @@ begin
 		BARefrFilterOutValidReg_S <= BARefrFilterInValidReg_S;
 	end generate baRefrFilterSupportDisabled;
 
-	baRefrFilterSupportEnabled : if ENABLE_BA_REFR_FILTERING = true generate
+	baRefrFilterSupportEnabled : if ENABLE_BA_REFR_FILTERING generate
 		baFilter : entity work.DVSBAFilterStateMachine
 			generic map(
 				BA_FILTER_SUBSAMPLE_COLUMN => BA_FILTER_SUBSAMPLE_COLUMN,
@@ -757,16 +670,80 @@ begin
 				Output_SO(0) => BARefrFilterOutValidReg_S);
 	end generate baRefrFilterSupportEnabled;
 
-	rowOnlyFilter : process(BARefrFilterOutDataReg_D, BARefrFilterOutValidReg_S, DVSAERConfigReg_D, RowOnlyFilterOutDataReg_D)
+	skipFilterSupportDisabled : if not ENABLE_SKIP_FILTERING generate
 	begin
-		RowOnlyFilterInDataReg_D  <= BARefrFilterOutDataReg_D;
-		RowOnlyFilterInValidReg_S <= BARefrFilterOutValidReg_S;
+		SkipFilterInDataReg_D  <= BARefrFilterOutDataReg_D;
+		SkipFilterInValidReg_S <= BARefrFilterOutValidReg_S;
+
+		SkipFilterOutDataReg_D  <= SkipFilterInDataReg_D;
+		SkipFilterOutValidReg_S <= SkipFilterInValidReg_S;
+	end generate skipFilterSupportDisabled;
+
+	skipFilterSupportEnabled : if ENABLE_SKIP_FILTERING generate
+		signal FilterSkipCounterIncrement_S : std_logic;
+		signal FilterSkipCounterSuppress_S  : std_logic;
+	begin
+		skipCounter : entity work.ContinuousCounter
+			generic map(
+				SIZE              => DVS_FILTER_SKIP_EVENTS_WIDTH,
+				RESET_ON_OVERFLOW => true,
+				GENERATE_OVERFLOW => true)
+			port map(
+				Clock_CI     => Clock_CI,
+				Reset_RI     => Reset_RI,
+				Clear_SI     => '0',
+				Enable_SI    => FilterSkipCounterIncrement_S,
+				DataLimit_DI => DVSAERConfigReg_D.FilterSkipEventsEvery_D,
+				Overflow_SO  => FilterSkipCounterSuppress_S,
+				Data_DO      => open);
+
+		skipFilter : process(BARefrFilterOutDataReg_D, BARefrFilterOutValidReg_S, DVSAERConfigReg_D, FilterSkipCounterSuppress_S)
+		begin
+			SkipFilterInDataReg_D  <= BARefrFilterOutDataReg_D;
+			SkipFilterInValidReg_S <= BARefrFilterOutValidReg_S;
+
+			FilterSkipCounterIncrement_S <= '0';
+
+			if DVSAERConfigReg_D.FilterSkipEvents_S = '1' and BARefrFilterOutValidReg_S = '1' and BARefrFilterOutDataReg_D(EVENT_WIDTH - 2) = '1' then
+				-- This is a valid column address. If the filter is enabled, we count it,
+				-- and when we reach the limit of the counter, we suppress that event (skip it).
+				FilterSkipCounterIncrement_S <= '1';
+
+				SkipFilterInValidReg_S <= not FilterSkipCounterSuppress_S;
+			end if;
+		end process skipFilter;
+
+		skipFilterDataRegister : entity work.SimpleRegister
+			generic map(
+				SIZE => EVENT_WIDTH)
+			port map(
+				Clock_CI  => Clock_CI,
+				Reset_RI  => Reset_RI,
+				Enable_SI => SkipFilterInValidReg_S,
+				Input_SI  => SkipFilterInDataReg_D,
+				Output_SO => SkipFilterOutDataReg_D);
+
+		skipFilterValidRegister : entity work.SimpleRegister
+			generic map(
+				SIZE => 1)
+			port map(
+				Clock_CI     => Clock_CI,
+				Reset_RI     => Reset_RI,
+				Enable_SI    => '1',
+				Input_SI(0)  => SkipFilterInValidReg_S,
+				Output_SO(0) => SkipFilterOutValidReg_S);
+	end generate skipFilterSupportEnabled;
+
+	rowOnlyFilter : process(SkipFilterOutDataReg_D, SkipFilterOutValidReg_S, RowOnlyFilterOutDataReg_D)
+	begin
+		RowOnlyFilterInDataReg_D  <= SkipFilterOutDataReg_D;
+		RowOnlyFilterInValidReg_S <= SkipFilterOutValidReg_S;
 
 		-- Bypass register and control FIFO directly.
 		RowOnlyFilterPassRow_S <= '0';
 
-		if DVSAERConfigReg_D.FilterRowOnlyEvents_S = '1' and BARefrFilterOutValidReg_S = '1' then
-			if BARefrFilterOutDataReg_D(EVENT_WIDTH - 2) = '0' then
+		if SkipFilterOutValidReg_S = '1' then
+			if SkipFilterOutDataReg_D(EVENT_WIDTH - 2) = '0' then
 				-- This is a row address, we force it to be invalid, so that it is not automatically
 				-- forwarded to the FIFO. We'll forward it later when encountering a column address.
 				RowOnlyFilterInValidReg_S <= '0';
@@ -807,7 +784,7 @@ begin
 	OutFifoControl_SO.Write_S <= RowOnlyFilterOutValidReg_S or RowOnlyFilterPassRow_S;
 
     NOTDVSAERConfigReg_DRun_S <= not DVSAERConfigReg_D.Run_S;
-	statisticsSupport : if ENABLE_STATISTICS = true generate
+	statisticsSupport : if ENABLE_STATISTICS generate
 		StatisticsEventsRowReg : entity work.SimpleRegister
 			generic map(
 				SIZE => 1)
@@ -868,7 +845,7 @@ begin
 				Enable_SI => StatisticsEventsDropped_SP,
 				Data_DO   => DVSAERConfigInfoOut_DO.StatisticsEventsDropped_D);
 
-		StatisticsFilteredPixels : if ENABLE_PIXEL_FILTERING = true generate
+		StatisticsFilteredPixels : if ENABLE_PIXEL_FILTERING generate
 		begin
 			StatisticsFilteredPixelsReg : entity work.SimpleRegister
 				generic map(
@@ -891,12 +868,12 @@ begin
 					Data_DO   => DVSAERConfigInfoOut_DO.StatisticsFilteredPixels_D);
 		end generate StatisticsFilteredPixels;
 
-		noStatisticsFilteredPixels : if ENABLE_PIXEL_FILTERING = false generate
+		noStatisticsFilteredPixels : if not ENABLE_PIXEL_FILTERING generate
 		begin
 			DVSAERConfigInfoOut_DO.StatisticsFilteredPixels_D <= (others => '0');
 		end generate noStatisticsFilteredPixels;
 
-		StatisticsFilteredBackgroundActivity : if ENABLE_BA_REFR_FILTERING = true generate
+		StatisticsFilteredBackgroundActivity : if ENABLE_BA_REFR_FILTERING generate
 		begin
 			StatisticsFilteredBackgroundActivityReg : entity work.SimpleRegister
 				generic map(
@@ -939,10 +916,14 @@ begin
 					Data_DO   => DVSAERConfigInfoOut_DO.StatisticsFilteredRefractoryPeriod_D);
 		end generate StatisticsFilteredBackgroundActivity;
 
-		noStatisticsFilteredBackgroundActivity : if ENABLE_BA_REFR_FILTERING = false generate
+		noStatisticsFilteredBackgroundActivity : if not ENABLE_BA_REFR_FILTERING generate
 		begin
 			DVSAERConfigInfoOut_DO.StatisticsFilteredBackgroundActivity_D <= (others => '0');
 			DVSAERConfigInfoOut_DO.StatisticsFilteredRefractoryPeriod_D   <= (others => '0');
 		end generate noStatisticsFilteredBackgroundActivity;
 	end generate statisticsSupport;
+
+	noStatisticsSupport : if not ENABLE_STATISTICS generate
+		DVSAERConfigInfoOut_DO <= tDVSAERConfigInfoOutDefault;
+	end generate noStatisticsSupport;
 end Behavioral;
