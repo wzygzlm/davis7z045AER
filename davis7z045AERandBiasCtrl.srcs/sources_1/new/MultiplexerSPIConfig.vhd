@@ -5,8 +5,6 @@ use work.MultiplexerConfigRecords.all;
 
 entity MultiplexerSPIConfig is
 	generic(
-		ENABLE_INPUT_5    : boolean := false;
-		ENABLE_INPUT_6    : boolean := false;
 		ENABLE_STATISTICS : boolean := false);
 	port(
 		Clock_CI                        : in  std_logic;
@@ -31,7 +29,7 @@ begin
 	MultiplexerConfig_DO            <= MultiplexerConfigReg_DP;
 	MultiplexerConfigParamOutput_DO <= MultiplexerOutput_DP;
 
-	LatchMultiplexerReg_S <= '1' when ConfigModuleAddress_DI = MULTIPLEXERCONFIG_MODULE_ADDRESS else '0';
+	LatchMultiplexerReg_S <= '1' when (ConfigModuleAddress_DI = MULTIPLEXER_CONFIG_MODULE_ADDRESS) else '0';
 
 	multiplexerIO : process(ConfigParamAddress_DI, ConfigParamInput_DI, MultiplexerConfigReg_DP, MultiplexerConfigInfoOut_DI)
 	begin
@@ -51,109 +49,50 @@ begin
 				MultiplexerConfigReg_DN.TimestampReset_S <= ConfigParamInput_DI(0);
 				MultiplexerOutput_DN(0)                  <= MultiplexerConfigReg_DP.TimestampReset_S;
 
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.ForceChipBiasEnable_S =>
-				MultiplexerConfigReg_DN.ForceChipBiasEnable_S <= ConfigParamInput_DI(0);
-				MultiplexerOutput_DN(0)                       <= MultiplexerConfigReg_DP.ForceChipBiasEnable_S;
+			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.RunChip_S =>
+				MultiplexerConfigReg_DN.RunChip_S <= ConfigParamInput_DI(0);
+				MultiplexerOutput_DN(0)           <= MultiplexerConfigReg_DP.RunChip_S;
 
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.DropInput1OnTransferStall_S =>
-				MultiplexerConfigReg_DN.DropInput1OnTransferStall_S <= ConfigParamInput_DI(0);
-				MultiplexerOutput_DN(0)                             <= MultiplexerConfigReg_DP.DropInput1OnTransferStall_S;
+			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.DropExtInputOnTransferStall_S =>
+				MultiplexerConfigReg_DN.DropExtInputOnTransferStall_S <= ConfigParamInput_DI(0);
+				MultiplexerOutput_DN(0)                               <= MultiplexerConfigReg_DP.DropExtInputOnTransferStall_S;
 
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.DropInput2OnTransferStall_S =>
-				MultiplexerConfigReg_DN.DropInput2OnTransferStall_S <= ConfigParamInput_DI(0);
-				MultiplexerOutput_DN(0)                             <= MultiplexerConfigReg_DP.DropInput2OnTransferStall_S;
-
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.DropInput3OnTransferStall_S =>
-				MultiplexerConfigReg_DN.DropInput3OnTransferStall_S <= ConfigParamInput_DI(0);
-				MultiplexerOutput_DN(0)                             <= MultiplexerConfigReg_DP.DropInput3OnTransferStall_S;
-
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.DropInput4OnTransferStall_S =>
-				MultiplexerConfigReg_DN.DropInput4OnTransferStall_S <= ConfigParamInput_DI(0);
-				MultiplexerOutput_DN(0)                             <= MultiplexerConfigReg_DP.DropInput4OnTransferStall_S;
-
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.DropInput5OnTransferStall_S =>
-				if ENABLE_INPUT_5 = true then
-					MultiplexerConfigReg_DN.DropInput5OnTransferStall_S <= ConfigParamInput_DI(0);
-					MultiplexerOutput_DN(0)                             <= MultiplexerConfigReg_DP.DropInput5OnTransferStall_S;
-				end if;
-
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.DropInput6OnTransferStall_S =>
-				if ENABLE_INPUT_6 = true then
-					MultiplexerConfigReg_DN.DropInput6OnTransferStall_S <= ConfigParamInput_DI(0);
-					MultiplexerOutput_DN(0)                             <= MultiplexerConfigReg_DP.DropInput6OnTransferStall_S;
-				end if;
+			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.DropDVSOnTransferStall_S =>
+				MultiplexerConfigReg_DN.DropDVSOnTransferStall_S <= ConfigParamInput_DI(0);
+				MultiplexerOutput_DN(0)                          <= MultiplexerConfigReg_DP.DropDVSOnTransferStall_S;
 
 			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.HasStatistics_S =>
-				if ENABLE_STATISTICS = true then
+				if ENABLE_STATISTICS then
 					MultiplexerOutput_DN(0) <= '1';
 				end if;
 
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsInput1Dropped64_D =>
-				if ENABLE_STATISTICS = true then
-					MultiplexerOutput_DN(TRANSACTION_COUNTER_WIDTH - 1 - 32 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsInput1Dropped_D(TRANSACTION_COUNTER_WIDTH - 1 downto 32));
+			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsExtInputDropped64_D =>
+				if ENABLE_STATISTICS then
+					MultiplexerOutput_DN(TRANSACTION_COUNTER_WIDTH - 1 - 32 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsExtInputDropped_D(TRANSACTION_COUNTER_WIDTH - 1 downto 32));
 				end if;
 
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsInput1Dropped32_D =>
-				if ENABLE_STATISTICS = true then
-					MultiplexerOutput_DN(31 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsInput1Dropped_D(31 downto 0));
+			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsExtInputDropped32_D =>
+				if ENABLE_STATISTICS then
+					MultiplexerOutput_DN(31 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsExtInputDropped_D(31 downto 0));
 				end if;
 
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsInput2Dropped64_D =>
-				if ENABLE_STATISTICS = true then
-					MultiplexerOutput_DN(TRANSACTION_COUNTER_WIDTH - 1 - 32 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsInput2Dropped_D(TRANSACTION_COUNTER_WIDTH - 1 downto 32));
+			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsDVSDropped64_D =>
+				if ENABLE_STATISTICS then
+					MultiplexerOutput_DN(TRANSACTION_COUNTER_WIDTH - 1 - 32 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsDVSDropped_D(TRANSACTION_COUNTER_WIDTH - 1 downto 32));
 				end if;
 
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsInput2Dropped32_D =>
-				if ENABLE_STATISTICS = true then
-					MultiplexerOutput_DN(31 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsInput2Dropped_D(31 downto 0));
+			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsDVSDropped32_D =>
+				if ENABLE_STATISTICS then
+					MultiplexerOutput_DN(31 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsDVSDropped_D(31 downto 0));
 				end if;
 
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsInput3Dropped64_D =>
-				if ENABLE_STATISTICS = true then
-					MultiplexerOutput_DN(TRANSACTION_COUNTER_WIDTH - 1 - 32 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsInput3Dropped_D(TRANSACTION_COUNTER_WIDTH - 1 downto 32));
-				end if;
-
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsInput3Dropped32_D =>
-				if ENABLE_STATISTICS = true then
-					MultiplexerOutput_DN(31 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsInput3Dropped_D(31 downto 0));
-				end if;
-
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsInput4Dropped64_D =>
-				if ENABLE_STATISTICS = true then
-					MultiplexerOutput_DN(TRANSACTION_COUNTER_WIDTH - 1 - 32 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsInput4Dropped_D(TRANSACTION_COUNTER_WIDTH - 1 downto 32));
-				end if;
-
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsInput4Dropped32_D =>
-				if ENABLE_STATISTICS = true then
-					MultiplexerOutput_DN(31 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsInput4Dropped_D(31 downto 0));
-				end if;
-
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsInput5Dropped64_D =>
-				if ENABLE_STATISTICS = true and ENABLE_INPUT_5 = true then
-					MultiplexerOutput_DN(TRANSACTION_COUNTER_WIDTH - 1 - 32 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsInput5Dropped_D(TRANSACTION_COUNTER_WIDTH - 1 downto 32));
-				end if;
-
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsInput5Dropped32_D =>
-				if ENABLE_STATISTICS = true and ENABLE_INPUT_5 = true then
-					MultiplexerOutput_DN(31 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsInput5Dropped_D(31 downto 0));
-				end if;
-
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsInput6Dropped64_D =>
-				if ENABLE_STATISTICS = true and ENABLE_INPUT_6 = true then
-					MultiplexerOutput_DN(TRANSACTION_COUNTER_WIDTH - 1 - 32 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsInput6Dropped_D(TRANSACTION_COUNTER_WIDTH - 1 downto 32));
-				end if;
-
-			when MULTIPLEXERCONFIG_PARAM_ADDRESSES.StatisticsInput6Dropped32_D =>
-				if ENABLE_STATISTICS = true and ENABLE_INPUT_6 = true then
-					MultiplexerOutput_DN(31 downto 0) <= std_logic_vector(MultiplexerConfigInfoOut_DI.StatisticsInput6Dropped_D(31 downto 0));
-				end if;
 			when others => null;
 		end case;
 	end process multiplexerIO;
 
 	multiplexerUpdate : process(Clock_CI, Reset_RI) is
 	begin
-		if Reset_RI = '1' then          -- asynchronous reset (active high)
+		if Reset_RI = '1' then                -- asynchronous reset (active high)
 			MultiplexerOutput_DP <= (others => '0');
 
 			MultiplexerConfigReg_DP <= tMultiplexerConfigDefault;

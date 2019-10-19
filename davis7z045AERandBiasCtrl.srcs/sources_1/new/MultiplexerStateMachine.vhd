@@ -7,8 +7,6 @@ use work.MultiplexerConfigRecords.all;
 
 entity MultiplexerStateMachine is
 	generic(
-		ENABLE_INPUT_5    : boolean := false;
-		ENABLE_INPUT_6    : boolean := false;
 		ENABLE_STATISTICS : boolean := false);
 	port(
 		Clock_CI                    : in  std_logic;
@@ -25,41 +23,29 @@ entity MultiplexerStateMachine is
 		OutFifoControl_SO           : out tToFifoWriteSide;
 		OutFifoData_DO              : out std_logic_vector(FULL_EVENT_WIDTH - 1 downto 0);
 
-		-- Fifo input (from Input1)
-		In1FifoControl_SI           : in  tFromFifoReadSide;
-		In1FifoControl_SO           : out tToFifoReadSide;
-		In1FifoData_DI              : in  std_logic_vector(EVENT_WIDTH - 1 downto 0);
-		In1Timestamp_SI             : in  std_logic;
+		-- Fifo input (from IMU)
+		IMUFifoControl_SI           : in  tFromFifoReadSide;
+		IMUFifoControl_SO           : out tToFifoReadSide;
+		IMUFifoData_DI              : in  std_logic_vector(EVENT_WIDTH - 1 downto 0);
+		IMUTimestamp_SI             : in  std_logic;
 
-		-- Fifo input (from Input2)
-		In2FifoControl_SI           : in  tFromFifoReadSide;
-		In2FifoControl_SO           : out tToFifoReadSide;
-		In2FifoData_DI              : in  std_logic_vector(EVENT_WIDTH - 1 downto 0);
-		In2Timestamp_SI             : in  std_logic;
+		-- Fifo input (from ExtInput)
+		ExtInputFifoControl_SI      : in  tFromFifoReadSide;
+		ExtInputFifoControl_SO      : out tToFifoReadSide;
+		ExtInputFifoData_DI         : in  std_logic_vector(EVENT_WIDTH - 1 downto 0);
+		ExtInputTimestamp_SI        : in  std_logic;
 
-		-- Fifo input (from Input3)
-		In3FifoControl_SI           : in  tFromFifoReadSide;
-		In3FifoControl_SO           : out tToFifoReadSide;
-		In3FifoData_DI              : in  std_logic_vector(EVENT_WIDTH - 1 downto 0);
-		In3Timestamp_SI             : in  std_logic;
+		-- Fifo input (from DVS)
+		DVSFifoControl_SI           : in  tFromFifoReadSide;
+		DVSFifoControl_SO           : out tToFifoReadSide;
+		DVSFifoData_DI              : in  std_logic_vector(EVENT_WIDTH - 1 downto 0);
+		DVSTimestamp_SI             : in  std_logic;
 
-		-- Fifo input (from Input4)
-		In4FifoControl_SI           : in  tFromFifoReadSide;
-		In4FifoControl_SO           : out tToFifoReadSide;
-		In4FifoData_DI              : in  std_logic_vector(EVENT_WIDTH - 1 downto 0);
-		In4Timestamp_SI             : in  std_logic;
-
-		-- Fifo input (from Input5)
-		In5FifoControl_SI           : in  tFromFifoReadSide;
-		In5FifoControl_SO           : out tToFifoReadSide;
-		In5FifoData_DI              : in  std_logic_vector(EVENT_WIDTH - 1 downto 0);
-		In5Timestamp_SI             : in  std_logic;
-
-		-- Fifo input (from Input6)
-		In6FifoControl_SI           : in  tFromFifoReadSide;
-		In6FifoControl_SO           : out tToFifoReadSide;
-		In6FifoData_DI              : in  std_logic_vector(EVENT_WIDTH - 1 downto 0);
-		In6Timestamp_SI             : in  std_logic;
+		-- Fifo input (from APS)
+		APSFifoControl_SI           : in  tFromFifoReadSide;
+		APSFifoControl_SO           : out tToFifoReadSide;
+		APSFifoData_DI              : in  std_logic_vector(EVENT_WIDTH - 1 downto 0);
+		APSTimestamp_SI             : in  std_logic;
 
 		-- Configuration input and output
 		MultiplexerConfig_DI        : in  tMultiplexerConfig;
@@ -69,7 +55,7 @@ end MultiplexerStateMachine;
 architecture Behavioral of MultiplexerStateMachine is
 	attribute syn_enum_encoding : string;
 
-	type tState is (stIdle, stTimestampReset, stTimestampWrap, stTimestamp, stPrepareInput1, stInput1, stPrepareInput2, stInput2, stPrepareInput3, stInput3, stPrepareInput4, stInput4, stPrepareInput5, stInput5, stPrepareInput6, stInput6, stDropData);
+	type tState is (stIdle, stTimestampReset, stTimestampWrap, stTimestamp, stPrepareIMU, stIMU, stPrepareExtInput, stExtInput, stPrepareDVS, stDVS, stPrepareAPS, stAPS, stDropData);
 	attribute syn_enum_encoding of tState : type is "onehot";
 
 	-- present and next state
@@ -104,14 +90,10 @@ architecture Behavioral of MultiplexerStateMachine is
 	signal MultiplexerConfigReg_D : tMultiplexerConfig;
 
 	-- Statistics support.
-	signal StatisticsInput1Dropped_SP, StatisticsInput1Dropped_SN : std_logic;
-	signal StatisticsInput2Dropped_SP, StatisticsInput2Dropped_SN : std_logic;
-	signal StatisticsInput3Dropped_SP, StatisticsInput3Dropped_SN : std_logic;
-	signal StatisticsInput4Dropped_SP, StatisticsInput4Dropped_SN : std_logic;
-	signal StatisticsInput5Dropped_SP, StatisticsInput5Dropped_SN : std_logic;
-	signal StatisticsInput6Dropped_SP, StatisticsInput6Dropped_SN : std_logic;
+	signal StatisticsExtInputDropped_SP, StatisticsExtInputDropped_SN : std_logic;
+	signal StatisticsDVSDropped_SP, StatisticsDVSDropped_SN           : std_logic;
 	
-	signal TimestampReset_SORTimestampOverflowBufferOverflow_S, NOTMultiplexerConfigReg_DRun_S : std_logic;
+    signal TimestampReset_SORTimestampOverflowBufferOverflow_S, NOTMultiplexerConfigReg_DRun_S : std_logic;
 begin
 	-- Use a PulseDetector to detect this, so that the pulse, however long it
 	-- may be, gets reduced to one cycle at exit and only resets once.
@@ -204,7 +186,7 @@ begin
 			ChangeDetected_SO     => TimestampChanged_S,
 			ChangeAcknowledged_SI => TimestampSent_S);
 
-	p_memoryless : process(State_DP, StateTimestampNext_DP, TimestampResetBuffer_S, TimestampOverflowBuffer_D, TimestampBuffer_D, HighestTimestampSent_SP, TimestampChanged_S, OutFifoControl_SI, In1FifoControl_SI, In1FifoData_DI, In2FifoControl_SI, In2FifoData_DI, In3FifoControl_SI, In3FifoData_DI, In4FifoControl_SI, In4FifoData_DI, In5FifoControl_SI, In5FifoData_DI, In6FifoControl_SI, In6FifoData_DI, MultiplexerConfigReg_D, In1Timestamp_SI, In2Timestamp_SI, In3Timestamp_SI, In4Timestamp_SI, In5Timestamp_SI, In6Timestamp_SI, TimestampOverflow_S)
+	p_memoryless : process(State_DP, StateTimestampNext_DP, TimestampResetBuffer_S, TimestampOverflowBuffer_D, TimestampBuffer_D, HighestTimestampSent_SP, TimestampChanged_S, OutFifoControl_SI, IMUFifoControl_SI, IMUFifoData_DI, ExtInputFifoControl_SI, ExtInputFifoData_DI, DVSFifoControl_SI, DVSFifoData_DI, APSFifoControl_SI, APSFifoData_DI, MultiplexerConfigReg_D, IMUTimestamp_SI, ExtInputTimestamp_SI, DVSTimestamp_SI, APSTimestamp_SI, TimestampOverflow_S)
 	begin
 		State_DN              <= State_DP; -- Keep current state by default.
 		StateTimestampNext_DN <= stTimestamp;
@@ -218,19 +200,13 @@ begin
 		OutFifoControl_SO.Write_S <= '0';
 		OutFifoData_DO            <= (others => '0');
 
-		In1FifoControl_SO.Read_S <= '0';
-		In2FifoControl_SO.Read_S <= '0';
-		In3FifoControl_SO.Read_S <= '0';
-		In4FifoControl_SO.Read_S <= '0';
-		In5FifoControl_SO.Read_S <= '0';
-		In6FifoControl_SO.Read_S <= '0';
+		IMUFifoControl_SO.Read_S      <= '0';
+		ExtInputFifoControl_SO.Read_S <= '0';
+		DVSFifoControl_SO.Read_S      <= '0';
+		APSFifoControl_SO.Read_S      <= '0';
 
-		StatisticsInput1Dropped_SN <= '0';
-		StatisticsInput2Dropped_SN <= '0';
-		StatisticsInput3Dropped_SN <= '0';
-		StatisticsInput4Dropped_SN <= '0';
-		StatisticsInput5Dropped_SN <= '0';
-		StatisticsInput6Dropped_SN <= '0';
+		StatisticsExtInputDropped_SN <= '0';
+		StatisticsDVSDropped_SN      <= '0';
 
 		case State_DP is
 			when stIdle =>
@@ -238,41 +214,29 @@ begin
 				if MultiplexerConfigReg_D.Run_S = '1' then
 					-- Now check various flags and see what data to forward.
 					-- Timestamp-related flags have priority over data.
-					if OutFifoControl_SI.Full_S = '0' then
+					if not OutFifoControl_SI.Full_S = '1' then
 						if TimestampResetBuffer_S = '1' then
 							State_DN <= stTimestampReset;
 						elsif TimestampOverflowBuffer_D > 0 then
 							State_DN <= stTimestampWrap;
-						elsif OutFifoControl_SI.AlmostFull_S = '0' then
+						elsif not OutFifoControl_SI.AlmostFull_S = '1' then
 							-- Use the AlmostEmpty flags as markers to see if
 							-- there is lots of data in the FIFOs and
 							-- prioritize emptying these over others.
 							-- First check the AlmostEmpty flags, which are set
 							-- to indicate a higher fullness level.
-							if In1FifoControl_SI.AlmostEmpty_S = '0' then
-								State_DN <= stPrepareInput1;
-							elsif In2FifoControl_SI.AlmostEmpty_S = '0' then
-								State_DN <= stPrepareInput2;
-							elsif In3FifoControl_SI.AlmostEmpty_S = '0' then
-								State_DN <= stPrepareInput3;
-							elsif In4FifoControl_SI.AlmostEmpty_S = '0' then
-								State_DN <= stPrepareInput4;
-							elsif In5FifoControl_SI.AlmostEmpty_S = '0' and ENABLE_INPUT_5 = true then
-								State_DN <= stPrepareInput5;
-							elsif In6FifoControl_SI.AlmostEmpty_S = '0' and ENABLE_INPUT_6 = true then
-								State_DN <= stPrepareInput6;
-							elsif In1FifoControl_SI.Empty_S = '0' then
-								State_DN <= stPrepareInput1;
-							elsif In2FifoControl_SI.Empty_S = '0' then
-								State_DN <= stPrepareInput2;
-							elsif In3FifoControl_SI.Empty_S = '0' then
-								State_DN <= stPrepareInput3;
-							elsif In4FifoControl_SI.Empty_S = '0' then
-								State_DN <= stPrepareInput4;
-							elsif In5FifoControl_SI.Empty_S = '0' and ENABLE_INPUT_5 = true then
-								State_DN <= stPrepareInput5;
-							elsif In6FifoControl_SI.Empty_S = '0' and ENABLE_INPUT_6 = true then
-								State_DN <= stPrepareInput6;
+							if not IMUFifoControl_SI.Empty_S = '1' then
+								State_DN <= stPrepareIMU;
+							elsif not ExtInputFifoControl_SI.Empty_S = '1' then
+								State_DN <= stPrepareExtInput;
+							elsif not DVSFifoControl_SI.AlmostEmpty_S = '1' then
+								State_DN <= stPrepareDVS;
+							elsif not APSFifoControl_SI.AlmostEmpty_S = '1' then
+								State_DN <= stPrepareAPS;
+							elsif not DVSFifoControl_SI.Empty_S = '1' then
+								State_DN <= stPrepareDVS;
+							elsif not APSFifoControl_SI.Empty_S = '1' then
+								State_DN <= stPrepareAPS;
 							end if;
 						else
 							-- No space for an event and its timestamp, drop it.
@@ -285,29 +249,10 @@ begin
 					end if;
 				else
 					-- If not running, just drain the FIFOs.
-					if In1FifoControl_SI.Empty_S = '0' then
-						In1FifoControl_SO.Read_S <= '1';
-					end if;
-
-					if In2FifoControl_SI.Empty_S = '0' then
-						In2FifoControl_SO.Read_S <= '1';
-					end if;
-
-					if In3FifoControl_SI.Empty_S = '0' then
-						In3FifoControl_SO.Read_S <= '1';
-					end if;
-
-					if In4FifoControl_SI.Empty_S = '0' then
-						In4FifoControl_SO.Read_S <= '1';
-					end if;
-
-					if In5FifoControl_SI.Empty_S = '0' and ENABLE_INPUT_5 = true then
-						In5FifoControl_SO.Read_S <= '1';
-					end if;
-
-					if In6FifoControl_SI.Empty_S = '0' and ENABLE_INPUT_6 = true then
-						In6FifoControl_SO.Read_S <= '1';
-					end if;
+					IMUFifoControl_SO.Read_S      <= not IMUFifoControl_SI.Empty_S;
+					ExtInputFifoControl_SO.Read_S <= not ExtInputFifoControl_SI.Empty_S;
+					DVSFifoControl_SO.Read_S      <= not DVSFifoControl_SI.Empty_S;
+					APSFifoControl_SO.Read_S      <= not APSFifoControl_SI.Empty_S;
 				end if;
 
 			when stTimestampReset =>
@@ -315,7 +260,7 @@ begin
 				OutFifoData_DO            <= EVENT_CODE_EVENT & EVENT_CODE_SPECIAL & EVENT_CODE_SPECIAL_TIMESTAMP_RESET;
 				OutFifoControl_SO.Write_S <= '1';
 
-				TimestampResetBufferClear_S <= '1';
+				TimestampResetBufferClear_S    <= '1';
 				-- Also clean overflow counter, since a timestamp reset event
 				-- has higher priority and invalidates all previous time
 				-- information by restarting from zero at this point.
@@ -332,9 +277,9 @@ begin
 				-- the new count as usual in stIdle. This is the least painful way to deal with
 				-- this corner case, others (like sending out a VAL+1) suffer from problems
 				-- themselves when the overflow counter is at its maximum.
-				if TimestampOverflow_S = '0' then
+				if not TimestampOverflow_S = '1' then
 					-- Send timestamp wrap (add 15 bits) event to host.
-					OutFifoData_DO <= EVENT_CODE_EVENT & EVENT_CODE_TIMESTAMP_WRAP & std_logic_vector(TimestampOverflowBuffer_D);
+					OutFifoData_DO            <= EVENT_CODE_EVENT & EVENT_CODE_TIMESTAMP_WRAP & std_logic_vector(TimestampOverflowBuffer_D);
 					OutFifoControl_SO.Write_S <= '1';
 
 					TimestampOverflowBufferClear_S <= '1';
@@ -381,106 +326,72 @@ begin
 
 				State_DN <= StateTimestampNext_DP;
 
-			when stPrepareInput1 =>
+			when stPrepareIMU =>
 				-- Decide if event needs to be timestamped.
-				if In1Timestamp_SI = '1' then
+				if IMUTimestamp_SI = '1'then
 					State_DN              <= stTimestamp;
-					StateTimestampNext_DN <= stInput1;
+					StateTimestampNext_DN <= stIMU;
 				else
-					State_DN <= stInput1;
+					State_DN <= stIMU;
 				end if;
 
-			when stInput1 =>
+			when stIMU =>
 				-- Write out current event.
-				OutFifoData_DO            <= EVENT_CODE_EVENT & In1FifoData_DI;
+				OutFifoData_DO            <= EVENT_CODE_EVENT & IMUFifoData_DI;
 				OutFifoControl_SO.Write_S <= '1';
 
-				In1FifoControl_SO.Read_S <= '1';
+				IMUFifoControl_SO.Read_S <= '1';
 				State_DN                 <= stIdle;
 
-			when stPrepareInput2 =>
+			when stPrepareExtInput =>
 				-- Decide if event needs to be timestamped.
-				if In2Timestamp_SI = '1' then
+				if ExtInputTimestamp_SI = '1' then
 					State_DN              <= stTimestamp;
-					StateTimestampNext_DN <= stInput2;
+					StateTimestampNext_DN <= stExtInput;
 				else
-					State_DN <= stInput2;
+					State_DN <= stExtInput;
 				end if;
 
-			when stInput2 =>
+			when stExtInput =>
 				-- Write out current event.
-				OutFifoData_DO            <= EVENT_CODE_EVENT & In2FifoData_DI;
+				OutFifoData_DO            <= EVENT_CODE_EVENT & ExtInputFifoData_DI;
 				OutFifoControl_SO.Write_S <= '1';
 
-				In2FifoControl_SO.Read_S <= '1';
+				ExtInputFifoControl_SO.Read_S <= '1';
+				State_DN                      <= stIdle;
+
+			when stPrepareDVS =>
+				-- Decide if event needs to be timestamped.
+				if DVSTimestamp_SI = '1' then
+					State_DN              <= stTimestamp;
+					StateTimestampNext_DN <= stDVS;
+				else
+					State_DN <= stDVS;
+				end if;
+
+			when stDVS =>
+				-- Write out current event.
+				OutFifoData_DO            <= EVENT_CODE_EVENT & DVSFifoData_DI;
+				OutFifoControl_SO.Write_S <= '1';
+
+				DVSFifoControl_SO.Read_S <= '1';
 				State_DN                 <= stIdle;
 
-			when stPrepareInput3 =>
+			when stPrepareAPS =>
 				-- Decide if event needs to be timestamped.
-				if In3Timestamp_SI = '1' then
+				if APSTimestamp_SI = '1' then
 					State_DN              <= stTimestamp;
-					StateTimestampNext_DN <= stInput3;
+					StateTimestampNext_DN <= stAPS;
 				else
-					State_DN <= stInput3;
+					State_DN <= stAPS;
 				end if;
 
-			when stInput3 =>
+			when stAPS =>
 				-- Write out current event.
-				OutFifoData_DO            <= EVENT_CODE_EVENT & In3FifoData_DI;
+				OutFifoData_DO            <= EVENT_CODE_EVENT & APSFifoData_DI;
 				OutFifoControl_SO.Write_S <= '1';
 
-				In3FifoControl_SO.Read_S <= '1';
-				State_DN                 <= stIdle;
-
-			when stPrepareInput4 =>
-				-- Decide if event needs to be timestamped.
-				if In4Timestamp_SI = '1' then
-					State_DN              <= stTimestamp;
-					StateTimestampNext_DN <= stInput4;
-				else
-					State_DN <= stInput4;
-				end if;
-
-			when stInput4 =>
-				-- Write out current event.
-				OutFifoData_DO            <= EVENT_CODE_EVENT & In4FifoData_DI;
-				OutFifoControl_SO.Write_S <= '1';
-
-				In4FifoControl_SO.Read_S <= '1';
-				State_DN                 <= stIdle;
-
-			when stPrepareInput5 =>
-				-- Decide if event needs to be timestamped.
-				if In5Timestamp_SI = '1' then
-					State_DN              <= stTimestamp;
-					StateTimestampNext_DN <= stInput5;
-				else
-					State_DN <= stInput5;
-				end if;
-
-			when stInput5 =>
-				-- Write out current event.
-				OutFifoData_DO            <= EVENT_CODE_EVENT & In5FifoData_DI;
-				OutFifoControl_SO.Write_S <= '1';
-
-				In5FifoControl_SO.Read_S <= '1';
-				State_DN                 <= stIdle;
-
-			when stPrepareInput6 =>
-				-- Decide if event needs to be timestamped.
-				if In6Timestamp_SI = '1' then
-					State_DN              <= stTimestamp;
-					StateTimestampNext_DN <= stInput6;
-				else
-					State_DN <= stInput6;
-				end if;
-
-			when stInput6 =>
-				-- Write out current event.
-				OutFifoData_DO            <= EVENT_CODE_EVENT & In6FifoData_DI;
-				OutFifoControl_SO.Write_S <= '1';
-
-				In6FifoControl_SO.Read_S <= '1';
+				APSFifoControl_SO.Read_S <= '1';
 				State_DN                 <= stIdle;
 
 			when stDropData =>
@@ -489,40 +400,16 @@ begin
 				-- disallows a backlog of old events to remain around, which
 				-- would be timestamped incorrectly after long delays.
 				-- This is fully configurable from the host.
-				if MultiplexerConfigReg_D.DropInput1OnTransferStall_S = '1' and In1FifoControl_SI.Empty_S = '0' then
-					In1FifoControl_SO.Read_S <= '1';
+				if MultiplexerConfigReg_D.DropExtInputOnTransferStall_S = '1' and not ExtInputFifoControl_SI.Empty_S = '1' then
+					ExtInputFifoControl_SO.Read_S <= '1';
 
-					StatisticsInput1Dropped_SN <= '1';
+					StatisticsExtInputDropped_SN <= '1';
 				end if;
 
-				if MultiplexerConfigReg_D.DropInput2OnTransferStall_S = '1' and In2FifoControl_SI.Empty_S = '0' then
-					In2FifoControl_SO.Read_S <= '1';
+				if MultiplexerConfigReg_D.DropDVSOnTransferStall_S = '1' and not DVSFifoControl_SI.Empty_S = '1' then
+					DVSFifoControl_SO.Read_S <= '1';
 
-					StatisticsInput2Dropped_SN <= '1';
-				end if;
-
-				if MultiplexerConfigReg_D.DropInput3OnTransferStall_S = '1' and In3FifoControl_SI.Empty_S = '0' then
-					In3FifoControl_SO.Read_S <= '1';
-
-					StatisticsInput3Dropped_SN <= '1';
-				end if;
-
-				if MultiplexerConfigReg_D.DropInput4OnTransferStall_S = '1' and In4FifoControl_SI.Empty_S = '0' then
-					In4FifoControl_SO.Read_S <= '1';
-
-					StatisticsInput4Dropped_SN <= '1';
-				end if;
-
-				if MultiplexerConfigReg_D.DropInput5OnTransferStall_S = '1' and In5FifoControl_SI.Empty_S = '0' and ENABLE_INPUT_5 = true then
-					In5FifoControl_SO.Read_S <= '1';
-
-					StatisticsInput5Dropped_SN <= '1';
-				end if;
-
-				if MultiplexerConfigReg_D.DropInput6OnTransferStall_S = '1' and In6FifoControl_SI.Empty_S = '0' and ENABLE_INPUT_6 = true then
-					In6FifoControl_SO.Read_S <= '1';
-
-					StatisticsInput6Dropped_SN <= '1';
+					StatisticsDVSDropped_SN <= '1';
 				end if;
 
 				State_DN <= stIdle;
@@ -534,7 +421,7 @@ begin
 	-- Change state on clock edge (synchronous).
 	p_memoryzing : process(Clock_CI, Reset_RI)
 	begin
-		if Reset_RI = '1' then          -- asynchronous reset (active-high for FPGAs)
+		if Reset_RI = '1' then                -- asynchronous reset (active-high for FPGAs)
 			State_DP              <= stIdle;
 			StateTimestampNext_DP <= stTimestamp;
 
@@ -553,132 +440,50 @@ begin
 		end if;
 	end process p_memoryzing;
 
-	statisticsSupport : if ENABLE_STATISTICS = true generate
-		StatisticsInput1DroppedReg : entity work.SimpleRegister
+    NOTMultiplexerConfigReg_DRun_S <= not MultiplexerConfigReg_D.Run_S;
+	statisticsSupport : if ENABLE_STATISTICS generate
+		StatisticsExtInputDroppedReg : entity work.SimpleRegister
 			generic map(
 				SIZE => 1)
 			port map(
 				Clock_CI     => Clock_CI,
 				Reset_RI     => Reset_RI,
 				Enable_SI    => '1',
-				Input_SI(0)  => StatisticsInput1Dropped_SN,
-				Output_SO(0) => StatisticsInput1Dropped_SP);
+				Input_SI(0)  => StatisticsExtInputDropped_SN,
+				Output_SO(0) => StatisticsExtInputDropped_SP);
 
-        NOTMultiplexerConfigReg_DRun_S <= not MultiplexerConfigReg_D.Run_S;
-		StatisticsInput1DroppedCounter : entity work.Counter
+		StatisticsExtInputDroppedCounter : entity work.Counter
 			generic map(
 				SIZE => TRANSACTION_COUNTER_WIDTH)
 			port map(
 				Clock_CI  => Clock_CI,
 				Reset_RI  => Reset_RI,
 				Clear_SI  => NOTMultiplexerConfigReg_DRun_S,
-				Enable_SI => StatisticsInput1Dropped_SP,
-				Data_DO   => MultiplexerConfigInfoOut_DO.StatisticsInput1Dropped_D);
+				Enable_SI => StatisticsExtInputDropped_SP,
+				Data_DO   => MultiplexerConfigInfoOut_DO.StatisticsExtInputDropped_D);
 
-		StatisticsInput2DroppedReg : entity work.SimpleRegister
+		StatisticsDVSDroppedReg : entity work.SimpleRegister
 			generic map(
 				SIZE => 1)
 			port map(
 				Clock_CI     => Clock_CI,
 				Reset_RI     => Reset_RI,
 				Enable_SI    => '1',
-				Input_SI(0)  => StatisticsInput2Dropped_SN,
-				Output_SO(0) => StatisticsInput2Dropped_SP);
+				Input_SI(0)  => StatisticsDVSDropped_SN,
+				Output_SO(0) => StatisticsDVSDropped_SP);
 
-		StatisticsInput2DroppedCounter : entity work.Counter
+		StatisticsDVSDroppedCounter : entity work.Counter
 			generic map(
 				SIZE => TRANSACTION_COUNTER_WIDTH)
 			port map(
 				Clock_CI  => Clock_CI,
 				Reset_RI  => Reset_RI,
 				Clear_SI  => NOTMultiplexerConfigReg_DRun_S,
-				Enable_SI => StatisticsInput2Dropped_SP,
-				Data_DO   => MultiplexerConfigInfoOut_DO.StatisticsInput2Dropped_D);
-
-		StatisticsInput3DroppedReg : entity work.SimpleRegister
-			generic map(
-				SIZE => 1)
-			port map(
-				Clock_CI     => Clock_CI,
-				Reset_RI     => Reset_RI,
-				Enable_SI    => '1',
-				Input_SI(0)  => StatisticsInput3Dropped_SN,
-				Output_SO(0) => StatisticsInput3Dropped_SP);
-
-		StatisticsInput3DroppedCounter : entity work.Counter
-			generic map(
-				SIZE => TRANSACTION_COUNTER_WIDTH)
-			port map(
-				Clock_CI  => Clock_CI,
-				Reset_RI  => Reset_RI,
-				Clear_SI  => NOTMultiplexerConfigReg_DRun_S,
-				Enable_SI => StatisticsInput3Dropped_SP,
-				Data_DO   => MultiplexerConfigInfoOut_DO.StatisticsInput3Dropped_D);
-
-		StatisticsInput4DroppedReg : entity work.SimpleRegister
-			generic map(
-				SIZE => 1)
-			port map(
-				Clock_CI     => Clock_CI,
-				Reset_RI     => Reset_RI,
-				Enable_SI    => '1',
-				Input_SI(0)  => StatisticsInput4Dropped_SN,
-				Output_SO(0) => StatisticsInput4Dropped_SP);
-
-		StatisticsInput4DroppedCounter : entity work.Counter
-			generic map(
-				SIZE => TRANSACTION_COUNTER_WIDTH)
-			port map(
-				Clock_CI  => Clock_CI,
-				Reset_RI  => Reset_RI,
-				Clear_SI  => NOTMultiplexerConfigReg_DRun_S,
-				Enable_SI => StatisticsInput4Dropped_SP,
-				Data_DO   => MultiplexerConfigInfoOut_DO.StatisticsInput4Dropped_D);
-
-		StatisticsInput5Dropped : if ENABLE_INPUT_5 = true generate
-		begin
-			StatisticsInput5DroppedReg : entity work.SimpleRegister
-				generic map(
-					SIZE => 1)
-				port map(
-					Clock_CI     => Clock_CI,
-					Reset_RI     => Reset_RI,
-					Enable_SI    => '1',
-					Input_SI(0)  => StatisticsInput5Dropped_SN,
-					Output_SO(0) => StatisticsInput5Dropped_SP);
-
-			StatisticsInput5DroppedCounter : entity work.Counter
-				generic map(
-					SIZE => TRANSACTION_COUNTER_WIDTH)
-				port map(
-					Clock_CI  => Clock_CI,
-					Reset_RI  => Reset_RI,
-					Clear_SI  => NOTMultiplexerConfigReg_DRun_S,
-					Enable_SI => StatisticsInput5Dropped_SP,
-					Data_DO   => MultiplexerConfigInfoOut_DO.StatisticsInput5Dropped_D);
-		end generate StatisticsInput5Dropped;
-
-		StatisticsInput6Dropped : if ENABLE_INPUT_6 = true generate
-		begin
-			StatisticsInput6DroppedReg : entity work.SimpleRegister
-				generic map(
-					SIZE => 1)
-				port map(
-					Clock_CI     => Clock_CI,
-					Reset_RI     => Reset_RI,
-					Enable_SI    => '1',
-					Input_SI(0)  => StatisticsInput6Dropped_SN,
-					Output_SO(0) => StatisticsInput6Dropped_SP);
-
-			StatisticsInput6DroppedCounter : entity work.Counter
-				generic map(
-					SIZE => TRANSACTION_COUNTER_WIDTH)
-				port map(
-					Clock_CI  => Clock_CI,
-					Reset_RI  => Reset_RI,
-					Clear_SI  => NOTMultiplexerConfigReg_DRun_S,
-					Enable_SI => StatisticsInput6Dropped_SP,
-					Data_DO   => MultiplexerConfigInfoOut_DO.StatisticsInput6Dropped_D);
-		end generate StatisticsInput6Dropped;
+				Enable_SI => StatisticsDVSDropped_SP,
+				Data_DO   => MultiplexerConfigInfoOut_DO.StatisticsDVSDropped_D);
 	end generate statisticsSupport;
+
+	noStatisticsSupport : if not ENABLE_STATISTICS generate
+		MultiplexerConfigInfoOut_DO <= tMultiplexerConfigInfoOutDefault;
+	end generate noStatisticsSupport;
 end Behavioral;

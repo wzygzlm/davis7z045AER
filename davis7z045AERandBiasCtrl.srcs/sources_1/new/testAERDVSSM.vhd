@@ -236,30 +236,22 @@ begin
             OutFifoControl_SI           => LogicUSBFifoControlOut_S.WriteSide,
             OutFifoControl_SO           => LogicUSBFifoControlIn_S.WriteSide,
             OutFifoData_DO              => AERSMOutFifoData_DO,
-            In1FifoControl_SI           => DVSAERFifoControlOut_S.ReadSide,
-            In1FifoControl_SO           => DVSAERFifoControlIn_S.ReadSide,
-            In1FifoData_DI              => DVSAERFifoDataOut_D,
-            In1Timestamp_SI             => In1Timestamp_S,
-            In2FifoControl_SI           => (others => '1'),
-            In2FifoControl_SO           => open,
-            In2FifoData_DI              => (others => '0'),
-            In2Timestamp_SI             => '0',
-            In3FifoControl_SI           => (others => '1'),
-            In3FifoControl_SO           => open,
-            In3FifoData_DI              => (others => '0'),
-            In3Timestamp_SI             => '0',
-            In4FifoControl_SI           => (others => '1'),
-            In4FifoControl_SO           => open,
-            In4FifoData_DI              => (others => '0'),
-            In4Timestamp_SI             => '0',
-            In5FifoControl_SI           => (others => '1'),
-            In5FifoControl_SO           => open,
-            In5FifoData_DI              => (others => '0'),
-            In5Timestamp_SI             => '0',
-            In6FifoControl_SI           => (others => '1'),
-            In6FifoControl_SO           => open,
-            In6FifoData_DI              => (others => '0'),
-            In6Timestamp_SI             => '0',
+            IMUFifoControl_SI           => (others => '1'),
+            IMUFifoControl_SO           => open,
+            IMUFifoData_DI              => (others => '0'),
+            IMUTimestamp_SI             => '0',
+            ExtInputFifoControl_SI      => (others => '1'),
+            ExtInputFifoControl_SO      => open,
+            ExtInputFifoData_DI         => (others => '0'),
+            ExtInputTimestamp_SI        => '0',
+            DVSFifoControl_SI           => DVSAERFifoControlOut_S.ReadSide,
+            DVSFifoControl_SO           => DVSAERFifoControlIn_S.ReadSide,
+            DVSFifoData_DI              => DVSAERFifoDataOut_D,
+            DVSTimestamp_SI             => In1Timestamp_S,            
+            APSFifoControl_SI           => (others => '1'),
+            APSFifoControl_SO           => open,
+            APSFifoData_DI              => (others => '0'),
+            APSTimestamp_SI             => '0',
             MultiplexerConfig_DI        => MultiplexerConfigReg2_D,
             MultiplexerConfigInfoOut_DO => MultiplexerConfigInfoOutReg2_D);
 
@@ -418,7 +410,7 @@ begin
         ConfigParamOutput_D <= (others => '0');
 
         case ConfigModuleAddress_D is
-            when MULTIPLEXERCONFIG_MODULE_ADDRESS =>
+            when MULTIPLEXER_CONFIG_MODULE_ADDRESS =>
                 ConfigParamOutput_D <= MultiplexerConfigParamOutput_D;
 
             when DVS_CONFIG_MODULE_ADDRESS =>

@@ -14,4 +14,4 @@
 *.sdk/BOOT.bin
 *.sdk/image.ub
 *.sdk
-*.src/sources_1/bd/brd/ip
+*.srcs/sources_1/bd/brd/ip
