@@ -162,6 +162,7 @@ architecture Behavioral of testAERDVSSM is
 	-- added by Min to adapt it to vivado
 	signal DVSAERConfig_DRun_SORAPSADCConfig_DRun_S   : std_logic;
 	signal NOTSPISlaveSelectSync_SB                   : std_logic;
+	signal DVSAERConfig_DRun_SORAPSADCConfig_DRun_SORMultiplexerConfig_DForceChipBiasEnable_S : std_logic;
 	
 begin
 --    ConfigLatchInput_S_Debug <= ConfigLatchInput_S;
@@ -215,6 +216,17 @@ begin
 --				FifoData_DO    => LogicUSBFifoDataOut_D);
 --	end generate normalFIFO;
 
+	-- Always enable chip if it is needed (for DVS or APS or forced).
+	DVSAERConfig_DRun_SORAPSADCConfig_DRun_S <= DVSAERConfig_D.Run_S or APSADCConfig_D.Run_S or MultiplexerConfig_D.RunChip_S;
+--	DVSAERConfig_DRun_SORAPSADCConfig_DRun_SORMultiplexerConfig_DForceChipBiasEnable_S <= DVSAERConfig_D.Run_S or APSADCConfig_D.Run_S or MultiplexerConfig_D.ForceChipBiasEnable_S;
+	chipBiasEnableBuffer : entity work.SimpleRegister
+		port map(
+			Clock_CI     => LogicClock_C,
+			Reset_RI     => LogicReset_R,
+			Enable_SI    => '1',
+			Input_SI(0)  => DVSAERConfig_DRun_SORAPSADCConfig_DRun_S,
+			Output_SO(0) => ChipBiasEnable_SO);
+			
 	-- In1 is DVS, TS Y addresses. In2 is APS, TS special. In3 is IMU, TS special. In4 is ExtInput, TS all.
 	In1Timestamp_S <= '1' when DVSAERFifoDataOut_D(EVENT_WIDTH - 1 downto EVENT_WIDTH - 3) = EVENT_CODE_Y_ADDR else '0';
 	In2Timestamp_S <= '1' when APSADCFifoDataOut_D(EVENT_WIDTH - 1 downto EVENT_WIDTH - 3) = EVENT_CODE_SPECIAL else '0';
