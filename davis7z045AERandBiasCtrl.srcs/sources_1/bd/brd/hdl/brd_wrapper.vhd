@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
---Date        : Tue Oct 22 10:41:18 2019
+--Date        : Thu Oct 24 15:25:30 2019
 --Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 --Command     : generate_target brd_wrapper.bd
 --Design      : brd_wrapper
@@ -54,6 +54,7 @@ entity brd_wrapper is
     SyncInSignal_AI_0 : in STD_LOGIC;
     SyncOutClock_CO_0 : out STD_LOGIC;
     SyncOutSignal_SO_0 : out STD_LOGIC;
+    extIn_V_0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     led_0 : out STD_LOGIC_VECTOR ( 5 downto 0 );
     vid_data : out STD_LOGIC_VECTOR ( 23 downto 0 );
     vid_hsync : out STD_LOGIC;
@@ -108,7 +109,8 @@ architecture STRUCTURE of brd_wrapper is
     SyncOutSignal_SO_0 : out STD_LOGIC;
     vid_data : out STD_LOGIC_VECTOR ( 23 downto 0 );
     vid_hsync : out STD_LOGIC;
-    vid_vsync : out STD_LOGIC
+    vid_vsync : out STD_LOGIC;
+    extIn_V_0 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component brd;
 begin
@@ -155,6 +157,7 @@ brd_i: component brd
       SyncInSignal_AI_0 => SyncInSignal_AI_0,
       SyncOutClock_CO_0 => SyncOutClock_CO_0,
       SyncOutSignal_SO_0 => SyncOutSignal_SO_0,
+      extIn_V_0(0) => extIn_V_0(0),
       led_0(5 downto 0) => led_0(5 downto 0),
       vid_data(23 downto 0) => vid_data(23 downto 0),
       vid_hsync => vid_hsync,

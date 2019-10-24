@@ -185,4 +185,7 @@ set_property PACKAGE_PIN U30 [get_ports vid_vsync]
 set_property IOSTANDARD LVCMOS33 [get_ports vid_vsync]
 
 
+set_property PACKAGE_PIN AK16 [get_ports {extIn_V_0[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {extIn_V_0[0]}]
+set_property PULLUP true [get_ports {extIn_V_0[0]}]
 
