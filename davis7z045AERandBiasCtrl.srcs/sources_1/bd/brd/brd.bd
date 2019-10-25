@@ -1097,7 +1097,7 @@
           <spirit:configurableElementValue spirit:referenceId="C_PROBE1_TYPE">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE0_TYPE">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_DATA_DEPTH">32768</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_NUM_OF_PROBES">21</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_NUM_OF_PROBES">10</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_EN_STRG_QUAL">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_ADV_TRIGGER">false</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE11_MU_CNT">1</spirit:configurableElementValue>
@@ -1134,13 +1134,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>EVRawStreamToXYTSStr_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="EVRawStreamToXYTSStream" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">brd_EVRawStreamToXYTSStr_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>LEDShifter_0</spirit:instanceName>
         <spirit:componentRef spirit:library="module_ref" spirit:name="LEDShifter" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
@@ -1152,10 +1145,17 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
+        <spirit:instanceName>EVRawStreamToXYTSStr_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="EVRawStreamToXYTSStream" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">brd_EVRawStreamToXYTSStr_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
         <spirit:instanceName>eventStreamToConstEn_0</spirit:instanceName>
         <spirit:componentRef spirit:library="hls" spirit:name="eventStreamToConstEncntFrameStream" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">brd_eventStreamToConstEn_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">brd_eventStreamToConstEn_0_1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -1206,7 +1206,7 @@
       </spirit:interconnection>
       <spirit:monitorInterconnection>
         <spirit:name>EVRawStreamToXYTSStr_0_yStreamOut_V_V</spirit:name>
-        <spirit:monitoredActiveInterface spirit:busRef="yStream_V_V" spirit:componentRef="eventStreamToConstEn_0"/>
+        <spirit:monitoredActiveInterface spirit:busRef="yStreamOut_V_V" spirit:componentRef="EVRawStreamToXYTSStr_0"/>
         <spirit:monitorInterface spirit:busRef="SLOT_1_AXIS" spirit:componentRef="system_ila_0"/>
       </spirit:monitorInterconnection>
       <spirit:interconnection>
@@ -1263,7 +1263,7 @@
         <spirit:name>EVRawStreamToXYTSStr_0_eventFIFOIn_V_read</spirit:name>
         <spirit:internalPortReference spirit:componentRef="EVRawStreamToXYTSStr_0" spirit:portRef="eventFIFOIn_V_read"/>
         <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="rd_en"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe12"/>
+        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>IMUInterrupt_AI_0_1</spirit:name>
@@ -1339,8 +1339,8 @@
       <spirit:adHocConnection>
         <spirit:name>fifo_generator_0_dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="dout"/>
+        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe0"/>
         <spirit:internalPortReference spirit:componentRef="EVRawStreamToXYTSStr_0" spirit:portRef="eventFIFOIn_V_dout"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe11"/>
         <bd:hdl_attributes>
           <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
           <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
@@ -1368,11 +1368,11 @@
         <spirit:internalPortReference spirit:componentRef="axi_smc" spirit:portRef="aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_0" spirit:portRef="axi_resetn"/>
         <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="resetn"/>
-        <spirit:internalPortReference spirit:componentRef="EVRawStreamToXYTSStr_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M01_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M02_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="EVRawStreamToXYTSStr_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="ap_rst_n"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -1400,12 +1400,12 @@
         <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="USBClock_CI"/>
         <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="LogicClk_CI"/>
         <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="ADCClk_CI"/>
-        <spirit:internalPortReference spirit:componentRef="EVRawStreamToXYTSStr_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M01_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="ps7_0_axi_periph" spirit:portRef="M02_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="EVRawStreamToXYTSStr_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="ap_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -1436,61 +1436,31 @@
         <spirit:name>testAERDVSSM_0_ChipBiasAddrSelect_SBO</spirit:name>
         <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="ChipBiasAddrSelect_SBO"/>
         <spirit:externalPortReference spirit:portRef="ChipBiasAddrSelect_SBO_0"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe16"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>testAERDVSSM_0_ChipBiasBitIn_DO</spirit:name>
         <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="ChipBiasBitIn_DO"/>
         <spirit:externalPortReference spirit:portRef="ChipBiasBitIn_DO_0"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe18"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>testAERDVSSM_0_ChipBiasClock_CBO</spirit:name>
         <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="ChipBiasClock_CBO"/>
         <spirit:externalPortReference spirit:portRef="ChipBiasClock_CBO_0"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe17"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>testAERDVSSM_0_ChipBiasDiagSelect_SO</spirit:name>
         <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="ChipBiasDiagSelect_SO"/>
         <spirit:externalPortReference spirit:portRef="ChipBiasDiagSelect_SO_0"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe15"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>testAERDVSSM_0_ChipBiasEnable_SO</spirit:name>
         <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="ChipBiasEnable_SO"/>
         <spirit:externalPortReference spirit:portRef="ChipBiasEnable_SO_0"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe14"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>testAERDVSSM_0_ChipBiasLatch_SBO</spirit:name>
         <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="ChipBiasLatch_SBO"/>
         <spirit:externalPortReference spirit:portRef="ChipBiasLatch_SBO_0"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe19"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>testAERDVSSM_0_DVSAERAck_SBO</spirit:name>
@@ -1533,8 +1503,8 @@
       <spirit:adHocConnection>
         <spirit:name>util_vector_logic_0_Res</spirit:name>
         <spirit:internalPortReference spirit:componentRef="util_vector_logic_0" spirit:portRef="Res"/>
+        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe2"/>
         <spirit:internalPortReference spirit:componentRef="EVRawStreamToXYTSStr_0" spirit:portRef="eventFIFOIn_V_empty_n"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe13"/>
         <bd:hdl_attributes>
           <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
           <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
@@ -1578,105 +1548,6 @@
         <spirit:internalPortReference spirit:componentRef="v_axi4s_vid_out_0" spirit:portRef="fid"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>hCnt_V</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="hCnt_V"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe0"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>hCnt_V_ap_vld</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="hCnt_V_ap_vld"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe1"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>regX_V</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="regX_V"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe2"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>regX_V_ap_vld</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="regX_V_ap_vld"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe3"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>vgaEn_V</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="vgaEn_V"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe4"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>vCnt_V</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="vCnt_V"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe5"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>vCnt_V_ap_vld</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="vCnt_V_ap_vld"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe6"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>count_V</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="count_V"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe7"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>count_V_ap_vld</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="count_V_ap_vld"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe8"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>regY_V_ap_vld</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="regY_V_ap_vld"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe9"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>regY_V</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="regY_V"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe10"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>processing_system7_0_SPI0_MOSI_O</spirit:name>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="SPI0_MOSI_O"/>
         <spirit:internalPortReference spirit:componentRef="testAERDVSSM_0" spirit:portRef="SPIMOSI_AI"/>
@@ -1702,21 +1573,67 @@
         <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="gpio2_io_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>skipFlgOutput_V</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="skipFlgOutput_V"/>
-        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe20"/>
+        <spirit:name>regY_V</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="regY_V"/>
+        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe3"/>
         <bd:hdl_attributes>
           <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
           <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
         </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>currentIdx_V</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="currentIdx_V"/>
+        <spirit:name>hCnt_V</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="hCnt_V"/>
+        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe4"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>vgaEn_V_ap_vld</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="vgaEn_V_ap_vld"/>
+        <spirit:name>regX_V</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="regX_V"/>
+        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe5"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>vgaEn_V</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="vgaEn_V"/>
+        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe6"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>vCnt_V</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="vCnt_V"/>
+        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe7"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>count_V</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="count_V"/>
+        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe8"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>skipFlgOutput_V</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="eventStreamToConstEn_0" spirit:portRef="skipFlgOutput_V"/>
+        <spirit:internalPortReference spirit:componentRef="system_ila_0" spirit:portRef="probe9"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="DEBUG" bd:value="true"/>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

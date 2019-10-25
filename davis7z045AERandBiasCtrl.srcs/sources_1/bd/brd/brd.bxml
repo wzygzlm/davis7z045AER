@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="35">
   <CompositeFile CompositeFileTopName="brd" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1571936109"/>
-    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1571936109"/>
-    <Generation Name="SIMULATION" State="RESET" Timestamp="1571936109"/>
-    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1571936109"/>
+    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1571989991"/>
+    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1571989991"/>
+    <Generation Name="SIMULATION" State="RESET" Timestamp="1571989991"/>
+    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1571989991"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\brd_LEDShifter_0_0\brd_LEDShifter_0_0.xci" Type="IP">
         <Instance HierarchyPath="LEDShifter_0"/>
@@ -159,14 +159,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\brd_eventStreamToConstEn_0_0\brd_eventStreamToConstEn_0_0.xci" Type="IP">
-        <Instance HierarchyPath="eventStreamToConstEn_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\brd_testAERDVSSM_0_0\brd_testAERDVSSM_0_0.xci" Type="IP">
         <Instance HierarchyPath="testAERDVSSM_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -177,6 +169,14 @@
       </File>
       <File Name="ip\brd_xbar_0\brd_xbar_0.xci" Type="IP">
         <Instance HierarchyPath="ps7_0_axi_periph/xbar"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\brd_eventStreamToConstEn_0_1\brd_eventStreamToConstEn_0_1.xci" Type="IP">
+        <Instance HierarchyPath="eventStreamToConstEn_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
