@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Fri Oct 25 12:43:42 2019
+-- Date        : Fri Oct 25 19:56:35 2019
 -- Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               E:/PhD_project/vivado_prjs/davisZynq/davis7z045AERandBiasCtrl/davis7z045AERandBiasCtrl.srcs/sources_1/bd/brd/ip/brd_testAERDVSSM_0_0/brd_testAERDVSSM_0_0_sim_netlist.vhdl
@@ -2784,8 +2784,7 @@ entity brd_testAERDVSSM_0_0_Counter is
     \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39]\ : out STD_LOGIC_VECTOR ( 39 downto 0 );
     \Output_SO_reg[0]\ : in STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__3\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__2\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__2\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \MultiplexerConfigReg_D_reg[Run_S]\ : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -3280,7 +3279,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => \Count_DP_reg[0]_i_2__0_n_7\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(0)
     );
@@ -3307,7 +3306,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[8]_i_1__0_n_5\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(10)
     );
@@ -3315,7 +3314,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[8]_i_1__0_n_4\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(11)
     );
@@ -3323,7 +3322,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[12]_i_1__0_n_7\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(12)
     );
@@ -3349,7 +3348,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[12]_i_1__0_n_6\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(13)
     );
@@ -3357,7 +3356,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[12]_i_1__0_n_5\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(14)
     );
@@ -3365,7 +3364,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[12]_i_1__0_n_4\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(15)
     );
@@ -3373,7 +3372,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[16]_i_1__0_n_7\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(16)
     );
@@ -3399,7 +3398,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[16]_i_1__0_n_6\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(17)
     );
@@ -3407,7 +3406,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[16]_i_1__0_n_5\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(18)
     );
@@ -3415,7 +3414,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[16]_i_1__0_n_4\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(19)
     );
@@ -3423,7 +3422,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[0]_i_2__0_n_6\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(1)
     );
@@ -3431,7 +3430,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[20]_i_1__0_n_7\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(20)
     );
@@ -3457,7 +3456,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[20]_i_1__0_n_6\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(21)
     );
@@ -3465,7 +3464,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[20]_i_1__0_n_5\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(22)
     );
@@ -3473,7 +3472,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[20]_i_1__0_n_4\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(23)
     );
@@ -3481,7 +3480,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[24]_i_1__0_n_7\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(24)
     );
@@ -3507,7 +3506,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[24]_i_1__0_n_6\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(25)
     );
@@ -3515,7 +3514,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[24]_i_1__0_n_5\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(26)
     );
@@ -3565,7 +3564,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[0]_i_2__0_n_5\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(2)
     );
@@ -3573,7 +3572,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => \Count_DP_reg[28]_i_1__0_n_5\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(30)
     );
@@ -3581,7 +3580,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => \Count_DP_reg[28]_i_1__0_n_4\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(31)
     );
@@ -3589,7 +3588,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[32]_i_1__0_n_7\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(32)
     );
@@ -3615,7 +3614,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[32]_i_1__0_n_6\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(33)
     );
@@ -3623,7 +3622,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[32]_i_1__0_n_5\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(34)
     );
@@ -3631,7 +3630,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[32]_i_1__0_n_4\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(35)
     );
@@ -3639,7 +3638,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[36]_i_1__0_n_7\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(36)
     );
@@ -3665,7 +3664,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[36]_i_1__0_n_6\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(37)
     );
@@ -3673,7 +3672,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[36]_i_1__0_n_5\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(38)
     );
@@ -3681,7 +3680,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[36]_i_1__0_n_4\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(39)
     );
@@ -3689,7 +3688,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[0]_i_2__0_n_4\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(3)
     );
@@ -3697,7 +3696,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[4]_i_1__0_n_7\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(4)
     );
@@ -3723,7 +3722,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[4]_i_1__0_n_6\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(5)
     );
@@ -3731,7 +3730,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[4]_i_1__0_n_5\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(6)
     );
@@ -3739,7 +3738,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[4]_i_1__0_n_4\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(7)
     );
@@ -3747,7 +3746,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[8]_i_1__0_n_7\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(8)
     );
@@ -3773,7 +3772,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \Output_SO_reg[0]\,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => \Count_DP_reg[8]_i_1__0_n_6\,
       Q => \^multiplexerconfiginfooutreg_d_reg[statisticsdvsdropped_d][39]\(9)
     );
@@ -8840,18 +8839,18 @@ architecture STRUCTURE of \brd_testAERDVSSM_0_0_Counter__parameterized0\ is
   signal \State_DP[1]_i_4__0_n_0\ : STD_LOGIC;
   signal \State_DP[1]_i_5__0_n_0\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Count_DP[0]_i_1__2\ : label is "soft_lutpair74";
-  attribute SOFT_HLUTNM of \Count_DP[1]_i_1__0\ : label is "soft_lutpair69";
-  attribute SOFT_HLUTNM of \Count_DP[2]_i_1__0\ : label is "soft_lutpair69";
-  attribute SOFT_HLUTNM of \Count_DP[4]_i_2__5\ : label is "soft_lutpair73";
-  attribute SOFT_HLUTNM of \Count_DP[5]_i_3\ : label is "soft_lutpair70";
-  attribute SOFT_HLUTNM of \ParamAddressReg_DP[7]_i_1\ : label is "soft_lutpair74";
-  attribute SOFT_HLUTNM of \ParamInput_DP[7]_i_1\ : label is "soft_lutpair72";
-  attribute SOFT_HLUTNM of \ParamInput_DP[7]_i_2\ : label is "soft_lutpair70";
-  attribute SOFT_HLUTNM of \ShiftReg_DP[0]_i_1\ : label is "soft_lutpair71";
-  attribute SOFT_HLUTNM of \ShiftReg_DP[2]_i_1\ : label is "soft_lutpair71";
-  attribute SOFT_HLUTNM of \State_DP[0]_i_1__0\ : label is "soft_lutpair72";
-  attribute SOFT_HLUTNM of \State_DP[1]_i_3__0\ : label is "soft_lutpair73";
+  attribute SOFT_HLUTNM of \Count_DP[0]_i_1__2\ : label is "soft_lutpair75";
+  attribute SOFT_HLUTNM of \Count_DP[1]_i_1__0\ : label is "soft_lutpair70";
+  attribute SOFT_HLUTNM of \Count_DP[2]_i_1__0\ : label is "soft_lutpair70";
+  attribute SOFT_HLUTNM of \Count_DP[4]_i_2__5\ : label is "soft_lutpair74";
+  attribute SOFT_HLUTNM of \Count_DP[5]_i_3\ : label is "soft_lutpair71";
+  attribute SOFT_HLUTNM of \ParamAddressReg_DP[7]_i_1\ : label is "soft_lutpair75";
+  attribute SOFT_HLUTNM of \ParamInput_DP[7]_i_1\ : label is "soft_lutpair73";
+  attribute SOFT_HLUTNM of \ParamInput_DP[7]_i_2\ : label is "soft_lutpair71";
+  attribute SOFT_HLUTNM of \ShiftReg_DP[0]_i_1\ : label is "soft_lutpair72";
+  attribute SOFT_HLUTNM of \ShiftReg_DP[2]_i_1\ : label is "soft_lutpair72";
+  attribute SOFT_HLUTNM of \State_DP[0]_i_1__0\ : label is "soft_lutpair73";
+  attribute SOFT_HLUTNM of \State_DP[1]_i_3__0\ : label is "soft_lutpair74";
 begin
 \Count_DP[0]_i_1__2\: unisim.vcomponents.LUT3
     generic map(
@@ -11624,7 +11623,7 @@ entity brd_testAERDVSSM_0_0_DAVIS346SPIConfig is
     \ParamOutput_DP_reg[3]\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
     \ParamInput_DP_reg[0]\ : in STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 );
+    AR : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \ParamInput_DP_reg[0]_0\ : in STD_LOGIC;
     \ParamInput_DP_reg[0]_1\ : in STD_LOGIC;
     \ParamInput_DP_reg[0]_2\ : in STD_LOGIC;
@@ -11646,12 +11645,11 @@ entity brd_testAERDVSSM_0_0_DAVIS346SPIConfig is
     \ParamAddressReg_DP_reg[0]_2\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[3]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[3]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__13\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[1]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[3]_1\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[3]_2\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[2]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__12\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    \SyncSignalSyncFF_S_reg_rep__13\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \ParamAddressReg_DP_reg[3]_3\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[1]_1\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[0]_3\ : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -11660,11 +11658,11 @@ entity brd_testAERDVSSM_0_0_DAVIS346SPIConfig is
     \ParamAddressReg_DP_reg[4]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[0]_4\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[5]_1\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__11\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \ParamAddressReg_DP_reg[5]_2\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[2]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[0]_5\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[5]_3\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__10\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[5]_4\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[1]_3\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[1]_4\ : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -11674,7 +11672,6 @@ entity brd_testAERDVSSM_0_0_DAVIS346SPIConfig is
     \ParamAddressReg_DP_reg[3]_5\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[1]_5\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 6 downto 0 );
-    \SyncSignalSyncFF_S_reg_rep__0\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \ParamAddressReg_DP_reg[3]_6\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[0]_6\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[1]_6\ : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -11914,7 +11911,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(0)
     );
@@ -11922,7 +11919,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(10)
     );
@@ -11930,7 +11927,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(11)
     );
@@ -11938,7 +11935,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(12)
     );
@@ -11946,7 +11943,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(13)
     );
@@ -11954,7 +11951,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(14)
     );
@@ -11962,7 +11959,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(1)
     );
@@ -11970,7 +11967,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(2)
     );
@@ -11978,7 +11975,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(3)
     );
@@ -11986,7 +11983,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(4)
     );
@@ -11994,7 +11991,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(5)
     );
@@ -12002,7 +11999,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(6)
     );
@@ -12010,7 +12007,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(7)
     );
@@ -12018,7 +12015,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(8)
     );
@@ -12026,7 +12023,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepdbn_d][14]\(9)
     );
@@ -12034,7 +12031,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(0)
     );
@@ -12042,7 +12039,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(10)
     );
@@ -12050,7 +12047,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(11)
     );
@@ -12058,7 +12055,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(12)
     );
@@ -12066,7 +12063,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(13)
     );
@@ -12074,7 +12071,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(14)
     );
@@ -12082,7 +12079,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(1)
     );
@@ -12090,7 +12087,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(2)
     );
@@ -12098,7 +12095,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(3)
     );
@@ -12106,7 +12103,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(4)
     );
@@ -12114,7 +12111,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(5)
     );
@@ -12122,7 +12119,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(6)
     );
@@ -12130,7 +12127,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(7)
     );
@@ -12138,7 +12135,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(8)
     );
@@ -12146,7 +12143,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuxbp_d][14]\(9)
     );
@@ -12154,7 +12151,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(0)
     );
@@ -12162,7 +12159,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(10)
     );
@@ -12170,7 +12167,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(11)
     );
@@ -12178,7 +12175,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(12)
     );
@@ -12186,7 +12183,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(13)
     );
@@ -12194,7 +12191,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(14)
     );
@@ -12202,7 +12199,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(1)
     );
@@ -12210,7 +12207,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(2)
     );
@@ -12218,7 +12215,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(3)
     );
@@ -12226,7 +12223,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(4)
     );
@@ -12234,7 +12231,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(5)
     );
@@ -12242,7 +12239,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(6)
     );
@@ -12250,7 +12247,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(7)
     );
@@ -12258,7 +12255,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(8)
     );
@@ -12266,7 +12263,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[aepuybp_d][14]\(9)
     );
@@ -12274,7 +12271,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(0)
     );
@@ -12282,7 +12279,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(10)
     );
@@ -12290,7 +12287,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(11)
     );
@@ -12298,7 +12295,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(12)
     );
@@ -12306,7 +12303,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(13)
     );
@@ -12314,7 +12311,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(14)
     );
@@ -12322,7 +12319,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(1)
     );
@@ -12330,7 +12327,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(2)
     );
@@ -12338,7 +12335,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(3)
     );
@@ -12346,7 +12343,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(4)
     );
@@ -12354,7 +12351,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(5)
     );
@@ -12362,7 +12359,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(6)
     );
@@ -12370,7 +12367,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(7)
     );
@@ -12378,7 +12375,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(8)
     );
@@ -12386,7 +12383,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adccompbp_d][14]\(9)
     );
@@ -12418,7 +12415,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adcrefhigh_d][8]\(3)
     );
@@ -12482,7 +12479,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adcreflow_d][8]\(2)
     );
@@ -12490,7 +12487,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adcreflow_d][8]\(3)
     );
@@ -12538,7 +12535,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adctestvoltage_d][8]\(0)
     );
@@ -12546,7 +12543,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[adctestvoltage_d][8]\(1)
     );
@@ -12626,7 +12623,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apscas_d][8]\(2)
     );
@@ -12634,7 +12631,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apscas_d][8]\(3)
     );
@@ -12698,7 +12695,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsoverflowlevel_d][8]\(2)
     );
@@ -12706,7 +12703,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsoverflowlevel_d][8]\(3)
     );
@@ -12754,7 +12751,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(0)
     );
@@ -12762,7 +12759,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(10)
     );
@@ -12770,7 +12767,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(11)
     );
@@ -12778,7 +12775,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(12)
     );
@@ -12786,7 +12783,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(13)
     );
@@ -12794,7 +12791,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(14)
     );
@@ -12802,7 +12799,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(1)
     );
@@ -12810,7 +12807,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(2)
     );
@@ -12818,7 +12815,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(3)
     );
@@ -12826,7 +12823,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(4)
     );
@@ -12834,7 +12831,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(5)
     );
@@ -12842,7 +12839,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(6)
     );
@@ -12850,7 +12847,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(7)
     );
@@ -12858,7 +12855,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(8)
     );
@@ -12866,7 +12863,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[apsrosfbn_d][14]\(9)
     );
@@ -12946,7 +12943,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_6\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__5\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__5\(1),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[biasbuffer_d][14]\(4)
     );
@@ -12994,7 +12991,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(0)
     );
@@ -13002,7 +12999,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(10)
     );
@@ -13010,7 +13007,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(11)
     );
@@ -13018,7 +13015,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(12)
     );
@@ -13026,7 +13023,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(13)
     );
@@ -13034,7 +13031,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(14)
     );
@@ -13042,7 +13039,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(1)
     );
@@ -13050,7 +13047,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(2)
     );
@@ -13058,7 +13055,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(3)
     );
@@ -13066,7 +13063,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(4)
     );
@@ -13074,7 +13071,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(5)
     );
@@ -13082,7 +13079,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(6)
     );
@@ -13090,7 +13087,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(7)
     );
@@ -13098,7 +13095,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(8)
     );
@@ -13106,7 +13103,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[colsellowbn_d][14]\(9)
     );
@@ -13114,7 +13111,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(0)
     );
@@ -13122,7 +13119,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(10)
     );
@@ -13130,7 +13127,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(11)
     );
@@ -13138,7 +13135,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(12)
     );
@@ -13146,7 +13143,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(13)
     );
@@ -13154,7 +13151,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(14)
     );
@@ -13162,7 +13159,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(1)
     );
@@ -13170,7 +13167,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(2)
     );
@@ -13178,7 +13175,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(3)
     );
@@ -13186,7 +13183,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(4)
     );
@@ -13194,7 +13191,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(5)
     );
@@ -13202,7 +13199,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(6)
     );
@@ -13210,7 +13207,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(7)
     );
@@ -13218,7 +13215,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(8)
     );
@@ -13226,7 +13223,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[dacbufbp_d][14]\(9)
     );
@@ -13234,7 +13231,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[diffbn_d][14]\(0)
     );
@@ -13354,7 +13351,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(0)
     );
@@ -13362,7 +13359,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(10)
     );
@@ -13370,7 +13367,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(11)
     );
@@ -13378,7 +13375,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(12)
     );
@@ -13386,7 +13383,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(13)
     );
@@ -13394,7 +13391,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(14)
     );
@@ -13402,7 +13399,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(1)
     );
@@ -13410,7 +13407,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(2)
     );
@@ -13418,7 +13415,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(3)
     );
@@ -13426,7 +13423,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(4)
     );
@@ -13434,7 +13431,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(5)
     );
@@ -13442,7 +13439,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(6)
     );
@@ -13450,7 +13447,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(7)
     );
@@ -13458,7 +13455,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(8)
     );
@@ -13466,7 +13463,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifrefrbn_d][14]\(9)
     );
@@ -13546,7 +13543,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__5\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__5\(1),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ifthrbn_d][14]\(4)
     );
@@ -13594,7 +13591,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(0)
     );
@@ -13602,7 +13599,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(10)
     );
@@ -13610,7 +13607,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(11)
     );
@@ -13618,7 +13615,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(12)
     );
@@ -13626,7 +13623,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(13)
     );
@@ -13634,7 +13631,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(14)
     );
@@ -13642,7 +13639,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(1)
     );
@@ -13650,7 +13647,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(2)
     );
@@ -13658,7 +13655,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(3)
     );
@@ -13666,7 +13663,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(4)
     );
@@ -13674,7 +13671,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(5)
     );
@@ -13682,7 +13679,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(6)
     );
@@ -13690,7 +13687,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(7)
     );
@@ -13698,7 +13695,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(8)
     );
@@ -13706,7 +13703,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(1),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[lcoltimeoutbn_d][14]\(9)
     );
@@ -13714,7 +13711,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[localbufbn_d][14]\(0)
     );
@@ -13834,7 +13831,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(0)
     );
@@ -13842,7 +13839,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(10)
     );
@@ -13850,7 +13847,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(11)
     );
@@ -13858,7 +13855,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(12)
     );
@@ -13866,7 +13863,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(13)
     );
@@ -13874,7 +13871,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(14)
     );
@@ -13882,7 +13879,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(1)
     );
@@ -13890,7 +13887,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(2)
     );
@@ -13898,7 +13895,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(3)
     );
@@ -13906,7 +13903,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(4)
     );
@@ -13914,7 +13911,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(5)
     );
@@ -13922,7 +13919,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(6)
     );
@@ -13930,7 +13927,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(7)
     );
@@ -13938,7 +13935,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(8)
     );
@@ -13946,7 +13943,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[offbn_d][14]\(9)
     );
@@ -13954,7 +13951,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(0)
     );
@@ -13962,7 +13959,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(10)
     );
@@ -13970,7 +13967,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(11)
     );
@@ -13978,7 +13975,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(12)
     );
@@ -13986,7 +13983,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(13)
     );
@@ -13994,7 +13991,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(14)
     );
@@ -14002,7 +13999,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(1)
     );
@@ -14010,7 +14007,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(2)
     );
@@ -14018,7 +14015,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(3)
     );
@@ -14026,7 +14023,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(4)
     );
@@ -14034,7 +14031,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(5)
     );
@@ -14042,7 +14039,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(6)
     );
@@ -14050,7 +14047,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(7)
     );
@@ -14058,7 +14055,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(8)
     );
@@ -14066,7 +14063,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[onbn_d][14]\(9)
     );
@@ -14074,7 +14071,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[padfollbn_d][14]\(0)
     );
@@ -14122,7 +14119,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[padfollbn_d][14]\(1)
     );
@@ -14194,7 +14191,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(0)
     );
@@ -14202,7 +14199,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(10)
     );
@@ -14210,7 +14207,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(11)
     );
@@ -14218,7 +14215,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(12)
     );
@@ -14226,7 +14223,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(13)
     );
@@ -14234,7 +14231,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(14)
     );
@@ -14242,7 +14239,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(1)
     );
@@ -14250,7 +14247,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(2)
     );
@@ -14258,7 +14255,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(3)
     );
@@ -14266,7 +14263,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(4)
     );
@@ -14274,7 +14271,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(5)
     );
@@ -14282,7 +14279,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(6)
     );
@@ -14290,7 +14287,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(7)
     );
@@ -14298,7 +14295,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(8)
     );
@@ -14306,7 +14303,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[pixinvbn_d][14]\(9)
     );
@@ -14314,7 +14311,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(0)
     );
@@ -14322,7 +14319,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(10)
     );
@@ -14330,7 +14327,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(11)
     );
@@ -14338,7 +14335,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(12)
     );
@@ -14346,7 +14343,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(13)
     );
@@ -14354,7 +14351,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(14)
     );
@@ -14362,7 +14359,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(1)
     );
@@ -14370,7 +14367,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(2)
     );
@@ -14378,7 +14375,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(3)
     );
@@ -14386,7 +14383,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(4)
     );
@@ -14394,7 +14391,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(5)
     );
@@ -14402,7 +14399,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(6)
     );
@@ -14410,7 +14407,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(7)
     );
@@ -14418,7 +14415,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(8)
     );
@@ -14426,7 +14423,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prbp_d][14]\(9)
     );
@@ -14434,7 +14431,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(0)
     );
@@ -14442,7 +14439,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(10)
     );
@@ -14450,7 +14447,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(11)
     );
@@ -14458,7 +14455,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(12)
     );
@@ -14466,7 +14463,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(13)
     );
@@ -14474,7 +14471,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(14)
     );
@@ -14482,7 +14479,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(1)
     );
@@ -14490,7 +14487,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(2)
     );
@@ -14498,7 +14495,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(3)
     );
@@ -14506,7 +14503,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(4)
     );
@@ -14514,7 +14511,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(5)
     );
@@ -14522,7 +14519,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(6)
     );
@@ -14530,7 +14527,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(7)
     );
@@ -14538,7 +14535,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(8)
     );
@@ -14546,7 +14543,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_4\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[prsfbp_d][14]\(9)
     );
@@ -14554,7 +14551,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(0)
     );
@@ -14562,7 +14559,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(10)
     );
@@ -14570,7 +14567,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(11)
     );
@@ -14578,7 +14575,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(12)
     );
@@ -14586,7 +14583,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(13)
     );
@@ -14594,7 +14591,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(14)
     );
@@ -14602,7 +14599,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(1)
     );
@@ -14610,7 +14607,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(2)
     );
@@ -14618,7 +14615,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(3)
     );
@@ -14626,7 +14623,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(4)
     );
@@ -14634,7 +14631,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(5)
     );
@@ -14642,7 +14639,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(6)
     );
@@ -14650,7 +14647,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(7)
     );
@@ -14658,7 +14655,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(8)
     );
@@ -14666,7 +14663,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[readoutbufbp_d][14]\(9)
     );
@@ -14674,7 +14671,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(0)
     );
@@ -14682,7 +14679,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(10),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(10)
     );
@@ -14690,7 +14687,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(11),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(11)
     );
@@ -14698,7 +14695,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(12),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(12)
     );
@@ -14706,7 +14703,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(13),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(13)
     );
@@ -14714,7 +14711,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(1),
       D => ConfigParamInput_DO(14),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(14)
     );
@@ -14722,7 +14719,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(1)
     );
@@ -14730,7 +14727,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(2)
     );
@@ -14738,7 +14735,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(3)
     );
@@ -14746,7 +14743,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(4)
     );
@@ -14754,7 +14751,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(5),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(5)
     );
@@ -14762,7 +14759,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(6),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(6)
     );
@@ -14770,7 +14767,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(7),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(7)
     );
@@ -14778,7 +14775,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(8),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(8)
     );
@@ -14786,7 +14783,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => ConfigParamInput_DO(9),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[refrbp_d][14]\(9)
     );
@@ -15002,7 +14999,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_5\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__5\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__5\(1),
       D => ConfigParamInput_DO(4),
       Q => \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ssp_d][15]\(4)
     );
@@ -16578,7 +16575,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(2),
       D => D(1),
       Q => \ParamOutput_DP_reg[15]\(10)
     );
@@ -16593,7 +16590,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(2),
       D => D(2),
       Q => \ParamOutput_DP_reg[15]\(11)
     );
@@ -16608,7 +16605,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(2),
       D => D(3),
       Q => \ParamOutput_DP_reg[15]\(12)
     );
@@ -16623,7 +16620,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(3),
       D => D(4),
       Q => \ParamOutput_DP_reg[15]\(13)
     );
@@ -16638,7 +16635,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(3),
       D => D(5),
       Q => \ParamOutput_DP_reg[15]\(14)
     );
@@ -16653,7 +16650,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(3),
       D => D(6),
       Q => \ParamOutput_DP_reg[15]\(15)
     );
@@ -16705,7 +16702,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \BiasOutput_DP[3]_i_1_n_0\,
       Q => \ParamOutput_DP_reg[15]\(3)
     );
@@ -16727,7 +16724,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(2),
       D => \BiasOutput_DP[4]_i_1_n_0\,
       Q => \ParamOutput_DP_reg[15]\(4)
     );
@@ -16749,7 +16746,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(2),
       D => \BiasOutput_DP[5]_i_1_n_0\,
       Q => \ParamOutput_DP_reg[15]\(5)
     );
@@ -16771,7 +16768,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(2),
       D => \BiasOutput_DP[6]_i_1_n_0\,
       Q => \ParamOutput_DP_reg[15]\(6)
     );
@@ -16793,7 +16790,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(1),
       D => \BiasOutput_DP[7]_i_1_n_0\,
       Q => \ParamOutput_DP_reg[15]\(7)
     );
@@ -16815,7 +16812,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(1),
       D => \BiasOutput_DP[8]_i_1_n_0\,
       Q => \ParamOutput_DP_reg[15]\(8)
     );
@@ -16837,7 +16834,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(1),
       D => D(0),
       Q => \ParamOutput_DP_reg[15]\(9)
     );
@@ -16852,7 +16849,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ParamInput_DP_reg[0]_2\,
       Q => \^chipconfigreg_dp_reg[aernarow_s]\
     );
@@ -16860,7 +16857,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_1\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[analogmux0_d][3]\(0)
     );
@@ -16868,7 +16865,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_1\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[analogmux0_d][3]\(1)
     );
@@ -16876,7 +16873,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_1\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[analogmux0_d][3]\(2)
     );
@@ -16884,7 +16881,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_1\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[analogmux0_d][3]\(3)
     );
@@ -16892,7 +16889,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_8\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[analogmux1_d][3]\(0)
     );
@@ -16900,7 +16897,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_8\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[analogmux1_d][3]\(1)
     );
@@ -16908,7 +16905,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_8\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[analogmux1_d][3]\(2)
     );
@@ -16916,7 +16913,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_8\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[analogmux1_d][3]\(3)
     );
@@ -16924,7 +16921,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_7\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[analogmux2_d][3]\(0)
     );
@@ -16932,7 +16929,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_7\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[analogmux2_d][3]\(1)
     );
@@ -16940,7 +16937,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_7\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[analogmux2_d][3]\(2)
     );
@@ -16948,7 +16945,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_7\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[analogmux2_d][3]\(3)
     );
@@ -16956,7 +16953,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_7\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[biasmux0_d][3]\(0)
     );
@@ -16964,7 +16961,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_7\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[biasmux0_d][3]\(1)
     );
@@ -16972,7 +16969,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_7\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[biasmux0_d][3]\(2)
     );
@@ -16980,7 +16977,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_7\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[biasmux0_d][3]\(3)
     );
@@ -16988,7 +16985,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_6\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux0_d][3]\(0)
     );
@@ -16996,7 +16993,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_6\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux0_d][3]\(1)
     );
@@ -17004,7 +17001,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_6\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux0_d][3]\(2)
     );
@@ -17012,7 +17009,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]_6\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux0_d][3]\(3)
     );
@@ -17020,7 +17017,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_6\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux1_d][3]\(0)
     );
@@ -17028,7 +17025,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_6\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux1_d][3]\(1)
     );
@@ -17036,7 +17033,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_6\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux1_d][3]\(2)
     );
@@ -17044,7 +17041,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_6\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux1_d][3]\(3)
     );
@@ -17052,7 +17049,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_6\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux2_d][3]\(0)
     );
@@ -17060,7 +17057,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_6\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux2_d][3]\(1)
     );
@@ -17068,7 +17065,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_6\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux2_d][3]\(2)
     );
@@ -17076,7 +17073,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_6\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux2_d][3]\(3)
     );
@@ -17084,7 +17081,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_7\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(0),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux3_d][3]\(0)
     );
@@ -17092,7 +17089,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_7\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(1),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux3_d][3]\(1)
     );
@@ -17100,7 +17097,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_7\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(2),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux3_d][3]\(2)
     );
@@ -17108,7 +17105,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_7\(0),
-      CLR => AR(0),
+      CLR => AR(1),
       D => ConfigParamInput_DO(3),
       Q => \^davis346chipbias.timingreg2support.davis346chipconfigreg_d_reg[digitalmux3_d][3]\(3)
     );
@@ -17117,7 +17114,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \ParamInput_DP_reg[0]_4\,
-      PRE => AR(0),
+      PRE => AR(1),
       Q => \^chipconfigreg_dp_reg[globalshutter_s]\
     );
 \ChipConfigReg_DP_reg[ResetCalibNeuron_S]__0\: unisim.vcomponents.FDPE
@@ -17125,7 +17122,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \ParamInput_DP_reg[0]\,
-      PRE => AR(0),
+      PRE => AR(1),
       Q => \^chipconfigreg_dp_reg[resetcalibneuron_s]\
     );
 \ChipConfigReg_DP_reg[ResetTestPixel_S]__0\: unisim.vcomponents.FDPE
@@ -17133,14 +17130,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \ParamInput_DP_reg[0]_1\,
-      PRE => AR(0),
+      PRE => AR(1),
       Q => \^chipconfigreg_dp_reg[resettestpixel_s]\
     );
 \ChipConfigReg_DP_reg[SelectGrayCounter_S]__0\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ParamInput_DP_reg[0]_5\,
       Q => \^chipconfigreg_dp_reg[selectgraycounter_s]\
     );
@@ -17148,7 +17145,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ParamInput_DP_reg[0]_6\,
       Q => \ChipConfigReg_DP_reg[TestADC_S]\
     );
@@ -17156,7 +17153,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ParamInput_DP_reg[0]_0\,
       Q => \^chipconfigreg_dp_reg[typencalibneuron_s]\
     );
@@ -17164,7 +17161,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ParamInput_DP_reg[0]_3\,
       Q => \^chipconfigreg_dp_reg[useaout_s]\
     );
@@ -17339,7 +17336,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ParamAddressReg_DP_reg[4]_0\(3),
       Q => \ParamOutput_DP_reg[3]\(3)
     );
@@ -17353,7 +17350,7 @@ entity brd_testAERDVSSM_0_0_DFFSynchronizer is
     SPISlaveSelectSync_SB : out STD_LOGIC;
     SPISlaveSelect_ABI : in STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__6\ : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__7\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_DFFSynchronizer : entity is "DFFSynchronizer";
@@ -17367,7 +17364,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => SPISlaveSelect_ABI,
-      PRE => \SyncSignalSyncFF_S_reg_rep__6\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__7\(0),
       Q => \SyncSignalDemetFF_S_reg_n_0_[0]\
     );
 \SyncSignalSyncFF_S_reg[0]\: unisim.vcomponents.FDPE
@@ -17375,7 +17372,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \SyncSignalDemetFF_S_reg_n_0_[0]\,
-      PRE => \SyncSignalSyncFF_S_reg_rep__6\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__7\(0),
       Q => SPISlaveSelectSync_SB
     );
 end STRUCTURE;
@@ -17389,7 +17386,7 @@ entity \brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0\ is
     \ShiftReg_DP_reg[0]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     SPIClock_AI : in STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__6\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__7\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \State_DP_reg[0]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     SPIClockEdgeDetectorReg_S : in STD_LOGIC;
     SPISlaveSelectSync_SB : in STD_LOGIC;
@@ -17420,7 +17417,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__6\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__7\(0),
       D => SPIClock_AI,
       Q => \SyncSignalDemetFF_S_reg_n_0_[0]\
     );
@@ -17428,7 +17425,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__6\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__7\(0),
       D => \SyncSignalDemetFF_S_reg_n_0_[0]\,
       Q => \^spiclocksync_c\
     );
@@ -17442,7 +17439,7 @@ entity \brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0_1\ is
     SPIMOSISync_D : out STD_LOGIC;
     SPIMOSI_AI : in STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__6\ : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__7\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0_1\ : entity is "DFFSynchronizer";
@@ -17455,7 +17452,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__6\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__7\(0),
       D => SPIMOSI_AI,
       Q => \SyncSignalDemetFF_S_reg_n_0_[0]\
     );
@@ -17463,7 +17460,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__6\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__7\(0),
       D => \SyncSignalDemetFF_S_reg_n_0_[0]\,
       Q => SPIMOSISync_D
     );
@@ -17542,7 +17539,7 @@ entity brd_testAERDVSSM_0_0_DVSAERSPIConfig is
     \ParamOutput_DP_reg[31]\ : out STD_LOGIC_VECTOR ( 31 downto 0 );
     \ParamInput_DP_reg[0]\ : in STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    AR : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamInput_DP_reg[0]_0\ : in STD_LOGIC;
     \ParamInput_DP_reg[0]_1\ : in STD_LOGIC;
     ConfigParamAddress_DO : in STD_LOGIC_VECTOR ( 4 downto 0 );
@@ -17551,7 +17548,8 @@ entity brd_testAERDVSSM_0_0_DVSAERSPIConfig is
     ConfigParamInput_DO : in STD_LOGIC_VECTOR ( 8 downto 0 );
     \ParamAddressReg_DP_reg[1]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[1]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__0\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    AR : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    \SyncSignalSyncFF_S_reg_rep__1\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[0]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[5]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[2]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -17616,7 +17614,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AS(0),
       D => \ParamInput_DP_reg[0]_1\,
       Q => \^dvsaerconfig_d[externalaercontrol_s]\
     );
@@ -17624,7 +17622,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel0column_d][8]\(0)
     );
@@ -17633,14 +17631,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]\(0),
       D => ConfigParamInput_DO(1),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel0column_d][8]\(1)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel0column_d][8]\(2)
     );
@@ -17649,7 +17647,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]\(0),
       D => ConfigParamInput_DO(3),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel0column_d][8]\(3)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][4]\: unisim.vcomponents.FDPE
@@ -17657,14 +17655,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]\(0),
       D => ConfigParamInput_DO(4),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel0column_d][8]\(4)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel0column_d][8]\(5)
     );
@@ -17673,14 +17671,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]\(0),
       D => ConfigParamInput_DO(6),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel0column_d][8]\(6)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel0column_d][8]\(7)
     );
@@ -17689,14 +17687,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel0column_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel0Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^q\(0)
     );
@@ -17704,7 +17702,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(1),
       Q => \^q\(1)
     );
@@ -17713,14 +17711,14 @@ begin
       C => LogicClk_CI,
       CE => E(0),
       D => ConfigParamInput_DO(2),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^q\(2)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel0Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(3),
       Q => \^q\(3)
     );
@@ -17728,7 +17726,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(4),
       Q => \^q\(4)
     );
@@ -17736,7 +17734,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(5),
       Q => \^q\(5)
     );
@@ -17744,7 +17742,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(6),
       Q => \^q\(6)
     );
@@ -17752,7 +17750,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(7),
       Q => \^q\(7)
     );
@@ -17761,14 +17759,14 @@ begin
       C => LogicClk_CI,
       CE => E(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^q\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1column_d][8]\(0)
     );
@@ -17777,14 +17775,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]\(0),
       D => ConfigParamInput_DO(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__1\(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1column_d][8]\(1)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1column_d][8]\(2)
     );
@@ -17793,7 +17791,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]\(0),
       D => ConfigParamInput_DO(3),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__1\(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1column_d][8]\(3)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][4]\: unisim.vcomponents.FDPE
@@ -17801,14 +17799,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]\(0),
       D => ConfigParamInput_DO(4),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__1\(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1column_d][8]\(4)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1column_d][8]\(5)
     );
@@ -17817,14 +17815,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]\(0),
       D => ConfigParamInput_DO(6),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__1\(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1column_d][8]\(6)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1column_d][8]\(7)
     );
@@ -17833,14 +17831,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1column_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel1Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_0\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1row_d][8]\(0)
     );
@@ -17848,7 +17846,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(1),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1row_d][8]\(1)
     );
@@ -17857,14 +17855,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_0\(0),
       D => ConfigParamInput_DO(2),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__1\(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1row_d][8]\(2)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel1Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(3),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1row_d][8]\(3)
     );
@@ -17872,7 +17870,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(4),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1row_d][8]\(4)
     );
@@ -17880,7 +17878,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1row_d][8]\(5)
     );
@@ -17888,7 +17886,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(6),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1row_d][8]\(6)
     );
@@ -17896,7 +17894,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1row_d][8]\(7)
     );
@@ -17905,14 +17903,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_0\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel1row_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2column_d][8]\(0)
     );
@@ -17921,14 +17919,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
       D => ConfigParamInput_DO(1),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2column_d][8]\(1)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2column_d][8]\(2)
     );
@@ -17937,7 +17935,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
       D => ConfigParamInput_DO(3),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2column_d][8]\(3)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][4]\: unisim.vcomponents.FDPE
@@ -17945,14 +17943,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
       D => ConfigParamInput_DO(4),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2column_d][8]\(4)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2column_d][8]\(5)
     );
@@ -17961,14 +17959,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
       D => ConfigParamInput_DO(6),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2column_d][8]\(6)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2column_d][8]\(7)
     );
@@ -17977,14 +17975,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2column_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel2Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2row_d][8]\(0)
     );
@@ -17992,7 +17990,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(1),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2row_d][8]\(1)
     );
@@ -18001,14 +17999,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]\(0),
       D => ConfigParamInput_DO(2),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__1\(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2row_d][8]\(2)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel2Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(3),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2row_d][8]\(3)
     );
@@ -18016,7 +18014,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(4),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2row_d][8]\(4)
     );
@@ -18024,7 +18022,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2row_d][8]\(5)
     );
@@ -18032,7 +18030,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(6),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2row_d][8]\(6)
     );
@@ -18040,7 +18038,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2row_d][8]\(7)
     );
@@ -18049,14 +18047,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[5]\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel2row_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_0\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3column_d][8]\(0)
     );
@@ -18065,14 +18063,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_0\(0),
       D => ConfigParamInput_DO(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      PRE => AR(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3column_d][8]\(1)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_0\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3column_d][8]\(2)
     );
@@ -18081,7 +18079,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_0\(0),
       D => ConfigParamInput_DO(3),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      PRE => AR(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3column_d][8]\(3)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][4]\: unisim.vcomponents.FDPE
@@ -18089,14 +18087,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_0\(0),
       D => ConfigParamInput_DO(4),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      PRE => AR(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3column_d][8]\(4)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3column_d][8]\(5)
     );
@@ -18105,14 +18103,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_0\(0),
       D => ConfigParamInput_DO(6),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      PRE => AR(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3column_d][8]\(6)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3column_d][8]\(7)
     );
@@ -18121,14 +18119,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_0\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3column_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel3Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3row_d][8]\(0)
     );
@@ -18136,7 +18134,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(1),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3row_d][8]\(1)
     );
@@ -18145,14 +18143,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
       D => ConfigParamInput_DO(2),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      PRE => AR(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3row_d][8]\(2)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel3Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(3),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3row_d][8]\(3)
     );
@@ -18160,7 +18158,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(4),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3row_d][8]\(4)
     );
@@ -18168,7 +18166,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3row_d][8]\(5)
     );
@@ -18176,7 +18174,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(6),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3row_d][8]\(6)
     );
@@ -18184,7 +18182,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3row_d][8]\(7)
     );
@@ -18193,14 +18191,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel3row_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4column_d][8]\(0)
     );
@@ -18209,14 +18207,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
       D => ConfigParamInput_DO(1),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4column_d][8]\(1)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4column_d][8]\(2)
     );
@@ -18225,7 +18223,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
       D => ConfigParamInput_DO(3),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4column_d][8]\(3)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][4]\: unisim.vcomponents.FDPE
@@ -18233,14 +18231,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
       D => ConfigParamInput_DO(4),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4column_d][8]\(4)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4column_d][8]\(5)
     );
@@ -18249,14 +18247,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
       D => ConfigParamInput_DO(6),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4column_d][8]\(6)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4column_d][8]\(7)
     );
@@ -18265,14 +18263,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_2\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4column_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel4Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4row_d][8]\(0)
     );
@@ -18280,7 +18278,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => ConfigParamInput_DO(1),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4row_d][8]\(1)
     );
@@ -18289,14 +18287,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
       D => ConfigParamInput_DO(2),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      PRE => AR(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4row_d][8]\(2)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel4Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => ConfigParamInput_DO(3),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4row_d][8]\(3)
     );
@@ -18304,7 +18302,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => ConfigParamInput_DO(4),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4row_d][8]\(4)
     );
@@ -18312,7 +18310,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4row_d][8]\(5)
     );
@@ -18320,7 +18318,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => ConfigParamInput_DO(6),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4row_d][8]\(6)
     );
@@ -18328,7 +18326,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4row_d][8]\(7)
     );
@@ -18337,14 +18335,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_1\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel4row_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_0\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5column_d][8]\(0)
     );
@@ -18353,14 +18351,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_0\(0),
       D => ConfigParamInput_DO(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__1\(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5column_d][8]\(1)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_0\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5column_d][8]\(2)
     );
@@ -18369,7 +18367,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_0\(0),
       D => ConfigParamInput_DO(3),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__1\(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5column_d][8]\(3)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][4]\: unisim.vcomponents.FDPE
@@ -18377,14 +18375,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_0\(0),
       D => ConfigParamInput_DO(4),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__1\(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5column_d][8]\(4)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5column_d][8]\(5)
     );
@@ -18393,14 +18391,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_0\(0),
       D => ConfigParamInput_DO(6),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__1\(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5column_d][8]\(6)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5column_d][8]\(7)
     );
@@ -18409,14 +18407,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_0\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5column_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel5Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5row_d][8]\(0)
     );
@@ -18424,7 +18422,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(1),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5row_d][8]\(1)
     );
@@ -18433,14 +18431,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
       D => ConfigParamInput_DO(2),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__1\(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5row_d][8]\(2)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel5Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(3),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5row_d][8]\(3)
     );
@@ -18448,7 +18446,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(4),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5row_d][8]\(4)
     );
@@ -18456,7 +18454,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5row_d][8]\(5)
     );
@@ -18464,7 +18462,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(6),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5row_d][8]\(6)
     );
@@ -18472,7 +18470,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5row_d][8]\(7)
     );
@@ -18481,14 +18479,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_3\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel5row_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_1\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6column_d][8]\(0)
     );
@@ -18497,14 +18495,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_1\(0),
       D => ConfigParamInput_DO(1),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6column_d][8]\(1)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_1\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(2),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6column_d][8]\(2)
     );
@@ -18513,7 +18511,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_1\(0),
       D => ConfigParamInput_DO(3),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6column_d][8]\(3)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][4]\: unisim.vcomponents.FDPE
@@ -18521,14 +18519,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_1\(0),
       D => ConfigParamInput_DO(4),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6column_d][8]\(4)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_1\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6column_d][8]\(5)
     );
@@ -18537,14 +18535,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_1\(0),
       D => ConfigParamInput_DO(6),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6column_d][8]\(6)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_1\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6column_d][8]\(7)
     );
@@ -18553,14 +18551,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_1\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6column_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel6Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6row_d][8]\(0)
     );
@@ -18568,7 +18566,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(1),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6row_d][8]\(1)
     );
@@ -18577,14 +18575,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]\(0),
       D => ConfigParamInput_DO(2),
-      PRE => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      PRE => \SyncSignalSyncFF_S_reg_rep__1\(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6row_d][8]\(2)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel6Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(3),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6row_d][8]\(3)
     );
@@ -18592,7 +18590,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(4),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6row_d][8]\(4)
     );
@@ -18600,7 +18598,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(5),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6row_d][8]\(5)
     );
@@ -18608,7 +18606,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(6),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6row_d][8]\(6)
     );
@@ -18616,7 +18614,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__1\(0),
       D => ConfigParamInput_DO(7),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6row_d][8]\(7)
     );
@@ -18625,14 +18623,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[3]\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \^dvsaerconfigreg_d_reg[filterpixel6row_d][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D][8]\(0)
     );
@@ -18641,14 +18639,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
       D => ConfigParamInput_DO(1),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D][8]\(1)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D][8]\(2)
     );
@@ -18657,7 +18655,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
       D => ConfigParamInput_DO(3),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D][8]\(3)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][4]\: unisim.vcomponents.FDPE
@@ -18665,14 +18663,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
       D => ConfigParamInput_DO(4),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D][8]\(4)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D][8]\(5)
     );
@@ -18681,14 +18679,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
       D => ConfigParamInput_DO(6),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D][8]\(6)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D][8]\(7)
     );
@@ -18697,14 +18695,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[2]_0\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel7Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_2\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D][8]\(0)
     );
@@ -18721,7 +18719,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_2\(0),
       D => ConfigParamInput_DO(2),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D][8]\(2)
     );
 \DVSAERConfigReg_DP_reg[FilterPixel7Row_D][3]\: unisim.vcomponents.FDCE
@@ -18744,7 +18742,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_2\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D][8]\(5)
     );
@@ -18760,7 +18758,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_2\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D][8]\(7)
     );
@@ -18769,7 +18767,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[4]_2\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][0]\: unisim.vcomponents.FDPE
@@ -18777,14 +18775,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
       D => ConfigParamInput_DO(0),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8]\(0)
     );
 \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][1]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(1),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8]\(1)
     );
@@ -18792,7 +18790,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(2),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8]\(2)
     );
@@ -18801,7 +18799,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
       D => ConfigParamInput_DO(3),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8]\(3)
     );
 \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][4]\: unisim.vcomponents.FDPE
@@ -18809,14 +18807,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
       D => ConfigParamInput_DO(4),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8]\(4)
     );
 \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(5),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8]\(5)
     );
@@ -18825,14 +18823,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
       D => ConfigParamInput_DO(6),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8]\(6)
     );
 \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(7),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8]\(7)
     );
@@ -18841,7 +18839,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[1]_4\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterROIEndRow_D][0]\: unisim.vcomponents.FDPE
@@ -18849,7 +18847,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[6]_0\(0),
       D => ConfigParamInput_DO(0),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D][8]\(0)
     );
 \DVSAERConfigReg_DP_reg[FilterROIEndRow_D][1]\: unisim.vcomponents.FDPE
@@ -18857,7 +18855,7 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[6]_0\(0),
       D => ConfigParamInput_DO(1),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D][8]\(1)
     );
 \DVSAERConfigReg_DP_reg[FilterROIEndRow_D][2]\: unisim.vcomponents.FDCE
@@ -18913,14 +18911,14 @@ begin
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[6]_0\(0),
       D => ConfigParamInput_DO(8),
-      PRE => AR(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D][8]\(8)
     );
 \DVSAERConfigReg_DP_reg[FilterROIStartColumn_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_1\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][8]\(0)
     );
@@ -18936,7 +18934,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_1\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(2),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][8]\(2)
     );
@@ -18960,7 +18958,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_1\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(5),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][8]\(5)
     );
@@ -18976,7 +18974,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_1\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(7),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][8]\(7)
     );
@@ -18984,7 +18982,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[0]_1\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(8),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][8]\(8)
     );
@@ -18992,7 +18990,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[6]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D][8]\(0)
     );
@@ -19000,7 +18998,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[6]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(1),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D][8]\(1)
     );
@@ -19008,7 +19006,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[6]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(2),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D][8]\(2)
     );
@@ -19016,7 +19014,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[6]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(3),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D][8]\(3)
     );
@@ -19024,7 +19022,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[6]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(4),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D][8]\(4)
     );
@@ -19032,7 +19030,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[6]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(5),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D][8]\(5)
     );
@@ -19040,7 +19038,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[6]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(6),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D][8]\(6)
     );
@@ -19048,7 +19046,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[6]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(7),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D][8]\(7)
     );
@@ -19056,7 +19054,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \ParamAddressReg_DP_reg[6]\(0),
-      CLR => AR(0),
+      CLR => AS(0),
       D => ConfigParamInput_DO(8),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D][8]\(8)
     );
@@ -19064,7 +19062,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AS(0),
       D => \ParamInput_DP_reg[0]\,
       Q => \^dvsaerconfig_d[run_s]\
     );
@@ -19072,7 +19070,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AS(0),
       D => \ParamInput_DP_reg[0]_0\,
       Q => \^dvsaerconfig_d[waitontransferstall_s]\
     );
@@ -19190,7 +19188,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(1),
+      CLR => AR(2),
       D => D(13),
       Q => \ParamOutput_DP_reg[31]\(13)
     );
@@ -19198,7 +19196,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => D(14),
       Q => \ParamOutput_DP_reg[31]\(14)
     );
@@ -19206,7 +19204,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(1),
+      CLR => AR(2),
       D => D(15),
       Q => \ParamOutput_DP_reg[31]\(15)
     );
@@ -19723,15 +19721,13 @@ entity brd_testAERDVSSM_0_0_MultiplexerSPIConfig is
     Q : out STD_LOGIC_VECTOR ( 31 downto 0 );
     \ParamInput_DP_reg[0]\ : in STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    AR : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    AR : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \ParamInput_DP_reg[0]_0\ : in STD_LOGIC;
     \ParamInput_DP_reg[0]_1\ : in STD_LOGIC;
     \ParamInput_DP_reg[0]_2\ : in STD_LOGIC;
     \ParamInput_DP_reg[0]_3\ : in STD_LOGIC;
     \ParamInput_DP_reg[0]_4\ : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__6\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    D : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    \SyncSignalSyncFF_S_reg_rep__4\ : in STD_LOGIC_VECTOR ( 1 downto 0 )
+    D : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_MultiplexerSPIConfig : entity is "MultiplexerSPIConfig";
@@ -19743,7 +19739,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__6\(0),
+      CLR => AR(0),
       D => \ParamInput_DP_reg[0]_4\,
       Q => \MultiplexerConfig_D[DropDVSOnTransferStall_S]\
     );
@@ -19823,7 +19819,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(1),
+      CLR => AR(2),
       D => D(13),
       Q => Q(13)
     );
@@ -19831,7 +19827,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
+      CLR => AR(2),
       D => D(14),
       Q => Q(14)
     );
@@ -19839,7 +19835,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
+      CLR => AR(2),
       D => D(15),
       Q => Q(15)
     );
@@ -19847,7 +19843,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(16),
       Q => Q(16)
     );
@@ -19855,7 +19851,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(17),
       Q => Q(17)
     );
@@ -19863,7 +19859,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(18),
       Q => Q(18)
     );
@@ -19871,7 +19867,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(19),
       Q => Q(19)
     );
@@ -19887,7 +19883,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(20),
       Q => Q(20)
     );
@@ -19895,7 +19891,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(21),
       Q => Q(21)
     );
@@ -19903,7 +19899,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(22),
       Q => Q(22)
     );
@@ -19911,7 +19907,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(23),
       Q => Q(23)
     );
@@ -19919,7 +19915,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(24),
       Q => Q(24)
     );
@@ -19927,7 +19923,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(25),
       Q => Q(25)
     );
@@ -19935,7 +19931,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(26),
       Q => Q(26)
     );
@@ -19943,7 +19939,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(27),
       Q => Q(27)
     );
@@ -19951,7 +19947,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(28),
       Q => Q(28)
     );
@@ -19959,7 +19955,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(29),
       Q => Q(29)
     );
@@ -19975,7 +19971,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(30),
       Q => Q(30)
     );
@@ -19983,7 +19979,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(1),
+      CLR => AR(3),
       D => D(31),
       Q => Q(31)
     );
@@ -19999,7 +19995,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(1),
+      CLR => AR(0),
       D => D(4),
       Q => Q(4)
     );
@@ -20052,8 +20048,9 @@ entity brd_testAERDVSSM_0_0_PulseDetector is
   port (
     TimestampResetExternalDetected_S : out STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    AR : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    State_DN10_out : in STD_LOGIC
+    \SyncSignalSyncFF_S_reg_rep__2\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    State_DN10_out : in STD_LOGIC;
+    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_PulseDetector : entity is "PulseDetector";
@@ -20113,7 +20110,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(1),
+      CLR => AR(0),
       D => Count_DN(0),
       Q => Count_DP(0)
     );
@@ -20121,7 +20118,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(1),
+      CLR => AR(0),
       D => Count_DN(1),
       Q => Count_DP(1)
     );
@@ -20153,7 +20150,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(1),
+      CLR => AR(0),
       D => \FSM_sequential_State_DP[0]_i_1_n_0\,
       Q => State_DP(0)
     );
@@ -20161,7 +20158,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(1),
+      CLR => AR(0),
       D => \FSM_sequential_State_DP[1]_i_1_n_0\,
       Q => State_DP(1)
     );
@@ -20169,7 +20166,7 @@ PulseDetectedBuffer_S_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => PulseDetected_S,
       Q => TimestampResetExternalDetected_S
     );
@@ -20180,27 +20177,27 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity brd_testAERDVSSM_0_0_ResetSynchronizer is
   port (
-    SyncReset_RO : out STD_LOGIC;
+    AS : out STD_LOGIC_VECTOR ( 1 downto 0 );
     AR : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \SyncSignalSyncFF_S_reg[0]\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    \Divider_DP_reg[0]\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
     Memory_SP_reg : out STD_LOGIC_VECTOR ( 0 to 0 );
     \BiasConfigReg_DP_reg[SSN_D][15]\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    \Output_SO_reg[0]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
-    \ParamInput_DP_reg[13]\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    \BiasConfigReg_DP_reg[LcolTimeoutBn_D][14]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
-    \BiasConfigReg_DP_reg[PrBp_D][0]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
-    \BiasConfigReg_DP_reg[AdcTestVoltage_D][1]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
-    \BiasConfigReg_DP_reg[AdcRefLow_D][3]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg[0]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    LatchInputReg_SP_reg : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \BiasConfigReg_DP_reg[IFRefrBn_D][12]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \BiasConfigReg_DP_reg[ColSelLowBn_D][13]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \BiasConfigReg_DP_reg[ReadoutBufBp_D][14]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \BiasConfigReg_DP_reg[PrBp_D][14]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \BiasConfigReg_DP_reg[AdcRefHigh_D][2]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     \BiasConfigReg_DP_reg[AdcRefLow_D][8]\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    \BiasConfigReg_D_reg[PrSFBp_D][1]\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    \BiasConfigReg_D_reg[AEPuXBp_D][10]\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    \PreviousData_DP_reg[15]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \BiasConfigReg_D_reg[PrSFBp_D][6]\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    \BiasConfigReg_D_reg[AEPdBn_D][0]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \BiasConfigReg_D_reg[BiasBuffer_D][12]\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
     \Count_DP_reg[13]\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    \PreviousData_DP_reg[13]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
-    \PreviousData_DP_reg[4]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \PreviousData_DP_reg[0]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \PreviousData_DP_reg[6]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     \PreviousData_DP_reg[2]\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
     \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][1]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
-    \Output_SO_reg[0]_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     \Count_DP_reg[31]\ : out STD_LOGIC_VECTOR ( 2 downto 0 );
     LogicClk_CI : in STD_LOGIC;
     Reset_RI : in STD_LOGIC
@@ -20262,7 +20259,7 @@ SyncSignalSyncFF_S_reg: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => SyncReset_RO
+      Q => AS(0)
     );
 SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
      port map (
@@ -20286,7 +20283,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \SyncSignalSyncFF_S_reg[0]\(1)
+      Q => \Divider_DP_reg[0]\(0)
     );
 \SyncSignalSyncFF_S_reg_rep__10\: unisim.vcomponents.FDPE
      port map (
@@ -20294,7 +20291,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \ParamInput_DP_reg[13]\(0)
+      Q => \BiasConfigReg_DP_reg[IFRefrBn_D][12]\(0)
     );
 \SyncSignalSyncFF_S_reg_rep__11\: unisim.vcomponents.FDPE
      port map (
@@ -20302,7 +20299,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \BiasConfigReg_DP_reg[LcolTimeoutBn_D][14]\(0)
+      Q => \BiasConfigReg_DP_reg[ColSelLowBn_D][13]\(0)
     );
 \SyncSignalSyncFF_S_reg_rep__12\: unisim.vcomponents.FDPE
      port map (
@@ -20310,7 +20307,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \BiasConfigReg_DP_reg[PrBp_D][0]\(0)
+      Q => \BiasConfigReg_DP_reg[ReadoutBufBp_D][14]\(0)
     );
 \SyncSignalSyncFF_S_reg_rep__13\: unisim.vcomponents.FDPE
      port map (
@@ -20318,7 +20315,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \BiasConfigReg_DP_reg[AdcTestVoltage_D][1]\(0)
+      Q => \BiasConfigReg_DP_reg[PrBp_D][14]\(0)
     );
 \SyncSignalSyncFF_S_reg_rep__14\: unisim.vcomponents.FDPE
      port map (
@@ -20326,7 +20323,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \BiasConfigReg_DP_reg[AdcRefLow_D][3]\(0)
+      Q => \BiasConfigReg_DP_reg[AdcRefHigh_D][2]\(0)
     );
 \SyncSignalSyncFF_S_reg_rep__15\: unisim.vcomponents.FDPE
      port map (
@@ -20350,7 +20347,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \BiasConfigReg_D_reg[PrSFBp_D][1]\(1)
+      Q => \BiasConfigReg_D_reg[PrSFBp_D][6]\(1)
     );
 \SyncSignalSyncFF_S_reg_rep__18\: unisim.vcomponents.FDPE
      port map (
@@ -20358,7 +20355,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \BiasConfigReg_D_reg[PrSFBp_D][1]\(0)
+      Q => \BiasConfigReg_D_reg[PrSFBp_D][6]\(0)
     );
 \SyncSignalSyncFF_S_reg_rep__19\: unisim.vcomponents.FDPE
      port map (
@@ -20366,7 +20363,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \BiasConfigReg_D_reg[AEPuXBp_D][10]\(1)
+      Q => \BiasConfigReg_D_reg[AEPdBn_D][0]\(0)
     );
 \SyncSignalSyncFF_S_reg_rep__2\: unisim.vcomponents.FDPE
      port map (
@@ -20374,7 +20371,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \SyncSignalSyncFF_S_reg[0]\(0)
+      Q => \Divider_DP_reg[0]\(1)
     );
 \SyncSignalSyncFF_S_reg_rep__20\: unisim.vcomponents.FDPE
      port map (
@@ -20382,7 +20379,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \BiasConfigReg_D_reg[AEPuXBp_D][10]\(0)
+      Q => \BiasConfigReg_D_reg[BiasBuffer_D][12]\(1)
     );
 \SyncSignalSyncFF_S_reg_rep__21\: unisim.vcomponents.FDPE
      port map (
@@ -20390,7 +20387,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \PreviousData_DP_reg[15]\(0)
+      Q => \BiasConfigReg_D_reg[BiasBuffer_D][12]\(0)
     );
 \SyncSignalSyncFF_S_reg_rep__22\: unisim.vcomponents.FDPE
      port map (
@@ -20414,7 +20411,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \PreviousData_DP_reg[13]\(0)
+      Q => \PreviousData_DP_reg[0]\(0)
     );
 \SyncSignalSyncFF_S_reg_rep__25\: unisim.vcomponents.FDPE
      port map (
@@ -20422,7 +20419,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \PreviousData_DP_reg[4]\(0)
+      Q => \PreviousData_DP_reg[6]\(0)
     );
 \SyncSignalSyncFF_S_reg_rep__26\: unisim.vcomponents.FDPE
      port map (
@@ -20454,7 +20451,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \Output_SO_reg[0]_0\(0)
+      Q => AS(1)
     );
 \SyncSignalSyncFF_S_reg_rep__3\: unisim.vcomponents.FDPE
      port map (
@@ -20518,7 +20515,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \Output_SO_reg[0]\(0)
+      Q => \SyncSignalSyncFF_S_reg[0]\(0)
     );
 \SyncSignalSyncFF_S_reg_rep__8\: unisim.vcomponents.FDPE
      port map (
@@ -20534,7 +20531,7 @@ SyncSignalSyncFF_S_reg_rep: unisim.vcomponents.FDPE
       CE => '1',
       D => SyncSignalDemetFF_S,
       PRE => Reset_RI,
-      Q => \ParamInput_DP_reg[13]\(1)
+      Q => LatchInputReg_SP_reg(0)
     );
 end STRUCTURE;
 library IEEE;
@@ -20749,7 +20746,7 @@ entity brd_testAERDVSSM_0_0_ShiftRegister_24 is
     \out\ : in STD_LOGIC_VECTOR ( 27 downto 0 );
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__22\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__23\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \SyncSignalSyncFF_S_reg_rep__15\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -21109,7 +21106,7 @@ ChipBiasLatch_SBO_i_5: unisim.vcomponents.LUT4
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => ShiftReg_DN(1),
       Q => \ShiftReg_DP_reg_n_0_[1]\
     );
@@ -21133,7 +21130,7 @@ ChipBiasLatch_SBO_i_5: unisim.vcomponents.LUT4
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => ShiftReg_DN(4),
       Q => \ShiftReg_DP_reg_n_0_[4]\
     );
@@ -21157,7 +21154,7 @@ ChipBiasLatch_SBO_i_5: unisim.vcomponents.LUT4
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => ShiftReg_DN(7),
       Q => Q(0)
     );
@@ -21247,7 +21244,7 @@ SPIMISO_DZO_i_2: unisim.vcomponents.LUT2
      port map (
       C => LogicClk_CI,
       CE => \ShiftReg_DP[31]_i_1_n_0\,
-      CLR => AR(0),
+      CLR => AR(1),
       D => D(12),
       Q => Q(12)
     );
@@ -21570,7 +21567,7 @@ entity \brd_testAERDVSSM_0_0_ShiftRegister__parameterized1\ is
     D : in STD_LOGIC_VECTOR ( 15 downto 0 );
     LogicClk_CI : in STD_LOGIC;
     \SyncSignalSyncFF_S_reg_rep__23\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
+    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \brd_testAERDVSSM_0_0_ShiftRegister__parameterized1\ : entity is "ShiftRegister";
@@ -23982,7 +23979,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(0),
       Q => ChipBiasBitIn_DO_reg(0)
     );
@@ -23990,7 +23987,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(10),
       Q => ChipBiasBitIn_DO_reg(10)
     );
@@ -23998,7 +23995,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(11),
       Q => ChipBiasBitIn_DO_reg(11)
     );
@@ -24006,7 +24003,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(12),
       Q => ChipBiasBitIn_DO_reg(12)
     );
@@ -24014,7 +24011,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(13),
       Q => ChipBiasBitIn_DO_reg(13)
     );
@@ -24038,7 +24035,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(1),
       Q => ChipBiasBitIn_DO_reg(1)
     );
@@ -24046,7 +24043,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(2),
       Q => ChipBiasBitIn_DO_reg(2)
     );
@@ -24054,7 +24051,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(3),
       Q => ChipBiasBitIn_DO_reg(3)
     );
@@ -24062,7 +24059,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(4),
       Q => ChipBiasBitIn_DO_reg(4)
     );
@@ -24070,7 +24067,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(5),
       Q => ChipBiasBitIn_DO_reg(5)
     );
@@ -24078,7 +24075,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(6),
       Q => ChipBiasBitIn_DO_reg(6)
     );
@@ -24086,7 +24083,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(7),
       Q => ChipBiasBitIn_DO_reg(7)
     );
@@ -24094,7 +24091,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(8),
       Q => ChipBiasBitIn_DO_reg(8)
     );
@@ -24102,7 +24099,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__0\(0),
+      CLR => AR(0),
       D => D(9),
       Q => ChipBiasBitIn_DO_reg(9)
     );
@@ -24121,7 +24118,7 @@ entity \brd_testAERDVSSM_0_0_ShiftRegister__parameterized2\ is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 55 downto 0 );
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__22\ : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__23\ : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \brd_testAERDVSSM_0_0_ShiftRegister__parameterized2\ : entity is "ShiftRegister";
@@ -24147,7 +24144,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(0),
       Q => \ShiftReg_DP_reg[55]_0\(0)
     );
@@ -24155,7 +24152,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(10),
       Q => \ShiftReg_DP_reg[55]_0\(10)
     );
@@ -24163,7 +24160,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(11),
       Q => \ShiftReg_DP_reg[55]_0\(11)
     );
@@ -24171,7 +24168,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(12),
       Q => \ShiftReg_DP_reg[55]_0\(12)
     );
@@ -24179,7 +24176,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(13),
       Q => \ShiftReg_DP_reg[55]_0\(13)
     );
@@ -24187,7 +24184,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(14),
       Q => \ShiftReg_DP_reg[55]_0\(14)
     );
@@ -24195,7 +24192,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(15),
       Q => \ShiftReg_DP_reg[55]_0\(15)
     );
@@ -24203,7 +24200,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(16),
       Q => \ShiftReg_DP_reg[55]_0\(16)
     );
@@ -24211,7 +24208,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(17),
       Q => \ShiftReg_DP_reg[55]_0\(17)
     );
@@ -24219,7 +24216,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(18),
       Q => \ShiftReg_DP_reg[55]_0\(18)
     );
@@ -24227,7 +24224,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(19),
       Q => \ShiftReg_DP_reg[55]_0\(19)
     );
@@ -24235,7 +24232,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(1),
       Q => \ShiftReg_DP_reg[55]_0\(1)
     );
@@ -24243,7 +24240,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(20),
       Q => \ShiftReg_DP_reg[55]_0\(20)
     );
@@ -24251,7 +24248,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(21),
       Q => \ShiftReg_DP_reg[55]_0\(21)
     );
@@ -24259,7 +24256,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(22),
       Q => \ShiftReg_DP_reg[55]_0\(22)
     );
@@ -24267,7 +24264,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(23),
       Q => \ShiftReg_DP_reg[55]_0\(23)
     );
@@ -24275,7 +24272,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(24),
       Q => \ShiftReg_DP_reg[55]_0\(24)
     );
@@ -24283,7 +24280,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(25),
       Q => \ShiftReg_DP_reg[55]_0\(25)
     );
@@ -24291,7 +24288,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(26),
       Q => \ShiftReg_DP_reg[55]_0\(26)
     );
@@ -24299,7 +24296,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(27),
       Q => \ShiftReg_DP_reg[55]_0\(27)
     );
@@ -24307,7 +24304,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(28),
       Q => \ShiftReg_DP_reg[55]_0\(28)
     );
@@ -24315,7 +24312,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(29),
       Q => \ShiftReg_DP_reg[55]_0\(29)
     );
@@ -24323,7 +24320,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(2),
       Q => \ShiftReg_DP_reg[55]_0\(2)
     );
@@ -24331,7 +24328,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(30),
       Q => \ShiftReg_DP_reg[55]_0\(30)
     );
@@ -24339,7 +24336,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(31),
       Q => \ShiftReg_DP_reg[55]_0\(31)
     );
@@ -24347,7 +24344,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(32),
       Q => \ShiftReg_DP_reg[55]_0\(32)
     );
@@ -24355,7 +24352,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(33),
       Q => \ShiftReg_DP_reg[55]_0\(33)
     );
@@ -24363,7 +24360,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(34),
       Q => \ShiftReg_DP_reg[55]_0\(34)
     );
@@ -24371,7 +24368,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(35),
       Q => \ShiftReg_DP_reg[55]_0\(35)
     );
@@ -24379,7 +24376,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(36),
       Q => \ShiftReg_DP_reg[55]_0\(36)
     );
@@ -24387,7 +24384,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(37),
       Q => \ShiftReg_DP_reg[55]_0\(37)
     );
@@ -24395,7 +24392,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(38),
       Q => \ShiftReg_DP_reg[55]_0\(38)
     );
@@ -24403,7 +24400,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(39),
       Q => \ShiftReg_DP_reg[55]_0\(39)
     );
@@ -24411,7 +24408,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(3),
       Q => \ShiftReg_DP_reg[55]_0\(3)
     );
@@ -24419,7 +24416,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(40),
       Q => \ShiftReg_DP_reg[55]_0\(40)
     );
@@ -24427,7 +24424,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(41),
       Q => \ShiftReg_DP_reg[55]_0\(41)
     );
@@ -24435,7 +24432,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(42),
       Q => \ShiftReg_DP_reg[55]_0\(42)
     );
@@ -24443,7 +24440,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(43),
       Q => \ShiftReg_DP_reg[55]_0\(43)
     );
@@ -24451,7 +24448,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(44),
       Q => \ShiftReg_DP_reg[55]_0\(44)
     );
@@ -24459,7 +24456,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(45),
       Q => \ShiftReg_DP_reg[55]_0\(45)
     );
@@ -24467,7 +24464,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(46),
       Q => \ShiftReg_DP_reg[55]_0\(46)
     );
@@ -24475,7 +24472,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(47),
       Q => \ShiftReg_DP_reg[55]_0\(47)
     );
@@ -24483,7 +24480,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(48),
       Q => \ShiftReg_DP_reg[55]_0\(48)
     );
@@ -24491,7 +24488,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(49),
       Q => \ShiftReg_DP_reg[55]_0\(49)
     );
@@ -24499,7 +24496,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(4),
       Q => \ShiftReg_DP_reg[55]_0\(4)
     );
@@ -24507,7 +24504,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(50),
       Q => \ShiftReg_DP_reg[55]_0\(50)
     );
@@ -24515,7 +24512,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(51),
       Q => \ShiftReg_DP_reg[55]_0\(51)
     );
@@ -24523,7 +24520,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(52),
       Q => \ShiftReg_DP_reg[55]_0\(52)
     );
@@ -24531,7 +24528,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
       D => D(53),
       Q => \ShiftReg_DP_reg[55]_0\(53)
     );
@@ -24539,7 +24536,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
       D => D(54),
       Q => \ShiftReg_DP_reg[55]_0\(54)
     );
@@ -24547,7 +24544,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
       D => D(55),
       Q => ChipSROutput_D(55)
     );
@@ -24555,7 +24552,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(5),
       Q => \ShiftReg_DP_reg[55]_0\(5)
     );
@@ -24563,7 +24560,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(6),
       Q => \ShiftReg_DP_reg[55]_0\(6)
     );
@@ -24571,7 +24568,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(7),
       Q => \ShiftReg_DP_reg[55]_0\(7)
     );
@@ -24579,7 +24576,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(8),
       Q => \ShiftReg_DP_reg[55]_0\(8)
     );
@@ -24587,7 +24584,7 @@ ChipBiasBitIn_DO_i_1: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__22\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => D(9),
       Q => \ShiftReg_DP_reg[55]_0\(9)
     );
@@ -24679,7 +24676,7 @@ entity \brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_10\ is
     PixelFilterOutValidReg_S : out STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__3\ : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__4\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_10\ : entity is "SimpleRegister";
@@ -24691,7 +24688,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => E(0),
       Q => PixelFilterOutValidReg_S
     );
@@ -24706,7 +24703,7 @@ entity \brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_13\ is
     E : out STD_LOGIC_VECTOR ( 0 to 0 );
     \Output_SO_reg[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__29\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 );
     Q : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Output_SO_reg[6]\ : in STD_LOGIC;
     \Output_SO_reg[6]_0\ : in STD_LOGIC;
@@ -24738,7 +24735,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \Output_SO_reg[0]_0\(0),
       Q => \^roifilteroutvalidreg_s\
     );
@@ -24752,7 +24749,7 @@ entity \brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_15\ is
     \FifoControl_SI[WriteSide][Write_S]\ : out STD_LOGIC;
     RowOnlyFilterInValidReg_S : in STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__3\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__4\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     Q : in STD_LOGIC_VECTOR ( 0 to 0 );
     PixelFilterOutValidReg_S : in STD_LOGIC;
     \Output_SO_reg[13]\ : in STD_LOGIC_VECTOR ( 0 to 0 )
@@ -24768,7 +24765,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => RowOnlyFilterInValidReg_S,
       Q => RowOnlyFilterOutValidReg_S
     );
@@ -25529,7 +25526,7 @@ entity \brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_8\ is
     DVSEventOutValidReg_S : out STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__29\ : in STD_LOGIC_VECTOR ( 0 to 0 )
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_8\ : entity is "SimpleRegister";
@@ -25541,7 +25538,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => E(0),
       Q => DVSEventOutValidReg_S
     );
@@ -25793,7 +25790,7 @@ entity \brd_testAERDVSSM_0_0_SimpleRegister__parameterized2\ is
     \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 10 downto 0 );
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__29\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 );
     \SyncSignalSyncFF_S_reg_rep__3\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Output_SO_reg[0]_2\ : in STD_LOGIC;
     \Output_SO_reg[1]_1\ : in STD_LOGIC;
@@ -26189,7 +26186,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \^e\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(0),
       Q => \^q\(0)
     );
@@ -26205,7 +26202,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \^e\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(10),
       Q => \^q\(10)
     );
@@ -26273,7 +26270,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \^e\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(1),
       Q => \^q\(1)
     );
@@ -26281,7 +26278,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \^e\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(2),
       Q => \^q\(2)
     );
@@ -26289,7 +26286,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \^e\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(3),
       Q => \^q\(3)
     );
@@ -26297,7 +26294,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \^e\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(4),
       Q => \^q\(4)
     );
@@ -26305,7 +26302,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \^e\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(5),
       Q => \^q\(5)
     );
@@ -26313,7 +26310,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \^e\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(6),
       Q => \^q\(6)
     );
@@ -26321,7 +26318,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \^e\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(7),
       Q => \^q\(7)
     );
@@ -26329,7 +26326,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => \^e\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(8),
       Q => \^q\(8)
     );
@@ -26384,8 +26381,8 @@ entity \brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_11\ is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 10 downto 0 );
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__29\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__3\ : in STD_LOGIC_VECTOR ( 0 to 0 )
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__4\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_11\ : entity is "SimpleRegister";
@@ -26879,7 +26876,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(0),
       Q => \^q\(0)
     );
@@ -26887,7 +26884,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => D(9),
       Q => \^q\(9)
     );
@@ -26895,7 +26892,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(10),
       Q => \^q\(10)
     );
@@ -27023,7 +27020,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(1),
       Q => \^q\(1)
     );
@@ -27031,7 +27028,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(2),
       Q => \^q\(2)
     );
@@ -27039,7 +27036,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(3),
       Q => \^q\(3)
     );
@@ -27047,7 +27044,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(4),
       Q => \^q\(4)
     );
@@ -27055,7 +27052,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(5),
       Q => \^q\(5)
     );
@@ -27063,7 +27060,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(6),
       Q => \^q\(6)
     );
@@ -27071,7 +27068,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(7),
       Q => \^q\(7)
     );
@@ -27079,7 +27076,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => E(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => D(8),
       Q => \^q\(8)
     );
@@ -27093,7 +27090,7 @@ entity \brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_14\ is
     Q : out STD_LOGIC_VECTOR ( 10 downto 0 );
     D : in STD_LOGIC_VECTOR ( 10 downto 0 );
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__3\ : in STD_LOGIC_VECTOR ( 1 downto 0 )
+    \SyncSignalSyncFF_S_reg_rep__4\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_14\ : entity is "SimpleRegister";
@@ -27105,7 +27102,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => D(0),
       Q => Q(0)
     );
@@ -27113,7 +27110,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => D(9),
       Q => Q(9)
     );
@@ -27121,7 +27118,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => D(10),
       Q => Q(10)
     );
@@ -27129,7 +27126,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => D(1),
       Q => Q(1)
     );
@@ -27137,7 +27134,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => D(2),
       Q => Q(2)
     );
@@ -27145,7 +27142,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => D(3),
       Q => Q(3)
     );
@@ -27153,7 +27150,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => D(4),
       Q => Q(4)
     );
@@ -27161,7 +27158,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => D(5),
       Q => Q(5)
     );
@@ -27169,7 +27166,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => D(6),
       Q => Q(6)
     );
@@ -27177,7 +27174,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => D(7),
       Q => Q(7)
     );
@@ -27185,7 +27182,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
       D => D(8),
       Q => Q(8)
     );
@@ -27344,11 +27341,10 @@ entity \brd_testAERDVSSM_0_0_SimpleRegister__parameterized3\ is
     ROIFilterOutValidReg_S : in STD_LOGIC;
     \Output_SO_reg[8]_1\ : in STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    SyncReset_RO : in STD_LOGIC;
+    AS : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \Output_SO_reg[7]_1\ : in STD_LOGIC;
     \Output_SO_reg[6]_1\ : in STD_LOGIC;
     \Output_SO_reg[5]_1\ : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__29\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Output_SO_reg[4]_1\ : in STD_LOGIC;
     \Output_SO_reg[3]_1\ : in STD_LOGIC;
     \Output_SO_reg[2]_1\ : in STD_LOGIC;
@@ -27751,7 +27747,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => ROIFilterOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \Output_SO_reg[0]_8\,
       Q => \^output_so_reg[0]_0\
     );
@@ -27879,7 +27875,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => ROIFilterOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \Output_SO_reg[1]_1\,
       Q => \^output_so_reg[1]_0\
     );
@@ -27887,7 +27883,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => ROIFilterOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \Output_SO_reg[2]_1\,
       Q => \^output_so_reg[2]_0\
     );
@@ -27895,7 +27891,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => ROIFilterOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \Output_SO_reg[3]_1\,
       Q => \^output_so_reg[3]_0\
     );
@@ -27903,7 +27899,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => ROIFilterOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \Output_SO_reg[4]_1\,
       Q => \^output_so_reg[4]_0\
     );
@@ -27911,7 +27907,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => ROIFilterOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \Output_SO_reg[5]_1\,
       Q => \^output_so_reg[5]_0\
     );
@@ -27919,7 +27915,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => ROIFilterOutValidReg_S,
-      CLR => SyncReset_RO,
+      CLR => AS(0),
       D => \Output_SO_reg[6]_1\,
       Q => \^output_so_reg[6]_0\
     );
@@ -27927,7 +27923,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => ROIFilterOutValidReg_S,
-      CLR => SyncReset_RO,
+      CLR => AS(0),
       D => \Output_SO_reg[7]_1\,
       Q => \^output_so_reg[7]_0\
     );
@@ -27935,7 +27931,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => ROIFilterOutValidReg_S,
-      CLR => SyncReset_RO,
+      CLR => AS(0),
       D => \Output_SO_reg[8]_1\,
       Q => \^output_so_reg[8]_0\
     );
@@ -27962,7 +27958,7 @@ entity \brd_testAERDVSSM_0_0_SimpleRegister__parameterized3_12\ is
     DVSEventOutValidReg_S : in STD_LOGIC;
     \Output_SO_reg[8]_1\ : in STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__29\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Output_SO_reg[7]_1\ : in STD_LOGIC;
     \Output_SO_reg[6]_1\ : in STD_LOGIC;
     \Output_SO_reg[5]_1\ : in STD_LOGIC;
@@ -28246,7 +28242,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => DVSEventOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \Output_SO_reg[0]_2\,
       Q => \^output_so_reg[0]_1\
     );
@@ -28314,7 +28310,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => DVSEventOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \Output_SO_reg[1]_1\,
       Q => \^output_so_reg[1]_0\
     );
@@ -28322,7 +28318,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => DVSEventOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \Output_SO_reg[2]_1\,
       Q => \^output_so_reg[2]_0\
     );
@@ -28330,7 +28326,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => DVSEventOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \Output_SO_reg[3]_1\,
       Q => \^output_so_reg[3]_0\
     );
@@ -28338,7 +28334,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => DVSEventOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \Output_SO_reg[4]_1\,
       Q => \^output_so_reg[4]_0\
     );
@@ -28346,7 +28342,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => DVSEventOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \Output_SO_reg[5]_1\,
       Q => \^output_so_reg[5]_0\
     );
@@ -28354,7 +28350,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => DVSEventOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \Output_SO_reg[6]_1\,
       Q => \^output_so_reg[6]_0\
     );
@@ -28362,7 +28358,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => DVSEventOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \Output_SO_reg[7]_1\,
       Q => \^output_so_reg[7]_0\
     );
@@ -28370,7 +28366,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => DVSEventOutValidReg_S,
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \Output_SO_reg[8]_1\,
       Q => \^output_so_reg[8]_0\
     );
@@ -28396,8 +28392,8 @@ entity brd_testAERDVSSM_0_0_TimestampSynchronizer is
     TimestampOverflowBufferOverflow_S : in STD_LOGIC;
     TimestampResetBufferClear_S : in STD_LOGIC;
     TimestampResetBuffer_S : in STD_LOGIC;
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__2\ : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__2\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_TimestampSynchronizer : entity is "TimestampSynchronizer";
@@ -28549,24 +28545,26 @@ architecture STRUCTURE of brd_testAERDVSSM_0_0_TimestampSynchronizer is
   signal \NLW_plusOp_carry__2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   signal \NLW_plusOp_carry__2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \Confirm_DP[0]_i_1\ : label is "soft_lutpair60";
-  attribute SOFT_HLUTNM of \Confirm_DP[10]_i_1\ : label is "soft_lutpair64";
-  attribute SOFT_HLUTNM of \Confirm_DP[11]_i_1\ : label is "soft_lutpair65";
-  attribute SOFT_HLUTNM of \Confirm_DP[1]_i_1\ : label is "soft_lutpair61";
-  attribute SOFT_HLUTNM of \Confirm_DP[2]_i_1\ : label is "soft_lutpair62";
-  attribute SOFT_HLUTNM of \Confirm_DP[3]_i_1\ : label is "soft_lutpair63";
-  attribute SOFT_HLUTNM of \Confirm_DP[4]_i_1\ : label is "soft_lutpair64";
-  attribute SOFT_HLUTNM of \Confirm_DP[5]_i_1\ : label is "soft_lutpair60";
-  attribute SOFT_HLUTNM of \Confirm_DP[6]_i_1\ : label is "soft_lutpair62";
-  attribute SOFT_HLUTNM of \Confirm_DP[7]_i_1\ : label is "soft_lutpair65";
-  attribute SOFT_HLUTNM of \Confirm_DP[8]_i_1\ : label is "soft_lutpair61";
-  attribute SOFT_HLUTNM of \Confirm_DP[9]_i_1\ : label is "soft_lutpair63";
+  attribute SOFT_HLUTNM of \Confirm_DP[0]_i_1\ : label is "soft_lutpair61";
+  attribute SOFT_HLUTNM of \Confirm_DP[10]_i_1\ : label is "soft_lutpair65";
+  attribute SOFT_HLUTNM of \Confirm_DP[11]_i_1\ : label is "soft_lutpair66";
+  attribute SOFT_HLUTNM of \Confirm_DP[1]_i_1\ : label is "soft_lutpair62";
+  attribute SOFT_HLUTNM of \Confirm_DP[2]_i_1\ : label is "soft_lutpair63";
+  attribute SOFT_HLUTNM of \Confirm_DP[3]_i_1\ : label is "soft_lutpair64";
+  attribute SOFT_HLUTNM of \Confirm_DP[4]_i_1\ : label is "soft_lutpair65";
+  attribute SOFT_HLUTNM of \Confirm_DP[5]_i_1\ : label is "soft_lutpair61";
+  attribute SOFT_HLUTNM of \Confirm_DP[6]_i_1\ : label is "soft_lutpair63";
+  attribute SOFT_HLUTNM of \Confirm_DP[7]_i_1\ : label is "soft_lutpair66";
+  attribute SOFT_HLUTNM of \Confirm_DP[8]_i_1\ : label is "soft_lutpair62";
+  attribute SOFT_HLUTNM of \Confirm_DP[9]_i_1\ : label is "soft_lutpair64";
   attribute SOFT_HLUTNM of \Counter_DP[14]_i_8\ : label is "soft_lutpair58";
   attribute SOFT_HLUTNM of \Counter_DP[14]_i_9\ : label is "soft_lutpair55";
-  attribute SOFT_HLUTNM of \Divider_DP[0]_i_1\ : label is "soft_lutpair59";
+  attribute SOFT_HLUTNM of \Divider_DP[0]_i_1\ : label is "soft_lutpair60";
+  attribute SOFT_HLUTNM of \Divider_DP[1]_i_1\ : label is "soft_lutpair60";
   attribute SOFT_HLUTNM of \Divider_DP[2]_i_1\ : label is "soft_lutpair56";
   attribute SOFT_HLUTNM of \Divider_DP[4]_i_1\ : label is "soft_lutpair59";
   attribute SOFT_HLUTNM of \Divider_DP[4]_i_2\ : label is "soft_lutpair57";
+  attribute SOFT_HLUTNM of \Divider_DP[5]_i_1\ : label is "soft_lutpair59";
   attribute SOFT_HLUTNM of \Divider_DP[6]_i_3\ : label is "soft_lutpair57";
   attribute SOFT_HLUTNM of \Divider_DP[6]_i_4\ : label is "soft_lutpair56";
   attribute SOFT_HLUTNM of \FSM_sequential_State_DP[2]_i_11\ : label is "soft_lutpair55";
@@ -29233,7 +29231,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => \Counter_DP[14]_i_1_n_0\,
       Q => \Counter_DP_reg_n_0_[14]\
     );
@@ -29516,7 +29514,7 @@ DeviceIsMaster_SO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => Divider_DN,
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => \Divider_DP[5]_i_1_n_0\,
       Q => Divider_DP(5)
     );
@@ -29524,7 +29522,7 @@ DeviceIsMaster_SO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => Divider_DN,
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => \Divider_DP[6]_i_2_n_0\,
       Q => Divider_DP(6)
     );
@@ -29773,7 +29771,7 @@ DeviceIsMaster_SO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => \FSM_sequential_State_DP[0]_i_1__0_n_0\,
       Q => State_DP(0)
     );
@@ -29781,7 +29779,7 @@ DeviceIsMaster_SO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => \FSM_sequential_State_DP[1]_i_1__0_n_0\,
       Q => State_DP(1)
     );
@@ -29789,7 +29787,7 @@ DeviceIsMaster_SO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => \FSM_sequential_State_DP[2]_i_1_n_0\,
       Q => State_DP(2)
     );
@@ -30243,7 +30241,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_25 is
     Bias3Changed_S : in STD_LOGIC;
     Bias2Changed_S : in STD_LOGIC;
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__26\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_25 : entity is "ChangeDetector";
@@ -30360,7 +30358,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -30368,7 +30366,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -30376,7 +30374,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -30384,7 +30382,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -30392,7 +30390,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -30400,7 +30398,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -30408,7 +30406,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -30416,7 +30414,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -30424,7 +30422,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -30432,7 +30430,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -30440,7 +30438,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -30448,7 +30446,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -30456,7 +30454,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -30464,7 +30462,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -30472,7 +30470,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -30516,7 +30514,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_26 is
     Bias8Changed_S : in STD_LOGIC;
     Bias4Changed_S : in STD_LOGIC;
     Bias3Changed_S : in STD_LOGIC;
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__26\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_26 : entity is "ChangeDetector";
@@ -30633,7 +30631,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -30641,7 +30639,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -30649,7 +30647,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -30657,7 +30655,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -30665,7 +30663,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -30673,7 +30671,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -30681,7 +30679,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -30689,7 +30687,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -30697,7 +30695,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -30705,7 +30703,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -30713,7 +30711,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -30721,7 +30719,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -30729,7 +30727,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -30737,7 +30735,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -30745,7 +30743,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -30783,7 +30781,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_27 is
     \SyncSignalSyncFF_S_reg_rep__22\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     Q : in STD_LOGIC_VECTOR ( 14 downto 0 );
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 1 downto 0 )
+    \SyncSignalSyncFF_S_reg_rep__26\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_27 : entity is "ChangeDetector";
@@ -30900,7 +30898,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -30908,7 +30906,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -30916,7 +30914,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -30924,7 +30922,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -30932,7 +30930,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -30940,7 +30938,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -30948,7 +30946,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -30956,7 +30954,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -30964,7 +30962,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -30972,7 +30970,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -30980,7 +30978,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -30988,7 +30986,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -30996,7 +30994,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -31004,7 +31002,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -31012,7 +31010,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -31038,7 +31036,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_28 is
     Q : in STD_LOGIC_VECTOR ( 14 downto 0 );
     Bias14Changed_S : in STD_LOGIC;
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__25\ : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_28 : entity is "ChangeDetector";
@@ -31155,7 +31153,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -31163,7 +31161,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -31171,7 +31169,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -31179,7 +31177,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -31187,7 +31185,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -31195,7 +31193,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -31203,7 +31201,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -31211,7 +31209,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -31219,7 +31217,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -31227,7 +31225,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -31235,7 +31233,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -31243,7 +31241,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -31251,7 +31249,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -31259,7 +31257,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -31267,7 +31265,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(1),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -31297,7 +31295,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_29 is
     Bias16Changed_S : in STD_LOGIC;
     Bias15Changed_S : in STD_LOGIC;
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__25\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_29 : entity is "ChangeDetector";
@@ -31414,7 +31412,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -31422,7 +31420,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -31430,7 +31428,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -31438,7 +31436,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -31446,7 +31444,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -31454,7 +31452,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -31462,7 +31460,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -31470,7 +31468,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -31478,7 +31476,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -31486,7 +31484,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -31494,7 +31492,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -31502,7 +31500,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -31510,7 +31508,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -31518,7 +31516,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -31526,7 +31524,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -31554,7 +31552,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_30 is
     \SyncSignalSyncFF_S_reg_rep__22\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     Q : in STD_LOGIC_VECTOR ( 14 downto 0 );
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__25\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_30 : entity is "ChangeDetector";
@@ -31671,7 +31669,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -31679,7 +31677,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -31687,7 +31685,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -31695,7 +31693,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -31703,7 +31701,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -31711,7 +31709,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -31719,7 +31717,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -31727,7 +31725,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -31735,7 +31733,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -31743,7 +31741,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -31751,7 +31749,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -31759,7 +31757,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -31767,7 +31765,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -31775,7 +31773,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -31783,7 +31781,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -31812,7 +31810,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_31 is
     Bias20Changed_S : in STD_LOGIC;
     Memory_SP_reg : in STD_LOGIC;
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__25\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_31 : entity is "ChangeDetector";
@@ -31929,7 +31927,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -31937,7 +31935,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -31945,7 +31943,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -31953,7 +31951,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -31961,7 +31959,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -31969,7 +31967,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -31977,7 +31975,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -31985,7 +31983,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -31993,7 +31991,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -32001,7 +31999,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -32009,7 +32007,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -32017,7 +32015,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -32025,7 +32023,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -32033,7 +32031,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -32041,7 +32039,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -32072,7 +32070,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_32 is
     Q : in STD_LOGIC_VECTOR ( 14 downto 0 );
     Bias18Changed_S : in STD_LOGIC;
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__25\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_32 : entity is "ChangeDetector";
@@ -32189,7 +32187,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -32197,7 +32195,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -32205,7 +32203,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -32213,7 +32211,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -32221,7 +32219,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -32229,7 +32227,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -32237,7 +32235,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -32245,7 +32243,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -32253,7 +32251,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -32261,7 +32259,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -32269,7 +32267,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -32277,7 +32275,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -32285,7 +32283,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -32293,7 +32291,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -32301,7 +32299,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -32331,7 +32329,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_33 is
     Bias20Changed_S : in STD_LOGIC;
     Bias19Changed_S : in STD_LOGIC;
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__25\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_33 : entity is "ChangeDetector";
@@ -32448,7 +32446,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -32456,7 +32454,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -32464,7 +32462,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -32472,7 +32470,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -32480,7 +32478,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -32488,7 +32486,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -32496,7 +32494,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -32504,7 +32502,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -32512,7 +32510,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -32520,7 +32518,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -32528,7 +32526,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -32536,7 +32534,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -32544,7 +32542,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -32552,7 +32550,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -32560,7 +32558,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -32615,7 +32613,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_34 is
     Bias11Changed_S : in STD_LOGIC;
     Bias0Changed_S : in STD_LOGIC;
     Bias12Changed_S : in STD_LOGIC;
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__25\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_34 : entity is "ChangeDetector";
@@ -32732,7 +32730,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -32740,7 +32738,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -32748,7 +32746,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -32756,7 +32754,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -32764,7 +32762,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -32772,7 +32770,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -32780,7 +32778,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -32788,7 +32786,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -32796,7 +32794,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -32804,7 +32802,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -32812,7 +32810,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -32820,7 +32818,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -32828,7 +32826,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -32836,7 +32834,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -32844,7 +32842,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -32895,8 +32893,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_36 is
     \SyncSignalSyncFF_S_reg_rep__22\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     Q : in STD_LOGIC_VECTOR ( 14 downto 0 );
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__24\ : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__25\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_36 : entity is "ChangeDetector";
@@ -33013,7 +33010,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__24\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -33021,7 +33018,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -33029,7 +33026,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -33037,7 +33034,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -33045,7 +33042,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -33053,7 +33050,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -33061,7 +33058,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__24\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -33069,7 +33066,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__24\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -33077,7 +33074,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -33085,7 +33082,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -33093,7 +33090,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__24\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -33101,7 +33098,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -33109,7 +33106,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -33117,7 +33114,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -33125,7 +33122,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -33151,6 +33148,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_37 is
     Q : in STD_LOGIC_VECTOR ( 14 downto 0 );
     Bias22Changed_S : in STD_LOGIC;
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__25\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \SyncSignalSyncFF_S_reg_rep__24\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -33276,7 +33274,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__24\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -33284,7 +33282,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__24\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -33292,7 +33290,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__24\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -33300,7 +33298,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__24\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -33308,7 +33306,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__24\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -33356,7 +33354,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__24\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -33380,7 +33378,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__24\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__25\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -35344,7 +35342,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_49 is
     Bias14Changed_S : in STD_LOGIC;
     Bias25Changed_S : in STD_LOGIC;
     Bias26Changed_S : in STD_LOGIC;
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__26\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_49 : entity is "ChangeDetector";
@@ -35461,7 +35459,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -35469,7 +35467,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -35477,7 +35475,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -35485,7 +35483,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -35493,7 +35491,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -35501,7 +35499,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -35509,7 +35507,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -35517,7 +35515,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -35525,7 +35523,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -35533,7 +35531,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -35541,7 +35539,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -35549,7 +35547,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -35557,7 +35555,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -35565,7 +35563,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -35573,7 +35571,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -35610,7 +35608,7 @@ entity brd_testAERDVSSM_0_0_ChangeDetector_50 is
     \SyncSignalSyncFF_S_reg_rep__22\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     Q : in STD_LOGIC_VECTOR ( 14 downto 0 );
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__26\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ChangeDetector_50 : entity is "ChangeDetector";
@@ -35727,7 +35725,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -35735,7 +35733,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -35743,7 +35741,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -35751,7 +35749,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(12),
       Q => PreviousData_DP(12)
     );
@@ -35759,7 +35757,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(13),
       Q => PreviousData_DP(13)
     );
@@ -35767,7 +35765,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -35775,7 +35773,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -35783,7 +35781,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -35791,7 +35789,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -35799,7 +35797,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -35807,7 +35805,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -35815,7 +35813,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -35823,7 +35821,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -35831,7 +35829,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -35839,7 +35837,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -35863,7 +35861,7 @@ entity \brd_testAERDVSSM_0_0_ChangeDetector__parameterized0\ is
     \SyncSignalSyncFF_S_reg_rep__22\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     Q : in STD_LOGIC_VECTOR ( 8 downto 0 );
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__26\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \brd_testAERDVSSM_0_0_ChangeDetector__parameterized0\ : entity is "ChangeDetector";
@@ -35938,7 +35936,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -35946,7 +35944,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -35954,7 +35952,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -35962,7 +35960,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -35970,7 +35968,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -35978,7 +35976,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -35986,7 +35984,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -35994,7 +35992,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -36002,7 +36000,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -36026,7 +36024,7 @@ entity \brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_35\ is
     \SyncSignalSyncFF_S_reg_rep__22\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     Q : in STD_LOGIC_VECTOR ( 8 downto 0 );
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__26\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_35\ : entity is "ChangeDetector";
@@ -36101,7 +36099,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -36109,7 +36107,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -36117,7 +36115,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -36125,7 +36123,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -36133,7 +36131,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -36141,7 +36139,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -36149,7 +36147,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -36157,7 +36155,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -36165,7 +36163,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -36189,7 +36187,7 @@ entity \brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_44\ is
     \SyncSignalSyncFF_S_reg_rep__22\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     Q : in STD_LOGIC_VECTOR ( 8 downto 0 );
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__26\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_44\ : entity is "ChangeDetector";
@@ -36264,7 +36262,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -36272,7 +36270,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -36280,7 +36278,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -36288,7 +36286,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -36296,7 +36294,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -36304,7 +36302,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -36312,7 +36310,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -36320,7 +36318,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -36328,7 +36326,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -36352,7 +36350,7 @@ entity \brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_47\ is
     \SyncSignalSyncFF_S_reg_rep__22\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     Q : in STD_LOGIC_VECTOR ( 8 downto 0 );
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__26\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_47\ : entity is "ChangeDetector";
@@ -36427,7 +36425,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -36435,7 +36433,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -36443,7 +36441,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -36451,7 +36449,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -36459,7 +36457,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -36467,7 +36465,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -36475,7 +36473,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -36483,7 +36481,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -36491,7 +36489,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -36517,7 +36515,7 @@ entity \brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_48\ is
     Q : in STD_LOGIC_VECTOR ( 8 downto 0 );
     Bias8Changed_S : in STD_LOGIC;
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \SyncSignalSyncFF_S_reg_rep__26\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of \brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_48\ : entity is "ChangeDetector";
@@ -36592,7 +36590,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -36600,7 +36598,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(1),
       Q => PreviousData_DP(1)
     );
@@ -36608,7 +36606,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(2),
       Q => PreviousData_DP(2)
     );
@@ -36616,7 +36614,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -36624,7 +36622,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -36632,7 +36630,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -36640,7 +36638,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -36648,7 +36646,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -36656,7 +36654,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__26\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -36818,7 +36816,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
       D => Q(0),
       Q => PreviousData_DP(0)
     );
@@ -36826,7 +36824,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
       D => Q(10),
       Q => PreviousData_DP(10)
     );
@@ -36834,7 +36832,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
       D => Q(11),
       Q => PreviousData_DP(11)
     );
@@ -36858,7 +36856,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
       D => Q(14),
       Q => PreviousData_DP(14)
     );
@@ -36890,7 +36888,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
       D => Q(3),
       Q => PreviousData_DP(3)
     );
@@ -36898,7 +36896,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
       D => Q(4),
       Q => PreviousData_DP(4)
     );
@@ -36906,7 +36904,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
       D => Q(5),
       Q => PreviousData_DP(5)
     );
@@ -36914,7 +36912,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
       D => Q(6),
       Q => PreviousData_DP(6)
     );
@@ -36922,7 +36920,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
       D => Q(7),
       Q => PreviousData_DP(7)
     );
@@ -36930,7 +36928,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
       D => Q(8),
       Q => PreviousData_DP(8)
     );
@@ -36938,7 +36936,7 @@ ChangeDetected_S1_carry: unisim.vcomponents.CARRY4
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
       D => Q(9),
       Q => PreviousData_DP(9)
     );
@@ -37942,7 +37940,7 @@ entity brd_testAERDVSSM_0_0_ContinuousCounter is
     Memory_SP_reg : out STD_LOGIC_VECTOR ( 0 to 0 );
     HighestTimestampSent_SP_reg : out STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__3\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__2\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \State_DP_reg[3]\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \MultiplexerConfigReg_D_reg[TimestampRun_S]\ : in STD_LOGIC;
     \SyncSignalSyncFF_S_reg[0]\ : in STD_LOGIC;
@@ -37952,8 +37950,7 @@ entity brd_testAERDVSSM_0_0_ContinuousCounter is
     HighestTimestampSent_SP_reg_0 : in STD_LOGIC;
     \State_DP_reg[2]\ : in STD_LOGIC;
     HighestTimestampSent_SP : in STD_LOGIC;
-    \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__2\ : in STD_LOGIC_VECTOR ( 0 to 0 )
+    \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_ContinuousCounter : entity is "ContinuousCounter";
@@ -38258,7 +38255,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(0),
       Q => \^q\(0)
     );
@@ -38266,7 +38263,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(10),
       Q => \^q\(10)
     );
@@ -38274,7 +38271,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(11),
       Q => \^q\(11)
     );
@@ -38282,7 +38279,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(12),
       Q => \^q\(12)
     );
@@ -38290,7 +38287,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(13),
       Q => \^q\(13)
     );
@@ -38298,7 +38295,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(14),
       Q => \^q\(14)
     );
@@ -38306,7 +38303,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(1),
       Q => \^q\(1)
     );
@@ -38314,7 +38311,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(2),
       Q => \^q\(2)
     );
@@ -38322,7 +38319,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(3),
       Q => \^q\(3)
     );
@@ -38330,7 +38327,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(4),
       Q => \^q\(4)
     );
@@ -38338,7 +38335,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(5),
       Q => \^q\(5)
     );
@@ -38346,7 +38343,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(6),
       Q => \^q\(6)
     );
@@ -38354,7 +38351,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(7),
       Q => \^q\(7)
     );
@@ -38362,7 +38359,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(8),
       Q => \^q\(8)
     );
@@ -38370,7 +38367,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
      port map (
       C => LogicClk_CI,
       CE => \MultiplexerConfigReg_D_reg[TimestampRun_S]_0\(0),
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => Count_DN(9),
       Q => \^q\(9)
     );
@@ -38402,7 +38399,7 @@ ChangeDetected_S1_carry_i_4: unisim.vcomponents.LUT6
       \State_DP_reg[2]\ => \State_DP_reg[2]\,
       \State_DP_reg[3]\(3 downto 0) => \State_DP_reg[3]\(3 downto 0),
       \SyncSignalSyncFF_S_reg[0]\ => \SyncSignalSyncFF_S_reg[0]\,
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__2\(0),
       TimestampResetBufferClear_S => TimestampResetBufferClear_S
     );
 plusOp_carry: unisim.vcomponents.CARRY4
@@ -38924,17 +38921,17 @@ entity brd_testAERDVSSM_0_0_DVSAERStateMachine is
     LogicClk_CI : in STD_LOGIC;
     AR : in STD_LOGIC_VECTOR ( 2 downto 0 );
     DVSAERData_AI : in STD_LOGIC_VECTOR ( 10 downto 0 );
-    \SyncSignalSyncFF_S_reg_rep__29\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__3\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    SyncReset_RO : in STD_LOGIC;
+    AS : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    \SyncSignalSyncFF_S_reg_rep__3\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__4\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     O132 : in STD_LOGIC;
     O134 : in STD_LOGIC;
     O133 : in STD_LOGIC;
     \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8]\ : in STD_LOGIC_VECTOR ( 8 downto 0 );
     \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8]\ : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    \SyncSignalSyncFF_S_reg_rep__28\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8]\ : in STD_LOGIC_VECTOR ( 8 downto 0 );
     \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][8]\ : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    \SyncSignalSyncFF_S_reg_rep__28\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8]\ : in STD_LOGIC_VECTOR ( 8 downto 0 );
     \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][8]\ : in STD_LOGIC_VECTOR ( 8 downto 0 );
     \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8]\ : in STD_LOGIC_VECTOR ( 8 downto 0 );
@@ -39147,7 +39144,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => DVSAERAckReg_SB,
-      PRE => SyncReset_RO,
+      PRE => AS(0),
       Q => DVSAERAck_SBO
     );
 \DVSAERConfigReg_D_reg[ExternalAERControl_S]\: unisim.vcomponents.FDCE
@@ -39162,7 +39159,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0\(0)
     );
@@ -39171,14 +39168,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8]\(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel0Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0\(2)
     );
@@ -39187,7 +39184,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8]\(3),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel0Column_D][4]\: unisim.vcomponents.FDPE
@@ -39195,14 +39192,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8]\(4),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel0Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0\(5)
     );
@@ -39211,14 +39208,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8]\(6),
-      PRE => SyncReset_RO,
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel0Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => SyncReset_RO,
+      CLR => AS(0),
       D => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0\(7)
     );
@@ -39227,7 +39224,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8]\(8),
-      PRE => SyncReset_RO,
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel0Row_D][0]\: unisim.vcomponents.FDCE
@@ -39306,7 +39303,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0\(0)
     );
@@ -39315,14 +39312,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8]\(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0\(2)
     );
@@ -39331,7 +39328,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8]\(3),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Column_D][4]\: unisim.vcomponents.FDPE
@@ -39339,14 +39336,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8]\(4),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0\(5)
     );
@@ -39355,14 +39352,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8]\(6),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0\(7)
     );
@@ -39371,14 +39368,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8]\(8),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__28\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0\(0)
     );
@@ -39386,7 +39383,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__28\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0\(1)
     );
@@ -39395,14 +39392,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8]\(2),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0\(2)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__28\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0\(3)
     );
@@ -39410,7 +39407,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__28\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0\(4)
     );
@@ -39418,7 +39415,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__28\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0\(5)
     );
@@ -39426,7 +39423,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__28\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0\(6)
     );
@@ -39434,7 +39431,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__28\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0\(7)
     );
@@ -39443,14 +39440,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8]\(8),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0\(0)
     );
@@ -39459,14 +39456,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8]\(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0\(2)
     );
@@ -39475,7 +39472,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8]\(3),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Column_D][4]\: unisim.vcomponents.FDPE
@@ -39483,14 +39480,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8]\(4),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0\(5)
     );
@@ -39499,14 +39496,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8]\(6),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0\(7)
     );
@@ -39515,7 +39512,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8]\(8),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Row_D][0]\: unisim.vcomponents.FDCE
@@ -39539,7 +39536,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][8]\(2),
-      PRE => \SyncSignalSyncFF_S_reg_rep__28\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]__0\(2)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Row_D][3]\: unisim.vcomponents.FDCE
@@ -39570,7 +39567,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__28\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][8]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]__0\(6)
     );
@@ -39578,7 +39575,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__28\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][8]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]__0\(7)
     );
@@ -39587,14 +39584,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][8]\(8),
-      PRE => \SyncSignalSyncFF_S_reg_rep__28\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]__0\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0\(0)
     );
@@ -39603,14 +39600,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8]\(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0\(2)
     );
@@ -39619,7 +39616,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8]\(3),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Column_D][4]\: unisim.vcomponents.FDPE
@@ -39627,14 +39624,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8]\(4),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0\(5)
     );
@@ -39643,14 +39640,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8]\(6),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0\(7)
     );
@@ -39659,7 +39656,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8]\(8),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Row_D][0]\: unisim.vcomponents.FDCE
@@ -39738,7 +39735,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0\(0)
     );
@@ -39747,14 +39744,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8]\(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel4Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0\(2)
     );
@@ -39763,7 +39760,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8]\(3),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel4Column_D][4]\: unisim.vcomponents.FDPE
@@ -39771,14 +39768,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8]\(4),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel4Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0\(5)
     );
@@ -39787,14 +39784,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8]\(6),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel4Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0\(7)
     );
@@ -39803,7 +39800,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8]\(8),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel4Row_D][0]\: unisim.vcomponents.FDCE
@@ -39882,7 +39879,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0\(0)
     );
@@ -39891,14 +39888,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8]\(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel5Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0\(2)
     );
@@ -39907,7 +39904,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8]\(3),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel5Column_D][4]\: unisim.vcomponents.FDPE
@@ -39915,14 +39912,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8]\(4),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel5Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0\(5)
     );
@@ -39931,14 +39928,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8]\(6),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel5Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0\(7)
     );
@@ -39947,7 +39944,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8]\(8),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel5Row_D][0]\: unisim.vcomponents.FDCE
@@ -40026,7 +40023,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0\(0)
     );
@@ -40035,14 +40032,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8]\(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel6Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0\(2)
     );
@@ -40051,7 +40048,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8]\(3),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel6Column_D][4]\: unisim.vcomponents.FDPE
@@ -40059,14 +40056,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8]\(4),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel6Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0\(5)
     );
@@ -40075,14 +40072,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8]\(6),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel6Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0\(7)
     );
@@ -40091,7 +40088,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8]\(8),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel6Row_D][0]\: unisim.vcomponents.FDCE
@@ -40170,7 +40167,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0\(0)
     );
@@ -40179,14 +40176,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8]\(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel7Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0\(2)
     );
@@ -40195,7 +40192,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8]\(3),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel7Column_D][4]\: unisim.vcomponents.FDPE
@@ -40203,14 +40200,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8]\(4),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel7Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0\(5)
     );
@@ -40219,14 +40216,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8]\(6),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel7Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(0),
       D => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0\(7)
     );
@@ -40235,7 +40232,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8]\(8),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel7Row_D][0]\: unisim.vcomponents.FDCE
@@ -40387,7 +40384,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8]\(0),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0\(0)
     );
 \DVSAERConfigReg_D_reg[FilterROIEndRow_D][1]\: unisim.vcomponents.FDPE
@@ -40395,14 +40392,14 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8]\(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0\(1)
     );
 \DVSAERConfigReg_D_reg[FilterROIEndRow_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0\(2)
     );
@@ -40410,7 +40407,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0\(3)
     );
@@ -40418,7 +40415,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0\(4)
     );
@@ -40426,7 +40423,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0\(5)
     );
@@ -40434,7 +40431,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0\(6)
     );
@@ -40442,7 +40439,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0\(7)
     );
@@ -40451,7 +40448,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8]\(8),
-      PRE => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      PRE => AS(1),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0\(8)
     );
 \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][0]\: unisim.vcomponents.FDCE
@@ -40530,7 +40527,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0\(0)
     );
@@ -40538,7 +40535,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0\(1)
     );
@@ -40546,7 +40543,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0\(2)
     );
@@ -40554,7 +40551,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0\(3)
     );
@@ -40562,7 +40559,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0\(4)
     );
@@ -40570,7 +40567,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0\(5)
     );
@@ -40578,7 +40575,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0\(6)
     );
@@ -40586,7 +40583,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0\(7)
     );
@@ -40594,7 +40591,7 @@ DVSAERAck_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__29\(0),
+      CLR => AS(1),
       D => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8]\(8),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0\(8)
     );
@@ -40630,7 +40627,7 @@ DVSAERReset_SBO_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => SyncReset_RO,
+      CLR => AS(0),
       D => DVSAERResetReg_SB,
       Q => DVSAERReset_SBO
     );
@@ -40706,6 +40703,7 @@ dvsChipAERDataRegister: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parame
     );
 dvsEventDataRegister: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parameterized2\
      port map (
+      AS(0) => AS(1),
       CO(0) => BOOL122_in,
       D(10 downto 9) => DVSEventDataReg_D(13 downto 12),
       D(8 downto 0) => DVSEventDataReg_D(8 downto 0),
@@ -40745,21 +40743,20 @@ dvsEventDataRegister: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__paramete
       Q(2) => dvsEventDataRegister_n_8,
       Q(1) => dvsEventDataRegister_n_9,
       Q(0) => dvsEventDataRegister_n_10,
-      \SyncSignalSyncFF_S_reg_rep__29\(0) => \SyncSignalSyncFF_S_reg_rep__29\(0),
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__3\(0),
       \out\(2 downto 0) => State_DP(2 downto 0)
     );
 dvsEventValidRegister: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_8\
      port map (
+      AS(0) => AS(1),
       DVSEventOutValidReg_S => DVSEventOutValidReg_S,
       E(0) => DVSEventValidReg_S,
-      LogicClk_CI => LogicClk_CI,
-      \SyncSignalSyncFF_S_reg_rep__29\(0) => \SyncSignalSyncFF_S_reg_rep__29\(0)
+      LogicClk_CI => LogicClk_CI
     );
 \pixelFilterSupportEnabled.pixelFilterDataRegister\: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_9\
      port map (
-      AR(1) => SyncReset_RO,
-      AR(0) => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      AR(1) => AS(0),
+      AR(0) => \SyncSignalSyncFF_S_reg_rep__4\(0),
       E(0) => PixelFilterInValidReg_S,
       LogicClk_CI => LogicClk_CI,
       \Output_SO_reg[13]_0\(10) => ROIFilterOutDataReg_D(13),
@@ -40789,6 +40786,7 @@ dvsEventValidRegister: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__paramet
     );
 \pixelFilterSupportEnabled.pixelFilterLastRowAddressRegister\: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parameterized3\
      port map (
+      AS(1 downto 0) => AS(1 downto 0),
       CO(0) => BOOL76_out,
       \DVSAERConfigReg_D_reg[FilterPixel0Column_D][8]\(8 downto 0) => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0\(8 downto 0),
       \DVSAERConfigReg_D_reg[FilterPixel2Column_D][8]\(8 downto 0) => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0\(8 downto 0),
@@ -40824,19 +40822,18 @@ dvsEventValidRegister: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__paramet
       \Output_SO_reg[8]_0\ => \pixelFilterSupportEnabled.pixelFilterLastRowAddressRegister_n_7\,
       \Output_SO_reg[8]_1\ => \roiFilterSupportEnabled.roiFilterDataRegister_n_20\,
       Q(8 downto 0) => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0\(8 downto 0),
-      ROIFilterOutValidReg_S => ROIFilterOutValidReg_S,
-      SyncReset_RO => SyncReset_RO,
-      \SyncSignalSyncFF_S_reg_rep__29\(0) => \SyncSignalSyncFF_S_reg_rep__29\(0)
+      ROIFilterOutValidReg_S => ROIFilterOutValidReg_S
     );
 \pixelFilterSupportEnabled.pixelFilterValidRegister\: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_10\
      port map (
       E(0) => PixelFilterInValidReg_S,
       LogicClk_CI => LogicClk_CI,
       PixelFilterOutValidReg_S => PixelFilterOutValidReg_S,
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__3\(1)
+      \SyncSignalSyncFF_S_reg_rep__4\(0) => \SyncSignalSyncFF_S_reg_rep__4\(0)
     );
 \roiFilterSupportEnabled.roiFilterDataRegister\: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_11\
      port map (
+      AS(0) => AS(1),
       CO(0) => BOOL7,
       D(10) => DVSEventOutDataReg_D(13),
       D(9) => dvsEventDataRegister_n_1,
@@ -40901,11 +40898,11 @@ dvsEventValidRegister: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__paramet
       Q(0) => \roiFilterSupportEnabled.roiFilterDataRegister_n_10\,
       ROIFilterOutValidReg_S => ROIFilterOutValidReg_S,
       StatisticsFilteredPixels_SN => StatisticsFilteredPixels_SN,
-      \SyncSignalSyncFF_S_reg_rep__29\(0) => \SyncSignalSyncFF_S_reg_rep__29\(0),
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__3\(1)
+      \SyncSignalSyncFF_S_reg_rep__4\(0) => \SyncSignalSyncFF_S_reg_rep__4\(0)
     );
 \roiFilterSupportEnabled.roiFilterLastRowAddressRegister\: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parameterized3_12\
      port map (
+      AS(0) => AS(1),
       CO(0) => BOOL122_in,
       \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8]\(8 downto 0) => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]__0\(8 downto 0),
       DVSEventOutValidReg_S => DVSEventOutValidReg_S,
@@ -40929,11 +40926,11 @@ dvsEventValidRegister: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__paramet
       \Output_SO_reg[7]_1\ => dvsEventDataRegister_n_20,
       \Output_SO_reg[8]_0\ => \roiFilterSupportEnabled.roiFilterLastRowAddressRegister_n_0\,
       \Output_SO_reg[8]_1\ => dvsEventDataRegister_n_21,
-      Q(8 downto 0) => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]__0\(8 downto 0),
-      \SyncSignalSyncFF_S_reg_rep__29\(0) => \SyncSignalSyncFF_S_reg_rep__29\(0)
+      Q(8 downto 0) => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]__0\(8 downto 0)
     );
 \roiFilterSupportEnabled.roiFilterValidRegister\: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_13\
      port map (
+      AS(0) => AS(1),
       E(0) => PixelFilterInValidReg_S,
       LogicClk_CI => LogicClk_CI,
       \Output_SO_reg[0]_0\(0) => ROIFilterInValidReg_S,
@@ -40942,8 +40939,7 @@ dvsEventValidRegister: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__paramet
       \Output_SO_reg[6]_1\ => \statisticsSupport.StatisticsFilteredPixels.StatisticsFilteredPixelsReg_n_1\,
       \Output_SO_reg[6]_2\ => \statisticsSupport.StatisticsFilteredPixels.StatisticsFilteredPixelsReg_n_2\,
       Q(0) => ROIFilterOutDataReg_D(13),
-      ROIFilterOutValidReg_S => ROIFilterOutValidReg_S,
-      \SyncSignalSyncFF_S_reg_rep__29\(0) => \SyncSignalSyncFF_S_reg_rep__29\(0)
+      ROIFilterOutValidReg_S => ROIFilterOutValidReg_S
     );
 rowCaptureDelayCounter: entity work.\brd_testAERDVSSM_0_0_ContinuousCounter__parameterized1\
      port map (
@@ -40975,7 +40971,7 @@ rowOnlyFilterDataRegister: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__par
       D(0) => \pixelFilterSupportEnabled.pixelFilterDataRegister_n_11\,
       LogicClk_CI => LogicClk_CI,
       Q(10 downto 0) => \^q\(10 downto 0),
-      \SyncSignalSyncFF_S_reg_rep__3\(1 downto 0) => \SyncSignalSyncFF_S_reg_rep__3\(1 downto 0)
+      \SyncSignalSyncFF_S_reg_rep__4\(0) => \SyncSignalSyncFF_S_reg_rep__4\(0)
     );
 rowOnlyFilterValidRegister: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_15\
      port map (
@@ -40985,7 +40981,7 @@ rowOnlyFilterValidRegister: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__pa
       PixelFilterOutValidReg_S => PixelFilterOutValidReg_S,
       Q(0) => \^q\(10),
       RowOnlyFilterInValidReg_S => RowOnlyFilterInValidReg_S,
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__3\(1)
+      \SyncSignalSyncFF_S_reg_rep__4\(0) => \SyncSignalSyncFF_S_reg_rep__4\(0)
     );
 \statisticsSupport.StatisticsEventsColumnCounter\: entity work.brd_testAERDVSSM_0_0_Counter_16
      port map (
@@ -41150,7 +41146,7 @@ entity brd_testAERDVSSM_0_0_LogicClockSynchronizer is
     \ShiftReg_DP_reg[0]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     SPISlaveSelect_ABI : in STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__6\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__7\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     SPIClock_AI : in STD_LOGIC;
     SPIMOSI_AI : in STD_LOGIC;
     SyncInClock_AI : in STD_LOGIC;
@@ -41177,21 +41173,21 @@ syncSPIClock: entity work.\brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0\
       SPISlaveSelectSync_SB => \^spislaveselectsync_sb\,
       \ShiftReg_DP_reg[0]\(0) => \ShiftReg_DP_reg[0]\(0),
       \State_DP_reg[0]\(0) => \State_DP_reg[0]\(0),
-      \SyncSignalSyncFF_S_reg_rep__6\(0) => \SyncSignalSyncFF_S_reg_rep__6\(0)
+      \SyncSignalSyncFF_S_reg_rep__7\(0) => \SyncSignalSyncFF_S_reg_rep__7\(0)
     );
 syncSPIMOSI: entity work.\brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0_1\
      port map (
       LogicClk_CI => LogicClk_CI,
       SPIMOSISync_D => SPIMOSISync_D,
       SPIMOSI_AI => SPIMOSI_AI,
-      \SyncSignalSyncFF_S_reg_rep__6\(0) => \SyncSignalSyncFF_S_reg_rep__6\(0)
+      \SyncSignalSyncFF_S_reg_rep__7\(0) => \SyncSignalSyncFF_S_reg_rep__7\(0)
     );
 syncSPISlaveSelect: entity work.brd_testAERDVSSM_0_0_DFFSynchronizer
      port map (
       LogicClk_CI => LogicClk_CI,
       SPISlaveSelectSync_SB => \^spislaveselectsync_sb\,
       SPISlaveSelect_ABI => SPISlaveSelect_ABI,
-      \SyncSignalSyncFF_S_reg_rep__6\(0) => \SyncSignalSyncFF_S_reg_rep__6\(0)
+      \SyncSignalSyncFF_S_reg_rep__7\(0) => \SyncSignalSyncFF_S_reg_rep__7\(0)
     );
 syncSyncInClock: entity work.\brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0_2\
      port map (
@@ -41295,11 +41291,12 @@ entity brd_testAERDVSSM_0_0_SPIConfig is
     \ChipConfigReg_DP_reg[ResetTestPixel_S]__0\ : out STD_LOGIC;
     \ChipConfigReg_DP_reg[AERnArow_S]__0\ : out STD_LOGIC;
     \ChipConfigReg_DP_reg[SelectGrayCounter_S]__0\ : out STD_LOGIC;
-    \SystemInfoOutput_DP_reg[6]\ : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    \SystemInfoOutput_DP_reg[9]\ : out STD_LOGIC_VECTOR ( 4 downto 0 );
     LogicClk_CI : in STD_LOGIC;
     SPIClockSync_C : in STD_LOGIC;
     AR : in STD_LOGIC_VECTOR ( 3 downto 0 );
     SPISlaveSelectSync_SB : in STD_LOGIC;
+    \SyncSignalSyncFF_S_reg_rep__9\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \MultiplexerConfig_D[RunChip_S]\ : in STD_LOGIC;
     \MultiplexerConfig_D[TimestampReset_S]\ : in STD_LOGIC;
     \ChipConfigReg_DP_reg[TestADC_S]\ : in STD_LOGIC;
@@ -41374,13 +41371,12 @@ entity brd_testAERDVSSM_0_0_SPIConfig is
     \ChipConfigReg_DP_reg[ResetTestPixel_S]\ : in STD_LOGIC;
     \ChipConfigReg_DP_reg[AERnArow_S]\ : in STD_LOGIC;
     \ChipConfigReg_DP_reg[SelectGrayCounter_S]\ : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__9\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][39]\ : in STD_LOGIC_VECTOR ( 39 downto 0 );
     Output_SO : in STD_LOGIC;
     \BiasOutput_DP_reg[15]_4\ : in STD_LOGIC_VECTOR ( 15 downto 0 );
     \DVSAEROutput_DP_reg[31]_0\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
     \MultiplexerOutput_DP_reg[31]\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    \SystemInfoOutput_DP_reg[6]_0\ : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    \SystemInfoOutput_DP_reg[9]_0\ : in STD_LOGIC_VECTOR ( 4 downto 0 );
     \ChipOutput_DP_reg[3]_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -41426,6 +41422,7 @@ architecture STRUCTURE of brd_testAERDVSSM_0_0_SPIConfig is
   signal \^biasoutput_dp_reg[15]_3\ : STD_LOGIC;
   signal \ChipConfigReg_DP[AERnArow_S]_i_2_n_0\ : STD_LOGIC;
   signal \ChipConfigReg_DP[DigitalMux0_D][3]_i_3_n_0\ : STD_LOGIC;
+  signal \ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0\ : STD_LOGIC;
   signal \ChipConfigReg_DP[GlobalShutter_S]_i_2_n_0\ : STD_LOGIC;
   signal \ChipConfigReg_DP[ResetCalibNeuron_S]_i_2_n_0\ : STD_LOGIC;
   signal \ChipConfigReg_DP[ResetTestPixel_S]_i_2_n_0\ : STD_LOGIC;
@@ -41690,13 +41687,14 @@ architecture STRUCTURE of brd_testAERDVSSM_0_0_SPIConfig is
   signal \ParamOutput_DP[5]_i_2_n_0\ : STD_LOGIC;
   signal \ParamOutput_DP[6]_i_1_n_0\ : STD_LOGIC;
   signal \ParamOutput_DP[6]_i_2_n_0\ : STD_LOGIC;
-  signal \ParamOutput_DP[6]_i_3_n_0\ : STD_LOGIC;
   signal \ParamOutput_DP[7]_i_1_n_0\ : STD_LOGIC;
   signal \ParamOutput_DP[7]_i_2_n_0\ : STD_LOGIC;
   signal \ParamOutput_DP[8]_i_1_n_0\ : STD_LOGIC;
   signal \ParamOutput_DP[8]_i_2_n_0\ : STD_LOGIC;
   signal \ParamOutput_DP[9]_i_1_n_0\ : STD_LOGIC;
   signal \ParamOutput_DP[9]_i_2_n_0\ : STD_LOGIC;
+  signal \ParamOutput_DP[9]_i_3_n_0\ : STD_LOGIC;
+  signal \ParamOutput_DP[9]_i_4_n_0\ : STD_LOGIC;
   signal \^q\ : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal ReadOperationReg_SN : STD_LOGIC;
   signal ReadOperationReg_SP : STD_LOGIC;
@@ -41707,8 +41705,7 @@ architecture STRUCTURE of brd_testAERDVSSM_0_0_SPIConfig is
   signal ShiftReg_DN : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \^shiftreg_dp_reg[0]\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal State_DP : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal \SystemInfoOutput_DP[4]_i_2_n_0\ : STD_LOGIC;
-  signal \SystemInfoOutput_DP[6]_i_2_n_0\ : STD_LOGIC;
+  signal \SystemInfoOutput_DP[9]_i_2_n_0\ : STD_LOGIC;
   signal \chipBiasSelector/davis346ChipBias.davis346ChipBiasSPIConfig/BiasConfigReg_DP[ApsOverflowLevel_D]1__0\ : STD_LOGIC;
   signal \chipBiasSelector/davis346ChipBias.davis346ChipBiasSPIConfig/ChipConfigReg_DP[DigitalMux0_D]1__0\ : STD_LOGIC;
   signal data2 : STD_LOGIC_VECTOR ( 1 to 1 );
@@ -41719,107 +41716,107 @@ architecture STRUCTURE of brd_testAERDVSSM_0_0_SPIConfig is
   signal spiBitCounter_n_36 : STD_LOGIC;
   signal spiBitCounter_n_37 : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[AEPuXBp_D][14]_i_2\ : label is "soft_lutpair108";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[AEPuYBp_D][14]_i_2\ : label is "soft_lutpair118";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[AdcCompBp_D][14]_i_2\ : label is "soft_lutpair112";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[AdcTestVoltage_D][8]_i_2\ : label is "soft_lutpair89";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_4\ : label is "soft_lutpair119";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_5\ : label is "soft_lutpair83";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_6\ : label is "soft_lutpair105";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[ApsROSFBn_D][14]_i_2\ : label is "soft_lutpair104";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[BiasBuffer_D][14]_i_2\ : label is "soft_lutpair117";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[AEPuXBp_D][14]_i_2\ : label is "soft_lutpair113";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[AEPuYBp_D][14]_i_2\ : label is "soft_lutpair123";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[AdcCompBp_D][14]_i_2\ : label is "soft_lutpair121";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[AdcTestVoltage_D][8]_i_2\ : label is "soft_lutpair92";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_4\ : label is "soft_lutpair118";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_5\ : label is "soft_lutpair88";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_6\ : label is "soft_lutpair106";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[ApsROSFBn_D][14]_i_2\ : label is "soft_lutpair105";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[BiasBuffer_D][14]_i_2\ : label is "soft_lutpair115";
   attribute SOFT_HLUTNM of \BiasConfigReg_DP[ColSelLowBn_D][14]_i_2\ : label is "soft_lutpair123";
   attribute SOFT_HLUTNM of \BiasConfigReg_DP[ColSelLowBn_D][14]_i_3\ : label is "soft_lutpair120";
   attribute SOFT_HLUTNM of \BiasConfigReg_DP[IFRefrBn_D][14]_i_2\ : label is "soft_lutpair120";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[LocalBufBn_D][14]_i_2\ : label is "soft_lutpair77";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[OffBn_D][14]_i_2\ : label is "soft_lutpair91";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[PadFollBn_D][14]_i_2\ : label is "soft_lutpair84";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[PixInvBn_D][14]_i_2\ : label is "soft_lutpair92";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[PrBp_D][14]_i_2\ : label is "soft_lutpair85";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[LocalBufBn_D][14]_i_2\ : label is "soft_lutpair82";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[OffBn_D][14]_i_2\ : label is "soft_lutpair94";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[PadFollBn_D][14]_i_2\ : label is "soft_lutpair81";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[PixInvBn_D][14]_i_2\ : label is "soft_lutpair122";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[PrBp_D][14]_i_2\ : label is "soft_lutpair93";
   attribute SOFT_HLUTNM of \BiasConfigReg_DP[ReadoutBufBp_D][14]_i_2\ : label is "soft_lutpair116";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[RefrBp_D][14]_i_2\ : label is "soft_lutpair118";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[SSN_D][15]_i_2\ : label is "soft_lutpair114";
-  attribute SOFT_HLUTNM of \BiasConfigReg_DP[SSP_D][15]_i_2\ : label is "soft_lutpair81";
-  attribute SOFT_HLUTNM of \BiasOutput_DP[15]_i_1\ : label is "soft_lutpair103";
-  attribute SOFT_HLUTNM of \ChipConfigReg_DP[DigitalMux0_D][3]_i_3\ : label is "soft_lutpair94";
-  attribute SOFT_HLUTNM of \ChipConfigReg_DP[SelectGrayCounter_S]_i_2\ : label is "soft_lutpair80";
-  attribute SOFT_HLUTNM of \ChipOutput_DP[0]_i_4\ : label is "soft_lutpair80";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel0Column_D][8]_i_1\ : label is "soft_lutpair98";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[RefrBp_D][14]_i_2\ : label is "soft_lutpair117";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[SSN_D][15]_i_2\ : label is "soft_lutpair117";
+  attribute SOFT_HLUTNM of \BiasConfigReg_DP[SSP_D][15]_i_2\ : label is "soft_lutpair85";
+  attribute SOFT_HLUTNM of \BiasOutput_DP[15]_i_1\ : label is "soft_lutpair104";
+  attribute SOFT_HLUTNM of \ChipConfigReg_DP[DigitalMux0_D][3]_i_3\ : label is "soft_lutpair87";
+  attribute SOFT_HLUTNM of \ChipConfigReg_DP[DigitalMux2_D][3]_i_2\ : label is "soft_lutpair83";
+  attribute SOFT_HLUTNM of \ChipConfigReg_DP[SelectGrayCounter_S]_i_2\ : label is "soft_lutpair78";
+  attribute SOFT_HLUTNM of \ChipOutput_DP[0]_i_4\ : label is "soft_lutpair78";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel0Column_D][8]_i_1\ : label is "soft_lutpair96";
   attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel0Column_D][8]_i_2\ : label is "soft_lutpair109";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel0Row_D][8]_i_1\ : label is "soft_lutpair99";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel0Row_D][8]_i_1\ : label is "soft_lutpair98";
   attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel0Row_D][8]_i_2\ : label is "soft_lutpair109";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel1Column_D][8]_i_1\ : label is "soft_lutpair98";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel1Row_D][8]_i_1\ : label is "soft_lutpair100";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel2Column_D][8]_i_2\ : label is "soft_lutpair113";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_2\ : label is "soft_lutpair115";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_4\ : label is "soft_lutpair103";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_5\ : label is "soft_lutpair105";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel3Row_D][8]_i_1\ : label is "soft_lutpair101";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel4Column_D][8]_i_1\ : label is "soft_lutpair90";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel4Row_D][8]_i_1\ : label is "soft_lutpair101";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel5Column_D][8]_i_1\ : label is "soft_lutpair90";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel5Row_D][8]_i_1\ : label is "soft_lutpair100";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel6Row_D][8]_i_2\ : label is "soft_lutpair119";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel7Row_D][8]_i_1\ : label is "soft_lutpair99";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterROIEndColumn_D][8]_i_1\ : label is "soft_lutpair91";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterROIEndColumn_D][8]_i_2\ : label is "soft_lutpair106";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterROIEndRow_D][8]_i_2\ : label is "soft_lutpair88";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel1Column_D][8]_i_1\ : label is "soft_lutpair97";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel1Row_D][8]_i_1\ : label is "soft_lutpair99";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel2Column_D][8]_i_2\ : label is "soft_lutpair114";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_2\ : label is "soft_lutpair119";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_4\ : label is "soft_lutpair104";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_5\ : label is "soft_lutpair106";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel3Row_D][8]_i_1\ : label is "soft_lutpair100";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel4Column_D][8]_i_1\ : label is "soft_lutpair97";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel4Row_D][8]_i_1\ : label is "soft_lutpair100";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel5Column_D][8]_i_1\ : label is "soft_lutpair96";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel5Row_D][8]_i_1\ : label is "soft_lutpair99";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel6Row_D][8]_i_2\ : label is "soft_lutpair110";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterPixel7Row_D][8]_i_1\ : label is "soft_lutpair98";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterROIEndColumn_D][8]_i_1\ : label is "soft_lutpair94";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterROIEndColumn_D][8]_i_2\ : label is "soft_lutpair108";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterROIEndRow_D][8]_i_2\ : label is "soft_lutpair91";
   attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterROIStartColumn_D][8]_i_2\ : label is "soft_lutpair116";
   attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterROIStartColumn_D][8]_i_3\ : label is "soft_lutpair122";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterROIStartRow_D][8]_i_2\ : label is "soft_lutpair86";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterROIStartRow_D][8]_i_3\ : label is "soft_lutpair117";
-  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[WaitOnTransferStall_S]_i_2\ : label is "soft_lutpair93";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_13\ : label is "soft_lutpair77";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_14\ : label is "soft_lutpair114";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_15\ : label is "soft_lutpair122";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_17\ : label is "soft_lutpair81";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_19\ : label is "soft_lutpair115";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_2\ : label is "soft_lutpair78";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_23\ : label is "soft_lutpair102";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_8\ : label is "soft_lutpair78";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[17]_i_2\ : label is "soft_lutpair89";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[18]_i_2\ : label is "soft_lutpair88";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[20]_i_2\ : label is "soft_lutpair87";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[22]_i_2\ : label is "soft_lutpair86";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[24]_i_2\ : label is "soft_lutpair85";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[28]_i_2\ : label is "soft_lutpair84";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[2]_i_14\ : label is "soft_lutpair123";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[2]_i_16\ : label is "soft_lutpair104";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[2]_i_17\ : label is "soft_lutpair79";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[30]_i_2\ : label is "soft_lutpair83";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[31]_i_2\ : label is "soft_lutpair94";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[31]_i_3\ : label is "soft_lutpair79";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[31]_i_4\ : label is "soft_lutpair82";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[31]_i_5\ : label is "soft_lutpair82";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterROIStartRow_D][8]_i_2\ : label is "soft_lutpair89";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[FilterROIStartRow_D][8]_i_3\ : label is "soft_lutpair115";
+  attribute SOFT_HLUTNM of \DVSAERConfigReg_DP[WaitOnTransferStall_S]_i_2\ : label is "soft_lutpair86";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_13\ : label is "soft_lutpair82";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_14\ : label is "soft_lutpair112";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_15\ : label is "soft_lutpair118";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_17\ : label is "soft_lutpair85";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_19\ : label is "soft_lutpair119";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_2\ : label is "soft_lutpair84";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_23\ : label is "soft_lutpair103";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[0]_i_8\ : label is "soft_lutpair84";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[22]_i_2\ : label is "soft_lutpair93";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[28]_i_2\ : label is "soft_lutpair91";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[29]_i_2\ : label is "soft_lutpair90";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[2]_i_14\ : label is "soft_lutpair121";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[2]_i_16\ : label is "soft_lutpair105";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[2]_i_17\ : label is "soft_lutpair76";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[30]_i_2\ : label is "soft_lutpair89";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[31]_i_2\ : label is "soft_lutpair87";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[31]_i_3\ : label is "soft_lutpair76";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[31]_i_4\ : label is "soft_lutpair79";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[31]_i_5\ : label is "soft_lutpair88";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[3]_i_3\ : label is "soft_lutpair92";
   attribute SOFT_HLUTNM of \DVSAEROutput_DP[6]_i_15\ : label is "soft_lutpair108";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[7]_i_16\ : label is "soft_lutpair96";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[8]_i_14\ : label is "soft_lutpair93";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[8]_i_15\ : label is "soft_lutpair75";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[8]_i_6\ : label is "soft_lutpair113";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[8]_i_7\ : label is "soft_lutpair106";
-  attribute SOFT_HLUTNM of \DVSAEROutput_DP[8]_i_8\ : label is "soft_lutpair92";
-  attribute SOFT_HLUTNM of LatchInputReg_SP_i_1 : label is "soft_lutpair121";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[7]_i_16\ : label is "soft_lutpair101";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[8]_i_14\ : label is "soft_lutpair86";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[8]_i_15\ : label is "soft_lutpair83";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[8]_i_6\ : label is "soft_lutpair114";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[8]_i_7\ : label is "soft_lutpair110";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[8]_i_8\ : label is "soft_lutpair81";
+  attribute SOFT_HLUTNM of \DVSAEROutput_DP[8]_i_9\ : label is "soft_lutpair79";
+  attribute SOFT_HLUTNM of LatchInputReg_SP_i_1 : label is "soft_lutpair124";
   attribute SOFT_HLUTNM of \MultiplexerConfigReg_DP[Run_S]_i_2\ : label is "soft_lutpair107";
-  attribute SOFT_HLUTNM of \MultiplexerConfigReg_DP[Run_S]_i_3\ : label is "soft_lutpair112";
+  attribute SOFT_HLUTNM of \MultiplexerConfigReg_DP[Run_S]_i_3\ : label is "soft_lutpair113";
   attribute SOFT_HLUTNM of \MultiplexerConfigReg_DP[TimestampRun_S]_i_2\ : label is "soft_lutpair107";
-  attribute SOFT_HLUTNM of \MultiplexerOutput_DP[0]_i_5\ : label is "soft_lutpair87";
-  attribute SOFT_HLUTNM of \MultiplexerOutput_DP[0]_i_7\ : label is "soft_lutpair102";
-  attribute SOFT_HLUTNM of \ParamOutput_DP[15]_i_3\ : label is "soft_lutpair76";
+  attribute SOFT_HLUTNM of \MultiplexerOutput_DP[0]_i_5\ : label is "soft_lutpair90";
+  attribute SOFT_HLUTNM of \MultiplexerOutput_DP[0]_i_7\ : label is "soft_lutpair103";
+  attribute SOFT_HLUTNM of \ParamOutput_DP[11]_i_2\ : label is "soft_lutpair80";
   attribute SOFT_HLUTNM of \ParamOutput_DP[31]_i_2\ : label is "soft_lutpair95";
   attribute SOFT_HLUTNM of \ParamOutput_DP[3]_i_1\ : label is "soft_lutpair95";
-  attribute SOFT_HLUTNM of \ParamOutput_DP[6]_i_3\ : label is "soft_lutpair76";
-  attribute SOFT_HLUTNM of SPIMISO_DZO_i_3 : label is "soft_lutpair121";
+  attribute SOFT_HLUTNM of \ParamOutput_DP[6]_i_2\ : label is "soft_lutpair77";
+  attribute SOFT_HLUTNM of \ParamOutput_DP[9]_i_2\ : label is "soft_lutpair77";
+  attribute SOFT_HLUTNM of \ParamOutput_DP[9]_i_3\ : label is "soft_lutpair80";
+  attribute SOFT_HLUTNM of SPIMISO_DZO_i_3 : label is "soft_lutpair124";
   attribute FSM_ENCODED_STATES : string;
   attribute FSM_ENCODED_STATES of \State_DP_reg[0]\ : label is "stidle:00,stinput:01,stinputlatch:11,stoutput:10";
   attribute FSM_ENCODED_STATES of \State_DP_reg[1]\ : label is "stidle:00,stinput:01,stinputlatch:11,stoutput:10";
-  attribute SOFT_HLUTNM of \SystemInfoOutput_DP[0]_i_1\ : label is "soft_lutpair97";
-  attribute SOFT_HLUTNM of \SystemInfoOutput_DP[1]_i_1\ : label is "soft_lutpair97";
-  attribute SOFT_HLUTNM of \SystemInfoOutput_DP[2]_i_1\ : label is "soft_lutpair110";
-  attribute SOFT_HLUTNM of \SystemInfoOutput_DP[3]_i_1\ : label is "soft_lutpair110";
-  attribute SOFT_HLUTNM of \SystemInfoOutput_DP[4]_i_2\ : label is "soft_lutpair75";
-  attribute SOFT_HLUTNM of \SystemInfoOutput_DP[5]_i_1\ : label is "soft_lutpair111";
+  attribute SOFT_HLUTNM of \SystemInfoOutput_DP[0]_i_1\ : label is "soft_lutpair102";
+  attribute SOFT_HLUTNM of \SystemInfoOutput_DP[2]_i_1\ : label is "soft_lutpair102";
+  attribute SOFT_HLUTNM of \SystemInfoOutput_DP[4]_i_1\ : label is "soft_lutpair111";
   attribute SOFT_HLUTNM of \SystemInfoOutput_DP[6]_i_1\ : label is "soft_lutpair111";
-  attribute SOFT_HLUTNM of \SystemInfoOutput_DP[6]_i_2\ : label is "soft_lutpair96";
+  attribute SOFT_HLUTNM of \SystemInfoOutput_DP[9]_i_1\ : label is "soft_lutpair112";
+  attribute SOFT_HLUTNM of \SystemInfoOutput_DP[9]_i_2\ : label is "soft_lutpair101";
 begin
   \BiasConfigReg_DP_reg[SSN_D][15]\(15 downto 0) <= \^biasconfigreg_dp_reg[ssn_d][15]\(15 downto 0);
   \BiasOutput_DP_reg[14]\ <= \^biasoutput_dp_reg[14]\;
@@ -42696,7 +42693,7 @@ begin
       I2 => \^q\(2),
       I3 => \^q\(0),
       I4 => \^q\(1),
-      I5 => \SystemInfoOutput_DP[4]_i_2_n_0\,
+      I5 => \ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0\,
       O => \ChipConfigReg_DP_reg[AnalogMux0_D][0]\(0)
     );
 \ChipConfigReg_DP[AnalogMux1_D][3]_i_1\: unisim.vcomponents.LUT6
@@ -42709,7 +42706,7 @@ begin
       I2 => \^q\(0),
       I3 => \^q\(1),
       I4 => \^q\(2),
-      I5 => \SystemInfoOutput_DP[4]_i_2_n_0\,
+      I5 => \ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0\,
       O => \ChipConfigReg_DP_reg[AnalogMux1_D][0]\(0)
     );
 \ChipConfigReg_DP[AnalogMux2_D][3]_i_1\: unisim.vcomponents.LUT6
@@ -42722,7 +42719,7 @@ begin
       I2 => \^q\(1),
       I3 => \^q\(0),
       I4 => \^q\(2),
-      I5 => \SystemInfoOutput_DP[4]_i_2_n_0\,
+      I5 => \ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0\,
       O => \ChipConfigReg_DP_reg[AnalogMux2_D][0]\(0)
     );
 \ChipConfigReg_DP[BiasMux0_D][3]_i_1\: unisim.vcomponents.LUT6
@@ -42797,8 +42794,17 @@ begin
       I2 => \^q\(1),
       I3 => \^q\(2),
       I4 => \^q\(0),
-      I5 => \SystemInfoOutput_DP[4]_i_2_n_0\,
+      I5 => \ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0\,
       O => \ChipConfigReg_DP_reg[DigitalMux2_D][0]\(0)
+    );
+\ChipConfigReg_DP[DigitalMux2_D][3]_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"E"
+    )
+        port map (
+      I0 => \^q\(3),
+      I1 => \^q\(4),
+      O => \ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0\
     );
 \ChipConfigReg_DP[DigitalMux3_D][3]_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -42810,7 +42816,7 @@ begin
       I2 => \^q\(0),
       I3 => \^q\(2),
       I4 => \^q\(1),
-      I5 => \SystemInfoOutput_DP[4]_i_2_n_0\,
+      I5 => \ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0\,
       O => \ChipConfigReg_DP_reg[DigitalMux3_D][0]\(0)
     );
 \ChipConfigReg_DP[GlobalShutter_S]_i_1\: unisim.vcomponents.LUT4
@@ -45975,7 +45981,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(3),
+      CLR => \SyncSignalSyncFF_S_reg_rep__9\(0),
       D => LatchInputReg_SN,
       Q => ConfigLatchInput_S
     );
@@ -46032,7 +46038,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
       C => LogicClk_CI,
       CE => ReadOperationReg_SN,
       D => data3(5),
-      PRE => AR(3),
+      PRE => \SyncSignalSyncFF_S_reg_rep__9\(0),
       Q => ConfigModuleAddress_D(6)
     );
 \MultiplexerConfigReg_DP[DropDVSOnTransferStall_S]_i_1\: unisim.vcomponents.LUT6
@@ -46881,7 +46887,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => spiBitCounter_n_34,
-      CLR => AR(3),
+      CLR => \SyncSignalSyncFF_S_reg_rep__9\(0),
       D => data3(5),
       Q => \^biasconfigreg_dp_reg[ssn_d][15]\(14)
     );
@@ -46929,7 +46935,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => spiBitCounter_n_35,
-      CLR => AR(3),
+      CLR => \SyncSignalSyncFF_S_reg_rep__9\(0),
       D => data3(4),
       Q => \^biasconfigreg_dp_reg[ssn_d][15]\(5)
     );
@@ -46937,7 +46943,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => spiBitCounter_n_35,
-      CLR => AR(3),
+      CLR => \SyncSignalSyncFF_S_reg_rep__9\(0),
       D => data3(5),
       Q => \^biasconfigreg_dp_reg[ssn_d][15]\(6)
     );
@@ -46995,7 +47001,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
       INIT => X"00F0AA0000CCAA00"
     )
         port map (
-      I0 => \SystemInfoOutput_DP_reg[6]_0\(0),
+      I0 => \SystemInfoOutput_DP_reg[9]_0\(0),
       I1 => \BiasOutput_DP_reg[15]_4\(0),
       I2 => \ChipOutput_DP_reg[3]_0\(0),
       I3 => ConfigModuleAddress_D(1),
@@ -47234,7 +47240,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
       INIT => X"00F0AA0000CCAA00"
     )
         port map (
-      I0 => \SystemInfoOutput_DP_reg[6]_0\(1),
+      I0 => \SystemInfoOutput_DP_reg[9]_0\(2),
       I1 => \BiasOutput_DP_reg[15]_4\(1),
       I2 => \ChipOutput_DP_reg[3]_0\(1),
       I3 => ConfigModuleAddress_D(1),
@@ -47402,7 +47408,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
       INIT => X"00F0AA0000CCAA00"
     )
         port map (
-      I0 => \SystemInfoOutput_DP_reg[6]_0\(2),
+      I0 => \SystemInfoOutput_DP_reg[9]_0\(1),
       I1 => \BiasOutput_DP_reg[15]_4\(2),
       I2 => \ChipOutput_DP_reg[3]_0\(2),
       I3 => ConfigModuleAddress_D(1),
@@ -47477,7 +47483,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
       INIT => X"00F0AA0000CCAA00"
     )
         port map (
-      I0 => \SystemInfoOutput_DP_reg[6]_0\(3),
+      I0 => \SystemInfoOutput_DP_reg[9]_0\(4),
       I1 => \BiasOutput_DP_reg[15]_4\(3),
       I2 => \ChipOutput_DP_reg[3]_0\(3),
       I3 => ConfigModuleAddress_D(1),
@@ -47495,7 +47501,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
       I2 => \BiasOutput_DP_reg[15]_4\(4),
       I3 => \ParamOutput_DP[15]_i_2_n_0\,
       I4 => \DVSAEROutput_DP_reg[31]_0\(4),
-      I5 => \ParamOutput_DP[6]_i_3_n_0\,
+      I5 => \ParamOutput_DP[9]_i_2_n_0\,
       O => \ParamOutput_DP[4]_i_1_n_0\
     );
 \ParamOutput_DP[4]_i_2\: unisim.vcomponents.LUT5
@@ -47503,7 +47509,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
       INIT => X"0000A00C"
     )
         port map (
-      I0 => \SystemInfoOutput_DP_reg[6]_0\(4),
+      I0 => \SystemInfoOutput_DP_reg[9]_0\(2),
       I1 => \MultiplexerOutput_DP_reg[31]\(4),
       I2 => ConfigModuleAddress_D(2),
       I3 => ConfigModuleAddress_D(1),
@@ -47520,7 +47526,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
       I2 => \BiasOutput_DP_reg[15]_4\(5),
       I3 => \ParamOutput_DP[15]_i_2_n_0\,
       I4 => \DVSAEROutput_DP_reg[31]_0\(5),
-      I5 => \ParamOutput_DP[6]_i_3_n_0\,
+      I5 => \ParamOutput_DP[9]_i_2_n_0\,
       O => \ParamOutput_DP[5]_i_1_n_0\
     );
 \ParamOutput_DP[5]_i_2\: unisim.vcomponents.LUT5
@@ -47528,7 +47534,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
       INIT => X"0000A00C"
     )
         port map (
-      I0 => \SystemInfoOutput_DP_reg[6]_0\(5),
+      I0 => \SystemInfoOutput_DP_reg[9]_0\(3),
       I1 => \MultiplexerOutput_DP_reg[31]\(5),
       I2 => ConfigModuleAddress_D(2),
       I3 => ConfigModuleAddress_D(1),
@@ -47545,7 +47551,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
       I2 => \BiasOutput_DP_reg[15]_4\(6),
       I3 => \ParamOutput_DP[15]_i_2_n_0\,
       I4 => \DVSAEROutput_DP_reg[31]_0\(6),
-      I5 => \ParamOutput_DP[6]_i_3_n_0\,
+      I5 => \ParamOutput_DP[9]_i_2_n_0\,
       O => \ParamOutput_DP[6]_i_1_n_0\
     );
 \ParamOutput_DP[6]_i_2\: unisim.vcomponents.LUT5
@@ -47553,14 +47559,79 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
       INIT => X"0000A00C"
     )
         port map (
-      I0 => \SystemInfoOutput_DP_reg[6]_0\(6),
+      I0 => \SystemInfoOutput_DP_reg[9]_0\(3),
       I1 => \MultiplexerOutput_DP_reg[31]\(6),
       I2 => ConfigModuleAddress_D(2),
       I3 => ConfigModuleAddress_D(1),
       I4 => ConfigModuleAddress_D(0),
       O => \ParamOutput_DP[6]_i_2_n_0\
     );
-\ParamOutput_DP[6]_i_3\: unisim.vcomponents.LUT3
+\ParamOutput_DP[7]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAAAAAAAAA808080"
+    )
+        port map (
+      I0 => \ParamOutput_DP[31]_i_2_n_0\,
+      I1 => \DVSAEROutput_DP_reg[31]_0\(7),
+      I2 => \ParamOutput_DP[9]_i_2_n_0\,
+      I3 => \MultiplexerOutput_DP_reg[31]\(7),
+      I4 => \ParamOutput_DP[9]_i_3_n_0\,
+      I5 => \ParamOutput_DP[7]_i_2_n_0\,
+      O => \ParamOutput_DP[7]_i_1_n_0\
+    );
+\ParamOutput_DP[7]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00AA0C0000000000"
+    )
+        port map (
+      I0 => \SystemInfoOutput_DP_reg[9]_0\(4),
+      I1 => \BiasOutput_DP_reg[15]_4\(7),
+      I2 => ConfigParamAddress_D(7),
+      I3 => ConfigModuleAddress_D(0),
+      I4 => ConfigModuleAddress_D(1),
+      I5 => ConfigModuleAddress_D(2),
+      O => \ParamOutput_DP[7]_i_2_n_0\
+    );
+\ParamOutput_DP[8]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAAAAAAAAA808080"
+    )
+        port map (
+      I0 => \ParamOutput_DP[31]_i_2_n_0\,
+      I1 => \DVSAEROutput_DP_reg[31]_0\(8),
+      I2 => \ParamOutput_DP[9]_i_2_n_0\,
+      I3 => \MultiplexerOutput_DP_reg[31]\(8),
+      I4 => \ParamOutput_DP[9]_i_3_n_0\,
+      I5 => \ParamOutput_DP[8]_i_2_n_0\,
+      O => \ParamOutput_DP[8]_i_1_n_0\
+    );
+\ParamOutput_DP[8]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00AA0C0000000000"
+    )
+        port map (
+      I0 => \SystemInfoOutput_DP_reg[9]_0\(4),
+      I1 => \BiasOutput_DP_reg[15]_4\(8),
+      I2 => ConfigParamAddress_D(7),
+      I3 => ConfigModuleAddress_D(0),
+      I4 => ConfigModuleAddress_D(1),
+      I5 => ConfigModuleAddress_D(2),
+      O => \ParamOutput_DP[8]_i_2_n_0\
+    );
+\ParamOutput_DP[9]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAAAAAAAAA808080"
+    )
+        port map (
+      I0 => \ParamOutput_DP[31]_i_2_n_0\,
+      I1 => \DVSAEROutput_DP_reg[31]_0\(9),
+      I2 => \ParamOutput_DP[9]_i_2_n_0\,
+      I3 => \MultiplexerOutput_DP_reg[31]\(9),
+      I4 => \ParamOutput_DP[9]_i_3_n_0\,
+      I5 => \ParamOutput_DP[9]_i_4_n_0\,
+      O => \ParamOutput_DP[9]_i_1_n_0\
+    );
+\ParamOutput_DP[9]_i_2\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"10"
     )
@@ -47568,76 +47639,30 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
       I0 => ConfigModuleAddress_D(2),
       I1 => ConfigModuleAddress_D(1),
       I2 => ConfigModuleAddress_D(0),
-      O => \ParamOutput_DP[6]_i_3_n_0\
-    );
-\ParamOutput_DP[7]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"AA80"
-    )
-        port map (
-      I0 => \ParamOutput_DP[31]_i_2_n_0\,
-      I1 => \ParamOutput_DP[15]_i_2_n_0\,
-      I2 => \BiasOutput_DP_reg[15]_4\(7),
-      I3 => \ParamOutput_DP[7]_i_2_n_0\,
-      O => \ParamOutput_DP[7]_i_1_n_0\
-    );
-\ParamOutput_DP[7]_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"000A000C"
-    )
-        port map (
-      I0 => \DVSAEROutput_DP_reg[31]_0\(7),
-      I1 => \MultiplexerOutput_DP_reg[31]\(7),
-      I2 => ConfigModuleAddress_D(2),
-      I3 => ConfigModuleAddress_D(1),
-      I4 => ConfigModuleAddress_D(0),
-      O => \ParamOutput_DP[7]_i_2_n_0\
-    );
-\ParamOutput_DP[8]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"AA80"
-    )
-        port map (
-      I0 => \ParamOutput_DP[31]_i_2_n_0\,
-      I1 => \ParamOutput_DP[15]_i_2_n_0\,
-      I2 => \BiasOutput_DP_reg[15]_4\(8),
-      I3 => \ParamOutput_DP[8]_i_2_n_0\,
-      O => \ParamOutput_DP[8]_i_1_n_0\
-    );
-\ParamOutput_DP[8]_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"000A000C"
-    )
-        port map (
-      I0 => \DVSAEROutput_DP_reg[31]_0\(8),
-      I1 => \MultiplexerOutput_DP_reg[31]\(8),
-      I2 => ConfigModuleAddress_D(2),
-      I3 => ConfigModuleAddress_D(1),
-      I4 => ConfigModuleAddress_D(0),
-      O => \ParamOutput_DP[8]_i_2_n_0\
-    );
-\ParamOutput_DP[9]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"AA80"
-    )
-        port map (
-      I0 => \ParamOutput_DP[31]_i_2_n_0\,
-      I1 => \ParamOutput_DP[15]_i_2_n_0\,
-      I2 => \BiasOutput_DP_reg[15]_4\(9),
-      I3 => \ParamOutput_DP[9]_i_2_n_0\,
-      O => \ParamOutput_DP[9]_i_1_n_0\
-    );
-\ParamOutput_DP[9]_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"000A000C"
-    )
-        port map (
-      I0 => \DVSAEROutput_DP_reg[31]_0\(9),
-      I1 => \MultiplexerOutput_DP_reg[31]\(9),
-      I2 => ConfigModuleAddress_D(2),
-      I3 => ConfigModuleAddress_D(1),
-      I4 => ConfigModuleAddress_D(0),
       O => \ParamOutput_DP[9]_i_2_n_0\
+    );
+\ParamOutput_DP[9]_i_3\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"01"
+    )
+        port map (
+      I0 => ConfigModuleAddress_D(2),
+      I1 => ConfigModuleAddress_D(1),
+      I2 => ConfigModuleAddress_D(0),
+      O => \ParamOutput_DP[9]_i_3_n_0\
+    );
+\ParamOutput_DP[9]_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00AA0C0000000000"
+    )
+        port map (
+      I0 => \SystemInfoOutput_DP_reg[9]_0\(4),
+      I1 => \BiasOutput_DP_reg[15]_4\(9),
+      I2 => ConfigParamAddress_D(7),
+      I3 => ConfigModuleAddress_D(0),
+      I4 => ConfigModuleAddress_D(1),
+      I5 => ConfigModuleAddress_D(2),
+      O => \ParamOutput_DP[9]_i_4_n_0\
     );
 \ParamOutput_DP_reg[0]\: unisim.vcomponents.FDCE
      port map (
@@ -47675,7 +47700,7 @@ LatchInputReg_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ParamOutput_DP[13]_i_1_n_0\,
       Q => ParamOutput_DP(13)
     );
@@ -47954,17 +47979,28 @@ SPISlaveSelectEdgeDetectorReg_S_reg: unisim.vcomponents.FDPE
     );
 \SystemInfoOutput_DP[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"00000062"
+      INIT => X"0000C308"
+    )
+        port map (
+      I0 => Output_SO,
+      I1 => \^q\(1),
+      I2 => \^q\(2),
+      I3 => \^q\(0),
+      I4 => \SystemInfoOutput_DP[9]_i_2_n_0\,
+      O => \SystemInfoOutput_DP_reg[9]\(0)
+    );
+\SystemInfoOutput_DP[2]_i_1\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"002E"
     )
         port map (
       I0 => \^q\(0),
-      I1 => \^q\(1),
-      I2 => Output_SO,
-      I3 => \^q\(2),
-      I4 => \SystemInfoOutput_DP[6]_i_2_n_0\,
-      O => \SystemInfoOutput_DP_reg[6]\(0)
+      I1 => \^q\(2),
+      I2 => \^q\(1),
+      I3 => \SystemInfoOutput_DP[9]_i_2_n_0\,
+      O => \SystemInfoOutput_DP_reg[9]\(1)
     );
-\SystemInfoOutput_DP[1]_i_1\: unisim.vcomponents.LUT4
+\SystemInfoOutput_DP[4]_i_1\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"0001"
     )
@@ -47972,76 +48008,32 @@ SPISlaveSelectEdgeDetectorReg_S_reg: unisim.vcomponents.FDPE
       I0 => \^q\(2),
       I1 => \^q\(0),
       I2 => \^q\(1),
-      I3 => \SystemInfoOutput_DP[6]_i_2_n_0\,
-      O => \SystemInfoOutput_DP_reg[6]\(1)
-    );
-\SystemInfoOutput_DP[2]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0034"
-    )
-        port map (
-      I0 => \^q\(1),
-      I1 => \^q\(2),
-      I2 => \^q\(0),
-      I3 => \SystemInfoOutput_DP[6]_i_2_n_0\,
-      O => \SystemInfoOutput_DP_reg[6]\(2)
-    );
-\SystemInfoOutput_DP[3]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0010"
-    )
-        port map (
-      I0 => \^q\(0),
-      I1 => \^q\(1),
-      I2 => \^q\(2),
-      I3 => \SystemInfoOutput_DP[6]_i_2_n_0\,
-      O => \SystemInfoOutput_DP_reg[6]\(3)
-    );
-\SystemInfoOutput_DP[4]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000000001"
-    )
-        port map (
-      I0 => \^q\(1),
-      I1 => \^q\(0),
-      I2 => ConfigParamAddress_D(5),
-      I3 => ConfigParamAddress_D(6),
-      I4 => \SystemInfoOutput_DP[4]_i_2_n_0\,
-      I5 => ConfigParamAddress_D(7),
-      O => \SystemInfoOutput_DP_reg[6]\(4)
-    );
-\SystemInfoOutput_DP[4]_i_2\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => \^q\(3),
-      I1 => \^q\(4),
-      O => \SystemInfoOutput_DP[4]_i_2_n_0\
-    );
-\SystemInfoOutput_DP[5]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0024"
-    )
-        port map (
-      I0 => \^q\(1),
-      I1 => \^q\(2),
-      I2 => \^q\(0),
-      I3 => \SystemInfoOutput_DP[6]_i_2_n_0\,
-      O => \SystemInfoOutput_DP_reg[6]\(5)
+      I3 => \SystemInfoOutput_DP[9]_i_2_n_0\,
+      O => \SystemInfoOutput_DP_reg[9]\(2)
     );
 \SystemInfoOutput_DP[6]_i_1\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"006A"
+    )
+        port map (
+      I0 => \^q\(2),
+      I1 => \^q\(0),
+      I2 => \^q\(1),
+      I3 => \SystemInfoOutput_DP[9]_i_2_n_0\,
+      O => \SystemInfoOutput_DP_reg[9]\(3)
+    );
+\SystemInfoOutput_DP[9]_i_1\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"0008"
     )
         port map (
       I0 => \^q\(1),
-      I1 => \^q\(0),
-      I2 => \^q\(2),
-      I3 => \SystemInfoOutput_DP[6]_i_2_n_0\,
-      O => \SystemInfoOutput_DP_reg[6]\(6)
+      I1 => \^q\(2),
+      I2 => \^q\(0),
+      I3 => \SystemInfoOutput_DP[9]_i_2_n_0\,
+      O => \SystemInfoOutput_DP_reg[9]\(4)
     );
-\SystemInfoOutput_DP[6]_i_2\: unisim.vcomponents.LUT5
+\SystemInfoOutput_DP[9]_i_2\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"FFFFFFFE"
     )
@@ -48051,7 +48043,7 @@ SPISlaveSelectEdgeDetectorReg_S_reg: unisim.vcomponents.FDPE
       I2 => \^q\(4),
       I3 => ConfigParamAddress_D(6),
       I4 => ConfigParamAddress_D(5),
-      O => \SystemInfoOutput_DP[6]_i_2_n_0\
+      O => \SystemInfoOutput_DP[9]_i_2_n_0\
     );
 spiBitCounter: entity work.\brd_testAERDVSSM_0_0_Counter__parameterized0\
      port map (
@@ -48109,11 +48101,11 @@ use UNISIM.VCOMPONENTS.ALL;
 entity brd_testAERDVSSM_0_0_SystemInfoSPIConfig is
   port (
     Output_SO : out STD_LOGIC;
-    Q : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    Q : out STD_LOGIC_VECTOR ( 4 downto 0 );
     O131 : in STD_LOGIC_VECTOR ( 0 to 0 );
     LogicClk_CI : in STD_LOGIC;
-    AR : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    D : in STD_LOGIC_VECTOR ( 6 downto 0 )
+    AR : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    D : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of brd_testAERDVSSM_0_0_SystemInfoSPIConfig : entity is "SystemInfoSPIConfig";
@@ -48125,57 +48117,41 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => D(0),
       Q => Q(0)
-    );
-\SystemInfoOutput_DP_reg[1]\: unisim.vcomponents.FDCE
-     port map (
-      C => LogicClk_CI,
-      CE => '1',
-      CLR => AR(0),
-      D => D(1),
-      Q => Q(1)
     );
 \SystemInfoOutput_DP_reg[2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
-      D => D(2),
-      Q => Q(2)
-    );
-\SystemInfoOutput_DP_reg[3]\: unisim.vcomponents.FDCE
-     port map (
-      C => LogicClk_CI,
-      CE => '1',
       CLR => AR(1),
-      D => D(3),
-      Q => Q(3)
+      D => D(1),
+      Q => Q(1)
     );
 \SystemInfoOutput_DP_reg[4]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(2),
-      D => D(4),
-      Q => Q(4)
-    );
-\SystemInfoOutput_DP_reg[5]\: unisim.vcomponents.FDCE
-     port map (
-      C => LogicClk_CI,
-      CE => '1',
-      CLR => AR(2),
-      D => D(5),
-      Q => Q(5)
+      CLR => AR(1),
+      D => D(2),
+      Q => Q(2)
     );
 \SystemInfoOutput_DP_reg[6]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(2),
-      D => D(6),
-      Q => Q(6)
+      CLR => AR(0),
+      D => D(3),
+      Q => Q(3)
+    );
+\SystemInfoOutput_DP_reg[9]\: unisim.vcomponents.FDCE
+     port map (
+      C => LogicClk_CI,
+      CE => '1',
+      CLR => AR(1),
+      D => D(4),
+      Q => Q(4)
     );
 deviceIsMasterBuffer: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_0\
      port map (
@@ -48199,8 +48175,8 @@ entity brd_testAERDVSSM_0_0_DAVIS346StateMachine is
     LogicClk_CI : in STD_LOGIC;
     \SyncSignalSyncFF_S_reg_rep__23\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \SyncSignalSyncFF_S_reg_rep__15\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    \SyncSignalSyncFF_S_reg_rep__0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    AR : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    AR : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__25\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \SyncSignalSyncFF_S_reg_rep__21\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     Q : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D][3]\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -48236,12 +48212,13 @@ entity brd_testAERDVSSM_0_0_DAVIS346StateMachine is
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ReadoutBufBp_D][14]\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ApsROSFBn_D][14]\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][14]\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
+    \SyncSignalSyncFF_S_reg_rep__19\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
-    \SyncSignalSyncFF_S_reg_rep__19\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
+    \SyncSignalSyncFF_S_reg_rep__20\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
@@ -49113,7 +49090,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(0),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][0]\
     );
@@ -49121,7 +49098,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(10),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][10]\
     );
@@ -49129,7 +49106,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(11),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][11]\
     );
@@ -49137,7 +49114,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(12),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][12]\
     );
@@ -49145,7 +49122,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(13),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][13]\
     );
@@ -49153,7 +49130,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(14),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][14]\
     );
@@ -49161,7 +49138,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(1),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][1]\
     );
@@ -49169,7 +49146,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(2),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][2]\
     );
@@ -49177,7 +49154,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(3),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][3]\
     );
@@ -49185,7 +49162,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(4),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][4]\
     );
@@ -49193,7 +49170,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(5),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][5]\
     );
@@ -49201,7 +49178,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(6),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][6]\
     );
@@ -49209,7 +49186,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(7),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][7]\
     );
@@ -49217,7 +49194,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(8),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][8]\
     );
@@ -49225,7 +49202,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(9),
       Q => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][9]\
     );
@@ -49233,7 +49210,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(0),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][0]\
     );
@@ -49241,7 +49218,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(10),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][10]\
     );
@@ -49249,7 +49226,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(11),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][11]\
     );
@@ -49257,7 +49234,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(12),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][12]\
     );
@@ -49265,7 +49242,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(13),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][13]\
     );
@@ -49273,7 +49250,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(14),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][14]\
     );
@@ -49281,7 +49258,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(1),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][1]\
     );
@@ -49289,7 +49266,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(2),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][2]\
     );
@@ -49297,7 +49274,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(3),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][3]\
     );
@@ -49305,7 +49282,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(4),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][4]\
     );
@@ -49313,7 +49290,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(5),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][5]\
     );
@@ -49321,7 +49298,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(6),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][6]\
     );
@@ -49329,7 +49306,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(7),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][7]\
     );
@@ -49337,7 +49314,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(8),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][8]\
     );
@@ -49345,7 +49322,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14]\(9),
       Q => \BiasConfigReg_D_reg[AEPuXBp_D_n_0_][9]\
     );
@@ -49353,7 +49330,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(0),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][0]\
     );
@@ -49361,7 +49338,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(10),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][10]\
     );
@@ -49369,7 +49346,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(11),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][11]\
     );
@@ -49377,7 +49354,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(12),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][12]\
     );
@@ -49385,7 +49362,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(13),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][13]\
     );
@@ -49393,7 +49370,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(14),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][14]\
     );
@@ -49401,7 +49378,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(1),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][1]\
     );
@@ -49409,7 +49386,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(2),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][2]\
     );
@@ -49417,7 +49394,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(3),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][3]\
     );
@@ -49425,7 +49402,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(4),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][4]\
     );
@@ -49433,7 +49410,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(5),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][5]\
     );
@@ -49441,7 +49418,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(6),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][6]\
     );
@@ -49449,7 +49426,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(7),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][7]\
     );
@@ -49457,7 +49434,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(8),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][8]\
     );
@@ -49465,7 +49442,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14]\(9),
       Q => \BiasConfigReg_D_reg[AEPuYBp_D_n_0_][9]\
     );
@@ -49473,7 +49450,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][14]\(0),
       Q => \BiasConfigReg_D_reg[AdcCompBp_D_n_0_][0]\
     );
@@ -49521,7 +49498,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][14]\(1),
       Q => \BiasConfigReg_D_reg[AdcCompBp_D_n_0_][1]\
     );
@@ -49529,7 +49506,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][14]\(2),
       Q => \BiasConfigReg_D_reg[AdcCompBp_D_n_0_][2]\
     );
@@ -49665,7 +49642,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D][8]\(0),
       Q => \BiasConfigReg_D_reg[AdcRefLow_D_n_0_][0]\
     );
@@ -49673,7 +49650,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D][8]\(1),
       Q => \BiasConfigReg_D_reg[AdcRefLow_D_n_0_][1]\
     );
@@ -49681,7 +49658,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D][8]\(2),
       Q => \BiasConfigReg_D_reg[AdcRefLow_D_n_0_][2]\
     );
@@ -49793,7 +49770,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D][8]\(7),
       Q => \BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][7]\
     );
@@ -49801,7 +49778,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D][8]\(8),
       Q => \BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][8]\
     );
@@ -50081,7 +50058,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14]\(10),
       Q => \BiasConfigReg_D_reg[BiasBuffer_D_n_0_][10]\
     );
@@ -50089,7 +50066,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14]\(11),
       Q => \BiasConfigReg_D_reg[BiasBuffer_D_n_0_][11]\
     );
@@ -50097,7 +50074,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14]\(12),
       Q => \BiasConfigReg_D_reg[BiasBuffer_D_n_0_][12]\
     );
@@ -50105,7 +50082,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14]\(13),
       Q => \BiasConfigReg_D_reg[BiasBuffer_D_n_0_][13]\
     );
@@ -50113,7 +50090,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14]\(14),
       Q => \BiasConfigReg_D_reg[BiasBuffer_D_n_0_][14]\
     );
@@ -50169,7 +50146,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14]\(7),
       Q => \BiasConfigReg_D_reg[BiasBuffer_D_n_0_][7]\
     );
@@ -50177,7 +50154,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14]\(8),
       Q => \BiasConfigReg_D_reg[BiasBuffer_D_n_0_][8]\
     );
@@ -50185,7 +50162,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__21\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14]\(9),
       Q => \BiasConfigReg_D_reg[BiasBuffer_D_n_0_][9]\
     );
@@ -50193,7 +50170,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(0),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][0]\
     );
@@ -50201,7 +50178,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(10),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][10]\
     );
@@ -50209,7 +50186,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(11),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][11]\
     );
@@ -50217,7 +50194,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(12),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][12]\
     );
@@ -50225,7 +50202,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(13),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][13]\
     );
@@ -50233,7 +50210,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(14),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][14]\
     );
@@ -50241,7 +50218,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(1),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][1]\
     );
@@ -50249,7 +50226,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(2),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][2]\
     );
@@ -50257,7 +50234,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(3),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][3]\
     );
@@ -50265,7 +50242,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(4),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][4]\
     );
@@ -50273,7 +50250,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(5),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][5]\
     );
@@ -50281,7 +50258,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(6),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][6]\
     );
@@ -50289,7 +50266,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(7),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][7]\
     );
@@ -50297,7 +50274,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(8),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][8]\
     );
@@ -50305,7 +50282,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14]\(9),
       Q => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][9]\
     );
@@ -50313,7 +50290,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(0),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][0]\
     );
@@ -50321,7 +50298,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(10),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][10]\
     );
@@ -50329,7 +50306,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(11),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][11]\
     );
@@ -50337,7 +50314,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(12),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][12]\
     );
@@ -50345,7 +50322,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(13),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][13]\
     );
@@ -50353,7 +50330,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(14),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][14]\
     );
@@ -50361,7 +50338,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(1),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][1]\
     );
@@ -50369,7 +50346,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(2),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][2]\
     );
@@ -50377,7 +50354,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(3),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][3]\
     );
@@ -50385,7 +50362,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(4),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][4]\
     );
@@ -50393,7 +50370,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(5),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][5]\
     );
@@ -50401,7 +50378,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(6),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][6]\
     );
@@ -50409,7 +50386,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(7),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][7]\
     );
@@ -50417,7 +50394,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(8),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][8]\
     );
@@ -50425,7 +50402,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14]\(9),
       Q => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][9]\
     );
@@ -50553,7 +50530,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(0),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][0]\
     );
@@ -50561,7 +50538,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(10),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][10]\
     );
@@ -50569,7 +50546,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(11),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][11]\
     );
@@ -50577,7 +50554,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(12),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][12]\
     );
@@ -50585,7 +50562,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(13),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][13]\
     );
@@ -50593,7 +50570,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(14),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][14]\
     );
@@ -50601,7 +50578,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(1),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][1]\
     );
@@ -50609,7 +50586,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(2),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][2]\
     );
@@ -50617,7 +50594,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(3),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][3]\
     );
@@ -50625,7 +50602,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(4),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][4]\
     );
@@ -50633,7 +50610,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(5),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][5]\
     );
@@ -50641,7 +50618,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(6),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][6]\
     );
@@ -50649,7 +50626,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(7),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][7]\
     );
@@ -50657,7 +50634,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(8),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][8]\
     );
@@ -50665,7 +50642,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14]\(9),
       Q => \BiasConfigReg_D_reg[IFRefrBn_D_n_0_][9]\
     );
@@ -50673,7 +50650,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(0),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][0]\
     );
@@ -50681,7 +50658,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(10),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][10]\
     );
@@ -50689,7 +50666,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(11),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][11]\
     );
@@ -50697,7 +50674,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(12),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][12]\
     );
@@ -50705,7 +50682,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(13),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][13]\
     );
@@ -50713,7 +50690,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(14),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][14]\
     );
@@ -50721,7 +50698,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(1),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][1]\
     );
@@ -50729,7 +50706,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(2),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][2]\
     );
@@ -50737,7 +50714,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(3),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][3]\
     );
@@ -50745,7 +50722,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(4),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][4]\
     );
@@ -50753,7 +50730,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(5),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][5]\
     );
@@ -50761,7 +50738,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(6),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][6]\
     );
@@ -50769,7 +50746,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(7),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][7]\
     );
@@ -50777,7 +50754,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(8),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][8]\
     );
@@ -50785,7 +50762,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14]\(9),
       Q => \BiasConfigReg_D_reg[IFThrBn_D_n_0_][9]\
     );
@@ -50793,7 +50770,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(0),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][0]\
     );
@@ -50801,7 +50778,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(10),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][10]\
     );
@@ -50809,7 +50786,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(11),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][11]\
     );
@@ -50817,7 +50794,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(12),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][12]\
     );
@@ -50825,7 +50802,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(13),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][13]\
     );
@@ -50833,7 +50810,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(14),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][14]\
     );
@@ -50841,7 +50818,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(1),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][1]\
     );
@@ -50849,7 +50826,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(2),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][2]\
     );
@@ -50857,7 +50834,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(3),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][3]\
     );
@@ -50865,7 +50842,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(4),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][4]\
     );
@@ -50873,7 +50850,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(5),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][5]\
     );
@@ -50881,7 +50858,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(6),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][6]\
     );
@@ -50889,7 +50866,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(7),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][7]\
     );
@@ -50897,7 +50874,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(8),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][8]\
     );
@@ -50905,7 +50882,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14]\(9),
       Q => \BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][9]\
     );
@@ -51225,7 +51202,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][14]\(4),
       Q => \BiasConfigReg_D_reg[OnBn_D_n_0_][4]\
     );
@@ -51233,7 +51210,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][14]\(5),
       Q => \BiasConfigReg_D_reg[OnBn_D_n_0_][5]\
     );
@@ -51241,7 +51218,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][14]\(6),
       Q => \BiasConfigReg_D_reg[OnBn_D_n_0_][6]\
     );
@@ -51249,7 +51226,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][14]\(7),
       Q => \BiasConfigReg_D_reg[OnBn_D_n_0_][7]\
     );
@@ -51257,7 +51234,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][14]\(8),
       Q => \BiasConfigReg_D_reg[OnBn_D_n_0_][8]\
     );
@@ -51681,7 +51658,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][14]\(1),
       Q => \BiasConfigReg_D_reg[PrSFBp_D_n_0_][1]\
     );
@@ -51689,7 +51666,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][14]\(2),
       Q => \BiasConfigReg_D_reg[PrSFBp_D_n_0_][2]\
     );
@@ -51697,7 +51674,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][14]\(3),
       Q => \BiasConfigReg_D_reg[PrSFBp_D_n_0_][3]\
     );
@@ -51705,7 +51682,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][14]\(4),
       Q => \BiasConfigReg_D_reg[PrSFBp_D_n_0_][4]\
     );
@@ -51713,7 +51690,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][14]\(5),
       Q => \BiasConfigReg_D_reg[PrSFBp_D_n_0_][5]\
     );
@@ -52566,7 +52543,7 @@ ChipBiasLatch_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D][3]\(0),
       Q => ChipChangedInput_D(20)
     );
@@ -52574,7 +52551,7 @@ ChipBiasLatch_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D][3]\(1),
       Q => ChipChangedInput_D(21)
     );
@@ -52606,7 +52583,7 @@ ChipBiasLatch_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D][3]\(1),
       Q => ChipChangedInput_D(17)
     );
@@ -52614,7 +52591,7 @@ ChipBiasLatch_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D][3]\(2),
       Q => ChipChangedInput_D(18)
     );
@@ -52622,7 +52599,7 @@ ChipBiasLatch_SBO_reg: unisim.vcomponents.FDPE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D][3]\(3),
       Q => ChipChangedInput_D(19)
     );
@@ -53410,7 +53387,7 @@ ChipBiasLatch_SBO_reg: unisim.vcomponents.FDPE
         port map (
       C => LogicClk_CI,
       CE => waitCyclesCounter_n_59,
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
       D => detectChipChange_n_5,
       Q => ChipSent_S
     );
@@ -53531,7 +53508,7 @@ ChipBiasLatch_SBO_reg: unisim.vcomponents.FDPE
         port map (
       C => LogicClk_CI,
       CE => waitCyclesCounter_n_59,
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
       D => \FSM_onehot_State_DP[2]_i_1_n_0\,
       Q => \FSM_onehot_State_DP_reg_n_0_[2]\
     );
@@ -53652,7 +53629,7 @@ ChipBiasLatch_SBO_reg: unisim.vcomponents.FDPE
         port map (
       C => LogicClk_CI,
       CE => waitCyclesCounter_n_59,
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
       D => \FSM_onehot_State_DP[3]_i_1_n_0\,
       Q => \FSM_onehot_State_DP_reg_n_0_[3]\
     );
@@ -53674,7 +53651,7 @@ ChipBiasLatch_SBO_reg: unisim.vcomponents.FDPE
         port map (
       C => LogicClk_CI,
       CE => waitCyclesCounter_n_59,
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
       D => \FSM_onehot_State_DP[4]_i_1_n_0\,
       Q => \FSM_onehot_State_DP_reg_n_0_[4]\
     );
@@ -53685,7 +53662,7 @@ ChipBiasLatch_SBO_reg: unisim.vcomponents.FDPE
         port map (
       C => LogicClk_CI,
       CE => waitCyclesCounter_n_59,
-      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(1),
       D => \FSM_onehot_State_DP[5]_i_1_n_0\,
       Q => \FSM_onehot_State_DP_reg_n_0_[5]\
     );
@@ -53754,7 +53731,7 @@ biasAddrSR: entity work.brd_testAERDVSSM_0_0_ShiftRegister_24
       \ShiftReg_DP_reg[3]_1\ => biasAddrSR_n_2,
       \ShiftReg_DP_reg[4]_0\ => biasAddrSR_n_3,
       \SyncSignalSyncFF_S_reg_rep__15\(0) => \SyncSignalSyncFF_S_reg_rep__15\(1),
-      \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__23\(0) => \SyncSignalSyncFF_S_reg_rep__23\(1),
       \out\(27) => Bias0Sent_S,
       \out\(26) => Bias1Sent_S,
       \out\(25) => Bias2Sent_S,
@@ -53786,6 +53763,7 @@ biasAddrSR: entity work.brd_testAERDVSSM_0_0_ShiftRegister_24
     );
 biasSR: entity work.\brd_testAERDVSSM_0_0_ShiftRegister__parameterized1\
      port map (
+      AR(0) => AR(0),
       \BiasConfigReg_D_reg[AEPdBn_D][14]\(14) => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][14]\,
       \BiasConfigReg_D_reg[AEPdBn_D][14]\(13) => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][13]\,
       \BiasConfigReg_D_reg[AEPdBn_D][14]\(12) => \BiasConfigReg_D_reg[AEPdBn_D_n_0_][12]\,
@@ -54249,7 +54227,6 @@ biasSR: entity work.\brd_testAERDVSSM_0_0_ShiftRegister__parameterized1\
       \ShiftReg_DP_reg[9]_0\ => biasSR_n_18,
       \ShiftReg_DP_reg[9]_1\ => biasSR_n_19,
       \ShiftReg_DP_reg[9]_2\ => biasSR_n_20,
-      \SyncSignalSyncFF_S_reg_rep__0\(0) => \SyncSignalSyncFF_S_reg_rep__0\(0),
       \SyncSignalSyncFF_S_reg_rep__23\(0) => \SyncSignalSyncFF_S_reg_rep__23\(1),
       \out\(27) => Bias0Sent_S,
       \out\(26) => Bias1Sent_S,
@@ -54343,14 +54320,13 @@ chipSR: entity work.\brd_testAERDVSSM_0_0_ShiftRegister__parameterized2\
       \ShiftReg_DP_reg[55]_0\(2) => chipSR_n_53,
       \ShiftReg_DP_reg[55]_0\(1) => chipSR_n_54,
       \ShiftReg_DP_reg[55]_0\(0) => chipSR_n_55,
-      \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__23\(1 downto 0) => \SyncSignalSyncFF_S_reg_rep__23\(1 downto 0),
       \out\(2) => \FSM_onehot_State_DP_reg_n_0_[38]\,
       \out\(1) => \FSM_onehot_State_DP_reg_n_0_[35]\,
       \out\(0) => \FSM_onehot_State_DP_reg_n_0_[3]\
     );
 detectBias0Change: entity work.\brd_testAERDVSSM_0_0_ChangeDetector__parameterized0\
      port map (
-      AR(0) => AR(1),
       Bias0Changed_S => Bias0Changed_S,
       LogicClk_CI => LogicClk_CI,
       Q(8) => \BiasConfigReg_D_reg[ApsOverflowLevel_D_n_0_][8]\,
@@ -54363,11 +54339,11 @@ detectBias0Change: entity work.\brd_testAERDVSSM_0_0_ChangeDetector__parameteriz
       Q(1) => \BiasConfigReg_D_reg[ApsOverflowLevel_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[ApsOverflowLevel_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__26\(0) => \SyncSignalSyncFF_S_reg_rep__25\(0),
       \out\(0) => Bias0Sent_S
     );
 detectBias10Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_25
      port map (
-      AR(0) => AR(1),
       Bias10Changed_S => Bias10Changed_S,
       Bias2Changed_S => Bias2Changed_S,
       Bias3Changed_S => Bias3Changed_S,
@@ -54392,11 +54368,11 @@ detectBias10Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_25
       Q(1) => \BiasConfigReg_D_reg[DiffBn_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[DiffBn_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__26\(0) => \SyncSignalSyncFF_S_reg_rep__25\(0),
       \out\(0) => Bias10Sent_S
     );
 detectBias11Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_26
      port map (
-      AR(0) => AR(1),
       Bias10Changed_S => Bias10Changed_S,
       Bias11Changed_S => Bias11Changed_S,
       Bias12Changed_S => Bias12Changed_S,
@@ -54429,12 +54405,12 @@ detectBias11Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_26
       Q(1) => \BiasConfigReg_D_reg[OnBn_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[OnBn_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__26\(0) => \SyncSignalSyncFF_S_reg_rep__25\(0),
       \out\(1) => Bias11Sent_S,
       \out\(0) => \FSM_onehot_State_DP_reg_n_0_[0]\
     );
 detectBias12Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_27
      port map (
-      AR(1 downto 0) => AR(1 downto 0),
       Bias12Changed_S => Bias12Changed_S,
       LogicClk_CI => LogicClk_CI,
       Q(14) => \BiasConfigReg_D_reg[OffBn_D_n_0_][14]\,
@@ -54453,11 +54429,11 @@ detectBias12Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_27
       Q(1) => \BiasConfigReg_D_reg[OffBn_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[OffBn_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__26\(0) => \SyncSignalSyncFF_S_reg_rep__25\(0),
       \out\(0) => Bias12Sent_S
     );
 detectBias13Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_28
      port map (
-      AR(0) => AR(0),
       Bias13Changed_S => Bias13Changed_S,
       Bias14Changed_S => Bias14Changed_S,
       \FSM_onehot_State_DP_reg[30]\ => detectBias13Change_n_1,
@@ -54478,11 +54454,11 @@ detectBias13Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_28
       Q(1) => \BiasConfigReg_D_reg[PixInvBn_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[PixInvBn_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__25\(1 downto 0) => \SyncSignalSyncFF_S_reg_rep__25\(1 downto 0),
       \out\(0) => Bias13Sent_S
     );
 detectBias14Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_29
      port map (
-      AR(0) => AR(0),
       Bias13Changed_S => Bias13Changed_S,
       Bias14Changed_S => Bias14Changed_S,
       Bias15Changed_S => Bias15Changed_S,
@@ -54505,11 +54481,11 @@ detectBias14Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_29
       Q(1) => \BiasConfigReg_D_reg[PrBp_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[PrBp_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__25\(0) => \SyncSignalSyncFF_S_reg_rep__25\(1),
       \out\(0) => Bias14Sent_S
     );
 detectBias15Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_30
      port map (
-      AR(0) => AR(0),
       Bias15Changed_S => Bias15Changed_S,
       LogicClk_CI => LogicClk_CI,
       Q(14) => \BiasConfigReg_D_reg[PrSFBp_D_n_0_][14]\,
@@ -54528,11 +54504,11 @@ detectBias15Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_30
       Q(1) => \BiasConfigReg_D_reg[PrSFBp_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[PrSFBp_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__25\(0) => \SyncSignalSyncFF_S_reg_rep__25\(1),
       \out\(0) => Bias15Sent_S
     );
 detectBias16Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_31
      port map (
-      AR(0) => AR(0),
       Bias15Changed_S => Bias15Changed_S,
       Bias16Changed_S => Bias16Changed_S,
       Bias20Changed_S => Bias20Changed_S,
@@ -54556,11 +54532,11 @@ detectBias16Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_31
       Q(1) => \BiasConfigReg_D_reg[RefrBp_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[RefrBp_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__25\(0) => \SyncSignalSyncFF_S_reg_rep__25\(1),
       \out\(0) => Bias16Sent_S
     );
 detectBias17Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_32
      port map (
-      AR(0) => AR(0),
       Bias17Changed_S => Bias17Changed_S,
       Bias18Changed_S => Bias18Changed_S,
       \FSM_onehot_State_DP_reg[21]\ => detectBias17Change_n_1,
@@ -54581,11 +54557,11 @@ detectBias17Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_32
       Q(1) => \BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__25\(0) => \SyncSignalSyncFF_S_reg_rep__25\(1),
       \out\(0) => Bias17Sent_S
     );
 detectBias18Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_33
      port map (
-      AR(0) => AR(0),
       Bias17Changed_S => Bias17Changed_S,
       Bias18Changed_S => Bias18Changed_S,
       Bias19Changed_S => Bias19Changed_S,
@@ -54608,11 +54584,11 @@ detectBias18Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_33
       Q(1) => \BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__25\(0) => \SyncSignalSyncFF_S_reg_rep__25\(1),
       \out\(0) => Bias18Sent_S
     );
 detectBias19Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_34
      port map (
-      AR(0) => AR(0),
       Bias0Changed_S => Bias0Changed_S,
       Bias10Changed_S => Bias10Changed_S,
       Bias11Changed_S => Bias11Changed_S,
@@ -54661,12 +54637,12 @@ detectBias19Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_34
       Q(1) => \BiasConfigReg_D_reg[AdcCompBp_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[AdcCompBp_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__25\(0) => \SyncSignalSyncFF_S_reg_rep__25\(1),
       \out\(1) => Bias19Sent_S,
       \out\(0) => \FSM_onehot_State_DP_reg_n_0_[0]\
     );
 detectBias1Change: entity work.\brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_35\
      port map (
-      AR(0) => AR(1),
       Bias1Changed_S => Bias1Changed_S,
       LogicClk_CI => LogicClk_CI,
       Q(8) => \BiasConfigReg_D_reg[ApsCas_D_n_0_][8]\,
@@ -54679,11 +54655,11 @@ detectBias1Change: entity work.\brd_testAERDVSSM_0_0_ChangeDetector__parameteriz
       Q(1) => \BiasConfigReg_D_reg[ApsCas_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[ApsCas_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__26\(0) => \SyncSignalSyncFF_S_reg_rep__25\(0),
       \out\(0) => Bias1Sent_S
     );
 detectBias20Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_36
      port map (
-      AR(0) => AR(0),
       Bias20Changed_S => Bias20Changed_S,
       LogicClk_CI => LogicClk_CI,
       Q(14) => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][14]\,
@@ -54702,7 +54678,7 @@ detectBias20Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_36
       Q(1) => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
-      \SyncSignalSyncFF_S_reg_rep__24\(0) => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      \SyncSignalSyncFF_S_reg_rep__25\(0) => \SyncSignalSyncFF_S_reg_rep__25\(1),
       \out\(0) => Bias20Sent_S
     );
 detectBias21Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_37
@@ -54728,6 +54704,7 @@ detectBias21Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_37
       Q(0) => \BiasConfigReg_D_reg[DACBufBp_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
       \SyncSignalSyncFF_S_reg_rep__24\(0) => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      \SyncSignalSyncFF_S_reg_rep__25\(0) => \SyncSignalSyncFF_S_reg_rep__25\(1),
       \out\(0) => Bias21Sent_S
     );
 detectBias22Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_38
@@ -54958,7 +54935,6 @@ detectBias27Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_43
     );
 detectBias2Change: entity work.\brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_44\
      port map (
-      AR(0) => AR(1),
       Bias2Changed_S => Bias2Changed_S,
       LogicClk_CI => LogicClk_CI,
       Q(8) => \BiasConfigReg_D_reg[AdcRefHigh_D_n_0_][8]\,
@@ -54971,6 +54947,7 @@ detectBias2Change: entity work.\brd_testAERDVSSM_0_0_ChangeDetector__parameteriz
       Q(1) => \BiasConfigReg_D_reg[AdcRefHigh_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[AdcRefHigh_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__26\(0) => \SyncSignalSyncFF_S_reg_rep__25\(0),
       \out\(0) => Bias2Sent_S
     );
 detectBias34Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_45
@@ -55074,7 +55051,6 @@ detectBias36Change: entity work.\brd_testAERDVSSM_0_0_ChangeDetector__parameteri
     );
 detectBias3Change: entity work.\brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_47\
      port map (
-      AR(0) => AR(1),
       Bias3Changed_S => Bias3Changed_S,
       LogicClk_CI => LogicClk_CI,
       Q(8) => \BiasConfigReg_D_reg[AdcRefLow_D_n_0_][8]\,
@@ -55087,11 +55063,11 @@ detectBias3Change: entity work.\brd_testAERDVSSM_0_0_ChangeDetector__parameteriz
       Q(1) => \BiasConfigReg_D_reg[AdcRefLow_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[AdcRefLow_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__26\(0) => \SyncSignalSyncFF_S_reg_rep__25\(0),
       \out\(0) => Bias3Sent_S
     );
 detectBias4Change: entity work.\brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_48\
      port map (
-      AR(0) => AR(1),
       Bias4Changed_S => Bias4Changed_S,
       Bias8Changed_S => Bias8Changed_S,
       \FSM_onehot_State_DP_reg[32]\ => detectBias4Change_n_1,
@@ -55106,11 +55082,11 @@ detectBias4Change: entity work.\brd_testAERDVSSM_0_0_ChangeDetector__parameteriz
       Q(1) => \BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__26\(0) => \SyncSignalSyncFF_S_reg_rep__25\(0),
       \out\(0) => Bias4Sent_S
     );
 detectBias8Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_49
      port map (
-      AR(0) => AR(1),
       Bias13Changed_S => Bias13Changed_S,
       Bias14Changed_S => Bias14Changed_S,
       Bias1Changed_S => Bias1Changed_S,
@@ -55142,13 +55118,13 @@ detectBias8Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_49
       Q(1) => \BiasConfigReg_D_reg[LocalBufBn_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[LocalBufBn_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__26\(0) => \SyncSignalSyncFF_S_reg_rep__25\(0),
       \out\(2) => Bias8Sent_S,
       \out\(1) => ChipSent_S,
       \out\(0) => \FSM_onehot_State_DP_reg_n_0_[0]\
     );
 detectBias9Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_50
      port map (
-      AR(0) => AR(1),
       Bias9Changed_S => Bias9Changed_S,
       LogicClk_CI => LogicClk_CI,
       Q(14) => \BiasConfigReg_D_reg[PadFollBn_D_n_0_][14]\,
@@ -55167,6 +55143,7 @@ detectBias9Change: entity work.brd_testAERDVSSM_0_0_ChangeDetector_50
       Q(1) => \BiasConfigReg_D_reg[PadFollBn_D_n_0_][1]\,
       Q(0) => \BiasConfigReg_D_reg[PadFollBn_D_n_0_][0]\,
       \SyncSignalSyncFF_S_reg_rep__22\(0) => \SyncSignalSyncFF_S_reg_rep__23\(0),
+      \SyncSignalSyncFF_S_reg_rep__26\(0) => \SyncSignalSyncFF_S_reg_rep__25\(0),
       \out\(0) => Bias9Sent_S
     );
 detectChipChange: entity work.\brd_testAERDVSSM_0_0_ChangeDetector__parameterized2\
@@ -55412,11 +55389,11 @@ entity brd_testAERDVSSM_0_0_MultiplexerStateMachine is
     O148 : in STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
     AR : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    \SyncSignalSyncFF_S_reg_rep__2\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     O147 : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__3\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     SyncReset_RO : in STD_LOGIC;
+    \SyncSignalSyncFF_S_reg_rep__4\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     O146 : in STD_LOGIC;
-    \SyncSignalSyncFF_S_reg_rep__2\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     O151 : in STD_LOGIC;
     SyncInClockSync_CO : in STD_LOGIC;
     FifoData_DO : in STD_LOGIC_VECTOR ( 14 downto 0 );
@@ -55522,12 +55499,12 @@ architecture STRUCTURE of brd_testAERDVSSM_0_0_MultiplexerStateMachine is
   signal tsSynchronizer_n_3 : STD_LOGIC;
   signal tsSynchronizer_n_4 : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \AERSMOutFifoData_DO[0]_INST_0_i_1\ : label is "soft_lutpair66";
-  attribute SOFT_HLUTNM of \AERSMOutFifoData_DO[0]_INST_0_i_2\ : label is "soft_lutpair66";
-  attribute SOFT_HLUTNM of \AERSMOutFifoData_DO[14]_INST_0_i_2\ : label is "soft_lutpair67";
-  attribute SOFT_HLUTNM of AERSMOutFifoWrite_SO_INST_0_i_7 : label is "soft_lutpair68";
-  attribute SOFT_HLUTNM of HighestTimestampSent_SP_i_9 : label is "soft_lutpair68";
-  attribute SOFT_HLUTNM of \State_DP[2]_i_2\ : label is "soft_lutpair67";
+  attribute SOFT_HLUTNM of \AERSMOutFifoData_DO[0]_INST_0_i_1\ : label is "soft_lutpair67";
+  attribute SOFT_HLUTNM of \AERSMOutFifoData_DO[0]_INST_0_i_2\ : label is "soft_lutpair67";
+  attribute SOFT_HLUTNM of \AERSMOutFifoData_DO[14]_INST_0_i_2\ : label is "soft_lutpair68";
+  attribute SOFT_HLUTNM of AERSMOutFifoWrite_SO_INST_0_i_7 : label is "soft_lutpair69";
+  attribute SOFT_HLUTNM of HighestTimestampSent_SP_i_9 : label is "soft_lutpair69";
+  attribute SOFT_HLUTNM of \State_DP[2]_i_2\ : label is "soft_lutpair68";
 begin
   Q(1 downto 0) <= \^q\(1 downto 0);
   \State_DP_reg[2]_0\ <= \^state_dp_reg[2]_0\;
@@ -55658,7 +55635,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => tsGenerator_n_35,
       Q => HighestTimestampSent_SP
     );
@@ -55666,7 +55643,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => O151,
       Q => \MultiplexerConfigReg_D_reg[DropDVSOnTransferStall_S]__0\
     );
@@ -55674,7 +55651,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => O146,
       Q => \MultiplexerConfigReg_D_reg[Run_S_n_0_]\
     );
@@ -55690,7 +55667,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => O147,
       Q => \MultiplexerConfigReg_D_reg[TimestampRun_S_n_0_]\
     );
@@ -55721,14 +55698,14 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
       C => LogicClk_CI,
       CE => '1',
       D => StateTimestampNext_DN(1),
-      PRE => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      PRE => \SyncSignalSyncFF_S_reg_rep__2\(0),
       Q => StateTimestampNext_DP(1)
     );
 \StateTimestampNext_DP_reg[3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
       D => \FifoData_DO_reg[12]\(0),
       Q => StateTimestampNext_DP(3)
     );
@@ -55785,7 +55762,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => tsResetBuffer_n_5,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => State_DN(0),
       Q => State_DP(0)
     );
@@ -55793,7 +55770,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => tsResetBuffer_n_5,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => State_DN(1),
       Q => State_DP(1)
     );
@@ -55801,7 +55778,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => tsResetBuffer_n_5,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => State_DN(2),
       Q => \^q\(0)
     );
@@ -55809,7 +55786,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => tsResetBuffer_n_5,
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => State_DN(3),
       Q => \^q\(1)
     );
@@ -55817,7 +55794,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_15,
       Q => PreviousData_DP(0)
     );
@@ -55825,7 +55802,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_5,
       Q => PreviousData_DP(10)
     );
@@ -55833,7 +55810,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_4,
       Q => PreviousData_DP(11)
     );
@@ -55841,7 +55818,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_3,
       Q => PreviousData_DP(12)
     );
@@ -55849,7 +55826,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_2,
       Q => PreviousData_DP(13)
     );
@@ -55857,7 +55834,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_1,
       Q => PreviousData_DP(14)
     );
@@ -55865,7 +55842,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_14,
       Q => PreviousData_DP(1)
     );
@@ -55873,7 +55850,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_13,
       Q => PreviousData_DP(2)
     );
@@ -55881,7 +55858,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_12,
       Q => PreviousData_DP(3)
     );
@@ -55889,7 +55866,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_11,
       Q => PreviousData_DP(4)
     );
@@ -55897,7 +55874,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_10,
       Q => PreviousData_DP(5)
     );
@@ -55905,7 +55882,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_9,
       Q => PreviousData_DP(6)
     );
@@ -55913,7 +55890,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_8,
       Q => PreviousData_DP(7)
     );
@@ -55921,7 +55898,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_7,
       Q => PreviousData_DP(8)
     );
@@ -55929,7 +55906,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__2\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__2\(1),
       D => tsGenerator_n_6,
       Q => PreviousData_DP(9)
     );
@@ -55965,8 +55942,7 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
       \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39]\(39 downto 0) => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39]\(39 downto 0),
       \MultiplexerConfigReg_D_reg[Run_S]\ => \MultiplexerConfigReg_D_reg[Run_S_n_0_]\,
       \Output_SO_reg[0]\ => \statisticsSupport.StatisticsDVSDroppedReg_n_0\,
-      \SyncSignalSyncFF_S_reg_rep__2\(0) => \SyncSignalSyncFF_S_reg_rep__2\(0),
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__3\(1)
+      \SyncSignalSyncFF_S_reg_rep__2\(1 downto 0) => \SyncSignalSyncFF_S_reg_rep__2\(1 downto 0)
     );
 \statisticsSupport.StatisticsDVSDroppedReg\: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_3\
      port map (
@@ -55977,14 +55953,14 @@ HighestTimestampSent_SP_reg: unisim.vcomponents.FDCE
       \OutFifoControl_SO[Empty_S]\ => \OutFifoControl_SO[Empty_S]\,
       Q(3 downto 2) => \^q\(1 downto 0),
       Q(1 downto 0) => State_DP(1 downto 0),
-      \SyncSignalSyncFF_S_reg_rep__2\(0) => \SyncSignalSyncFF_S_reg_rep__2\(0)
+      \SyncSignalSyncFF_S_reg_rep__2\(0) => \SyncSignalSyncFF_S_reg_rep__2\(1)
     );
 \statisticsSupport.StatisticsExtInputDroppedCounter\: entity work.brd_testAERDVSSM_0_0_Counter_4
      port map (
       D(39 downto 0) => D(39 downto 0),
       LogicClk_CI => LogicClk_CI,
       \MultiplexerConfigReg_D_reg[Run_S]\ => \MultiplexerConfigReg_D_reg[Run_S_n_0_]\,
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__3\(1)
+      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__2\(0)
     );
 timestampChangeDetector: entity work.brd_testAERDVSSM_0_0_ChangeDetector
      port map (
@@ -56021,7 +55997,7 @@ timestampChangeDetector: entity work.brd_testAERDVSSM_0_0_ChangeDetector
       \State_DP_reg[2]\ => \AERSMOutFifoData_DO[0]_INST_0_i_1_n_0\,
       \State_DP_reg[3]\(3 downto 2) => \^q\(1 downto 0),
       \State_DP_reg[3]\(1 downto 0) => State_DP(1 downto 0),
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__2\(0),
       \TimestampBuffer_D_reg[11]\ => HighestTimestampSent_SP_i_9_n_0,
       TimestampOverflow_S => TimestampOverflow_S
     );
@@ -56082,8 +56058,7 @@ tsGenerator: entity work.brd_testAERDVSSM_0_0_ContinuousCounter
       \State_DP_reg[3]\(3 downto 2) => \^q\(1 downto 0),
       \State_DP_reg[3]\(1 downto 0) => State_DP(1 downto 0),
       \SyncSignalSyncFF_S_reg[0]\ => tsSynchronizer_n_3,
-      \SyncSignalSyncFF_S_reg_rep__2\(0) => \SyncSignalSyncFF_S_reg_rep__2\(0),
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      \SyncSignalSyncFF_S_reg_rep__2\(1 downto 0) => \SyncSignalSyncFF_S_reg_rep__2\(1 downto 0),
       \TimestampBuffer_D_reg[14]\(14 downto 0) => PreviousData_DP(14 downto 0),
       TimestampOverflow_S => TimestampOverflow_S,
       TimestampResetBufferClear_S => TimestampResetBufferClear_S
@@ -56111,7 +56086,7 @@ tsOverflowBuffer: entity work.\brd_testAERDVSSM_0_0_ContinuousCounter__parameter
       State_DN1 => State_DN1,
       \State_DP_reg[3]\(3 downto 2) => \^q\(1 downto 0),
       \State_DP_reg[3]\(1 downto 0) => State_DP(1 downto 0),
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__2\(0),
       \TimestampBuffer_D_reg[12]\ => timestampChangeDetector_n_17,
       \TimestampBuffer_D_reg[2]\ => HighestTimestampSent_SP_i_6_n_0,
       TimestampOverflowBufferOverflow_S => TimestampOverflowBufferOverflow_S,
@@ -56136,14 +56111,15 @@ tsResetBuffer: entity work.brd_testAERDVSSM_0_0_BufferClear
       \State_DP_reg[0]\ => \State_DP[2]_i_2_n_0\,
       \State_DP_reg[1]\ => \^state_dp_reg[2]_0\,
       \State_DP_reg[2]\ => \State_DP[3]_i_3_n_0\,
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__3\(1),
+      \SyncSignalSyncFF_S_reg_rep__3\(0) => \SyncSignalSyncFF_S_reg_rep__2\(0),
       TimestampResetBuffer_S => TimestampResetBuffer_S
     );
 tsResetExternalDetector: entity work.brd_testAERDVSSM_0_0_PulseDetector
      port map (
-      AR(1 downto 0) => AR(1 downto 0),
+      AR(0) => AR(1),
       LogicClk_CI => LogicClk_CI,
       State_DN10_out => State_DN10_out,
+      \SyncSignalSyncFF_S_reg_rep__2\(0) => \SyncSignalSyncFF_S_reg_rep__2\(1),
       TimestampResetExternalDetected_S => TimestampResetExternalDetected_S
     );
 tsSynchronizer: entity work.brd_testAERDVSSM_0_0_TimestampSynchronizer
@@ -56160,8 +56136,8 @@ tsSynchronizer: entity work.brd_testAERDVSSM_0_0_TimestampSynchronizer
       SyncInClockSync_CO => SyncInClockSync_CO,
       SyncOutClock_CO => SyncOutClock_CO,
       SyncReset_RO => SyncReset_RO,
-      \SyncSignalSyncFF_S_reg_rep__2\(0) => \SyncSignalSyncFF_S_reg_rep__2\(0),
-      \SyncSignalSyncFF_S_reg_rep__4\(0) => \SyncSignalSyncFF_S_reg_rep__3\(0),
+      \SyncSignalSyncFF_S_reg_rep__2\(0) => \SyncSignalSyncFF_S_reg_rep__2\(1),
+      \SyncSignalSyncFF_S_reg_rep__4\(0) => \SyncSignalSyncFF_S_reg_rep__4\(0),
       TimestampOverflowBufferOverflow_S => TimestampOverflowBufferOverflow_S,
       TimestampResetBufferClear_S => TimestampResetBufferClear_S,
       TimestampResetBuffer_S => TimestampResetBuffer_S,
@@ -56215,7 +56191,7 @@ entity brd_testAERDVSSM_0_0_ChipBiasSelector is
     ChipBiasBitIn_DO : out STD_LOGIC;
     ChipBiasLatch_SBO : out STD_LOGIC;
     LogicClk_CI : in STD_LOGIC;
-    AR : in STD_LOGIC_VECTOR ( 0 to 0 );
+    AR : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \SyncSignalSyncFF_S_reg_rep__23\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \ParamInput_DP_reg[0]\ : in STD_LOGIC;
     \ParamInput_DP_reg[0]_0\ : in STD_LOGIC;
@@ -56240,16 +56216,16 @@ entity brd_testAERDVSSM_0_0_ChipBiasSelector is
     \ParamAddressReg_DP_reg[0]_2\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[3]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[3]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__13\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[1]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[3]_1\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[3]_2\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[2]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \SyncSignalSyncFF_S_reg_rep__12\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__13\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[3]_3\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[1]_1\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[0]_3\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[3]_4\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__12\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[1]_2\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[4]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[0]_4\ : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -56270,8 +56246,6 @@ entity brd_testAERDVSSM_0_0_ChipBiasSelector is
     \ParamAddressReg_DP_reg[3]_5\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[1]_5\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 6 downto 0 );
-    \SyncSignalSyncFF_S_reg_rep__0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    SyncSignalSyncFF_S_reg_rep : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[3]_6\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[0]_6\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[1]_6\ : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -56282,8 +56256,8 @@ entity brd_testAERDVSSM_0_0_ChipBiasSelector is
     \ParamAddressReg_DP_reg[3]_7\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ParamAddressReg_DP_reg[4]_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \SyncSignalSyncFF_S_reg_rep__17\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    \SyncSignalSyncFF_S_reg_rep__19\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    \SyncSignalSyncFF_S_reg_rep__21\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__19\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    \SyncSignalSyncFF_S_reg_rep__20\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \SyncSignalSyncFF_S_reg_rep__26\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \SyncSignalSyncFF_S_reg_rep__25\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \SyncSignalSyncFF_S_reg_rep__24\ : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -56835,8 +56809,7 @@ begin
   \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D][15]_0\(0) <= \^davis346chipbias.timingreg2support.davis128biasconfigreg_d_reg[ssp_d][15]_0\(0);
 \davis346ChipBias.davis346ChipBiasSM\: entity work.brd_testAERDVSSM_0_0_DAVIS346StateMachine
      port map (
-      AR(1) => \SyncSignalSyncFF_S_reg_rep__26\(0),
-      AR(0) => \SyncSignalSyncFF_S_reg_rep__25\(0),
+      AR(0) => AR(3),
       ChipBiasAddrSelect_SBO => ChipBiasAddrSelect_SBO,
       ChipBiasBitIn_DO => ChipBiasBitIn_DO,
       ChipBiasClock_CBO => ChipBiasClock_CBO,
@@ -56856,13 +56829,15 @@ begin
       Q(1) => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[BiasMux0_D_n_0_][1]\,
       Q(0) => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[BiasMux0_D_n_0_][0]\,
       SyncReset_RO => SyncReset_RO,
-      \SyncSignalSyncFF_S_reg_rep__0\(0) => \SyncSignalSyncFF_S_reg_rep__0\(0),
       \SyncSignalSyncFF_S_reg_rep__15\(1 downto 0) => \SyncSignalSyncFF_S_reg_rep__15\(1 downto 0),
       \SyncSignalSyncFF_S_reg_rep__17\(1 downto 0) => \SyncSignalSyncFF_S_reg_rep__17\(1 downto 0),
-      \SyncSignalSyncFF_S_reg_rep__19\(1 downto 0) => \SyncSignalSyncFF_S_reg_rep__19\(1 downto 0),
-      \SyncSignalSyncFF_S_reg_rep__21\(1) => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      \SyncSignalSyncFF_S_reg_rep__19\(0) => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      \SyncSignalSyncFF_S_reg_rep__20\(0) => \SyncSignalSyncFF_S_reg_rep__20\(1),
+      \SyncSignalSyncFF_S_reg_rep__21\(1) => \SyncSignalSyncFF_S_reg_rep__20\(0),
       \SyncSignalSyncFF_S_reg_rep__21\(0) => \SyncSignalSyncFF_S_reg_rep__24\(0),
       \SyncSignalSyncFF_S_reg_rep__23\(1 downto 0) => \SyncSignalSyncFF_S_reg_rep__23\(1 downto 0),
+      \SyncSignalSyncFF_S_reg_rep__25\(1) => \SyncSignalSyncFF_S_reg_rep__25\(0),
+      \SyncSignalSyncFF_S_reg_rep__25\(0) => \SyncSignalSyncFF_S_reg_rep__26\(0),
       \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(14) => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][14]\,
       \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(13) => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][13]\,
       \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14]\(12) => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][12]\,
@@ -57286,7 +57261,7 @@ begin
     );
 \davis346ChipBias.davis346ChipBiasSPIConfig\: entity work.brd_testAERDVSSM_0_0_DAVIS346SPIConfig
      port map (
-      AR(0) => AR(0),
+      AR(3 downto 0) => AR(3 downto 0),
       \BiasOutput_DP_reg[10]_0\ => \BiasOutput_DP_reg[10]\,
       \BiasOutput_DP_reg[10]_1\ => \BiasOutput_DP_reg[10]_0\,
       \BiasOutput_DP_reg[11]_0\ => \BiasOutput_DP_reg[11]\,
@@ -57374,12 +57349,10 @@ begin
       \ParamOutput_DP_reg[3]\(3 downto 0) => \ParamOutput_DP_reg[3]\(3 downto 0),
       Q(15) => \^q\(0),
       Q(14 downto 0) => \BiasConfigReg_DP_reg[SSN_D]\(14 downto 0),
-      \SyncSignalSyncFF_S_reg_rep__0\(1) => \SyncSignalSyncFF_S_reg_rep__0\(0),
-      \SyncSignalSyncFF_S_reg_rep__0\(0) => SyncSignalSyncFF_S_reg_rep(0),
-      \SyncSignalSyncFF_S_reg_rep__10\(0) => \SyncSignalSyncFF_S_reg_rep__10\(0),
-      \SyncSignalSyncFF_S_reg_rep__12\(1) => \SyncSignalSyncFF_S_reg_rep__12\(0),
-      \SyncSignalSyncFF_S_reg_rep__12\(0) => \SyncSignalSyncFF_S_reg_rep__11\(0),
-      \SyncSignalSyncFF_S_reg_rep__13\(0) => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      \SyncSignalSyncFF_S_reg_rep__11\(1) => \SyncSignalSyncFF_S_reg_rep__11\(0),
+      \SyncSignalSyncFF_S_reg_rep__11\(0) => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      \SyncSignalSyncFF_S_reg_rep__13\(1) => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      \SyncSignalSyncFF_S_reg_rep__13\(0) => \SyncSignalSyncFF_S_reg_rep__12\(0),
       \SyncSignalSyncFF_S_reg_rep__15\(1) => \SyncSignalSyncFF_S_reg_rep__15\(1),
       \SyncSignalSyncFF_S_reg_rep__15\(0) => \SyncSignalSyncFF_S_reg_rep__14\(0),
       \SyncSignalSyncFF_S_reg_rep__5\(1) => \SyncSignalSyncFF_S_reg_rep__5\(0),
@@ -57428,7 +57401,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][0]\
     );
@@ -57436,7 +57409,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(10),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][10]\
     );
@@ -57444,7 +57417,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(11),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][11]\
     );
@@ -57452,7 +57425,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][12]\
     );
@@ -57460,7 +57433,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][13]\
     );
@@ -57468,7 +57441,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][14]\
     );
@@ -57476,7 +57449,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][1]\
     );
@@ -57484,7 +57457,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][2]\
     );
@@ -57492,7 +57465,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][3]\
     );
@@ -57500,7 +57473,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][4]\
     );
@@ -57508,7 +57481,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][5]\
     );
@@ -57516,7 +57489,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][6]\
     );
@@ -57524,7 +57497,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][7]\
     );
@@ -57532,7 +57505,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][8]\
     );
@@ -57540,7 +57513,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(9),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][9]\
     );
@@ -57548,7 +57521,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][0]\
     );
@@ -57556,7 +57529,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(10),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][10]\
     );
@@ -57564,7 +57537,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(11),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][11]\
     );
@@ -57572,7 +57545,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][12]\
     );
@@ -57580,7 +57553,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][13]\
     );
@@ -57588,7 +57561,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][14]\
     );
@@ -57596,7 +57569,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][1]\
     );
@@ -57604,7 +57577,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][2]\
     );
@@ -57612,7 +57585,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][3]\
     );
@@ -57620,7 +57593,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][4]\
     );
@@ -57628,7 +57601,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][5]\
     );
@@ -57636,7 +57609,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][6]\
     );
@@ -57644,7 +57617,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][7]\
     );
@@ -57652,7 +57625,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][8]\
     );
@@ -57660,7 +57633,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(9),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][9]\
     );
@@ -57668,7 +57641,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][0]\
     );
@@ -57676,7 +57649,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(10),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][10]\
     );
@@ -57684,7 +57657,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(11),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][11]\
     );
@@ -57692,7 +57665,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][12]\
     );
@@ -57700,7 +57673,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][13]\
     );
@@ -57708,7 +57681,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][14]\
     );
@@ -57716,7 +57689,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][1]\
     );
@@ -57724,7 +57697,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][2]\
     );
@@ -57732,7 +57705,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][3]\
     );
@@ -57740,7 +57713,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][4]\
     );
@@ -57748,7 +57721,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][5]\
     );
@@ -57756,7 +57729,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][6]\
     );
@@ -57764,7 +57737,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][7]\
     );
@@ -57772,7 +57745,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][8]\
     );
@@ -57780,7 +57753,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(9),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][9]\
     );
@@ -57788,7 +57761,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D_n_0_][0]\
     );
@@ -57836,7 +57809,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D_n_0_][1]\
     );
@@ -57844,7 +57817,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D_n_0_][2]\
     );
@@ -57980,7 +57953,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefLow_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D_n_0_][0]\
     );
@@ -57988,7 +57961,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefLow_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D_n_0_][1]\
     );
@@ -57996,7 +57969,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefLow_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D_n_0_][2]\
     );
@@ -58100,7 +58073,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcTestVoltage_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D_n_0_][6]\
     );
@@ -58108,7 +58081,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcTestVoltage_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D_n_0_][7]\
     );
@@ -58116,7 +58089,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcTestVoltage_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D_n_0_][8]\
     );
@@ -58388,7 +58361,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][0]\
     );
@@ -58396,7 +58369,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(10),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][10]\
     );
@@ -58404,7 +58377,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(11),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][11]\
     );
@@ -58412,7 +58385,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][12]\
     );
@@ -58420,7 +58393,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][13]\
     );
@@ -58428,7 +58401,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][14]\
     );
@@ -58436,7 +58409,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][1]\
     );
@@ -58444,7 +58417,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][2]\
     );
@@ -58452,7 +58425,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][3]\
     );
@@ -58460,7 +58433,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][4]\
     );
@@ -58468,7 +58441,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][5]\
     );
@@ -58476,7 +58449,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][6]\
     );
@@ -58484,7 +58457,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][7]\
     );
@@ -58492,7 +58465,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][8]\
     );
@@ -58500,7 +58473,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(9),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][9]\
     );
@@ -58508,7 +58481,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][0]\
     );
@@ -58516,7 +58489,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(10),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][10]\
     );
@@ -58524,7 +58497,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(11),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][11]\
     );
@@ -58532,7 +58505,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][12]\
     );
@@ -58540,7 +58513,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][13]\
     );
@@ -58548,7 +58521,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][14]\
     );
@@ -58556,7 +58529,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][1]\
     );
@@ -58564,7 +58537,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][2]\
     );
@@ -58572,7 +58545,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][3]\
     );
@@ -58580,7 +58553,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][4]\
     );
@@ -58588,7 +58561,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][5]\
     );
@@ -58596,7 +58569,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][6]\
     );
@@ -58604,7 +58577,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][7]\
     );
@@ -58612,7 +58585,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][8]\
     );
@@ -58620,7 +58593,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(9),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][9]\
     );
@@ -58628,7 +58601,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][0]\
     );
@@ -58636,7 +58609,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(10),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][10]\
     );
@@ -58644,7 +58617,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(11),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][11]\
     );
@@ -58652,7 +58625,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][12]\
     );
@@ -58660,7 +58633,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][13]\
     );
@@ -58668,7 +58641,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][14]\
     );
@@ -58676,7 +58649,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][1]\
     );
@@ -58684,7 +58657,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][2]\
     );
@@ -58692,7 +58665,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][3]\
     );
@@ -58700,7 +58673,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][4]\
     );
@@ -58708,7 +58681,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][5]\
     );
@@ -58716,7 +58689,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][6]\
     );
@@ -58724,7 +58697,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][7]\
     );
@@ -58732,7 +58705,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][8]\
     );
@@ -58740,7 +58713,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(9),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][9]\
     );
@@ -58868,7 +58841,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][0]\
     );
@@ -58876,7 +58849,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(10),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][10]\
     );
@@ -58884,7 +58857,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(11),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][11]\
     );
@@ -58892,7 +58865,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][12]\
     );
@@ -58900,7 +58873,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][13]\
     );
@@ -58908,7 +58881,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][14]\
     );
@@ -58916,7 +58889,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][1]\
     );
@@ -58924,7 +58897,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][2]\
     );
@@ -58932,7 +58905,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][3]\
     );
@@ -58940,7 +58913,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][4]\
     );
@@ -58948,7 +58921,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][5]\
     );
@@ -58956,7 +58929,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][6]\
     );
@@ -58964,7 +58937,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][7]\
     );
@@ -58972,7 +58945,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][8]\
     );
@@ -58980,7 +58953,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(9),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][9]\
     );
@@ -58988,7 +58961,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][0]\
     );
@@ -58996,7 +58969,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(10),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][10]\
     );
@@ -59004,7 +58977,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(11),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][11]\
     );
@@ -59012,7 +58985,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][12]\
     );
@@ -59020,7 +58993,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][13]\
     );
@@ -59028,7 +59001,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][14]\
     );
@@ -59036,7 +59009,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][1]\
     );
@@ -59044,7 +59017,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][2]\
     );
@@ -59052,7 +59025,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][3]\
     );
@@ -59060,7 +59033,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][4]\
     );
@@ -59068,7 +59041,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][5]\
     );
@@ -59076,7 +59049,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][6]\
     );
@@ -59084,7 +59057,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][7]\
     );
@@ -59092,7 +59065,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][8]\
     );
@@ -59100,7 +59073,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(9),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][9]\
     );
@@ -59108,7 +59081,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][0]\
     );
@@ -59116,7 +59089,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(10),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][10]\
     );
@@ -59124,7 +59097,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(11),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][11]\
     );
@@ -59132,7 +59105,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][12]\
     );
@@ -59140,7 +59113,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][13]\
     );
@@ -59148,7 +59121,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][14]\
     );
@@ -59156,7 +59129,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][1]\
     );
@@ -59164,7 +59137,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][2]\
     );
@@ -59172,7 +59145,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][3]\
     );
@@ -59180,7 +59153,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][4]\
     );
@@ -59188,7 +59161,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][5]\
     );
@@ -59196,7 +59169,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][6]\
     );
@@ -59204,7 +59177,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][7]\
     );
@@ -59212,7 +59185,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][8]\
     );
@@ -59220,7 +59193,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__19\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__19\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(9),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][9]\
     );
@@ -59532,7 +59505,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D_n_0_][3]\
     );
@@ -59540,7 +59513,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D_n_0_][4]\
     );
@@ -59548,7 +59521,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D_n_0_][5]\
     );
@@ -59556,7 +59529,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D_n_0_][6]\
     );
@@ -59564,7 +59537,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D_n_0_][7]\
     );
@@ -59572,7 +59545,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__15\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D_n_0_][8]\
     );
@@ -59948,7 +59921,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D_n_0_][0]\
     );
@@ -59996,7 +59969,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D_n_0_][1]\
     );
@@ -60004,7 +59977,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D_n_0_][2]\
     );
@@ -60012,7 +59985,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D_n_0_][3]\
     );
@@ -60020,7 +59993,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D_n_0_][4]\
     );
@@ -60028,7 +60001,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__17\(1),
+      CLR => \SyncSignalSyncFF_S_reg_rep__17\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D_n_0_][5]\
     );
@@ -60308,7 +60281,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][0]\
     );
@@ -60316,7 +60289,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(10),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][10]\
     );
@@ -60324,7 +60297,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(11),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][11]\
     );
@@ -60332,7 +60305,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][12]\
     );
@@ -60340,7 +60313,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][13]\
     );
@@ -60348,7 +60321,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][14]\
     );
@@ -60356,7 +60329,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(15),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][15]\
     );
@@ -60364,7 +60337,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][1]\
     );
@@ -60372,7 +60345,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][2]\
     );
@@ -60380,7 +60353,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][3]\
     );
@@ -60388,7 +60361,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][4]\
     );
@@ -60396,7 +60369,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][5]\
     );
@@ -60404,7 +60377,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][6]\
     );
@@ -60412,7 +60385,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][7]\
     );
@@ -60420,7 +60393,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][8]\
     );
@@ -60428,7 +60401,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(9),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][9]\
     );
@@ -60436,7 +60409,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][0]\
     );
@@ -60444,7 +60417,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(10),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][10]\
     );
@@ -60452,7 +60425,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(11),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][11]\
     );
@@ -60460,7 +60433,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][12]\
     );
@@ -60468,7 +60441,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][13]\
     );
@@ -60476,7 +60449,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][14]\
     );
@@ -60484,7 +60457,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(15),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][15]\
     );
@@ -60492,7 +60465,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][1]\
     );
@@ -60500,7 +60473,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][2]\
     );
@@ -60508,7 +60481,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][3]\
     );
@@ -60516,7 +60489,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(4),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][4]\
     );
@@ -60524,7 +60497,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(5),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][5]\
     );
@@ -60532,7 +60505,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(6),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][6]\
     );
@@ -60540,7 +60513,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(7),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][7]\
     );
@@ -60548,7 +60521,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(8),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][8]\
     );
@@ -60556,7 +60529,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(9),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][9]\
     );
@@ -60588,7 +60561,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => \BiasConfigReg_DP_reg[AEPdBn_D]\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(12)
     );
@@ -60596,7 +60569,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => \BiasConfigReg_DP_reg[AEPdBn_D]\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0\(13)
     );
@@ -60708,7 +60681,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => \BiasConfigReg_DP_reg[AEPuXBp_D]\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(12)
     );
@@ -60716,7 +60689,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => \BiasConfigReg_DP_reg[AEPuXBp_D]\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0\(13)
     );
@@ -60828,7 +60801,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => \BiasConfigReg_DP_reg[AEPuYBp_D]\(12),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(12)
     );
@@ -60836,7 +60809,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => \BiasConfigReg_DP_reg[AEPuYBp_D]\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0\(13)
     );
@@ -60956,7 +60929,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
       D => \BiasConfigReg_DP_reg[AdcCompBp_D]\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D]__0\(13)
     );
@@ -61060,7 +61033,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__14\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
       D => \BiasConfigReg_DP_reg[AdcRefHigh_D]\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefHigh_D]__0\(2)
     );
@@ -61132,7 +61105,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__14\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
       D => \BiasConfigReg_DP_reg[AdcRefLow_D]\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefLow_D]__0\(2)
     );
@@ -61188,7 +61161,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__14\(0),
       D => \BiasConfigReg_DP_reg[AdcTestVoltage_D]\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcTestVoltage_D]__0\(0)
     );
@@ -61276,7 +61249,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__14\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
       D => \BiasConfigReg_DP_reg[ApsCas_D]\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsCas_D]__0\(2)
     );
@@ -61348,7 +61321,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__14\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__15\(1),
       D => \BiasConfigReg_DP_reg[ApsOverflowLevel_D]\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsOverflowLevel_D]__0\(2)
     );
@@ -61444,7 +61417,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => \BiasConfigReg_DP_reg[ApsROSFBn_D]\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D]__0\(14)
     );
@@ -61588,7 +61561,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__5\(0),
       D => \BiasConfigReg_DP_reg[BiasBuffer_D]\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0\(3)
     );
@@ -61676,7 +61649,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
       D => \BiasConfigReg_DP_reg[ColSelLowBn_D]\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(13)
     );
@@ -61684,7 +61657,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
       D => \BiasConfigReg_DP_reg[ColSelLowBn_D]\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0\(14)
     );
@@ -61796,7 +61769,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
       D => \BiasConfigReg_DP_reg[DACBufBp_D]\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0\(13)
     );
@@ -61884,7 +61857,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__14\(0),
       D => \BiasConfigReg_DP_reg[DiffBn_D]\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DiffBn_D]__0\(0)
     );
@@ -62036,7 +62009,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__10\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
       D => \BiasConfigReg_DP_reg[IFRefrBn_D]\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0\(13)
     );
@@ -62188,7 +62161,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__5\(0),
       D => \BiasConfigReg_DP_reg[IFThrBn_D]\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0\(3)
     );
@@ -62276,7 +62249,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
       D => \BiasConfigReg_DP_reg[LcolTimeoutBn_D]\(13),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(13)
     );
@@ -62284,7 +62257,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__11\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
       D => \BiasConfigReg_DP_reg[LcolTimeoutBn_D]\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0\(14)
     );
@@ -62364,7 +62337,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__14\(0),
       D => \BiasConfigReg_DP_reg[LocalBufBn_D]\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LocalBufBn_D]__0\(0)
     );
@@ -62724,7 +62697,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__14\(0),
       D => \BiasConfigReg_DP_reg[PadFollBn_D]\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PadFollBn_D]__0\(0)
     );
@@ -62884,7 +62857,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__14\(0),
       D => \BiasConfigReg_DP_reg[PixInvBn_D]\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D]__0\(14)
     );
@@ -63124,7 +63097,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => \BiasConfigReg_DP_reg[PrSFBp_D]\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0\(14)
     );
@@ -63244,7 +63217,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => \BiasConfigReg_DP_reg[ReadoutBufBp_D]\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D]__0\(14)
     );
@@ -63364,7 +63337,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__12\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__13\(0),
       D => \BiasConfigReg_DP_reg[RefrBp_D]\(14),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D]__0\(14)
     );
@@ -63516,7 +63489,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__5\(0),
       D => \BiasConfigReg_DP_reg[SSN_D]\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0\(3)
     );
@@ -63644,7 +63617,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__4\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__5\(0),
       D => \BiasConfigReg_DP_reg[SSP_D]\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0\(3)
     );
@@ -63708,7 +63681,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D_n_0_][0]\
     );
@@ -63716,7 +63689,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D_n_0_][1]\
     );
@@ -63724,7 +63697,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D_n_0_][2]\
     );
@@ -63732,7 +63705,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D_n_0_][3]\
     );
@@ -63740,7 +63713,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D_n_0_][0]\
     );
@@ -63748,7 +63721,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D_n_0_][1]\
     );
@@ -63756,7 +63729,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D_n_0_][2]\
     );
@@ -63764,7 +63737,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__23\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D_n_0_][3]\
     );
@@ -63836,7 +63809,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux0_D_n_0_][0]\
     );
@@ -63844,7 +63817,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux0_D_n_0_][1]\
     );
@@ -63852,7 +63825,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux0_D_n_0_][2]\
     );
@@ -63860,7 +63833,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux0_D_n_0_][3]\
     );
@@ -63868,7 +63841,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux1_D_n_0_][0]\
     );
@@ -63876,7 +63849,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux1_D_n_0_][1]\
     );
@@ -63884,7 +63857,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux1_D_n_0_][2]\
     );
@@ -63892,7 +63865,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux1_D_n_0_][3]\
     );
@@ -63900,7 +63873,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux2_D_n_0_][0]\
     );
@@ -63908,7 +63881,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux2_D_n_0_][1]\
     );
@@ -63916,7 +63889,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux2_D_n_0_][2]\
     );
@@ -63924,7 +63897,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux2_D_n_0_][3]\
     );
@@ -63932,7 +63905,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux3_D_n_0_][0]\
     );
@@ -63940,7 +63913,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux3_D_n_0_][1]\
     );
@@ -63948,7 +63921,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux3_D_n_0_][2]\
     );
@@ -63956,7 +63929,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => \SyncSignalSyncFF_S_reg_rep__21\(0),
+      CLR => \SyncSignalSyncFF_S_reg_rep__20\(0),
       D => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux3_D_n_0_][3]\
     );
@@ -64020,7 +63993,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \^chipconfigreg_dp_reg[aernarow_s]\,
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AERnArow_S]__0\
     );
@@ -64028,7 +64001,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[AnalogMux0_D]\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0\(0)
     );
@@ -64036,7 +64009,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[AnalogMux0_D]\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0\(1)
     );
@@ -64044,7 +64017,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[AnalogMux0_D]\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0\(2)
     );
@@ -64052,7 +64025,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[AnalogMux0_D]\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0\(3)
     );
@@ -64060,7 +64033,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[AnalogMux1_D]\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0\(0)
     );
@@ -64068,7 +64041,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[AnalogMux1_D]\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0\(1)
     );
@@ -64076,7 +64049,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[AnalogMux1_D]\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0\(2)
     );
@@ -64084,7 +64057,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[AnalogMux1_D]\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0\(3)
     );
@@ -64092,7 +64065,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[AnalogMux2_D]\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D]__0\(0)
     );
@@ -64100,7 +64073,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[AnalogMux2_D]\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D]__0\(1)
     );
@@ -64108,7 +64081,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[AnalogMux2_D]\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D]__0\(2)
     );
@@ -64116,7 +64089,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[AnalogMux2_D]\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D]__0\(3)
     );
@@ -64124,7 +64097,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[BiasMux0_D]\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D]__0\(0)
     );
@@ -64132,7 +64105,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[BiasMux0_D]\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D]__0\(1)
     );
@@ -64140,7 +64113,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[BiasMux0_D]\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D]__0\(2)
     );
@@ -64148,7 +64121,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[BiasMux0_D]\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D]__0\(3)
     );
@@ -64156,7 +64129,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux0_D]\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0\(0)
     );
@@ -64164,7 +64137,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux0_D]\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0\(1)
     );
@@ -64172,7 +64145,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux0_D]\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0\(2)
     );
@@ -64180,7 +64153,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux0_D]\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0\(3)
     );
@@ -64188,7 +64161,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux1_D]\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0\(0)
     );
@@ -64196,7 +64169,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux1_D]\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0\(1)
     );
@@ -64204,7 +64177,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux1_D]\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0\(2)
     );
@@ -64212,7 +64185,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux1_D]\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0\(3)
     );
@@ -64220,7 +64193,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux2_D]\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0\(0)
     );
@@ -64228,7 +64201,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux2_D]\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0\(1)
     );
@@ -64236,7 +64209,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux2_D]\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0\(2)
     );
@@ -64244,7 +64217,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux2_D]\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0\(3)
     );
@@ -64252,7 +64225,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux3_D]\(0),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0\(0)
     );
@@ -64260,7 +64233,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux3_D]\(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0\(1)
     );
@@ -64268,7 +64241,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux3_D]\(2),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0\(2)
     );
@@ -64276,7 +64249,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \ChipConfigReg_DP_reg[DigitalMux3_D]\(3),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0\(3)
     );
@@ -64285,7 +64258,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \^chipconfigreg_dp_reg[globalshutter_s]\,
-      PRE => AR(0),
+      PRE => AR(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[GlobalShutter_S]__0\
     );
 \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[ResetCalibNeuron_S]\: unisim.vcomponents.FDPE
@@ -64293,7 +64266,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \^chipconfigreg_dp_reg[resetcalibneuron_s]\,
-      PRE => AR(0),
+      PRE => AR(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[ResetCalibNeuron_S]__0\
     );
 \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[ResetTestPixel_S]\: unisim.vcomponents.FDPE
@@ -64301,14 +64274,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \^chipconfigreg_dp_reg[resettestpixel_s]\,
-      PRE => AR(0),
+      PRE => AR(1),
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[ResetTestPixel_S]__0\
     );
 \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[SelectGrayCounter_S]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \^chipconfigreg_dp_reg[selectgraycounter_s]\,
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[SelectGrayCounter_S]__0\
     );
@@ -64316,7 +64289,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \^chipconfigreg_dp_reg[testadc_s]\,
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[TestADC_S]__0\
     );
@@ -64324,7 +64297,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \^chipconfigreg_dp_reg[typencalibneuron_s]\,
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[TypeNCalibNeuron_S]__0\
     );
@@ -64332,7 +64305,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => AR(0),
+      CLR => AR(1),
       D => \^chipconfigreg_dp_reg[useaout_s]\,
       Q => \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[UseAOut_S]__0\
     );
@@ -64924,7 +64897,7 @@ architecture STRUCTURE of brd_testAERDVSSM_0_0_testAERDVSSM is
   signal State_DP : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal State_DP_0 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal SyncInClockSync_C : STD_LOGIC;
-  signal SystemInfoConfigParamOutput_D : STD_LOGIC_VECTOR ( 6 downto 0 );
+  signal SystemInfoConfigParamOutput_D : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal chipBiasSelector_n_10 : STD_LOGIC;
   signal chipBiasSelector_n_11 : STD_LOGIC;
   signal chipBiasSelector_n_12 : STD_LOGIC;
@@ -64988,7 +64961,7 @@ architecture STRUCTURE of brd_testAERDVSSM_0_0_testAERDVSSM is
   signal dvsaerSPIConfig_n_3 : STD_LOGIC;
   signal dvsaerSPIConfig_n_40 : STD_LOGIC;
   signal dvsaerSPIConfig_n_68 : STD_LOGIC;
-  signal logiecResetSync_n_1 : STD_LOGIC;
+  signal logiecResetSync_n_0 : STD_LOGIC;
   signal logiecResetSync_n_10 : STD_LOGIC;
   signal logiecResetSync_n_11 : STD_LOGIC;
   signal logiecResetSync_n_12 : STD_LOGIC;
@@ -65024,7 +64997,7 @@ architecture STRUCTURE of brd_testAERDVSSM_0_0_testAERDVSSM is
   signal logiecResetSync_n_9 : STD_LOGIC;
   signal multiplexerSM_n_100 : STD_LOGIC;
   signal multiplexerSPIConfig_n_4 : STD_LOGIC;
-  signal p_0_in : STD_LOGIC_VECTOR ( 6 downto 0 );
+  signal p_0_in : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal p_0_in_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal p_0_in_2 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal spiConfiguration_n_113 : STD_LOGIC;
@@ -66347,7 +66320,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(0),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][0]\
     );
@@ -66355,7 +66328,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(10),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][10]\
     );
@@ -66363,7 +66336,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(11),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][11]\
     );
@@ -66371,7 +66344,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(12),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][12]\
     );
@@ -66379,7 +66352,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(13),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][13]\
     );
@@ -66387,7 +66360,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(14),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][14]\
     );
@@ -66395,7 +66368,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(15),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][15]\
     );
@@ -66403,7 +66376,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(16),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][16]\
     );
@@ -66411,7 +66384,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(17),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][17]\
     );
@@ -66419,7 +66392,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(18),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][18]\
     );
@@ -66427,7 +66400,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(19),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][19]\
     );
@@ -66435,7 +66408,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(1),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][1]\
     );
@@ -66443,7 +66416,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(20),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][20]\
     );
@@ -66451,7 +66424,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(21),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][21]\
     );
@@ -66459,7 +66432,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(22),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][22]\
     );
@@ -66467,7 +66440,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(23),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][23]\
     );
@@ -66475,7 +66448,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(24),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][24]\
     );
@@ -66483,7 +66456,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(25),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][25]\
     );
@@ -66491,7 +66464,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(26),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][26]\
     );
@@ -66499,7 +66472,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(27),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][27]\
     );
@@ -66507,7 +66480,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(28),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][28]\
     );
@@ -66515,7 +66488,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(29),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][29]\
     );
@@ -66523,7 +66496,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(2),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][2]\
     );
@@ -66531,7 +66504,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(30),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][30]\
     );
@@ -66539,7 +66512,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(31),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][31]\
     );
@@ -66547,7 +66520,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(32),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][32]\
     );
@@ -66555,7 +66528,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(33),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][33]\
     );
@@ -66563,7 +66536,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(34),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][34]\
     );
@@ -66571,7 +66544,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(35),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][35]\
     );
@@ -66579,7 +66552,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(36),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][36]\
     );
@@ -66587,7 +66560,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(37),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][37]\
     );
@@ -66595,7 +66568,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(38),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][38]\
     );
@@ -66603,7 +66576,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(39),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][39]\
     );
@@ -66611,7 +66584,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(3),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][3]\
     );
@@ -66619,7 +66592,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(4),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][4]\
     );
@@ -66627,7 +66600,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(5),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][5]\
     );
@@ -66635,7 +66608,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(6),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][6]\
     );
@@ -66643,7 +66616,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(7),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][7]\
     );
@@ -66651,7 +66624,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(8),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][8]\
     );
@@ -66659,7 +66632,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0\(9),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][9]\
     );
@@ -66667,7 +66640,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(0),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][0]\
     );
@@ -66675,7 +66648,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(10),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][10]\
     );
@@ -66683,7 +66656,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(11),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][11]\
     );
@@ -66691,7 +66664,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(12),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][12]\
     );
@@ -66699,7 +66672,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(13),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][13]\
     );
@@ -66707,7 +66680,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(14),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][14]\
     );
@@ -66715,7 +66688,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(15),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][15]\
     );
@@ -66723,7 +66696,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(16),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][16]\
     );
@@ -66731,7 +66704,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(17),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][17]\
     );
@@ -66739,7 +66712,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(18),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][18]\
     );
@@ -66747,7 +66720,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(19),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][19]\
     );
@@ -66755,7 +66728,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(1),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][1]\
     );
@@ -66763,7 +66736,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(20),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][20]\
     );
@@ -66771,7 +66744,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(21),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][21]\
     );
@@ -66779,7 +66752,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(22),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][22]\
     );
@@ -66787,7 +66760,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(23),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][23]\
     );
@@ -66795,7 +66768,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(24),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][24]\
     );
@@ -66803,7 +66776,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(25),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][25]\
     );
@@ -66811,7 +66784,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(26),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][26]\
     );
@@ -66819,7 +66792,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(27),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][27]\
     );
@@ -66827,7 +66800,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(28),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][28]\
     );
@@ -66835,7 +66808,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(29),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][29]\
     );
@@ -66843,7 +66816,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(2),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][2]\
     );
@@ -66851,7 +66824,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(30),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][30]\
     );
@@ -66859,7 +66832,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(31),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][31]\
     );
@@ -66867,7 +66840,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(32),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][32]\
     );
@@ -66875,7 +66848,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(33),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][33]\
     );
@@ -66883,7 +66856,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(34),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][34]\
     );
@@ -66891,7 +66864,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(35),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][35]\
     );
@@ -66899,7 +66872,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(36),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][36]\
     );
@@ -66907,7 +66880,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(37),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][37]\
     );
@@ -66915,7 +66888,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(38),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][38]\
     );
@@ -66923,7 +66896,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(39),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][39]\
     );
@@ -66931,7 +66904,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(3),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][3]\
     );
@@ -66939,7 +66912,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(4),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][4]\
     );
@@ -66947,7 +66920,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(5),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][5]\
     );
@@ -66955,7 +66928,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(6),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][6]\
     );
@@ -66963,7 +66936,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(7),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][7]\
     );
@@ -66971,7 +66944,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(8),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][8]\
     );
@@ -66979,7 +66952,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0\(9),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][9]\
     );
@@ -66987,7 +66960,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(0),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][0]\
     );
@@ -66995,7 +66968,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_4,
+      CLR => logiecResetSync_n_5,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(10),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][10]\
     );
@@ -67003,7 +66976,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_4,
+      CLR => logiecResetSync_n_5,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(11),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][11]\
     );
@@ -67011,7 +66984,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_4,
+      CLR => logiecResetSync_n_5,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(12),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][12]\
     );
@@ -67027,7 +67000,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(14),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][14]\
     );
@@ -67035,7 +67008,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(15),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][15]\
     );
@@ -67043,7 +67016,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(16),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][16]\
     );
@@ -67051,7 +67024,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(17),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][17]\
     );
@@ -67059,7 +67032,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(18),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][18]\
     );
@@ -67067,7 +67040,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(19),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][19]\
     );
@@ -67075,7 +67048,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(1),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][1]\
     );
@@ -67083,7 +67056,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(20),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][20]\
     );
@@ -67091,7 +67064,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(21),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][21]\
     );
@@ -67099,7 +67072,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(22),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][22]\
     );
@@ -67107,7 +67080,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(23),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][23]\
     );
@@ -67115,7 +67088,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(24),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][24]\
     );
@@ -67123,7 +67096,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(25),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][25]\
     );
@@ -67131,7 +67104,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(26),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][26]\
     );
@@ -67139,7 +67112,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(27),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][27]\
     );
@@ -67147,7 +67120,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(28),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][28]\
     );
@@ -67155,7 +67128,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(29),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][29]\
     );
@@ -67163,7 +67136,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(2),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][2]\
     );
@@ -67171,7 +67144,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(30),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][30]\
     );
@@ -67179,7 +67152,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(31),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][31]\
     );
@@ -67187,7 +67160,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(32),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][32]\
     );
@@ -67195,7 +67168,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(33),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][33]\
     );
@@ -67203,7 +67176,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(34),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][34]\
     );
@@ -67211,7 +67184,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(35),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][35]\
     );
@@ -67219,7 +67192,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(36),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][36]\
     );
@@ -67227,7 +67200,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(37),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][37]\
     );
@@ -67235,7 +67208,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(38),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][38]\
     );
@@ -67243,7 +67216,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(39),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][39]\
     );
@@ -67251,7 +67224,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(3),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][3]\
     );
@@ -67259,7 +67232,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(4),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][4]\
     );
@@ -67267,7 +67240,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(5),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][5]\
     );
@@ -67275,7 +67248,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(6),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][6]\
     );
@@ -67283,7 +67256,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(7),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][7]\
     );
@@ -67291,7 +67264,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(8),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][8]\
     );
@@ -67299,7 +67272,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_4,
+      CLR => logiecResetSync_n_5,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0\(9),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][9]\
     );
@@ -67307,7 +67280,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(0),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][0]\
     );
@@ -67315,7 +67288,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_4,
+      CLR => logiecResetSync_n_5,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(10),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][10]\
     );
@@ -67323,7 +67296,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_4,
+      CLR => logiecResetSync_n_5,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(11),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][11]\
     );
@@ -67331,7 +67304,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_4,
+      CLR => logiecResetSync_n_5,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(12),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][12]\
     );
@@ -67347,7 +67320,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(14),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][14]\
     );
@@ -67355,7 +67328,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(15),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][15]\
     );
@@ -67363,7 +67336,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(16),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][16]\
     );
@@ -67371,7 +67344,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(17),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][17]\
     );
@@ -67379,7 +67352,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(18),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][18]\
     );
@@ -67387,7 +67360,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(19),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][19]\
     );
@@ -67395,7 +67368,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(1),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][1]\
     );
@@ -67403,7 +67376,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(20),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][20]\
     );
@@ -67411,7 +67384,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(21),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][21]\
     );
@@ -67419,7 +67392,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(22),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][22]\
     );
@@ -67427,7 +67400,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(23),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][23]\
     );
@@ -67435,7 +67408,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(24),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][24]\
     );
@@ -67443,7 +67416,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(25),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][25]\
     );
@@ -67451,7 +67424,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(26),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][26]\
     );
@@ -67459,7 +67432,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(27),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][27]\
     );
@@ -67467,7 +67440,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(28),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][28]\
     );
@@ -67475,7 +67448,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(29),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][29]\
     );
@@ -67483,7 +67456,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(2),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][2]\
     );
@@ -67491,7 +67464,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(30),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][30]\
     );
@@ -67499,7 +67472,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(31),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][31]\
     );
@@ -67507,7 +67480,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(32),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][32]\
     );
@@ -67515,7 +67488,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(33),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][33]\
     );
@@ -67523,7 +67496,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(34),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][34]\
     );
@@ -67531,7 +67504,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(35),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][35]\
     );
@@ -67539,7 +67512,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(36),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][36]\
     );
@@ -67547,7 +67520,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(37),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][37]\
     );
@@ -67555,7 +67528,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(38),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][38]\
     );
@@ -67563,7 +67536,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(39),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][39]\
     );
@@ -67571,7 +67544,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(3),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][3]\
     );
@@ -67579,7 +67552,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(4),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][4]\
     );
@@ -67587,7 +67560,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(5),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][5]\
     );
@@ -67595,7 +67568,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(6),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][6]\
     );
@@ -67603,7 +67576,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(7),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][7]\
     );
@@ -67611,7 +67584,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(8),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][8]\
     );
@@ -67619,7 +67592,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_4,
+      CLR => logiecResetSync_n_5,
       D => \DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0\(9),
       Q => \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][9]\
     );
@@ -67635,7 +67608,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][0]\
     );
@@ -67644,14 +67617,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(1),
-      PRE => logiecResetSync_n_28,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][1]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(2),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][2]\
     );
@@ -67660,7 +67633,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(3),
-      PRE => logiecResetSync_n_28,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][3]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][4]\: unisim.vcomponents.FDPE
@@ -67668,14 +67641,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(4),
-      PRE => logiecResetSync_n_28,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][4]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_28,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][5]\
     );
@@ -67684,14 +67657,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(6),
-      PRE => logiecResetSync_n_28,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][6]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_28,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][7]\
     );
@@ -67700,14 +67673,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(8),
-      PRE => logiecResetSync_n_28,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel0Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_28,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][0]\
     );
@@ -67715,7 +67688,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_28,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(1),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][1]\
     );
@@ -67724,14 +67697,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(2),
-      PRE => logiecResetSync_n_28,
+      PRE => logiecResetSync_n_29,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][2]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel0Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_28,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(3),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][3]\
     );
@@ -67739,7 +67712,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_28,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(4),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][4]\
     );
@@ -67747,7 +67720,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_28,
+      CLR => logiecResetSync_n_29,
       D => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][5]\
     );
@@ -67755,7 +67728,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_28,
+      CLR => logiecResetSync_n_29,
       D => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(6),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][6]\
     );
@@ -67763,7 +67736,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_28,
+      CLR => logiecResetSync_n_29,
       D => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][7]\
     );
@@ -67772,14 +67745,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(8),
-      PRE => logiecResetSync_n_28,
+      PRE => logiecResetSync_n_29,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][0]\
     );
@@ -67788,14 +67761,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(1),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][1]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(2),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][2]\
     );
@@ -67804,7 +67777,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(3),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][3]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][4]\: unisim.vcomponents.FDPE
@@ -67812,14 +67785,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(4),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][4]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][5]\
     );
@@ -67828,14 +67801,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(6),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][6]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][7]\
     );
@@ -67844,14 +67817,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][0]\
     );
@@ -67859,7 +67832,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(1),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][1]\
     );
@@ -67868,14 +67841,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(2),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][2]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(3),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][3]\
     );
@@ -67883,7 +67856,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(4),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][4]\
     );
@@ -67891,7 +67864,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][5]\
     );
@@ -67899,7 +67872,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(6),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][6]\
     );
@@ -67907,7 +67880,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][7]\
     );
@@ -67916,14 +67889,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][0]\
     );
@@ -67932,14 +67905,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(1),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][1]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(2),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][2]\
     );
@@ -67948,7 +67921,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(3),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][3]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][4]\: unisim.vcomponents.FDPE
@@ -67956,14 +67929,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(4),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][4]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][5]\
     );
@@ -67972,14 +67945,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(6),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][6]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][7]\
     );
@@ -67988,14 +67961,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][0]\
     );
@@ -68003,7 +67976,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(1),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][1]\
     );
@@ -68012,14 +67985,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(2),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][2]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(3),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][3]\
     );
@@ -68027,7 +68000,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(4),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][4]\
     );
@@ -68035,7 +68008,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][5]\
     );
@@ -68043,7 +68016,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(6),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][6]\
     );
@@ -68051,7 +68024,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][7]\
     );
@@ -68060,14 +68033,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][0]\
     );
@@ -68076,14 +68049,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(1),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][1]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(2),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][2]\
     );
@@ -68092,7 +68065,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(3),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][3]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][4]\: unisim.vcomponents.FDPE
@@ -68100,14 +68073,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(4),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][4]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][5]\
     );
@@ -68116,14 +68089,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(6),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][6]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][7]\
     );
@@ -68132,14 +68105,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][0]\
     );
@@ -68147,7 +68120,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(1),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][1]\
     );
@@ -68156,14 +68129,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(2),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][2]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(3),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][3]\
     );
@@ -68171,7 +68144,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(4),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][4]\
     );
@@ -68179,7 +68152,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][5]\
     );
@@ -68187,7 +68160,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(6),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][6]\
     );
@@ -68195,7 +68168,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][7]\
     );
@@ -68204,14 +68177,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][0]\
     );
@@ -68220,14 +68193,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(1),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][1]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(2),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][2]\
     );
@@ -68236,7 +68209,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(3),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][3]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][4]\: unisim.vcomponents.FDPE
@@ -68244,14 +68217,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(4),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][4]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][5]\
     );
@@ -68260,14 +68233,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(6),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][6]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][7]\
     );
@@ -68276,14 +68249,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel4Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][0]\
     );
@@ -68291,7 +68264,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(1),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][1]\
     );
@@ -68300,14 +68273,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(2),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][2]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel4Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(3),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][3]\
     );
@@ -68315,7 +68288,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(4),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][4]\
     );
@@ -68323,7 +68296,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][5]\
     );
@@ -68331,7 +68304,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(6),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][6]\
     );
@@ -68339,7 +68312,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][7]\
     );
@@ -68348,14 +68321,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][0]\
     );
@@ -68364,14 +68337,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(1),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][1]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(2),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][2]\
     );
@@ -68380,7 +68353,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(3),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][3]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][4]\: unisim.vcomponents.FDPE
@@ -68388,14 +68361,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(4),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][4]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][5]\
     );
@@ -68404,14 +68377,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(6),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][6]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][7]\
     );
@@ -68420,14 +68393,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel5Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][0]\
     );
@@ -68435,7 +68408,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(1),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][1]\
     );
@@ -68444,14 +68417,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(2),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][2]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel5Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(3),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][3]\
     );
@@ -68459,7 +68432,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(4),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][4]\
     );
@@ -68467,7 +68440,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][5]\
     );
@@ -68475,7 +68448,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(6),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][6]\
     );
@@ -68483,7 +68456,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][7]\
     );
@@ -68492,14 +68465,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][0]\
     );
@@ -68508,14 +68481,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(1),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][1]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(2),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][2]\
     );
@@ -68524,7 +68497,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(3),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][3]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][4]\: unisim.vcomponents.FDPE
@@ -68532,14 +68505,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(4),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][4]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][5]\
     );
@@ -68548,14 +68521,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(6),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][6]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][7]\
     );
@@ -68564,14 +68537,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel6Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][0]\
     );
@@ -68579,7 +68552,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(1),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][1]\
     );
@@ -68588,14 +68561,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(2),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][2]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel6Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(3),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][3]\
     );
@@ -68603,7 +68576,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(4),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][4]\
     );
@@ -68611,7 +68584,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][5]\
     );
@@ -68619,7 +68592,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(6),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][6]\
     );
@@ -68627,7 +68600,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][7]\
     );
@@ -68636,14 +68609,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][0]\
     );
@@ -68652,14 +68625,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(1),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][1]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(2),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][2]\
     );
@@ -68668,7 +68641,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(3),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][3]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][4]\: unisim.vcomponents.FDPE
@@ -68676,14 +68649,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(4),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][4]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][5]\
     );
@@ -68692,14 +68665,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(6),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][6]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][7]\
     );
@@ -68708,14 +68681,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel7Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][0]\
     );
@@ -68723,7 +68696,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(1),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][1]\
     );
@@ -68732,14 +68705,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(2),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][2]\
     );
 \DVSAERConfigReg2_D_reg[FilterPixel7Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(3),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][3]\
     );
@@ -68747,7 +68720,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(4),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][4]\
     );
@@ -68755,7 +68728,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][5]\
     );
@@ -68763,7 +68736,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(6),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][6]\
     );
@@ -68771,7 +68744,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_29,
+      CLR => logiecResetSync_n_30,
       D => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][7]\
     );
@@ -68780,7 +68753,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(8),
-      PRE => logiecResetSync_n_29,
+      PRE => logiecResetSync_n_30,
       Q => \DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][0]\: unisim.vcomponents.FDPE
@@ -68788,14 +68761,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(0),
-      PRE => logiecResetSync_n_30,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][0]\
     );
 \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][1]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(1),
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][1]\
     );
@@ -68803,7 +68776,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(2),
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][2]\
     );
@@ -68812,7 +68785,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(3),
-      PRE => logiecResetSync_n_30,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][3]\
     );
 \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][4]\: unisim.vcomponents.FDPE
@@ -68820,14 +68793,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(4),
-      PRE => logiecResetSync_n_30,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][4]\
     );
 \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][5]\
     );
@@ -68836,14 +68809,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(6),
-      PRE => logiecResetSync_n_30,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][6]\
     );
 \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][7]\
     );
@@ -68852,7 +68825,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(8),
-      PRE => logiecResetSync_n_30,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][0]\: unisim.vcomponents.FDPE
@@ -68860,7 +68833,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(0),
-      PRE => logiecResetSync_n_30,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][0]\
     );
 \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][1]\: unisim.vcomponents.FDPE
@@ -68868,14 +68841,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(1),
-      PRE => logiecResetSync_n_30,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][1]\
     );
 \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(2),
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][2]\
     );
@@ -68883,7 +68856,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(3),
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][3]\
     );
@@ -68891,7 +68864,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(4),
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][4]\
     );
@@ -68899,7 +68872,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][5]\
     );
@@ -68907,7 +68880,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(6),
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][6]\
     );
@@ -68915,7 +68888,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][7]\
     );
@@ -68924,14 +68897,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(8),
-      PRE => logiecResetSync_n_30,
+      PRE => logiecResetSync_n_31,
       Q => \DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][8]\
     );
 \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][0]\
     );
@@ -68939,7 +68912,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(1),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][1]\
     );
@@ -68947,7 +68920,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(2),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][2]\
     );
@@ -68955,7 +68928,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(3),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][3]\
     );
@@ -68963,7 +68936,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(4),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][4]\
     );
@@ -68971,7 +68944,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][5]\
     );
@@ -68979,7 +68952,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(6),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][6]\
     );
@@ -68987,7 +68960,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][7]\
     );
@@ -68995,7 +68968,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(8),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][8]\
     );
@@ -69003,7 +68976,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(0),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][0]\
     );
@@ -69011,7 +68984,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(1),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][1]\
     );
@@ -69019,7 +68992,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(2),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][2]\
     );
@@ -69027,7 +69000,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(3),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][3]\
     );
@@ -69035,7 +69008,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(4),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][4]\
     );
@@ -69043,7 +69016,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(5),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][5]\
     );
@@ -69051,7 +69024,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(6),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][6]\
     );
@@ -69059,7 +69032,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(7),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][7]\
     );
@@ -69067,7 +69040,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_30,
+      CLR => logiecResetSync_n_31,
       D => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(8),
       Q => \DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][8]\
     );
@@ -69091,7 +69064,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[ExternalAERControl_S]\,
       Q => \DVSAERConfigReg_D_reg[ExternalAERControl_S]__0\
     );
@@ -69099,7 +69072,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel0Column_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(0)
     );
@@ -69108,14 +69081,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel0Column_D]\(1),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel0Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel0Column_D]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(2)
     );
@@ -69124,7 +69097,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel0Column_D]\(3),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel0Column_D][4]\: unisim.vcomponents.FDPE
@@ -69132,14 +69105,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel0Column_D]\(4),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel0Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel0Column_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(5)
     );
@@ -69148,14 +69121,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel0Column_D]\(6),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel0Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel0Column_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(7)
     );
@@ -69164,14 +69137,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel0Column_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Column_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel0Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel0Row_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(0)
     );
@@ -69179,7 +69152,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel0Row_D]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(1)
     );
@@ -69188,14 +69161,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel0Row_D]\(2),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(2)
     );
 \DVSAERConfigReg_D_reg[FilterPixel0Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel0Row_D]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(3)
     );
@@ -69203,7 +69176,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel0Row_D]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(4)
     );
@@ -69211,7 +69184,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel0Row_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(5)
     );
@@ -69219,7 +69192,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel0Row_D]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(6)
     );
@@ -69227,7 +69200,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel0Row_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(7)
     );
@@ -69236,14 +69209,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel0Row_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel0Row_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel1Column_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(0)
     );
@@ -69252,14 +69225,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel1Column_D]\(1),
-      PRE => logiecResetSync_n_5,
+      PRE => logiecResetSync_n_7,
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel1Column_D]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(2)
     );
@@ -69268,7 +69241,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel1Column_D]\(3),
-      PRE => logiecResetSync_n_5,
+      PRE => logiecResetSync_n_7,
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Column_D][4]\: unisim.vcomponents.FDPE
@@ -69276,14 +69249,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel1Column_D]\(4),
-      PRE => logiecResetSync_n_5,
+      PRE => logiecResetSync_n_7,
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel1Column_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(5)
     );
@@ -69292,14 +69265,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel1Column_D]\(6),
-      PRE => logiecResetSync_n_5,
+      PRE => logiecResetSync_n_7,
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel1Column_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(7)
     );
@@ -69308,14 +69281,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel1Column_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Column_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel1Row_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(0)
     );
@@ -69323,7 +69296,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel1Row_D]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(1)
     );
@@ -69332,14 +69305,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel1Row_D]\(2),
-      PRE => logiecResetSync_n_5,
+      PRE => logiecResetSync_n_7,
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(2)
     );
 \DVSAERConfigReg_D_reg[FilterPixel1Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel1Row_D]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(3)
     );
@@ -69347,7 +69320,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel1Row_D]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(4)
     );
@@ -69355,7 +69328,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel1Row_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(5)
     );
@@ -69363,7 +69336,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel1Row_D]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(6)
     );
@@ -69371,7 +69344,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel1Row_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(7)
     );
@@ -69380,14 +69353,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel1Row_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel1Row_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel2Column_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(0)
     );
@@ -69396,14 +69369,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel2Column_D]\(1),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel2Column_D]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(2)
     );
@@ -69412,7 +69385,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel2Column_D]\(3),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Column_D][4]\: unisim.vcomponents.FDPE
@@ -69420,14 +69393,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel2Column_D]\(4),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel2Column_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(5)
     );
@@ -69436,14 +69409,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel2Column_D]\(6),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel2Column_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(7)
     );
@@ -69452,14 +69425,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel2Column_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Column_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel2Row_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(0)
     );
@@ -69467,7 +69440,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel2Row_D]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(1)
     );
@@ -69476,14 +69449,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel2Row_D]\(2),
-      PRE => logiecResetSync_n_5,
+      PRE => logiecResetSync_n_7,
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(2)
     );
 \DVSAERConfigReg_D_reg[FilterPixel2Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel2Row_D]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(3)
     );
@@ -69491,7 +69464,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel2Row_D]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(4)
     );
@@ -69499,7 +69472,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel2Row_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(5)
     );
@@ -69507,7 +69480,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel2Row_D]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(6)
     );
@@ -69515,7 +69488,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel2Row_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(7)
     );
@@ -69524,14 +69497,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel2Row_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel2Row_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel3Column_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(0)
     );
@@ -69540,14 +69513,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel3Column_D]\(1),
-      PRE => logiecResetSync_n_3,
+      PRE => logiecResetSync_n_4,
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel3Column_D]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(2)
     );
@@ -69556,7 +69529,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel3Column_D]\(3),
-      PRE => logiecResetSync_n_3,
+      PRE => logiecResetSync_n_4,
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Column_D][4]\: unisim.vcomponents.FDPE
@@ -69564,14 +69537,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel3Column_D]\(4),
-      PRE => logiecResetSync_n_3,
+      PRE => logiecResetSync_n_4,
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfig_D[FilterPixel3Column_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(5)
     );
@@ -69580,14 +69553,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel3Column_D]\(6),
-      PRE => logiecResetSync_n_3,
+      PRE => logiecResetSync_n_4,
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfig_D[FilterPixel3Column_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(7)
     );
@@ -69596,14 +69569,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel3Column_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Column_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel3Row_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(0)
     );
@@ -69611,7 +69584,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel3Row_D]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(1)
     );
@@ -69620,14 +69593,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel3Row_D]\(2),
-      PRE => logiecResetSync_n_3,
+      PRE => logiecResetSync_n_4,
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(2)
     );
 \DVSAERConfigReg_D_reg[FilterPixel3Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel3Row_D]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(3)
     );
@@ -69635,7 +69608,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel3Row_D]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(4)
     );
@@ -69643,7 +69616,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfig_D[FilterPixel3Row_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(5)
     );
@@ -69651,7 +69624,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel3Row_D]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(6)
     );
@@ -69659,7 +69632,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfig_D[FilterPixel3Row_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(7)
     );
@@ -69668,14 +69641,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel3Row_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel3Row_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel4Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel4Column_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(0)
     );
@@ -69684,14 +69657,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel4Column_D]\(1),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel4Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel4Column_D]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(2)
     );
@@ -69700,7 +69673,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel4Column_D]\(3),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel4Column_D][4]\: unisim.vcomponents.FDPE
@@ -69708,14 +69681,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel4Column_D]\(4),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel4Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel4Column_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(5)
     );
@@ -69724,14 +69697,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel4Column_D]\(6),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel4Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel4Column_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(7)
     );
@@ -69740,14 +69713,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel4Column_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Column_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel4Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel4Row_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(0)
     );
@@ -69755,7 +69728,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfig_D[FilterPixel4Row_D]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(1)
     );
@@ -69764,14 +69737,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel4Row_D]\(2),
-      PRE => logiecResetSync_n_3,
+      PRE => logiecResetSync_n_4,
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(2)
     );
 \DVSAERConfigReg_D_reg[FilterPixel4Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfig_D[FilterPixel4Row_D]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(3)
     );
@@ -69779,7 +69752,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfig_D[FilterPixel4Row_D]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(4)
     );
@@ -69787,7 +69760,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfig_D[FilterPixel4Row_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(5)
     );
@@ -69795,7 +69768,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfig_D[FilterPixel4Row_D]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(6)
     );
@@ -69803,7 +69776,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \DVSAERConfig_D[FilterPixel4Row_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(7)
     );
@@ -69812,14 +69785,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel4Row_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel4Row_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel5Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel5Column_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(0)
     );
@@ -69828,14 +69801,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel5Column_D]\(1),
-      PRE => logiecResetSync_n_5,
+      PRE => logiecResetSync_n_7,
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel5Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel5Column_D]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(2)
     );
@@ -69844,7 +69817,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel5Column_D]\(3),
-      PRE => logiecResetSync_n_5,
+      PRE => logiecResetSync_n_7,
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel5Column_D][4]\: unisim.vcomponents.FDPE
@@ -69852,14 +69825,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel5Column_D]\(4),
-      PRE => logiecResetSync_n_5,
+      PRE => logiecResetSync_n_7,
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel5Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel5Column_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(5)
     );
@@ -69868,14 +69841,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel5Column_D]\(6),
-      PRE => logiecResetSync_n_5,
+      PRE => logiecResetSync_n_7,
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel5Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel5Column_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(7)
     );
@@ -69884,14 +69857,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel5Column_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Column_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel5Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel5Row_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(0)
     );
@@ -69899,7 +69872,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel5Row_D]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(1)
     );
@@ -69908,14 +69881,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel5Row_D]\(2),
-      PRE => logiecResetSync_n_5,
+      PRE => logiecResetSync_n_7,
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(2)
     );
 \DVSAERConfigReg_D_reg[FilterPixel5Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel5Row_D]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(3)
     );
@@ -69923,7 +69896,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel5Row_D]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(4)
     );
@@ -69931,7 +69904,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel5Row_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(5)
     );
@@ -69939,7 +69912,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel5Row_D]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(6)
     );
@@ -69947,7 +69920,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel5Row_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(7)
     );
@@ -69956,14 +69929,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel5Row_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel5Row_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel6Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel6Column_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(0)
     );
@@ -69972,14 +69945,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel6Column_D]\(1),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel6Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel6Column_D]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(2)
     );
@@ -69988,7 +69961,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel6Column_D]\(3),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel6Column_D][4]\: unisim.vcomponents.FDPE
@@ -69996,14 +69969,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel6Column_D]\(4),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel6Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel6Column_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(5)
     );
@@ -70012,14 +69985,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel6Column_D]\(6),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel6Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel6Column_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(7)
     );
@@ -70028,14 +70001,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel6Column_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Column_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel6Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterPixel6Row_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(0)
     );
@@ -70043,7 +70016,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel6Row_D]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(1)
     );
@@ -70052,14 +70025,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel6Row_D]\(2),
-      PRE => logiecResetSync_n_5,
+      PRE => logiecResetSync_n_7,
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(2)
     );
 \DVSAERConfigReg_D_reg[FilterPixel6Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel6Row_D]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(3)
     );
@@ -70067,7 +70040,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel6Row_D]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(4)
     );
@@ -70075,7 +70048,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel6Row_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(5)
     );
@@ -70083,7 +70056,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel6Row_D]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(6)
     );
@@ -70091,7 +70064,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_5,
+      CLR => logiecResetSync_n_7,
       D => \DVSAERConfig_D[FilterPixel6Row_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(7)
     );
@@ -70100,14 +70073,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel6Row_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_13,
       Q => \DVSAERConfigReg_D_reg[FilterPixel6Row_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel7Column_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel7Column_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(0)
     );
@@ -70116,14 +70089,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel7Column_D]\(1),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(1)
     );
 \DVSAERConfigReg_D_reg[FilterPixel7Column_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel7Column_D]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(2)
     );
@@ -70132,7 +70105,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel7Column_D]\(3),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(3)
     );
 \DVSAERConfigReg_D_reg[FilterPixel7Column_D][4]\: unisim.vcomponents.FDPE
@@ -70140,14 +70113,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel7Column_D]\(4),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(4)
     );
 \DVSAERConfigReg_D_reg[FilterPixel7Column_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel7Column_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(5)
     );
@@ -70156,14 +70129,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel7Column_D]\(6),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(6)
     );
 \DVSAERConfigReg_D_reg[FilterPixel7Column_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterPixel7Column_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(7)
     );
@@ -70172,14 +70145,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel7Column_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Column_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterPixel7Row_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterPixel7Row_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(0)
     );
@@ -70187,7 +70160,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_2,
+      CLR => logiecResetSync_n_3,
       D => \DVSAERConfig_D[FilterPixel7Row_D]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(1)
     );
@@ -70196,14 +70169,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel7Row_D]\(2),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_13,
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(2)
     );
 \DVSAERConfigReg_D_reg[FilterPixel7Row_D][3]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_2,
+      CLR => logiecResetSync_n_3,
       D => \DVSAERConfig_D[FilterPixel7Row_D]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(3)
     );
@@ -70211,7 +70184,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_2,
+      CLR => logiecResetSync_n_3,
       D => \DVSAERConfig_D[FilterPixel7Row_D]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(4)
     );
@@ -70219,7 +70192,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterPixel7Row_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(5)
     );
@@ -70227,7 +70200,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_2,
+      CLR => logiecResetSync_n_3,
       D => \DVSAERConfig_D[FilterPixel7Row_D]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(6)
     );
@@ -70235,7 +70208,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterPixel7Row_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(7)
     );
@@ -70244,7 +70217,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterPixel7Row_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_13,
       Q => \DVSAERConfigReg_D_reg[FilterPixel7Row_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][0]\: unisim.vcomponents.FDPE
@@ -70252,14 +70225,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterROIEndColumn_D]\(0),
-      PRE => logiecResetSync_n_12,
+      PRE => logiecResetSync_n_13,
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(0)
     );
 \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][1]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_12,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterROIEndColumn_D]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(1)
     );
@@ -70267,7 +70240,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_12,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterROIEndColumn_D]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(2)
     );
@@ -70276,7 +70249,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterROIEndColumn_D]\(3),
-      PRE => logiecResetSync_n_12,
+      PRE => logiecResetSync_n_13,
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(3)
     );
 \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][4]\: unisim.vcomponents.FDPE
@@ -70284,14 +70257,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterROIEndColumn_D]\(4),
-      PRE => logiecResetSync_n_12,
+      PRE => logiecResetSync_n_13,
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(4)
     );
 \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][5]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_12,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterROIEndColumn_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(5)
     );
@@ -70300,14 +70273,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterROIEndColumn_D]\(6),
-      PRE => logiecResetSync_n_12,
+      PRE => logiecResetSync_n_13,
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(6)
     );
 \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][7]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_12,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterROIEndColumn_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(7)
     );
@@ -70316,7 +70289,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterROIEndColumn_D]\(8),
-      PRE => logiecResetSync_n_12,
+      PRE => logiecResetSync_n_13,
       Q => \DVSAERConfigReg_D_reg[FilterROIEndColumn_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterROIEndRow_D][0]\: unisim.vcomponents.FDPE
@@ -70324,7 +70297,7 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterROIEndRow_D]\(0),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(0)
     );
 \DVSAERConfigReg_D_reg[FilterROIEndRow_D][1]\: unisim.vcomponents.FDPE
@@ -70332,14 +70305,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterROIEndRow_D]\(1),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(1)
     );
 \DVSAERConfigReg_D_reg[FilterROIEndRow_D][2]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIEndRow_D]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(2)
     );
@@ -70347,7 +70320,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIEndRow_D]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(3)
     );
@@ -70355,7 +70328,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIEndRow_D]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(4)
     );
@@ -70363,7 +70336,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIEndRow_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(5)
     );
@@ -70371,7 +70344,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIEndRow_D]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(6)
     );
@@ -70379,7 +70352,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIEndRow_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(7)
     );
@@ -70388,14 +70361,14 @@ begin
       C => LogicClk_CI,
       CE => '1',
       D => \DVSAERConfig_D[FilterROIEndRow_D]\(8),
-      PRE => logiecResetSync_n_11,
+      PRE => logiecResetSync_n_12,
       Q => \DVSAERConfigReg_D_reg[FilterROIEndRow_D]\(8)
     );
 \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][0]\: unisim.vcomponents.FDCE
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_12,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterROIStartColumn_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(0)
     );
@@ -70403,7 +70376,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_2,
+      CLR => logiecResetSync_n_3,
       D => \DVSAERConfig_D[FilterROIStartColumn_D]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(1)
     );
@@ -70411,7 +70384,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterROIStartColumn_D]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(2)
     );
@@ -70419,7 +70392,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_2,
+      CLR => logiecResetSync_n_3,
       D => \DVSAERConfig_D[FilterROIStartColumn_D]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(3)
     );
@@ -70427,7 +70400,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_2,
+      CLR => logiecResetSync_n_3,
       D => \DVSAERConfig_D[FilterROIStartColumn_D]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(4)
     );
@@ -70435,7 +70408,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterROIStartColumn_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(5)
     );
@@ -70443,7 +70416,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_2,
+      CLR => logiecResetSync_n_3,
       D => \DVSAERConfig_D[FilterROIStartColumn_D]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(6)
     );
@@ -70451,7 +70424,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterROIStartColumn_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(7)
     );
@@ -70459,7 +70432,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_13,
       D => \DVSAERConfig_D[FilterROIStartColumn_D]\(8),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartColumn_D]\(8)
     );
@@ -70467,7 +70440,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIStartRow_D]\(0),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(0)
     );
@@ -70475,7 +70448,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIStartRow_D]\(1),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(1)
     );
@@ -70483,7 +70456,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIStartRow_D]\(2),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(2)
     );
@@ -70491,7 +70464,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIStartRow_D]\(3),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(3)
     );
@@ -70499,7 +70472,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIStartRow_D]\(4),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(4)
     );
@@ -70507,7 +70480,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIStartRow_D]\(5),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(5)
     );
@@ -70515,7 +70488,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIStartRow_D]\(6),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(6)
     );
@@ -70523,7 +70496,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIStartRow_D]\(7),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(7)
     );
@@ -70531,7 +70504,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[FilterROIStartRow_D]\(8),
       Q => \DVSAERConfigReg_D_reg[FilterROIStartRow_D]\(8)
     );
@@ -70539,7 +70512,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[Run_S]\,
       Q => \DVSAERConfigReg_D_reg[Run_S]__0\
     );
@@ -70547,7 +70520,7 @@ begin
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_11,
+      CLR => logiecResetSync_n_12,
       D => \DVSAERConfig_D[WaitOnTransferStall_S]\,
       Q => \DVSAERConfigReg_D_reg[WaitOnTransferStall_S]__0\
     );
@@ -70565,7 +70538,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D]\(0),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(0)
     );
@@ -70709,7 +70682,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_6,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D]\(26),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(26)
     );
@@ -70717,7 +70690,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_6,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D]\(27),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(27)
     );
@@ -70725,7 +70698,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_6,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D]\(28),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(28)
     );
@@ -70733,7 +70706,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_6,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D]\(29),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(29)
     );
@@ -70749,7 +70722,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D]\(30),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(30)
     );
@@ -70757,7 +70730,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D]\(31),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(31)
     );
@@ -70885,7 +70858,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(0),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(0)
     );
@@ -70893,7 +70866,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(10),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(10)
     );
@@ -70901,7 +70874,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(11),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(11)
     );
@@ -70909,7 +70882,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(12),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(12)
     );
@@ -70917,7 +70890,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(13),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(13)
     );
@@ -70925,7 +70898,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(14),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(14)
     );
@@ -70933,7 +70906,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(15),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(15)
     );
@@ -70941,7 +70914,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(16),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(16)
     );
@@ -70949,7 +70922,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(17),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(17)
     );
@@ -70957,7 +70930,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(18),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(18)
     );
@@ -70965,7 +70938,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(19),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(19)
     );
@@ -70973,7 +70946,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(1),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(1)
     );
@@ -70981,7 +70954,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(20),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(20)
     );
@@ -70989,7 +70962,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(21),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(21)
     );
@@ -70997,7 +70970,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(22),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(22)
     );
@@ -71005,7 +70978,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(23),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(23)
     );
@@ -71013,7 +70986,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(24),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(24)
     );
@@ -71021,7 +70994,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(25),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(25)
     );
@@ -71029,7 +71002,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(26),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(26)
     );
@@ -71037,7 +71010,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(27),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(27)
     );
@@ -71045,7 +71018,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(28),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(28)
     );
@@ -71053,7 +71026,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(29),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(29)
     );
@@ -71061,7 +71034,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(2),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(2)
     );
@@ -71069,7 +71042,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(30),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(30)
     );
@@ -71077,7 +71050,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(31),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(31)
     );
@@ -71085,7 +71058,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(32),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(32)
     );
@@ -71093,7 +71066,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(33),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(33)
     );
@@ -71101,7 +71074,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(34),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(34)
     );
@@ -71109,7 +71082,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(35),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(35)
     );
@@ -71117,7 +71090,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(36),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(36)
     );
@@ -71125,7 +71098,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(37),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(37)
     );
@@ -71133,7 +71106,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(38),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(38)
     );
@@ -71141,7 +71114,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(39),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(39)
     );
@@ -71149,7 +71122,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(3),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(3)
     );
@@ -71157,7 +71130,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(4),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(4)
     );
@@ -71165,7 +71138,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(5),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(5)
     );
@@ -71173,7 +71146,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(6),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(6)
     );
@@ -71181,7 +71154,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(7),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(7)
     );
@@ -71189,7 +71162,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(8),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(8)
     );
@@ -71197,7 +71170,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_7,
+      CLR => logiecResetSync_n_8,
       D => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(9),
       Q => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(9)
     );
@@ -71205,7 +71178,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(0),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][0]\
     );
@@ -71213,7 +71186,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(10),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][10]\
     );
@@ -71221,7 +71194,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(11),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][11]\
     );
@@ -71229,7 +71202,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(12),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][12]\
     );
@@ -71237,7 +71210,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(13),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][13]\
     );
@@ -71245,7 +71218,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(14),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][14]\
     );
@@ -71253,7 +71226,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(15),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][15]\
     );
@@ -71261,7 +71234,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(16),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][16]\
     );
@@ -71269,7 +71242,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(17),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][17]\
     );
@@ -71277,7 +71250,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(18),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][18]\
     );
@@ -71285,7 +71258,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(19),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][19]\
     );
@@ -71293,7 +71266,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(1),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][1]\
     );
@@ -71301,7 +71274,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(20),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][20]\
     );
@@ -71309,7 +71282,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(21),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][21]\
     );
@@ -71317,7 +71290,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(22),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][22]\
     );
@@ -71325,7 +71298,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(23),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][23]\
     );
@@ -71333,7 +71306,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(24),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][24]\
     );
@@ -71341,7 +71314,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(25),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][25]\
     );
@@ -71349,7 +71322,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(26),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][26]\
     );
@@ -71357,7 +71330,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(27),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][27]\
     );
@@ -71365,7 +71338,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(28),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][28]\
     );
@@ -71373,7 +71346,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(29),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][29]\
     );
@@ -71381,7 +71354,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(2),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][2]\
     );
@@ -71389,7 +71362,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(30),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][30]\
     );
@@ -71397,7 +71370,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(31),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][31]\
     );
@@ -71405,7 +71378,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(32),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][32]\
     );
@@ -71413,7 +71386,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(33),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][33]\
     );
@@ -71421,7 +71394,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(34),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][34]\
     );
@@ -71429,7 +71402,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(35),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][35]\
     );
@@ -71437,7 +71410,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(36),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][36]\
     );
@@ -71445,7 +71418,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(37),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][37]\
     );
@@ -71453,7 +71426,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(38),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][38]\
     );
@@ -71461,7 +71434,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(39),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][39]\
     );
@@ -71469,7 +71442,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(3),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][3]\
     );
@@ -71477,7 +71450,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(4),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][4]\
     );
@@ -71485,7 +71458,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(5),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][5]\
     );
@@ -71493,7 +71466,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(6),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][6]\
     );
@@ -71501,7 +71474,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(7),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][7]\
     );
@@ -71509,7 +71482,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(8),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][8]\
     );
@@ -71517,7 +71490,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0\(9),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][9]\
     );
@@ -71525,7 +71498,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(0),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][0]\
     );
@@ -71533,7 +71506,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(10),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][10]\
     );
@@ -71541,7 +71514,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(11),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][11]\
     );
@@ -71549,7 +71522,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(12),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][12]\
     );
@@ -71557,7 +71530,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(13),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][13]\
     );
@@ -71565,7 +71538,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(14),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][14]\
     );
@@ -71573,7 +71546,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(15),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][15]\
     );
@@ -71581,7 +71554,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(16),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][16]\
     );
@@ -71589,7 +71562,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(17),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][17]\
     );
@@ -71597,7 +71570,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(18),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][18]\
     );
@@ -71605,7 +71578,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(19),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][19]\
     );
@@ -71613,7 +71586,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(1),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][1]\
     );
@@ -71621,7 +71594,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(20),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][20]\
     );
@@ -71629,7 +71602,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(21),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][21]\
     );
@@ -71637,7 +71610,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(22),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][22]\
     );
@@ -71645,7 +71618,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(23),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][23]\
     );
@@ -71653,7 +71626,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(24),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][24]\
     );
@@ -71661,7 +71634,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(25),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][25]\
     );
@@ -71669,7 +71642,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(26),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][26]\
     );
@@ -71677,7 +71650,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(27),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][27]\
     );
@@ -71685,7 +71658,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(28),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][28]\
     );
@@ -71693,7 +71666,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(29),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][29]\
     );
@@ -71701,7 +71674,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_9,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(2),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][2]\
     );
@@ -71709,7 +71682,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(30),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][30]\
     );
@@ -71717,7 +71690,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(31),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][31]\
     );
@@ -71725,7 +71698,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(32),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][32]\
     );
@@ -71733,7 +71706,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(33),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][33]\
     );
@@ -71741,7 +71714,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(34),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][34]\
     );
@@ -71749,7 +71722,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(35),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][35]\
     );
@@ -71757,7 +71730,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(36),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][36]\
     );
@@ -71765,7 +71738,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(37),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][37]\
     );
@@ -71773,7 +71746,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(38),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][38]\
     );
@@ -71781,7 +71754,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_9,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(39),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][39]\
     );
@@ -71789,7 +71762,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(3),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][3]\
     );
@@ -71797,7 +71770,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(4),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][4]\
     );
@@ -71805,7 +71778,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(5),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][5]\
     );
@@ -71813,7 +71786,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(6),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][6]\
     );
@@ -71821,7 +71794,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(7),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][7]\
     );
@@ -71829,7 +71802,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(8),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][8]\
     );
@@ -71837,7 +71810,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_8,
+      CLR => logiecResetSync_n_10,
       D => \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0\(9),
       Q => \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][9]\
     );
@@ -71861,7 +71834,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_3,
+      CLR => logiecResetSync_n_4,
       D => \MultiplexerConfigReg_D_reg[TimestampReset_S]__0\,
       Q => \MultiplexerConfigReg2_D_reg[TimestampReset_S_n_0_]\
     );
@@ -71877,7 +71850,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_12,
+      CLR => logiecResetSync_n_13,
       D => \MultiplexerConfig_D[DropDVSOnTransferStall_S]\,
       Q => \MultiplexerConfigReg_D_reg[DropDVSOnTransferStall_S]__0\
     );
@@ -71885,7 +71858,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_12,
+      CLR => logiecResetSync_n_13,
       D => \MultiplexerConfig_D[Run_S]\,
       Q => \MultiplexerConfigReg_D_reg[Run_S]__0\
     );
@@ -71893,7 +71866,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_12,
+      CLR => logiecResetSync_n_13,
       D => \MultiplexerConfig_D[TimestampReset_S]\,
       Q => \MultiplexerConfigReg_D_reg[TimestampReset_S]__0\
     );
@@ -71901,7 +71874,7 @@ In1Timestamp_S: unisim.vcomponents.LUT3
      port map (
       C => LogicClk_CI,
       CE => '1',
-      CLR => logiecResetSync_n_12,
+      CLR => logiecResetSync_n_13,
       D => \MultiplexerConfig_D[TimestampRun_S]\,
       Q => \MultiplexerConfigReg_D_reg[TimestampRun_S]__0\
     );
@@ -71914,7 +71887,10 @@ chipBiasEnableBuffer: entity work.brd_testAERDVSSM_0_0_SimpleRegister
     );
 chipBiasSelector: entity work.brd_testAERDVSSM_0_0_ChipBiasSelector
      port map (
-      AR(0) => logiecResetSync_n_1,
+      AR(3) => logiecResetSync_n_4,
+      AR(2) => logiecResetSync_n_5,
+      AR(1) => logiecResetSync_n_2,
+      AR(0) => logiecResetSync_n_12,
       \BiasOutput_DP_reg[10]\ => chipBiasSelector_n_12,
       \BiasOutput_DP_reg[10]_0\ => chipBiasSelector_n_18,
       \BiasOutput_DP_reg[11]\ => chipBiasSelector_n_11,
@@ -72016,27 +71992,25 @@ chipBiasSelector: entity work.brd_testAERDVSSM_0_0_ChipBiasSelector
       \ParamOutput_DP_reg[3]\(3 downto 0) => ChipConfigParamOutput_D(3 downto 0),
       Q(0) => \BiasConfigReg_DP_reg[SSN_D]\(15),
       SyncReset_RO => LogicReset_R,
-      SyncSignalSyncFF_S_reg_rep(0) => logiecResetSync_n_4,
-      \SyncSignalSyncFF_S_reg_rep__0\(0) => logiecResetSync_n_3,
-      \SyncSignalSyncFF_S_reg_rep__10\(0) => logiecResetSync_n_12,
-      \SyncSignalSyncFF_S_reg_rep__11\(0) => logiecResetSync_n_13,
-      \SyncSignalSyncFF_S_reg_rep__12\(0) => logiecResetSync_n_14,
-      \SyncSignalSyncFF_S_reg_rep__13\(0) => logiecResetSync_n_15,
-      \SyncSignalSyncFF_S_reg_rep__14\(0) => logiecResetSync_n_16,
-      \SyncSignalSyncFF_S_reg_rep__15\(1) => logiecResetSync_n_17,
-      \SyncSignalSyncFF_S_reg_rep__15\(0) => logiecResetSync_n_18,
-      \SyncSignalSyncFF_S_reg_rep__17\(1) => logiecResetSync_n_19,
-      \SyncSignalSyncFF_S_reg_rep__17\(0) => logiecResetSync_n_20,
-      \SyncSignalSyncFF_S_reg_rep__19\(1) => logiecResetSync_n_21,
+      \SyncSignalSyncFF_S_reg_rep__10\(0) => logiecResetSync_n_13,
+      \SyncSignalSyncFF_S_reg_rep__11\(0) => logiecResetSync_n_14,
+      \SyncSignalSyncFF_S_reg_rep__12\(0) => logiecResetSync_n_15,
+      \SyncSignalSyncFF_S_reg_rep__13\(0) => logiecResetSync_n_16,
+      \SyncSignalSyncFF_S_reg_rep__14\(0) => logiecResetSync_n_17,
+      \SyncSignalSyncFF_S_reg_rep__15\(1) => logiecResetSync_n_18,
+      \SyncSignalSyncFF_S_reg_rep__15\(0) => logiecResetSync_n_19,
+      \SyncSignalSyncFF_S_reg_rep__17\(1) => logiecResetSync_n_20,
+      \SyncSignalSyncFF_S_reg_rep__17\(0) => logiecResetSync_n_21,
       \SyncSignalSyncFF_S_reg_rep__19\(0) => logiecResetSync_n_22,
-      \SyncSignalSyncFF_S_reg_rep__21\(0) => logiecResetSync_n_23,
-      \SyncSignalSyncFF_S_reg_rep__23\(1) => logiecResetSync_n_24,
-      \SyncSignalSyncFF_S_reg_rep__23\(0) => logiecResetSync_n_25,
-      \SyncSignalSyncFF_S_reg_rep__24\(0) => logiecResetSync_n_26,
-      \SyncSignalSyncFF_S_reg_rep__25\(0) => logiecResetSync_n_27,
-      \SyncSignalSyncFF_S_reg_rep__26\(0) => logiecResetSync_n_28,
-      \SyncSignalSyncFF_S_reg_rep__4\(0) => logiecResetSync_n_2,
-      \SyncSignalSyncFF_S_reg_rep__5\(0) => logiecResetSync_n_8,
+      \SyncSignalSyncFF_S_reg_rep__20\(1) => logiecResetSync_n_23,
+      \SyncSignalSyncFF_S_reg_rep__20\(0) => logiecResetSync_n_24,
+      \SyncSignalSyncFF_S_reg_rep__23\(1) => logiecResetSync_n_25,
+      \SyncSignalSyncFF_S_reg_rep__23\(0) => logiecResetSync_n_26,
+      \SyncSignalSyncFF_S_reg_rep__24\(0) => logiecResetSync_n_27,
+      \SyncSignalSyncFF_S_reg_rep__25\(0) => logiecResetSync_n_28,
+      \SyncSignalSyncFF_S_reg_rep__26\(0) => logiecResetSync_n_29,
+      \SyncSignalSyncFF_S_reg_rep__4\(0) => logiecResetSync_n_3,
+      \SyncSignalSyncFF_S_reg_rep__5\(0) => logiecResetSync_n_9,
       \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DiffBn_D][14]_0\(5 downto 0) => \BiasConfigReg_DP_reg[DiffBn_D]\(14 downto 9),
       \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LocalBufBn_D][14]_0\(5 downto 0) => \BiasConfigReg_DP_reg[LocalBufBn_D]\(14 downto 9),
       \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PadFollBn_D][14]_0\(5 downto 0) => \BiasConfigReg_DP_reg[PadFollBn_D]\(14 downto 9),
@@ -72044,14 +72018,14 @@ chipBiasSelector: entity work.brd_testAERDVSSM_0_0_ChipBiasSelector
     );
 deviceIsMasterBuffer: entity work.\brd_testAERDVSSM_0_0_SimpleRegister__parameterized0\
      port map (
-      AR(0) => logiecResetSync_n_2,
+      AR(0) => logiecResetSync_n_3,
       DeviceIsMaster_SO => DeviceIsMaster_S,
       LogicClk_CI => LogicClk_CI,
       O131(0) => DeviceIsMasterBuffer_S
     );
 dvsAerFifo: entity work.brd_testAERDVSSM_0_0_FIFO
      port map (
-      AR(0) => logiecResetSync_n_2,
+      AR(0) => logiecResetSync_n_3,
       D(0) => StateTimestampNext_DN(3),
       \DVSAERFifoControlIn_S[ReadSide][Read_S]\ => \DVSAERFifoControlIn_S[ReadSide][Read_S]\,
       \FifoControl_SI[WriteSide][Write_S]\ => \DVSAERFifoControlIn_S[WriteSide][Write_S]\,
@@ -72066,13 +72040,15 @@ dvsAerFifo: entity work.brd_testAERDVSSM_0_0_FIFO
       \State_DP_reg[1]\ => dvsAerFifo_n_16,
       \State_DP_reg[1]_0\ => multiplexerSM_n_100,
       \SyncSignalSyncFF_S_reg_rep__2\(1) => logiecResetSync_n_6,
-      \SyncSignalSyncFF_S_reg_rep__2\(0) => logiecResetSync_n_7
+      \SyncSignalSyncFF_S_reg_rep__2\(0) => logiecResetSync_n_8
     );
 dvsAerSMTest: entity work.brd_testAERDVSSM_0_0_DVSAERStateMachine
      port map (
       AR(2) => logiecResetSync_n_32,
       AR(1) => logiecResetSync_n_33,
       AR(0) => logiecResetSync_n_34,
+      AS(1) => logiecResetSync_n_0,
+      AS(0) => LogicReset_R,
       DVSAERAck_SBO => DVSAERAck_SBO,
       \DVSAERConfigInfoOut_DO[StatisticsEventsColumn_D]\(39 downto 0) => \DVSAERConfigInfoOutReg2_D[StatisticsEventsColumn_D]\(39 downto 0),
       \DVSAERConfigInfoOut_DO[StatisticsEventsDropped_D]\(39 downto 0) => \DVSAERConfigInfoOutReg2_D[StatisticsEventsDropped_D]\(39 downto 0),
@@ -72269,16 +72245,16 @@ dvsAerSMTest: entity work.brd_testAERDVSSM_0_0_DVSAERStateMachine
       O134 => \DVSAERConfigReg2_D_reg[ExternalAERControl_S_n_0_]\,
       Q(10 downto 9) => DVSAERFifoDataIn_D(13 downto 12),
       Q(8 downto 0) => DVSAERFifoDataIn_D(8 downto 0),
-      SyncReset_RO => LogicReset_R,
-      \SyncSignalSyncFF_S_reg_rep__28\(0) => logiecResetSync_n_30,
-      \SyncSignalSyncFF_S_reg_rep__29\(0) => logiecResetSync_n_31,
-      \SyncSignalSyncFF_S_reg_rep__3\(1) => logiecResetSync_n_7,
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => logiecResetSync_n_2
+      \SyncSignalSyncFF_S_reg_rep__28\(0) => logiecResetSync_n_31,
+      \SyncSignalSyncFF_S_reg_rep__3\(0) => logiecResetSync_n_8,
+      \SyncSignalSyncFF_S_reg_rep__4\(0) => logiecResetSync_n_3
     );
 dvsaerSPIConfig: entity work.brd_testAERDVSSM_0_0_DVSAERSPIConfig
      port map (
-      AR(1) => logiecResetSync_n_4,
-      AR(0) => logiecResetSync_n_10,
+      AR(2) => logiecResetSync_n_4,
+      AR(1) => logiecResetSync_n_5,
+      AR(0) => logiecResetSync_n_2,
+      AS(0) => logiecResetSync_n_11,
       ConfigParamAddress_DO(4 downto 0) => ConfigParamAddress_D(4 downto 0),
       ConfigParamInput_DO(8 downto 0) => ConfigParamInput_D(8 downto 0),
       D(31 downto 0) => p_0_in_1(31 downto 0),
@@ -72338,49 +72314,48 @@ dvsaerSPIConfig: entity work.brd_testAERDVSSM_0_0_DVSAERSPIConfig
       \ParamInput_DP_reg[0]_1\ => spiConfiguration_n_115,
       \ParamOutput_DP_reg[31]\(31 downto 0) => DVSAERConfigParamOutput_D(31 downto 0),
       Q(8 downto 0) => \DVSAERConfig_D[FilterPixel0Row_D]\(8 downto 0),
-      \SyncSignalSyncFF_S_reg_rep__0\(1) => logiecResetSync_n_3,
-      \SyncSignalSyncFF_S_reg_rep__0\(0) => logiecResetSync_n_5,
-      \SyncSignalSyncFF_S_reg_rep__4\(0) => logiecResetSync_n_2
+      \SyncSignalSyncFF_S_reg_rep__1\(0) => logiecResetSync_n_7,
+      \SyncSignalSyncFF_S_reg_rep__4\(0) => logiecResetSync_n_3
     );
 logiecResetSync: entity work.brd_testAERDVSSM_0_0_ResetSynchronizer
      port map (
-      AR(3) => logiecResetSync_n_1,
-      AR(2) => logiecResetSync_n_2,
-      AR(1) => logiecResetSync_n_3,
-      AR(0) => logiecResetSync_n_4,
-      \BiasConfigReg_DP_reg[AdcRefLow_D][3]\(0) => logiecResetSync_n_16,
-      \BiasConfigReg_DP_reg[AdcRefLow_D][8]\(1) => logiecResetSync_n_17,
-      \BiasConfigReg_DP_reg[AdcRefLow_D][8]\(0) => logiecResetSync_n_18,
-      \BiasConfigReg_DP_reg[AdcTestVoltage_D][1]\(0) => logiecResetSync_n_15,
-      \BiasConfigReg_DP_reg[LcolTimeoutBn_D][14]\(0) => logiecResetSync_n_13,
-      \BiasConfigReg_DP_reg[PrBp_D][0]\(0) => logiecResetSync_n_14,
-      \BiasConfigReg_DP_reg[SSN_D][15]\(1) => logiecResetSync_n_8,
-      \BiasConfigReg_DP_reg[SSN_D][15]\(0) => logiecResetSync_n_9,
-      \BiasConfigReg_D_reg[AEPuXBp_D][10]\(1) => logiecResetSync_n_21,
-      \BiasConfigReg_D_reg[AEPuXBp_D][10]\(0) => logiecResetSync_n_22,
-      \BiasConfigReg_D_reg[PrSFBp_D][1]\(1) => logiecResetSync_n_19,
-      \BiasConfigReg_D_reg[PrSFBp_D][1]\(0) => logiecResetSync_n_20,
-      \Count_DP_reg[13]\(1) => logiecResetSync_n_24,
-      \Count_DP_reg[13]\(0) => logiecResetSync_n_25,
+      AR(3) => logiecResetSync_n_2,
+      AR(2) => logiecResetSync_n_3,
+      AR(1) => logiecResetSync_n_4,
+      AR(0) => logiecResetSync_n_5,
+      AS(1) => logiecResetSync_n_0,
+      AS(0) => LogicReset_R,
+      \BiasConfigReg_DP_reg[AdcRefHigh_D][2]\(0) => logiecResetSync_n_17,
+      \BiasConfigReg_DP_reg[AdcRefLow_D][8]\(1) => logiecResetSync_n_18,
+      \BiasConfigReg_DP_reg[AdcRefLow_D][8]\(0) => logiecResetSync_n_19,
+      \BiasConfigReg_DP_reg[ColSelLowBn_D][13]\(0) => logiecResetSync_n_14,
+      \BiasConfigReg_DP_reg[IFRefrBn_D][12]\(0) => logiecResetSync_n_13,
+      \BiasConfigReg_DP_reg[PrBp_D][14]\(0) => logiecResetSync_n_16,
+      \BiasConfigReg_DP_reg[ReadoutBufBp_D][14]\(0) => logiecResetSync_n_15,
+      \BiasConfigReg_DP_reg[SSN_D][15]\(1) => logiecResetSync_n_9,
+      \BiasConfigReg_DP_reg[SSN_D][15]\(0) => logiecResetSync_n_10,
+      \BiasConfigReg_D_reg[AEPdBn_D][0]\(0) => logiecResetSync_n_22,
+      \BiasConfigReg_D_reg[BiasBuffer_D][12]\(1) => logiecResetSync_n_23,
+      \BiasConfigReg_D_reg[BiasBuffer_D][12]\(0) => logiecResetSync_n_24,
+      \BiasConfigReg_D_reg[PrSFBp_D][6]\(1) => logiecResetSync_n_20,
+      \BiasConfigReg_D_reg[PrSFBp_D][6]\(0) => logiecResetSync_n_21,
+      \Count_DP_reg[13]\(1) => logiecResetSync_n_25,
+      \Count_DP_reg[13]\(0) => logiecResetSync_n_26,
       \Count_DP_reg[31]\(2) => logiecResetSync_n_32,
       \Count_DP_reg[31]\(1) => logiecResetSync_n_33,
       \Count_DP_reg[31]\(0) => logiecResetSync_n_34,
-      \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][1]\(0) => logiecResetSync_n_30,
+      \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][1]\(0) => logiecResetSync_n_31,
+      \Divider_DP_reg[0]\(1) => logiecResetSync_n_6,
+      \Divider_DP_reg[0]\(0) => logiecResetSync_n_7,
+      LatchInputReg_SP_reg(0) => logiecResetSync_n_12,
       LogicClk_CI => LogicClk_CI,
-      Memory_SP_reg(0) => logiecResetSync_n_7,
-      \Output_SO_reg[0]\(0) => logiecResetSync_n_10,
-      \Output_SO_reg[0]_0\(0) => logiecResetSync_n_31,
-      \ParamInput_DP_reg[13]\(1) => logiecResetSync_n_11,
-      \ParamInput_DP_reg[13]\(0) => logiecResetSync_n_12,
-      \PreviousData_DP_reg[13]\(0) => logiecResetSync_n_26,
-      \PreviousData_DP_reg[15]\(0) => logiecResetSync_n_23,
-      \PreviousData_DP_reg[2]\(1) => logiecResetSync_n_28,
-      \PreviousData_DP_reg[2]\(0) => logiecResetSync_n_29,
-      \PreviousData_DP_reg[4]\(0) => logiecResetSync_n_27,
+      Memory_SP_reg(0) => logiecResetSync_n_8,
+      \PreviousData_DP_reg[0]\(0) => logiecResetSync_n_27,
+      \PreviousData_DP_reg[2]\(1) => logiecResetSync_n_29,
+      \PreviousData_DP_reg[2]\(0) => logiecResetSync_n_30,
+      \PreviousData_DP_reg[6]\(0) => logiecResetSync_n_28,
       Reset_RI => Reset_RI,
-      SyncReset_RO => LogicReset_R,
-      \SyncSignalSyncFF_S_reg[0]\(1) => logiecResetSync_n_5,
-      \SyncSignalSyncFF_S_reg[0]\(0) => logiecResetSync_n_6
+      \SyncSignalSyncFF_S_reg[0]\(0) => logiecResetSync_n_11
     );
 multiplexerSM: entity work.brd_testAERDVSSM_0_0_MultiplexerStateMachine
      port map (
@@ -72388,8 +72363,8 @@ multiplexerSM: entity work.brd_testAERDVSSM_0_0_MultiplexerStateMachine
       AERSMFifoFull_AI => AERSMFifoFull_AI,
       AERSMOutFifoData_DO(15 downto 0) => AERSMOutFifoData_DO(15 downto 0),
       AERSMOutFifoWrite_SO => AERSMOutFifoWrite_SO,
-      AR(1) => logiecResetSync_n_3,
-      AR(0) => logiecResetSync_n_5,
+      AR(1) => logiecResetSync_n_4,
+      AR(0) => logiecResetSync_n_7,
       D(39 downto 0) => \MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D]\(39 downto 0),
       \DVSAERFifoControlIn_S[ReadSide][Read_S]\ => \DVSAERFifoControlIn_S[ReadSide][Read_S]\,
       FifoData_DO(14 downto 0) => DVSAERFifoDataOut_D(14 downto 0),
@@ -72410,14 +72385,16 @@ multiplexerSM: entity work.brd_testAERDVSSM_0_0_MultiplexerStateMachine
       SyncInClockSync_CO => SyncInClockSync_C,
       SyncOutClock_CO => SyncOutClock_CO,
       SyncReset_RO => LogicReset_R,
-      \SyncSignalSyncFF_S_reg_rep__2\(0) => logiecResetSync_n_6,
-      \SyncSignalSyncFF_S_reg_rep__3\(1) => logiecResetSync_n_7,
-      \SyncSignalSyncFF_S_reg_rep__3\(0) => logiecResetSync_n_2
+      \SyncSignalSyncFF_S_reg_rep__2\(1) => logiecResetSync_n_6,
+      \SyncSignalSyncFF_S_reg_rep__2\(0) => logiecResetSync_n_8,
+      \SyncSignalSyncFF_S_reg_rep__4\(0) => logiecResetSync_n_3
     );
 multiplexerSPIConfig: entity work.brd_testAERDVSSM_0_0_MultiplexerSPIConfig
      port map (
-      AR(1) => logiecResetSync_n_4,
-      AR(0) => logiecResetSync_n_10,
+      AR(3) => logiecResetSync_n_3,
+      AR(2) => logiecResetSync_n_4,
+      AR(1) => logiecResetSync_n_5,
+      AR(0) => logiecResetSync_n_11,
       D(31 downto 0) => p_0_in_2(31 downto 0),
       LogicClk_CI => LogicClk_CI,
       \MultiplexerConfigReg_DP_reg[DropExtInputOnTransferStall_S]_0\ => multiplexerSPIConfig_n_4,
@@ -72432,17 +72409,14 @@ multiplexerSPIConfig: entity work.brd_testAERDVSSM_0_0_MultiplexerSPIConfig
       \ParamInput_DP_reg[0]_2\ => spiConfiguration_n_58,
       \ParamInput_DP_reg[0]_3\ => spiConfiguration_n_59,
       \ParamInput_DP_reg[0]_4\ => spiConfiguration_n_60,
-      Q(31 downto 0) => MultiplexerConfigParamOutput_D(31 downto 0),
-      \SyncSignalSyncFF_S_reg_rep__4\(1) => logiecResetSync_n_2,
-      \SyncSignalSyncFF_S_reg_rep__4\(0) => logiecResetSync_n_3,
-      \SyncSignalSyncFF_S_reg_rep__6\(0) => logiecResetSync_n_9
+      Q(31 downto 0) => MultiplexerConfigParamOutput_D(31 downto 0)
     );
 spiConfiguration: entity work.brd_testAERDVSSM_0_0_SPIConfig
      port map (
-      AR(3) => logiecResetSync_n_1,
-      AR(2) => logiecResetSync_n_2,
-      AR(1) => logiecResetSync_n_3,
-      AR(0) => logiecResetSync_n_4,
+      AR(3) => logiecResetSync_n_2,
+      AR(2) => logiecResetSync_n_3,
+      AR(1) => logiecResetSync_n_4,
+      AR(0) => logiecResetSync_n_5,
       \BiasConfigReg_DP_reg[AEPdBn_D][0]\(0) => \davis346ChipBias.davis346ChipBiasSPIConfig/BiasConfigReg_DP[AEPdBn_D]\,
       \BiasConfigReg_DP_reg[AEPuXBp_D][0]\(0) => \davis346ChipBias.davis346ChipBiasSPIConfig/BiasConfigReg_DP[AEPuXBp_D]\,
       \BiasConfigReg_DP_reg[AEPuYBp_D][0]\(0) => \davis346ChipBias.davis346ChipBiasSPIConfig/BiasConfigReg_DP[AEPuYBp_D]\,
@@ -72864,9 +72838,17 @@ spiConfiguration: entity work.brd_testAERDVSSM_0_0_SPIConfig
       SPISlaveSelectSync_SB => SPISlaveSelectSync_SB,
       \ShiftReg_DP_reg[0]\(0) => State_DP_0(0),
       \State_DP_reg[0]_0\(0) => \spiInputShiftRegister/ShiftReg_DN\(0),
-      \SyncSignalSyncFF_S_reg_rep__9\(0) => logiecResetSync_n_11,
-      \SystemInfoOutput_DP_reg[6]\(6 downto 0) => p_0_in(6 downto 0),
-      \SystemInfoOutput_DP_reg[6]_0\(6 downto 0) => SystemInfoConfigParamOutput_D(6 downto 0)
+      \SyncSignalSyncFF_S_reg_rep__9\(0) => logiecResetSync_n_12,
+      \SystemInfoOutput_DP_reg[9]\(4) => p_0_in(9),
+      \SystemInfoOutput_DP_reg[9]\(3) => p_0_in(6),
+      \SystemInfoOutput_DP_reg[9]\(2) => p_0_in(4),
+      \SystemInfoOutput_DP_reg[9]\(1) => p_0_in(2),
+      \SystemInfoOutput_DP_reg[9]\(0) => p_0_in(0),
+      \SystemInfoOutput_DP_reg[9]_0\(4) => SystemInfoConfigParamOutput_D(9),
+      \SystemInfoOutput_DP_reg[9]_0\(3) => SystemInfoConfigParamOutput_D(6),
+      \SystemInfoOutput_DP_reg[9]_0\(2) => SystemInfoConfigParamOutput_D(4),
+      \SystemInfoOutput_DP_reg[9]_0\(1) => SystemInfoConfigParamOutput_D(2),
+      \SystemInfoOutput_DP_reg[9]_0\(0) => SystemInfoConfigParamOutput_D(0)
     );
 syncInputsToLogicClock: entity work.brd_testAERDVSSM_0_0_LogicClockSynchronizer
      port map (
@@ -72881,19 +72863,26 @@ syncInputsToLogicClock: entity work.brd_testAERDVSSM_0_0_LogicClockSynchronizer
       \State_DP_reg[0]\(0) => State_DP_0(0),
       SyncInClockSync_CO => SyncInClockSync_C,
       SyncInClock_AI => SyncInClock_AI,
-      \SyncSignalSyncFF_S_reg_rep__1\(0) => logiecResetSync_n_5,
-      \SyncSignalSyncFF_S_reg_rep__6\(0) => logiecResetSync_n_9
+      \SyncSignalSyncFF_S_reg_rep__1\(0) => logiecResetSync_n_7,
+      \SyncSignalSyncFF_S_reg_rep__7\(0) => logiecResetSync_n_11
     );
 systemInfoSPIConfig: entity work.brd_testAERDVSSM_0_0_SystemInfoSPIConfig
      port map (
-      AR(2) => logiecResetSync_n_4,
-      AR(1) => logiecResetSync_n_10,
-      AR(0) => logiecResetSync_n_1,
-      D(6 downto 0) => p_0_in(6 downto 0),
+      AR(1) => logiecResetSync_n_2,
+      AR(0) => logiecResetSync_n_5,
+      D(4) => p_0_in(9),
+      D(3) => p_0_in(6),
+      D(2) => p_0_in(4),
+      D(1) => p_0_in(2),
+      D(0) => p_0_in(0),
       LogicClk_CI => LogicClk_CI,
       O131(0) => DeviceIsMasterBuffer_S,
       Output_SO => Output_SO,
-      Q(6 downto 0) => SystemInfoConfigParamOutput_D(6 downto 0)
+      Q(4) => SystemInfoConfigParamOutput_D(9),
+      Q(3) => SystemInfoConfigParamOutput_D(6),
+      Q(2) => SystemInfoConfigParamOutput_D(4),
+      Q(1) => SystemInfoConfigParamOutput_D(2),
+      Q(0) => SystemInfoConfigParamOutput_D(0)
     );
 end STRUCTURE;
 library IEEE;

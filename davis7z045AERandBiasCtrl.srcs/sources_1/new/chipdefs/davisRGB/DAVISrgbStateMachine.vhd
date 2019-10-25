@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 use ieee.math_real.ceil;
 use ieee.math_real.log2;
 use work.ShiftRegisterModes.all;
-use work.Settings.LOGIC_CLOCK_FREQ_REAL;
+use work.Settings.LOGIC_CLOCK_FREQ;
 use work.ChipBiasConfigRecords.all;
 use work.DAVISrgbChipBiasConfigRecords.all;
 
@@ -43,7 +43,7 @@ architecture Behavioral of DAVISrgbStateMachine is
 	constant LATCH_LENGTH : integer := 10;
 
 	-- Calculated values in cycles.
-	constant BIAS_CLOCK_CYCLES : integer := integer((LOGIC_CLOCK_FREQ_REAL * 1000.0) / BIAS_CLOCK_FREQ);
+	constant BIAS_CLOCK_CYCLES : integer := integer((LOGIC_CLOCK_FREQ * 1000.0) / BIAS_CLOCK_FREQ);
 	constant LATCH_CYCLES      : integer := BIAS_CLOCK_CYCLES * LATCH_LENGTH;
 
 	-- Calcualted length of cycles counter. Based on latch cycles, since biggest value.

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="Digilent JTAG-SMT2 210251A515BC/2-xc7z045" key="brd_wrapper_hw_platform_0-device"/>
+	<item value="" key="brd_wrapper_hw_platform_0-bmmFile"/>
+	<item value="brd_wrapper.bit" key="brd_wrapper_hw_platform_0-bitFile"/>
+	<item value="brd_wrapper_hw_platform_0" key="programfpga.hwplatform"/>
+	<item value="Local" key="brd_wrapper_hw_platform_0-target"/>
+	<item value="false" key="brd_wrapper_hw_platform_0-partial_bit"/>
+</section>

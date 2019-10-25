@@ -3,11 +3,15 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.SystemInfoConfigRecords.all;
 use work.Settings.LOGIC_VERSION;
+use work.Settings.LOGIC_PATCH;
 use work.Settings.CHIP_IDENTIFIER;
-use work.Settings.LOGIC_CLOCK_FREQ;
-use work.Settings.ADC_CLOCK_FREQ;
+use work.Settings.CLOCK_DEVIATION_FACTOR;
 
 entity SystemInfoSPIConfig is
+	generic(
+		CLOCK_LOGIC : real;
+		CLOCK_SUPPL : real;
+		CLOCK_COMM  : real);
 	port(
 		Clock_CI                       : in  std_logic;
 		Reset_RI                       : in  std_logic;
@@ -41,15 +45,23 @@ begin
 				SystemInfoOutput_DN(0) <= DeviceIsMasterBuffer_S;
 
 			when SYSTEM_INFO_CONFIG_PARAM_ADDRESSES.LogicClock_D =>
-				SystemInfoOutput_DN(9 downto 0) <= std_logic_vector(to_unsigned(LOGIC_CLOCK_FREQ, 10));
+				SystemInfoOutput_DN(7 downto 0) <= std_logic_vector(to_unsigned(integer(CLOCK_LOGIC / CLOCK_DEVIATION_FACTOR), 8));
 
 			when SYSTEM_INFO_CONFIG_PARAM_ADDRESSES.ADCClock_D =>
-				SystemInfoOutput_DN(9 downto 0) <= std_logic_vector(to_unsigned(ADC_CLOCK_FREQ, 10));
+				SystemInfoOutput_DN(7 downto 0) <= std_logic_vector(to_unsigned(integer(CLOCK_SUPPL / CLOCK_DEVIATION_FACTOR), 8));
+
+			when SYSTEM_INFO_CONFIG_PARAM_ADDRESSES.USBClock_D =>
+				SystemInfoOutput_DN(7 downto 0) <= std_logic_vector(to_unsigned(integer(CLOCK_COMM / CLOCK_DEVIATION_FACTOR), 8));
+
+			when SYSTEM_INFO_CONFIG_PARAM_ADDRESSES.ClockDevFactor_D =>
+				SystemInfoOutput_DN(11 downto 0) <= std_logic_vector(to_unsigned(integer(CLOCK_DEVIATION_FACTOR * 1000.0), 12));
+
+			when SYSTEM_INFO_CONFIG_PARAM_ADDRESSES.LogicPatch_D =>
+				SystemInfoOutput_DN(LOGIC_PATCH'range) <= std_logic_vector(LOGIC_PATCH);
 
 			when others => null;
 		end case;
 	end process systemInfoIO;
-
 	systemInfoUpdate : process(Clock_CI, Reset_RI) is
 	begin
 		if Reset_RI = '1' then          -- asynchronous reset (active high)

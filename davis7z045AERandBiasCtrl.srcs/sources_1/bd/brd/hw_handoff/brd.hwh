@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Oct 25 18:38:03 2019" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Oct 25 19:54:47 2019" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z045" NAME="brd" PACKAGE="ffg900" SPEEDGRADE="-1"/>
 
@@ -5800,9 +5800,6 @@
             <CONNECTION INSTANCE="axi_smc" PORT="aclk"/>
             <CONNECTION INSTANCE="system_ila_0" PORT="clk"/>
             <CONNECTION INSTANCE="system_ila_1" PORT="clk"/>
-            <CONNECTION INSTANCE="testAERDVSSM_0" PORT="USBClock_CI"/>
-            <CONNECTION INSTANCE="testAERDVSSM_0" PORT="LogicClk_CI"/>
-            <CONNECTION INSTANCE="testAERDVSSM_0" PORT="ADCClk_CI"/>
             <CONNECTION INSTANCE="eventStreamToConstEn_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ACLK"/>
@@ -5811,6 +5808,9 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_ACLK"/>
             <CONNECTION INSTANCE="EVRawStreamToXYTSStr_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="testAERDVSSM_0" PORT="USBClock_CI"/>
+            <CONNECTION INSTANCE="testAERDVSSM_0" PORT="LogicClk_CI"/>
+            <CONNECTION INSTANCE="testAERDVSSM_0" PORT="ADCClk_CI"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="4e+07" DIR="O" NAME="FCLK_CLK1" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK1">

@@ -87,7 +87,7 @@ architecture Behavioral of DVSBAFilterStateMachine is
 
 	-- Generate continuous timestamp value, expanded to N microseconds per tick.
 	constant TICK_EXPANSION : integer := 250;
-	constant TS_TICK        : integer := LOGIC_CLOCK_FREQ * TICK_EXPANSION;
+	constant TS_TICK        : integer := integer(LOGIC_CLOCK_FREQ * real(TICK_EXPANSION));
 	constant TS_TICK_SIZE   : integer := integer(ceil(log2(real(TS_TICK))));
 
 	signal TimestampRefresh_S : std_logic;

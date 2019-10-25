@@ -1,8 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.math_real.ceil;
-use ieee.math_real.log2;
 use work.Functions.SizeCountUpToN;
 use work.Functions.SelectInteger;
 use work.Settings.CHIP_APS_SIZE_COLUMNS;
@@ -10,12 +8,12 @@ use work.Settings.CHIP_APS_SIZE_ROWS;
 use work.Settings.CHIP_APS_STREAM_START;
 use work.Settings.CHIP_APS_AXES_INVERT;
 use work.Settings.CHIP_APS_HAS_GLOBAL_SHUTTER;
-use work.Settings.ADC_CLOCK_FREQ_REAL;
+use work.Settings.ADC_CLOCK_FREQ;
 
 package APSADCConfigRecords is
 	constant APS_CONFIG_MODULE_ADDRESS : unsigned(6 downto 0) := to_unsigned(2, 7);
 
-	constant APS_CLOCK_FREQ_SIZE : integer := integer(ceil(log2(real(ADC_CLOCK_FREQ_REAL + 1.0))));
+	constant APS_CLOCK_FREQ_SIZE : integer := SizeCountUpToN(ADC_CLOCK_FREQ);
 
 	constant APS_EXPOSURE_SIZE       : integer := 22 + APS_CLOCK_FREQ_SIZE; -- Up to about four seconds.
 	constant APS_FRAME_INTERVAL_SIZE : integer := 23 + APS_CLOCK_FREQ_SIZE; -- Up to about eight seconds.
@@ -89,6 +87,6 @@ package APSADCConfigRecords is
 		StartRow0_D           => to_unsigned(0, APS_USER_LENGTH_ROWS),
 		EndColumn0_D          => to_unsigned(APS_USER_VALUE_COLUMNS - 1, APS_USER_LENGTH_COLUMNS),
 		EndRow0_D             => to_unsigned(APS_USER_VALUE_ROWS - 1, APS_USER_LENGTH_ROWS),
-		Exposure_D            => to_unsigned(integer(4000.0 * ADC_CLOCK_FREQ_REAL), APS_EXPOSURE_SIZE),
-		FrameInterval_D       => to_unsigned(integer(50000.0 * ADC_CLOCK_FREQ_REAL), APS_FRAME_INTERVAL_SIZE));
+		Exposure_D            => to_unsigned(integer(4000.0 * ADC_CLOCK_FREQ), APS_EXPOSURE_SIZE),
+		FrameInterval_D       => to_unsigned(integer(50000.0 * ADC_CLOCK_FREQ), APS_FRAME_INTERVAL_SIZE));
 end package APSADCConfigRecords;

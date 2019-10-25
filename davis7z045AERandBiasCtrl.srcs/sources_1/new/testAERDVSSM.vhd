@@ -344,45 +344,49 @@ begin
 			Output_SO(0) => DeviceIsMasterBuffer_S);
 
 	systemInfoSPIConfig : entity work.SystemInfoSPIConfig
+		generic map(
+			CLOCK_LOGIC => LOGIC_CLOCK_FREQ,
+			CLOCK_SUPPL => ADC_CLOCK_FREQ,
+			CLOCK_COMM  => USB_CLOCK_FREQ)
 		port map(
 			Clock_CI                       => LogicClock_C,
 			Reset_RI                       => LogicReset_R,
 			DeviceIsMaster_SI              => DeviceIsMasterBuffer_S,
 			ConfigParamAddress_DI          => ConfigParamAddress_D,
 			SystemInfoConfigParamOutput_DO => SystemInfoConfigParamOutput_D);
-						        
+
 	configRegisters : process(LogicClock_C, LogicReset_R) is
-        begin
-            if LogicReset_R = '1' then
-                MultiplexerConfigReg2_D <= tMultiplexerConfigDefault;
-                DVSAERConfigReg2_D      <= tDVSAERConfigDefault;
-                APSADCConfigReg2_D      <= tAPSADCConfigDefault;
-                IMUConfigReg2_D         <= tIMUConfigDefault;
-                ExtInputConfigReg2_D    <= tExtInputConfigDefault;
-                FX3ConfigReg2_D         <= tFX3ConfigDefault;
-    
-                MultiplexerConfigReg_D <= tMultiplexerConfigDefault;
-                DVSAERConfigReg_D      <= tDVSAERConfigDefault;
-                APSADCConfigReg_D      <= tAPSADCConfigDefault;
-                IMUConfigReg_D         <= tIMUConfigDefault;
-                ExtInputConfigReg_D    <= tExtInputConfigDefault;
-                FX3ConfigReg_D         <= tFX3ConfigDefault;
-            elsif rising_edge(LogicClock_C) then
-                MultiplexerConfigReg2_D <= MultiplexerConfigReg_D;
-                DVSAERConfigReg2_D      <= DVSAERConfigReg_D;
-                APSADCConfigReg2_D      <= APSADCConfigReg_D;
-                IMUConfigReg2_D         <= IMUConfigReg_D;
-                ExtInputConfigReg2_D    <= ExtInputConfigReg_D;
-                FX3ConfigReg2_D         <= FX3ConfigReg_D;
-    
-                MultiplexerConfigReg_D <= MultiplexerConfig_D;
-                DVSAERConfigReg_D      <= DVSAERConfig_D;
-                APSADCConfigReg_D      <= APSADCConfig_D;
-                IMUConfigReg_D         <= IMUConfig_D;
-                ExtInputConfigReg_D    <= ExtInputConfig_D;
-                FX3ConfigReg_D         <= FX3Config_D;
-            end if;
-        end process configRegisters;        
+	begin
+		if LogicReset_R = '1' then
+			MultiplexerConfigReg2_D <= tMultiplexerConfigDefault;
+			DVSAERConfigReg2_D      <= tDVSAERConfigDefault;
+			APSADCConfigReg2_D      <= tAPSADCConfigDefault;
+			IMUConfigReg2_D         <= tIMUConfigDefault;
+			ExtInputConfigReg2_D    <= tExtInputConfigDefault;
+			FX3ConfigReg2_D         <= tFX3ConfigDefault;
+
+			MultiplexerConfigReg_D <= tMultiplexerConfigDefault;
+			DVSAERConfigReg_D      <= tDVSAERConfigDefault;
+			APSADCConfigReg_D      <= tAPSADCConfigDefault;
+			IMUConfigReg_D         <= tIMUConfigDefault;
+			ExtInputConfigReg_D    <= tExtInputConfigDefault;
+			FX3ConfigReg_D         <= tFX3ConfigDefault;
+		elsif rising_edge(LogicClock_C) then
+			MultiplexerConfigReg2_D <= MultiplexerConfigReg_D;
+			DVSAERConfigReg2_D      <= DVSAERConfigReg_D;
+			APSADCConfigReg2_D      <= APSADCConfigReg_D;
+			IMUConfigReg2_D         <= IMUConfigReg_D;
+			ExtInputConfigReg2_D    <= ExtInputConfigReg_D;
+			FX3ConfigReg2_D         <= FX3ConfigReg_D;
+
+			MultiplexerConfigReg_D <= MultiplexerConfig_D;
+			DVSAERConfigReg_D      <= DVSAERConfig_D;
+			APSADCConfigReg_D      <= APSADCConfig_D;
+			IMUConfigReg_D         <= IMUConfig_D;
+			ExtInputConfigReg_D    <= ExtInputConfig_D;
+			FX3ConfigReg_D         <= FX3Config_D;
+		end if;
+	end process configRegisters;
 
 	-- Data flows the other way here!
 	configInfoOutRegisters : process(LogicClock_C, LogicReset_R) is

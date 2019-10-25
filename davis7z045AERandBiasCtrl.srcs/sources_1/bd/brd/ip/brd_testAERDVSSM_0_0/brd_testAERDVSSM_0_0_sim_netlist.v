@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Fri Oct 25 12:43:42 2019
+// Date        : Fri Oct 25 19:56:34 2019
 // Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               E:/PhD_project/vivado_prjs/davisZynq/davis7z045AERandBiasCtrl/davis7z045AERandBiasCtrl.srcs/sources_1/bd/brd/ip/brd_testAERDVSSM_0_0/brd_testAERDVSSM_0_0_sim_netlist.v
@@ -2944,7 +2944,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_25
     Bias3Changed_S,
     Bias2Changed_S,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__26);
   output Bias10Changed_S;
   output [0:0]D;
   output \FSM_onehot_State_DP_reg[32] ;
@@ -2956,9 +2956,8 @@ module brd_testAERDVSSM_0_0_ChangeDetector_25
   input Bias3Changed_S;
   input Bias2Changed_S;
   input [0:0]out;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__26;
 
-  wire [0:0]AR;
   wire Bias10Changed_S;
   wire Bias2Changed_S;
   wire Bias3Changed_S;
@@ -2980,6 +2979,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_25
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__26;
   wire [0:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -3052,91 +3052,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_25
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_79 bufferChangeDetectedSignal
@@ -3174,7 +3174,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_26
     Bias8Changed_S,
     Bias4Changed_S,
     Bias3Changed_S,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__26);
   output Bias11Changed_S;
   output [0:0]D;
   output \FSM_onehot_State_DP_reg[33] ;
@@ -3194,9 +3194,8 @@ module brd_testAERDVSSM_0_0_ChangeDetector_26
   input Bias8Changed_S;
   input Bias4Changed_S;
   input Bias3Changed_S;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__26;
 
-  wire [0:0]AR;
   wire Bias10Changed_S;
   wire Bias11Changed_S;
   wire Bias12Changed_S;
@@ -3226,6 +3225,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_26
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__26;
   wire [1:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -3298,91 +3298,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_26
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_78 bufferChangeDetectedSignal
@@ -3414,15 +3414,14 @@ module brd_testAERDVSSM_0_0_ChangeDetector_27
     SyncSignalSyncFF_S_reg_rep__22,
     Q,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__26);
   output Bias12Changed_S;
   input LogicClk_CI;
   input [0:0]SyncSignalSyncFF_S_reg_rep__22;
   input [14:0]Q;
   input [0:0]out;
-  input [1:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__26;
 
-  wire [1:0]AR;
   wire Bias12Changed_S;
   wire ChangeDetected_S1;
   wire ChangeDetected_S1_carry__0_i_1__4_n_0;
@@ -3438,6 +3437,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_27
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__26;
   wire [0:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -3510,91 +3510,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_27
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_77 bufferChangeDetectedSignal
@@ -3614,7 +3614,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_28
     Q,
     Bias14Changed_S,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__25);
   output Bias13Changed_S;
   output \FSM_onehot_State_DP_reg[30] ;
   input LogicClk_CI;
@@ -3622,9 +3622,8 @@ module brd_testAERDVSSM_0_0_ChangeDetector_28
   input [14:0]Q;
   input Bias14Changed_S;
   input [0:0]out;
-  input [0:0]AR;
+  input [1:0]SyncSignalSyncFF_S_reg_rep__25;
 
-  wire [0:0]AR;
   wire Bias13Changed_S;
   wire Bias14Changed_S;
   wire ChangeDetected_S1;
@@ -3642,6 +3641,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_28
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [1:0]SyncSignalSyncFF_S_reg_rep__25;
   wire [0:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -3714,91 +3714,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_28
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[0]),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25[1]),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_76 bufferChangeDetectedSignal
@@ -3822,7 +3822,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_29
     Bias16Changed_S,
     Bias15Changed_S,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__25);
   output Bias14Changed_S;
   output \FSM_onehot_State_DP_reg[24] ;
   input LogicClk_CI;
@@ -3832,9 +3832,8 @@ module brd_testAERDVSSM_0_0_ChangeDetector_29
   input Bias16Changed_S;
   input Bias15Changed_S;
   input [0:0]out;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__25;
 
-  wire [0:0]AR;
   wire Bias13Changed_S;
   wire Bias14Changed_S;
   wire Bias15Changed_S;
@@ -3854,6 +3853,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_29
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__25;
   wire [0:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -3926,91 +3926,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_29
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_75 bufferChangeDetectedSignal
@@ -4032,15 +4032,14 @@ module brd_testAERDVSSM_0_0_ChangeDetector_30
     SyncSignalSyncFF_S_reg_rep__22,
     Q,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__25);
   output Bias15Changed_S;
   input LogicClk_CI;
   input [0:0]SyncSignalSyncFF_S_reg_rep__22;
   input [14:0]Q;
   input [0:0]out;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__25;
 
-  wire [0:0]AR;
   wire Bias15Changed_S;
   wire ChangeDetected_S1;
   wire ChangeDetected_S1_carry__0_i_1__7_n_0;
@@ -4056,6 +4055,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_30
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__25;
   wire [0:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -4128,91 +4128,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_30
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_74 bufferChangeDetectedSignal
@@ -4235,7 +4235,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_31
     Bias20Changed_S,
     Memory_SP_reg,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__25);
   output Bias16Changed_S;
   output \FSM_onehot_State_DP_reg[0] ;
   input LogicClk_CI;
@@ -4246,9 +4246,8 @@ module brd_testAERDVSSM_0_0_ChangeDetector_31
   input Bias20Changed_S;
   input Memory_SP_reg;
   input [0:0]out;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__25;
 
-  wire [0:0]AR;
   wire Bias15Changed_S;
   wire Bias16Changed_S;
   wire Bias20Changed_S;
@@ -4269,6 +4268,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_31
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__25;
   wire [0:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -4341,91 +4341,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_31
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_73 bufferChangeDetectedSignal
@@ -4450,7 +4450,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_32
     Q,
     Bias18Changed_S,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__25);
   output Bias17Changed_S;
   output \FSM_onehot_State_DP_reg[21] ;
   input LogicClk_CI;
@@ -4458,9 +4458,8 @@ module brd_testAERDVSSM_0_0_ChangeDetector_32
   input [14:0]Q;
   input Bias18Changed_S;
   input [0:0]out;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__25;
 
-  wire [0:0]AR;
   wire Bias17Changed_S;
   wire Bias18Changed_S;
   wire ChangeDetected_S1;
@@ -4478,6 +4477,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_32
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__25;
   wire [0:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -4550,91 +4550,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_32
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_72 bufferChangeDetectedSignal
@@ -4658,7 +4658,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_33
     Bias20Changed_S,
     Bias19Changed_S,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__25);
   output Bias18Changed_S;
   output \FSM_onehot_State_DP_reg[23] ;
   input LogicClk_CI;
@@ -4668,9 +4668,8 @@ module brd_testAERDVSSM_0_0_ChangeDetector_33
   input Bias20Changed_S;
   input Bias19Changed_S;
   input [0:0]out;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__25;
 
-  wire [0:0]AR;
   wire Bias17Changed_S;
   wire Bias18Changed_S;
   wire Bias19Changed_S;
@@ -4690,6 +4689,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_33
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__25;
   wire [0:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -4762,91 +4762,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_33
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_71 bufferChangeDetectedSignal
@@ -4895,7 +4895,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_34
     Bias11Changed_S,
     Bias0Changed_S,
     Bias12Changed_S,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__25);
   output Bias19Changed_S;
   output [3:0]D;
   output \FSM_onehot_State_DP_reg[32] ;
@@ -4928,9 +4928,8 @@ module brd_testAERDVSSM_0_0_ChangeDetector_34
   input Bias11Changed_S;
   input Bias0Changed_S;
   input Bias12Changed_S;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__25;
 
-  wire [0:0]AR;
   wire Bias0Changed_S;
   wire Bias10Changed_S;
   wire Bias11Changed_S;
@@ -4973,6 +4972,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_34
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__25;
   wire [1:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -5045,91 +5045,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_34
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_70 bufferChangeDetectedSignal
@@ -5174,17 +5174,14 @@ module brd_testAERDVSSM_0_0_ChangeDetector_36
     SyncSignalSyncFF_S_reg_rep__22,
     Q,
     out,
-    AR,
-    SyncSignalSyncFF_S_reg_rep__24);
+    SyncSignalSyncFF_S_reg_rep__25);
   output Bias20Changed_S;
   input LogicClk_CI;
   input [0:0]SyncSignalSyncFF_S_reg_rep__22;
   input [14:0]Q;
   input [0:0]out;
-  input [0:0]AR;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__24;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__25;
 
-  wire [0:0]AR;
   wire Bias20Changed_S;
   wire ChangeDetected_S1;
   wire ChangeDetected_S1_carry__0_i_1__12_n_0;
@@ -5200,7 +5197,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_36
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__24;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__25;
   wire [0:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -5273,91 +5270,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_36
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__24),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__24),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__24),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__24),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_68 bufferChangeDetectedSignal
@@ -5377,6 +5374,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_37
     Q,
     Bias22Changed_S,
     out,
+    SyncSignalSyncFF_S_reg_rep__25,
     SyncSignalSyncFF_S_reg_rep__24);
   output Bias21Changed_S;
   output \FSM_onehot_State_DP_reg[18] ;
@@ -5385,6 +5383,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_37
   input [14:0]Q;
   input Bias22Changed_S;
   input [0:0]out;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__25;
   input [0:0]SyncSignalSyncFF_S_reg_rep__24;
 
   wire Bias21Changed_S;
@@ -5405,6 +5404,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_37
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__24;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__25;
   wire [0:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -5483,31 +5483,31 @@ module brd_testAERDVSSM_0_0_ChangeDetector_37
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__24),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__24),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__24),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__24),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__24),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
@@ -5543,7 +5543,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_37
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__24),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
@@ -5561,7 +5561,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_37
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__24),
+        .CLR(SyncSignalSyncFF_S_reg_rep__25),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_67 bufferChangeDetectedSignal
@@ -7288,7 +7288,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_49
     Bias14Changed_S,
     Bias25Changed_S,
     Bias26Changed_S,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__26);
   output Bias8Changed_S;
   output \FSM_onehot_State_DP_reg[0] ;
   input LogicClk_CI;
@@ -7307,9 +7307,8 @@ module brd_testAERDVSSM_0_0_ChangeDetector_49
   input Bias14Changed_S;
   input Bias25Changed_S;
   input Bias26Changed_S;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__26;
 
-  wire [0:0]AR;
   wire Bias13Changed_S;
   wire Bias14Changed_S;
   wire Bias1Changed_S;
@@ -7338,6 +7337,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_49
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__26;
   wire [2:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -7410,91 +7410,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_49
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_54 bufferChangeDetectedSignal
@@ -7525,15 +7525,14 @@ module brd_testAERDVSSM_0_0_ChangeDetector_50
     SyncSignalSyncFF_S_reg_rep__22,
     Q,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__26);
   output Bias9Changed_S;
   input LogicClk_CI;
   input [0:0]SyncSignalSyncFF_S_reg_rep__22;
   input [14:0]Q;
   input [0:0]out;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__26;
 
-  wire [0:0]AR;
   wire Bias9Changed_S;
   wire ChangeDetected_S1;
   wire ChangeDetected_S1_carry__0_i_1__1_n_0;
@@ -7549,6 +7548,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector_50
   wire [14:0]PreviousData_DP;
   wire [14:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__26;
   wire [0:0]out;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
   wire [3:1]NLW_ChangeDetected_S1_carry__0_CO_UNCONNECTED;
@@ -7621,91 +7621,91 @@ module brd_testAERDVSSM_0_0_ChangeDetector_50
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[12]),
         .Q(PreviousData_DP[12]));
   FDCE \PreviousData_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[13]),
         .Q(PreviousData_DP[13]));
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_53 bufferChangeDetectedSignal
@@ -7723,15 +7723,14 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0
     SyncSignalSyncFF_S_reg_rep__22,
     Q,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__26);
   output Bias0Changed_S;
   input LogicClk_CI;
   input [0:0]SyncSignalSyncFF_S_reg_rep__22;
   input [8:0]Q;
   input [0:0]out;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__26;
 
-  wire [0:0]AR;
   wire Bias0Changed_S;
   wire ChangeDetected_S1;
   wire ChangeDetected_S1_carry_i_1__0_n_0;
@@ -7743,6 +7742,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0
   wire [8:0]PreviousData_DP;
   wire [8:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__26;
   wire [0:0]out;
   wire [3:3]NLW_ChangeDetected_S1_carry_CO_UNCONNECTED;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
@@ -7787,55 +7787,55 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   brd_testAERDVSSM_0_0_BufferClear_80 bufferChangeDetectedSignal
@@ -7853,15 +7853,14 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_35
     SyncSignalSyncFF_S_reg_rep__22,
     Q,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__26);
   output Bias1Changed_S;
   input LogicClk_CI;
   input [0:0]SyncSignalSyncFF_S_reg_rep__22;
   input [8:0]Q;
   input [0:0]out;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__26;
 
-  wire [0:0]AR;
   wire Bias1Changed_S;
   wire ChangeDetected_S1;
   wire ChangeDetected_S1_carry_i_1__1_n_0;
@@ -7873,6 +7872,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_35
   wire [8:0]PreviousData_DP;
   wire [8:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__26;
   wire [0:0]out;
   wire [3:3]NLW_ChangeDetected_S1_carry_CO_UNCONNECTED;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
@@ -7917,55 +7917,55 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_35
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   brd_testAERDVSSM_0_0_BufferClear_69 bufferChangeDetectedSignal
@@ -7983,15 +7983,14 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_44
     SyncSignalSyncFF_S_reg_rep__22,
     Q,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__26);
   output Bias2Changed_S;
   input LogicClk_CI;
   input [0:0]SyncSignalSyncFF_S_reg_rep__22;
   input [8:0]Q;
   input [0:0]out;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__26;
 
-  wire [0:0]AR;
   wire Bias2Changed_S;
   wire ChangeDetected_S1;
   wire ChangeDetected_S1_carry_i_1__2_n_0;
@@ -8003,6 +8002,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_44
   wire [8:0]PreviousData_DP;
   wire [8:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__26;
   wire [0:0]out;
   wire [3:3]NLW_ChangeDetected_S1_carry_CO_UNCONNECTED;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
@@ -8047,55 +8047,55 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_44
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   brd_testAERDVSSM_0_0_BufferClear_60 bufferChangeDetectedSignal
@@ -8113,15 +8113,14 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_47
     SyncSignalSyncFF_S_reg_rep__22,
     Q,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__26);
   output Bias3Changed_S;
   input LogicClk_CI;
   input [0:0]SyncSignalSyncFF_S_reg_rep__22;
   input [8:0]Q;
   input [0:0]out;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__26;
 
-  wire [0:0]AR;
   wire Bias3Changed_S;
   wire ChangeDetected_S1;
   wire ChangeDetected_S1_carry_i_1__3_n_0;
@@ -8133,6 +8132,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_47
   wire [8:0]PreviousData_DP;
   wire [8:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__26;
   wire [0:0]out;
   wire [3:3]NLW_ChangeDetected_S1_carry_CO_UNCONNECTED;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
@@ -8177,55 +8177,55 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_47
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   brd_testAERDVSSM_0_0_BufferClear_56 bufferChangeDetectedSignal
@@ -8245,7 +8245,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_48
     Q,
     Bias8Changed_S,
     out,
-    AR);
+    SyncSignalSyncFF_S_reg_rep__26);
   output Bias4Changed_S;
   output \FSM_onehot_State_DP_reg[32] ;
   input LogicClk_CI;
@@ -8253,9 +8253,8 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_48
   input [8:0]Q;
   input Bias8Changed_S;
   input [0:0]out;
-  input [0:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__26;
 
-  wire [0:0]AR;
   wire Bias4Changed_S;
   wire Bias8Changed_S;
   wire ChangeDetected_S1;
@@ -8269,6 +8268,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_48
   wire [8:0]PreviousData_DP;
   wire [8:0]Q;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__26;
   wire [0:0]out;
   wire [3:3]NLW_ChangeDetected_S1_carry_CO_UNCONNECTED;
   wire [3:0]NLW_ChangeDetected_S1_carry_O_UNCONNECTED;
@@ -8313,55 +8313,55 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_48
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[1]),
         .Q(PreviousData_DP[1]));
   FDCE \PreviousData_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[2]),
         .Q(PreviousData_DP[2]));
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__26),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   brd_testAERDVSSM_0_0_BufferClear_55 bufferChangeDetectedSignal
@@ -8503,19 +8503,19 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized1
   FDCE \PreviousData_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[0]),
         .D(Q[0]),
         .Q(PreviousData_DP[0]));
   FDCE \PreviousData_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[0]),
         .D(Q[10]),
         .Q(PreviousData_DP[10]));
   FDCE \PreviousData_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[0]),
         .D(Q[11]),
         .Q(PreviousData_DP[11]));
   FDCE \PreviousData_DP_reg[12] 
@@ -8533,7 +8533,7 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized1
   FDCE \PreviousData_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[0]),
         .D(Q[14]),
         .Q(PreviousData_DP[14]));
   FDCE \PreviousData_DP_reg[15] 
@@ -8557,43 +8557,43 @@ module brd_testAERDVSSM_0_0_ChangeDetector__parameterized1
   FDCE \PreviousData_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[0]),
         .D(Q[3]),
         .Q(PreviousData_DP[3]));
   FDCE \PreviousData_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[0]),
         .D(Q[4]),
         .Q(PreviousData_DP[4]));
   FDCE \PreviousData_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[0]),
         .D(Q[5]),
         .Q(PreviousData_DP[5]));
   FDCE \PreviousData_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[0]),
         .D(Q[6]),
         .Q(PreviousData_DP[6]));
   FDCE \PreviousData_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[0]),
         .D(Q[7]),
         .Q(PreviousData_DP[7]));
   FDCE \PreviousData_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[0]),
         .D(Q[8]),
         .Q(PreviousData_DP[8]));
   FDCE \PreviousData_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[0]),
         .D(Q[9]),
         .Q(PreviousData_DP[9]));
   brd_testAERDVSSM_0_0_BufferClear_58 bufferChangeDetectedSignal
@@ -9491,16 +9491,16 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
     \ParamAddressReg_DP_reg[0]_2 ,
     \ParamAddressReg_DP_reg[3] ,
     \ParamAddressReg_DP_reg[3]_0 ,
-    SyncSignalSyncFF_S_reg_rep__13,
     \ParamAddressReg_DP_reg[1]_0 ,
     \ParamAddressReg_DP_reg[3]_1 ,
     \ParamAddressReg_DP_reg[3]_2 ,
     \ParamAddressReg_DP_reg[2] ,
-    SyncSignalSyncFF_S_reg_rep__12,
+    SyncSignalSyncFF_S_reg_rep__13,
     \ParamAddressReg_DP_reg[3]_3 ,
     \ParamAddressReg_DP_reg[1]_1 ,
     \ParamAddressReg_DP_reg[0]_3 ,
     \ParamAddressReg_DP_reg[3]_4 ,
+    SyncSignalSyncFF_S_reg_rep__12,
     \ParamAddressReg_DP_reg[1]_2 ,
     \ParamAddressReg_DP_reg[4] ,
     \ParamAddressReg_DP_reg[0]_4 ,
@@ -9521,8 +9521,6 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
     \ParamAddressReg_DP_reg[3]_5 ,
     \ParamAddressReg_DP_reg[1]_5 ,
     D,
-    SyncSignalSyncFF_S_reg_rep__0,
-    SyncSignalSyncFF_S_reg_rep,
     \ParamAddressReg_DP_reg[3]_6 ,
     \ParamAddressReg_DP_reg[0]_6 ,
     \ParamAddressReg_DP_reg[1]_6 ,
@@ -9534,7 +9532,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
     \ParamAddressReg_DP_reg[4]_0 ,
     SyncSignalSyncFF_S_reg_rep__17,
     SyncSignalSyncFF_S_reg_rep__19,
-    SyncSignalSyncFF_S_reg_rep__21,
+    SyncSignalSyncFF_S_reg_rep__20,
     SyncSignalSyncFF_S_reg_rep__26,
     SyncSignalSyncFF_S_reg_rep__25,
     SyncSignalSyncFF_S_reg_rep__24,
@@ -9580,7 +9578,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   output ChipBiasBitIn_DO;
   output ChipBiasLatch_SBO;
   input LogicClk_CI;
-  input [0:0]AR;
+  input [3:0]AR;
   input [1:0]SyncSignalSyncFF_S_reg_rep__23;
   input \ParamInput_DP_reg[0] ;
   input \ParamInput_DP_reg[0]_0 ;
@@ -9605,16 +9603,16 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   input [0:0]\ParamAddressReg_DP_reg[0]_2 ;
   input [0:0]\ParamAddressReg_DP_reg[3] ;
   input [0:0]\ParamAddressReg_DP_reg[3]_0 ;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__13;
   input [0:0]\ParamAddressReg_DP_reg[1]_0 ;
   input [0:0]\ParamAddressReg_DP_reg[3]_1 ;
   input [0:0]\ParamAddressReg_DP_reg[3]_2 ;
   input [0:0]\ParamAddressReg_DP_reg[2] ;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__12;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__13;
   input [0:0]\ParamAddressReg_DP_reg[3]_3 ;
   input [0:0]\ParamAddressReg_DP_reg[1]_1 ;
   input [0:0]\ParamAddressReg_DP_reg[0]_3 ;
   input [0:0]\ParamAddressReg_DP_reg[3]_4 ;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__12;
   input [0:0]\ParamAddressReg_DP_reg[1]_2 ;
   input [0:0]\ParamAddressReg_DP_reg[4] ;
   input [0:0]\ParamAddressReg_DP_reg[0]_4 ;
@@ -9635,8 +9633,6 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   input [0:0]\ParamAddressReg_DP_reg[3]_5 ;
   input [0:0]\ParamAddressReg_DP_reg[1]_5 ;
   input [6:0]D;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__0;
-  input [0:0]SyncSignalSyncFF_S_reg_rep;
   input [0:0]\ParamAddressReg_DP_reg[3]_6 ;
   input [0:0]\ParamAddressReg_DP_reg[0]_6 ;
   input [0:0]\ParamAddressReg_DP_reg[1]_6 ;
@@ -9647,14 +9643,14 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   input [0:0]\ParamAddressReg_DP_reg[3]_7 ;
   input [3:0]\ParamAddressReg_DP_reg[4]_0 ;
   input [1:0]SyncSignalSyncFF_S_reg_rep__17;
-  input [1:0]SyncSignalSyncFF_S_reg_rep__19;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__21;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__19;
+  input [1:0]SyncSignalSyncFF_S_reg_rep__20;
   input [0:0]SyncSignalSyncFF_S_reg_rep__26;
   input [0:0]SyncSignalSyncFF_S_reg_rep__25;
   input [0:0]SyncSignalSyncFF_S_reg_rep__24;
   input SyncReset_RO;
 
-  wire [0:0]AR;
+  wire [3:0]AR;
   wire [14:0]\BiasConfigReg_DP_reg[AEPdBn_D] ;
   wire [14:0]\BiasConfigReg_DP_reg[AEPuXBp_D] ;
   wire [14:0]\BiasConfigReg_DP_reg[AEPuYBp_D] ;
@@ -9783,8 +9779,6 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   wire [3:0]\ParamOutput_DP_reg[3] ;
   wire [0:0]Q;
   wire SyncReset_RO;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__0;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__10;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__11;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__12;
@@ -9792,8 +9786,8 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   wire [0:0]SyncSignalSyncFF_S_reg_rep__14;
   wire [1:0]SyncSignalSyncFF_S_reg_rep__15;
   wire [1:0]SyncSignalSyncFF_S_reg_rep__17;
-  wire [1:0]SyncSignalSyncFF_S_reg_rep__19;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__21;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__19;
+  wire [1:0]SyncSignalSyncFF_S_reg_rep__20;
   wire [1:0]SyncSignalSyncFF_S_reg_rep__23;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__24;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__25;
@@ -10282,7 +10276,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   wire \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[UseAOut_S]__0 ;
 
   brd_testAERDVSSM_0_0_DAVIS346StateMachine \davis346ChipBias.davis346ChipBiasSM 
-       (.AR({SyncSignalSyncFF_S_reg_rep__26,SyncSignalSyncFF_S_reg_rep__25}),
+       (.AR(AR[3]),
         .ChipBiasAddrSelect_SBO(ChipBiasAddrSelect_SBO),
         .ChipBiasBitIn_DO(ChipBiasBitIn_DO),
         .ChipBiasClock_CBO(ChipBiasClock_CBO),
@@ -10299,12 +10293,13 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
         .LogicClk_CI(LogicClk_CI),
         .Q({\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[BiasMux0_D_n_0_][3] ,\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[BiasMux0_D_n_0_][2] ,\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[BiasMux0_D_n_0_][1] ,\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[BiasMux0_D_n_0_][0] }),
         .SyncReset_RO(SyncReset_RO),
-        .SyncSignalSyncFF_S_reg_rep__0(SyncSignalSyncFF_S_reg_rep__0),
         .SyncSignalSyncFF_S_reg_rep__15(SyncSignalSyncFF_S_reg_rep__15),
         .SyncSignalSyncFF_S_reg_rep__17(SyncSignalSyncFF_S_reg_rep__17),
         .SyncSignalSyncFF_S_reg_rep__19(SyncSignalSyncFF_S_reg_rep__19),
-        .SyncSignalSyncFF_S_reg_rep__21({SyncSignalSyncFF_S_reg_rep__21,SyncSignalSyncFF_S_reg_rep__24}),
+        .SyncSignalSyncFF_S_reg_rep__20(SyncSignalSyncFF_S_reg_rep__20[1]),
+        .SyncSignalSyncFF_S_reg_rep__21({SyncSignalSyncFF_S_reg_rep__20[0],SyncSignalSyncFF_S_reg_rep__24}),
         .SyncSignalSyncFF_S_reg_rep__23(SyncSignalSyncFF_S_reg_rep__23),
+        .SyncSignalSyncFF_S_reg_rep__25({SyncSignalSyncFF_S_reg_rep__25,SyncSignalSyncFF_S_reg_rep__26}),
         .\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] ({\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][14] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][13] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][12] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][11] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][10] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][9] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][8] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][7] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][6] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][5] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][4] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][3] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][2] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][1] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][0] }),
         .\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] ({\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][14] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][13] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][12] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][11] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][10] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][9] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][8] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][7] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][6] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][5] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][4] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][3] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][2] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][1] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][0] }),
         .\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] ({\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][14] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][13] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][12] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][11] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][10] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][9] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][8] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][7] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][6] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][5] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][4] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][3] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][2] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][1] ,\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][0] }),
@@ -10428,10 +10423,8 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
         .\ParamOutput_DP_reg[15] (\ParamOutput_DP_reg[15] ),
         .\ParamOutput_DP_reg[3] (\ParamOutput_DP_reg[3] ),
         .Q({Q,\BiasConfigReg_DP_reg[SSN_D] }),
-        .SyncSignalSyncFF_S_reg_rep__0({SyncSignalSyncFF_S_reg_rep__0,SyncSignalSyncFF_S_reg_rep}),
-        .SyncSignalSyncFF_S_reg_rep__10(SyncSignalSyncFF_S_reg_rep__10),
-        .SyncSignalSyncFF_S_reg_rep__12({SyncSignalSyncFF_S_reg_rep__12,SyncSignalSyncFF_S_reg_rep__11}),
-        .SyncSignalSyncFF_S_reg_rep__13(SyncSignalSyncFF_S_reg_rep__13),
+        .SyncSignalSyncFF_S_reg_rep__11({SyncSignalSyncFF_S_reg_rep__11,SyncSignalSyncFF_S_reg_rep__10}),
+        .SyncSignalSyncFF_S_reg_rep__13({SyncSignalSyncFF_S_reg_rep__13,SyncSignalSyncFF_S_reg_rep__12}),
         .SyncSignalSyncFF_S_reg_rep__15({SyncSignalSyncFF_S_reg_rep__15[1],SyncSignalSyncFF_S_reg_rep__14}),
         .SyncSignalSyncFF_S_reg_rep__5({SyncSignalSyncFF_S_reg_rep__5,SyncSignalSyncFF_S_reg_rep__4}),
         .\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] (\BiasConfigReg_DP_reg[AEPdBn_D] ),
@@ -10472,277 +10465,277 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][10] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][11] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][12] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][13] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][14] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D_n_0_][9] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][10] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][11] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][12] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][13] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][14] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D_n_0_][9] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][10] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][11] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][12] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][13] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][14] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D_n_0_][9] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][10] 
@@ -10778,13 +10771,13 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][3] 
@@ -10886,19 +10879,19 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefLow_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefLow_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefLow_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D][3] 
@@ -10976,19 +10969,19 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcTestVoltage_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcTestVoltage_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcTestVoltage_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ApsCas_D][0] 
@@ -11192,271 +11185,271 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][10] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][11] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][12] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][13] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][14] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D_n_0_][9] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][10] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][11] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][12] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][13] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][14] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D_n_0_][9] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][10] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][11] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][12] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][13] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][14] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D_n_0_][9] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DiffBn_D][0] 
@@ -11552,271 +11545,271 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][10] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][11] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][12] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][13] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][14] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D_n_0_][9] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][10] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][11] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][12] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][13] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][14] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D_n_0_][9] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][10] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][11] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][12] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][13] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][14] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D_n_0_][9] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LocalBufBn_D][0] 
@@ -12050,37 +12043,37 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][9] 
@@ -12362,7 +12355,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][10] 
@@ -12398,31 +12391,31 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][6] 
@@ -12632,193 +12625,193 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][10] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][11] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][12] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][13] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][14] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][15] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [15]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][15] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D_n_0_][9] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][10] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][11] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][12] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][13] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][14] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][15] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [15]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][15] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][4] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][5] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][6] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][7] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][8] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSP_D_n_0_][9] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][0] 
@@ -12842,13 +12835,13 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11),
         .D(\BiasConfigReg_DP_reg[AEPdBn_D] [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [12]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11),
         .D(\BiasConfigReg_DP_reg[AEPdBn_D] [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D]__0 [13]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] 
@@ -12932,13 +12925,13 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11),
         .D(\BiasConfigReg_DP_reg[AEPuXBp_D] [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [12]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11),
         .D(\BiasConfigReg_DP_reg[AEPuXBp_D] [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D]__0 [13]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] 
@@ -13022,13 +13015,13 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11),
         .D(\BiasConfigReg_DP_reg[AEPuYBp_D] [12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [12]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11),
         .D(\BiasConfigReg_DP_reg[AEPuYBp_D] [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D]__0 [13]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] 
@@ -13118,7 +13111,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__11),
+        .CLR(SyncSignalSyncFF_S_reg_rep__12),
         .D(\BiasConfigReg_DP_reg[AdcCompBp_D] [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D]__0 [13]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] 
@@ -13196,7 +13189,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefHigh_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__14),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
         .D(\BiasConfigReg_DP_reg[AdcRefHigh_D] [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefHigh_D]__0 [2]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefHigh_D][3] 
@@ -13250,7 +13243,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefLow_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__14),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
         .D(\BiasConfigReg_DP_reg[AdcRefLow_D] [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefLow_D]__0 [2]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefLow_D][3] 
@@ -13292,7 +13285,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcTestVoltage_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__14),
         .D(\BiasConfigReg_DP_reg[AdcTestVoltage_D] [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcTestVoltage_D]__0 [0]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcTestVoltage_D][1] 
@@ -13358,7 +13351,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsCas_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__14),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
         .D(\BiasConfigReg_DP_reg[ApsCas_D] [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsCas_D]__0 [2]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsCas_D][3] 
@@ -13412,7 +13405,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsOverflowLevel_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__14),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
         .D(\BiasConfigReg_DP_reg[ApsOverflowLevel_D] [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsOverflowLevel_D]__0 [2]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsOverflowLevel_D][3] 
@@ -13484,7 +13477,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13),
         .D(\BiasConfigReg_DP_reg[ApsROSFBn_D] [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D]__0 [14]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][1] 
@@ -13592,7 +13585,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4),
+        .CLR(SyncSignalSyncFF_S_reg_rep__5),
         .D(\BiasConfigReg_DP_reg[BiasBuffer_D] [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D]__0 [3]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D][4] 
@@ -13658,13 +13651,13 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__11),
+        .CLR(SyncSignalSyncFF_S_reg_rep__12),
         .D(\BiasConfigReg_DP_reg[ColSelLowBn_D] [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [13]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__11),
+        .CLR(SyncSignalSyncFF_S_reg_rep__12),
         .D(\BiasConfigReg_DP_reg[ColSelLowBn_D] [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D]__0 [14]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][1] 
@@ -13748,7 +13741,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__11),
+        .CLR(SyncSignalSyncFF_S_reg_rep__12),
         .D(\BiasConfigReg_DP_reg[DACBufBp_D] [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D]__0 [13]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] 
@@ -13814,7 +13807,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DiffBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__14),
         .D(\BiasConfigReg_DP_reg[DiffBn_D] [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DiffBn_D]__0 [0]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DiffBn_D][10] 
@@ -13928,7 +13921,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11),
         .D(\BiasConfigReg_DP_reg[IFRefrBn_D] [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D]__0 [13]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] 
@@ -14042,7 +14035,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4),
+        .CLR(SyncSignalSyncFF_S_reg_rep__5),
         .D(\BiasConfigReg_DP_reg[IFThrBn_D] [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D]__0 [3]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D][4] 
@@ -14108,13 +14101,13 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__11),
+        .CLR(SyncSignalSyncFF_S_reg_rep__12),
         .D(\BiasConfigReg_DP_reg[LcolTimeoutBn_D] [13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [13]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__11),
+        .CLR(SyncSignalSyncFF_S_reg_rep__12),
         .D(\BiasConfigReg_DP_reg[LcolTimeoutBn_D] [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D]__0 [14]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][1] 
@@ -14174,7 +14167,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LocalBufBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__14),
         .D(\BiasConfigReg_DP_reg[LocalBufBn_D] [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LocalBufBn_D]__0 [0]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LocalBufBn_D][10] 
@@ -14444,7 +14437,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PadFollBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__14),
         .D(\BiasConfigReg_DP_reg[PadFollBn_D] [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PadFollBn_D]__0 [0]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PadFollBn_D][10] 
@@ -14564,7 +14557,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__14),
         .D(\BiasConfigReg_DP_reg[PixInvBn_D] [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D]__0 [14]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][1] 
@@ -14744,7 +14737,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13),
         .D(\BiasConfigReg_DP_reg[PrSFBp_D] [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D]__0 [14]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][1] 
@@ -14834,7 +14827,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13),
         .D(\BiasConfigReg_DP_reg[ReadoutBufBp_D] [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D]__0 [14]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][1] 
@@ -14924,7 +14917,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13),
         .D(\BiasConfigReg_DP_reg[RefrBp_D] [14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D]__0 [14]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][1] 
@@ -15038,7 +15031,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4),
+        .CLR(SyncSignalSyncFF_S_reg_rep__5),
         .D(\BiasConfigReg_DP_reg[SSN_D] [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D]__0 [3]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSN_D][4] 
@@ -15134,7 +15127,7 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4),
+        .CLR(SyncSignalSyncFF_S_reg_rep__5),
         .D(\BiasConfigReg_DP_reg[SSP_D] [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D]__0 [3]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D][4] 
@@ -15182,49 +15175,49 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux2_D][0] 
@@ -15278,97 +15271,97 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux0_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux0_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux0_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux0_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux0_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux0_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux0_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux0_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux1_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux1_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux1_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux1_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux1_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux1_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux1_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux1_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux2_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux2_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux2_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux2_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux2_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux2_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux2_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux2_D_n_0_][3] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux3_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0 [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux3_D_n_0_][0] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux3_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0 [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux3_D_n_0_][1] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux3_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0 [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux3_D_n_0_][2] ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux3_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0 [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[DigitalMux3_D_n_0_][3] ));
   FDPE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[GlobalShutter_S] 
@@ -15416,241 +15409,241 @@ module brd_testAERDVSSM_0_0_ChipBiasSelector
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AERnArow_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AERnArow_S] ),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AERnArow_S]__0 ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AnalogMux0_D] [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0 [0]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AnalogMux0_D] [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0 [1]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AnalogMux0_D] [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0 [2]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AnalogMux0_D] [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D]__0 [3]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AnalogMux1_D] [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0 [0]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AnalogMux1_D] [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0 [1]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AnalogMux1_D] [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0 [2]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AnalogMux1_D] [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D]__0 [3]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AnalogMux2_D] [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D]__0 [0]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AnalogMux2_D] [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D]__0 [1]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AnalogMux2_D] [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D]__0 [2]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[AnalogMux2_D] [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D]__0 [3]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[BiasMux0_D] [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D]__0 [0]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[BiasMux0_D] [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D]__0 [1]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[BiasMux0_D] [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D]__0 [2]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[BiasMux0_D] [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D]__0 [3]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux0_D] [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0 [0]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux0_D] [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0 [1]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux0_D] [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0 [2]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux0_D] [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D]__0 [3]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux1_D] [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0 [0]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux1_D] [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0 [1]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux1_D] [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0 [2]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux1_D] [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D]__0 [3]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux2_D] [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0 [0]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux2_D] [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0 [1]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux2_D] [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0 [2]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux2_D] [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D]__0 [3]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux3_D] [0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0 [0]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux3_D] [1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0 [1]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux3_D] [2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0 [2]));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[DigitalMux3_D] [3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D]__0 [3]));
   FDPE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[GlobalShutter_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\ChipConfigReg_DP_reg[GlobalShutter_S] ),
-        .PRE(AR),
+        .PRE(AR[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[GlobalShutter_S]__0 ));
   FDPE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[ResetCalibNeuron_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\ChipConfigReg_DP_reg[ResetCalibNeuron_S] ),
-        .PRE(AR),
+        .PRE(AR[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[ResetCalibNeuron_S]__0 ));
   FDPE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[ResetTestPixel_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\ChipConfigReg_DP_reg[ResetTestPixel_S] ),
-        .PRE(AR),
+        .PRE(AR[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[ResetTestPixel_S]__0 ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[SelectGrayCounter_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[SelectGrayCounter_S] ),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[SelectGrayCounter_S]__0 ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[TestADC_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[TestADC_S] ),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[TestADC_S]__0 ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[TypeNCalibNeuron_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[TypeNCalibNeuron_S] ),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[TypeNCalibNeuron_S]__0 ));
   FDCE \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[UseAOut_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ChipConfigReg_DP_reg[UseAOut_S] ),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[UseAOut_S]__0 ));
 endmodule
@@ -15677,7 +15670,7 @@ module brd_testAERDVSSM_0_0_ContinuousCounter
     Memory_SP_reg,
     HighestTimestampSent_SP_reg,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__3,
+    SyncSignalSyncFF_S_reg_rep__2,
     \State_DP_reg[3] ,
     \MultiplexerConfigReg_D_reg[TimestampRun_S] ,
     \SyncSignalSyncFF_S_reg[0] ,
@@ -15687,8 +15680,7 @@ module brd_testAERDVSSM_0_0_ContinuousCounter
     HighestTimestampSent_SP_reg_0,
     \State_DP_reg[2] ,
     HighestTimestampSent_SP,
-    \MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ,
-    SyncSignalSyncFF_S_reg_rep__2);
+    \MultiplexerConfigReg_D_reg[TimestampRun_S]_0 );
   output TimestampOverflow_S;
   output [14:0]Q;
   output TimestampResetBufferClear_S;
@@ -15709,7 +15701,7 @@ module brd_testAERDVSSM_0_0_ContinuousCounter
   output [0:0]Memory_SP_reg;
   output HighestTimestampSent_SP_reg;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__3;
+  input [1:0]SyncSignalSyncFF_S_reg_rep__2;
   input [3:0]\State_DP_reg[3] ;
   input \MultiplexerConfigReg_D_reg[TimestampRun_S] ;
   input \SyncSignalSyncFF_S_reg[0] ;
@@ -15720,7 +15712,6 @@ module brd_testAERDVSSM_0_0_ContinuousCounter
   input \State_DP_reg[2] ;
   input HighestTimestampSent_SP;
   input [0:0]\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__2;
 
   wire \AERSMOutFifoData_DO[10] ;
   wire \AERSMOutFifoData_DO[11] ;
@@ -15751,8 +15742,7 @@ module brd_testAERDVSSM_0_0_ContinuousCounter
   wire \State_DP_reg[2] ;
   wire [3:0]\State_DP_reg[3] ;
   wire \SyncSignalSyncFF_S_reg[0] ;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__2;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__3;
+  wire [1:0]SyncSignalSyncFF_S_reg_rep__2;
   wire [14:0]\TimestampBuffer_D_reg[14] ;
   wire TimestampOverflow_S;
   wire TimestampResetBufferClear_S;
@@ -15989,91 +15979,91 @@ module brd_testAERDVSSM_0_0_ContinuousCounter
   FDCE \Count_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[0]),
         .Q(Q[0]));
   FDCE \Count_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[10]),
         .Q(Q[10]));
   FDCE \Count_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[11]),
         .Q(Q[11]));
   FDCE \Count_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[12]),
         .Q(Q[12]));
   FDCE \Count_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[13]),
         .Q(Q[13]));
   FDCE \Count_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[14]),
         .Q(Q[14]));
   FDCE \Count_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[1]),
         .Q(Q[1]));
   FDCE \Count_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[2]),
         .Q(Q[2]));
   FDCE \Count_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[3]),
         .Q(Q[3]));
   FDCE \Count_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[4]),
         .Q(Q[4]));
   FDCE \Count_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[5]),
         .Q(Q[5]));
   FDCE \Count_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[6]),
         .Q(Q[6]));
   FDCE \Count_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[7]),
         .Q(Q[7]));
   FDCE \Count_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[8]),
         .Q(Q[8]));
   FDCE \Count_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(\MultiplexerConfigReg_D_reg[TimestampRun_S]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(Count_DN[9]),
         .Q(Q[9]));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_6 \overflowLogicEnabled.overflowUnbufferedOnZero.zeroOverflowDelay 
@@ -16103,7 +16093,7 @@ module brd_testAERDVSSM_0_0_ContinuousCounter
         .\State_DP_reg[2] (\State_DP_reg[2] ),
         .\State_DP_reg[3] (\State_DP_reg[3] ),
         .\SyncSignalSyncFF_S_reg[0] (\SyncSignalSyncFF_S_reg[0] ),
-        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3),
+        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__2[0]),
         .TimestampResetBufferClear_S(TimestampResetBufferClear_S));
   CARRY4 plusOp_carry
        (.CI(1'b0),
@@ -16622,14 +16612,12 @@ module brd_testAERDVSSM_0_0_Counter
    (\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] ,
     \Output_SO_reg[0] ,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__3,
     SyncSignalSyncFF_S_reg_rep__2,
     \MultiplexerConfigReg_D_reg[Run_S] );
   output [39:0]\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] ;
   input \Output_SO_reg[0] ;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__3;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__2;
+  input [1:0]SyncSignalSyncFF_S_reg_rep__2;
   input \MultiplexerConfigReg_D_reg[Run_S] ;
 
   wire \Count_DP[0]_i_3__0_n_0 ;
@@ -16755,8 +16743,7 @@ module brd_testAERDVSSM_0_0_Counter
   wire [39:0]\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] ;
   wire \MultiplexerConfigReg_D_reg[Run_S] ;
   wire \Output_SO_reg[0] ;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__2;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__3;
+  wire [1:0]SyncSignalSyncFF_S_reg_rep__2;
   wire [3:3]\NLW_Count_DP_reg[36]_i_1__0_CO_UNCONNECTED ;
 
   LUT2 #(
@@ -17002,7 +16989,7 @@ module brd_testAERDVSSM_0_0_Counter
   FDCE \Count_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[0]),
         .D(\Count_DP_reg[0]_i_2__0_n_7 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [0]));
   CARRY4 \Count_DP_reg[0]_i_2__0 
@@ -17015,19 +17002,19 @@ module brd_testAERDVSSM_0_0_Counter
   FDCE \Count_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[8]_i_1__0_n_5 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [10]));
   FDCE \Count_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[8]_i_1__0_n_4 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [11]));
   FDCE \Count_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[12]_i_1__0_n_7 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [12]));
   CARRY4 \Count_DP_reg[12]_i_1__0 
@@ -17040,25 +17027,25 @@ module brd_testAERDVSSM_0_0_Counter
   FDCE \Count_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[12]_i_1__0_n_6 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [13]));
   FDCE \Count_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[12]_i_1__0_n_5 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [14]));
   FDCE \Count_DP_reg[15] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[12]_i_1__0_n_4 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [15]));
   FDCE \Count_DP_reg[16] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[16]_i_1__0_n_7 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [16]));
   CARRY4 \Count_DP_reg[16]_i_1__0 
@@ -17071,31 +17058,31 @@ module brd_testAERDVSSM_0_0_Counter
   FDCE \Count_DP_reg[17] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[16]_i_1__0_n_6 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [17]));
   FDCE \Count_DP_reg[18] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[16]_i_1__0_n_5 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [18]));
   FDCE \Count_DP_reg[19] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[16]_i_1__0_n_4 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [19]));
   FDCE \Count_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[0]_i_2__0_n_6 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [1]));
   FDCE \Count_DP_reg[20] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[20]_i_1__0_n_7 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [20]));
   CARRY4 \Count_DP_reg[20]_i_1__0 
@@ -17108,25 +17095,25 @@ module brd_testAERDVSSM_0_0_Counter
   FDCE \Count_DP_reg[21] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[20]_i_1__0_n_6 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [21]));
   FDCE \Count_DP_reg[22] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[20]_i_1__0_n_5 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [22]));
   FDCE \Count_DP_reg[23] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[20]_i_1__0_n_4 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [23]));
   FDCE \Count_DP_reg[24] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[24]_i_1__0_n_7 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [24]));
   CARRY4 \Count_DP_reg[24]_i_1__0 
@@ -17139,25 +17126,25 @@ module brd_testAERDVSSM_0_0_Counter
   FDCE \Count_DP_reg[25] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[24]_i_1__0_n_6 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [25]));
   FDCE \Count_DP_reg[26] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[24]_i_1__0_n_5 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [26]));
   FDCE \Count_DP_reg[27] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[0]),
         .D(\Count_DP_reg[24]_i_1__0_n_4 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [27]));
   FDCE \Count_DP_reg[28] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[0]),
         .D(\Count_DP_reg[28]_i_1__0_n_7 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [28]));
   CARRY4 \Count_DP_reg[28]_i_1__0 
@@ -17170,31 +17157,31 @@ module brd_testAERDVSSM_0_0_Counter
   FDCE \Count_DP_reg[29] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[0]),
         .D(\Count_DP_reg[28]_i_1__0_n_6 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [29]));
   FDCE \Count_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[0]_i_2__0_n_5 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [2]));
   FDCE \Count_DP_reg[30] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[0]),
         .D(\Count_DP_reg[28]_i_1__0_n_5 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [30]));
   FDCE \Count_DP_reg[31] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[0]),
         .D(\Count_DP_reg[28]_i_1__0_n_4 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [31]));
   FDCE \Count_DP_reg[32] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[32]_i_1__0_n_7 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [32]));
   CARRY4 \Count_DP_reg[32]_i_1__0 
@@ -17207,25 +17194,25 @@ module brd_testAERDVSSM_0_0_Counter
   FDCE \Count_DP_reg[33] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[32]_i_1__0_n_6 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [33]));
   FDCE \Count_DP_reg[34] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[32]_i_1__0_n_5 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [34]));
   FDCE \Count_DP_reg[35] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[32]_i_1__0_n_4 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [35]));
   FDCE \Count_DP_reg[36] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[36]_i_1__0_n_7 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [36]));
   CARRY4 \Count_DP_reg[36]_i_1__0 
@@ -17238,31 +17225,31 @@ module brd_testAERDVSSM_0_0_Counter
   FDCE \Count_DP_reg[37] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[36]_i_1__0_n_6 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [37]));
   FDCE \Count_DP_reg[38] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[36]_i_1__0_n_5 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [38]));
   FDCE \Count_DP_reg[39] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[36]_i_1__0_n_4 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [39]));
   FDCE \Count_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[0]_i_2__0_n_4 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [3]));
   FDCE \Count_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[4]_i_1__0_n_7 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [4]));
   CARRY4 \Count_DP_reg[4]_i_1__0 
@@ -17275,25 +17262,25 @@ module brd_testAERDVSSM_0_0_Counter
   FDCE \Count_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[4]_i_1__0_n_6 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [5]));
   FDCE \Count_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[4]_i_1__0_n_5 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [6]));
   FDCE \Count_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[4]_i_1__0_n_4 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [7]));
   FDCE \Count_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[8]_i_1__0_n_7 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [8]));
   CARRY4 \Count_DP_reg[8]_i_1__0 
@@ -17306,7 +17293,7 @@ module brd_testAERDVSSM_0_0_Counter
   FDCE \Count_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(\Output_SO_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(\Count_DP_reg[8]_i_1__0_n_6 ),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] [9]));
 endmodule
@@ -20838,7 +20825,7 @@ module brd_testAERDVSSM_0_0_Counter__parameterized0
   wire \State_DP_reg[0]_0 ;
   wire \State_DP_reg[1] ;
 
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT3 #(
     .INIT(8'h0E)) 
     \Count_DP[0]_i_1__2 
@@ -20846,7 +20833,7 @@ module brd_testAERDVSSM_0_0_Counter__parameterized0
         .I1(\State_DP_reg[0]_0 ),
         .I2(SPIBitCount_D[0]),
         .O(Count_DN[0]));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
   LUT4 #(
     .INIT(16'h0EE0)) 
     \Count_DP[1]_i_1__0 
@@ -20855,7 +20842,7 @@ module brd_testAERDVSSM_0_0_Counter__parameterized0
         .I2(SPIBitCount_D[0]),
         .I3(SPIBitCount_D[1]),
         .O(Count_DN[1]));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
   LUT5 #(
     .INIT(32'h77708880)) 
     \Count_DP[2]_i_1__0 
@@ -20885,7 +20872,7 @@ module brd_testAERDVSSM_0_0_Counter__parameterized0
         .I4(SPIBitCount_D[4]),
         .I5(\Count_DP[4]_i_2__5_n_0 ),
         .O(Count_DN[4]));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \Count_DP[4]_i_2__5 
@@ -20911,7 +20898,7 @@ module brd_testAERDVSSM_0_0_Counter__parameterized0
         .I4(\State_DP_reg[0]_0 ),
         .I5(SPIBitCount_D[5]),
         .O(Count_DN[5]));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     \Count_DP[5]_i_3 
@@ -20972,7 +20959,7 @@ module brd_testAERDVSSM_0_0_Counter__parameterized0
         .I1(SPIBitCount_D[1]),
         .I2(SPIBitCount_D[0]),
         .O(\ModuleAddressReg_DP[6]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT3 #(
     .INIT(8'h04)) 
     \ParamAddressReg_DP[7]_i_1 
@@ -21000,7 +20987,7 @@ module brd_testAERDVSSM_0_0_Counter__parameterized0
         .I4(SPIBitCount_D[3]),
         .I5(\ModuleAddressReg_DP[6]_i_2_n_0 ),
         .O(\ParamInput_DP_reg[15] [1]));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \ParamInput_DP[7]_i_1 
@@ -21009,7 +20996,7 @@ module brd_testAERDVSSM_0_0_Counter__parameterized0
         .I2(State_DP),
         .I3(\ParamInput_DP[7]_i_2_n_0 ),
         .O(\ParamInput_DP_reg[15] [0]));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
   LUT5 #(
     .INIT(32'hFFFFFEFF)) 
     \ParamInput_DP[7]_i_2 
@@ -21019,7 +21006,7 @@ module brd_testAERDVSSM_0_0_Counter__parameterized0
         .I3(SPIBitCount_D[4]),
         .I4(SPIBitCount_D[3]),
         .O(\ParamInput_DP[7]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \ShiftReg_DP[0]_i_1 
@@ -21194,7 +21181,7 @@ module brd_testAERDVSSM_0_0_Counter__parameterized0
         .I2(\ShiftReg_DP_reg[30] [28]),
         .I3(\ShiftReg_DP[31]_i_4_n_0 ),
         .O(D[29]));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT4 #(
     .INIT(16'hF888)) 
     \ShiftReg_DP[2]_i_1 
@@ -21295,7 +21282,7 @@ module brd_testAERDVSSM_0_0_Counter__parameterized0
         .I2(\ShiftReg_DP_reg[30] [8]),
         .I3(\ShiftReg_DP[31]_i_4_n_0 ),
         .O(D[9]));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
   LUT4 #(
     .INIT(16'h2F30)) 
     \State_DP[0]_i_1__0 
@@ -21321,7 +21308,7 @@ module brd_testAERDVSSM_0_0_Counter__parameterized0
         .I4(\State_DP_reg[0]_0 ),
         .I5(State_DP),
         .O(\State_DP[1]_i_2__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT4 #(
     .INIT(16'h00A8)) 
     \State_DP[1]_i_3__0 
@@ -23160,12 +23147,11 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
     \ParamAddressReg_DP_reg[0]_2 ,
     \ParamAddressReg_DP_reg[3] ,
     \ParamAddressReg_DP_reg[3]_0 ,
-    SyncSignalSyncFF_S_reg_rep__13,
     \ParamAddressReg_DP_reg[1]_0 ,
     \ParamAddressReg_DP_reg[3]_1 ,
     \ParamAddressReg_DP_reg[3]_2 ,
     \ParamAddressReg_DP_reg[2] ,
-    SyncSignalSyncFF_S_reg_rep__12,
+    SyncSignalSyncFF_S_reg_rep__13,
     \ParamAddressReg_DP_reg[3]_3 ,
     \ParamAddressReg_DP_reg[1]_1 ,
     \ParamAddressReg_DP_reg[0]_3 ,
@@ -23174,11 +23160,11 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
     \ParamAddressReg_DP_reg[4] ,
     \ParamAddressReg_DP_reg[0]_4 ,
     \ParamAddressReg_DP_reg[5]_1 ,
+    SyncSignalSyncFF_S_reg_rep__11,
     \ParamAddressReg_DP_reg[5]_2 ,
     \ParamAddressReg_DP_reg[2]_0 ,
     \ParamAddressReg_DP_reg[0]_5 ,
     \ParamAddressReg_DP_reg[5]_3 ,
-    SyncSignalSyncFF_S_reg_rep__10,
     \ParamAddressReg_DP_reg[5]_4 ,
     \ParamAddressReg_DP_reg[1]_3 ,
     \ParamAddressReg_DP_reg[1]_4 ,
@@ -23188,7 +23174,6 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
     \ParamAddressReg_DP_reg[3]_5 ,
     \ParamAddressReg_DP_reg[1]_5 ,
     D,
-    SyncSignalSyncFF_S_reg_rep__0,
     \ParamAddressReg_DP_reg[3]_6 ,
     \ParamAddressReg_DP_reg[0]_6 ,
     \ParamAddressReg_DP_reg[1]_6 ,
@@ -23266,7 +23251,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   output [3:0]\ParamOutput_DP_reg[3] ;
   input \ParamInput_DP_reg[0] ;
   input LogicClk_CI;
-  input [0:0]AR;
+  input [3:0]AR;
   input \ParamInput_DP_reg[0]_0 ;
   input \ParamInput_DP_reg[0]_1 ;
   input \ParamInput_DP_reg[0]_2 ;
@@ -23288,12 +23273,11 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   input [0:0]\ParamAddressReg_DP_reg[0]_2 ;
   input [0:0]\ParamAddressReg_DP_reg[3] ;
   input [0:0]\ParamAddressReg_DP_reg[3]_0 ;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__13;
   input [0:0]\ParamAddressReg_DP_reg[1]_0 ;
   input [0:0]\ParamAddressReg_DP_reg[3]_1 ;
   input [0:0]\ParamAddressReg_DP_reg[3]_2 ;
   input [0:0]\ParamAddressReg_DP_reg[2] ;
-  input [1:0]SyncSignalSyncFF_S_reg_rep__12;
+  input [1:0]SyncSignalSyncFF_S_reg_rep__13;
   input [0:0]\ParamAddressReg_DP_reg[3]_3 ;
   input [0:0]\ParamAddressReg_DP_reg[1]_1 ;
   input [0:0]\ParamAddressReg_DP_reg[0]_3 ;
@@ -23302,11 +23286,11 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   input [0:0]\ParamAddressReg_DP_reg[4] ;
   input [0:0]\ParamAddressReg_DP_reg[0]_4 ;
   input [0:0]\ParamAddressReg_DP_reg[5]_1 ;
+  input [1:0]SyncSignalSyncFF_S_reg_rep__11;
   input [0:0]\ParamAddressReg_DP_reg[5]_2 ;
   input [0:0]\ParamAddressReg_DP_reg[2]_0 ;
   input [0:0]\ParamAddressReg_DP_reg[0]_5 ;
   input [0:0]\ParamAddressReg_DP_reg[5]_3 ;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__10;
   input [0:0]\ParamAddressReg_DP_reg[5]_4 ;
   input [0:0]\ParamAddressReg_DP_reg[1]_3 ;
   input [0:0]\ParamAddressReg_DP_reg[1]_4 ;
@@ -23316,7 +23300,6 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   input [0:0]\ParamAddressReg_DP_reg[3]_5 ;
   input [0:0]\ParamAddressReg_DP_reg[1]_5 ;
   input [6:0]D;
-  input [1:0]SyncSignalSyncFF_S_reg_rep__0;
   input [0:0]\ParamAddressReg_DP_reg[3]_6 ;
   input [0:0]\ParamAddressReg_DP_reg[0]_6 ;
   input [0:0]\ParamAddressReg_DP_reg[1]_6 ;
@@ -23327,7 +23310,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   input [0:0]\ParamAddressReg_DP_reg[3]_7 ;
   input [3:0]\ParamAddressReg_DP_reg[4]_0 ;
 
-  wire [0:0]AR;
+  wire [3:0]AR;
   wire \BiasOutput_DP[0]_i_10_n_0 ;
   wire \BiasOutput_DP[0]_i_11_n_0 ;
   wire \BiasOutput_DP[0]_i_1_n_0 ;
@@ -23547,10 +23530,8 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   wire [15:0]\ParamOutput_DP_reg[15] ;
   wire [3:0]\ParamOutput_DP_reg[3] ;
   wire [15:0]Q;
-  wire [1:0]SyncSignalSyncFF_S_reg_rep__0;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__10;
-  wire [1:0]SyncSignalSyncFF_S_reg_rep__12;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__13;
+  wire [1:0]SyncSignalSyncFF_S_reg_rep__11;
+  wire [1:0]SyncSignalSyncFF_S_reg_rep__13;
   wire [1:0]SyncSignalSyncFF_S_reg_rep__15;
   wire [1:0]SyncSignalSyncFF_S_reg_rep__5;
   wire [14:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] ;
@@ -23592,361 +23573,361 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[AEPdBn_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPdBn_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[AEPuXBp_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuXBp_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[AEPuYBp_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AEPuYBp_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[AdcCompBp_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcCompBp_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[AdcRefHigh_D][0] 
@@ -23970,7 +23951,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[AdcRefHigh_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefHigh_D][8] [3]));
   FDCE \BiasConfigReg_DP_reg[AdcRefHigh_D][4] 
@@ -24018,13 +23999,13 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[AdcRefLow_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefLow_D][8] [2]));
   FDCE \BiasConfigReg_DP_reg[AdcRefLow_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcRefLow_D][8] [3]));
   FDCE \BiasConfigReg_DP_reg[AdcRefLow_D][4] 
@@ -24060,13 +24041,13 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[AdcTestVoltage_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcTestVoltage_D][8] [0]));
   FDCE \BiasConfigReg_DP_reg[AdcTestVoltage_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[AdcTestVoltage_D][8] [1]));
   FDCE \BiasConfigReg_DP_reg[AdcTestVoltage_D][2] 
@@ -24126,13 +24107,13 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[ApsCas_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsCas_D][8] [2]));
   FDCE \BiasConfigReg_DP_reg[ApsCas_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsCas_D][8] [3]));
   FDCE \BiasConfigReg_DP_reg[ApsCas_D][4] 
@@ -24180,13 +24161,13 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[ApsOverflowLevel_D][2] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsOverflowLevel_D][8] [2]));
   FDCE \BiasConfigReg_DP_reg[ApsOverflowLevel_D][3] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsOverflowLevel_D][8] [3]));
   FDCE \BiasConfigReg_DP_reg[ApsOverflowLevel_D][4] 
@@ -24222,91 +24203,91 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[ApsROSFBn_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ApsROSFBn_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[BiasBuffer_D][0] 
@@ -24366,7 +24347,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[BiasBuffer_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_6 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__5[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__5[1]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[BiasBuffer_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[BiasBuffer_D][5] 
@@ -24402,187 +24383,187 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[ColSelLowBn_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ColSelLowBn_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[DACBufBp_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DACBufBp_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[DiffBn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DiffBn_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[DiffBn_D][10] 
@@ -24672,91 +24653,91 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[IFRefrBn_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__10),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[0]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFRefrBn_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[IFThrBn_D][0] 
@@ -24816,7 +24797,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[IFThrBn_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__5[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__5[1]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[IFThrBn_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[IFThrBn_D][5] 
@@ -24852,97 +24833,97 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[LcolTimeoutBn_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__11[1]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LcolTimeoutBn_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[LocalBufBn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LocalBufBn_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[LocalBufBn_D][10] 
@@ -25032,187 +25013,187 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[OffBn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[OffBn_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OffBn_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[OnBn_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[OnBn_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[PadFollBn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PadFollBn_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[PadFollBn_D][10] 
@@ -25248,7 +25229,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[PadFollBn_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PadFollBn_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[PadFollBn_D][2] 
@@ -25302,451 +25283,451 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[PixInvBn_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PixInvBn_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[PrBp_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__13),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrBp_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[PrSFBp_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_4 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PrSFBp_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[ReadoutBufBp_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[ReadoutBufBp_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [0]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][10] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[10]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [10]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][11] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[11]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [11]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][12] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[12]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [12]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][13] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[13]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [13]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][14] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[1]),
         .D(ConfigParamInput_DO[14]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [14]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [1]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [2]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [3]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [4]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[5]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [5]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[6]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [6]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[7]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [7]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[8]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [8]));
   FDCE \BiasConfigReg_DP_reg[RefrBp_D][9] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__12[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__13[0]),
         .D(ConfigParamInput_DO[9]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[RefrBp_D][14] [9]));
   FDCE \BiasConfigReg_DP_reg[SSN_D][0] 
@@ -25908,7 +25889,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasConfigReg_DP_reg[SSP_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_5 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__5[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__5[1]),
         .D(ConfigParamInput_DO[4]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D][15] [4]));
   FDCE \BiasConfigReg_DP_reg[SSP_D][5] 
@@ -27099,7 +27080,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[0]),
         .D(\BiasOutput_DP[0]_i_1_n_0 ),
         .Q(\ParamOutput_DP_reg[15] [0]));
   MUXF7 \BiasOutput_DP_reg[0]_i_2 
@@ -27115,7 +27096,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(AR[2]),
         .D(D[1]),
         .Q(\ParamOutput_DP_reg[15] [10]));
   MUXF7 \BiasOutput_DP_reg[10]_i_3 
@@ -27126,7 +27107,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(AR[2]),
         .D(D[2]),
         .Q(\ParamOutput_DP_reg[15] [11]));
   MUXF7 \BiasOutput_DP_reg[11]_i_3 
@@ -27137,7 +27118,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(AR[2]),
         .D(D[3]),
         .Q(\ParamOutput_DP_reg[15] [12]));
   MUXF7 \BiasOutput_DP_reg[12]_i_3 
@@ -27148,7 +27129,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(AR[3]),
         .D(D[4]),
         .Q(\ParamOutput_DP_reg[15] [13]));
   MUXF7 \BiasOutput_DP_reg[13]_i_3 
@@ -27159,7 +27140,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[3]),
         .D(D[5]),
         .Q(\ParamOutput_DP_reg[15] [14]));
   MUXF7 \BiasOutput_DP_reg[14]_i_4 
@@ -27170,13 +27151,13 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[15] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[3]),
         .D(D[6]),
         .Q(\ParamOutput_DP_reg[15] [15]));
   FDCE \BiasOutput_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[0]),
         .D(\BiasOutput_DP[1]_i_1_n_0 ),
         .Q(\ParamOutput_DP_reg[15] [1]));
   MUXF7 \BiasOutput_DP_reg[1]_i_2 
@@ -27192,7 +27173,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[0]),
         .D(\BiasOutput_DP[2]_i_1_n_0 ),
         .Q(\ParamOutput_DP_reg[15] [2]));
   MUXF7 \BiasOutput_DP_reg[2]_i_2 
@@ -27208,7 +27189,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\BiasOutput_DP[3]_i_1_n_0 ),
         .Q(\ParamOutput_DP_reg[15] [3]));
   MUXF7 \BiasOutput_DP_reg[3]_i_2 
@@ -27224,7 +27205,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(AR[2]),
         .D(\BiasOutput_DP[4]_i_1_n_0 ),
         .Q(\ParamOutput_DP_reg[15] [4]));
   MUXF7 \BiasOutput_DP_reg[4]_i_2 
@@ -27240,7 +27221,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(AR[2]),
         .D(\BiasOutput_DP[5]_i_1_n_0 ),
         .Q(\ParamOutput_DP_reg[15] [5]));
   MUXF7 \BiasOutput_DP_reg[5]_i_2 
@@ -27256,7 +27237,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(AR[2]),
         .D(\BiasOutput_DP[6]_i_1_n_0 ),
         .Q(\ParamOutput_DP_reg[15] [6]));
   MUXF7 \BiasOutput_DP_reg[6]_i_2 
@@ -27272,7 +27253,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(AR[1]),
         .D(\BiasOutput_DP[7]_i_1_n_0 ),
         .Q(\ParamOutput_DP_reg[15] [7]));
   MUXF7 \BiasOutput_DP_reg[7]_i_2 
@@ -27288,7 +27269,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(AR[1]),
         .D(\BiasOutput_DP[8]_i_1_n_0 ),
         .Q(\ParamOutput_DP_reg[15] [8]));
   MUXF7 \BiasOutput_DP_reg[8]_i_2 
@@ -27304,7 +27285,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \BiasOutput_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(AR[1]),
         .D(D[0]),
         .Q(\ParamOutput_DP_reg[15] [9]));
   MUXF7 \BiasOutput_DP_reg[9]_i_3 
@@ -27315,241 +27296,241 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \ChipConfigReg_DP_reg[AERnArow_S]__0 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ParamInput_DP_reg[0]_2 ),
         .Q(\ChipConfigReg_DP_reg[AERnArow_S] ));
   FDCE \ChipConfigReg_DP_reg[AnalogMux0_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_1 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D][3] [0]));
   FDCE \ChipConfigReg_DP_reg[AnalogMux0_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_1 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D][3] [1]));
   FDCE \ChipConfigReg_DP_reg[AnalogMux0_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_1 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D][3] [2]));
   FDCE \ChipConfigReg_DP_reg[AnalogMux0_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_1 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux0_D][3] [3]));
   FDCE \ChipConfigReg_DP_reg[AnalogMux1_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_8 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D][3] [0]));
   FDCE \ChipConfigReg_DP_reg[AnalogMux1_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_8 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D][3] [1]));
   FDCE \ChipConfigReg_DP_reg[AnalogMux1_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_8 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D][3] [2]));
   FDCE \ChipConfigReg_DP_reg[AnalogMux1_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_8 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux1_D][3] [3]));
   FDCE \ChipConfigReg_DP_reg[AnalogMux2_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_7 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D][3] [0]));
   FDCE \ChipConfigReg_DP_reg[AnalogMux2_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_7 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D][3] [1]));
   FDCE \ChipConfigReg_DP_reg[AnalogMux2_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_7 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D][3] [2]));
   FDCE \ChipConfigReg_DP_reg[AnalogMux2_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_7 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[AnalogMux2_D][3] [3]));
   FDCE \ChipConfigReg_DP_reg[BiasMux0_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_7 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D][3] [0]));
   FDCE \ChipConfigReg_DP_reg[BiasMux0_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_7 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D][3] [1]));
   FDCE \ChipConfigReg_DP_reg[BiasMux0_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_7 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D][3] [2]));
   FDCE \ChipConfigReg_DP_reg[BiasMux0_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_7 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[BiasMux0_D][3] [3]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux0_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_6 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D][3] [0]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux0_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_6 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D][3] [1]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux0_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_6 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D][3] [2]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux0_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3]_6 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux0_D][3] [3]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux1_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_6 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D][3] [0]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux1_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_6 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D][3] [1]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux1_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_6 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D][3] [2]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux1_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_6 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux1_D][3] [3]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux2_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_6 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D][3] [0]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux2_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_6 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D][3] [1]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux2_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_6 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D][3] [2]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux2_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_6 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux2_D][3] [3]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux3_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_7 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[0]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D][3] [0]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux3_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_7 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[1]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D][3] [1]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux3_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_7 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[2]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D][3] [2]));
   FDCE \ChipConfigReg_DP_reg[DigitalMux3_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_7 ),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(ConfigParamInput_DO[3]),
         .Q(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg_D_reg[DigitalMux3_D][3] [3]));
   FDPE \ChipConfigReg_DP_reg[GlobalShutter_S]__0 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\ParamInput_DP_reg[0]_4 ),
-        .PRE(AR),
+        .PRE(AR[1]),
         .Q(\ChipConfigReg_DP_reg[GlobalShutter_S] ));
   FDPE \ChipConfigReg_DP_reg[ResetCalibNeuron_S]__0 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\ParamInput_DP_reg[0] ),
-        .PRE(AR),
+        .PRE(AR[1]),
         .Q(\ChipConfigReg_DP_reg[ResetCalibNeuron_S] ));
   FDPE \ChipConfigReg_DP_reg[ResetTestPixel_S]__0 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\ParamInput_DP_reg[0]_1 ),
-        .PRE(AR),
+        .PRE(AR[1]),
         .Q(\ChipConfigReg_DP_reg[ResetTestPixel_S] ));
   FDCE \ChipConfigReg_DP_reg[SelectGrayCounter_S]__0 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ParamInput_DP_reg[0]_5 ),
         .Q(\ChipConfigReg_DP_reg[SelectGrayCounter_S] ));
   FDCE \ChipConfigReg_DP_reg[TestADC_S]__0 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ParamInput_DP_reg[0]_6 ),
         .Q(\ChipConfigReg_DP_reg[TestADC_S] ));
   FDCE \ChipConfigReg_DP_reg[TypeNCalibNeuron_S]__0 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ParamInput_DP_reg[0]_0 ),
         .Q(\ChipConfigReg_DP_reg[TypeNCalibNeuron_S] ));
   FDCE \ChipConfigReg_DP_reg[UseAOut_S]__0 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ParamInput_DP_reg[0]_3 ),
         .Q(\ChipConfigReg_DP_reg[UseAOut_S] ));
   LUT6 #(
@@ -27654,7 +27635,7 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \ChipOutput_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[0]),
         .D(\ParamAddressReg_DP_reg[4]_0 [0]),
         .Q(\ParamOutput_DP_reg[3] [0]));
   MUXF7 \ChipOutput_DP_reg[0]_i_2 
@@ -27670,19 +27651,19 @@ module brd_testAERDVSSM_0_0_DAVIS346SPIConfig
   FDCE \ChipOutput_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[0]),
         .D(\ParamAddressReg_DP_reg[4]_0 [1]),
         .Q(\ParamOutput_DP_reg[3] [1]));
   FDCE \ChipOutput_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[0]),
         .D(\ParamAddressReg_DP_reg[4]_0 [2]),
         .Q(\ParamOutput_DP_reg[3] [2]));
   FDCE \ChipOutput_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(AR[1]),
         .D(\ParamAddressReg_DP_reg[4]_0 [3]),
         .Q(\ParamOutput_DP_reg[3] [3]));
 endmodule
@@ -27697,8 +27678,8 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
     LogicClk_CI,
     SyncSignalSyncFF_S_reg_rep__23,
     SyncSignalSyncFF_S_reg_rep__15,
-    SyncSignalSyncFF_S_reg_rep__0,
     AR,
+    SyncSignalSyncFF_S_reg_rep__25,
     SyncSignalSyncFF_S_reg_rep__21,
     Q,
     \davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D][3] ,
@@ -27734,12 +27715,13 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ReadoutBufBp_D][14] ,
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ApsROSFBn_D][14] ,
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][14] ,
-    \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] ,
     SyncSignalSyncFF_S_reg_rep__19,
+    \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] ,
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] ,
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] ,
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] ,
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] ,
+    SyncSignalSyncFF_S_reg_rep__20,
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] ,
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] ,
     \davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] ,
@@ -27755,8 +27737,8 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   input LogicClk_CI;
   input [1:0]SyncSignalSyncFF_S_reg_rep__23;
   input [1:0]SyncSignalSyncFF_S_reg_rep__15;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__0;
-  input [1:0]AR;
+  input [0:0]AR;
+  input [1:0]SyncSignalSyncFF_S_reg_rep__25;
   input [1:0]SyncSignalSyncFF_S_reg_rep__21;
   input [3:0]Q;
   input [3:0]\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D][3] ;
@@ -27792,12 +27774,13 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   input [14:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ReadoutBufBp_D][14] ;
   input [14:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ApsROSFBn_D][14] ;
   input [14:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][14] ;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__19;
   input [14:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] ;
-  input [1:0]SyncSignalSyncFF_S_reg_rep__19;
   input [14:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] ;
   input [14:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] ;
   input [14:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] ;
   input [14:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] ;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__20;
   input [14:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] ;
   input [14:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] ;
   input [14:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] ;
@@ -27806,7 +27789,7 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   input [15:0]\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[SSN_D][15] ;
   input SyncReset_RO;
 
-  wire [1:0]AR;
+  wire [0:0]AR;
   wire Bias0Changed_S;
   (* RTL_KEEP = "yes" *) wire Bias0Sent_S;
   wire Bias10Changed_S;
@@ -28351,12 +28334,13 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   wire [15:0]ShiftReg_DN_0;
   wire [55:0]ShiftReg_DN_1;
   wire SyncReset_RO;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__0;
   wire [1:0]SyncSignalSyncFF_S_reg_rep__15;
   wire [1:0]SyncSignalSyncFF_S_reg_rep__17;
-  wire [1:0]SyncSignalSyncFF_S_reg_rep__19;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__19;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__20;
   wire [1:0]SyncSignalSyncFF_S_reg_rep__21;
   wire [1:0]SyncSignalSyncFF_S_reg_rep__23;
+  wire [1:0]SyncSignalSyncFF_S_reg_rep__25;
   wire biasAddrSR_n_0;
   wire biasAddrSR_n_1;
   wire biasAddrSR_n_10;
@@ -28595,277 +28579,277 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [0]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][0] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [10]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][10] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [11]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][11] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [12]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][12] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [13]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][13] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [14]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][14] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [1]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][1] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [2]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][2] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [3]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][3] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [4]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][4] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [5]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][5] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [6]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][6] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [7]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][7] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [8]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][8] ));
   FDCE \BiasConfigReg_D_reg[AEPdBn_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPdBn_D][14] [9]),
         .Q(\BiasConfigReg_D_reg[AEPdBn_D_n_0_][9] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [0]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][0] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [10]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][10] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [11]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][11] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [12]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][12] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [13]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][13] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [14]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][14] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [1]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][1] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [2]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][2] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [3]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][3] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [4]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][4] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [5]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][5] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [6]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][6] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [7]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][7] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [8]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][8] ));
   FDCE \BiasConfigReg_D_reg[AEPuXBp_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuXBp_D][14] [9]),
         .Q(\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][9] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [0]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][0] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [10]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][10] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [11]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][11] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [12]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][12] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [13]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][13] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [14]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][14] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [1]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][1] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [2]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][2] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [3]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][3] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [4]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][4] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [5]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][5] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [6]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][6] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [7]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][7] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [8]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][8] ));
   FDCE \BiasConfigReg_D_reg[AEPuYBp_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AEPuYBp_D][14] [9]),
         .Q(\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][9] ));
   FDCE \BiasConfigReg_D_reg[AdcCompBp_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][14] [0]),
         .Q(\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][0] ));
   FDCE \BiasConfigReg_D_reg[AdcCompBp_D][10] 
@@ -28901,13 +28885,13 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   FDCE \BiasConfigReg_D_reg[AdcCompBp_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][14] [1]),
         .Q(\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][1] ));
   FDCE \BiasConfigReg_D_reg[AdcCompBp_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcCompBp_D][14] [2]),
         .Q(\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][2] ));
   FDCE \BiasConfigReg_D_reg[AdcCompBp_D][3] 
@@ -29009,19 +28993,19 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   FDCE \BiasConfigReg_D_reg[AdcRefLow_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D][8] [0]),
         .Q(\BiasConfigReg_D_reg[AdcRefLow_D_n_0_][0] ));
   FDCE \BiasConfigReg_D_reg[AdcRefLow_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D][8] [1]),
         .Q(\BiasConfigReg_D_reg[AdcRefLow_D_n_0_][1] ));
   FDCE \BiasConfigReg_D_reg[AdcRefLow_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcRefLow_D][8] [2]),
         .Q(\BiasConfigReg_D_reg[AdcRefLow_D_n_0_][2] ));
   FDCE \BiasConfigReg_D_reg[AdcRefLow_D][3] 
@@ -29105,13 +29089,13 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   FDCE \BiasConfigReg_D_reg[AdcTestVoltage_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D][8] [7]),
         .Q(\BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][7] ));
   FDCE \BiasConfigReg_D_reg[AdcTestVoltage_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[AdcTestVoltage_D][8] [8]),
         .Q(\BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][8] ));
   FDCE \BiasConfigReg_D_reg[ApsCas_D][0] 
@@ -29321,31 +29305,31 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   FDCE \BiasConfigReg_D_reg[BiasBuffer_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14] [10]),
         .Q(\BiasConfigReg_D_reg[BiasBuffer_D_n_0_][10] ));
   FDCE \BiasConfigReg_D_reg[BiasBuffer_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14] [11]),
         .Q(\BiasConfigReg_D_reg[BiasBuffer_D_n_0_][11] ));
   FDCE \BiasConfigReg_D_reg[BiasBuffer_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14] [12]),
         .Q(\BiasConfigReg_D_reg[BiasBuffer_D_n_0_][12] ));
   FDCE \BiasConfigReg_D_reg[BiasBuffer_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14] [13]),
         .Q(\BiasConfigReg_D_reg[BiasBuffer_D_n_0_][13] ));
   FDCE \BiasConfigReg_D_reg[BiasBuffer_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14] [14]),
         .Q(\BiasConfigReg_D_reg[BiasBuffer_D_n_0_][14] ));
   FDCE \BiasConfigReg_D_reg[BiasBuffer_D][1] 
@@ -29387,199 +29371,199 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   FDCE \BiasConfigReg_D_reg[BiasBuffer_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14] [7]),
         .Q(\BiasConfigReg_D_reg[BiasBuffer_D_n_0_][7] ));
   FDCE \BiasConfigReg_D_reg[BiasBuffer_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14] [8]),
         .Q(\BiasConfigReg_D_reg[BiasBuffer_D_n_0_][8] ));
   FDCE \BiasConfigReg_D_reg[BiasBuffer_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__21[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[BiasBuffer_D][14] [9]),
         .Q(\BiasConfigReg_D_reg[BiasBuffer_D_n_0_][9] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [0]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][0] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [10]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][10] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [11]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][11] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [12]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][12] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [13]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][13] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [14]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][14] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [1]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][1] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [2]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][2] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [3]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][3] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [4]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][4] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [5]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][5] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [6]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][6] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [7]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][7] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [8]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][8] ));
   FDCE \BiasConfigReg_D_reg[ColSelLowBn_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[ColSelLowBn_D][14] [9]),
         .Q(\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][9] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [0]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][0] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [10]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][10] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [11]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][11] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [12]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][12] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [13]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][13] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [14]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][14] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [1]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][1] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [2]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][2] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [3]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][3] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [4]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][4] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [5]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][5] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [6]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][6] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [7]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][7] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [8]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][8] ));
   FDCE \BiasConfigReg_D_reg[DACBufBp_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[DACBufBp_D][14] [9]),
         .Q(\BiasConfigReg_D_reg[DACBufBp_D_n_0_][9] ));
   FDCE \BiasConfigReg_D_reg[DiffBn_D][0] 
@@ -29675,271 +29659,271 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [0]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][0] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [10]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][10] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [11]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][11] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [12]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][12] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [13]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][13] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [14]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][14] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [1]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][1] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [2]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][2] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [3]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][3] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [4]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][4] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [5]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][5] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [6]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][6] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [7]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][7] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [8]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][8] ));
   FDCE \BiasConfigReg_D_reg[IFRefrBn_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFRefrBn_D][14] [9]),
         .Q(\BiasConfigReg_D_reg[IFRefrBn_D_n_0_][9] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [0]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][0] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [10]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][10] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [11]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][11] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [12]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][12] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [13]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][13] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [14]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][14] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [1]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][1] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [2]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][2] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [3]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][3] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [4]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][4] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [5]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][5] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [6]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][6] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [7]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][7] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [8]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][8] ));
   FDCE \BiasConfigReg_D_reg[IFThrBn_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__20),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[IFThrBn_D][14] [9]),
         .Q(\BiasConfigReg_D_reg[IFThrBn_D_n_0_][9] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [0]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][0] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [10]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][10] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [11]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][11] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [12]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][12] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [13]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][13] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [14]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][14] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [1]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][1] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [2]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][2] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [3]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][3] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [4]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][4] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [5]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][5] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [6]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][6] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [7]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][7] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [8]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][8] ));
   FDCE \BiasConfigReg_D_reg[LcolTimeoutBn_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__19[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__19),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[LcolTimeoutBn_D][14] [9]),
         .Q(\BiasConfigReg_D_reg[LcolTimeoutBn_D_n_0_][9] ));
   FDCE \BiasConfigReg_D_reg[LocalBufBn_D][0] 
@@ -30179,31 +30163,31 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   FDCE \BiasConfigReg_D_reg[OnBn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][14] [4]),
         .Q(\BiasConfigReg_D_reg[OnBn_D_n_0_][4] ));
   FDCE \BiasConfigReg_D_reg[OnBn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][14] [5]),
         .Q(\BiasConfigReg_D_reg[OnBn_D_n_0_][5] ));
   FDCE \BiasConfigReg_D_reg[OnBn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][14] [6]),
         .Q(\BiasConfigReg_D_reg[OnBn_D_n_0_][6] ));
   FDCE \BiasConfigReg_D_reg[OnBn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][14] [7]),
         .Q(\BiasConfigReg_D_reg[OnBn_D_n_0_][7] ));
   FDCE \BiasConfigReg_D_reg[OnBn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__15[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[OnBn_D][14] [8]),
         .Q(\BiasConfigReg_D_reg[OnBn_D_n_0_][8] ));
   FDCE \BiasConfigReg_D_reg[OnBn_D][9] 
@@ -30521,31 +30505,31 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   FDCE \BiasConfigReg_D_reg[PrSFBp_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][14] [1]),
         .Q(\BiasConfigReg_D_reg[PrSFBp_D_n_0_][1] ));
   FDCE \BiasConfigReg_D_reg[PrSFBp_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][14] [2]),
         .Q(\BiasConfigReg_D_reg[PrSFBp_D_n_0_][2] ));
   FDCE \BiasConfigReg_D_reg[PrSFBp_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][14] [3]),
         .Q(\BiasConfigReg_D_reg[PrSFBp_D_n_0_][3] ));
   FDCE \BiasConfigReg_D_reg[PrSFBp_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][14] [4]),
         .Q(\BiasConfigReg_D_reg[PrSFBp_D_n_0_][4] ));
   FDCE \BiasConfigReg_D_reg[PrSFBp_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__17[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__17[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg2_D_reg[PrSFBp_D][14] [5]),
         .Q(\BiasConfigReg_D_reg[PrSFBp_D_n_0_][5] ));
   FDCE \BiasConfigReg_D_reg[PrSFBp_D][6] 
@@ -31183,13 +31167,13 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   FDCE \ChipConfigReg_D_reg[AnalogMux0_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D][3] [0]),
         .Q(ChipChangedInput_D[20]));
   FDCE \ChipConfigReg_D_reg[AnalogMux0_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux0_D][3] [1]),
         .Q(ChipChangedInput_D[21]));
   FDCE \ChipConfigReg_D_reg[AnalogMux0_D][2] 
@@ -31213,19 +31197,19 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
   FDCE \ChipConfigReg_D_reg[AnalogMux1_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D][3] [1]),
         .Q(ChipChangedInput_D[17]));
   FDCE \ChipConfigReg_D_reg[AnalogMux1_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D][3] [2]),
         .Q(ChipChangedInput_D[18]));
   FDCE \ChipConfigReg_D_reg[AnalogMux1_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__21[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(\davis346ChipBias.timingReg2Support.DAVIS346ChipConfigReg2_D_reg[AnalogMux1_D][3] [3]),
         .Q(ChipChangedInput_D[19]));
   FDCE \ChipConfigReg_D_reg[AnalogMux2_D][0] 
@@ -31834,7 +31818,7 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
     \FSM_onehot_State_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(waitCyclesCounter_n_59),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
         .D(detectChipChange_n_5),
         .Q(ChipSent_S));
   (* FSM_ENCODED_STATES = "stackandloadbias1:00000000100000000000000000000000000000000,stackandloadbias0:00000001000000000000000000000000000000000,stidle:00000000000000000000000000000000000000001,stackandloadbias35:00000000000000000000000000000000010000000,stsendchip:00000000000000000000000000000000000001000,stackandloadbias25:00000000000000000000000000000100000000000,stackandloadbias34:00000000000000000000000000000000100000000,stpreparesendchip:00000000000000000000000000000000000000100,stackandloadbias24:00000000000000000000000000001000000000000,stackandloadbias27:00000000000000000000000000000001000000000,stackandloadbias23:00000000000000000000000000010000000000000,stackandloadbias26:00000000000000000000000000000010000000000,stackandloadchip:00000000000000000000000000000000000000010,stackandloadbias17:00000000000000000000010000000000000000000,stsendbias:00100000000000000000000000000000000000000,stackandloadbias22:00000000000000000000000000100000000000000,stackandloadbias16:00000000000000000000100000000000000000000,stackandloadbias15:00000000000000000001000000000000000000000,stackandloadbias14:00000000000000000010000000000000000000000,stackandloadbias21:00000000000000000000000001000000000000000,stackandloadbias20:00000000000000000000000010000000000000000,stackandloadbias13:00000000000000000100000000000000000000000,stackandloadbias19:00000000000000000000000100000000000000000,stackandloadbias9:00000000000001000000000000000000000000000,stackandloadbias12:00000000000000001000000000000000000000000,stackandloadbias18:00000000000000000000001000000000000000000,stackandloadbias8:00000000000010000000000000000000000000000,stackandloadbias11:00000000000000010000000000000000000000000,stackandloadbias4:00000000000100000000000000000000000000000,stackandloadbias10:00000000000000100000000000000000000000000,stackandloadbias3:00000000001000000000000000000000000000000,stpreparesendbias:00010000000000000000000000000000000000000,stendchip:00000000000000000000000000000000000100000,stsendbiasaddress:00000100000000000000000000000000000000000,stlatchchip:00000000000000000000000000000000000010000,stpreparesendbiasaddress:00000010000000000000000000000000000000000,stdelay:10000000000000000000000000000000000000000,stlatchbias:01000000000000000000000000000000000000000,stackandloadbias36:00000000000000000000000000000000001000000,stlatchbiasaddress:00001000000000000000000000000000000000000,stackandloadbias2:00000000010000000000000000000000000000000" *) 
@@ -31944,7 +31928,7 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
     \FSM_onehot_State_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(waitCyclesCounter_n_59),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
         .D(\FSM_onehot_State_DP[2]_i_1_n_0 ),
         .Q(\FSM_onehot_State_DP_reg_n_0_[2] ));
   (* FSM_ENCODED_STATES = "stackandloadbias1:00000000100000000000000000000000000000000,stackandloadbias0:00000001000000000000000000000000000000000,stidle:00000000000000000000000000000000000000001,stackandloadbias35:00000000000000000000000000000000010000000,stsendchip:00000000000000000000000000000000000001000,stackandloadbias25:00000000000000000000000000000100000000000,stackandloadbias34:00000000000000000000000000000000100000000,stpreparesendchip:00000000000000000000000000000000000000100,stackandloadbias24:00000000000000000000000000001000000000000,stackandloadbias27:00000000000000000000000000000001000000000,stackandloadbias23:00000000000000000000000000010000000000000,stackandloadbias26:00000000000000000000000000000010000000000,stackandloadchip:00000000000000000000000000000000000000010,stackandloadbias17:00000000000000000000010000000000000000000,stsendbias:00100000000000000000000000000000000000000,stackandloadbias22:00000000000000000000000000100000000000000,stackandloadbias16:00000000000000000000100000000000000000000,stackandloadbias15:00000000000000000001000000000000000000000,stackandloadbias14:00000000000000000010000000000000000000000,stackandloadbias21:00000000000000000000000001000000000000000,stackandloadbias20:00000000000000000000000010000000000000000,stackandloadbias13:00000000000000000100000000000000000000000,stackandloadbias19:00000000000000000000000100000000000000000,stackandloadbias9:00000000000001000000000000000000000000000,stackandloadbias12:00000000000000001000000000000000000000000,stackandloadbias18:00000000000000000000001000000000000000000,stackandloadbias8:00000000000010000000000000000000000000000,stackandloadbias11:00000000000000010000000000000000000000000,stackandloadbias4:00000000000100000000000000000000000000000,stackandloadbias10:00000000000000100000000000000000000000000,stackandloadbias3:00000000001000000000000000000000000000000,stpreparesendbias:00010000000000000000000000000000000000000,stendchip:00000000000000000000000000000000000100000,stsendbiasaddress:00000100000000000000000000000000000000000,stlatchchip:00000000000000000000000000000000000010000,stpreparesendbiasaddress:00000010000000000000000000000000000000000,stdelay:10000000000000000000000000000000000000000,stlatchbias:01000000000000000000000000000000000000000,stackandloadbias36:00000000000000000000000000000000001000000,stlatchbiasaddress:00001000000000000000000000000000000000000,stackandloadbias2:00000000010000000000000000000000000000000" *) 
@@ -32054,7 +32038,7 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
     \FSM_onehot_State_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(waitCyclesCounter_n_59),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
         .D(\FSM_onehot_State_DP[3]_i_1_n_0 ),
         .Q(\FSM_onehot_State_DP_reg_n_0_[3] ));
   (* FSM_ENCODED_STATES = "stackandloadbias1:00000000100000000000000000000000000000000,stackandloadbias0:00000001000000000000000000000000000000000,stidle:00000000000000000000000000000000000000001,stackandloadbias35:00000000000000000000000000000000010000000,stsendchip:00000000000000000000000000000000000001000,stackandloadbias25:00000000000000000000000000000100000000000,stackandloadbias34:00000000000000000000000000000000100000000,stpreparesendchip:00000000000000000000000000000000000000100,stackandloadbias24:00000000000000000000000000001000000000000,stackandloadbias27:00000000000000000000000000000001000000000,stackandloadbias23:00000000000000000000000000010000000000000,stackandloadbias26:00000000000000000000000000000010000000000,stackandloadchip:00000000000000000000000000000000000000010,stackandloadbias17:00000000000000000000010000000000000000000,stsendbias:00100000000000000000000000000000000000000,stackandloadbias22:00000000000000000000000000100000000000000,stackandloadbias16:00000000000000000000100000000000000000000,stackandloadbias15:00000000000000000001000000000000000000000,stackandloadbias14:00000000000000000010000000000000000000000,stackandloadbias21:00000000000000000000000001000000000000000,stackandloadbias20:00000000000000000000000010000000000000000,stackandloadbias13:00000000000000000100000000000000000000000,stackandloadbias19:00000000000000000000000100000000000000000,stackandloadbias9:00000000000001000000000000000000000000000,stackandloadbias12:00000000000000001000000000000000000000000,stackandloadbias18:00000000000000000000001000000000000000000,stackandloadbias8:00000000000010000000000000000000000000000,stackandloadbias11:00000000000000010000000000000000000000000,stackandloadbias4:00000000000100000000000000000000000000000,stackandloadbias10:00000000000000100000000000000000000000000,stackandloadbias3:00000000001000000000000000000000000000000,stpreparesendbias:00010000000000000000000000000000000000000,stendchip:00000000000000000000000000000000000100000,stsendbiasaddress:00000100000000000000000000000000000000000,stlatchchip:00000000000000000000000000000000000010000,stpreparesendbiasaddress:00000010000000000000000000000000000000000,stdelay:10000000000000000000000000000000000000000,stlatchbias:01000000000000000000000000000000000000000,stackandloadbias36:00000000000000000000000000000000001000000,stlatchbiasaddress:00001000000000000000000000000000000000000,stackandloadbias2:00000000010000000000000000000000000000000" *) 
@@ -32074,7 +32058,7 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
     \FSM_onehot_State_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(waitCyclesCounter_n_59),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
         .D(\FSM_onehot_State_DP[4]_i_1_n_0 ),
         .Q(\FSM_onehot_State_DP_reg_n_0_[4] ));
   (* FSM_ENCODED_STATES = "stackandloadbias1:00000000100000000000000000000000000000000,stackandloadbias0:00000001000000000000000000000000000000000,stidle:00000000000000000000000000000000000000001,stackandloadbias35:00000000000000000000000000000000010000000,stsendchip:00000000000000000000000000000000000001000,stackandloadbias25:00000000000000000000000000000100000000000,stackandloadbias34:00000000000000000000000000000000100000000,stpreparesendchip:00000000000000000000000000000000000000100,stackandloadbias24:00000000000000000000000000001000000000000,stackandloadbias27:00000000000000000000000000000001000000000,stackandloadbias23:00000000000000000000000000010000000000000,stackandloadbias26:00000000000000000000000000000010000000000,stackandloadchip:00000000000000000000000000000000000000010,stackandloadbias17:00000000000000000000010000000000000000000,stsendbias:00100000000000000000000000000000000000000,stackandloadbias22:00000000000000000000000000100000000000000,stackandloadbias16:00000000000000000000100000000000000000000,stackandloadbias15:00000000000000000001000000000000000000000,stackandloadbias14:00000000000000000010000000000000000000000,stackandloadbias21:00000000000000000000000001000000000000000,stackandloadbias20:00000000000000000000000010000000000000000,stackandloadbias13:00000000000000000100000000000000000000000,stackandloadbias19:00000000000000000000000100000000000000000,stackandloadbias9:00000000000001000000000000000000000000000,stackandloadbias12:00000000000000001000000000000000000000000,stackandloadbias18:00000000000000000000001000000000000000000,stackandloadbias8:00000000000010000000000000000000000000000,stackandloadbias11:00000000000000010000000000000000000000000,stackandloadbias4:00000000000100000000000000000000000000000,stackandloadbias10:00000000000000100000000000000000000000000,stackandloadbias3:00000000001000000000000000000000000000000,stpreparesendbias:00010000000000000000000000000000000000000,stendchip:00000000000000000000000000000000000100000,stsendbiasaddress:00000100000000000000000000000000000000000,stlatchchip:00000000000000000000000000000000000010000,stpreparesendbiasaddress:00000010000000000000000000000000000000000,stdelay:10000000000000000000000000000000000000000,stlatchbias:01000000000000000000000000000000000000000,stackandloadbias36:00000000000000000000000000000000001000000,stlatchbiasaddress:00001000000000000000000000000000000000000,stackandloadbias2:00000000010000000000000000000000000000000" *) 
@@ -32084,7 +32068,7 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
     \FSM_onehot_State_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(waitCyclesCounter_n_59),
-        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
         .D(\FSM_onehot_State_DP[5]_i_1_n_0 ),
         .Q(\FSM_onehot_State_DP_reg_n_0_[5] ));
   (* FSM_ENCODED_STATES = "stackandloadbias1:00000000100000000000000000000000000000000,stackandloadbias0:00000001000000000000000000000000000000000,stidle:00000000000000000000000000000000000000001,stackandloadbias35:00000000000000000000000000000000010000000,stsendchip:00000000000000000000000000000000000001000,stackandloadbias25:00000000000000000000000000000100000000000,stackandloadbias34:00000000000000000000000000000000100000000,stpreparesendchip:00000000000000000000000000000000000000100,stackandloadbias24:00000000000000000000000000001000000000000,stackandloadbias27:00000000000000000000000000000001000000000,stackandloadbias23:00000000000000000000000000010000000000000,stackandloadbias26:00000000000000000000000000000010000000000,stackandloadchip:00000000000000000000000000000000000000010,stackandloadbias17:00000000000000000000010000000000000000000,stsendbias:00100000000000000000000000000000000000000,stackandloadbias22:00000000000000000000000000100000000000000,stackandloadbias16:00000000000000000000100000000000000000000,stackandloadbias15:00000000000000000001000000000000000000000,stackandloadbias14:00000000000000000010000000000000000000000,stackandloadbias21:00000000000000000000000001000000000000000,stackandloadbias20:00000000000000000000000010000000000000000,stackandloadbias13:00000000000000000100000000000000000000000,stackandloadbias19:00000000000000000000000100000000000000000,stackandloadbias9:00000000000001000000000000000000000000000,stackandloadbias12:00000000000000001000000000000000000000000,stackandloadbias18:00000000000000000000001000000000000000000,stackandloadbias8:00000000000010000000000000000000000000000,stackandloadbias11:00000000000000010000000000000000000000000,stackandloadbias4:00000000000100000000000000000000000000000,stackandloadbias10:00000000000000100000000000000000000000000,stackandloadbias3:00000000001000000000000000000000000000000,stpreparesendbias:00010000000000000000000000000000000000000,stendchip:00000000000000000000000000000000000100000,stsendbiasaddress:00000100000000000000000000000000000000000,stlatchchip:00000000000000000000000000000000000010000,stpreparesendbiasaddress:00000010000000000000000000000000000000000,stdelay:10000000000000000000000000000000000000000,stlatchbias:01000000000000000000000000000000000000000,stackandloadbias36:00000000000000000000000000000000001000000,stlatchbiasaddress:00001000000000000000000000000000000000000,stackandloadbias2:00000000010000000000000000000000000000000" *) 
@@ -32147,10 +32131,11 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .\ShiftReg_DP_reg[3]_1 (biasAddrSR_n_2),
         .\ShiftReg_DP_reg[4]_0 (biasAddrSR_n_3),
         .SyncSignalSyncFF_S_reg_rep__15(SyncSignalSyncFF_S_reg_rep__15[1]),
-        .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__23(SyncSignalSyncFF_S_reg_rep__23[1]),
         .out({Bias0Sent_S,Bias1Sent_S,Bias2Sent_S,Bias3Sent_S,Bias4Sent_S,Bias8Sent_S,Bias9Sent_S,Bias10Sent_S,Bias11Sent_S,Bias12Sent_S,Bias13Sent_S,Bias14Sent_S,Bias15Sent_S,Bias16Sent_S,Bias17Sent_S,Bias18Sent_S,Bias19Sent_S,Bias20Sent_S,Bias21Sent_S,Bias22Sent_S,Bias23Sent_S,Bias24Sent_S,Bias25Sent_S,Bias26Sent_S,Bias27Sent_S,Bias34Sent_S,Bias35Sent_S,Bias36Sent_S}));
   brd_testAERDVSSM_0_0_ShiftRegister__parameterized1 biasSR
-       (.\BiasConfigReg_D_reg[AEPdBn_D][14] ({\BiasConfigReg_D_reg[AEPdBn_D_n_0_][14] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][13] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][12] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][11] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][10] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][9] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][8] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][7] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][6] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][5] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][4] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][3] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][2] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][1] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][0] }),
+       (.AR(AR),
+        .\BiasConfigReg_D_reg[AEPdBn_D][14] ({\BiasConfigReg_D_reg[AEPdBn_D_n_0_][14] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][13] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][12] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][11] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][10] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][9] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][8] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][7] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][6] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][5] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][4] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][3] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][2] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][1] ,\BiasConfigReg_D_reg[AEPdBn_D_n_0_][0] }),
         .\BiasConfigReg_D_reg[AEPuXBp_D][14] ({\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][14] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][13] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][12] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][11] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][10] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][9] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][8] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][7] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][6] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][5] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][4] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][3] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][2] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][1] ,\BiasConfigReg_D_reg[AEPuXBp_D_n_0_][0] }),
         .\BiasConfigReg_D_reg[AEPuYBp_D][14] ({\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][14] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][13] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][12] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][11] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][10] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][9] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][8] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][7] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][6] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][5] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][4] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][3] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][2] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][1] ,\BiasConfigReg_D_reg[AEPuYBp_D_n_0_][0] }),
         .\BiasConfigReg_D_reg[AdcCompBp_D][14] ({\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][14] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][13] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][12] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][11] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][10] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][9] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][8] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][7] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][6] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][5] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][4] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][3] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][2] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][1] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][0] }),
@@ -32236,7 +32221,6 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .\ShiftReg_DP_reg[9]_0 (biasSR_n_18),
         .\ShiftReg_DP_reg[9]_1 (biasSR_n_19),
         .\ShiftReg_DP_reg[9]_2 (biasSR_n_20),
-        .SyncSignalSyncFF_S_reg_rep__0(SyncSignalSyncFF_S_reg_rep__0),
         .SyncSignalSyncFF_S_reg_rep__23(SyncSignalSyncFF_S_reg_rep__23[1]),
         .out({Bias0Sent_S,Bias1Sent_S,Bias2Sent_S,Bias3Sent_S,Bias4Sent_S,Bias8Sent_S,Bias9Sent_S,Bias10Sent_S,Bias11Sent_S,Bias12Sent_S,Bias13Sent_S,Bias14Sent_S,Bias15Sent_S,Bias16Sent_S,Bias17Sent_S,Bias18Sent_S,Bias19Sent_S,Bias20Sent_S,Bias21Sent_S,Bias22Sent_S,Bias23Sent_S,Bias24Sent_S,Bias25Sent_S,Bias26Sent_S,Bias27Sent_S,Bias34Sent_S,Bias35Sent_S,Bias36Sent_S}));
   brd_testAERDVSSM_0_0_ShiftRegister__parameterized2 chipSR
@@ -32247,18 +32231,17 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .Q(BiasAddrSROutput_D),
         .\ShiftReg_DP_reg[15]_0 (BiasSROutput_D),
         .\ShiftReg_DP_reg[55]_0 ({chipSR_n_1,chipSR_n_2,chipSR_n_3,chipSR_n_4,chipSR_n_5,chipSR_n_6,chipSR_n_7,chipSR_n_8,chipSR_n_9,chipSR_n_10,chipSR_n_11,chipSR_n_12,chipSR_n_13,chipSR_n_14,chipSR_n_15,chipSR_n_16,chipSR_n_17,chipSR_n_18,chipSR_n_19,chipSR_n_20,chipSR_n_21,chipSR_n_22,chipSR_n_23,chipSR_n_24,chipSR_n_25,chipSR_n_26,chipSR_n_27,chipSR_n_28,chipSR_n_29,chipSR_n_30,chipSR_n_31,chipSR_n_32,chipSR_n_33,chipSR_n_34,chipSR_n_35,chipSR_n_36,chipSR_n_37,chipSR_n_38,chipSR_n_39,chipSR_n_40,chipSR_n_41,chipSR_n_42,chipSR_n_43,chipSR_n_44,chipSR_n_45,chipSR_n_46,chipSR_n_47,chipSR_n_48,chipSR_n_49,chipSR_n_50,chipSR_n_51,chipSR_n_52,chipSR_n_53,chipSR_n_54,chipSR_n_55}),
-        .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__23(SyncSignalSyncFF_S_reg_rep__23),
         .out({\FSM_onehot_State_DP_reg_n_0_[38] ,\FSM_onehot_State_DP_reg_n_0_[35] ,\FSM_onehot_State_DP_reg_n_0_[3] }));
   brd_testAERDVSSM_0_0_ChangeDetector__parameterized0 detectBias0Change
-       (.AR(AR[1]),
-        .Bias0Changed_S(Bias0Changed_S),
+       (.Bias0Changed_S(Bias0Changed_S),
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[ApsOverflowLevel_D_n_0_][8] ,\BiasConfigReg_D_reg[ApsOverflowLevel_D_n_0_][7] ,\BiasConfigReg_D_reg[ApsOverflowLevel_D_n_0_][6] ,\BiasConfigReg_D_reg[ApsOverflowLevel_D_n_0_][5] ,\BiasConfigReg_D_reg[ApsOverflowLevel_D_n_0_][4] ,\BiasConfigReg_D_reg[ApsOverflowLevel_D_n_0_][3] ,\BiasConfigReg_D_reg[ApsOverflowLevel_D_n_0_][2] ,\BiasConfigReg_D_reg[ApsOverflowLevel_D_n_0_][1] ,\BiasConfigReg_D_reg[ApsOverflowLevel_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__26(SyncSignalSyncFF_S_reg_rep__25[0]),
         .out(Bias0Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_25 detectBias10Change
-       (.AR(AR[1]),
-        .Bias10Changed_S(Bias10Changed_S),
+       (.Bias10Changed_S(Bias10Changed_S),
         .Bias2Changed_S(Bias2Changed_S),
         .Bias3Changed_S(Bias3Changed_S),
         .Bias9Changed_S(Bias9Changed_S),
@@ -32268,10 +32251,10 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .Memory_SP_reg(detectBias22Change_n_5),
         .Q({\BiasConfigReg_D_reg[DiffBn_D_n_0_][14] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][13] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][12] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][11] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][10] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][9] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][8] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][7] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][6] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][5] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][4] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][3] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][2] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][1] ,\BiasConfigReg_D_reg[DiffBn_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__26(SyncSignalSyncFF_S_reg_rep__25[0]),
         .out(Bias10Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_26 detectBias11Change
-       (.AR(AR[1]),
-        .Bias10Changed_S(Bias10Changed_S),
+       (.Bias10Changed_S(Bias10Changed_S),
         .Bias11Changed_S(Bias11Changed_S),
         .Bias12Changed_S(Bias12Changed_S),
         .Bias1Changed_S(Bias1Changed_S),
@@ -32289,26 +32272,26 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .Memory_SP_reg(detectBias19Change_n_5),
         .Q({\BiasConfigReg_D_reg[OnBn_D_n_0_][14] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][13] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][12] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][11] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][10] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][9] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][8] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][7] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][6] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][5] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][4] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][3] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][2] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][1] ,\BiasConfigReg_D_reg[OnBn_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__26(SyncSignalSyncFF_S_reg_rep__25[0]),
         .out({Bias11Sent_S,\FSM_onehot_State_DP_reg_n_0_[0] }));
   brd_testAERDVSSM_0_0_ChangeDetector_27 detectBias12Change
-       (.AR(AR),
-        .Bias12Changed_S(Bias12Changed_S),
+       (.Bias12Changed_S(Bias12Changed_S),
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[OffBn_D_n_0_][14] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][13] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][12] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][11] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][10] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][9] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][8] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][7] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][6] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][5] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][4] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][3] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][2] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][1] ,\BiasConfigReg_D_reg[OffBn_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__26(SyncSignalSyncFF_S_reg_rep__25[0]),
         .out(Bias12Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_28 detectBias13Change
-       (.AR(AR[0]),
-        .Bias13Changed_S(Bias13Changed_S),
+       (.Bias13Changed_S(Bias13Changed_S),
         .Bias14Changed_S(Bias14Changed_S),
         .\FSM_onehot_State_DP_reg[30] (detectBias13Change_n_1),
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[PixInvBn_D_n_0_][14] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][13] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][12] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][11] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][10] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][9] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][8] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][7] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][6] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][5] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][4] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][3] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][2] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][1] ,\BiasConfigReg_D_reg[PixInvBn_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__25(SyncSignalSyncFF_S_reg_rep__25),
         .out(Bias13Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_29 detectBias14Change
-       (.AR(AR[0]),
-        .Bias13Changed_S(Bias13Changed_S),
+       (.Bias13Changed_S(Bias13Changed_S),
         .Bias14Changed_S(Bias14Changed_S),
         .Bias15Changed_S(Bias15Changed_S),
         .Bias16Changed_S(Bias16Changed_S),
@@ -32316,17 +32299,17 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[PrBp_D_n_0_][14] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][13] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][12] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][11] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][10] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][9] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][8] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][7] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][6] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][5] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][4] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][3] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][2] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][1] ,\BiasConfigReg_D_reg[PrBp_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__25(SyncSignalSyncFF_S_reg_rep__25[1]),
         .out(Bias14Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_30 detectBias15Change
-       (.AR(AR[0]),
-        .Bias15Changed_S(Bias15Changed_S),
+       (.Bias15Changed_S(Bias15Changed_S),
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[PrSFBp_D_n_0_][14] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][13] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][12] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][11] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][10] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][9] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][8] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][7] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][6] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][5] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][4] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][3] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][2] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][1] ,\BiasConfigReg_D_reg[PrSFBp_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__25(SyncSignalSyncFF_S_reg_rep__25[1]),
         .out(Bias15Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_31 detectBias16Change
-       (.AR(AR[0]),
-        .Bias15Changed_S(Bias15Changed_S),
+       (.Bias15Changed_S(Bias15Changed_S),
         .Bias16Changed_S(Bias16Changed_S),
         .Bias20Changed_S(Bias20Changed_S),
         .Bias27Changed_S(Bias27Changed_S),
@@ -32335,19 +32318,19 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .Memory_SP_reg(detectBias19Change_n_7),
         .Q({\BiasConfigReg_D_reg[RefrBp_D_n_0_][14] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][13] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][12] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][11] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][10] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][9] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][8] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][7] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][6] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][5] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][4] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][3] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][2] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][1] ,\BiasConfigReg_D_reg[RefrBp_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__25(SyncSignalSyncFF_S_reg_rep__25[1]),
         .out(Bias16Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_32 detectBias17Change
-       (.AR(AR[0]),
-        .Bias17Changed_S(Bias17Changed_S),
+       (.Bias17Changed_S(Bias17Changed_S),
         .Bias18Changed_S(Bias18Changed_S),
         .\FSM_onehot_State_DP_reg[21] (detectBias17Change_n_1),
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][14] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][13] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][12] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][11] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][10] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][9] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][8] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][7] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][6] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][5] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][4] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][3] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][2] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][1] ,\BiasConfigReg_D_reg[ReadoutBufBp_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__25(SyncSignalSyncFF_S_reg_rep__25[1]),
         .out(Bias17Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_33 detectBias18Change
-       (.AR(AR[0]),
-        .Bias17Changed_S(Bias17Changed_S),
+       (.Bias17Changed_S(Bias17Changed_S),
         .Bias18Changed_S(Bias18Changed_S),
         .Bias19Changed_S(Bias19Changed_S),
         .Bias20Changed_S(Bias20Changed_S),
@@ -32355,10 +32338,10 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][14] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][13] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][12] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][11] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][10] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][9] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][8] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][7] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][6] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][5] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][4] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][3] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][2] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][1] ,\BiasConfigReg_D_reg[ApsROSFBn_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__25(SyncSignalSyncFF_S_reg_rep__25[1]),
         .out(Bias18Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_34 detectBias19Change
-       (.AR(AR[0]),
-        .Bias0Changed_S(Bias0Changed_S),
+       (.Bias0Changed_S(Bias0Changed_S),
         .Bias10Changed_S(Bias10Changed_S),
         .Bias11Changed_S(Bias11Changed_S),
         .Bias12Changed_S(Bias12Changed_S),
@@ -32389,21 +32372,21 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .Memory_SP_reg_4(detectBias22Change_n_7),
         .Q({\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][14] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][13] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][12] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][11] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][10] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][9] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][8] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][7] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][6] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][5] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][4] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][3] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][2] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][1] ,\BiasConfigReg_D_reg[AdcCompBp_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__25(SyncSignalSyncFF_S_reg_rep__25[1]),
         .out({Bias19Sent_S,\FSM_onehot_State_DP_reg_n_0_[0] }));
   brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_35 detectBias1Change
-       (.AR(AR[1]),
-        .Bias1Changed_S(Bias1Changed_S),
+       (.Bias1Changed_S(Bias1Changed_S),
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[ApsCas_D_n_0_][8] ,\BiasConfigReg_D_reg[ApsCas_D_n_0_][7] ,\BiasConfigReg_D_reg[ApsCas_D_n_0_][6] ,\BiasConfigReg_D_reg[ApsCas_D_n_0_][5] ,\BiasConfigReg_D_reg[ApsCas_D_n_0_][4] ,\BiasConfigReg_D_reg[ApsCas_D_n_0_][3] ,\BiasConfigReg_D_reg[ApsCas_D_n_0_][2] ,\BiasConfigReg_D_reg[ApsCas_D_n_0_][1] ,\BiasConfigReg_D_reg[ApsCas_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__26(SyncSignalSyncFF_S_reg_rep__25[0]),
         .out(Bias1Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_36 detectBias20Change
-       (.AR(AR[0]),
-        .Bias20Changed_S(Bias20Changed_S),
+       (.Bias20Changed_S(Bias20Changed_S),
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][14] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][13] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][12] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][11] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][10] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][9] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][8] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][7] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][6] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][5] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][4] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][3] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][2] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][1] ,\BiasConfigReg_D_reg[ColSelLowBn_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
-        .SyncSignalSyncFF_S_reg_rep__24(SyncSignalSyncFF_S_reg_rep__21[0]),
+        .SyncSignalSyncFF_S_reg_rep__25(SyncSignalSyncFF_S_reg_rep__25[1]),
         .out(Bias20Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_37 detectBias21Change
        (.Bias21Changed_S(Bias21Changed_S),
@@ -32413,6 +32396,7 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .Q({\BiasConfigReg_D_reg[DACBufBp_D_n_0_][14] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][13] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][12] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][11] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][10] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][9] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][8] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][7] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][6] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][5] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][4] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][3] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][2] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][1] ,\BiasConfigReg_D_reg[DACBufBp_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
         .SyncSignalSyncFF_S_reg_rep__24(SyncSignalSyncFF_S_reg_rep__21[0]),
+        .SyncSignalSyncFF_S_reg_rep__25(SyncSignalSyncFF_S_reg_rep__25[1]),
         .out(Bias21Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_38 detectBias22Change
        (.Bias10Changed_S(Bias10Changed_S),
@@ -32530,11 +32514,11 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .SyncSignalSyncFF_S_reg_rep__24(SyncSignalSyncFF_S_reg_rep__21[0]),
         .out({Bias27Sent_S,\FSM_onehot_State_DP_reg_n_0_[0] }));
   brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_44 detectBias2Change
-       (.AR(AR[1]),
-        .Bias2Changed_S(Bias2Changed_S),
+       (.Bias2Changed_S(Bias2Changed_S),
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[AdcRefHigh_D_n_0_][8] ,\BiasConfigReg_D_reg[AdcRefHigh_D_n_0_][7] ,\BiasConfigReg_D_reg[AdcRefHigh_D_n_0_][6] ,\BiasConfigReg_D_reg[AdcRefHigh_D_n_0_][5] ,\BiasConfigReg_D_reg[AdcRefHigh_D_n_0_][4] ,\BiasConfigReg_D_reg[AdcRefHigh_D_n_0_][3] ,\BiasConfigReg_D_reg[AdcRefHigh_D_n_0_][2] ,\BiasConfigReg_D_reg[AdcRefHigh_D_n_0_][1] ,\BiasConfigReg_D_reg[AdcRefHigh_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__26(SyncSignalSyncFF_S_reg_rep__25[0]),
         .out(Bias2Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_45 detectBias34Change
        (.Bias34Changed_S(Bias34Changed_S),
@@ -32583,24 +32567,23 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .SyncSignalSyncFF_S_reg_rep__23(SyncSignalSyncFF_S_reg_rep__23),
         .out({Bias36Sent_S,\FSM_onehot_State_DP_reg_n_0_[0] }));
   brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_47 detectBias3Change
-       (.AR(AR[1]),
-        .Bias3Changed_S(Bias3Changed_S),
+       (.Bias3Changed_S(Bias3Changed_S),
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[AdcRefLow_D_n_0_][8] ,\BiasConfigReg_D_reg[AdcRefLow_D_n_0_][7] ,\BiasConfigReg_D_reg[AdcRefLow_D_n_0_][6] ,\BiasConfigReg_D_reg[AdcRefLow_D_n_0_][5] ,\BiasConfigReg_D_reg[AdcRefLow_D_n_0_][4] ,\BiasConfigReg_D_reg[AdcRefLow_D_n_0_][3] ,\BiasConfigReg_D_reg[AdcRefLow_D_n_0_][2] ,\BiasConfigReg_D_reg[AdcRefLow_D_n_0_][1] ,\BiasConfigReg_D_reg[AdcRefLow_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__26(SyncSignalSyncFF_S_reg_rep__25[0]),
         .out(Bias3Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector__parameterized0_48 detectBias4Change
-       (.AR(AR[1]),
-        .Bias4Changed_S(Bias4Changed_S),
+       (.Bias4Changed_S(Bias4Changed_S),
         .Bias8Changed_S(Bias8Changed_S),
         .\FSM_onehot_State_DP_reg[32] (detectBias4Change_n_1),
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][8] ,\BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][7] ,\BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][6] ,\BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][5] ,\BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][4] ,\BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][3] ,\BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][2] ,\BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][1] ,\BiasConfigReg_D_reg[AdcTestVoltage_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__26(SyncSignalSyncFF_S_reg_rep__25[0]),
         .out(Bias4Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector_49 detectBias8Change
-       (.AR(AR[1]),
-        .Bias13Changed_S(Bias13Changed_S),
+       (.Bias13Changed_S(Bias13Changed_S),
         .Bias14Changed_S(Bias14Changed_S),
         .Bias1Changed_S(Bias1Changed_S),
         .Bias25Changed_S(Bias25Changed_S),
@@ -32617,13 +32600,14 @@ module brd_testAERDVSSM_0_0_DAVIS346StateMachine
         .Memory_SP_reg_4(detectBias21Change_n_1),
         .Q({\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][14] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][13] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][12] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][11] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][10] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][9] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][8] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][7] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][6] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][5] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][4] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][3] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][2] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][1] ,\BiasConfigReg_D_reg[LocalBufBn_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__26(SyncSignalSyncFF_S_reg_rep__25[0]),
         .out({Bias8Sent_S,ChipSent_S,\FSM_onehot_State_DP_reg_n_0_[0] }));
   brd_testAERDVSSM_0_0_ChangeDetector_50 detectBias9Change
-       (.AR(AR[1]),
-        .Bias9Changed_S(Bias9Changed_S),
+       (.Bias9Changed_S(Bias9Changed_S),
         .LogicClk_CI(LogicClk_CI),
         .Q({\BiasConfigReg_D_reg[PadFollBn_D_n_0_][14] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][13] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][12] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][11] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][10] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][9] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][8] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][7] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][6] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][5] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][4] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][3] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][2] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][1] ,\BiasConfigReg_D_reg[PadFollBn_D_n_0_][0] }),
         .SyncSignalSyncFF_S_reg_rep__22(SyncSignalSyncFF_S_reg_rep__23[0]),
+        .SyncSignalSyncFF_S_reg_rep__26(SyncSignalSyncFF_S_reg_rep__25[0]),
         .out(Bias9Sent_S));
   brd_testAERDVSSM_0_0_ChangeDetector__parameterized2 detectChipChange
        (.Bias13Changed_S(Bias13Changed_S),
@@ -32756,29 +32740,29 @@ module brd_testAERDVSSM_0_0_DFFSynchronizer
    (SPISlaveSelectSync_SB,
     SPISlaveSelect_ABI,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__6);
+    SyncSignalSyncFF_S_reg_rep__7);
   output SPISlaveSelectSync_SB;
   input SPISlaveSelect_ABI;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__6;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__7;
 
   wire LogicClk_CI;
   wire SPISlaveSelectSync_SB;
   wire SPISlaveSelect_ABI;
   wire \SyncSignalDemetFF_S_reg_n_0_[0] ;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__6;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__7;
 
   FDPE \SyncSignalDemetFF_S_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(SPISlaveSelect_ABI),
-        .PRE(SyncSignalSyncFF_S_reg_rep__6),
+        .PRE(SyncSignalSyncFF_S_reg_rep__7),
         .Q(\SyncSignalDemetFF_S_reg_n_0_[0] ));
   FDPE \SyncSignalSyncFF_S_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\SyncSignalDemetFF_S_reg_n_0_[0] ),
-        .PRE(SyncSignalSyncFF_S_reg_rep__6),
+        .PRE(SyncSignalSyncFF_S_reg_rep__7),
         .Q(SPISlaveSelectSync_SB));
 endmodule
 
@@ -32788,7 +32772,7 @@ module brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0
     \ShiftReg_DP_reg[0] ,
     SPIClock_AI,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__6,
+    SyncSignalSyncFF_S_reg_rep__7,
     \State_DP_reg[0] ,
     SPIClockEdgeDetectorReg_S,
     SPISlaveSelectSync_SB,
@@ -32797,7 +32781,7 @@ module brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0
   output [0:0]\ShiftReg_DP_reg[0] ;
   input SPIClock_AI;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__6;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__7;
   input [0:0]\State_DP_reg[0] ;
   input SPIClockEdgeDetectorReg_S;
   input SPISlaveSelectSync_SB;
@@ -32812,7 +32796,7 @@ module brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0
   wire [0:0]\ShiftReg_DP_reg[0] ;
   wire [0:0]\State_DP_reg[0] ;
   wire \SyncSignalDemetFF_S_reg_n_0_[0] ;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__6;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__7;
 
   LUT5 #(
     .INIT(32'h00200000)) 
@@ -32826,13 +32810,13 @@ module brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0
   FDCE \SyncSignalDemetFF_S_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__6),
+        .CLR(SyncSignalSyncFF_S_reg_rep__7),
         .D(SPIClock_AI),
         .Q(\SyncSignalDemetFF_S_reg_n_0_[0] ));
   FDCE \SyncSignalSyncFF_S_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__6),
+        .CLR(SyncSignalSyncFF_S_reg_rep__7),
         .D(\SyncSignalDemetFF_S_reg_n_0_[0] ),
         .Q(SPIClockSync_C));
 endmodule
@@ -32842,28 +32826,28 @@ module brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0_1
    (SPIMOSISync_D,
     SPIMOSI_AI,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__6);
+    SyncSignalSyncFF_S_reg_rep__7);
   output SPIMOSISync_D;
   input SPIMOSI_AI;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__6;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__7;
 
   wire LogicClk_CI;
   wire SPIMOSISync_D;
   wire SPIMOSI_AI;
   wire \SyncSignalDemetFF_S_reg_n_0_[0] ;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__6;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__7;
 
   FDCE \SyncSignalDemetFF_S_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__6),
+        .CLR(SyncSignalSyncFF_S_reg_rep__7),
         .D(SPIMOSI_AI),
         .Q(\SyncSignalDemetFF_S_reg_n_0_[0] ));
   FDCE \SyncSignalSyncFF_S_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__6),
+        .CLR(SyncSignalSyncFF_S_reg_rep__7),
         .D(\SyncSignalDemetFF_S_reg_n_0_[0] ),
         .Q(SPIMOSISync_D));
 endmodule
@@ -32934,7 +32918,7 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
     \ParamOutput_DP_reg[31] ,
     \ParamInput_DP_reg[0] ,
     LogicClk_CI,
-    AR,
+    AS,
     \ParamInput_DP_reg[0]_0 ,
     \ParamInput_DP_reg[0]_1 ,
     ConfigParamAddress_DO,
@@ -32943,7 +32927,8 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
     ConfigParamInput_DO,
     \ParamAddressReg_DP_reg[1] ,
     \ParamAddressReg_DP_reg[1]_0 ,
-    SyncSignalSyncFF_S_reg_rep__0,
+    AR,
+    SyncSignalSyncFF_S_reg_rep__1,
     \ParamAddressReg_DP_reg[0] ,
     \ParamAddressReg_DP_reg[5] ,
     \ParamAddressReg_DP_reg[2] ,
@@ -32996,7 +32981,7 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
   output [31:0]\ParamOutput_DP_reg[31] ;
   input \ParamInput_DP_reg[0] ;
   input LogicClk_CI;
-  input [1:0]AR;
+  input [0:0]AS;
   input \ParamInput_DP_reg[0]_0 ;
   input \ParamInput_DP_reg[0]_1 ;
   input [4:0]ConfigParamAddress_DO;
@@ -33005,7 +32990,8 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
   input [8:0]ConfigParamInput_DO;
   input [0:0]\ParamAddressReg_DP_reg[1] ;
   input [0:0]\ParamAddressReg_DP_reg[1]_0 ;
-  input [1:0]SyncSignalSyncFF_S_reg_rep__0;
+  input [2:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__1;
   input [0:0]\ParamAddressReg_DP_reg[0] ;
   input [0:0]\ParamAddressReg_DP_reg[5] ;
   input [0:0]\ParamAddressReg_DP_reg[2] ;
@@ -33026,7 +33012,8 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
   input [0:0]\ParamAddressReg_DP_reg[6]_0 ;
   input [31:0]D;
 
-  wire [1:0]AR;
+  wire [2:0]AR;
+  wire [0:0]AS;
   wire [4:0]ConfigParamAddress_DO;
   wire [8:0]ConfigParamInput_DO;
   wire [31:0]D;
@@ -33086,829 +33073,829 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
   wire \ParamInput_DP_reg[0]_1 ;
   wire [31:0]\ParamOutput_DP_reg[31] ;
   wire [8:0]Q;
-  wire [1:0]SyncSignalSyncFF_S_reg_rep__0;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__1;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__4;
 
   FDCE \DVSAERConfigReg_DP_reg[ExternalAERControl_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(\ParamInput_DP_reg[0]_1 ),
         .Q(\DVSAERConfig_D[ExternalAERControl_S] ));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] [0]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1] ),
         .D(ConfigParamInput_DO[1]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] [1]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] [2]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1] ),
         .D(ConfigParamInput_DO[3]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] [3]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1] ),
         .D(ConfigParamInput_DO[4]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] [5]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1] ),
         .D(ConfigParamInput_DO[6]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel0Column_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1] ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel0Row_D][0] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(Q[0]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel0Row_D][1] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[1]),
         .Q(Q[1]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel0Row_D][2] 
        (.C(LogicClk_CI),
         .CE(E),
         .D(ConfigParamInput_DO[2]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(Q[2]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel0Row_D][3] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[3]),
         .Q(Q[3]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel0Row_D][4] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[4]),
         .Q(Q[4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel0Row_D][5] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[5]),
         .Q(Q[5]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel0Row_D][6] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[6]),
         .Q(Q[6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel0Row_D][7] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[7]),
         .Q(Q[7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel0Row_D][8] 
        (.C(LogicClk_CI),
         .CE(E),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(Q[8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D][8] [0]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0] ),
         .D(ConfigParamInput_DO[1]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__1),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D][8] [1]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D][8] [2]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0] ),
         .D(ConfigParamInput_DO[3]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__1),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D][8] [3]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0] ),
         .D(ConfigParamInput_DO[4]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__1),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D][8] [5]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0] ),
         .D(ConfigParamInput_DO[6]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__1),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel1Column_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0] ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel1Row_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_0 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D][8] [0]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel1Row_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D][8] [1]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel1Row_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_0 ),
         .D(ConfigParamInput_DO[2]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__1),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D][8] [2]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel1Row_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D][8] [3]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel1Row_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel1Row_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D][8] [5]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel1Row_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel1Row_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel1Row_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_0 ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] [0]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
         .D(ConfigParamInput_DO[1]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] [1]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] [2]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
         .D(ConfigParamInput_DO[3]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] [3]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
         .D(ConfigParamInput_DO[4]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] [5]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
         .D(ConfigParamInput_DO[6]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel2Column_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2] ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel2Row_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D][8] [0]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel2Row_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D][8] [1]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel2Row_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5] ),
         .D(ConfigParamInput_DO[2]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__1),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D][8] [2]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel2Row_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D][8] [3]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel2Row_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel2Row_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D][8] [5]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel2Row_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel2Row_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel2Row_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[5] ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_0 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D][8] [0]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_0 ),
         .D(ConfigParamInput_DO[1]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .PRE(AR[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D][8] [1]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_0 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D][8] [2]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_0 ),
         .D(ConfigParamInput_DO[3]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .PRE(AR[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D][8] [3]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_0 ),
         .D(ConfigParamInput_DO[4]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .PRE(AR[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D][8] [5]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_0 ),
         .D(ConfigParamInput_DO[6]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .PRE(AR[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel3Column_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_0 ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel3Row_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D][8] [0]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel3Row_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D][8] [1]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel3Row_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
         .D(ConfigParamInput_DO[2]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .PRE(AR[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D][8] [2]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel3Row_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D][8] [3]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel3Row_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel3Row_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D][8] [5]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel3Row_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel3Row_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel3Row_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4] ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D][8] [0]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
         .D(ConfigParamInput_DO[1]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D][8] [1]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D][8] [2]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
         .D(ConfigParamInput_DO[3]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D][8] [3]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
         .D(ConfigParamInput_DO[4]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D][8] [5]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
         .D(ConfigParamInput_DO[6]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel4Column_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_2 ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel4Row_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D][8] [0]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel4Row_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(ConfigParamInput_DO[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D][8] [1]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel4Row_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
         .D(ConfigParamInput_DO[2]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .PRE(AR[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D][8] [2]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel4Row_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(ConfigParamInput_DO[3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D][8] [3]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel4Row_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(ConfigParamInput_DO[4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel4Row_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D][8] [5]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel4Row_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(ConfigParamInput_DO[6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel4Row_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel4Row_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_1 ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_0 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D][8] [0]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_0 ),
         .D(ConfigParamInput_DO[1]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__1),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D][8] [1]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_0 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D][8] [2]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_0 ),
         .D(ConfigParamInput_DO[3]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__1),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D][8] [3]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_0 ),
         .D(ConfigParamInput_DO[4]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__1),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D][8] [5]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_0 ),
         .D(ConfigParamInput_DO[6]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__1),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_0 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel5Column_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_0 ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel5Row_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D][8] [0]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel5Row_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D][8] [1]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel5Row_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
         .D(ConfigParamInput_DO[2]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__1),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D][8] [2]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel5Row_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D][8] [3]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel5Row_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel5Row_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D][8] [5]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel5Row_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel5Row_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel5Row_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_3 ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_1 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D][8] [0]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_1 ),
         .D(ConfigParamInput_DO[1]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D][8] [1]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_1 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D][8] [2]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_1 ),
         .D(ConfigParamInput_DO[3]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D][8] [3]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_1 ),
         .D(ConfigParamInput_DO[4]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_1 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D][8] [5]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_1 ),
         .D(ConfigParamInput_DO[6]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_1 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel6Column_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_1 ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel6Row_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D][8] [0]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel6Row_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D][8] [1]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel6Row_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3] ),
         .D(ConfigParamInput_DO[2]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__1),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D][8] [2]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel6Row_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D][8] [3]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel6Row_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel6Row_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D][8] [5]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel6Row_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel6Row_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3] ),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__1),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel6Row_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[3] ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D][8] [0]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
         .D(ConfigParamInput_DO[1]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D][8] [1]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D][8] [2]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
         .D(ConfigParamInput_DO[3]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D][8] [3]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
         .D(ConfigParamInput_DO[4]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D][8] [5]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
         .D(ConfigParamInput_DO[6]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel7Column_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[2]_0 ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel7Row_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_2 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D][8] [0]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel7Row_D][1] 
@@ -33921,7 +33908,7 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_2 ),
         .D(ConfigParamInput_DO[2]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D][8] [2]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel7Row_D][3] 
        (.C(LogicClk_CI),
@@ -33938,7 +33925,7 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel7Row_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_2 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D][8] [5]));
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel7Row_D][6] 
@@ -33950,80 +33937,80 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
   FDCE \DVSAERConfigReg_DP_reg[FilterPixel7Row_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_2 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterPixel7Row_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[4]_2 ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D][8] [8]));
   FDPE \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
         .D(ConfigParamInput_DO[0]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] [0]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] [1]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] [2]));
   FDPE \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
         .D(ConfigParamInput_DO[3]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] [3]));
   FDPE \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
         .D(ConfigParamInput_DO[4]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] [5]));
   FDPE \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
         .D(ConfigParamInput_DO[6]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] [7]));
   FDPE \DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[1]_4 ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] [8]));
   FDPE \DVSAERConfigReg_DP_reg[FilterROIEndRow_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[6]_0 ),
         .D(ConfigParamInput_DO[0]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D][8] [0]));
   FDPE \DVSAERConfigReg_DP_reg[FilterROIEndRow_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[6]_0 ),
         .D(ConfigParamInput_DO[1]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D][8] [1]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIEndRow_D][2] 
        (.C(LogicClk_CI),
@@ -34065,12 +34052,12 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[6]_0 ),
         .D(ConfigParamInput_DO[8]),
-        .PRE(AR[0]),
+        .PRE(AS),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartColumn_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_1 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D][8] [0]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartColumn_D][1] 
@@ -34082,7 +34069,7 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartColumn_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_1 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D][8] [2]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartColumn_D][3] 
@@ -34100,7 +34087,7 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartColumn_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_1 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D][8] [5]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartColumn_D][6] 
@@ -34112,79 +34099,79 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartColumn_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_1 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D][8] [7]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartColumn_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[0]_1 ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[8]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartRow_D][0] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[6] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D][8] [0]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartRow_D][1] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[6] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D][8] [1]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartRow_D][2] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[6] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[2]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D][8] [2]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartRow_D][3] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[6] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[3]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D][8] [3]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartRow_D][4] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[6] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[4]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D][8] [4]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartRow_D][5] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[6] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[5]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D][8] [5]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartRow_D][6] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[6] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[6]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D][8] [6]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartRow_D][7] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[6] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[7]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D][8] [7]));
   FDCE \DVSAERConfigReg_DP_reg[FilterROIStartRow_D][8] 
        (.C(LogicClk_CI),
         .CE(\ParamAddressReg_DP_reg[6] ),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(ConfigParamInput_DO[8]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D][8] [8]));
   FDCE \DVSAERConfigReg_DP_reg[Run_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(\ParamInput_DP_reg[0] ),
         .Q(\DVSAERConfig_D[Run_S] ));
   FDCE \DVSAERConfigReg_DP_reg[WaitOnTransferStall_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(AS),
         .D(\ParamInput_DP_reg[0]_0 ),
         .Q(\DVSAERConfig_D[WaitOnTransferStall_S] ));
   LUT6 #(
@@ -34274,19 +34261,19 @@ module brd_testAERDVSSM_0_0_DVSAERSPIConfig
   FDCE \DVSAEROutput_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[1]),
+        .CLR(AR[2]),
         .D(D[13]),
         .Q(\ParamOutput_DP_reg[31] [13]));
   FDCE \DVSAEROutput_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(D[14]),
         .Q(\ParamOutput_DP_reg[31] [14]));
   FDCE \DVSAEROutput_DP_reg[15] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0[1]),
+        .CLR(AR[2]),
         .D(D[15]),
         .Q(\ParamOutput_DP_reg[31] [15]));
   FDCE \DVSAEROutput_DP_reg[16] 
@@ -34460,17 +34447,17 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
     LogicClk_CI,
     AR,
     DVSAERData_AI,
-    SyncSignalSyncFF_S_reg_rep__29,
+    AS,
     SyncSignalSyncFF_S_reg_rep__3,
-    SyncReset_RO,
+    SyncSignalSyncFF_S_reg_rep__4,
     O132,
     O134,
     O133,
     \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8] ,
     \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8] ,
-    SyncSignalSyncFF_S_reg_rep__28,
     \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8] ,
     \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][8] ,
+    SyncSignalSyncFF_S_reg_rep__28,
     \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8] ,
     \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][8] ,
     \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8] ,
@@ -34500,17 +34487,17 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
   input LogicClk_CI;
   input [2:0]AR;
   input [10:0]DVSAERData_AI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__29;
-  input [1:0]SyncSignalSyncFF_S_reg_rep__3;
-  input SyncReset_RO;
+  input [1:0]AS;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__3;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__4;
   input O132;
   input O134;
   input O133;
   input [8:0]\DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8] ;
   input [8:0]\DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8] ;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__28;
   input [8:0]\DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8] ;
   input [8:0]\DVSAERConfigReg2_D_reg[FilterPixel2Row_D][8] ;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__28;
   input [8:0]\DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8] ;
   input [8:0]\DVSAERConfigReg2_D_reg[FilterPixel3Row_D][8] ;
   input [8:0]\DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8] ;
@@ -34531,6 +34518,7 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
   input \FifoControl_SO[WriteSide][AlmostFull_S] ;
 
   wire [2:0]AR;
+  wire [1:0]AS;
   wire BOOL1;
   wire BOOL10_out;
   wire BOOL120_in;
@@ -34627,10 +34615,9 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
   wire [2:1]State_DN__0;
   (* RTL_KEEP = "yes" *) wire [2:0]State_DP;
   wire StatisticsFilteredPixels_SN;
-  wire SyncReset_RO;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__28;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__29;
-  wire [1:0]SyncSignalSyncFF_S_reg_rep__3;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__3;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__4;
   wire dvsEventDataRegister_n_1;
   wire dvsEventDataRegister_n_10;
   wire dvsEventDataRegister_n_13;
@@ -34736,7 +34723,7 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(DVSAERAckReg_SB),
-        .PRE(SyncReset_RO),
+        .PRE(AS[0]),
         .Q(DVSAERAck_SBO));
   FDCE \DVSAERConfigReg_D_reg[ExternalAERControl_S] 
        (.C(LogicClk_CI),
@@ -34747,56 +34734,56 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0 [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8] [1]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0 [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0 [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8] [3]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0 [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8] [4]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0 [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0 [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8] [6]),
-        .PRE(SyncReset_RO),
+        .PRE(AS[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0 [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncReset_RO),
+        .CLR(AS[0]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0 [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8] [8]),
-        .PRE(SyncReset_RO),
+        .PRE(AS[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0 [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Row_D][0] 
        (.C(LogicClk_CI),
@@ -34855,164 +34842,164 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0 [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8] [1]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0 [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0 [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8] [3]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0 [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8] [4]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0 [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0 [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8] [6]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0 [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0 [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8] [8]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0 [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__28),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0 [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__28),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0 [1]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8] [2]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0 [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__28),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0 [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__28),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0 [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__28),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0 [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__28),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0 [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__28),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0 [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8] [8]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0 [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0 [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8] [1]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0 [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0 [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8] [3]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0 [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8] [4]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0 [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0 [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8] [6]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0 [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0 [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8] [8]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0 [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][0] 
        (.C(LogicClk_CI),
@@ -35030,7 +35017,7 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D][8] [2]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__28),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D]__0 [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][3] 
        (.C(LogicClk_CI),
@@ -35053,74 +35040,74 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__28),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D][8] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D]__0 [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__28),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D][8] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D]__0 [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D][8] [8]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__28),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D]__0 [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0 [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8] [1]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0 [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0 [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8] [3]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0 [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8] [4]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0 [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0 [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8] [6]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0 [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0 [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8] [8]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0 [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Row_D][0] 
        (.C(LogicClk_CI),
@@ -35179,56 +35166,56 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0 [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8] [1]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0 [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0 [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8] [3]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0 [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8] [4]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0 [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0 [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8] [6]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0 [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[0]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0 [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8] [8]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D]__0 [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Row_D][0] 
        (.C(LogicClk_CI),
@@ -35287,56 +35274,56 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0 [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8] [1]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0 [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0 [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8] [3]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0 [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8] [4]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0 [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0 [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8] [6]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0 [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[0]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0 [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8] [8]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D]__0 [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Row_D][0] 
        (.C(LogicClk_CI),
@@ -35395,56 +35382,56 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0 [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8] [1]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0 [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0 [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8] [3]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0 [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8] [4]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0 [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0 [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8] [6]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0 [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[0]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0 [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8] [8]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D]__0 [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Row_D][0] 
        (.C(LogicClk_CI),
@@ -35503,56 +35490,56 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0 [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8] [1]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0 [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0 [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8] [3]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0 [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8] [4]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0 [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0 [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8] [6]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0 [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[0]),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0 [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8] [8]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D]__0 [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Row_D][0] 
        (.C(LogicClk_CI),
@@ -35666,55 +35653,55 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8] [0]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0 [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8] [1]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0 [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0 [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0 [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0 [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0 [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0 [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0 [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8] [8]),
-        .PRE(SyncSignalSyncFF_S_reg_rep__29),
+        .PRE(AS[1]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0 [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][0] 
        (.C(LogicClk_CI),
@@ -35773,55 +35760,55 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0 [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0 [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0 [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0 [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0 [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0 [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0 [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0 [7]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8] [8]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D]__0 [8]));
   FDCE \DVSAERConfigReg_D_reg[Run_S] 
@@ -35848,7 +35835,7 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
   FDCE DVSAERReset_SBO_reg
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncReset_RO),
+        .CLR(AS[0]),
         .D(DVSAERResetReg_SB),
         .Q(DVSAERReset_SBO));
   LUT5 #(
@@ -35910,7 +35897,8 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
         .LogicClk_CI(LogicClk_CI),
         .out(State_DP[2:1]));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized2 dvsEventDataRegister
-       (.CO(BOOL122_in),
+       (.AS(AS[1]),
+        .CO(BOOL122_in),
         .D({DVSEventDataReg_D[13:12],DVSEventDataReg_D[8:0]}),
         .\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] (BOOL120_in),
         .\DVSAERConfigReg_D_reg[FilterROIEndRow_D][8] (\DVSAERConfigReg_D_reg[FilterROIEndRow_D]__0 ),
@@ -35938,16 +35926,15 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
         .\Output_SO_reg[8]_0 (dvsEventDataRegister_n_21),
         .\Output_SO_reg[8]_1 (\roiFilterSupportEnabled.roiFilterLastRowAddressRegister_n_0 ),
         .Q({DVSEventOutDataReg_D,dvsEventDataRegister_n_1,dvsEventDataRegister_n_2,dvsEventDataRegister_n_3,dvsEventDataRegister_n_4,dvsEventDataRegister_n_5,dvsEventDataRegister_n_6,dvsEventDataRegister_n_7,dvsEventDataRegister_n_8,dvsEventDataRegister_n_9,dvsEventDataRegister_n_10}),
-        .SyncSignalSyncFF_S_reg_rep__29(SyncSignalSyncFF_S_reg_rep__29),
-        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3[1]),
+        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3),
         .out(State_DP));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_8 dvsEventValidRegister
-       (.DVSEventOutValidReg_S(DVSEventOutValidReg_S),
+       (.AS(AS[1]),
+        .DVSEventOutValidReg_S(DVSEventOutValidReg_S),
         .E(DVSEventValidReg_S),
-        .LogicClk_CI(LogicClk_CI),
-        .SyncSignalSyncFF_S_reg_rep__29(SyncSignalSyncFF_S_reg_rep__29));
+        .LogicClk_CI(LogicClk_CI));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_9 \pixelFilterSupportEnabled.pixelFilterDataRegister 
-       (.AR({SyncReset_RO,SyncSignalSyncFF_S_reg_rep__3[1]}),
+       (.AR({AS[0],SyncSignalSyncFF_S_reg_rep__4}),
         .E(PixelFilterInValidReg_S),
         .LogicClk_CI(LogicClk_CI),
         .\Output_SO_reg[13]_0 ({ROIFilterOutDataReg_D,\roiFilterSupportEnabled.roiFilterDataRegister_n_1 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_2 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_3 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_4 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_5 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_6 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_7 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_8 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_9 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_10 }),
@@ -35955,7 +35942,8 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
         .Q({PixelFilterOutDataReg_D,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_2 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_3 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_4 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_5 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_6 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_7 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_8 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_9 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_10 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_11 }),
         .RowOnlyFilterInValidReg_S(RowOnlyFilterInValidReg_S));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized3 \pixelFilterSupportEnabled.pixelFilterLastRowAddressRegister 
-       (.CO(BOOL76_out),
+       (.AS(AS),
+        .CO(BOOL76_out),
         .\DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] (\DVSAERConfigReg_D_reg[FilterPixel0Column_D]__0 ),
         .\DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] (\DVSAERConfigReg_D_reg[FilterPixel2Column_D]__0 ),
         .\DVSAERConfigReg_D_reg[FilterPixel3Column_D][8] (\DVSAERConfigReg_D_reg[FilterPixel3Column_D]__0 ),
@@ -35990,16 +35978,15 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
         .\Output_SO_reg[8]_0 (\pixelFilterSupportEnabled.pixelFilterLastRowAddressRegister_n_7 ),
         .\Output_SO_reg[8]_1 (\roiFilterSupportEnabled.roiFilterDataRegister_n_20 ),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D]__0 ),
-        .ROIFilterOutValidReg_S(ROIFilterOutValidReg_S),
-        .SyncReset_RO(SyncReset_RO),
-        .SyncSignalSyncFF_S_reg_rep__29(SyncSignalSyncFF_S_reg_rep__29));
+        .ROIFilterOutValidReg_S(ROIFilterOutValidReg_S));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_10 \pixelFilterSupportEnabled.pixelFilterValidRegister 
        (.E(PixelFilterInValidReg_S),
         .LogicClk_CI(LogicClk_CI),
         .PixelFilterOutValidReg_S(PixelFilterOutValidReg_S),
-        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3[1]));
+        .SyncSignalSyncFF_S_reg_rep__4(SyncSignalSyncFF_S_reg_rep__4));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_11 \roiFilterSupportEnabled.roiFilterDataRegister 
-       (.CO(BOOL7),
+       (.AS(AS[1]),
+        .CO(BOOL7),
         .D({DVSEventOutDataReg_D,dvsEventDataRegister_n_1,dvsEventDataRegister_n_2,dvsEventDataRegister_n_3,dvsEventDataRegister_n_4,dvsEventDataRegister_n_5,dvsEventDataRegister_n_6,dvsEventDataRegister_n_7,dvsEventDataRegister_n_8,dvsEventDataRegister_n_9,dvsEventDataRegister_n_10}),
         .\DVSAERConfigReg_D_reg[FilterPixel0Row_D][8] (\DVSAERConfigReg_D_reg[FilterPixel0Row_D]__0 ),
         .\DVSAERConfigReg_D_reg[FilterPixel1Row_D][8] (\DVSAERConfigReg_D_reg[FilterPixel1Row_D]__0 ),
@@ -36043,10 +36030,10 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
         .Q({ROIFilterOutDataReg_D,\roiFilterSupportEnabled.roiFilterDataRegister_n_1 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_2 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_3 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_4 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_5 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_6 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_7 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_8 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_9 ,\roiFilterSupportEnabled.roiFilterDataRegister_n_10 }),
         .ROIFilterOutValidReg_S(ROIFilterOutValidReg_S),
         .StatisticsFilteredPixels_SN(StatisticsFilteredPixels_SN),
-        .SyncSignalSyncFF_S_reg_rep__29(SyncSignalSyncFF_S_reg_rep__29),
-        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3[1]));
+        .SyncSignalSyncFF_S_reg_rep__4(SyncSignalSyncFF_S_reg_rep__4));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized3_12 \roiFilterSupportEnabled.roiFilterLastRowAddressRegister 
-       (.CO(BOOL122_in),
+       (.AS(AS[1]),
+        .CO(BOOL122_in),
         .\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] (\DVSAERConfigReg_D_reg[FilterROIEndColumn_D]__0 ),
         .DVSEventOutValidReg_S(DVSEventOutValidReg_S),
         .LogicClk_CI(LogicClk_CI),
@@ -36069,10 +36056,10 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
         .\Output_SO_reg[7]_1 (dvsEventDataRegister_n_20),
         .\Output_SO_reg[8]_0 (\roiFilterSupportEnabled.roiFilterLastRowAddressRegister_n_0 ),
         .\Output_SO_reg[8]_1 (dvsEventDataRegister_n_21),
-        .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D]__0 ),
-        .SyncSignalSyncFF_S_reg_rep__29(SyncSignalSyncFF_S_reg_rep__29));
+        .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D]__0 ));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_13 \roiFilterSupportEnabled.roiFilterValidRegister 
-       (.E(PixelFilterInValidReg_S),
+       (.AS(AS[1]),
+        .E(PixelFilterInValidReg_S),
         .LogicClk_CI(LogicClk_CI),
         .\Output_SO_reg[0]_0 (ROIFilterInValidReg_S),
         .\Output_SO_reg[6] (\statisticsSupport.StatisticsFilteredPixels.StatisticsFilteredPixelsReg_n_3 ),
@@ -36080,8 +36067,7 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
         .\Output_SO_reg[6]_1 (\statisticsSupport.StatisticsFilteredPixels.StatisticsFilteredPixelsReg_n_1 ),
         .\Output_SO_reg[6]_2 (\statisticsSupport.StatisticsFilteredPixels.StatisticsFilteredPixelsReg_n_2 ),
         .Q(ROIFilterOutDataReg_D),
-        .ROIFilterOutValidReg_S(ROIFilterOutValidReg_S),
-        .SyncSignalSyncFF_S_reg_rep__29(SyncSignalSyncFF_S_reg_rep__29));
+        .ROIFilterOutValidReg_S(ROIFilterOutValidReg_S));
   brd_testAERDVSSM_0_0_ContinuousCounter__parameterized1 rowCaptureDelayCounter
        (.AR(AR[1]),
         .\DVSAERConfigReg_D_reg[Run_S] (\FSM_sequential_State_DP[2]_i_5__0_n_0 ),
@@ -36099,7 +36085,7 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
        (.D({PixelFilterOutDataReg_D,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_2 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_3 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_4 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_5 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_6 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_7 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_8 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_9 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_10 ,\pixelFilterSupportEnabled.pixelFilterDataRegister_n_11 }),
         .LogicClk_CI(LogicClk_CI),
         .Q(Q),
-        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3));
+        .SyncSignalSyncFF_S_reg_rep__4(SyncSignalSyncFF_S_reg_rep__4));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_15 rowOnlyFilterValidRegister
        (.\FifoControl_SI[WriteSide][Write_S] (\FifoControl_SI[WriteSide][Write_S] ),
         .LogicClk_CI(LogicClk_CI),
@@ -36107,7 +36093,7 @@ module brd_testAERDVSSM_0_0_DVSAERStateMachine
         .PixelFilterOutValidReg_S(PixelFilterOutValidReg_S),
         .Q(Q[10]),
         .RowOnlyFilterInValidReg_S(RowOnlyFilterInValidReg_S),
-        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3[1]));
+        .SyncSignalSyncFF_S_reg_rep__4(SyncSignalSyncFF_S_reg_rep__4));
   brd_testAERDVSSM_0_0_Counter_16 \statisticsSupport.StatisticsEventsColumnCounter 
        (.AR({AR[2],AR[0]}),
         .\DVSAERConfigInfoOut_DO[StatisticsEventsColumn_D] (\DVSAERConfigInfoOut_DO[StatisticsEventsColumn_D] ),
@@ -36507,7 +36493,7 @@ module brd_testAERDVSSM_0_0_LogicClockSynchronizer
     \ShiftReg_DP_reg[0] ,
     SPISlaveSelect_ABI,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__6,
+    SyncSignalSyncFF_S_reg_rep__7,
     SPIClock_AI,
     SPIMOSI_AI,
     SyncInClock_AI,
@@ -36520,7 +36506,7 @@ module brd_testAERDVSSM_0_0_LogicClockSynchronizer
   output [0:0]\ShiftReg_DP_reg[0] ;
   input SPISlaveSelect_ABI;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__6;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__7;
   input SPIClock_AI;
   input SPIMOSI_AI;
   input SyncInClock_AI;
@@ -36541,7 +36527,7 @@ module brd_testAERDVSSM_0_0_LogicClockSynchronizer
   wire SyncInClockSync_CO;
   wire SyncInClock_AI;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__1;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__6;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__7;
 
   brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0 syncSPIClock
        (.LogicClk_CI(LogicClk_CI),
@@ -36552,17 +36538,17 @@ module brd_testAERDVSSM_0_0_LogicClockSynchronizer
         .SPISlaveSelectSync_SB(SPISlaveSelectSync_SB),
         .\ShiftReg_DP_reg[0] (\ShiftReg_DP_reg[0] ),
         .\State_DP_reg[0] (\State_DP_reg[0] ),
-        .SyncSignalSyncFF_S_reg_rep__6(SyncSignalSyncFF_S_reg_rep__6));
+        .SyncSignalSyncFF_S_reg_rep__7(SyncSignalSyncFF_S_reg_rep__7));
   brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0_1 syncSPIMOSI
        (.LogicClk_CI(LogicClk_CI),
         .SPIMOSISync_D(SPIMOSISync_D),
         .SPIMOSI_AI(SPIMOSI_AI),
-        .SyncSignalSyncFF_S_reg_rep__6(SyncSignalSyncFF_S_reg_rep__6));
+        .SyncSignalSyncFF_S_reg_rep__7(SyncSignalSyncFF_S_reg_rep__7));
   brd_testAERDVSSM_0_0_DFFSynchronizer syncSPISlaveSelect
        (.LogicClk_CI(LogicClk_CI),
         .SPISlaveSelectSync_SB(SPISlaveSelectSync_SB),
         .SPISlaveSelect_ABI(SPISlaveSelect_ABI),
-        .SyncSignalSyncFF_S_reg_rep__6(SyncSignalSyncFF_S_reg_rep__6));
+        .SyncSignalSyncFF_S_reg_rep__7(SyncSignalSyncFF_S_reg_rep__7));
   brd_testAERDVSSM_0_0_DFFSynchronizer__parameterized0_2 syncSyncInClock
        (.LogicClk_CI(LogicClk_CI),
         .SyncInClockSync_CO(SyncInClockSync_CO),
@@ -36587,9 +36573,7 @@ module brd_testAERDVSSM_0_0_MultiplexerSPIConfig
     \ParamInput_DP_reg[0]_2 ,
     \ParamInput_DP_reg[0]_3 ,
     \ParamInput_DP_reg[0]_4 ,
-    SyncSignalSyncFF_S_reg_rep__6,
-    D,
-    SyncSignalSyncFF_S_reg_rep__4);
+    D);
   output \MultiplexerConfig_D[Run_S] ;
   output \MultiplexerConfig_D[TimestampRun_S] ;
   output \MultiplexerConfig_D[TimestampReset_S] ;
@@ -36599,17 +36583,15 @@ module brd_testAERDVSSM_0_0_MultiplexerSPIConfig
   output [31:0]Q;
   input \ParamInput_DP_reg[0] ;
   input LogicClk_CI;
-  input [1:0]AR;
+  input [3:0]AR;
   input \ParamInput_DP_reg[0]_0 ;
   input \ParamInput_DP_reg[0]_1 ;
   input \ParamInput_DP_reg[0]_2 ;
   input \ParamInput_DP_reg[0]_3 ;
   input \ParamInput_DP_reg[0]_4 ;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__6;
   input [31:0]D;
-  input [1:0]SyncSignalSyncFF_S_reg_rep__4;
 
-  wire [1:0]AR;
+  wire [3:0]AR;
   wire [31:0]D;
   wire LogicClk_CI;
   wire \MultiplexerConfigReg_DP_reg[DropExtInputOnTransferStall_S]_0 ;
@@ -36625,13 +36607,11 @@ module brd_testAERDVSSM_0_0_MultiplexerSPIConfig
   wire \ParamInput_DP_reg[0]_3 ;
   wire \ParamInput_DP_reg[0]_4 ;
   wire [31:0]Q;
-  wire [1:0]SyncSignalSyncFF_S_reg_rep__4;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__6;
 
   FDCE \MultiplexerConfigReg_DP_reg[DropDVSOnTransferStall_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__6),
+        .CLR(AR[0]),
         .D(\ParamInput_DP_reg[0]_4 ),
         .Q(\MultiplexerConfig_D[DropDVSOnTransferStall_S] ));
   FDCE \MultiplexerConfigReg_DP_reg[DropExtInputOnTransferStall_S] 
@@ -36691,43 +36671,43 @@ module brd_testAERDVSSM_0_0_MultiplexerSPIConfig
   FDCE \MultiplexerOutput_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[1]),
+        .CLR(AR[2]),
         .D(D[13]),
         .Q(Q[13]));
   FDCE \MultiplexerOutput_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[0]),
+        .CLR(AR[2]),
         .D(D[14]),
         .Q(Q[14]));
   FDCE \MultiplexerOutput_DP_reg[15] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[0]),
+        .CLR(AR[2]),
         .D(D[15]),
         .Q(Q[15]));
   FDCE \MultiplexerOutput_DP_reg[16] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[16]),
         .Q(Q[16]));
   FDCE \MultiplexerOutput_DP_reg[17] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[17]),
         .Q(Q[17]));
   FDCE \MultiplexerOutput_DP_reg[18] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[18]),
         .Q(Q[18]));
   FDCE \MultiplexerOutput_DP_reg[19] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[19]),
         .Q(Q[19]));
   FDCE \MultiplexerOutput_DP_reg[1] 
@@ -36739,61 +36719,61 @@ module brd_testAERDVSSM_0_0_MultiplexerSPIConfig
   FDCE \MultiplexerOutput_DP_reg[20] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[20]),
         .Q(Q[20]));
   FDCE \MultiplexerOutput_DP_reg[21] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[21]),
         .Q(Q[21]));
   FDCE \MultiplexerOutput_DP_reg[22] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[22]),
         .Q(Q[22]));
   FDCE \MultiplexerOutput_DP_reg[23] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[23]),
         .Q(Q[23]));
   FDCE \MultiplexerOutput_DP_reg[24] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[24]),
         .Q(Q[24]));
   FDCE \MultiplexerOutput_DP_reg[25] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[25]),
         .Q(Q[25]));
   FDCE \MultiplexerOutput_DP_reg[26] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[26]),
         .Q(Q[26]));
   FDCE \MultiplexerOutput_DP_reg[27] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[27]),
         .Q(Q[27]));
   FDCE \MultiplexerOutput_DP_reg[28] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[28]),
         .Q(Q[28]));
   FDCE \MultiplexerOutput_DP_reg[29] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[29]),
         .Q(Q[29]));
   FDCE \MultiplexerOutput_DP_reg[2] 
@@ -36805,13 +36785,13 @@ module brd_testAERDVSSM_0_0_MultiplexerSPIConfig
   FDCE \MultiplexerOutput_DP_reg[30] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[30]),
         .Q(Q[30]));
   FDCE \MultiplexerOutput_DP_reg[31] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__4[1]),
+        .CLR(AR[3]),
         .D(D[31]),
         .Q(Q[31]));
   FDCE \MultiplexerOutput_DP_reg[3] 
@@ -36823,7 +36803,7 @@ module brd_testAERDVSSM_0_0_MultiplexerSPIConfig
   FDCE \MultiplexerOutput_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[1]),
+        .CLR(AR[0]),
         .D(D[4]),
         .Q(Q[4]));
   FDCE \MultiplexerOutput_DP_reg[5] 
@@ -36872,11 +36852,11 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
     O148,
     LogicClk_CI,
     AR,
-    O147,
-    SyncSignalSyncFF_S_reg_rep__3,
-    SyncReset_RO,
-    O146,
     SyncSignalSyncFF_S_reg_rep__2,
+    O147,
+    SyncReset_RO,
+    SyncSignalSyncFF_S_reg_rep__4,
+    O146,
     O151,
     SyncInClockSync_CO,
     FifoData_DO,
@@ -36899,11 +36879,11 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
   input O148;
   input LogicClk_CI;
   input [1:0]AR;
+  input [1:0]SyncSignalSyncFF_S_reg_rep__2;
   input O147;
-  input [1:0]SyncSignalSyncFF_S_reg_rep__3;
   input SyncReset_RO;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__4;
   input O146;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__2;
   input O151;
   input SyncInClockSync_CO;
   input [14:0]FifoData_DO;
@@ -36967,8 +36947,8 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
   wire SyncInClockSync_CO;
   wire SyncOutClock_CO;
   wire SyncReset_RO;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__2;
-  wire [1:0]SyncSignalSyncFF_S_reg_rep__3;
+  wire [1:0]SyncSignalSyncFF_S_reg_rep__2;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__4;
   wire TimestampOverflowBufferOverflow_S;
   wire TimestampOverflow_S;
   wire TimestampResetBufferClear_S;
@@ -37029,7 +37009,7 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
   wire tsSynchronizer_n_3;
   wire tsSynchronizer_n_4;
 
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT5 #(
     .INIT(32'h00400000)) 
     \AERSMOutFifoData_DO[0]_INST_0_i_1 
@@ -37039,7 +37019,7 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
         .I3(State_DP[1]),
         .I4(FifoData_DO[0]),
         .O(\AERSMOutFifoData_DO[0]_INST_0_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT4 #(
     .INIT(16'h0100)) 
     \AERSMOutFifoData_DO[0]_INST_0_i_2 
@@ -37048,7 +37028,7 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
         .I2(Q[1]),
         .I3(State_DP[0]),
         .O(\AERSMOutFifoData_DO[0]_INST_0_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT4 #(
     .INIT(16'h0040)) 
     \AERSMOutFifoData_DO[14]_INST_0_i_2 
@@ -37075,7 +37055,7 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
         .I2(PreviousData_DP[3]),
         .I3(PreviousData_DP[2]),
         .O(AERSMOutFifoWrite_SO_INST_0_i_6_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     AERSMOutFifoWrite_SO_INST_0_i_7
@@ -37115,7 +37095,7 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
         .I2(PreviousData_DP[5]),
         .I3(PreviousData_DP[4]),
         .O(HighestTimestampSent_SP_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     HighestTimestampSent_SP_i_9
@@ -37127,19 +37107,19 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
   FDCE HighestTimestampSent_SP_reg
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[0]),
         .D(tsGenerator_n_35),
         .Q(HighestTimestampSent_SP));
   FDCE \MultiplexerConfigReg_D_reg[DropDVSOnTransferStall_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(O151),
         .Q(\MultiplexerConfigReg_D_reg[DropDVSOnTransferStall_S]__0 ));
   FDCE \MultiplexerConfigReg_D_reg[Run_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(O146),
         .Q(\MultiplexerConfigReg_D_reg[Run_S_n_0_] ));
   FDCE \MultiplexerConfigReg_D_reg[TimestampReset_S] 
@@ -37151,7 +37131,7 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
   FDCE \MultiplexerConfigReg_D_reg[TimestampRun_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[0]),
         .D(O147),
         .Q(\MultiplexerConfigReg_D_reg[TimestampRun_S_n_0_] ));
   LUT6 #(
@@ -37174,12 +37154,12 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(StateTimestampNext_DN),
-        .PRE(SyncSignalSyncFF_S_reg_rep__3[1]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__2[0]),
         .Q(StateTimestampNext_DP[1]));
   FDCE \StateTimestampNext_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[0]),
         .D(\FifoData_DO_reg[12] ),
         .Q(StateTimestampNext_DP[3]));
   LUT6 #(
@@ -37192,7 +37172,7 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
         .I4(State_DP[1]),
         .I5(State_DP[0]),
         .O(\State_DP[1]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT3 #(
     .INIT(8'h04)) 
     \State_DP[2]_i_2 
@@ -37223,115 +37203,115 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
   FDCE \State_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(tsResetBuffer_n_5),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(State_DN[0]),
         .Q(State_DP[0]));
   FDCE \State_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(tsResetBuffer_n_5),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(State_DN[1]),
         .Q(State_DP[1]));
   FDCE \State_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(tsResetBuffer_n_5),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(State_DN[2]),
         .Q(Q[0]));
   FDCE \State_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(tsResetBuffer_n_5),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(State_DN[3]),
         .Q(Q[1]));
   FDCE \TimestampBuffer_D_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_15),
         .Q(PreviousData_DP[0]));
   FDCE \TimestampBuffer_D_reg[10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_5),
         .Q(PreviousData_DP[10]));
   FDCE \TimestampBuffer_D_reg[11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_4),
         .Q(PreviousData_DP[11]));
   FDCE \TimestampBuffer_D_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_3),
         .Q(PreviousData_DP[12]));
   FDCE \TimestampBuffer_D_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_2),
         .Q(PreviousData_DP[13]));
   FDCE \TimestampBuffer_D_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_1),
         .Q(PreviousData_DP[14]));
   FDCE \TimestampBuffer_D_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_14),
         .Q(PreviousData_DP[1]));
   FDCE \TimestampBuffer_D_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_13),
         .Q(PreviousData_DP[2]));
   FDCE \TimestampBuffer_D_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_12),
         .Q(PreviousData_DP[3]));
   FDCE \TimestampBuffer_D_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_11),
         .Q(PreviousData_DP[4]));
   FDCE \TimestampBuffer_D_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_10),
         .Q(PreviousData_DP[5]));
   FDCE \TimestampBuffer_D_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_9),
         .Q(PreviousData_DP[6]));
   FDCE \TimestampBuffer_D_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_8),
         .Q(PreviousData_DP[7]));
   FDCE \TimestampBuffer_D_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_7),
         .Q(PreviousData_DP[8]));
   FDCE \TimestampBuffer_D_reg[9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__2),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2[1]),
         .D(tsGenerator_n_6),
         .Q(PreviousData_DP[9]));
   LUT6 #(
@@ -37359,8 +37339,7 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
         .\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] (\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][39] ),
         .\MultiplexerConfigReg_D_reg[Run_S] (\MultiplexerConfigReg_D_reg[Run_S_n_0_] ),
         .\Output_SO_reg[0] (\statisticsSupport.StatisticsDVSDroppedReg_n_0 ),
-        .SyncSignalSyncFF_S_reg_rep__2(SyncSignalSyncFF_S_reg_rep__2),
-        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3[1]));
+        .SyncSignalSyncFF_S_reg_rep__2(SyncSignalSyncFF_S_reg_rep__2));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_3 \statisticsSupport.StatisticsDVSDroppedReg 
        (.\Count_DP_reg[39] (\statisticsSupport.StatisticsDVSDroppedReg_n_0 ),
         .LogicClk_CI(LogicClk_CI),
@@ -37368,12 +37347,12 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
         .\MultiplexerConfigReg_D_reg[Run_S] (\MultiplexerConfigReg_D_reg[Run_S_n_0_] ),
         .\OutFifoControl_SO[Empty_S] (\OutFifoControl_SO[Empty_S] ),
         .Q({Q,State_DP}),
-        .SyncSignalSyncFF_S_reg_rep__2(SyncSignalSyncFF_S_reg_rep__2));
+        .SyncSignalSyncFF_S_reg_rep__2(SyncSignalSyncFF_S_reg_rep__2[1]));
   brd_testAERDVSSM_0_0_Counter_4 \statisticsSupport.StatisticsExtInputDroppedCounter 
        (.D(D),
         .LogicClk_CI(LogicClk_CI),
         .\MultiplexerConfigReg_D_reg[Run_S] (\MultiplexerConfigReg_D_reg[Run_S_n_0_] ),
-        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3[1]));
+        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__2[0]));
   brd_testAERDVSSM_0_0_ChangeDetector timestampChangeDetector
        (.AERSMOutFifoData_DO(AERSMOutFifoData_DO),
         .AERSMOutFifoWrite_SO(AERSMOutFifoWrite_SO),
@@ -37404,7 +37383,7 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
         .\State_DP_reg[1]_9 (tsGenerator_n_25),
         .\State_DP_reg[2] (\AERSMOutFifoData_DO[0]_INST_0_i_1_n_0 ),
         .\State_DP_reg[3] ({Q,State_DP}),
-        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3[1]),
+        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__2[0]),
         .\TimestampBuffer_D_reg[11] (HighestTimestampSent_SP_i_9_n_0),
         .TimestampOverflow_S(TimestampOverflow_S));
   brd_testAERDVSSM_0_0_ContinuousCounter tsGenerator
@@ -37436,7 +37415,6 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
         .\State_DP_reg[3] ({Q,State_DP}),
         .\SyncSignalSyncFF_S_reg[0] (tsSynchronizer_n_3),
         .SyncSignalSyncFF_S_reg_rep__2(SyncSignalSyncFF_S_reg_rep__2),
-        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3[1]),
         .\TimestampBuffer_D_reg[14] (PreviousData_DP),
         .TimestampOverflow_S(TimestampOverflow_S),
         .TimestampResetBufferClear_S(TimestampResetBufferClear_S));
@@ -37451,7 +37429,7 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
         .Q({tsOverflowBuffer_n_1,tsOverflowBuffer_n_2,tsOverflowBuffer_n_3,tsOverflowBuffer_n_4,tsOverflowBuffer_n_5,tsOverflowBuffer_n_6,tsOverflowBuffer_n_7,tsOverflowBuffer_n_8,tsOverflowBuffer_n_9,tsOverflowBuffer_n_10,tsOverflowBuffer_n_11}),
         .State_DN1(State_DN1),
         .\State_DP_reg[3] ({Q,State_DP}),
-        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3[1]),
+        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__2[0]),
         .\TimestampBuffer_D_reg[12] (timestampChangeDetector_n_17),
         .\TimestampBuffer_D_reg[2] (HighestTimestampSent_SP_i_6_n_0),
         .TimestampOverflowBufferOverflow_S(TimestampOverflowBufferOverflow_S),
@@ -37473,12 +37451,13 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
         .\State_DP_reg[0] (\State_DP[2]_i_2_n_0 ),
         .\State_DP_reg[1] (\State_DP_reg[2]_0 ),
         .\State_DP_reg[2] (\State_DP[3]_i_3_n_0 ),
-        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__3[1]),
+        .SyncSignalSyncFF_S_reg_rep__3(SyncSignalSyncFF_S_reg_rep__2[0]),
         .TimestampResetBuffer_S(TimestampResetBuffer_S));
   brd_testAERDVSSM_0_0_PulseDetector tsResetExternalDetector
-       (.AR(AR),
+       (.AR(AR[1]),
         .LogicClk_CI(LogicClk_CI),
         .State_DN10_out(State_DN10_out),
+        .SyncSignalSyncFF_S_reg_rep__2(SyncSignalSyncFF_S_reg_rep__2[1]),
         .TimestampResetExternalDetected_S(TimestampResetExternalDetected_S));
   brd_testAERDVSSM_0_0_TimestampSynchronizer tsSynchronizer
        (.AR(AR[0]),
@@ -37492,8 +37471,8 @@ module brd_testAERDVSSM_0_0_MultiplexerStateMachine
         .SyncInClockSync_CO(SyncInClockSync_CO),
         .SyncOutClock_CO(SyncOutClock_CO),
         .SyncReset_RO(SyncReset_RO),
-        .SyncSignalSyncFF_S_reg_rep__2(SyncSignalSyncFF_S_reg_rep__2),
-        .SyncSignalSyncFF_S_reg_rep__4(SyncSignalSyncFF_S_reg_rep__3[0]),
+        .SyncSignalSyncFF_S_reg_rep__2(SyncSignalSyncFF_S_reg_rep__2[1]),
+        .SyncSignalSyncFF_S_reg_rep__4(SyncSignalSyncFF_S_reg_rep__4),
         .TimestampOverflowBufferOverflow_S(TimestampOverflowBufferOverflow_S),
         .TimestampResetBufferClear_S(TimestampResetBufferClear_S),
         .TimestampResetBuffer_S(TimestampResetBuffer_S),
@@ -37504,14 +37483,16 @@ endmodule
 module brd_testAERDVSSM_0_0_PulseDetector
    (TimestampResetExternalDetected_S,
     LogicClk_CI,
-    AR,
-    State_DN10_out);
+    SyncSignalSyncFF_S_reg_rep__2,
+    State_DN10_out,
+    AR);
   output TimestampResetExternalDetected_S;
   input LogicClk_CI;
-  input [1:0]AR;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__2;
   input State_DN10_out;
+  input [0:0]AR;
 
-  wire [1:0]AR;
+  wire [0:0]AR;
   wire [1:0]Count_DN;
   wire [1:0]Count_DP;
   wire \FSM_sequential_State_DP[0]_i_1_n_0 ;
@@ -37520,6 +37501,7 @@ module brd_testAERDVSSM_0_0_PulseDetector
   wire PulseDetected_S;
   wire State_DN10_out;
   (* RTL_KEEP = "yes" *) wire [1:0]State_DP;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__2;
   wire TimestampResetExternalDetected_S;
 
   LUT3 #(
@@ -37550,13 +37532,13 @@ module brd_testAERDVSSM_0_0_PulseDetector
   FDCE \Count_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[1]),
+        .CLR(AR),
         .D(Count_DN[0]),
         .Q(Count_DP[0]));
   FDCE \Count_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[1]),
+        .CLR(AR),
         .D(Count_DN[1]),
         .Q(Count_DP[1]));
   LUT5 #(
@@ -37582,7 +37564,7 @@ module brd_testAERDVSSM_0_0_PulseDetector
   FDCE \FSM_sequential_State_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[1]),
+        .CLR(AR),
         .D(\FSM_sequential_State_DP[0]_i_1_n_0 ),
         .Q(State_DP[0]));
   (* FSM_ENCODED_STATES = "stpulsedetected:01,stwaitforpulse:00,stpulseoverflowwait:10" *) 
@@ -37590,93 +37572,93 @@ module brd_testAERDVSSM_0_0_PulseDetector
   FDCE \FSM_sequential_State_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[1]),
+        .CLR(AR),
         .D(\FSM_sequential_State_DP[1]_i_1_n_0 ),
         .Q(State_DP[1]));
   FDCE PulseDetectedBuffer_S_reg
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2),
         .D(PulseDetected_S),
         .Q(TimestampResetExternalDetected_S));
 endmodule
 
 (* ORIG_REF_NAME = "ResetSynchronizer" *) 
 module brd_testAERDVSSM_0_0_ResetSynchronizer
-   (SyncReset_RO,
+   (AS,
     AR,
-    \SyncSignalSyncFF_S_reg[0] ,
+    \Divider_DP_reg[0] ,
     Memory_SP_reg,
     \BiasConfigReg_DP_reg[SSN_D][15] ,
-    \Output_SO_reg[0] ,
-    \ParamInput_DP_reg[13] ,
-    \BiasConfigReg_DP_reg[LcolTimeoutBn_D][14] ,
-    \BiasConfigReg_DP_reg[PrBp_D][0] ,
-    \BiasConfigReg_DP_reg[AdcTestVoltage_D][1] ,
-    \BiasConfigReg_DP_reg[AdcRefLow_D][3] ,
+    \SyncSignalSyncFF_S_reg[0] ,
+    LatchInputReg_SP_reg,
+    \BiasConfigReg_DP_reg[IFRefrBn_D][12] ,
+    \BiasConfigReg_DP_reg[ColSelLowBn_D][13] ,
+    \BiasConfigReg_DP_reg[ReadoutBufBp_D][14] ,
+    \BiasConfigReg_DP_reg[PrBp_D][14] ,
+    \BiasConfigReg_DP_reg[AdcRefHigh_D][2] ,
     \BiasConfigReg_DP_reg[AdcRefLow_D][8] ,
-    \BiasConfigReg_D_reg[PrSFBp_D][1] ,
-    \BiasConfigReg_D_reg[AEPuXBp_D][10] ,
-    \PreviousData_DP_reg[15] ,
+    \BiasConfigReg_D_reg[PrSFBp_D][6] ,
+    \BiasConfigReg_D_reg[AEPdBn_D][0] ,
+    \BiasConfigReg_D_reg[BiasBuffer_D][12] ,
     \Count_DP_reg[13] ,
-    \PreviousData_DP_reg[13] ,
-    \PreviousData_DP_reg[4] ,
+    \PreviousData_DP_reg[0] ,
+    \PreviousData_DP_reg[6] ,
     \PreviousData_DP_reg[2] ,
     \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][1] ,
-    \Output_SO_reg[0]_0 ,
     \Count_DP_reg[31] ,
     LogicClk_CI,
     Reset_RI);
-  output SyncReset_RO;
+  output [1:0]AS;
   output [3:0]AR;
-  output [1:0]\SyncSignalSyncFF_S_reg[0] ;
+  output [1:0]\Divider_DP_reg[0] ;
   output [0:0]Memory_SP_reg;
   output [1:0]\BiasConfigReg_DP_reg[SSN_D][15] ;
-  output [0:0]\Output_SO_reg[0] ;
-  output [1:0]\ParamInput_DP_reg[13] ;
-  output [0:0]\BiasConfigReg_DP_reg[LcolTimeoutBn_D][14] ;
-  output [0:0]\BiasConfigReg_DP_reg[PrBp_D][0] ;
-  output [0:0]\BiasConfigReg_DP_reg[AdcTestVoltage_D][1] ;
-  output [0:0]\BiasConfigReg_DP_reg[AdcRefLow_D][3] ;
+  output [0:0]\SyncSignalSyncFF_S_reg[0] ;
+  output [0:0]LatchInputReg_SP_reg;
+  output [0:0]\BiasConfigReg_DP_reg[IFRefrBn_D][12] ;
+  output [0:0]\BiasConfigReg_DP_reg[ColSelLowBn_D][13] ;
+  output [0:0]\BiasConfigReg_DP_reg[ReadoutBufBp_D][14] ;
+  output [0:0]\BiasConfigReg_DP_reg[PrBp_D][14] ;
+  output [0:0]\BiasConfigReg_DP_reg[AdcRefHigh_D][2] ;
   output [1:0]\BiasConfigReg_DP_reg[AdcRefLow_D][8] ;
-  output [1:0]\BiasConfigReg_D_reg[PrSFBp_D][1] ;
-  output [1:0]\BiasConfigReg_D_reg[AEPuXBp_D][10] ;
-  output [0:0]\PreviousData_DP_reg[15] ;
+  output [1:0]\BiasConfigReg_D_reg[PrSFBp_D][6] ;
+  output [0:0]\BiasConfigReg_D_reg[AEPdBn_D][0] ;
+  output [1:0]\BiasConfigReg_D_reg[BiasBuffer_D][12] ;
   output [1:0]\Count_DP_reg[13] ;
-  output [0:0]\PreviousData_DP_reg[13] ;
-  output [0:0]\PreviousData_DP_reg[4] ;
+  output [0:0]\PreviousData_DP_reg[0] ;
+  output [0:0]\PreviousData_DP_reg[6] ;
   output [1:0]\PreviousData_DP_reg[2] ;
   output [0:0]\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][1] ;
-  output [0:0]\Output_SO_reg[0]_0 ;
   output [2:0]\Count_DP_reg[31] ;
   input LogicClk_CI;
   input Reset_RI;
 
   wire [3:0]AR;
-  wire [0:0]\BiasConfigReg_DP_reg[AdcRefLow_D][3] ;
+  wire [1:0]AS;
+  wire [0:0]\BiasConfigReg_DP_reg[AdcRefHigh_D][2] ;
   wire [1:0]\BiasConfigReg_DP_reg[AdcRefLow_D][8] ;
-  wire [0:0]\BiasConfigReg_DP_reg[AdcTestVoltage_D][1] ;
-  wire [0:0]\BiasConfigReg_DP_reg[LcolTimeoutBn_D][14] ;
-  wire [0:0]\BiasConfigReg_DP_reg[PrBp_D][0] ;
+  wire [0:0]\BiasConfigReg_DP_reg[ColSelLowBn_D][13] ;
+  wire [0:0]\BiasConfigReg_DP_reg[IFRefrBn_D][12] ;
+  wire [0:0]\BiasConfigReg_DP_reg[PrBp_D][14] ;
+  wire [0:0]\BiasConfigReg_DP_reg[ReadoutBufBp_D][14] ;
   wire [1:0]\BiasConfigReg_DP_reg[SSN_D][15] ;
-  wire [1:0]\BiasConfigReg_D_reg[AEPuXBp_D][10] ;
-  wire [1:0]\BiasConfigReg_D_reg[PrSFBp_D][1] ;
+  wire [0:0]\BiasConfigReg_D_reg[AEPdBn_D][0] ;
+  wire [1:0]\BiasConfigReg_D_reg[BiasBuffer_D][12] ;
+  wire [1:0]\BiasConfigReg_D_reg[PrSFBp_D][6] ;
   wire [1:0]\Count_DP_reg[13] ;
   wire [2:0]\Count_DP_reg[31] ;
   wire [0:0]\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][1] ;
+  wire [1:0]\Divider_DP_reg[0] ;
+  wire [0:0]LatchInputReg_SP_reg;
   wire LogicClk_CI;
   wire [0:0]Memory_SP_reg;
-  wire [0:0]\Output_SO_reg[0] ;
-  wire [0:0]\Output_SO_reg[0]_0 ;
-  wire [1:0]\ParamInput_DP_reg[13] ;
-  wire [0:0]\PreviousData_DP_reg[13] ;
-  wire [0:0]\PreviousData_DP_reg[15] ;
+  wire [0:0]\PreviousData_DP_reg[0] ;
   wire [1:0]\PreviousData_DP_reg[2] ;
-  wire [0:0]\PreviousData_DP_reg[4] ;
+  wire [0:0]\PreviousData_DP_reg[6] ;
   wire Reset_RI;
-  wire SyncReset_RO;
   wire SyncSignalDemetFF_S;
-  wire [1:0]\SyncSignalSyncFF_S_reg[0] ;
+  wire [0:0]\SyncSignalSyncFF_S_reg[0] ;
 
   FDPE SyncSignalDemetFF_S_reg
        (.C(LogicClk_CI),
@@ -37690,7 +37672,7 @@ module brd_testAERDVSSM_0_0_ResetSynchronizer
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(SyncReset_RO));
+        .Q(AS[0]));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep
        (.C(LogicClk_CI),
@@ -37711,42 +37693,42 @@ module brd_testAERDVSSM_0_0_ResetSynchronizer
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\SyncSignalSyncFF_S_reg[0] [1]));
+        .Q(\Divider_DP_reg[0] [0]));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__10
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\ParamInput_DP_reg[13] [0]));
+        .Q(\BiasConfigReg_DP_reg[IFRefrBn_D][12] ));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__11
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\BiasConfigReg_DP_reg[LcolTimeoutBn_D][14] ));
+        .Q(\BiasConfigReg_DP_reg[ColSelLowBn_D][13] ));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__12
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\BiasConfigReg_DP_reg[PrBp_D][0] ));
+        .Q(\BiasConfigReg_DP_reg[ReadoutBufBp_D][14] ));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__13
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\BiasConfigReg_DP_reg[AdcTestVoltage_D][1] ));
+        .Q(\BiasConfigReg_DP_reg[PrBp_D][14] ));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__14
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\BiasConfigReg_DP_reg[AdcRefLow_D][3] ));
+        .Q(\BiasConfigReg_DP_reg[AdcRefHigh_D][2] ));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__15
        (.C(LogicClk_CI),
@@ -37767,42 +37749,42 @@ module brd_testAERDVSSM_0_0_ResetSynchronizer
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\BiasConfigReg_D_reg[PrSFBp_D][1] [1]));
+        .Q(\BiasConfigReg_D_reg[PrSFBp_D][6] [1]));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__18
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\BiasConfigReg_D_reg[PrSFBp_D][1] [0]));
+        .Q(\BiasConfigReg_D_reg[PrSFBp_D][6] [0]));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__19
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\BiasConfigReg_D_reg[AEPuXBp_D][10] [1]));
+        .Q(\BiasConfigReg_D_reg[AEPdBn_D][0] ));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__2
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\SyncSignalSyncFF_S_reg[0] [0]));
+        .Q(\Divider_DP_reg[0] [1]));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__20
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\BiasConfigReg_D_reg[AEPuXBp_D][10] [0]));
+        .Q(\BiasConfigReg_D_reg[BiasBuffer_D][12] [1]));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__21
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\PreviousData_DP_reg[15] ));
+        .Q(\BiasConfigReg_D_reg[BiasBuffer_D][12] [0]));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__22
        (.C(LogicClk_CI),
@@ -37823,14 +37805,14 @@ module brd_testAERDVSSM_0_0_ResetSynchronizer
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\PreviousData_DP_reg[13] ));
+        .Q(\PreviousData_DP_reg[0] ));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__25
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\PreviousData_DP_reg[4] ));
+        .Q(\PreviousData_DP_reg[6] ));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__26
        (.C(LogicClk_CI),
@@ -37858,7 +37840,7 @@ module brd_testAERDVSSM_0_0_ResetSynchronizer
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\Output_SO_reg[0]_0 ));
+        .Q(AS[1]));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__3
        (.C(LogicClk_CI),
@@ -37914,7 +37896,7 @@ module brd_testAERDVSSM_0_0_ResetSynchronizer
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\Output_SO_reg[0] ));
+        .Q(\SyncSignalSyncFF_S_reg[0] ));
   (* ORIG_CELL_NAME = "SyncSignalSyncFF_S_reg" *) 
   FDPE SyncSignalSyncFF_S_reg_rep__8
        (.C(LogicClk_CI),
@@ -37928,7 +37910,7 @@ module brd_testAERDVSSM_0_0_ResetSynchronizer
         .CE(1'b1),
         .D(SyncSignalDemetFF_S),
         .PRE(Reset_RI),
-        .Q(\ParamInput_DP_reg[13] [1]));
+        .Q(LatchInputReg_SP_reg));
 endmodule
 
 (* ORIG_REF_NAME = "SPIConfig" *) 
@@ -38021,11 +38003,12 @@ module brd_testAERDVSSM_0_0_SPIConfig
     \ChipConfigReg_DP_reg[ResetTestPixel_S]__0 ,
     \ChipConfigReg_DP_reg[AERnArow_S]__0 ,
     \ChipConfigReg_DP_reg[SelectGrayCounter_S]__0 ,
-    \SystemInfoOutput_DP_reg[6] ,
+    \SystemInfoOutput_DP_reg[9] ,
     LogicClk_CI,
     SPIClockSync_C,
     AR,
     SPISlaveSelectSync_SB,
+    SyncSignalSyncFF_S_reg_rep__9,
     \MultiplexerConfig_D[RunChip_S] ,
     \MultiplexerConfig_D[TimestampReset_S] ,
     \ChipConfigReg_DP_reg[TestADC_S] ,
@@ -38100,13 +38083,12 @@ module brd_testAERDVSSM_0_0_SPIConfig
     \ChipConfigReg_DP_reg[ResetTestPixel_S] ,
     \ChipConfigReg_DP_reg[AERnArow_S] ,
     \ChipConfigReg_DP_reg[SelectGrayCounter_S] ,
-    SyncSignalSyncFF_S_reg_rep__9,
     \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][39] ,
     Output_SO,
     \BiasOutput_DP_reg[15]_4 ,
     \DVSAEROutput_DP_reg[31]_0 ,
     \MultiplexerOutput_DP_reg[31] ,
-    \SystemInfoOutput_DP_reg[6]_0 ,
+    \SystemInfoOutput_DP_reg[9]_0 ,
     \ChipOutput_DP_reg[3]_0 );
   output SPIMISO_DZO;
   output SPIClockEdgeDetectorReg_S;
@@ -38196,11 +38178,12 @@ module brd_testAERDVSSM_0_0_SPIConfig
   output \ChipConfigReg_DP_reg[ResetTestPixel_S]__0 ;
   output \ChipConfigReg_DP_reg[AERnArow_S]__0 ;
   output \ChipConfigReg_DP_reg[SelectGrayCounter_S]__0 ;
-  output [6:0]\SystemInfoOutput_DP_reg[6] ;
+  output [4:0]\SystemInfoOutput_DP_reg[9] ;
   input LogicClk_CI;
   input SPIClockSync_C;
   input [3:0]AR;
   input SPISlaveSelectSync_SB;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__9;
   input \MultiplexerConfig_D[RunChip_S] ;
   input \MultiplexerConfig_D[TimestampReset_S] ;
   input \ChipConfigReg_DP_reg[TestADC_S] ;
@@ -38275,13 +38258,12 @@ module brd_testAERDVSSM_0_0_SPIConfig
   input \ChipConfigReg_DP_reg[ResetTestPixel_S] ;
   input \ChipConfigReg_DP_reg[AERnArow_S] ;
   input \ChipConfigReg_DP_reg[SelectGrayCounter_S] ;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__9;
   input [39:0]\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][39] ;
   input Output_SO;
   input [15:0]\BiasOutput_DP_reg[15]_4 ;
   input [31:0]\DVSAEROutput_DP_reg[31]_0 ;
   input [31:0]\MultiplexerOutput_DP_reg[31] ;
-  input [6:0]\SystemInfoOutput_DP_reg[6]_0 ;
+  input [4:0]\SystemInfoOutput_DP_reg[9]_0 ;
   input [3:0]\ChipOutput_DP_reg[3]_0 ;
 
   wire [3:0]AR;
@@ -38364,6 +38346,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
   wire [15:0]\BiasOutput_DP_reg[15]_4 ;
   wire \ChipConfigReg_DP[AERnArow_S]_i_2_n_0 ;
   wire \ChipConfigReg_DP[DigitalMux0_D][3]_i_3_n_0 ;
+  wire \ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0 ;
   wire \ChipConfigReg_DP[GlobalShutter_S]_i_2_n_0 ;
   wire \ChipConfigReg_DP[ResetCalibNeuron_S]_i_2_n_0 ;
   wire \ChipConfigReg_DP[ResetTestPixel_S]_i_2_n_0 ;
@@ -38744,13 +38727,14 @@ module brd_testAERDVSSM_0_0_SPIConfig
   wire \ParamOutput_DP[5]_i_2_n_0 ;
   wire \ParamOutput_DP[6]_i_1_n_0 ;
   wire \ParamOutput_DP[6]_i_2_n_0 ;
-  wire \ParamOutput_DP[6]_i_3_n_0 ;
   wire \ParamOutput_DP[7]_i_1_n_0 ;
   wire \ParamOutput_DP[7]_i_2_n_0 ;
   wire \ParamOutput_DP[8]_i_1_n_0 ;
   wire \ParamOutput_DP[8]_i_2_n_0 ;
   wire \ParamOutput_DP[9]_i_1_n_0 ;
   wire \ParamOutput_DP[9]_i_2_n_0 ;
+  wire \ParamOutput_DP[9]_i_3_n_0 ;
+  wire \ParamOutput_DP[9]_i_4_n_0 ;
   wire [4:0]Q;
   wire ReadOperationReg_SN;
   wire ReadOperationReg_SP;
@@ -38766,10 +38750,9 @@ module brd_testAERDVSSM_0_0_SPIConfig
   wire [1:1]State_DP;
   wire [0:0]\State_DP_reg[0]_0 ;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__9;
-  wire \SystemInfoOutput_DP[4]_i_2_n_0 ;
-  wire \SystemInfoOutput_DP[6]_i_2_n_0 ;
-  wire [6:0]\SystemInfoOutput_DP_reg[6] ;
-  wire [6:0]\SystemInfoOutput_DP_reg[6]_0 ;
+  wire \SystemInfoOutput_DP[9]_i_2_n_0 ;
+  wire [4:0]\SystemInfoOutput_DP_reg[9] ;
+  wire [4:0]\SystemInfoOutput_DP_reg[9]_0 ;
   wire \chipBiasSelector/davis346ChipBias.davis346ChipBiasSPIConfig/BiasConfigReg_DP[ApsOverflowLevel_D]1__0 ;
   wire \chipBiasSelector/davis346ChipBias.davis346ChipBiasSPIConfig/ChipConfigReg_DP[DigitalMux0_D]1__0 ;
   wire [1:1]data2;
@@ -38800,7 +38783,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\BiasConfigReg_DP[AEPuXBp_D][14]_i_2_n_0 ),
         .I5(\BiasConfigReg_DP[LocalBufBn_D][14]_i_2_n_0 ),
         .O(\BiasConfigReg_DP_reg[AEPuXBp_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair108" *) 
+  (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \BiasConfigReg_DP[AEPuXBp_D][14]_i_2 
@@ -38817,7 +38800,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[1]),
         .I5(Q[4]),
         .O(\BiasConfigReg_DP_reg[AEPuYBp_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair118" *) 
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \BiasConfigReg_DP[AEPuYBp_D][14]_i_2 
@@ -38840,7 +38823,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_2_n_0 ),
         .I5(\BiasConfigReg_DP[AdcCompBp_D][14]_i_2_n_0 ),
         .O(\BiasConfigReg_DP_reg[AdcCompBp_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair121" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \BiasConfigReg_DP[AdcCompBp_D][14]_i_2 
@@ -38877,7 +38860,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[3]),
         .I5(Q[0]),
         .O(\BiasConfigReg_DP_reg[AdcTestVoltage_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \BiasConfigReg_DP[AdcTestVoltage_D][8]_i_2 
@@ -38920,21 +38903,21 @@ module brd_testAERDVSSM_0_0_SPIConfig
        (.I0(ConfigParamAddress_D[7]),
         .I1(ConfigParamAddress_D[6]),
         .O(\BiasOutput_DP_reg[14]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair119" *) 
+  (* SOFT_HLUTNM = "soft_lutpair118" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_4 
        (.I0(Q[4]),
         .I1(ConfigParamAddress_D[5]),
         .O(\BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_5 
        (.I0(Q[3]),
         .I1(Q[2]),
         .O(\BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair105" *) 
+  (* SOFT_HLUTNM = "soft_lutpair106" *) 
   LUT4 #(
     .INIT(16'hFEFF)) 
     \BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_6 
@@ -38953,7 +38936,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\BiasConfigReg_DP[ApsROSFBn_D][14]_i_2_n_0 ),
         .I5(\BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_5_n_0 ),
         .O(\BiasConfigReg_DP_reg[ApsROSFBn_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair104" *) 
+  (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \BiasConfigReg_DP[ApsROSFBn_D][14]_i_2 
@@ -38970,7 +38953,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[1]),
         .I5(\BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_5_n_0 ),
         .O(\BiasConfigReg_DP_reg[BiasBuffer_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair117" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \BiasConfigReg_DP[BiasBuffer_D][14]_i_2 
@@ -39068,7 +39051,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[3]),
         .I5(\BiasConfigReg_DP[LocalBufBn_D][14]_i_2_n_0 ),
         .O(\BiasConfigReg_DP_reg[LocalBufBn_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \BiasConfigReg_DP[LocalBufBn_D][14]_i_2 
@@ -39085,7 +39068,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[2]),
         .I5(\BiasConfigReg_DP[OffBn_D][14]_i_2_n_0 ),
         .O(\BiasConfigReg_DP_reg[OffBn_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair91" *) 
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \BiasConfigReg_DP[OffBn_D][14]_i_2 
@@ -39112,7 +39095,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[0]),
         .I5(\BiasConfigReg_DP[PadFollBn_D][14]_i_2_n_0 ),
         .O(\BiasConfigReg_DP_reg[PadFollBn_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \BiasConfigReg_DP[PadFollBn_D][14]_i_2 
@@ -39129,7 +39112,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[1]),
         .I5(Q[3]),
         .O(\BiasConfigReg_DP_reg[PixInvBn_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \BiasConfigReg_DP[PixInvBn_D][14]_i_2 
@@ -39146,7 +39129,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[0]),
         .I5(Q[3]),
         .O(\BiasConfigReg_DP_reg[PrBp_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \BiasConfigReg_DP[PrBp_D][14]_i_2 
@@ -39190,7 +39173,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[4]),
         .I5(\BiasConfigReg_DP[ApsOverflowLevel_D][8]_i_5_n_0 ),
         .O(\BiasConfigReg_DP_reg[RefrBp_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair118" *) 
+  (* SOFT_HLUTNM = "soft_lutpair117" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \BiasConfigReg_DP[RefrBp_D][14]_i_2 
@@ -39207,7 +39190,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\BiasConfigReg_DP[SSN_D][15]_i_2_n_0 ),
         .I5(\BiasConfigReg_DP[ColSelLowBn_D][14]_i_3_n_0 ),
         .O(\BiasConfigReg_DP_reg[SSN_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  (* SOFT_HLUTNM = "soft_lutpair117" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \BiasConfigReg_DP[SSN_D][15]_i_2 
@@ -39224,7 +39207,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[3]),
         .I5(ConfigParamAddress_D[5]),
         .O(\BiasConfigReg_DP_reg[SSP_D][0] ));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \BiasConfigReg_DP[SSP_D][15]_i_2 
@@ -39341,7 +39324,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[0]),
         .I5(Q[4]),
         .O(\BiasOutput_DP_reg[14] ));
-  (* SOFT_HLUTNM = "soft_lutpair103" *) 
+  (* SOFT_HLUTNM = "soft_lutpair104" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \BiasOutput_DP[15]_i_1 
@@ -39446,7 +39429,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(Q[2]),
         .I3(Q[0]),
         .I4(Q[1]),
-        .I5(\SystemInfoOutput_DP[4]_i_2_n_0 ),
+        .I5(\ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0 ),
         .O(\ChipConfigReg_DP_reg[AnalogMux0_D][0] ));
   LUT6 #(
     .INIT(64'h0000000000200000)) 
@@ -39456,7 +39439,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(Q[0]),
         .I3(Q[1]),
         .I4(Q[2]),
-        .I5(\SystemInfoOutput_DP[4]_i_2_n_0 ),
+        .I5(\ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0 ),
         .O(\ChipConfigReg_DP_reg[AnalogMux1_D][0] ));
   LUT6 #(
     .INIT(64'h0000000000200000)) 
@@ -39466,7 +39449,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(Q[1]),
         .I3(Q[0]),
         .I4(Q[2]),
-        .I5(\SystemInfoOutput_DP[4]_i_2_n_0 ),
+        .I5(\ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0 ),
         .O(\ChipConfigReg_DP_reg[AnalogMux2_D][0] ));
   LUT6 #(
     .INIT(64'h0000000200000000)) 
@@ -39498,7 +39481,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(ConfigLatchInput_S),
         .I5(ConfigParamAddress_D[7]),
         .O(\chipBiasSelector/davis346ChipBias.davis346ChipBiasSPIConfig/ChipConfigReg_DP[DigitalMux0_D]1__0 ));
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT3 #(
     .INIT(8'hEF)) 
     \ChipConfigReg_DP[DigitalMux0_D][3]_i_3 
@@ -39524,8 +39507,15 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(Q[1]),
         .I3(Q[2]),
         .I4(Q[0]),
-        .I5(\SystemInfoOutput_DP[4]_i_2_n_0 ),
+        .I5(\ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0 ),
         .O(\ChipConfigReg_DP_reg[DigitalMux2_D][0] ));
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \ChipConfigReg_DP[DigitalMux2_D][3]_i_2 
+       (.I0(Q[3]),
+        .I1(Q[4]),
+        .O(\ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000200000)) 
     \ChipConfigReg_DP[DigitalMux3_D][3]_i_1 
@@ -39534,7 +39524,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(Q[0]),
         .I3(Q[2]),
         .I4(Q[1]),
-        .I5(\SystemInfoOutput_DP[4]_i_2_n_0 ),
+        .I5(\ChipConfigReg_DP[DigitalMux2_D][3]_i_2_n_0 ),
         .O(\ChipConfigReg_DP_reg[DigitalMux3_D][0] ));
   LUT4 #(
     .INIT(16'hBF80)) 
@@ -39600,7 +39590,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\chipBiasSelector/davis346ChipBias.davis346ChipBiasSPIConfig/ChipConfigReg_DP[DigitalMux0_D]1__0 ),
         .I5(\ChipConfigReg_DP_reg[SelectGrayCounter_S] ),
         .O(\ChipConfigReg_DP_reg[SelectGrayCounter_S]__0 ));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     \ChipConfigReg_DP[SelectGrayCounter_S]_i_2 
@@ -39673,7 +39663,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\ChipOutput_DP[0]_i_4_n_0 ),
         .I5(\ChipConfigReg_DP[DigitalMux0_D][3]_i_3_n_0 ),
         .O(\ChipOutput_DP_reg[3] [0]));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT5 #(
     .INIT(32'h00000010)) 
     \ChipOutput_DP[0]_i_4 
@@ -39723,7 +39713,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAERConfigReg_DP[FilterPixel0Row_D][8]_i_2_n_0 ),
         .I5(\DVSAERConfig_D[ExternalAERControl_S] ),
         .O(\DVSAERConfigReg_DP_reg[ExternalAERControl_S] ));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT5 #(
     .INIT(32'h00100000)) 
     \DVSAERConfigReg_DP[FilterPixel0Column_D][8]_i_1 
@@ -39742,7 +39732,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(ConfigParamAddress_D[6]),
         .I3(Q[2]),
         .O(\DVSAERConfigReg_DP[FilterPixel0Column_D][8]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT5 #(
     .INIT(32'h00200000)) 
     \DVSAERConfigReg_DP[FilterPixel0Row_D][8]_i_1 
@@ -39761,7 +39751,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(ConfigParamAddress_D[6]),
         .I3(Q[0]),
         .O(\DVSAERConfigReg_DP[FilterPixel0Row_D][8]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT5 #(
     .INIT(32'h10000000)) 
     \DVSAERConfigReg_DP[FilterPixel1Column_D][8]_i_1 
@@ -39771,7 +39761,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I3(Q[3]),
         .I4(\DVSAERConfigReg_DP[FilterPixel0Column_D][8]_i_2_n_0 ),
         .O(\DVSAERConfigReg_DP_reg[FilterPixel1Column_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair100" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT5 #(
     .INIT(32'h10000000)) 
     \DVSAERConfigReg_DP[FilterPixel1Row_D][8]_i_1 
@@ -39791,7 +39781,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[4]),
         .I5(\DVSAERConfigReg_DP[FilterPixel2Column_D][8]_i_2_n_0 ),
         .O(\DVSAERConfigReg_DP_reg[FilterPixel2Column_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair113" *) 
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT3 #(
     .INIT(8'h02)) 
     \DVSAERConfigReg_DP[FilterPixel2Column_D][8]_i_2 
@@ -39809,7 +39799,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[3]),
         .I5(Q[2]),
         .O(\DVSAERConfigReg_DP_reg[FilterPixel2Row_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
+  (* SOFT_HLUTNM = "soft_lutpair119" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_2 
@@ -39826,14 +39816,14 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(ConfigModuleAddress_D[4]),
         .I5(ConfigParamAddress_D[7]),
         .O(\DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair103" *) 
+  (* SOFT_HLUTNM = "soft_lutpair104" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_4 
        (.I0(ConfigParamAddress_D[6]),
         .I1(Q[4]),
         .O(\DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair105" *) 
+  (* SOFT_HLUTNM = "soft_lutpair106" *) 
   LUT4 #(
     .INIT(16'h0004)) 
     \DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_5 
@@ -39852,7 +39842,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[1]),
         .I5(\DVSAERConfigReg_DP[FilterPixel2Column_D][8]_i_2_n_0 ),
         .O(\DVSAERConfigReg_DP_reg[FilterPixel3Column_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair101" *) 
+  (* SOFT_HLUTNM = "soft_lutpair100" *) 
   LUT5 #(
     .INIT(32'h00020000)) 
     \DVSAERConfigReg_DP[FilterPixel3Row_D][8]_i_1 
@@ -39862,7 +39852,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I3(Q[3]),
         .I4(\DVSAERConfigReg_DP[FilterPixel0Row_D][8]_i_2_n_0 ),
         .O(\DVSAERConfigReg_DP_reg[FilterPixel3Row_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT5 #(
     .INIT(32'h00100000)) 
     \DVSAERConfigReg_DP[FilterPixel4Column_D][8]_i_1 
@@ -39872,7 +39862,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I3(Q[0]),
         .I4(\DVSAERConfigReg_DP[FilterPixel0Column_D][8]_i_2_n_0 ),
         .O(\DVSAERConfigReg_DP_reg[FilterPixel4Column_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair101" *) 
+  (* SOFT_HLUTNM = "soft_lutpair100" *) 
   LUT5 #(
     .INIT(32'h00080000)) 
     \DVSAERConfigReg_DP[FilterPixel4Row_D][8]_i_1 
@@ -39882,7 +39872,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I3(Q[3]),
         .I4(\DVSAERConfigReg_DP[FilterPixel0Row_D][8]_i_2_n_0 ),
         .O(\DVSAERConfigReg_DP_reg[FilterPixel4Row_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT5 #(
     .INIT(32'h10000000)) 
     \DVSAERConfigReg_DP[FilterPixel5Column_D][8]_i_1 
@@ -39892,7 +39882,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I3(Q[4]),
         .I4(\DVSAERConfigReg_DP[FilterPixel0Column_D][8]_i_2_n_0 ),
         .O(\DVSAERConfigReg_DP_reg[FilterPixel5Column_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair100" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT5 #(
     .INIT(32'h10000000)) 
     \DVSAERConfigReg_DP[FilterPixel5Row_D][8]_i_1 
@@ -39922,7 +39912,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[2]),
         .I5(ConfigParamAddress_D[5]),
         .O(\DVSAERConfigReg_DP_reg[FilterPixel6Row_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair119" *) 
+  (* SOFT_HLUTNM = "soft_lutpair110" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \DVSAERConfigReg_DP[FilterPixel6Row_D][8]_i_2 
@@ -39939,7 +39929,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[3]),
         .I5(\DVSAERConfigReg_DP[FilterPixel2Column_D][8]_i_2_n_0 ),
         .O(\DVSAERConfigReg_DP_reg[FilterPixel7Column_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT5 #(
     .INIT(32'h02000000)) 
     \DVSAERConfigReg_DP[FilterPixel7Row_D][8]_i_1 
@@ -39949,7 +39939,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I3(Q[3]),
         .I4(\DVSAERConfigReg_DP[FilterPixel0Row_D][8]_i_2_n_0 ),
         .O(\DVSAERConfigReg_DP_reg[FilterPixel7Row_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair91" *) 
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT5 #(
     .INIT(32'h00800000)) 
     \DVSAERConfigReg_DP[FilterROIEndColumn_D][8]_i_1 
@@ -39959,7 +39949,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I3(Q[2]),
         .I4(\DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_3_n_0 ),
         .O(\DVSAERConfigReg_DP_reg[FilterROIEndColumn_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair106" *) 
+  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \DVSAERConfigReg_DP[FilterROIEndColumn_D][8]_i_2 
@@ -39978,7 +39968,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAERConfigReg_DP[FilterROIStartRow_D][8]_i_3_n_0 ),
         .I5(\DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_3_n_0 ),
         .O(\DVSAERConfigReg_DP_reg[FilterROIEndRow_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair88" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \DVSAERConfigReg_DP[FilterROIEndRow_D][8]_i_2 
@@ -40019,14 +40009,14 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAERConfigReg_DP[FilterROIStartRow_D][8]_i_3_n_0 ),
         .I5(\DVSAERConfigReg_DP[FilterPixel2Row_D][8]_i_3_n_0 ),
         .O(\DVSAERConfigReg_DP_reg[FilterROIStartRow_D][8] ));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \DVSAERConfigReg_DP[FilterROIStartRow_D][8]_i_2 
        (.I0(Q[1]),
         .I1(Q[2]),
         .O(\DVSAERConfigReg_DP[FilterROIStartRow_D][8]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair117" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \DVSAERConfigReg_DP[FilterROIStartRow_D][8]_i_3 
@@ -40053,7 +40043,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAERConfigReg_DP[FilterPixel0Column_D][8]_i_2_n_0 ),
         .I5(\DVSAERConfig_D[WaitOnTransferStall_S] ),
         .O(\DVSAERConfigReg_DP_reg[WaitOnTransferStall_S] ));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \DVSAERConfigReg_DP[WaitOnTransferStall_S]_i_2 
@@ -40099,7 +40089,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[3]),
         .I5(ConfigParamAddress_D[6]),
         .O(\DVSAEROutput_DP[0]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT5 #(
     .INIT(32'h000022F3)) 
     \DVSAEROutput_DP[0]_i_13 
@@ -40109,7 +40099,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I3(Q[2]),
         .I4(Q[1]),
         .O(\DVSAEROutput_DP[0]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
   LUT3 #(
     .INIT(8'h01)) 
     \DVSAEROutput_DP[0]_i_14 
@@ -40117,7 +40107,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I1(Q[2]),
         .I2(ConfigParamAddress_D[5]),
         .O(\DVSAEROutput_DP[0]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
+  (* SOFT_HLUTNM = "soft_lutpair118" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \DVSAEROutput_DP[0]_i_15 
@@ -40134,7 +40124,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(ConfigParamAddress_D[6]),
         .I5(\BiasConfigReg_DP[PadFollBn_D][14]_i_2_n_0 ),
         .O(\DVSAEROutput_DP[0]_i_16_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT5 #(
     .INIT(32'hA5A7F5A7)) 
     \DVSAEROutput_DP[0]_i_17 
@@ -40154,14 +40144,14 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[0]),
         .I5(Q[1]),
         .O(\DVSAEROutput_DP[0]_i_18_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
+  (* SOFT_HLUTNM = "soft_lutpair119" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \DVSAEROutput_DP[0]_i_19 
        (.I0(Q[1]),
         .I1(Q[0]),
         .O(\DVSAEROutput_DP[0]_i_19_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
   LUT5 #(
     .INIT(32'h00000004)) 
     \DVSAEROutput_DP[0]_i_2 
@@ -40191,7 +40181,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAERConfigReg_DP_reg[FilterPixel4Column_D][7] [0]),
         .I5(Q[1]),
         .O(\DVSAEROutput_DP[0]_i_21_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair102" *) 
+  (* SOFT_HLUTNM = "soft_lutpair103" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \DVSAEROutput_DP[0]_i_23 
@@ -40248,7 +40238,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[0]),
         .I5(\DVSAERConfigReg_DP_reg[FilterPixel7Column_D][8]_0 [0]),
         .O(\DVSAEROutput_DP[0]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \DVSAEROutput_DP[0]_i_8 
@@ -40408,7 +40398,6 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAEROutput_DP[31]_i_4_n_0 ),
         .I5(\DVSAEROutput_DP[17]_i_2_n_0 ),
         .O(\DVSAEROutput_DP_reg[31] [17]));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT5 #(
     .INIT(32'h0A000C00)) 
     \DVSAEROutput_DP[17]_i_2 
@@ -40428,7 +40417,6 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAEROutput_DP[31]_i_4_n_0 ),
         .I5(\DVSAEROutput_DP[18]_i_2_n_0 ),
         .O(\DVSAEROutput_DP_reg[31] [18]));
-  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT5 #(
     .INIT(32'h0A000C00)) 
     \DVSAEROutput_DP[18]_i_2 
@@ -40623,7 +40611,6 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAEROutput_DP[31]_i_4_n_0 ),
         .I5(\DVSAEROutput_DP[20]_i_2_n_0 ),
         .O(\DVSAEROutput_DP_reg[31] [20]));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT5 #(
     .INIT(32'h0A000C00)) 
     \DVSAEROutput_DP[20]_i_2 
@@ -40662,7 +40649,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAEROutput_DP[31]_i_4_n_0 ),
         .I5(\DVSAEROutput_DP[22]_i_2_n_0 ),
         .O(\DVSAEROutput_DP_reg[31] [22]));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT5 #(
     .INIT(32'h0A000C00)) 
     \DVSAEROutput_DP[22]_i_2 
@@ -40701,7 +40688,6 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAEROutput_DP[31]_i_4_n_0 ),
         .I5(\DVSAEROutput_DP[24]_i_2_n_0 ),
         .O(\DVSAEROutput_DP_reg[31] [24]));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT5 #(
     .INIT(32'h0A000C00)) 
     \DVSAEROutput_DP[24]_i_2 
@@ -40778,7 +40764,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAEROutput_DP[31]_i_4_n_0 ),
         .I5(\DVSAEROutput_DP[28]_i_2_n_0 ),
         .O(\DVSAEROutput_DP_reg[31] [28]));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT5 #(
     .INIT(32'h0A000C00)) 
     \DVSAEROutput_DP[28]_i_2 
@@ -40798,6 +40784,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAEROutput_DP[31]_i_4_n_0 ),
         .I5(\DVSAEROutput_DP[29]_i_2_n_0 ),
         .O(\DVSAEROutput_DP_reg[31] [29]));
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT5 #(
     .INIT(32'h0A000C00)) 
     \DVSAEROutput_DP[29]_i_2 
@@ -40846,14 +40833,14 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[4]),
         .I5(ConfigParamAddress_D[6]),
         .O(\DVSAEROutput_DP[2]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  (* SOFT_HLUTNM = "soft_lutpair121" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \DVSAEROutput_DP[2]_i_14 
        (.I0(Q[3]),
         .I1(Q[4]),
         .O(\DVSAEROutput_DP[2]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair104" *) 
+  (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \DVSAEROutput_DP[2]_i_16 
@@ -40862,7 +40849,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(Q[4]),
         .I3(Q[3]),
         .O(\DVSAEROutput_DP[2]_i_16_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT5 #(
     .INIT(32'h0A000C00)) 
     \DVSAEROutput_DP[2]_i_17 
@@ -40960,7 +40947,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAEROutput_DP[31]_i_4_n_0 ),
         .I5(\DVSAEROutput_DP[30]_i_2_n_0 ),
         .O(\DVSAEROutput_DP_reg[31] [30]));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT5 #(
     .INIT(32'h0A000C00)) 
     \DVSAEROutput_DP[30]_i_2 
@@ -40980,7 +40967,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAEROutput_DP[31]_i_4_n_0 ),
         .I5(\DVSAEROutput_DP[31]_i_5_n_0 ),
         .O(\DVSAEROutput_DP_reg[31] [31]));
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT5 #(
     .INIT(32'h00000008)) 
     \DVSAEROutput_DP[31]_i_2 
@@ -40990,7 +40977,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I3(ConfigParamAddress_D[5]),
         .I4(ConfigParamAddress_D[7]),
         .O(\DVSAEROutput_DP[31]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT3 #(
     .INIT(8'h10)) 
     \DVSAEROutput_DP[31]_i_3 
@@ -40998,7 +40985,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I1(Q[2]),
         .I2(Q[3]),
         .O(\DVSAEROutput_DP[31]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT3 #(
     .INIT(8'h04)) 
     \DVSAEROutput_DP[31]_i_4 
@@ -41006,7 +40993,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I1(Q[1]),
         .I2(Q[3]),
         .O(\DVSAEROutput_DP[31]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT5 #(
     .INIT(32'h0A000C00)) 
     \DVSAEROutput_DP[31]_i_5 
@@ -41105,6 +41092,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAEROutput_DP[3]_i_7_n_0 ),
         .I5(\DVSAEROutput_DP[3]_i_8_n_0 ),
         .O(\DVSAEROutput_DP[3]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
   LUT5 #(
     .INIT(32'hAA00FC00)) 
     \DVSAEROutput_DP[3]_i_3 
@@ -41714,7 +41702,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(ConfigParamAddress_D[5]),
         .I3(ConfigParamAddress_D[6]),
         .O(\DVSAEROutput_DP[7]_i_15_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair101" *) 
   LUT4 #(
     .INIT(16'h0004)) 
     \DVSAEROutput_DP[7]_i_16 
@@ -41859,7 +41847,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\DVSAERConfigReg_DP_reg[FilterPixel7Column_D][8]_0 [8]),
         .I5(\DVSAEROutput_DP[8]_i_15_n_0 ),
         .O(\DVSAEROutput_DP[8]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT5 #(
     .INIT(32'hEAAAAAAA)) 
     \DVSAEROutput_DP[8]_i_14 
@@ -41869,7 +41857,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I3(Q[0]),
         .I4(\DVSAERConfigReg_DP_reg[FilterPixel7Row_D][8]_0 [8]),
         .O(\DVSAEROutput_DP[8]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT5 #(
     .INIT(32'h0A000C00)) 
     \DVSAEROutput_DP[8]_i_15 
@@ -41919,14 +41907,14 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[2]),
         .I5(Q[1]),
         .O(\DVSAEROutput_DP[8]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair113" *) 
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \DVSAEROutput_DP[8]_i_6 
        (.I0(ConfigParamAddress_D[6]),
         .I1(ConfigParamAddress_D[5]),
         .O(\DVSAEROutput_DP[8]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair106" *) 
+  (* SOFT_HLUTNM = "soft_lutpair110" *) 
   LUT4 #(
     .INIT(16'h1000)) 
     \DVSAEROutput_DP[8]_i_7 
@@ -41935,7 +41923,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(Q[3]),
         .I3(ConfigParamAddress_D[5]),
         .O(\DVSAEROutput_DP[8]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT5 #(
     .INIT(32'h03080008)) 
     \DVSAEROutput_DP[8]_i_8 
@@ -41945,6 +41933,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I3(Q[0]),
         .I4(\DVSAERConfigReg_DP_reg[FilterROIStartColumn_D][8]_0 [8]),
         .O(\DVSAEROutput_DP[8]_i_8_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT5 #(
     .INIT(32'h000A0C00)) 
     \DVSAEROutput_DP[8]_i_9 
@@ -41973,7 +41962,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I3(Q[2]),
         .I4(Q[1]),
         .O(\DVSAEROutput_DP[9]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair121" *) 
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
   LUT2 #(
     .INIT(4'h8)) 
     LatchInputReg_SP_i_1
@@ -41983,7 +41972,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
   FDCE LatchInputReg_SP_reg
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[3]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__9),
         .D(LatchInputReg_SN),
         .Q(ConfigLatchInput_S));
   FDPE \ModuleAddressReg_DP_reg[0] 
@@ -42026,7 +42015,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
        (.C(LogicClk_CI),
         .CE(ReadOperationReg_SN),
         .D(data3[5]),
-        .PRE(AR[3]),
+        .PRE(SyncSignalSyncFF_S_reg_rep__9),
         .Q(ConfigModuleAddress_D[6]));
   LUT6 #(
     .INIT(64'hFFFFFBFF00000800)) 
@@ -42077,7 +42066,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(ConfigParamAddress_D[5]),
         .I3(Q[0]),
         .O(\MultiplexerConfigReg_DP[Run_S]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     \MultiplexerConfigReg_DP[Run_S]_i_3 
@@ -42171,7 +42160,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(\MultiplexerConfig_D[Run_S] ),
         .I5(\MultiplexerOutput_DP[0]_i_7_n_0 ),
         .O(\MultiplexerOutput_DP[0]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \MultiplexerOutput_DP[0]_i_5 
@@ -42188,7 +42177,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I4(Q[0]),
         .I5(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][39] [32]),
         .O(\MultiplexerOutput_DP[0]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair102" *) 
+  (* SOFT_HLUTNM = "soft_lutpair103" *) 
   LUT5 #(
     .INIT(32'h00E20000)) 
     \MultiplexerOutput_DP[0]_i_7 
@@ -42678,7 +42667,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
   FDCE \ParamInput_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(spiBitCounter_n_34),
-        .CLR(AR[3]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__9),
         .D(data3[5]),
         .Q(\BiasConfigReg_DP_reg[SSN_D][15] [14]));
   FDCE \ParamInput_DP_reg[15] 
@@ -42714,13 +42703,13 @@ module brd_testAERDVSSM_0_0_SPIConfig
   FDCE \ParamInput_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(spiBitCounter_n_35),
-        .CLR(AR[3]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__9),
         .D(data3[4]),
         .Q(\BiasConfigReg_DP_reg[SSN_D][15] [5]));
   FDCE \ParamInput_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(spiBitCounter_n_35),
-        .CLR(AR[3]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__9),
         .D(data3[5]),
         .Q(\BiasConfigReg_DP_reg[SSN_D][15] [6]));
   FDCE \ParamInput_DP_reg[7] 
@@ -42763,7 +42752,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
   LUT6 #(
     .INIT(64'h00F0AA0000CCAA00)) 
     \ParamOutput_DP[0]_i_3 
-       (.I0(\SystemInfoOutput_DP_reg[6]_0 [0]),
+       (.I0(\SystemInfoOutput_DP_reg[9]_0 [0]),
         .I1(\BiasOutput_DP_reg[15]_4 [0]),
         .I2(\ChipOutput_DP_reg[3]_0 [0]),
         .I3(ConfigModuleAddress_D[1]),
@@ -42795,6 +42784,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(\BiasOutput_DP_reg[15]_4 [11]),
         .I3(\ParamOutput_DP[11]_i_2_n_0 ),
         .O(\ParamOutput_DP[11]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
   LUT5 #(
     .INIT(32'h000A000C)) 
     \ParamOutput_DP[11]_i_2 
@@ -42871,7 +42861,6 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(ConfigModuleAddress_D[1]),
         .I3(ConfigModuleAddress_D[2]),
         .O(\ParamOutput_DP[15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT5 #(
     .INIT(32'h000A000C)) 
     \ParamOutput_DP[15]_i_3 
@@ -42943,7 +42932,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
   LUT6 #(
     .INIT(64'h00F0AA0000CCAA00)) 
     \ParamOutput_DP[1]_i_3 
-       (.I0(\SystemInfoOutput_DP_reg[6]_0 [1]),
+       (.I0(\SystemInfoOutput_DP_reg[9]_0 [2]),
         .I1(\BiasOutput_DP_reg[15]_4 [1]),
         .I2(\ChipOutput_DP_reg[3]_0 [1]),
         .I3(ConfigModuleAddress_D[1]),
@@ -43072,7 +43061,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
   LUT6 #(
     .INIT(64'h00F0AA0000CCAA00)) 
     \ParamOutput_DP[2]_i_3 
-       (.I0(\SystemInfoOutput_DP_reg[6]_0 [2]),
+       (.I0(\SystemInfoOutput_DP_reg[9]_0 [1]),
         .I1(\BiasOutput_DP_reg[15]_4 [2]),
         .I2(\ChipOutput_DP_reg[3]_0 [2]),
         .I3(ConfigModuleAddress_D[1]),
@@ -43131,7 +43120,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
   LUT6 #(
     .INIT(64'h00F0AA0000CCAA00)) 
     \ParamOutput_DP[3]_i_3 
-       (.I0(\SystemInfoOutput_DP_reg[6]_0 [3]),
+       (.I0(\SystemInfoOutput_DP_reg[9]_0 [4]),
         .I1(\BiasOutput_DP_reg[15]_4 [3]),
         .I2(\ChipOutput_DP_reg[3]_0 [3]),
         .I3(ConfigModuleAddress_D[1]),
@@ -43146,12 +43135,12 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(\BiasOutput_DP_reg[15]_4 [4]),
         .I3(\ParamOutput_DP[15]_i_2_n_0 ),
         .I4(\DVSAEROutput_DP_reg[31]_0 [4]),
-        .I5(\ParamOutput_DP[6]_i_3_n_0 ),
+        .I5(\ParamOutput_DP[9]_i_2_n_0 ),
         .O(\ParamOutput_DP[4]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h0000A00C)) 
     \ParamOutput_DP[4]_i_2 
-       (.I0(\SystemInfoOutput_DP_reg[6]_0 [4]),
+       (.I0(\SystemInfoOutput_DP_reg[9]_0 [2]),
         .I1(\MultiplexerOutput_DP_reg[31] [4]),
         .I2(ConfigModuleAddress_D[2]),
         .I3(ConfigModuleAddress_D[1]),
@@ -43165,12 +43154,12 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(\BiasOutput_DP_reg[15]_4 [5]),
         .I3(\ParamOutput_DP[15]_i_2_n_0 ),
         .I4(\DVSAEROutput_DP_reg[31]_0 [5]),
-        .I5(\ParamOutput_DP[6]_i_3_n_0 ),
+        .I5(\ParamOutput_DP[9]_i_2_n_0 ),
         .O(\ParamOutput_DP[5]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h0000A00C)) 
     \ParamOutput_DP[5]_i_2 
-       (.I0(\SystemInfoOutput_DP_reg[6]_0 [5]),
+       (.I0(\SystemInfoOutput_DP_reg[9]_0 [3]),
         .I1(\MultiplexerOutput_DP_reg[31] [5]),
         .I2(ConfigModuleAddress_D[2]),
         .I3(ConfigModuleAddress_D[1]),
@@ -43184,76 +43173,94 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .I2(\BiasOutput_DP_reg[15]_4 [6]),
         .I3(\ParamOutput_DP[15]_i_2_n_0 ),
         .I4(\DVSAEROutput_DP_reg[31]_0 [6]),
-        .I5(\ParamOutput_DP[6]_i_3_n_0 ),
+        .I5(\ParamOutput_DP[9]_i_2_n_0 ),
         .O(\ParamOutput_DP[6]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT5 #(
     .INIT(32'h0000A00C)) 
     \ParamOutput_DP[6]_i_2 
-       (.I0(\SystemInfoOutput_DP_reg[6]_0 [6]),
+       (.I0(\SystemInfoOutput_DP_reg[9]_0 [3]),
         .I1(\MultiplexerOutput_DP_reg[31] [6]),
         .I2(ConfigModuleAddress_D[2]),
         .I3(ConfigModuleAddress_D[1]),
         .I4(ConfigModuleAddress_D[0]),
         .O(\ParamOutput_DP[6]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
+  LUT6 #(
+    .INIT(64'hAAAAAAAAAA808080)) 
+    \ParamOutput_DP[7]_i_1 
+       (.I0(\ParamOutput_DP[31]_i_2_n_0 ),
+        .I1(\DVSAEROutput_DP_reg[31]_0 [7]),
+        .I2(\ParamOutput_DP[9]_i_2_n_0 ),
+        .I3(\MultiplexerOutput_DP_reg[31] [7]),
+        .I4(\ParamOutput_DP[9]_i_3_n_0 ),
+        .I5(\ParamOutput_DP[7]_i_2_n_0 ),
+        .O(\ParamOutput_DP[7]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h00AA0C0000000000)) 
+    \ParamOutput_DP[7]_i_2 
+       (.I0(\SystemInfoOutput_DP_reg[9]_0 [4]),
+        .I1(\BiasOutput_DP_reg[15]_4 [7]),
+        .I2(ConfigParamAddress_D[7]),
+        .I3(ConfigModuleAddress_D[0]),
+        .I4(ConfigModuleAddress_D[1]),
+        .I5(ConfigModuleAddress_D[2]),
+        .O(\ParamOutput_DP[7]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hAAAAAAAAAA808080)) 
+    \ParamOutput_DP[8]_i_1 
+       (.I0(\ParamOutput_DP[31]_i_2_n_0 ),
+        .I1(\DVSAEROutput_DP_reg[31]_0 [8]),
+        .I2(\ParamOutput_DP[9]_i_2_n_0 ),
+        .I3(\MultiplexerOutput_DP_reg[31] [8]),
+        .I4(\ParamOutput_DP[9]_i_3_n_0 ),
+        .I5(\ParamOutput_DP[8]_i_2_n_0 ),
+        .O(\ParamOutput_DP[8]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h00AA0C0000000000)) 
+    \ParamOutput_DP[8]_i_2 
+       (.I0(\SystemInfoOutput_DP_reg[9]_0 [4]),
+        .I1(\BiasOutput_DP_reg[15]_4 [8]),
+        .I2(ConfigParamAddress_D[7]),
+        .I3(ConfigModuleAddress_D[0]),
+        .I4(ConfigModuleAddress_D[1]),
+        .I5(ConfigModuleAddress_D[2]),
+        .O(\ParamOutput_DP[8]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hAAAAAAAAAA808080)) 
+    \ParamOutput_DP[9]_i_1 
+       (.I0(\ParamOutput_DP[31]_i_2_n_0 ),
+        .I1(\DVSAEROutput_DP_reg[31]_0 [9]),
+        .I2(\ParamOutput_DP[9]_i_2_n_0 ),
+        .I3(\MultiplexerOutput_DP_reg[31] [9]),
+        .I4(\ParamOutput_DP[9]_i_3_n_0 ),
+        .I5(\ParamOutput_DP[9]_i_4_n_0 ),
+        .O(\ParamOutput_DP[9]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT3 #(
     .INIT(8'h10)) 
-    \ParamOutput_DP[6]_i_3 
+    \ParamOutput_DP[9]_i_2 
        (.I0(ConfigModuleAddress_D[2]),
         .I1(ConfigModuleAddress_D[1]),
         .I2(ConfigModuleAddress_D[0]),
-        .O(\ParamOutput_DP[6]_i_3_n_0 ));
-  LUT4 #(
-    .INIT(16'hAA80)) 
-    \ParamOutput_DP[7]_i_1 
-       (.I0(\ParamOutput_DP[31]_i_2_n_0 ),
-        .I1(\ParamOutput_DP[15]_i_2_n_0 ),
-        .I2(\BiasOutput_DP_reg[15]_4 [7]),
-        .I3(\ParamOutput_DP[7]_i_2_n_0 ),
-        .O(\ParamOutput_DP[7]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h000A000C)) 
-    \ParamOutput_DP[7]_i_2 
-       (.I0(\DVSAEROutput_DP_reg[31]_0 [7]),
-        .I1(\MultiplexerOutput_DP_reg[31] [7]),
-        .I2(ConfigModuleAddress_D[2]),
-        .I3(ConfigModuleAddress_D[1]),
-        .I4(ConfigModuleAddress_D[0]),
-        .O(\ParamOutput_DP[7]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'hAA80)) 
-    \ParamOutput_DP[8]_i_1 
-       (.I0(\ParamOutput_DP[31]_i_2_n_0 ),
-        .I1(\ParamOutput_DP[15]_i_2_n_0 ),
-        .I2(\BiasOutput_DP_reg[15]_4 [8]),
-        .I3(\ParamOutput_DP[8]_i_2_n_0 ),
-        .O(\ParamOutput_DP[8]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h000A000C)) 
-    \ParamOutput_DP[8]_i_2 
-       (.I0(\DVSAEROutput_DP_reg[31]_0 [8]),
-        .I1(\MultiplexerOutput_DP_reg[31] [8]),
-        .I2(ConfigModuleAddress_D[2]),
-        .I3(ConfigModuleAddress_D[1]),
-        .I4(ConfigModuleAddress_D[0]),
-        .O(\ParamOutput_DP[8]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'hAA80)) 
-    \ParamOutput_DP[9]_i_1 
-       (.I0(\ParamOutput_DP[31]_i_2_n_0 ),
-        .I1(\ParamOutput_DP[15]_i_2_n_0 ),
-        .I2(\BiasOutput_DP_reg[15]_4 [9]),
-        .I3(\ParamOutput_DP[9]_i_2_n_0 ),
-        .O(\ParamOutput_DP[9]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h000A000C)) 
-    \ParamOutput_DP[9]_i_2 
-       (.I0(\DVSAEROutput_DP_reg[31]_0 [9]),
-        .I1(\MultiplexerOutput_DP_reg[31] [9]),
-        .I2(ConfigModuleAddress_D[2]),
-        .I3(ConfigModuleAddress_D[1]),
-        .I4(ConfigModuleAddress_D[0]),
         .O(\ParamOutput_DP[9]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  LUT3 #(
+    .INIT(8'h01)) 
+    \ParamOutput_DP[9]_i_3 
+       (.I0(ConfigModuleAddress_D[2]),
+        .I1(ConfigModuleAddress_D[1]),
+        .I2(ConfigModuleAddress_D[0]),
+        .O(\ParamOutput_DP[9]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h00AA0C0000000000)) 
+    \ParamOutput_DP[9]_i_4 
+       (.I0(\SystemInfoOutput_DP_reg[9]_0 [4]),
+        .I1(\BiasOutput_DP_reg[15]_4 [9]),
+        .I2(ConfigParamAddress_D[7]),
+        .I3(ConfigModuleAddress_D[0]),
+        .I4(ConfigModuleAddress_D[1]),
+        .I5(ConfigModuleAddress_D[2]),
+        .O(\ParamOutput_DP[9]_i_4_n_0 ));
   FDCE \ParamOutput_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
@@ -43281,7 +43288,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
   FDCE \ParamOutput_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(AR[1]),
         .D(\ParamOutput_DP[13]_i_1_n_0 ),
         .Q(ParamOutput_DP[13]));
   FDCE \ParamOutput_DP_reg[14] 
@@ -43458,7 +43465,7 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .CLR(AR[3]),
         .D(SPIClockSync_C),
         .Q(SPIClockEdgeDetectorReg_S));
-  (* SOFT_HLUTNM = "soft_lutpair121" *) 
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
   LUT2 #(
     .INIT(4'h6)) 
     SPIMISO_DZO_i_3
@@ -43491,88 +43498,62 @@ module brd_testAERDVSSM_0_0_SPIConfig
         .CLR(AR[3]),
         .D(spiBitCounter_n_36),
         .Q(State_DP));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  (* SOFT_HLUTNM = "soft_lutpair102" *) 
   LUT5 #(
-    .INIT(32'h00000062)) 
+    .INIT(32'h0000C308)) 
     \SystemInfoOutput_DP[0]_i_1 
-       (.I0(Q[0]),
+       (.I0(Output_SO),
         .I1(Q[1]),
-        .I2(Output_SO),
-        .I3(Q[2]),
-        .I4(\SystemInfoOutput_DP[6]_i_2_n_0 ),
-        .O(\SystemInfoOutput_DP_reg[6] [0]));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+        .I2(Q[2]),
+        .I3(Q[0]),
+        .I4(\SystemInfoOutput_DP[9]_i_2_n_0 ),
+        .O(\SystemInfoOutput_DP_reg[9] [0]));
+  (* SOFT_HLUTNM = "soft_lutpair102" *) 
+  LUT4 #(
+    .INIT(16'h002E)) 
+    \SystemInfoOutput_DP[2]_i_1 
+       (.I0(Q[0]),
+        .I1(Q[2]),
+        .I2(Q[1]),
+        .I3(\SystemInfoOutput_DP[9]_i_2_n_0 ),
+        .O(\SystemInfoOutput_DP_reg[9] [1]));
+  (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT4 #(
     .INIT(16'h0001)) 
-    \SystemInfoOutput_DP[1]_i_1 
+    \SystemInfoOutput_DP[4]_i_1 
        (.I0(Q[2]),
         .I1(Q[0]),
         .I2(Q[1]),
-        .I3(\SystemInfoOutput_DP[6]_i_2_n_0 ),
-        .O(\SystemInfoOutput_DP_reg[6] [1]));
-  (* SOFT_HLUTNM = "soft_lutpair110" *) 
+        .I3(\SystemInfoOutput_DP[9]_i_2_n_0 ),
+        .O(\SystemInfoOutput_DP_reg[9] [2]));
+  (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT4 #(
-    .INIT(16'h0034)) 
-    \SystemInfoOutput_DP[2]_i_1 
-       (.I0(Q[1]),
-        .I1(Q[2]),
-        .I2(Q[0]),
-        .I3(\SystemInfoOutput_DP[6]_i_2_n_0 ),
-        .O(\SystemInfoOutput_DP_reg[6] [2]));
-  (* SOFT_HLUTNM = "soft_lutpair110" *) 
-  LUT4 #(
-    .INIT(16'h0010)) 
-    \SystemInfoOutput_DP[3]_i_1 
-       (.I0(Q[0]),
-        .I1(Q[1]),
-        .I2(Q[2]),
-        .I3(\SystemInfoOutput_DP[6]_i_2_n_0 ),
-        .O(\SystemInfoOutput_DP_reg[6] [3]));
-  LUT6 #(
-    .INIT(64'h0000000000000001)) 
-    \SystemInfoOutput_DP[4]_i_1 
-       (.I0(Q[1]),
+    .INIT(16'h006A)) 
+    \SystemInfoOutput_DP[6]_i_1 
+       (.I0(Q[2]),
         .I1(Q[0]),
-        .I2(ConfigParamAddress_D[5]),
-        .I3(ConfigParamAddress_D[6]),
-        .I4(\SystemInfoOutput_DP[4]_i_2_n_0 ),
-        .I5(ConfigParamAddress_D[7]),
-        .O(\SystemInfoOutput_DP_reg[6] [4]));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \SystemInfoOutput_DP[4]_i_2 
-       (.I0(Q[3]),
-        .I1(Q[4]),
-        .O(\SystemInfoOutput_DP[4]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair111" *) 
-  LUT4 #(
-    .INIT(16'h0024)) 
-    \SystemInfoOutput_DP[5]_i_1 
-       (.I0(Q[1]),
-        .I1(Q[2]),
-        .I2(Q[0]),
-        .I3(\SystemInfoOutput_DP[6]_i_2_n_0 ),
-        .O(\SystemInfoOutput_DP_reg[6] [5]));
-  (* SOFT_HLUTNM = "soft_lutpair111" *) 
+        .I2(Q[1]),
+        .I3(\SystemInfoOutput_DP[9]_i_2_n_0 ),
+        .O(\SystemInfoOutput_DP_reg[9] [3]));
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
   LUT4 #(
     .INIT(16'h0008)) 
-    \SystemInfoOutput_DP[6]_i_1 
+    \SystemInfoOutput_DP[9]_i_1 
        (.I0(Q[1]),
-        .I1(Q[0]),
-        .I2(Q[2]),
-        .I3(\SystemInfoOutput_DP[6]_i_2_n_0 ),
-        .O(\SystemInfoOutput_DP_reg[6] [6]));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+        .I1(Q[2]),
+        .I2(Q[0]),
+        .I3(\SystemInfoOutput_DP[9]_i_2_n_0 ),
+        .O(\SystemInfoOutput_DP_reg[9] [4]));
+  (* SOFT_HLUTNM = "soft_lutpair101" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
-    \SystemInfoOutput_DP[6]_i_2 
+    \SystemInfoOutput_DP[9]_i_2 
        (.I0(ConfigParamAddress_D[7]),
         .I1(Q[3]),
         .I2(Q[4]),
         .I3(ConfigParamAddress_D[6]),
         .I4(ConfigParamAddress_D[5]),
-        .O(\SystemInfoOutput_DP[6]_i_2_n_0 ));
+        .O(\SystemInfoOutput_DP[9]_i_2_n_0 ));
   brd_testAERDVSSM_0_0_Counter__parameterized0 spiBitCounter
        (.AR(AR[3]),
         .D(ShiftReg_DN),
@@ -43791,7 +43772,7 @@ module brd_testAERDVSSM_0_0_ShiftRegister_24
     out,
     E,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__22,
+    SyncSignalSyncFF_S_reg_rep__23,
     SyncSignalSyncFF_S_reg_rep__15);
   output \ShiftReg_DP_reg[1]_0 ;
   output \ShiftReg_DP_reg[3]_0 ;
@@ -43812,7 +43793,7 @@ module brd_testAERDVSSM_0_0_ShiftRegister_24
   input [27:0]out;
   input [0:0]E;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__23;
   input [0:0]SyncSignalSyncFF_S_reg_rep__15;
 
   wire [0:0]D;
@@ -43848,7 +43829,7 @@ module brd_testAERDVSSM_0_0_ShiftRegister_24
   wire \ShiftReg_DP_reg_n_0_[5] ;
   wire \ShiftReg_DP_reg_n_0_[6] ;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__15;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__23;
   wire [27:0]out;
 
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
@@ -44086,7 +44067,7 @@ module brd_testAERDVSSM_0_0_ShiftRegister_24
   FDCE \ShiftReg_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23),
         .D(ShiftReg_DN[1]),
         .Q(\ShiftReg_DP_reg_n_0_[1] ));
   FDCE \ShiftReg_DP_reg[2] 
@@ -44104,7 +44085,7 @@ module brd_testAERDVSSM_0_0_ShiftRegister_24
   FDCE \ShiftReg_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23),
         .D(ShiftReg_DN[4]),
         .Q(\ShiftReg_DP_reg_n_0_[4] ));
   FDCE \ShiftReg_DP_reg[5] 
@@ -44122,7 +44103,7 @@ module brd_testAERDVSSM_0_0_ShiftRegister_24
   FDCE \ShiftReg_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23),
         .D(ShiftReg_DN[7]),
         .Q(Q));
 endmodule
@@ -44209,7 +44190,7 @@ module brd_testAERDVSSM_0_0_ShiftRegister__parameterized0
   FDCE \ShiftReg_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(\ShiftReg_DP[31]_i_1_n_0 ),
-        .CLR(AR[0]),
+        .CLR(AR[1]),
         .D(D[12]),
         .Q(Q[12]));
   FDCE \ShiftReg_DP_reg[13] 
@@ -44472,7 +44453,7 @@ module brd_testAERDVSSM_0_0_ShiftRegister__parameterized1
     D,
     LogicClk_CI,
     SyncSignalSyncFF_S_reg_rep__23,
-    SyncSignalSyncFF_S_reg_rep__0);
+    AR);
   output \ShiftReg_DP_reg[14]_0 ;
   output \ShiftReg_DP_reg[14]_1 ;
   output \ShiftReg_DP_reg[14]_2 ;
@@ -44561,8 +44542,9 @@ module brd_testAERDVSSM_0_0_ShiftRegister__parameterized1
   input [15:0]D;
   input LogicClk_CI;
   input [0:0]SyncSignalSyncFF_S_reg_rep__23;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__0;
+  input [0:0]AR;
 
+  wire [0:0]AR;
   wire [14:0]\BiasConfigReg_D_reg[AEPdBn_D][14] ;
   wire [14:0]\BiasConfigReg_D_reg[AEPuXBp_D][14] ;
   wire [14:0]\BiasConfigReg_D_reg[AEPuYBp_D][14] ;
@@ -44787,7 +44769,6 @@ module brd_testAERDVSSM_0_0_ShiftRegister__parameterized1
   wire \ShiftReg_DP_reg[9]_0 ;
   wire \ShiftReg_DP_reg[9]_1 ;
   wire \ShiftReg_DP_reg[9]_2 ;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__0;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__23;
   wire [27:0]out;
 
@@ -46480,31 +46461,31 @@ module brd_testAERDVSSM_0_0_ShiftRegister__parameterized1
   FDCE \ShiftReg_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[0]),
         .Q(ChipBiasBitIn_DO_reg[0]));
   FDCE \ShiftReg_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[10]),
         .Q(ChipBiasBitIn_DO_reg[10]));
   FDCE \ShiftReg_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[11]),
         .Q(ChipBiasBitIn_DO_reg[11]));
   FDCE \ShiftReg_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[12]),
         .Q(ChipBiasBitIn_DO_reg[12]));
   FDCE \ShiftReg_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[13]),
         .Q(ChipBiasBitIn_DO_reg[13]));
   FDCE \ShiftReg_DP_reg[14] 
@@ -46522,55 +46503,55 @@ module brd_testAERDVSSM_0_0_ShiftRegister__parameterized1
   FDCE \ShiftReg_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[1]),
         .Q(ChipBiasBitIn_DO_reg[1]));
   FDCE \ShiftReg_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[2]),
         .Q(ChipBiasBitIn_DO_reg[2]));
   FDCE \ShiftReg_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[3]),
         .Q(ChipBiasBitIn_DO_reg[3]));
   FDCE \ShiftReg_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[4]),
         .Q(ChipBiasBitIn_DO_reg[4]));
   FDCE \ShiftReg_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[5]),
         .Q(ChipBiasBitIn_DO_reg[5]));
   FDCE \ShiftReg_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[6]),
         .Q(ChipBiasBitIn_DO_reg[6]));
   FDCE \ShiftReg_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[7]),
         .Q(ChipBiasBitIn_DO_reg[7]));
   FDCE \ShiftReg_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[8]),
         .Q(ChipBiasBitIn_DO_reg[8]));
   FDCE \ShiftReg_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__0),
+        .CLR(AR),
         .D(D[9]),
         .Q(ChipBiasBitIn_DO_reg[9]));
 endmodule
@@ -46585,7 +46566,7 @@ module brd_testAERDVSSM_0_0_ShiftRegister__parameterized2
     E,
     D,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__22);
+    SyncSignalSyncFF_S_reg_rep__23);
   output ChipBiasBitInReg_D;
   output [54:0]\ShiftReg_DP_reg[55]_0 ;
   input [2:0]out;
@@ -46594,7 +46575,7 @@ module brd_testAERDVSSM_0_0_ShiftRegister__parameterized2
   input [0:0]E;
   input [55:0]D;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  input [1:0]SyncSignalSyncFF_S_reg_rep__23;
 
   wire ChipBiasBitInReg_D;
   wire [55:55]ChipSROutput_D;
@@ -46604,7 +46585,7 @@ module brd_testAERDVSSM_0_0_ShiftRegister__parameterized2
   wire [0:0]Q;
   wire [0:0]\ShiftReg_DP_reg[15]_0 ;
   wire [54:0]\ShiftReg_DP_reg[55]_0 ;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__22;
+  wire [1:0]SyncSignalSyncFF_S_reg_rep__23;
   wire [2:0]out;
 
   LUT6 #(
@@ -46620,337 +46601,337 @@ module brd_testAERDVSSM_0_0_ShiftRegister__parameterized2
   FDCE \ShiftReg_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[0]),
         .Q(\ShiftReg_DP_reg[55]_0 [0]));
   FDCE \ShiftReg_DP_reg[10] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[10]),
         .Q(\ShiftReg_DP_reg[55]_0 [10]));
   FDCE \ShiftReg_DP_reg[11] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[11]),
         .Q(\ShiftReg_DP_reg[55]_0 [11]));
   FDCE \ShiftReg_DP_reg[12] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[12]),
         .Q(\ShiftReg_DP_reg[55]_0 [12]));
   FDCE \ShiftReg_DP_reg[13] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[13]),
         .Q(\ShiftReg_DP_reg[55]_0 [13]));
   FDCE \ShiftReg_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[14]),
         .Q(\ShiftReg_DP_reg[55]_0 [14]));
   FDCE \ShiftReg_DP_reg[15] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[15]),
         .Q(\ShiftReg_DP_reg[55]_0 [15]));
   FDCE \ShiftReg_DP_reg[16] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[16]),
         .Q(\ShiftReg_DP_reg[55]_0 [16]));
   FDCE \ShiftReg_DP_reg[17] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[17]),
         .Q(\ShiftReg_DP_reg[55]_0 [17]));
   FDCE \ShiftReg_DP_reg[18] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[18]),
         .Q(\ShiftReg_DP_reg[55]_0 [18]));
   FDCE \ShiftReg_DP_reg[19] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[19]),
         .Q(\ShiftReg_DP_reg[55]_0 [19]));
   FDCE \ShiftReg_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[1]),
         .Q(\ShiftReg_DP_reg[55]_0 [1]));
   FDCE \ShiftReg_DP_reg[20] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[20]),
         .Q(\ShiftReg_DP_reg[55]_0 [20]));
   FDCE \ShiftReg_DP_reg[21] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[21]),
         .Q(\ShiftReg_DP_reg[55]_0 [21]));
   FDCE \ShiftReg_DP_reg[22] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[22]),
         .Q(\ShiftReg_DP_reg[55]_0 [22]));
   FDCE \ShiftReg_DP_reg[23] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[23]),
         .Q(\ShiftReg_DP_reg[55]_0 [23]));
   FDCE \ShiftReg_DP_reg[24] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[24]),
         .Q(\ShiftReg_DP_reg[55]_0 [24]));
   FDCE \ShiftReg_DP_reg[25] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[25]),
         .Q(\ShiftReg_DP_reg[55]_0 [25]));
   FDCE \ShiftReg_DP_reg[26] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[26]),
         .Q(\ShiftReg_DP_reg[55]_0 [26]));
   FDCE \ShiftReg_DP_reg[27] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[27]),
         .Q(\ShiftReg_DP_reg[55]_0 [27]));
   FDCE \ShiftReg_DP_reg[28] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[28]),
         .Q(\ShiftReg_DP_reg[55]_0 [28]));
   FDCE \ShiftReg_DP_reg[29] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[29]),
         .Q(\ShiftReg_DP_reg[55]_0 [29]));
   FDCE \ShiftReg_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[2]),
         .Q(\ShiftReg_DP_reg[55]_0 [2]));
   FDCE \ShiftReg_DP_reg[30] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[30]),
         .Q(\ShiftReg_DP_reg[55]_0 [30]));
   FDCE \ShiftReg_DP_reg[31] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[31]),
         .Q(\ShiftReg_DP_reg[55]_0 [31]));
   FDCE \ShiftReg_DP_reg[32] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[32]),
         .Q(\ShiftReg_DP_reg[55]_0 [32]));
   FDCE \ShiftReg_DP_reg[33] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[33]),
         .Q(\ShiftReg_DP_reg[55]_0 [33]));
   FDCE \ShiftReg_DP_reg[34] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[34]),
         .Q(\ShiftReg_DP_reg[55]_0 [34]));
   FDCE \ShiftReg_DP_reg[35] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[35]),
         .Q(\ShiftReg_DP_reg[55]_0 [35]));
   FDCE \ShiftReg_DP_reg[36] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[36]),
         .Q(\ShiftReg_DP_reg[55]_0 [36]));
   FDCE \ShiftReg_DP_reg[37] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[37]),
         .Q(\ShiftReg_DP_reg[55]_0 [37]));
   FDCE \ShiftReg_DP_reg[38] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[38]),
         .Q(\ShiftReg_DP_reg[55]_0 [38]));
   FDCE \ShiftReg_DP_reg[39] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[39]),
         .Q(\ShiftReg_DP_reg[55]_0 [39]));
   FDCE \ShiftReg_DP_reg[3] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[3]),
         .Q(\ShiftReg_DP_reg[55]_0 [3]));
   FDCE \ShiftReg_DP_reg[40] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[40]),
         .Q(\ShiftReg_DP_reg[55]_0 [40]));
   FDCE \ShiftReg_DP_reg[41] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[41]),
         .Q(\ShiftReg_DP_reg[55]_0 [41]));
   FDCE \ShiftReg_DP_reg[42] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[42]),
         .Q(\ShiftReg_DP_reg[55]_0 [42]));
   FDCE \ShiftReg_DP_reg[43] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[43]),
         .Q(\ShiftReg_DP_reg[55]_0 [43]));
   FDCE \ShiftReg_DP_reg[44] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[44]),
         .Q(\ShiftReg_DP_reg[55]_0 [44]));
   FDCE \ShiftReg_DP_reg[45] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[45]),
         .Q(\ShiftReg_DP_reg[55]_0 [45]));
   FDCE \ShiftReg_DP_reg[46] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[46]),
         .Q(\ShiftReg_DP_reg[55]_0 [46]));
   FDCE \ShiftReg_DP_reg[47] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[47]),
         .Q(\ShiftReg_DP_reg[55]_0 [47]));
   FDCE \ShiftReg_DP_reg[48] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[48]),
         .Q(\ShiftReg_DP_reg[55]_0 [48]));
   FDCE \ShiftReg_DP_reg[49] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[49]),
         .Q(\ShiftReg_DP_reg[55]_0 [49]));
   FDCE \ShiftReg_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[4]),
         .Q(\ShiftReg_DP_reg[55]_0 [4]));
   FDCE \ShiftReg_DP_reg[50] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[50]),
         .Q(\ShiftReg_DP_reg[55]_0 [50]));
   FDCE \ShiftReg_DP_reg[51] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[51]),
         .Q(\ShiftReg_DP_reg[55]_0 [51]));
   FDCE \ShiftReg_DP_reg[52] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[52]),
         .Q(\ShiftReg_DP_reg[55]_0 [52]));
   FDCE \ShiftReg_DP_reg[53] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
         .D(D[53]),
         .Q(\ShiftReg_DP_reg[55]_0 [53]));
   FDCE \ShiftReg_DP_reg[54] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
         .D(D[54]),
         .Q(\ShiftReg_DP_reg[55]_0 [54]));
   FDCE \ShiftReg_DP_reg[55] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[1]),
         .D(D[55]),
         .Q(ChipSROutput_D));
   FDCE \ShiftReg_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[5]),
         .Q(\ShiftReg_DP_reg[55]_0 [5]));
   FDCE \ShiftReg_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[6]),
         .Q(\ShiftReg_DP_reg[55]_0 [6]));
   FDCE \ShiftReg_DP_reg[7] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[7]),
         .Q(\ShiftReg_DP_reg[55]_0 [7]));
   FDCE \ShiftReg_DP_reg[8] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[8]),
         .Q(\ShiftReg_DP_reg[55]_0 [8]));
   FDCE \ShiftReg_DP_reg[9] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__22),
+        .CLR(SyncSignalSyncFF_S_reg_rep__23[0]),
         .D(D[9]),
         .Q(\ShiftReg_DP_reg[55]_0 [9]));
 endmodule
@@ -47032,21 +47013,21 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_10
    (PixelFilterOutValidReg_S,
     E,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__3);
+    SyncSignalSyncFF_S_reg_rep__4);
   output PixelFilterOutValidReg_S;
   input [0:0]E;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__3;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__4;
 
   wire [0:0]E;
   wire LogicClk_CI;
   wire PixelFilterOutValidReg_S;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__3;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__4;
 
   FDCE \Output_SO_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(E),
         .Q(PixelFilterOutValidReg_S));
 endmodule
@@ -47057,7 +47038,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_13
     E,
     \Output_SO_reg[0]_0 ,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__29,
+    AS,
     Q,
     \Output_SO_reg[6] ,
     \Output_SO_reg[6]_0 ,
@@ -47067,13 +47048,14 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_13
   output [0:0]E;
   input [0:0]\Output_SO_reg[0]_0 ;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__29;
+  input [0:0]AS;
   input [0:0]Q;
   input \Output_SO_reg[6] ;
   input \Output_SO_reg[6]_0 ;
   input \Output_SO_reg[6]_1 ;
   input \Output_SO_reg[6]_2 ;
 
+  wire [0:0]AS;
   wire [0:0]E;
   wire LogicClk_CI;
   wire [0:0]\Output_SO_reg[0]_0 ;
@@ -47083,7 +47065,6 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_13
   wire \Output_SO_reg[6]_2 ;
   wire [0:0]Q;
   wire ROIFilterOutValidReg_S;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__29;
 
   LUT6 #(
     .INIT(64'h222222222222222A)) 
@@ -47098,7 +47079,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_13
   FDCE \Output_SO_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(\Output_SO_reg[0]_0 ),
         .Q(ROIFilterOutValidReg_S));
 endmodule
@@ -47108,14 +47089,14 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_15
    (\FifoControl_SI[WriteSide][Write_S] ,
     RowOnlyFilterInValidReg_S,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__3,
+    SyncSignalSyncFF_S_reg_rep__4,
     Q,
     PixelFilterOutValidReg_S,
     \Output_SO_reg[13] );
   output \FifoControl_SI[WriteSide][Write_S] ;
   input RowOnlyFilterInValidReg_S;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__3;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__4;
   input [0:0]Q;
   input PixelFilterOutValidReg_S;
   input [0:0]\Output_SO_reg[13] ;
@@ -47127,12 +47108,12 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_15
   wire [0:0]Q;
   wire RowOnlyFilterInValidReg_S;
   wire RowOnlyFilterOutValidReg_S;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__3;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__4;
 
   FDCE \Output_SO_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(RowOnlyFilterInValidReg_S),
         .Q(RowOnlyFilterOutValidReg_S));
   LUT4 #(
@@ -47857,21 +47838,21 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_8
    (DVSEventOutValidReg_S,
     E,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__29);
+    AS);
   output DVSEventOutValidReg_S;
   input [0:0]E;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__29;
+  input [0:0]AS;
 
+  wire [0:0]AS;
   wire DVSEventOutValidReg_S;
   wire [0:0]E;
   wire LogicClk_CI;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__29;
 
   FDCE \Output_SO_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(E),
         .Q(DVSEventOutValidReg_S));
 endmodule
@@ -48072,7 +48053,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2
     \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] ,
     D,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__29,
+    AS,
     SyncSignalSyncFF_S_reg_rep__3,
     \Output_SO_reg[0]_2 ,
     \Output_SO_reg[1]_1 ,
@@ -48103,7 +48084,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2
   input [0:0]\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] ;
   input [10:0]D;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__29;
+  input [0:0]AS;
   input [0:0]SyncSignalSyncFF_S_reg_rep__3;
   input \Output_SO_reg[0]_2 ;
   input \Output_SO_reg[1]_1 ;
@@ -48115,6 +48096,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2
   input \Output_SO_reg[7]_1 ;
   input \Output_SO_reg[8]_1 ;
 
+  wire [0:0]AS;
   wire BOOL121_in;
   wire BOOL123_in;
   wire [0:0]CO;
@@ -48173,7 +48155,6 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2
   wire \Output_SO_reg[8]_0 ;
   wire \Output_SO_reg[8]_1 ;
   wire [10:0]Q;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__29;
   wire [0:0]SyncSignalSyncFF_S_reg_rep__3;
   wire [2:0]out;
   wire [3:0]\NLW_Output_SO_reg[13]_i_12__0_O_UNCONNECTED ;
@@ -48426,7 +48407,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2
   FDCE \Output_SO_reg[0] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[0]),
         .Q(Q[0]));
   FDCE \Output_SO_reg[12] 
@@ -48438,7 +48419,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2
   FDCE \Output_SO_reg[13] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[10]),
         .Q(Q[10]));
   CARRY4 \Output_SO_reg[13]_i_12__0 
@@ -48472,49 +48453,49 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2
   FDCE \Output_SO_reg[1] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[1]),
         .Q(Q[1]));
   FDCE \Output_SO_reg[2] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[2]),
         .Q(Q[2]));
   FDCE \Output_SO_reg[3] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[3]),
         .Q(Q[3]));
   FDCE \Output_SO_reg[4] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[4]),
         .Q(Q[4]));
   FDCE \Output_SO_reg[5] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[5]),
         .Q(Q[5]));
   FDCE \Output_SO_reg[6] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[6]),
         .Q(Q[6]));
   FDCE \Output_SO_reg[7] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[7]),
         .Q(Q[7]));
   FDCE \Output_SO_reg[8] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[8]),
         .Q(Q[8]));
 endmodule
@@ -48565,8 +48546,8 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_11
     E,
     D,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__29,
-    SyncSignalSyncFF_S_reg_rep__3);
+    AS,
+    SyncSignalSyncFF_S_reg_rep__4);
   output [10:0]Q;
   output StatisticsFilteredPixels_SN;
   output \Output_SO_reg[0]_0 ;
@@ -48611,9 +48592,10 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_11
   input [0:0]E;
   input [10:0]D;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__29;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__3;
+  input [0:0]AS;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__4;
 
+  wire [0:0]AS;
   wire [0:0]CO;
   wire [10:0]D;
   wire [8:0]\DVSAERConfigReg_D_reg[FilterPixel0Row_D][8] ;
@@ -48698,8 +48680,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_11
   wire [10:0]Q;
   wire ROIFilterOutValidReg_S;
   wire StatisticsFilteredPixels_SN;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__29;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__3;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__4;
   wire [3:3]\NLW_Output_SO_reg[13]_i_11_CO_UNCONNECTED ;
   wire [3:0]\NLW_Output_SO_reg[13]_i_11_O_UNCONNECTED ;
   wire [3:3]\NLW_Output_SO_reg[13]_i_13_CO_UNCONNECTED ;
@@ -49041,19 +49022,19 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_11
   FDCE \Output_SO_reg[0] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[0]),
         .Q(Q[0]));
   FDCE \Output_SO_reg[12] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(D[9]),
         .Q(Q[9]));
   FDCE \Output_SO_reg[13] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[10]),
         .Q(Q[10]));
   CARRY4 \Output_SO_reg[13]_i_11 
@@ -49115,49 +49096,49 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_11
   FDCE \Output_SO_reg[1] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[1]),
         .Q(Q[1]));
   FDCE \Output_SO_reg[2] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[2]),
         .Q(Q[2]));
   FDCE \Output_SO_reg[3] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[3]),
         .Q(Q[3]));
   FDCE \Output_SO_reg[4] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[4]),
         .Q(Q[4]));
   FDCE \Output_SO_reg[5] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[5]),
         .Q(Q[5]));
   FDCE \Output_SO_reg[6] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[6]),
         .Q(Q[6]));
   FDCE \Output_SO_reg[7] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[7]),
         .Q(Q[7]));
   FDCE \Output_SO_reg[8] 
        (.C(LogicClk_CI),
         .CE(E),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(D[8]),
         .Q(Q[8]));
 endmodule
@@ -49167,81 +49148,81 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized2_14
    (Q,
     D,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__3);
+    SyncSignalSyncFF_S_reg_rep__4);
   output [10:0]Q;
   input [10:0]D;
   input LogicClk_CI;
-  input [1:0]SyncSignalSyncFF_S_reg_rep__3;
+  input [0:0]SyncSignalSyncFF_S_reg_rep__4;
 
   wire [10:0]D;
   wire LogicClk_CI;
   wire [10:0]Q;
-  wire [1:0]SyncSignalSyncFF_S_reg_rep__3;
+  wire [0:0]SyncSignalSyncFF_S_reg_rep__4;
 
   FDCE \Output_SO_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(D[0]),
         .Q(Q[0]));
   FDCE \Output_SO_reg[12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(D[9]),
         .Q(Q[9]));
   FDCE \Output_SO_reg[13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(D[10]),
         .Q(Q[10]));
   FDCE \Output_SO_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(D[1]),
         .Q(Q[1]));
   FDCE \Output_SO_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(D[2]),
         .Q(Q[2]));
   FDCE \Output_SO_reg[3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(D[3]),
         .Q(Q[3]));
   FDCE \Output_SO_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(D[4]),
         .Q(Q[4]));
   FDCE \Output_SO_reg[5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(D[5]),
         .Q(Q[5]));
   FDCE \Output_SO_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(D[6]),
         .Q(Q[6]));
   FDCE \Output_SO_reg[7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[0]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(D[7]),
         .Q(Q[7]));
   FDCE \Output_SO_reg[8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(SyncSignalSyncFF_S_reg_rep__3[1]),
+        .CLR(SyncSignalSyncFF_S_reg_rep__4),
         .D(D[8]),
         .Q(Q[8]));
 endmodule
@@ -49375,11 +49356,10 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized3
     ROIFilterOutValidReg_S,
     \Output_SO_reg[8]_1 ,
     LogicClk_CI,
-    SyncReset_RO,
+    AS,
     \Output_SO_reg[7]_1 ,
     \Output_SO_reg[6]_1 ,
     \Output_SO_reg[5]_1 ,
-    SyncSignalSyncFF_S_reg_rep__29,
     \Output_SO_reg[4]_1 ,
     \Output_SO_reg[3]_1 ,
     \Output_SO_reg[2]_1 ,
@@ -49413,17 +49393,17 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized3
   input ROIFilterOutValidReg_S;
   input \Output_SO_reg[8]_1 ;
   input LogicClk_CI;
-  input SyncReset_RO;
+  input [1:0]AS;
   input \Output_SO_reg[7]_1 ;
   input \Output_SO_reg[6]_1 ;
   input \Output_SO_reg[5]_1 ;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__29;
   input \Output_SO_reg[4]_1 ;
   input \Output_SO_reg[3]_1 ;
   input \Output_SO_reg[2]_1 ;
   input \Output_SO_reg[1]_1 ;
   input \Output_SO_reg[0]_8 ;
 
+  wire [1:0]AS;
   wire [0:0]CO;
   wire [8:0]\DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] ;
   wire [8:0]\DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] ;
@@ -49500,8 +49480,6 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized3
   wire \Output_SO_reg[8]_1 ;
   wire [8:0]Q;
   wire ROIFilterOutValidReg_S;
-  wire SyncReset_RO;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__29;
   wire [3:3]\NLW_Output_SO_reg[13]_i_10_CO_UNCONNECTED ;
   wire [3:0]\NLW_Output_SO_reg[13]_i_10_O_UNCONNECTED ;
   wire [3:3]\NLW_Output_SO_reg[13]_i_12_CO_UNCONNECTED ;
@@ -49762,7 +49740,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized3
   FDCE \Output_SO_reg[0] 
        (.C(LogicClk_CI),
         .CE(ROIFilterOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\Output_SO_reg[0]_8 ),
         .Q(\Output_SO_reg[0]_0 ));
   CARRY4 \Output_SO_reg[13]_i_10 
@@ -49824,49 +49802,49 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized3
   FDCE \Output_SO_reg[1] 
        (.C(LogicClk_CI),
         .CE(ROIFilterOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\Output_SO_reg[1]_1 ),
         .Q(\Output_SO_reg[1]_0 ));
   FDCE \Output_SO_reg[2] 
        (.C(LogicClk_CI),
         .CE(ROIFilterOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\Output_SO_reg[2]_1 ),
         .Q(\Output_SO_reg[2]_0 ));
   FDCE \Output_SO_reg[3] 
        (.C(LogicClk_CI),
         .CE(ROIFilterOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\Output_SO_reg[3]_1 ),
         .Q(\Output_SO_reg[3]_0 ));
   FDCE \Output_SO_reg[4] 
        (.C(LogicClk_CI),
         .CE(ROIFilterOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\Output_SO_reg[4]_1 ),
         .Q(\Output_SO_reg[4]_0 ));
   FDCE \Output_SO_reg[5] 
        (.C(LogicClk_CI),
         .CE(ROIFilterOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS[1]),
         .D(\Output_SO_reg[5]_1 ),
         .Q(\Output_SO_reg[5]_0 ));
   FDCE \Output_SO_reg[6] 
        (.C(LogicClk_CI),
         .CE(ROIFilterOutValidReg_S),
-        .CLR(SyncReset_RO),
+        .CLR(AS[0]),
         .D(\Output_SO_reg[6]_1 ),
         .Q(\Output_SO_reg[6]_0 ));
   FDCE \Output_SO_reg[7] 
        (.C(LogicClk_CI),
         .CE(ROIFilterOutValidReg_S),
-        .CLR(SyncReset_RO),
+        .CLR(AS[0]),
         .D(\Output_SO_reg[7]_1 ),
         .Q(\Output_SO_reg[7]_0 ));
   FDCE \Output_SO_reg[8] 
        (.C(LogicClk_CI),
         .CE(ROIFilterOutValidReg_S),
-        .CLR(SyncReset_RO),
+        .CLR(AS[0]),
         .D(\Output_SO_reg[8]_1 ),
         .Q(\Output_SO_reg[8]_0 ));
 endmodule
@@ -49889,7 +49867,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized3_12
     DVSEventOutValidReg_S,
     \Output_SO_reg[8]_1 ,
     LogicClk_CI,
-    SyncSignalSyncFF_S_reg_rep__29,
+    AS,
     \Output_SO_reg[7]_1 ,
     \Output_SO_reg[6]_1 ,
     \Output_SO_reg[5]_1 ,
@@ -49914,7 +49892,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized3_12
   input DVSEventOutValidReg_S;
   input \Output_SO_reg[8]_1 ;
   input LogicClk_CI;
-  input [0:0]SyncSignalSyncFF_S_reg_rep__29;
+  input [0:0]AS;
   input \Output_SO_reg[7]_1 ;
   input \Output_SO_reg[6]_1 ;
   input \Output_SO_reg[5]_1 ;
@@ -49924,6 +49902,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized3_12
   input \Output_SO_reg[1]_1 ;
   input \Output_SO_reg[0]_2 ;
 
+  wire [0:0]AS;
   wire [0:0]CO;
   wire [8:0]\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] ;
   wire DVSEventOutValidReg_S;
@@ -49976,7 +49955,6 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized3_12
   wire \Output_SO_reg[8]_0 ;
   wire \Output_SO_reg[8]_1 ;
   wire [8:0]Q;
-  wire [0:0]SyncSignalSyncFF_S_reg_rep__29;
   wire [3:0]\NLW_Output_SO_reg[13]_i_15__0_O_UNCONNECTED ;
   wire [3:1]\NLW_Output_SO_reg[13]_i_2_CO_UNCONNECTED ;
   wire [3:0]\NLW_Output_SO_reg[13]_i_2_O_UNCONNECTED ;
@@ -50139,7 +50117,7 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized3_12
   FDCE \Output_SO_reg[0] 
        (.C(LogicClk_CI),
         .CE(DVSEventOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(\Output_SO_reg[0]_2 ),
         .Q(\Output_SO_reg[0]_1 ));
   CARRY4 \Output_SO_reg[13]_i_15__0 
@@ -50173,49 +50151,49 @@ module brd_testAERDVSSM_0_0_SimpleRegister__parameterized3_12
   FDCE \Output_SO_reg[1] 
        (.C(LogicClk_CI),
         .CE(DVSEventOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(\Output_SO_reg[1]_1 ),
         .Q(\Output_SO_reg[1]_0 ));
   FDCE \Output_SO_reg[2] 
        (.C(LogicClk_CI),
         .CE(DVSEventOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(\Output_SO_reg[2]_1 ),
         .Q(\Output_SO_reg[2]_0 ));
   FDCE \Output_SO_reg[3] 
        (.C(LogicClk_CI),
         .CE(DVSEventOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(\Output_SO_reg[3]_1 ),
         .Q(\Output_SO_reg[3]_0 ));
   FDCE \Output_SO_reg[4] 
        (.C(LogicClk_CI),
         .CE(DVSEventOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(\Output_SO_reg[4]_1 ),
         .Q(\Output_SO_reg[4]_0 ));
   FDCE \Output_SO_reg[5] 
        (.C(LogicClk_CI),
         .CE(DVSEventOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(\Output_SO_reg[5]_1 ),
         .Q(\Output_SO_reg[5]_0 ));
   FDCE \Output_SO_reg[6] 
        (.C(LogicClk_CI),
         .CE(DVSEventOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(\Output_SO_reg[6]_1 ),
         .Q(\Output_SO_reg[6]_0 ));
   FDCE \Output_SO_reg[7] 
        (.C(LogicClk_CI),
         .CE(DVSEventOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(\Output_SO_reg[7]_1 ),
         .Q(\Output_SO_reg[7]_0 ));
   FDCE \Output_SO_reg[8] 
        (.C(LogicClk_CI),
         .CE(DVSEventOutValidReg_S),
-        .CLR(SyncSignalSyncFF_S_reg_rep__29),
+        .CLR(AS),
         .D(\Output_SO_reg[8]_1 ),
         .Q(\Output_SO_reg[8]_0 ));
 endmodule
@@ -50229,61 +50207,49 @@ module brd_testAERDVSSM_0_0_SystemInfoSPIConfig
     AR,
     D);
   output Output_SO;
-  output [6:0]Q;
+  output [4:0]Q;
   input [0:0]O131;
   input LogicClk_CI;
-  input [2:0]AR;
-  input [6:0]D;
+  input [1:0]AR;
+  input [4:0]D;
 
-  wire [2:0]AR;
-  wire [6:0]D;
+  wire [1:0]AR;
+  wire [4:0]D;
   wire LogicClk_CI;
   wire [0:0]O131;
   wire Output_SO;
-  wire [6:0]Q;
+  wire [4:0]Q;
 
   FDCE \SystemInfoOutput_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
+        .CLR(AR[1]),
         .D(D[0]),
         .Q(Q[0]));
-  FDCE \SystemInfoOutput_DP_reg[1] 
-       (.C(LogicClk_CI),
-        .CE(1'b1),
-        .CLR(AR[0]),
-        .D(D[1]),
-        .Q(Q[1]));
   FDCE \SystemInfoOutput_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[0]),
-        .D(D[2]),
-        .Q(Q[2]));
-  FDCE \SystemInfoOutput_DP_reg[3] 
-       (.C(LogicClk_CI),
-        .CE(1'b1),
         .CLR(AR[1]),
-        .D(D[3]),
-        .Q(Q[3]));
+        .D(D[1]),
+        .Q(Q[1]));
   FDCE \SystemInfoOutput_DP_reg[4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[2]),
-        .D(D[4]),
-        .Q(Q[4]));
-  FDCE \SystemInfoOutput_DP_reg[5] 
-       (.C(LogicClk_CI),
-        .CE(1'b1),
-        .CLR(AR[2]),
-        .D(D[5]),
-        .Q(Q[5]));
+        .CLR(AR[1]),
+        .D(D[2]),
+        .Q(Q[2]));
   FDCE \SystemInfoOutput_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR[2]),
-        .D(D[6]),
-        .Q(Q[6]));
+        .CLR(AR[0]),
+        .D(D[3]),
+        .Q(Q[3]));
+  FDCE \SystemInfoOutput_DP_reg[9] 
+       (.C(LogicClk_CI),
+        .CE(1'b1),
+        .CLR(AR[1]),
+        .D(D[4]),
+        .Q(Q[4]));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized0_0 deviceIsMasterBuffer
        (.AR(AR[1]),
         .LogicClk_CI(LogicClk_CI),
@@ -50308,8 +50274,8 @@ module brd_testAERDVSSM_0_0_TimestampSynchronizer
     TimestampOverflowBufferOverflow_S,
     TimestampResetBufferClear_S,
     TimestampResetBuffer_S,
-    AR,
-    SyncSignalSyncFF_S_reg_rep__2);
+    SyncSignalSyncFF_S_reg_rep__2,
+    AR);
   output SyncOutClock_CO;
   output [0:0]I127;
   output [0:0]\Count_DP_reg[14] ;
@@ -50325,8 +50291,8 @@ module brd_testAERDVSSM_0_0_TimestampSynchronizer
   input TimestampOverflowBufferOverflow_S;
   input TimestampResetBufferClear_S;
   input TimestampResetBuffer_S;
-  input [0:0]AR;
   input [0:0]SyncSignalSyncFF_S_reg_rep__2;
+  input [0:0]AR;
 
   wire [0:0]AR;
   wire [12:0]Confirm_DN;
@@ -50487,21 +50453,21 @@ module brd_testAERDVSSM_0_0_TimestampSynchronizer
   wire [3:1]NLW_plusOp_carry__2_CO_UNCONNECTED;
   wire [3:2]NLW_plusOp_carry__2_O_UNCONNECTED;
 
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \Confirm_DP[0]_i_1 
        (.I0(\Confirm_DP[12]_i_2_n_0 ),
         .I1(Confirm_DP[0]),
         .O(Confirm_DN[0]));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Confirm_DP[10]_i_1 
        (.I0(\Confirm_DP[12]_i_2_n_0 ),
         .I1(\Confirm_DP_reg[12]_i_3_n_6 ),
         .O(Confirm_DN[10]));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Confirm_DP[11]_i_1 
@@ -50551,63 +50517,63 @@ module brd_testAERDVSSM_0_0_TimestampSynchronizer
         .I3(Confirm_DP[3]),
         .I4(Confirm_DP[10]),
         .O(\Confirm_DP[12]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Confirm_DP[1]_i_1 
        (.I0(\Confirm_DP[12]_i_2_n_0 ),
         .I1(\Confirm_DP_reg[4]_i_2_n_7 ),
         .O(Confirm_DN[1]));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Confirm_DP[2]_i_1 
        (.I0(\Confirm_DP[12]_i_2_n_0 ),
         .I1(\Confirm_DP_reg[4]_i_2_n_6 ),
         .O(Confirm_DN[2]));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Confirm_DP[3]_i_1 
        (.I0(\Confirm_DP[12]_i_2_n_0 ),
         .I1(\Confirm_DP_reg[4]_i_2_n_5 ),
         .O(Confirm_DN[3]));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Confirm_DP[4]_i_1 
        (.I0(\Confirm_DP[12]_i_2_n_0 ),
         .I1(\Confirm_DP_reg[4]_i_2_n_4 ),
         .O(Confirm_DN[4]));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Confirm_DP[5]_i_1 
        (.I0(\Confirm_DP[12]_i_2_n_0 ),
         .I1(\Confirm_DP_reg[8]_i_2_n_7 ),
         .O(Confirm_DN[5]));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Confirm_DP[6]_i_1 
        (.I0(\Confirm_DP[12]_i_2_n_0 ),
         .I1(\Confirm_DP_reg[8]_i_2_n_6 ),
         .O(Confirm_DN[6]));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Confirm_DP[7]_i_1 
        (.I0(\Confirm_DP[12]_i_2_n_0 ),
         .I1(\Confirm_DP_reg[8]_i_2_n_5 ),
         .O(Confirm_DN[7]));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Confirm_DP[8]_i_1 
        (.I0(\Confirm_DP[12]_i_2_n_0 ),
         .I1(\Confirm_DP_reg[8]_i_2_n_4 ),
         .O(Confirm_DN[8]));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Confirm_DP[9]_i_1 
@@ -50969,7 +50935,7 @@ module brd_testAERDVSSM_0_0_TimestampSynchronizer
   FDCE \Counter_DP_reg[14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2),
         .D(\Counter_DP[14]_i_1_n_0 ),
         .Q(\Counter_DP_reg_n_0_[14] ));
   FDCE \Counter_DP_reg[1] 
@@ -51038,7 +51004,7 @@ module brd_testAERDVSSM_0_0_TimestampSynchronizer
         .D(DeviceIsMasterReg_S),
         .PRE(SyncSignalSyncFF_S_reg_rep__4),
         .Q(I127));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT3 #(
     .INIT(8'h20)) 
     \Divider_DP[0]_i_1 
@@ -51046,6 +51012,7 @@ module brd_testAERDVSSM_0_0_TimestampSynchronizer
         .I1(Divider_DP[0]),
         .I2(\Divider_DP[6]_i_4_n_0 ),
         .O(\Divider_DP[0]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT3 #(
     .INIT(8'h28)) 
     \Divider_DP[1]_i_1 
@@ -51100,6 +51067,7 @@ module brd_testAERDVSSM_0_0_TimestampSynchronizer
         .I2(Divider_DP[0]),
         .I3(Divider_DP[3]),
         .O(\Divider_DP[4]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \Divider_DP[5]_i_1 
@@ -51184,13 +51152,13 @@ module brd_testAERDVSSM_0_0_TimestampSynchronizer
   FDCE \Divider_DP_reg[5] 
        (.C(LogicClk_CI),
         .CE(Divider_DN),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2),
         .D(\Divider_DP[5]_i_1_n_0 ),
         .Q(Divider_DP[5]));
   FDCE \Divider_DP_reg[6] 
        (.C(LogicClk_CI),
         .CE(Divider_DN),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2),
         .D(\Divider_DP[6]_i_2_n_0 ),
         .Q(Divider_DP[6]));
   LUT6 #(
@@ -51380,7 +51348,7 @@ module brd_testAERDVSSM_0_0_TimestampSynchronizer
   FDCE \FSM_sequential_State_DP_reg[0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2),
         .D(\FSM_sequential_State_DP[0]_i_1__0_n_0 ),
         .Q(State_DP[0]));
   (* FSM_ENCODED_STATES = "stslavewaitedge:011,stmasterresetslaves:001,ststlavewaitreset:100,stmasterrun:000,stslaverun:010" *) 
@@ -51388,7 +51356,7 @@ module brd_testAERDVSSM_0_0_TimestampSynchronizer
   FDCE \FSM_sequential_State_DP_reg[1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2),
         .D(\FSM_sequential_State_DP[1]_i_1__0_n_0 ),
         .Q(State_DP[1]));
   (* FSM_ENCODED_STATES = "stslavewaitedge:011,stmasterresetslaves:001,ststlavewaitreset:100,stmasterrun:000,stslaverun:010" *) 
@@ -51396,7 +51364,7 @@ module brd_testAERDVSSM_0_0_TimestampSynchronizer
   FDCE \FSM_sequential_State_DP_reg[2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(AR),
+        .CLR(SyncSignalSyncFF_S_reg_rep__2),
         .D(\FSM_sequential_State_DP[2]_i_1_n_0 ),
         .Q(State_DP[2]));
   LUT6 #(
@@ -52154,7 +52122,7 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   wire SyncInClockSync_C;
   wire SyncInClock_AI;
   wire SyncOutClock_CO;
-  wire [6:0]SystemInfoConfigParamOutput_D;
+  wire [9:0]SystemInfoConfigParamOutput_D;
   wire chipBiasSelector_n_10;
   wire chipBiasSelector_n_11;
   wire chipBiasSelector_n_12;
@@ -52218,7 +52186,7 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   wire dvsaerSPIConfig_n_3;
   wire dvsaerSPIConfig_n_40;
   wire dvsaerSPIConfig_n_68;
-  wire logiecResetSync_n_1;
+  wire logiecResetSync_n_0;
   wire logiecResetSync_n_10;
   wire logiecResetSync_n_11;
   wire logiecResetSync_n_12;
@@ -52254,7 +52222,7 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   wire logiecResetSync_n_9;
   wire multiplexerSM_n_100;
   wire multiplexerSPIConfig_n_4;
-  wire [6:0]p_0_in;
+  wire [9:0]p_0_in;
   wire [31:0]p_0_in_1;
   wire [31:0]p_0_in_2;
   wire spiConfiguration_n_113;
@@ -53256,505 +53224,505 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [0]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][0] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [10]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][10] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [11]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][11] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [12]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][12] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [13]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][13] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [14]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][14] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][15] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [15]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][15] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][16] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [16]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][16] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][17] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [17]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][17] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][18] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [18]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][18] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][19] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [19]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][19] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [1]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][1] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][20] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [20]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][20] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][21] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [21]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][21] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][22] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [22]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][22] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][23] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [23]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][23] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][24] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [24]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][24] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][25] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [25]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][25] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][26] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [26]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][26] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][27] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [27]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][27] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][28] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [28]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][28] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][29] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [29]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][29] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [2]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][2] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][30] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [30]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][30] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][31] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [31]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][31] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][32] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [32]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][32] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][33] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [33]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][33] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][34] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [34]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][34] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][35] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [35]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][35] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][36] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [36]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][36] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][37] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [37]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][37] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][38] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [38]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][38] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][39] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [39]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][39] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [3]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][3] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [4]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][4] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [5]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][5] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [6]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][6] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [7]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][7] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [8]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][8] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsColumn_D]__0 [9]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsColumn_D_n_0_][9] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [0]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][0] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [10]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][10] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [11]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][11] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [12]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][12] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [13]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][13] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [14]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][14] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][15] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [15]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][15] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][16] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [16]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][16] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][17] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [17]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][17] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][18] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [18]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][18] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][19] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [19]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][19] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [1]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][1] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][20] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [20]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][20] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][21] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [21]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][21] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][22] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [22]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][22] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][23] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [23]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][23] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][24] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [24]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][24] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][25] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [25]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][25] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][26] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [26]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][26] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][27] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [27]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][27] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][28] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [28]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][28] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][29] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [29]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][29] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [2]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][2] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][30] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [30]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][30] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][31] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [31]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][31] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][32] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [32]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][32] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][33] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [33]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][33] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][34] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [34]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][34] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][35] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [35]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][35] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][36] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [36]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][36] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][37] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [37]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][37] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][38] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [38]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][38] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][39] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [39]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][39] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [3]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][3] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [4]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][4] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [5]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][5] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [6]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][6] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [7]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][7] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [8]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][8] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsDropped_D]__0 [9]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsDropped_D_n_0_][9] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [0]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][0] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_4),
+        .CLR(logiecResetSync_n_5),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [10]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][10] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_4),
+        .CLR(logiecResetSync_n_5),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [11]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][11] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_4),
+        .CLR(logiecResetSync_n_5),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [12]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][12] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][13] 
@@ -53766,235 +53734,235 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [14]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][14] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][15] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [15]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][15] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][16] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [16]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][16] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][17] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [17]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][17] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][18] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [18]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][18] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][19] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [19]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][19] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [1]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][1] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][20] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [20]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][20] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][21] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [21]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][21] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][22] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [22]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][22] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][23] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [23]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][23] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][24] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [24]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][24] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][25] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [25]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][25] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][26] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [26]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][26] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][27] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [27]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][27] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][28] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [28]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][28] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][29] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [29]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][29] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [2]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][2] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][30] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [30]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][30] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][31] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [31]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][31] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][32] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [32]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][32] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][33] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [33]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][33] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][34] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [34]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][34] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][35] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [35]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][35] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][36] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [36]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][36] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][37] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [37]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][37] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][38] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [38]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][38] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][39] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [39]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][39] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [3]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][3] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [4]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][4] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [5]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][5] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [6]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][6] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [7]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][7] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [8]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][8] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_4),
+        .CLR(logiecResetSync_n_5),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsEventsRow_D]__0 [9]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsEventsRow_D_n_0_][9] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [0]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][0] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_4),
+        .CLR(logiecResetSync_n_5),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [10]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][10] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_4),
+        .CLR(logiecResetSync_n_5),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [11]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][11] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_4),
+        .CLR(logiecResetSync_n_5),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [12]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][12] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][13] 
@@ -54006,211 +53974,211 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [14]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][14] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][15] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [15]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][15] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][16] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [16]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][16] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][17] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [17]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][17] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][18] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [18]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][18] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][19] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [19]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][19] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [1]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][1] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][20] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [20]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][20] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][21] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [21]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][21] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][22] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [22]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][22] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][23] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [23]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][23] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][24] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [24]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][24] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][25] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [25]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][25] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][26] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [26]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][26] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][27] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [27]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][27] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][28] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [28]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][28] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][29] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [29]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][29] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [2]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][2] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][30] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [30]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][30] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][31] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [31]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][31] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][32] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [32]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][32] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][33] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [33]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][33] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][34] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [34]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][34] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][35] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [35]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][35] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][36] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [36]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][36] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][37] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [37]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][37] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][38] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [38]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][38] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][39] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [39]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][39] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [3]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][3] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [4]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][4] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [5]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][5] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [6]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][6] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [7]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][7] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [8]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][8] ));
   FDCE \DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_4),
+        .CLR(logiecResetSync_n_5),
         .D(\DVSAERConfigInfoOutReg_D_reg[StatisticsFilteredPixels_D]__0 [9]),
         .Q(\DVSAERConfigInfoOut_D_reg[StatisticsFilteredPixels_D_n_0_][9] ));
   FDCE \DVSAERConfigReg2_D_reg[ExternalAERControl_S] 
@@ -54222,1081 +54190,1081 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][0] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [1]),
-        .PRE(logiecResetSync_n_28),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][1] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [2]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][2] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [3]),
-        .PRE(logiecResetSync_n_28),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][3] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [4]),
-        .PRE(logiecResetSync_n_28),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_28),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][5] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [6]),
-        .PRE(logiecResetSync_n_28),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_28),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel0Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [8]),
-        .PRE(logiecResetSync_n_28),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Column_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel0Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_28),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][0] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel0Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_28),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [1]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][1] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel0Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [2]),
-        .PRE(logiecResetSync_n_28),
+        .PRE(logiecResetSync_n_29),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][2] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel0Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_28),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [3]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][3] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel0Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_28),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [4]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel0Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_28),
+        .CLR(logiecResetSync_n_29),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][5] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel0Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_28),
+        .CLR(logiecResetSync_n_29),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [6]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel0Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_28),
+        .CLR(logiecResetSync_n_29),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel0Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [8]),
-        .PRE(logiecResetSync_n_28),
+        .PRE(logiecResetSync_n_29),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel0Row_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][0] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [1]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][1] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [2]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][2] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [3]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][3] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [4]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][5] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [6]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel1Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Column_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][0] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [1]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][1] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [2]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][2] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [3]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][3] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [4]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][5] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [6]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel1Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel1Row_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][0] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [1]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][1] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [2]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][2] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [3]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][3] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [4]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][5] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [6]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel2Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Column_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][0] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [1]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][1] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [2]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][2] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [3]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][3] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [4]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][5] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [6]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel2Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel2Row_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][0] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [1]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][1] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [2]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][2] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [3]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][3] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [4]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][5] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [6]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel3Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Column_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][0] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [1]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][1] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [2]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][2] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [3]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][3] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [4]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][5] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [6]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel3Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel3Row_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][0] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [1]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][1] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [2]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][2] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [3]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][3] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [4]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][5] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [6]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel4Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Column_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel4Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][0] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel4Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [1]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][1] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel4Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [2]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][2] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel4Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [3]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][3] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel4Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [4]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel4Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][5] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel4Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [6]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel4Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel4Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel4Row_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][0] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [1]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][1] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [2]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][2] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [3]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][3] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [4]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][5] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [6]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel5Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Column_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel5Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][0] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel5Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [1]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][1] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel5Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [2]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][2] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel5Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [3]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][3] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel5Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [4]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel5Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][5] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel5Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [6]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel5Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel5Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel5Row_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][0] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [1]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][1] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [2]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][2] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [3]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][3] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [4]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][5] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [6]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel6Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Column_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel6Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][0] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel6Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [1]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][1] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel6Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [2]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][2] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel6Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [3]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][3] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel6Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [4]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel6Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][5] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel6Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [6]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel6Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel6Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel6Row_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][0] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [1]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][1] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [2]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][2] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [3]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][3] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [4]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][5] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [6]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel7Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Column_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel7Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][0] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel7Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [1]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][1] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel7Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [2]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][2] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel7Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [3]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][3] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel7Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [4]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel7Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][5] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel7Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [6]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterPixel7Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_29),
+        .CLR(logiecResetSync_n_30),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterPixel7Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [8]),
-        .PRE(logiecResetSync_n_29),
+        .PRE(logiecResetSync_n_30),
         .Q(\DVSAERConfigReg2_D_reg[FilterPixel7Row_D_n_0_][8] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [0]),
-        .PRE(logiecResetSync_n_30),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][0] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [1]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][1] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [2]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][2] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [3]),
-        .PRE(logiecResetSync_n_30),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][3] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [4]),
-        .PRE(logiecResetSync_n_30),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][5] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [6]),
-        .PRE(logiecResetSync_n_30),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterROIEndColumn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [8]),
-        .PRE(logiecResetSync_n_30),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndColumn_D_n_0_][8] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [0]),
-        .PRE(logiecResetSync_n_30),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][0] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [1]),
-        .PRE(logiecResetSync_n_30),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][1] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [2]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][2] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [3]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][3] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [4]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][5] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [6]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][7] ));
   FDPE \DVSAERConfigReg2_D_reg[FilterROIEndRow_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [8]),
-        .PRE(logiecResetSync_n_30),
+        .PRE(logiecResetSync_n_31),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIEndRow_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][0] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [1]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][1] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [2]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][2] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [3]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][3] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [4]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][5] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [6]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][7] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartColumn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [8]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartColumn_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [0]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][0] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [1]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][1] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [2]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][2] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [3]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][3] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [4]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][4] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [5]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][5] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [6]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][6] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [7]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][7] ));
   FDCE \DVSAERConfigReg2_D_reg[FilterROIStartRow_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_30),
+        .CLR(logiecResetSync_n_31),
         .D(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [8]),
         .Q(\DVSAERConfigReg2_D_reg[FilterROIStartRow_D_n_0_][8] ));
   FDCE \DVSAERConfigReg2_D_reg[Run_S] 
@@ -55314,1099 +55282,1099 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   FDCE \DVSAERConfigReg_D_reg[ExternalAERControl_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[ExternalAERControl_S] ),
         .Q(\DVSAERConfigReg_D_reg[ExternalAERControl_S]__0 ));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel0Column_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel0Column_D] [1]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel0Column_D] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel0Column_D] [3]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel0Column_D] [4]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel0Column_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel0Column_D] [6]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel0Column_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel0Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel0Column_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Column_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel0Row_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel0Row_D] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [1]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel0Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel0Row_D] [2]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel0Row_D] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel0Row_D] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel0Row_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel0Row_D] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel0Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel0Row_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel0Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel0Row_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel0Row_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel1Column_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel1Column_D] [1]),
-        .PRE(logiecResetSync_n_5),
+        .PRE(logiecResetSync_n_7),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel1Column_D] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel1Column_D] [3]),
-        .PRE(logiecResetSync_n_5),
+        .PRE(logiecResetSync_n_7),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel1Column_D] [4]),
-        .PRE(logiecResetSync_n_5),
+        .PRE(logiecResetSync_n_7),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel1Column_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel1Column_D] [6]),
-        .PRE(logiecResetSync_n_5),
+        .PRE(logiecResetSync_n_7),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel1Column_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel1Column_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Column_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel1Row_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel1Row_D] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [1]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel1Row_D] [2]),
-        .PRE(logiecResetSync_n_5),
+        .PRE(logiecResetSync_n_7),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel1Row_D] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel1Row_D] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel1Row_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel1Row_D] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel1Row_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel1Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel1Row_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel1Row_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel2Column_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel2Column_D] [1]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel2Column_D] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel2Column_D] [3]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel2Column_D] [4]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel2Column_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel2Column_D] [6]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel2Column_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel2Column_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Column_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel2Row_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel2Row_D] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [1]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel2Row_D] [2]),
-        .PRE(logiecResetSync_n_5),
+        .PRE(logiecResetSync_n_7),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel2Row_D] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel2Row_D] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel2Row_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel2Row_D] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel2Row_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel2Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel2Row_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel2Row_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel3Column_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel3Column_D] [1]),
-        .PRE(logiecResetSync_n_3),
+        .PRE(logiecResetSync_n_4),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel3Column_D] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel3Column_D] [3]),
-        .PRE(logiecResetSync_n_3),
+        .PRE(logiecResetSync_n_4),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel3Column_D] [4]),
-        .PRE(logiecResetSync_n_3),
+        .PRE(logiecResetSync_n_4),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfig_D[FilterPixel3Column_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel3Column_D] [6]),
-        .PRE(logiecResetSync_n_3),
+        .PRE(logiecResetSync_n_4),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfig_D[FilterPixel3Column_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel3Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel3Column_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Column_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel3Row_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel3Row_D] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [1]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel3Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel3Row_D] [2]),
-        .PRE(logiecResetSync_n_3),
+        .PRE(logiecResetSync_n_4),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel3Row_D] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel3Row_D] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfig_D[FilterPixel3Row_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel3Row_D] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel3Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfig_D[FilterPixel3Row_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel3Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel3Row_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel3Row_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel4Column_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel4Column_D] [1]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel4Column_D] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel4Column_D] [3]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel4Column_D] [4]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel4Column_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel4Column_D] [6]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel4Column_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel4Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel4Column_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Column_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel4Row_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfig_D[FilterPixel4Row_D] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [1]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel4Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel4Row_D] [2]),
-        .PRE(logiecResetSync_n_3),
+        .PRE(logiecResetSync_n_4),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfig_D[FilterPixel4Row_D] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfig_D[FilterPixel4Row_D] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfig_D[FilterPixel4Row_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfig_D[FilterPixel4Row_D] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel4Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\DVSAERConfig_D[FilterPixel4Row_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel4Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel4Row_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel4Row_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel5Column_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel5Column_D] [1]),
-        .PRE(logiecResetSync_n_5),
+        .PRE(logiecResetSync_n_7),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel5Column_D] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel5Column_D] [3]),
-        .PRE(logiecResetSync_n_5),
+        .PRE(logiecResetSync_n_7),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel5Column_D] [4]),
-        .PRE(logiecResetSync_n_5),
+        .PRE(logiecResetSync_n_7),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel5Column_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel5Column_D] [6]),
-        .PRE(logiecResetSync_n_5),
+        .PRE(logiecResetSync_n_7),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel5Column_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel5Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel5Column_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Column_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel5Row_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel5Row_D] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [1]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel5Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel5Row_D] [2]),
-        .PRE(logiecResetSync_n_5),
+        .PRE(logiecResetSync_n_7),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel5Row_D] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel5Row_D] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel5Row_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel5Row_D] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel5Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel5Row_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel5Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel5Row_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel5Row_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel6Column_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel6Column_D] [1]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel6Column_D] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel6Column_D] [3]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel6Column_D] [4]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel6Column_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel6Column_D] [6]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel6Column_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel6Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel6Column_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Column_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterPixel6Row_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel6Row_D] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [1]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel6Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel6Row_D] [2]),
-        .PRE(logiecResetSync_n_5),
+        .PRE(logiecResetSync_n_7),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel6Row_D] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel6Row_D] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel6Row_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel6Row_D] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel6Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_5),
+        .CLR(logiecResetSync_n_7),
         .D(\DVSAERConfig_D[FilterPixel6Row_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel6Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel6Row_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_13),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel6Row_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel7Column_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel7Column_D] [1]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel7Column_D] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel7Column_D] [3]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel7Column_D] [4]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel7Column_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel7Column_D] [6]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterPixel7Column_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel7Column_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel7Column_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Column_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Row_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterPixel7Row_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Row_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_2),
+        .CLR(logiecResetSync_n_3),
         .D(\DVSAERConfig_D[FilterPixel7Row_D] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [1]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel7Row_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel7Row_D] [2]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_13),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Row_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_2),
+        .CLR(logiecResetSync_n_3),
         .D(\DVSAERConfig_D[FilterPixel7Row_D] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Row_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_2),
+        .CLR(logiecResetSync_n_3),
         .D(\DVSAERConfig_D[FilterPixel7Row_D] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Row_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterPixel7Row_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Row_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_2),
+        .CLR(logiecResetSync_n_3),
         .D(\DVSAERConfig_D[FilterPixel7Row_D] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterPixel7Row_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterPixel7Row_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterPixel7Row_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterPixel7Row_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_13),
         .Q(\DVSAERConfigReg_D_reg[FilterPixel7Row_D] [8]));
   FDPE \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterROIEndColumn_D] [0]),
-        .PRE(logiecResetSync_n_12),
+        .PRE(logiecResetSync_n_13),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_12),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterROIEndColumn_D] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_12),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterROIEndColumn_D] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [2]));
   FDPE \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterROIEndColumn_D] [3]),
-        .PRE(logiecResetSync_n_12),
+        .PRE(logiecResetSync_n_13),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [3]));
   FDPE \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterROIEndColumn_D] [4]),
-        .PRE(logiecResetSync_n_12),
+        .PRE(logiecResetSync_n_13),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_12),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterROIEndColumn_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [5]));
   FDPE \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterROIEndColumn_D] [6]),
-        .PRE(logiecResetSync_n_12),
+        .PRE(logiecResetSync_n_13),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_12),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterROIEndColumn_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterROIEndColumn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterROIEndColumn_D] [8]),
-        .PRE(logiecResetSync_n_12),
+        .PRE(logiecResetSync_n_13),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndColumn_D] [8]));
   FDPE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterROIEndRow_D] [0]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [0]));
   FDPE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterROIEndRow_D] [1]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIEndRow_D] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIEndRow_D] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIEndRow_D] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIEndRow_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIEndRow_D] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIEndRow_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [7]));
   FDPE \DVSAERConfigReg_D_reg[FilterROIEndRow_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
         .D(\DVSAERConfig_D[FilterROIEndRow_D] [8]),
-        .PRE(logiecResetSync_n_11),
+        .PRE(logiecResetSync_n_12),
         .Q(\DVSAERConfigReg_D_reg[FilterROIEndRow_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_12),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterROIStartColumn_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_2),
+        .CLR(logiecResetSync_n_3),
         .D(\DVSAERConfig_D[FilterROIStartColumn_D] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterROIStartColumn_D] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_2),
+        .CLR(logiecResetSync_n_3),
         .D(\DVSAERConfig_D[FilterROIStartColumn_D] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_2),
+        .CLR(logiecResetSync_n_3),
         .D(\DVSAERConfig_D[FilterROIStartColumn_D] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterROIStartColumn_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_2),
+        .CLR(logiecResetSync_n_3),
         .D(\DVSAERConfig_D[FilterROIStartColumn_D] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterROIStartColumn_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [7]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartColumn_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_13),
         .D(\DVSAERConfig_D[FilterROIStartColumn_D] [8]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartColumn_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIStartRow_D] [0]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [0]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIStartRow_D] [1]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [1]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIStartRow_D] [2]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [2]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIStartRow_D] [3]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [3]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIStartRow_D] [4]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [4]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIStartRow_D] [5]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [5]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIStartRow_D] [6]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [6]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIStartRow_D] [7]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [7]));
   FDCE \DVSAERConfigReg_D_reg[FilterROIStartRow_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[FilterROIStartRow_D] [8]),
         .Q(\DVSAERConfigReg_D_reg[FilterROIStartRow_D] [8]));
   FDCE \DVSAERConfigReg_D_reg[Run_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[Run_S] ),
         .Q(\DVSAERConfigReg_D_reg[Run_S]__0 ));
   FDCE \DVSAERConfigReg_D_reg[WaitOnTransferStall_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_11),
+        .CLR(logiecResetSync_n_12),
         .D(\DVSAERConfig_D[WaitOnTransferStall_S] ),
         .Q(\DVSAERConfigReg_D_reg[WaitOnTransferStall_S]__0 ));
   LUT3 #(
@@ -56419,7 +56387,7 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D] [0]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [0]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][10] 
@@ -56527,25 +56495,25 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][26] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_6),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D] [26]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [26]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][27] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_6),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D] [27]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [27]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][28] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_6),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D] [28]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [28]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][29] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_6),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D] [29]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [29]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][2] 
@@ -56557,13 +56525,13 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][30] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D] [30]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [30]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][31] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsDVSDropped_D] [31]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [31]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D][32] 
@@ -56659,721 +56627,721 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [0]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [0]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [10]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [10]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [11]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [11]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [12]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [12]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [13]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [13]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [14]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [14]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][15] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [15]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [15]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][16] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [16]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [16]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][17] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [17]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [17]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][18] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [18]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [18]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][19] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [19]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [19]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [1]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [1]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][20] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [20]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [20]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][21] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [21]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [21]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][22] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [22]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [22]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][23] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [23]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [23]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][24] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [24]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [24]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][25] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [25]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [25]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][26] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [26]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [26]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][27] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [27]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [27]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][28] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [28]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [28]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][29] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [29]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [29]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [2]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [2]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][30] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [30]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [30]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][31] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [31]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [31]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][32] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [32]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [32]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][33] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [33]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [33]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][34] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [34]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [34]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][35] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [35]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [35]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][36] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [36]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [36]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][37] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [37]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [37]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][38] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [38]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [38]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][39] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [39]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [39]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [3]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [3]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [4]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [4]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [5]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [5]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [6]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [6]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [7]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [7]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [8]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [8]));
   FDCE \MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_7),
+        .CLR(logiecResetSync_n_8),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] [9]),
         .Q(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [9]));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [0]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][0] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [10]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][10] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [11]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][11] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [12]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][12] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [13]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][13] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [14]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][14] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][15] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [15]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][15] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][16] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [16]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][16] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][17] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [17]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][17] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][18] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [18]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][18] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][19] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [19]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][19] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [1]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][1] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][20] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [20]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][20] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][21] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [21]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][21] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][22] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [22]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][22] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][23] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [23]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][23] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][24] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [24]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][24] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][25] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [25]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][25] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][26] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [26]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][26] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][27] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [27]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][27] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][28] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [28]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][28] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][29] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [29]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][29] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [2]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][2] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][30] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [30]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][30] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][31] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [31]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][31] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][32] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [32]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][32] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][33] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [33]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][33] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][34] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [34]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][34] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][35] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [35]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][35] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][36] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [36]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][36] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][37] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [37]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][37] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][38] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [38]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][38] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][39] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [39]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][39] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [3]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][3] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [4]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][4] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [5]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][5] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [6]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][6] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [7]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][7] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [8]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][8] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsDVSDropped_D]__0 [9]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsDVSDropped_D_n_0_][9] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][0] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [0]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][0] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][10] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [10]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][10] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][11] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [11]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][11] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][12] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [12]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][12] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][13] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [13]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][13] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][14] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [14]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][14] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][15] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [15]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][15] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][16] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [16]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][16] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][17] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [17]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][17] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][18] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [18]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][18] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][19] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [19]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][19] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][1] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [1]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][1] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][20] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [20]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][20] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][21] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [21]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][21] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][22] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [22]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][22] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][23] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [23]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][23] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][24] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [24]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][24] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][25] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [25]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][25] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][26] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [26]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][26] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][27] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [27]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][27] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][28] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [28]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][28] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][29] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [29]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][29] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][2] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_9),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [2]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][2] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][30] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [30]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][30] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][31] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [31]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][31] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][32] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [32]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][32] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][33] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [33]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][33] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][34] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [34]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][34] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][35] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [35]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][35] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][36] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [36]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][36] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][37] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [37]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][37] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][38] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [38]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][38] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][39] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_9),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [39]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][39] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][3] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [3]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][3] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][4] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [4]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][4] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][5] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [5]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][5] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][6] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [6]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][6] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][7] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [7]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][7] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][8] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [8]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][8] ));
   FDCE \MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D][9] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_8),
+        .CLR(logiecResetSync_n_10),
         .D(\MultiplexerConfigInfoOutReg_D_reg[StatisticsExtInputDropped_D]__0 [9]),
         .Q(\MultiplexerConfigInfoOut_D_reg[StatisticsExtInputDropped_D_n_0_][9] ));
   FDCE \MultiplexerConfigReg2_D_reg[DropDVSOnTransferStall_S] 
@@ -57391,7 +57359,7 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   FDCE \MultiplexerConfigReg2_D_reg[TimestampReset_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_3),
+        .CLR(logiecResetSync_n_4),
         .D(\MultiplexerConfigReg_D_reg[TimestampReset_S]__0 ),
         .Q(\MultiplexerConfigReg2_D_reg[TimestampReset_S_n_0_] ));
   FDCE \MultiplexerConfigReg2_D_reg[TimestampRun_S] 
@@ -57403,25 +57371,25 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
   FDCE \MultiplexerConfigReg_D_reg[DropDVSOnTransferStall_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_12),
+        .CLR(logiecResetSync_n_13),
         .D(\MultiplexerConfig_D[DropDVSOnTransferStall_S] ),
         .Q(\MultiplexerConfigReg_D_reg[DropDVSOnTransferStall_S]__0 ));
   FDCE \MultiplexerConfigReg_D_reg[Run_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_12),
+        .CLR(logiecResetSync_n_13),
         .D(\MultiplexerConfig_D[Run_S] ),
         .Q(\MultiplexerConfigReg_D_reg[Run_S]__0 ));
   FDCE \MultiplexerConfigReg_D_reg[TimestampReset_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_12),
+        .CLR(logiecResetSync_n_13),
         .D(\MultiplexerConfig_D[TimestampReset_S] ),
         .Q(\MultiplexerConfigReg_D_reg[TimestampReset_S]__0 ));
   FDCE \MultiplexerConfigReg_D_reg[TimestampRun_S] 
        (.C(LogicClk_CI),
         .CE(1'b1),
-        .CLR(logiecResetSync_n_12),
+        .CLR(logiecResetSync_n_13),
         .D(\MultiplexerConfig_D[TimestampRun_S] ),
         .Q(\MultiplexerConfigReg_D_reg[TimestampRun_S]__0 ));
   brd_testAERDVSSM_0_0_SimpleRegister chipBiasEnableBuffer
@@ -57430,7 +57398,7 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
         .LogicClk_CI(LogicClk_CI),
         .SyncReset_RO(LogicReset_R));
   brd_testAERDVSSM_0_0_ChipBiasSelector chipBiasSelector
-       (.AR(logiecResetSync_n_1),
+       (.AR({logiecResetSync_n_4,logiecResetSync_n_5,logiecResetSync_n_2,logiecResetSync_n_12}),
         .\BiasOutput_DP_reg[10] (chipBiasSelector_n_12),
         .\BiasOutput_DP_reg[10]_0 (chipBiasSelector_n_18),
         .\BiasOutput_DP_reg[11] (chipBiasSelector_n_11),
@@ -57523,34 +57491,32 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
         .\ParamOutput_DP_reg[3] (ChipConfigParamOutput_D),
         .Q(\BiasConfigReg_DP_reg[SSN_D] ),
         .SyncReset_RO(LogicReset_R),
-        .SyncSignalSyncFF_S_reg_rep(logiecResetSync_n_4),
-        .SyncSignalSyncFF_S_reg_rep__0(logiecResetSync_n_3),
-        .SyncSignalSyncFF_S_reg_rep__10(logiecResetSync_n_12),
-        .SyncSignalSyncFF_S_reg_rep__11(logiecResetSync_n_13),
-        .SyncSignalSyncFF_S_reg_rep__12(logiecResetSync_n_14),
-        .SyncSignalSyncFF_S_reg_rep__13(logiecResetSync_n_15),
-        .SyncSignalSyncFF_S_reg_rep__14(logiecResetSync_n_16),
-        .SyncSignalSyncFF_S_reg_rep__15({logiecResetSync_n_17,logiecResetSync_n_18}),
-        .SyncSignalSyncFF_S_reg_rep__17({logiecResetSync_n_19,logiecResetSync_n_20}),
-        .SyncSignalSyncFF_S_reg_rep__19({logiecResetSync_n_21,logiecResetSync_n_22}),
-        .SyncSignalSyncFF_S_reg_rep__21(logiecResetSync_n_23),
-        .SyncSignalSyncFF_S_reg_rep__23({logiecResetSync_n_24,logiecResetSync_n_25}),
-        .SyncSignalSyncFF_S_reg_rep__24(logiecResetSync_n_26),
-        .SyncSignalSyncFF_S_reg_rep__25(logiecResetSync_n_27),
-        .SyncSignalSyncFF_S_reg_rep__26(logiecResetSync_n_28),
-        .SyncSignalSyncFF_S_reg_rep__4(logiecResetSync_n_2),
-        .SyncSignalSyncFF_S_reg_rep__5(logiecResetSync_n_8),
+        .SyncSignalSyncFF_S_reg_rep__10(logiecResetSync_n_13),
+        .SyncSignalSyncFF_S_reg_rep__11(logiecResetSync_n_14),
+        .SyncSignalSyncFF_S_reg_rep__12(logiecResetSync_n_15),
+        .SyncSignalSyncFF_S_reg_rep__13(logiecResetSync_n_16),
+        .SyncSignalSyncFF_S_reg_rep__14(logiecResetSync_n_17),
+        .SyncSignalSyncFF_S_reg_rep__15({logiecResetSync_n_18,logiecResetSync_n_19}),
+        .SyncSignalSyncFF_S_reg_rep__17({logiecResetSync_n_20,logiecResetSync_n_21}),
+        .SyncSignalSyncFF_S_reg_rep__19(logiecResetSync_n_22),
+        .SyncSignalSyncFF_S_reg_rep__20({logiecResetSync_n_23,logiecResetSync_n_24}),
+        .SyncSignalSyncFF_S_reg_rep__23({logiecResetSync_n_25,logiecResetSync_n_26}),
+        .SyncSignalSyncFF_S_reg_rep__24(logiecResetSync_n_27),
+        .SyncSignalSyncFF_S_reg_rep__25(logiecResetSync_n_28),
+        .SyncSignalSyncFF_S_reg_rep__26(logiecResetSync_n_29),
+        .SyncSignalSyncFF_S_reg_rep__4(logiecResetSync_n_3),
+        .SyncSignalSyncFF_S_reg_rep__5(logiecResetSync_n_9),
         .\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[DiffBn_D][14]_0 (\BiasConfigReg_DP_reg[DiffBn_D] ),
         .\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[LocalBufBn_D][14]_0 (\BiasConfigReg_DP_reg[LocalBufBn_D] ),
         .\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[PadFollBn_D][14]_0 (\BiasConfigReg_DP_reg[PadFollBn_D] ),
         .\davis346ChipBias.timingReg2Support.DAVIS128BiasConfigReg_D_reg[SSP_D][15]_0 (\BiasConfigReg_DP_reg[SSP_D] ));
   brd_testAERDVSSM_0_0_SimpleRegister__parameterized0 deviceIsMasterBuffer
-       (.AR(logiecResetSync_n_2),
+       (.AR(logiecResetSync_n_3),
         .DeviceIsMaster_SO(DeviceIsMaster_S),
         .LogicClk_CI(LogicClk_CI),
         .O131(DeviceIsMasterBuffer_S));
   brd_testAERDVSSM_0_0_FIFO dvsAerFifo
-       (.AR(logiecResetSync_n_2),
+       (.AR(logiecResetSync_n_3),
         .D(StateTimestampNext_DN),
         .\DVSAERFifoControlIn_S[ReadSide][Read_S] (\DVSAERFifoControlIn_S[ReadSide][Read_S] ),
         .\FifoControl_SI[WriteSide][Write_S] (\DVSAERFifoControlIn_S[WriteSide][Write_S] ),
@@ -57563,9 +57529,10 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
         .Q(State_DP),
         .\State_DP_reg[1] (dvsAerFifo_n_16),
         .\State_DP_reg[1]_0 (multiplexerSM_n_100),
-        .SyncSignalSyncFF_S_reg_rep__2({logiecResetSync_n_6,logiecResetSync_n_7}));
+        .SyncSignalSyncFF_S_reg_rep__2({logiecResetSync_n_6,logiecResetSync_n_8}));
   brd_testAERDVSSM_0_0_DVSAERStateMachine dvsAerSMTest
        (.AR({logiecResetSync_n_32,logiecResetSync_n_33,logiecResetSync_n_34}),
+        .AS({logiecResetSync_n_0,LogicReset_R}),
         .DVSAERAck_SBO(DVSAERAck_SBO),
         .\DVSAERConfigInfoOut_DO[StatisticsEventsColumn_D] (\DVSAERConfigInfoOutReg2_D[StatisticsEventsColumn_D] ),
         .\DVSAERConfigInfoOut_DO[StatisticsEventsDropped_D] (\DVSAERConfigInfoOutReg2_D[StatisticsEventsDropped_D] ),
@@ -57601,12 +57568,12 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
         .O133(\DVSAERConfigReg2_D_reg[WaitOnTransferStall_S_n_0_] ),
         .O134(\DVSAERConfigReg2_D_reg[ExternalAERControl_S_n_0_] ),
         .Q({DVSAERFifoDataIn_D[13:12],DVSAERFifoDataIn_D[8:0]}),
-        .SyncReset_RO(LogicReset_R),
-        .SyncSignalSyncFF_S_reg_rep__28(logiecResetSync_n_30),
-        .SyncSignalSyncFF_S_reg_rep__29(logiecResetSync_n_31),
-        .SyncSignalSyncFF_S_reg_rep__3({logiecResetSync_n_7,logiecResetSync_n_2}));
+        .SyncSignalSyncFF_S_reg_rep__28(logiecResetSync_n_31),
+        .SyncSignalSyncFF_S_reg_rep__3(logiecResetSync_n_8),
+        .SyncSignalSyncFF_S_reg_rep__4(logiecResetSync_n_3));
   brd_testAERDVSSM_0_0_DVSAERSPIConfig dvsaerSPIConfig
-       (.AR({logiecResetSync_n_4,logiecResetSync_n_10}),
+       (.AR({logiecResetSync_n_4,logiecResetSync_n_5,logiecResetSync_n_2}),
+        .AS(logiecResetSync_n_11),
         .ConfigParamAddress_DO(ConfigParamAddress_D),
         .ConfigParamInput_DO(ConfigParamInput_D[8:0]),
         .D(p_0_in_1),
@@ -57666,39 +57633,39 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
         .\ParamInput_DP_reg[0]_1 (spiConfiguration_n_115),
         .\ParamOutput_DP_reg[31] (DVSAERConfigParamOutput_D),
         .Q(\DVSAERConfig_D[FilterPixel0Row_D] ),
-        .SyncSignalSyncFF_S_reg_rep__0({logiecResetSync_n_3,logiecResetSync_n_5}),
-        .SyncSignalSyncFF_S_reg_rep__4(logiecResetSync_n_2));
+        .SyncSignalSyncFF_S_reg_rep__1(logiecResetSync_n_7),
+        .SyncSignalSyncFF_S_reg_rep__4(logiecResetSync_n_3));
   brd_testAERDVSSM_0_0_ResetSynchronizer logiecResetSync
-       (.AR({logiecResetSync_n_1,logiecResetSync_n_2,logiecResetSync_n_3,logiecResetSync_n_4}),
-        .\BiasConfigReg_DP_reg[AdcRefLow_D][3] (logiecResetSync_n_16),
-        .\BiasConfigReg_DP_reg[AdcRefLow_D][8] ({logiecResetSync_n_17,logiecResetSync_n_18}),
-        .\BiasConfigReg_DP_reg[AdcTestVoltage_D][1] (logiecResetSync_n_15),
-        .\BiasConfigReg_DP_reg[LcolTimeoutBn_D][14] (logiecResetSync_n_13),
-        .\BiasConfigReg_DP_reg[PrBp_D][0] (logiecResetSync_n_14),
-        .\BiasConfigReg_DP_reg[SSN_D][15] ({logiecResetSync_n_8,logiecResetSync_n_9}),
-        .\BiasConfigReg_D_reg[AEPuXBp_D][10] ({logiecResetSync_n_21,logiecResetSync_n_22}),
-        .\BiasConfigReg_D_reg[PrSFBp_D][1] ({logiecResetSync_n_19,logiecResetSync_n_20}),
-        .\Count_DP_reg[13] ({logiecResetSync_n_24,logiecResetSync_n_25}),
+       (.AR({logiecResetSync_n_2,logiecResetSync_n_3,logiecResetSync_n_4,logiecResetSync_n_5}),
+        .AS({logiecResetSync_n_0,LogicReset_R}),
+        .\BiasConfigReg_DP_reg[AdcRefHigh_D][2] (logiecResetSync_n_17),
+        .\BiasConfigReg_DP_reg[AdcRefLow_D][8] ({logiecResetSync_n_18,logiecResetSync_n_19}),
+        .\BiasConfigReg_DP_reg[ColSelLowBn_D][13] (logiecResetSync_n_14),
+        .\BiasConfigReg_DP_reg[IFRefrBn_D][12] (logiecResetSync_n_13),
+        .\BiasConfigReg_DP_reg[PrBp_D][14] (logiecResetSync_n_16),
+        .\BiasConfigReg_DP_reg[ReadoutBufBp_D][14] (logiecResetSync_n_15),
+        .\BiasConfigReg_DP_reg[SSN_D][15] ({logiecResetSync_n_9,logiecResetSync_n_10}),
+        .\BiasConfigReg_D_reg[AEPdBn_D][0] (logiecResetSync_n_22),
+        .\BiasConfigReg_D_reg[BiasBuffer_D][12] ({logiecResetSync_n_23,logiecResetSync_n_24}),
+        .\BiasConfigReg_D_reg[PrSFBp_D][6] ({logiecResetSync_n_20,logiecResetSync_n_21}),
+        .\Count_DP_reg[13] ({logiecResetSync_n_25,logiecResetSync_n_26}),
         .\Count_DP_reg[31] ({logiecResetSync_n_32,logiecResetSync_n_33,logiecResetSync_n_34}),
-        .\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][1] (logiecResetSync_n_30),
+        .\DVSAERConfigReg_D_reg[FilterROIEndColumn_D][1] (logiecResetSync_n_31),
+        .\Divider_DP_reg[0] ({logiecResetSync_n_6,logiecResetSync_n_7}),
+        .LatchInputReg_SP_reg(logiecResetSync_n_12),
         .LogicClk_CI(LogicClk_CI),
-        .Memory_SP_reg(logiecResetSync_n_7),
-        .\Output_SO_reg[0] (logiecResetSync_n_10),
-        .\Output_SO_reg[0]_0 (logiecResetSync_n_31),
-        .\ParamInput_DP_reg[13] ({logiecResetSync_n_11,logiecResetSync_n_12}),
-        .\PreviousData_DP_reg[13] (logiecResetSync_n_26),
-        .\PreviousData_DP_reg[15] (logiecResetSync_n_23),
-        .\PreviousData_DP_reg[2] ({logiecResetSync_n_28,logiecResetSync_n_29}),
-        .\PreviousData_DP_reg[4] (logiecResetSync_n_27),
+        .Memory_SP_reg(logiecResetSync_n_8),
+        .\PreviousData_DP_reg[0] (logiecResetSync_n_27),
+        .\PreviousData_DP_reg[2] ({logiecResetSync_n_29,logiecResetSync_n_30}),
+        .\PreviousData_DP_reg[6] (logiecResetSync_n_28),
         .Reset_RI(Reset_RI),
-        .SyncReset_RO(LogicReset_R),
-        .\SyncSignalSyncFF_S_reg[0] ({logiecResetSync_n_5,logiecResetSync_n_6}));
+        .\SyncSignalSyncFF_S_reg[0] (logiecResetSync_n_11));
   brd_testAERDVSSM_0_0_MultiplexerStateMachine multiplexerSM
        (.AERSMFifoAlmostFull_AI(AERSMFifoAlmostFull_AI),
         .AERSMFifoFull_AI(AERSMFifoFull_AI),
         .AERSMOutFifoData_DO(AERSMOutFifoData_DO),
         .AERSMOutFifoWrite_SO(AERSMOutFifoWrite_SO),
-        .AR({logiecResetSync_n_3,logiecResetSync_n_5}),
+        .AR({logiecResetSync_n_4,logiecResetSync_n_7}),
         .D(\MultiplexerConfigInfoOutReg2_D[StatisticsExtInputDropped_D] ),
         .\DVSAERFifoControlIn_S[ReadSide][Read_S] (\DVSAERFifoControlIn_S[ReadSide][Read_S] ),
         .FifoData_DO(DVSAERFifoDataOut_D),
@@ -57719,10 +57686,10 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
         .SyncInClockSync_CO(SyncInClockSync_C),
         .SyncOutClock_CO(SyncOutClock_CO),
         .SyncReset_RO(LogicReset_R),
-        .SyncSignalSyncFF_S_reg_rep__2(logiecResetSync_n_6),
-        .SyncSignalSyncFF_S_reg_rep__3({logiecResetSync_n_7,logiecResetSync_n_2}));
+        .SyncSignalSyncFF_S_reg_rep__2({logiecResetSync_n_6,logiecResetSync_n_8}),
+        .SyncSignalSyncFF_S_reg_rep__4(logiecResetSync_n_3));
   brd_testAERDVSSM_0_0_MultiplexerSPIConfig multiplexerSPIConfig
-       (.AR({logiecResetSync_n_4,logiecResetSync_n_10}),
+       (.AR({logiecResetSync_n_3,logiecResetSync_n_4,logiecResetSync_n_5,logiecResetSync_n_11}),
         .D(p_0_in_2),
         .LogicClk_CI(LogicClk_CI),
         .\MultiplexerConfigReg_DP_reg[DropExtInputOnTransferStall_S]_0 (multiplexerSPIConfig_n_4),
@@ -57737,11 +57704,9 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
         .\ParamInput_DP_reg[0]_2 (spiConfiguration_n_58),
         .\ParamInput_DP_reg[0]_3 (spiConfiguration_n_59),
         .\ParamInput_DP_reg[0]_4 (spiConfiguration_n_60),
-        .Q(MultiplexerConfigParamOutput_D),
-        .SyncSignalSyncFF_S_reg_rep__4({logiecResetSync_n_2,logiecResetSync_n_3}),
-        .SyncSignalSyncFF_S_reg_rep__6(logiecResetSync_n_9));
+        .Q(MultiplexerConfigParamOutput_D));
   brd_testAERDVSSM_0_0_SPIConfig spiConfiguration
-       (.AR({logiecResetSync_n_1,logiecResetSync_n_2,logiecResetSync_n_3,logiecResetSync_n_4}),
+       (.AR({logiecResetSync_n_2,logiecResetSync_n_3,logiecResetSync_n_4,logiecResetSync_n_5}),
         .\BiasConfigReg_DP_reg[AEPdBn_D][0] (\davis346ChipBias.davis346ChipBiasSPIConfig/BiasConfigReg_DP[AEPdBn_D] ),
         .\BiasConfigReg_DP_reg[AEPuXBp_D][0] (\davis346ChipBias.davis346ChipBiasSPIConfig/BiasConfigReg_DP[AEPuXBp_D] ),
         .\BiasConfigReg_DP_reg[AEPuYBp_D][0] (\davis346ChipBias.davis346ChipBiasSPIConfig/BiasConfigReg_DP[AEPuYBp_D] ),
@@ -57913,9 +57878,9 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
         .SPISlaveSelectSync_SB(SPISlaveSelectSync_SB),
         .\ShiftReg_DP_reg[0] (State_DP_0),
         .\State_DP_reg[0]_0 (\spiInputShiftRegister/ShiftReg_DN ),
-        .SyncSignalSyncFF_S_reg_rep__9(logiecResetSync_n_11),
-        .\SystemInfoOutput_DP_reg[6] (p_0_in),
-        .\SystemInfoOutput_DP_reg[6]_0 (SystemInfoConfigParamOutput_D));
+        .SyncSignalSyncFF_S_reg_rep__9(logiecResetSync_n_12),
+        .\SystemInfoOutput_DP_reg[9] ({p_0_in[9],p_0_in[6],p_0_in[4],p_0_in[2],p_0_in[0]}),
+        .\SystemInfoOutput_DP_reg[9]_0 ({SystemInfoConfigParamOutput_D[9],SystemInfoConfigParamOutput_D[6],SystemInfoConfigParamOutput_D[4],SystemInfoConfigParamOutput_D[2],SystemInfoConfigParamOutput_D[0]}));
   brd_testAERDVSSM_0_0_LogicClockSynchronizer syncInputsToLogicClock
        (.LogicClk_CI(LogicClk_CI),
         .SPIClockEdgeDetectorReg_S(SPIClockEdgeDetectorReg_S),
@@ -57928,15 +57893,15 @@ module brd_testAERDVSSM_0_0_testAERDVSSM
         .\State_DP_reg[0] (State_DP_0),
         .SyncInClockSync_CO(SyncInClockSync_C),
         .SyncInClock_AI(SyncInClock_AI),
-        .SyncSignalSyncFF_S_reg_rep__1(logiecResetSync_n_5),
-        .SyncSignalSyncFF_S_reg_rep__6(logiecResetSync_n_9));
+        .SyncSignalSyncFF_S_reg_rep__1(logiecResetSync_n_7),
+        .SyncSignalSyncFF_S_reg_rep__7(logiecResetSync_n_11));
   brd_testAERDVSSM_0_0_SystemInfoSPIConfig systemInfoSPIConfig
-       (.AR({logiecResetSync_n_4,logiecResetSync_n_10,logiecResetSync_n_1}),
-        .D(p_0_in),
+       (.AR({logiecResetSync_n_2,logiecResetSync_n_5}),
+        .D({p_0_in[9],p_0_in[6],p_0_in[4],p_0_in[2],p_0_in[0]}),
         .LogicClk_CI(LogicClk_CI),
         .O131(DeviceIsMasterBuffer_S),
         .Output_SO(Output_SO),
-        .Q(SystemInfoConfigParamOutput_D));
+        .Q({SystemInfoConfigParamOutput_D[9],SystemInfoConfigParamOutput_D[6],SystemInfoConfigParamOutput_D[4],SystemInfoConfigParamOutput_D[2],SystemInfoConfigParamOutput_D[0]}));
 endmodule
 
 (* ORIG_REF_NAME = "unimacro_FIFO_SYNC_MACRO" *) 

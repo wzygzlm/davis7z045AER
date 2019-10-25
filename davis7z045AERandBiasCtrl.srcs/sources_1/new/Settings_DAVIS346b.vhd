@@ -7,43 +7,40 @@ use work.ChipGeometry.all;
 use work.DAVIS346b.all;
 
 package Settings is
-	constant DEVICE_FAMILY : string := "Zynq7000";
+	constant DEVICE_FAMILY : string := "zynq_7000";
 
-	constant USB_CLOCK_FREQ         : integer := 80; -- 50, 80 or 100 are viable settings, depending on FX3 and routing.
+	constant CLOCK_DEVIATION_FACTOR : real := 1.000;
+
+	constant USB_CLOCK_FREQ         : real    := 100.00; -- 50, 80 or 100 are viable settings, depending on FX3 and routing.
 	constant USB_FIFO_WIDTH         : integer := 16;
 	constant USB_BURST_WRITE_LENGTH : integer := 8;
 
-	constant LOGIC_CLOCK_FREQ : integer := 100; -- PLL can generate between 5 and 500 MHz here.
+	constant LOGIC_CLOCK_FREQ : real := 100.00; -- PLL can generate between 5 and 500 MHz here.
 
-	constant ADC_CLOCK_FREQ : integer := 60;
-
-	-- FX3 clock correction. Off by factor 1.008.
-	constant CLOCK_CORRECTION_FACTOR : real := 1.000;
-	constant USB_CLOCK_FREQ_REAL     : real := real(USB_CLOCK_FREQ) * CLOCK_CORRECTION_FACTOR;
-	constant LOGIC_CLOCK_FREQ_REAL   : real := real(LOGIC_CLOCK_FREQ) * CLOCK_CORRECTION_FACTOR;
-	constant ADC_CLOCK_FREQ_REAL     : real := real(ADC_CLOCK_FREQ) * CLOCK_CORRECTION_FACTOR;
+	constant ADC_CLOCK_FREQ : real := 100.00;
 
 	constant DVS_BAFILTER_ENABLE        : boolean := true;
-	constant DVS_BAFILTER_SUBSAMPLE_COL : integer := 1;
-	constant DVS_BAFILTER_SUBSAMPLE_ROW : integer := 1;
+	constant DVS_BAFILTER_SUBSAMPLE_COL : integer := 2;
+	constant DVS_BAFILTER_SUBSAMPLE_ROW : integer := 2;
 
 	constant USBLOGIC_FIFO_SIZE               : integer := 8192;
 	constant USBLOGIC_FIFO_ALMOST_EMPTY_SIZE  : integer := USB_BURST_WRITE_LENGTH;
 	constant USBLOGIC_FIFO_ALMOST_FULL_SIZE   : integer := 2; -- EVENT + TS
 	constant DVSAER_FIFO_SIZE                 : integer := 2048;
-	constant DVSAER_FIFO_ALMOST_EMPTY_SIZE    : integer := 4;
-	constant DVSAER_FIFO_ALMOST_FULL_SIZE     : integer := 14; -- FILTERS REG
+	constant DVSAER_FIFO_ALMOST_EMPTY_SIZE    : integer := 8;
+	constant DVSAER_FIFO_ALMOST_FULL_SIZE     : integer := 18; -- FILTERS REG
 	constant APSADC_FIFO_SIZE                 : integer := 2048;
 	constant APSADC_FIFO_ALMOST_EMPTY_SIZE    : integer := 16;
 	constant APSADC_FIFO_ALMOST_FULL_SIZE     : integer := 2; -- FIFOOUT REG
 	constant IMU_FIFO_SIZE                    : integer := 68; -- four samples (4x17)
-	constant IMU_FIFO_ALMOST_EMPTY_SIZE       : integer := 17; -- one sample (1x17)
+	constant IMU_FIFO_ALMOST_EMPTY_SIZE       : integer := 1; -- drain all
 	constant IMU_FIFO_ALMOST_FULL_SIZE        : integer := 17; -- one sample (1x17)
 	constant EXT_INPUT_FIFO_SIZE              : integer := 128;
-	constant EXT_INPUT_FIFO_ALMOST_EMPTY_SIZE : integer := 2;
+	constant EXT_INPUT_FIFO_ALMOST_EMPTY_SIZE : integer := 1; -- drain all
 	constant EXT_INPUT_FIFO_ALMOST_FULL_SIZE  : integer := 2; -- FIFOOUT REG
 
-	constant LOGIC_VERSION : unsigned(13 downto 0) := to_unsigned(18, 14);
+	constant LOGIC_VERSION : unsigned(4 downto 0) := to_unsigned(18, 5);
+	constant LOGIC_PATCH   : unsigned(2 downto 0) := to_unsigned(1, 3);
 
 	-- The idea behing common-source/ is to have generic implementations of features, that can
 	-- easily be adapted to a specific platform+chip combination. As such, only Settings.vhd and

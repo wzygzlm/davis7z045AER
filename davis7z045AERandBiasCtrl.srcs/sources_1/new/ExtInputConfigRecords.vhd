@@ -71,7 +71,7 @@ package ExtInputConfigRecords is
 		HasGenerator_S                => '0',
 		GeneratePulsePolarity_S       => '1',
 		GeneratePulseInterval_D       => to_unsigned(integer(LOGIC_CLOCK_FREQ), EXTINPUT_MAX_TIME_SIZE),
-		GeneratePulseLength_D         => to_unsigned(integer(LOGIC_CLOCK_FREQ / 2), EXTINPUT_MAX_TIME_SIZE),
+		GeneratePulseLength_D         => to_unsigned(integer(LOGIC_CLOCK_FREQ / 2.0), EXTINPUT_MAX_TIME_SIZE),
 		GenerateInjectOnRisingEdge_S  => '0',
 		GenerateInjectOnFallingEdge_S => '0');
 end package ExtInputConfigRecords;
