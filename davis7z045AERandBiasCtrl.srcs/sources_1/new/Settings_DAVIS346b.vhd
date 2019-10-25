@@ -18,7 +18,7 @@ package Settings is
 	constant ADC_CLOCK_FREQ : integer := 60;
 
 	-- FX3 clock correction. Off by factor 1.008.
-	constant CLOCK_CORRECTION_FACTOR : real := 1.008;
+	constant CLOCK_CORRECTION_FACTOR : real := 1.000;
 	constant USB_CLOCK_FREQ_REAL     : real := real(USB_CLOCK_FREQ) * CLOCK_CORRECTION_FACTOR;
 	constant LOGIC_CLOCK_FREQ_REAL   : real := real(LOGIC_CLOCK_FREQ) * CLOCK_CORRECTION_FACTOR;
 	constant ADC_CLOCK_FREQ_REAL     : real := real(ADC_CLOCK_FREQ) * CLOCK_CORRECTION_FACTOR;

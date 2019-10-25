@@ -14,4 +14,5 @@
 *.sdk/BOOT.bin
 *.sdk/image.ub
 *.sdk
-
+*.srcs/sources_1/bd/brd/ipshared
+*.srcs/sources_1/bd/brd/sim
