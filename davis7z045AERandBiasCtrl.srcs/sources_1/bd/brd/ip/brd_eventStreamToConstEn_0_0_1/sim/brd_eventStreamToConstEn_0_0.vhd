@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:hls:eventStreamToConstEncntFrameStream:1.0
--- IP Revision: 1910251822
+-- IP Revision: 1910281104
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;

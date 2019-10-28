@@ -665,6 +665,7 @@ int main()
     XEventstreamtoconstencntframestream_Set_configRegs_V(&etf_inst, sliceDuration);
     XEventstreamtoconstencntframestream_Set_ctrl_V(&etf_inst, configEn);
     XEventstreamtoconstencntframestream_Set_configRegs_V(&etf_inst, sliceDuration);
+    XGpio_DiscreteWrite(&Gpio, 1, 0xa116);
 
 	/* Start of VDMA Configuration */
     Xil_Out32 (XPAR_AXI_VDMA_0_BASEADDR + 0x30, 0x8B);

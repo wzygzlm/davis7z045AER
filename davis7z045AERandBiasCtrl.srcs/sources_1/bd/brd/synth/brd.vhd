@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
---Date        : Fri Oct 25 19:54:30 2019
+--Date        : Mon Oct 28 11:06:06 2019
 --Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 --Command     : generate_target brd.bd
 --Design      : brd
@@ -1649,7 +1649,7 @@ entity brd is
     vid_vsync : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of brd : entity is "brd,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=brd,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=29,numReposBlks=23,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=2,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=13,da_clkrst_cnt=3,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of brd : entity is "brd,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=brd,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=28,numReposBlks=22,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=2,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=13,da_clkrst_cnt=3,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of brd : entity is "brd.hwdef";
 end brd;
@@ -2121,15 +2121,68 @@ architecture STRUCTURE of brd is
     SLOT_2_AXIS_tuser : in STD_LOGIC_VECTOR ( 1 downto 0 );
     SLOT_2_AXIS_tvalid : in STD_LOGIC;
     SLOT_2_AXIS_tready : in STD_LOGIC;
-    resetn : in STD_LOGIC
+    resetn : in STD_LOGIC;
+    probe9 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component brd_system_ila_0_0;
-  component brd_system_ila_1_1 is
+  component brd_testAERDVSSM_0_0 is
   port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 )
+    USBClock_CI : in STD_LOGIC;
+    LogicClk_CI : in STD_LOGIC;
+    ADCClk_CI : in STD_LOGIC;
+    Reset_RI : in STD_LOGIC;
+    SPISlaveSelect_ABI : in STD_LOGIC;
+    SPIClock_AI : in STD_LOGIC;
+    SPIMOSI_AI : in STD_LOGIC;
+    SPIMISO_DZO : out STD_LOGIC;
+    ChipBiasEnable_SO : out STD_LOGIC;
+    ChipBiasDiagSelect_SO : out STD_LOGIC;
+    ChipBiasAddrSelect_SBO : out STD_LOGIC;
+    ChipBiasClock_CBO : out STD_LOGIC;
+    ChipBiasBitIn_DO : out STD_LOGIC;
+    ChipBiasLatch_SBO : out STD_LOGIC;
+    DVSAERData_AI : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    DVSAERReq_ABI : in STD_LOGIC;
+    DVSAERAck_SBO : out STD_LOGIC;
+    DVSAERReset_SBO : out STD_LOGIC;
+    IMUClock_CZO : out STD_LOGIC;
+    IMUData_DZIO : inout STD_LOGIC;
+    IMUInterrupt_AI : in STD_LOGIC;
+    IMUFSync_SO : out STD_LOGIC;
+    SyncOutClock_CO : out STD_LOGIC;
+    SyncOutSignal_SO : out STD_LOGIC;
+    SyncInClock_AI : in STD_LOGIC;
+    SyncInSignal_AI : in STD_LOGIC;
+    SyncInSignal1_AI : in STD_LOGIC;
+    SyncInSignal2_AI : in STD_LOGIC;
+    AERSMFifoAlmostFull_AI : in STD_LOGIC;
+    AERSMFifoFull_AI : in STD_LOGIC;
+    AERSMOutFifoWrite_SO : out STD_LOGIC;
+    AERSMOutFifoData_DO : out STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  end component brd_system_ila_1_1;
+  end component brd_testAERDVSSM_0_0;
+  component brd_EVRawStreamToXYTSStr_0_0 is
+  port (
+    ap_clk : in STD_LOGIC;
+    ap_rst_n : in STD_LOGIC;
+    ap_start : in STD_LOGIC;
+    ap_done : out STD_LOGIC;
+    ap_idle : out STD_LOGIC;
+    ap_ready : out STD_LOGIC;
+    eventFIFOIn_V_dout : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    eventFIFOIn_V_empty_n : in STD_LOGIC;
+    eventFIFOIn_V_read : out STD_LOGIC;
+    xStreamOut_V_V_TVALID : out STD_LOGIC;
+    xStreamOut_V_V_TREADY : in STD_LOGIC;
+    xStreamOut_V_V_TDATA : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    yStreamOut_V_V_TVALID : out STD_LOGIC;
+    yStreamOut_V_V_TREADY : in STD_LOGIC;
+    yStreamOut_V_V_TDATA : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    tsStreamOut_V_V_TVALID : out STD_LOGIC;
+    tsStreamOut_V_V_TREADY : in STD_LOGIC;
+    tsStreamOut_V_V_TDATA : out STD_LOGIC_VECTOR ( 15 downto 0 )
+  );
+  end component brd_EVRawStreamToXYTSStr_0_0;
   component brd_eventStreamToConstEn_0_0 is
   port (
     count_V_ap_vld : out STD_LOGIC;
@@ -2186,64 +2239,6 @@ architecture STRUCTURE of brd is
     skipFlgOutput_V : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component brd_eventStreamToConstEn_0_0;
-  component brd_EVRawStreamToXYTSStr_0_0 is
-  port (
-    ap_clk : in STD_LOGIC;
-    ap_rst_n : in STD_LOGIC;
-    ap_start : in STD_LOGIC;
-    ap_done : out STD_LOGIC;
-    ap_idle : out STD_LOGIC;
-    ap_ready : out STD_LOGIC;
-    eventFIFOIn_V_dout : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    eventFIFOIn_V_empty_n : in STD_LOGIC;
-    eventFIFOIn_V_read : out STD_LOGIC;
-    xStreamOut_V_V_TVALID : out STD_LOGIC;
-    xStreamOut_V_V_TREADY : in STD_LOGIC;
-    xStreamOut_V_V_TDATA : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    yStreamOut_V_V_TVALID : out STD_LOGIC;
-    yStreamOut_V_V_TREADY : in STD_LOGIC;
-    yStreamOut_V_V_TDATA : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    tsStreamOut_V_V_TVALID : out STD_LOGIC;
-    tsStreamOut_V_V_TREADY : in STD_LOGIC;
-    tsStreamOut_V_V_TDATA : out STD_LOGIC_VECTOR ( 15 downto 0 )
-  );
-  end component brd_EVRawStreamToXYTSStr_0_0;
-  component brd_testAERDVSSM_0_0 is
-  port (
-    USBClock_CI : in STD_LOGIC;
-    LogicClk_CI : in STD_LOGIC;
-    ADCClk_CI : in STD_LOGIC;
-    Reset_RI : in STD_LOGIC;
-    SPISlaveSelect_ABI : in STD_LOGIC;
-    SPIClock_AI : in STD_LOGIC;
-    SPIMOSI_AI : in STD_LOGIC;
-    SPIMISO_DZO : out STD_LOGIC;
-    ChipBiasEnable_SO : out STD_LOGIC;
-    ChipBiasDiagSelect_SO : out STD_LOGIC;
-    ChipBiasAddrSelect_SBO : out STD_LOGIC;
-    ChipBiasClock_CBO : out STD_LOGIC;
-    ChipBiasBitIn_DO : out STD_LOGIC;
-    ChipBiasLatch_SBO : out STD_LOGIC;
-    DVSAERData_AI : in STD_LOGIC_VECTOR ( 10 downto 0 );
-    DVSAERReq_ABI : in STD_LOGIC;
-    DVSAERAck_SBO : out STD_LOGIC;
-    DVSAERReset_SBO : out STD_LOGIC;
-    IMUClock_CZO : out STD_LOGIC;
-    IMUData_DZIO : inout STD_LOGIC;
-    IMUInterrupt_AI : in STD_LOGIC;
-    IMUFSync_SO : out STD_LOGIC;
-    SyncOutClock_CO : out STD_LOGIC;
-    SyncOutSignal_SO : out STD_LOGIC;
-    SyncInClock_AI : in STD_LOGIC;
-    SyncInSignal_AI : in STD_LOGIC;
-    SyncInSignal1_AI : in STD_LOGIC;
-    SyncInSignal2_AI : in STD_LOGIC;
-    AERSMFifoAlmostFull_AI : in STD_LOGIC;
-    AERSMFifoFull_AI : in STD_LOGIC;
-    AERSMOutFifoWrite_SO : out STD_LOGIC;
-    AERSMOutFifoData_DO : out STD_LOGIC_VECTOR ( 15 downto 0 )
-  );
-  end component brd_testAERDVSSM_0_0;
   signal DVSAERData_AI_0_1 : STD_LOGIC_VECTOR ( 10 downto 0 );
   signal DVSAERReq_ABI_0_1 : STD_LOGIC;
   signal EVRawStreamToXYTSStr_0_eventFIFOIn_V_read : STD_LOGIC;
@@ -2549,8 +2544,6 @@ architecture STRUCTURE of brd is
   signal testAERDVSSM_0_SPIMISO_DZO : STD_LOGIC;
   signal testAERDVSSM_0_SyncOutClock_CO : STD_LOGIC;
   signal testAERDVSSM_0_SyncOutSignal_SO : STD_LOGIC;
-  signal tsStreamOut_V_V_TDATA : STD_LOGIC_VECTOR ( 15 downto 0 );
-  signal tsStreamOut_V_V_TVALID : STD_LOGIC;
   signal util_vector_logic_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   attribute DEBUG of util_vector_logic_0_Res : signal is "true";
   attribute MARK_DEBUG of util_vector_logic_0_Res : signal is std.standard.true;
@@ -2571,6 +2564,8 @@ architecture STRUCTURE of brd is
   attribute MARK_DEBUG of vgaEn_V : signal is std.standard.true;
   signal xlslice_0_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlslice_1_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_EVRawStreamToXYTSStr_0_tsStreamOut_V_V_TVALID_UNCONNECTED : STD_LOGIC;
+  signal NLW_EVRawStreamToXYTSStr_0_tsStreamOut_V_V_TDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal NLW_axi_gpio_0_gpio2_io_i_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 1 );
   signal NLW_axi_vdma_0_mm2s_introut_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_vdma_0_s2mm_introut_UNCONNECTED : STD_LOGIC;
@@ -2699,9 +2694,9 @@ EVRawStreamToXYTSStr_0: component brd_EVRawStreamToXYTSStr_0_0
       eventFIFOIn_V_dout(15 downto 0) => fifo_generator_0_dout(15 downto 0),
       eventFIFOIn_V_empty_n => util_vector_logic_0_Res(0),
       eventFIFOIn_V_read => EVRawStreamToXYTSStr_0_eventFIFOIn_V_read,
-      tsStreamOut_V_V_TDATA(15 downto 0) => tsStreamOut_V_V_TDATA(15 downto 0),
+      tsStreamOut_V_V_TDATA(15 downto 0) => NLW_EVRawStreamToXYTSStr_0_tsStreamOut_V_V_TDATA_UNCONNECTED(15 downto 0),
       tsStreamOut_V_V_TREADY => '1',
-      tsStreamOut_V_V_TVALID => tsStreamOut_V_V_TVALID,
+      tsStreamOut_V_V_TVALID => NLW_EVRawStreamToXYTSStr_0_tsStreamOut_V_V_TVALID_UNCONNECTED,
       xStreamOut_V_V_TDATA(15 downto 0) => EVRawStreamToXYTSStr_0_xStreamOut_V_V_TDATA(15 downto 0),
       xStreamOut_V_V_TREADY => EVRawStreamToXYTSStr_0_xStreamOut_V_V_TREADY,
       xStreamOut_V_V_TVALID => EVRawStreamToXYTSStr_0_xStreamOut_V_V_TVALID,
@@ -3276,12 +3271,8 @@ system_ila_0: component brd_system_ila_0_0
       probe6(15 downto 0) => hCnt_V(15 downto 0),
       probe7(0) => vgaEn_V(0),
       probe8(63 downto 0) => count_V(63 downto 0),
+      probe9(0) => util_vector_logic_0_Res(0),
       resetn => proc_sys_reset_0_peripheral_aresetn(0)
-    );
-system_ila_1: component brd_system_ila_1_1
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe0(0) => util_vector_logic_0_Res(0)
     );
 testAERDVSSM_0: component brd_testAERDVSSM_0_0
      port map (
