@@ -30,18 +30,19 @@ entity bd_13e4 is
     clk : in STD_LOGIC;
     probe0 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    probe10 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     probe4 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe5 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    probe7 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe6 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe7 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe8 : in STD_LOGIC_VECTOR ( 63 downto 0 );
     probe9 : in STD_LOGIC_VECTOR ( 0 to 0 );
     resetn : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of bd_13e4 : entity is "bd_13e4,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=bd_13e4,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=2,numReposBlks=2,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=SBD,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of bd_13e4 : entity is "bd_13e4,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=bd_13e4,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=2,numReposBlks=2,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=SBD,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of bd_13e4 : entity is "brd_system_ila_0_0.hwdef";
 end bd_13e4;
@@ -52,31 +53,32 @@ architecture STRUCTURE of bd_13e4 is
     clk : in STD_LOGIC;
     probe0 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     probe4 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe5 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    probe7 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe6 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe7 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe8 : in STD_LOGIC_VECTOR ( 63 downto 0 );
     probe9 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe10 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    probe11 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe10 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe11 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe12 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe13 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe14 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    probe15 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe14 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe15 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe16 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe17 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe18 : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    probe19 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe18 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe19 : in STD_LOGIC_VECTOR ( 23 downto 0 );
     probe20 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe21 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe21 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe22 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe23 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe24 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe23 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe24 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe25 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe26 : in STD_LOGIC_VECTOR ( 0 to 0 )
+    probe26 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe27 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component bd_13e4_ila_lib_0;
   component bd_13e4_g_inst_0 is
@@ -155,13 +157,14 @@ architecture STRUCTURE of bd_13e4 is
   signal net_slot_2_axis_tuser : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal net_slot_2_axis_tvalid : STD_LOGIC;
   signal probe0_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal probe10_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal probe1_1 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal probe2_1 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal probe3_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal probe2_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal probe3_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal probe4_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal probe5_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
-  signal probe6_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
-  signal probe7_1 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal probe6_1 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal probe7_1 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal probe8_1 : STD_LOGIC_VECTOR ( 63 downto 0 );
   signal probe9_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal resetn_1 : STD_LOGIC;
@@ -211,13 +214,14 @@ begin
   Conn_TVALID <= SLOT_0_AXIS_tvalid;
   clk_1 <= clk;
   probe0_1(15 downto 0) <= probe0(15 downto 0);
+  probe10_1(0) <= probe10(0);
   probe1_1(0) <= probe1(0);
-  probe2_1(0) <= probe2(0);
-  probe3_1(15 downto 0) <= probe3(15 downto 0);
+  probe2_1(15 downto 0) <= probe2(15 downto 0);
+  probe3_1(7 downto 0) <= probe3(7 downto 0);
   probe4_1(15 downto 0) <= probe4(15 downto 0);
   probe5_1(15 downto 0) <= probe5(15 downto 0);
-  probe6_1(15 downto 0) <= probe6(15 downto 0);
-  probe7_1(0) <= probe7(0);
+  probe6_1(0) <= probe6(0);
+  probe7_1(15 downto 0) <= probe7(15 downto 0);
   probe8_1(63 downto 0) <= probe8(63 downto 0);
   probe9_1(0) <= probe9(0);
   resetn_1 <= resetn;
@@ -265,29 +269,30 @@ ila_lib: component bd_13e4_ila_lib_0
       clk => clk_1,
       probe0(15 downto 0) => probe0_1(15 downto 0),
       probe1(0) => probe1_1(0),
-      probe10(15 downto 0) => net_slot_0_axis_tdata(15 downto 0),
-      probe11(0) => net_slot_0_axis_tvalid,
-      probe12(0) => net_slot_0_axis_tready,
-      probe13(0) => net_slot_0_axis_tlast,
-      probe14(15 downto 0) => net_slot_1_axis_tdata(15 downto 0),
-      probe15(0) => net_slot_1_axis_tvalid,
-      probe16(0) => net_slot_1_axis_tready,
-      probe17(0) => net_slot_1_axis_tlast,
-      probe18(23 downto 0) => net_slot_2_axis_tdata(23 downto 0),
-      probe19(0) => net_slot_2_axis_tdest(0),
-      probe2(0) => probe2_1(0),
-      probe20(0) => net_slot_2_axis_tid(0),
-      probe21(2 downto 0) => net_slot_2_axis_tkeep(2 downto 0),
-      probe22(2 downto 0) => net_slot_2_axis_tstrb(2 downto 0),
-      probe23(1 downto 0) => net_slot_2_axis_tuser(1 downto 0),
-      probe24(0) => net_slot_2_axis_tvalid,
-      probe25(0) => net_slot_2_axis_tready,
-      probe26(0) => net_slot_2_axis_tlast,
-      probe3(15 downto 0) => probe3_1(15 downto 0),
+      probe10(0) => probe10_1(0),
+      probe11(15 downto 0) => net_slot_0_axis_tdata(15 downto 0),
+      probe12(0) => net_slot_0_axis_tvalid,
+      probe13(0) => net_slot_0_axis_tready,
+      probe14(0) => net_slot_0_axis_tlast,
+      probe15(15 downto 0) => net_slot_1_axis_tdata(15 downto 0),
+      probe16(0) => net_slot_1_axis_tvalid,
+      probe17(0) => net_slot_1_axis_tready,
+      probe18(0) => net_slot_1_axis_tlast,
+      probe19(23 downto 0) => net_slot_2_axis_tdata(23 downto 0),
+      probe2(15 downto 0) => probe2_1(15 downto 0),
+      probe20(0) => net_slot_2_axis_tdest(0),
+      probe21(0) => net_slot_2_axis_tid(0),
+      probe22(2 downto 0) => net_slot_2_axis_tkeep(2 downto 0),
+      probe23(2 downto 0) => net_slot_2_axis_tstrb(2 downto 0),
+      probe24(1 downto 0) => net_slot_2_axis_tuser(1 downto 0),
+      probe25(0) => net_slot_2_axis_tvalid,
+      probe26(0) => net_slot_2_axis_tready,
+      probe27(0) => net_slot_2_axis_tlast,
+      probe3(7 downto 0) => probe3_1(7 downto 0),
       probe4(15 downto 0) => probe4_1(15 downto 0),
       probe5(15 downto 0) => probe5_1(15 downto 0),
-      probe6(15 downto 0) => probe6_1(15 downto 0),
-      probe7(0) => probe7_1(0),
+      probe6(0) => probe6_1(0),
+      probe7(15 downto 0) => probe7_1(15 downto 0),
       probe8(63 downto 0) => probe8_1(63 downto 0),
       probe9(0) => probe9_1(0)
     );

@@ -293,15 +293,17 @@ begin
 			FifoControl_SI => DVSAERFifoControlIn_S,
 			FifoControl_SO => DVSAERFifoControlOut_S,
 			FifoData_DI    => DVSAERFifoDataIn_D,
-			FifoData_DO    => DVSAERFifoDataOut_D);
-        
+			FifoData_DO    => DVSAERFifoDataOut_D); 
+                        
     dvsAerSMTest : entity work.DVSAERStateMachine
     generic map(
         ENABLE_ROI_FILTERING       => true,
         ENABLE_PIXEL_FILTERING     => true,
-        ENABLE_BA_REFR_FILTERING   => false,
+        ENABLE_BA_REFR_FILTERING   => DVS_BAFILTER_ENABLE,
         BA_FILTER_SUBSAMPLE_COLUMN => DVS_BAFILTER_SUBSAMPLE_COL,
         BA_FILTER_SUBSAMPLE_ROW    => DVS_BAFILTER_SUBSAMPLE_ROW,
+        ENABLE_SKIP_FILTERING      => true,
+        ENABLE_POLARITY_FILTERING  => true,
         ENABLE_STATISTICS          => true)
     port map(
         Clock_CI               => LogicClk_CI,
@@ -318,10 +320,12 @@ begin
 
 	dvsaerSPIConfig : entity work.DVSAERSPIConfig
 		generic map(
-			ENABLE_ROI_FILTERING     => true,
-			ENABLE_PIXEL_FILTERING   => true,
-			ENABLE_BA_REFR_FILTERING => false,
-			ENABLE_STATISTICS        => true)
+			ENABLE_ROI_FILTERING      => true,
+            ENABLE_PIXEL_FILTERING    => true,
+            ENABLE_BA_REFR_FILTERING  => DVS_BAFILTER_ENABLE,
+            ENABLE_SKIP_FILTERING     => true,
+            ENABLE_POLARITY_FILTERING => true,
+            ENABLE_STATISTICS         => true)
 		port map(
 			Clock_CI                   => LogicClock_C,
 			Reset_RI                   => LogicReset_R,

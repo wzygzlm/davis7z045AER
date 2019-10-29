@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:hls:EVRawStreamToXYTSStream:1.0
--- IP Revision: 1910280954
+-- IP Revision: 1910281407
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -106,7 +106,7 @@ ARCHITECTURE brd_EVRawStreamToXYTSStr_0_0_arch OF brd_EVRawStreamToXYTSStr_0_0 I
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF brd_EVRawStreamToXYTSStr_0_0_arch : ARCHITECTURE IS "brd_EVRawStreamToXYTSStr_0_0,EVRawStreamToXYTSStream,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF brd_EVRawStreamToXYTSStr_0_0_arch: ARCHITECTURE IS "brd_EVRawStreamToXYTSStr_0_0,EVRawStreamToXYTSStream,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=EVRawStreamToXYTSStream,x_ipVersion=1.0,x_ipCoreRevision=1910280954,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
+  ATTRIBUTE CORE_GENERATION_INFO OF brd_EVRawStreamToXYTSStr_0_0_arch: ARCHITECTURE IS "brd_EVRawStreamToXYTSStr_0_0,EVRawStreamToXYTSStream,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=EVRawStreamToXYTSStream,x_ipVersion=1.0,x_ipCoreRevision=1910281407,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF tsStreamOut_V_V_TDATA: SIGNAL IS "xilinx.com:interface:axis:1.0 tsStreamOut_V_V TDATA";

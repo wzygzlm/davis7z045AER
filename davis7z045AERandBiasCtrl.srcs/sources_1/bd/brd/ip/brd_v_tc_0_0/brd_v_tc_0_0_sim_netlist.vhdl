@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Fri Oct 25 18:41:11 2019
+-- Date        : Fri Oct 25 18:41:06 2019
 -- Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               E:/PhD_project/vivado_prjs/davisZynq/davis7z045AERandBiasCtrl/davis7z045AERandBiasCtrl.srcs/sources_1/bd/brd/ip/brd_v_tc_0_0/brd_v_tc_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top brd_v_tc_0_0 -prefix
+--               brd_v_tc_0_0_ brd_v_tc_0_0_sim_netlist.vhdl
 -- Design      : brd_v_tc_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -47,8 +47,6 @@ entity brd_v_tc_0_0_tc_generator is
     \time_control_regs[24]\ : in STD_LOGIC_VECTOR ( 23 downto 0 );
     \time_control_regs[23]\ : in STD_LOGIC_VECTOR ( 23 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of brd_v_tc_0_0_tc_generator : entity is "tc_generator";
 end brd_v_tc_0_0_tc_generator;
 
 architecture STRUCTURE of brd_v_tc_0_0_tc_generator is
@@ -4077,8 +4075,6 @@ entity brd_v_tc_0_0_video_ctrl is
   attribute C_VERSION_MINOR of brd_v_tc_0_0_video_ctrl : entity is 1;
   attribute C_VERSION_REVISION : integer;
   attribute C_VERSION_REVISION of brd_v_tc_0_0_video_ctrl : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of brd_v_tc_0_0_video_ctrl : entity is "video_ctrl";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of brd_v_tc_0_0_video_ctrl : entity is "yes";
 end brd_v_tc_0_0_video_ctrl;
@@ -5912,8 +5908,6 @@ entity brd_v_tc_0_0_tc_top is
     \time_control_regs[24]\ : in STD_LOGIC_VECTOR ( 23 downto 0 );
     \time_control_regs[23]\ : in STD_LOGIC_VECTOR ( 23 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of brd_v_tc_0_0_tc_top : entity is "tc_top";
 end brd_v_tc_0_0_tc_top;
 
 architecture STRUCTURE of brd_v_tc_0_0_tc_top is
@@ -6481,8 +6475,6 @@ entity brd_v_tc_0_0_v_tc is
   attribute C_S_AXI_CLK_FREQ_HZ of brd_v_tc_0_0_v_tc : entity is 100000000;
   attribute C_S_AXI_DATA_WIDTH : integer;
   attribute C_S_AXI_DATA_WIDTH of brd_v_tc_0_0_v_tc : entity is 32;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of brd_v_tc_0_0_v_tc : entity is "v_tc";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of brd_v_tc_0_0_v_tc : entity is "yes";
 end brd_v_tc_0_0_v_tc;

@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Fri Oct 25 18:43:19 2019
+-- Date        : Mon Oct 28 14:23:38 2019
 -- Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top brd_EVRawStreamToXYTSStr_0_0 -prefix
---               brd_EVRawStreamToXYTSStr_0_0_ brd_EVRawStreamToXYTSStr_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               E:/PhD_project/vivado_prjs/davisZynq/davis7z045AERandBiasCtrl/davis7z045AERandBiasCtrl.srcs/sources_1/bd/brd/ip/brd_EVRawStreamToXYTSStr_0_0/brd_EVRawStreamToXYTSStr_0_0_sim_netlist.vhdl
 -- Design      : brd_EVRawStreamToXYTSStr_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -35,6 +35,8 @@ entity brd_EVRawStreamToXYTSStr_0_0_EVRawStreamToXYTSStream is
     tsStreamOut_V_V_TDATA : out STD_LOGIC_VECTOR ( 15 downto 0 );
     tsStreamOut_V_V_TVALID : out STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of brd_EVRawStreamToXYTSStr_0_0_EVRawStreamToXYTSStream : entity is "EVRawStreamToXYTSStream";
 end brd_EVRawStreamToXYTSStr_0_0_EVRawStreamToXYTSStream;
 
 architecture STRUCTURE of brd_EVRawStreamToXYTSStr_0_0_EVRawStreamToXYTSStream is
@@ -46,7 +48,6 @@ architecture STRUCTURE of brd_EVRawStreamToXYTSStr_0_0_EVRawStreamToXYTSStream i
   signal ap_enable_reg_pp0_iter2_i_1_n_0 : STD_LOGIC;
   signal \^ap_ready\ : STD_LOGIC;
   signal ap_rst_n_inv : STD_LOGIC;
-  signal \data_V_reg_161_reg_n_0_[12]\ : STD_LOGIC;
   signal \data_V_reg_161_reg_n_0_[13]\ : STD_LOGIC;
   signal \data_V_reg_161_reg_n_0_[14]\ : STD_LOGIC;
   signal eventFIFOIn_V_read_INST_0_i_1_n_0 : STD_LOGIC;
@@ -55,7 +56,7 @@ architecture STRUCTURE of brd_EVRawStreamToXYTSStr_0_0_EVRawStreamToXYTSStream i
   signal icmp_reg_176 : STD_LOGIC;
   signal \icmp_reg_176[0]_i_1_n_0\ : STD_LOGIC;
   signal \icmp_reg_176[0]_i_3_n_0\ : STD_LOGIC;
-  signal p_1_in : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal p_1_in : STD_LOGIC_VECTOR ( 12 downto 0 );
   signal tmp_2_fu_109_p2 : STD_LOGIC;
   signal tmp_2_reg_172 : STD_LOGIC;
   signal \tmp_2_reg_172[0]_i_1_n_0\ : STD_LOGIC;
@@ -81,8 +82,8 @@ architecture STRUCTURE of brd_EVRawStreamToXYTSStr_0_0_EVRawStreamToXYTSStream i
   signal xStreamOut_V_V_1_ack_in : STD_LOGIC;
   signal xStreamOut_V_V_1_load_A : STD_LOGIC;
   signal xStreamOut_V_V_1_load_B : STD_LOGIC;
-  signal xStreamOut_V_V_1_payload_A : STD_LOGIC_VECTOR ( 11 downto 0 );
-  signal xStreamOut_V_V_1_payload_B : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal xStreamOut_V_V_1_payload_A : STD_LOGIC_VECTOR ( 12 downto 0 );
+  signal xStreamOut_V_V_1_payload_B : STD_LOGIC_VECTOR ( 12 downto 0 );
   signal xStreamOut_V_V_1_sel : STD_LOGIC;
   signal xStreamOut_V_V_1_sel_rd_i_1_n_0 : STD_LOGIC;
   signal xStreamOut_V_V_1_sel_wr : STD_LOGIC;
@@ -93,7 +94,7 @@ architecture STRUCTURE of brd_EVRawStreamToXYTSStr_0_0_EVRawStreamToXYTSStream i
   signal \xStreamOut_V_V_1_state[0]_i_3_n_0\ : STD_LOGIC;
   signal \xStreamOut_V_V_1_state[1]_i_2_n_0\ : STD_LOGIC;
   signal \xStreamOut_V_V_1_state[1]_i_3_n_0\ : STD_LOGIC;
-  signal \^xstreamout_v_v_tdata\ : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal \^xstreamout_v_v_tdata\ : STD_LOGIC_VECTOR ( 12 downto 0 );
   signal \^xstreamout_v_v_tvalid\ : STD_LOGIC;
   signal yStreamOut_V_V_1_ack_in : STD_LOGIC;
   signal yStreamOut_V_V_1_load_A : STD_LOGIC;
@@ -122,14 +123,14 @@ architecture STRUCTURE of brd_EVRawStreamToXYTSStr_0_0_EVRawStreamToXYTSStream i
   attribute SOFT_HLUTNM of \tsStreamOut_V_V_1_state[0]_i_3\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \tsStreamOut_V_V_1_state[1]_i_2\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[0]_INST_0\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[10]_INST_0\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[11]_INST_0\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[12]_INST_0\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[13]_INST_0\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[14]_INST_0\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[1]_INST_0\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[10]_INST_0\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[11]_INST_0\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[12]_INST_0\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[13]_INST_0\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[14]_INST_0\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[1]_INST_0\ : label is "soft_lutpair18";
   attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[2]_INST_0\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[3]_INST_0\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[3]_INST_0\ : label is "soft_lutpair19";
   attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[4]_INST_0\ : label is "soft_lutpair19";
   attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[5]_INST_0\ : label is "soft_lutpair20";
   attribute SOFT_HLUTNM of \tsStreamOut_V_V_TDATA[6]_INST_0\ : label is "soft_lutpair21";
@@ -140,8 +141,10 @@ architecture STRUCTURE of brd_EVRawStreamToXYTSStr_0_0_EVRawStreamToXYTSStream i
   attribute SOFT_HLUTNM of \xStreamOut_V_V_1_state[0]_i_2\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \xStreamOut_V_V_TDATA[0]_INST_0\ : label is "soft_lutpair11";
   attribute SOFT_HLUTNM of \xStreamOut_V_V_TDATA[10]_INST_0\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \xStreamOut_V_V_TDATA[1]_INST_0\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \xStreamOut_V_V_TDATA[2]_INST_0\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \xStreamOut_V_V_TDATA[11]_INST_0\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \xStreamOut_V_V_TDATA[12]_INST_0\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \xStreamOut_V_V_TDATA[1]_INST_0\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \xStreamOut_V_V_TDATA[2]_INST_0\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \xStreamOut_V_V_TDATA[3]_INST_0\ : label is "soft_lutpair13";
   attribute SOFT_HLUTNM of \xStreamOut_V_V_TDATA[4]_INST_0\ : label is "soft_lutpair13";
   attribute SOFT_HLUTNM of \xStreamOut_V_V_TDATA[5]_INST_0\ : label is "soft_lutpair14";
@@ -153,9 +156,9 @@ architecture STRUCTURE of brd_EVRawStreamToXYTSStr_0_0_EVRawStreamToXYTSStream i
   attribute SOFT_HLUTNM of \yStreamOut_V_V_1_state[0]_i_2\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \yStreamOut_V_V_TDATA[0]_INST_0\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of \yStreamOut_V_V_TDATA[10]_INST_0\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \yStreamOut_V_V_TDATA[1]_INST_0\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \yStreamOut_V_V_TDATA[2]_INST_0\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \yStreamOut_V_V_TDATA[3]_INST_0\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \yStreamOut_V_V_TDATA[1]_INST_0\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \yStreamOut_V_V_TDATA[2]_INST_0\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \yStreamOut_V_V_TDATA[3]_INST_0\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \yStreamOut_V_V_TDATA[4]_INST_0\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \yStreamOut_V_V_TDATA[5]_INST_0\ : label is "soft_lutpair9";
   attribute SOFT_HLUTNM of \yStreamOut_V_V_TDATA[6]_INST_0\ : label is "soft_lutpair9";
@@ -171,8 +174,7 @@ begin
   xStreamOut_V_V_TDATA(15) <= \<const0>\;
   xStreamOut_V_V_TDATA(14) <= \<const0>\;
   xStreamOut_V_V_TDATA(13) <= \<const0>\;
-  xStreamOut_V_V_TDATA(12) <= \<const0>\;
-  xStreamOut_V_V_TDATA(11 downto 0) <= \^xstreamout_v_v_tdata\(11 downto 0);
+  xStreamOut_V_V_TDATA(12 downto 0) <= \^xstreamout_v_v_tdata\(12 downto 0);
   xStreamOut_V_V_TVALID <= \^xstreamout_v_v_tvalid\;
   yStreamOut_V_V_TDATA(15) <= \<const0>\;
   yStreamOut_V_V_TDATA(14) <= \<const0>\;
@@ -284,7 +286,7 @@ ap_idle_INST_0: unisim.vcomponents.LUT3
       C => ap_clk,
       CE => ap_block_pp0_stage0_11001,
       D => eventFIFOIn_V_dout(12),
-      Q => \data_V_reg_161_reg_n_0_[12]\,
+      Q => p_1_in(12),
       R => '0'
     );
 \data_V_reg_161_reg[13]\: unisim.vcomponents.FDRE
@@ -565,7 +567,7 @@ eventFIFOIn_V_read_INST_0_i_2: unisim.vcomponents.LUT5
      port map (
       C => ap_clk,
       CE => tsStreamOut_V_V_1_load_A,
-      D => \data_V_reg_161_reg_n_0_[12]\,
+      D => p_1_in(12),
       Q => tsStreamOut_V_V_1_payload_A(12),
       R => '0'
     );
@@ -695,7 +697,7 @@ eventFIFOIn_V_read_INST_0_i_2: unisim.vcomponents.LUT5
      port map (
       C => ap_clk,
       CE => tsStreamOut_V_V_1_load_B,
-      D => \data_V_reg_161_reg_n_0_[12]\,
+      D => p_1_in(12),
       Q => tsStreamOut_V_V_1_payload_B(12),
       R => '0'
     );
@@ -1061,7 +1063,7 @@ tsStreamOut_V_V_1_sel_wr_reg: unisim.vcomponents.FDRE
       I2 => tsStreamOut_V_V_1_sel,
       O => \^tsstreamout_v_v_tdata\(9)
     );
-\xStreamOut_V_V_1_payload_A[11]_i_1\: unisim.vcomponents.LUT3
+\xStreamOut_V_V_1_payload_A[12]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"45"
     )
@@ -1093,6 +1095,14 @@ tsStreamOut_V_V_1_sel_wr_reg: unisim.vcomponents.FDRE
       CE => xStreamOut_V_V_1_load_A,
       D => p_1_in(11),
       Q => xStreamOut_V_V_1_payload_A(11),
+      R => '0'
+    );
+\xStreamOut_V_V_1_payload_A_reg[12]\: unisim.vcomponents.FDRE
+     port map (
+      C => ap_clk,
+      CE => xStreamOut_V_V_1_load_A,
+      D => p_1_in(12),
+      Q => xStreamOut_V_V_1_payload_A(12),
       R => '0'
     );
 \xStreamOut_V_V_1_payload_A_reg[1]\: unisim.vcomponents.FDRE
@@ -1167,7 +1177,7 @@ tsStreamOut_V_V_1_sel_wr_reg: unisim.vcomponents.FDRE
       Q => xStreamOut_V_V_1_payload_A(9),
       R => '0'
     );
-\xStreamOut_V_V_1_payload_B[11]_i_1\: unisim.vcomponents.LUT3
+\xStreamOut_V_V_1_payload_B[12]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"8A"
     )
@@ -1199,6 +1209,14 @@ tsStreamOut_V_V_1_sel_wr_reg: unisim.vcomponents.FDRE
       CE => xStreamOut_V_V_1_load_B,
       D => p_1_in(11),
       Q => xStreamOut_V_V_1_payload_B(11),
+      R => '0'
+    );
+\xStreamOut_V_V_1_payload_B_reg[12]\: unisim.vcomponents.FDRE
+     port map (
+      C => ap_clk,
+      CE => xStreamOut_V_V_1_load_B,
+      D => p_1_in(12),
+      Q => xStreamOut_V_V_1_payload_B(12),
       R => '0'
     );
 \xStreamOut_V_V_1_payload_B_reg[1]\: unisim.vcomponents.FDRE
@@ -1437,6 +1455,16 @@ xStreamOut_V_V_1_sel_wr_reg: unisim.vcomponents.FDRE
       I1 => xStreamOut_V_V_1_payload_A(11),
       I2 => xStreamOut_V_V_1_sel,
       O => \^xstreamout_v_v_tdata\(11)
+    );
+\xStreamOut_V_V_TDATA[12]_INST_0\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"AC"
+    )
+        port map (
+      I0 => xStreamOut_V_V_1_payload_B(12),
+      I1 => xStreamOut_V_V_1_payload_A(12),
+      I2 => xStreamOut_V_V_1_sel,
+      O => \^xstreamout_v_v_tdata\(12)
     );
 \xStreamOut_V_V_TDATA[1]_INST_0\: unisim.vcomponents.LUT3
     generic map(

@@ -435,6 +435,7 @@ begin
 			ADDRESS_DEPTH => BA_ADDRESS_DEPTH,
 			ADDRESS_WIDTH => BA_ADDRESS_WIDTH,
 			DATA_WIDTH    => BA_TIMESTAMP_WIDTH,
+			RAM_STYLE     => "block",
 			WRITE_MODE    => "readbeforewrite")
 		port map(
 			Clock_CI          => Clock_CI,

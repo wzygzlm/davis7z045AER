@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="35">
   <CompositeFile CompositeFileTopName="brd" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1572257183"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1572257183"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1572257183"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1572257183"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1572357824"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1572357824"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1572357824"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1572357824"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\brd_LEDShifter_0_0\brd_LEDShifter_0_0.xci" Type="IP">
         <Instance HierarchyPath="LEDShifter_0"/>
@@ -185,7 +185,7 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\brd_eventStreamToConstEn_0_0_1\brd_eventStreamToConstEn_0_0.xci" Type="IP">
+      <File Name="ip\brd_eventStreamToConstEn_0_1\brd_eventStreamToConstEn_0_1.xci" Type="IP">
         <Instance HierarchyPath="eventStreamToConstEn_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
