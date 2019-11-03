@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Fri Oct 25 18:41:04 2019
+-- Date        : Fri Oct 25 18:40:59 2019
 -- Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               E:/PhD_project/vivado_prjs/davisZynq/davis7z045AERandBiasCtrl/davis7z045AERandBiasCtrl.srcs/sources_1/bd/brd/ip/brd_proc_sys_reset_0_0/brd_proc_sys_reset_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top brd_proc_sys_reset_0_0 -prefix
+--               brd_proc_sys_reset_0_0_ brd_proc_sys_reset_0_0_sim_netlist.vhdl
 -- Design      : brd_proc_sys_reset_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -25,8 +25,6 @@ entity brd_proc_sys_reset_0_0_cdc_sync is
     aux_reset_in : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of brd_proc_sys_reset_0_0_cdc_sync : entity is "cdc_sync";
 end brd_proc_sys_reset_0_0_cdc_sync;
 
 architecture STRUCTURE of brd_proc_sys_reset_0_0_cdc_sync is
@@ -235,8 +233,6 @@ entity brd_proc_sys_reset_0_0_upcnt_n is
     seq_cnt_en : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of brd_proc_sys_reset_0_0_upcnt_n : entity is "upcnt_n";
 end brd_proc_sys_reset_0_0_upcnt_n;
 
 architecture STRUCTURE of brd_proc_sys_reset_0_0_upcnt_n is
@@ -401,8 +397,6 @@ entity brd_proc_sys_reset_0_0_lpf is
     ext_reset_in : in STD_LOGIC;
     aux_reset_in : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of brd_proc_sys_reset_0_0_lpf : entity is "lpf";
 end brd_proc_sys_reset_0_0_lpf;
 
 architecture STRUCTURE of brd_proc_sys_reset_0_0_lpf is
@@ -584,8 +578,6 @@ entity brd_proc_sys_reset_0_0_sequence_psr is
     lpf_int : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of brd_proc_sys_reset_0_0_sequence_psr : entity is "sequence_psr";
 end brd_proc_sys_reset_0_0_sequence_psr;
 
 architecture STRUCTURE of brd_proc_sys_reset_0_0_sequence_psr is
@@ -924,8 +916,6 @@ entity brd_proc_sys_reset_0_0_proc_sys_reset is
   attribute C_NUM_PERP_ARESETN of brd_proc_sys_reset_0_0_proc_sys_reset : entity is 1;
   attribute C_NUM_PERP_RST : integer;
   attribute C_NUM_PERP_RST of brd_proc_sys_reset_0_0_proc_sys_reset : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of brd_proc_sys_reset_0_0_proc_sys_reset : entity is "proc_sys_reset";
 end brd_proc_sys_reset_0_0_proc_sys_reset;
 
 architecture STRUCTURE of brd_proc_sys_reset_0_0_proc_sys_reset is
