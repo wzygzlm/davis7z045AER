@@ -24,6 +24,7 @@
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../xfOpenCV/hls_2018_1/eventFIFOtoStream"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../xfOpenCV/hls_2018_1/EventStreamToFrameStream"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../xfOpenCV/hls_2018_1/hls_fastCorner"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -399,6 +400,9 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="brd.bd" FileRelPathName="ip/brd_EVFastCornerStream_0_0/brd_EVFastCornerStream_0_0.xci">
+          <Proxy FileSetName="brd_EVFastCornerStream_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="brd.bd" FileRelPathName="ip/brd_testAERDVSSM_0_0/brd_testAERDVSSM_0_0.xci">
           <Proxy FileSetName="brd_testAERDVSSM_0_0"/>
         </CompFileExtendedInfo>
@@ -407,9 +411,6 @@
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="brd.bd" FileRelPathName="ip/brd_EVMUXDataToXYTSStream_0_0/brd_EVMUXDataToXYTSStream_0_0.xci">
           <Proxy FileSetName="brd_EVMUXDataToXYTSStream_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="brd.bd" FileRelPathName="ip/brd_system_ila_0_0_1/brd_system_ila_0_0.xci">
-          <Proxy FileSetName="brd_system_ila_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="brd.bd" FileRelPathName="ip/brd_LEDShifter_0_0/brd_LEDShifter_0_0.xci">
           <Proxy FileSetName="brd_LEDShifter_0_0"/>
@@ -1163,15 +1164,15 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="brd_system_ila_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/brd_system_ila_0_0">
-      <Config>
-        <Option Name="TopModule" Val="brd_system_ila_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="brd_EVMUXDataToXYTSStream_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/brd_EVMUXDataToXYTSStream_0_0">
       <Config>
         <Option Name="TopModule" Val="brd_EVMUXDataToXYTSStream_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="brd_EVFastCornerStream_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/brd_EVFastCornerStream_0_0">
+      <Config>
+        <Option Name="TopModule" Val="brd_EVFastCornerStream_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -1228,18 +1229,16 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="brd_system_ila_0_0_synth_1" Type="Ft3:Synth" SrcSet="brd_system_ila_0_0" Part="xc7z045ffg900-1" ConstrsSet="brd_system_ila_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/brd_system_ila_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="brd_EVMUXDataToXYTSStream_0_0_synth_1" Type="Ft3:Synth" SrcSet="brd_EVMUXDataToXYTSStream_0_0" Part="xc7z045ffg900-1" ConstrsSet="brd_EVMUXDataToXYTSStream_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/brd_EVMUXDataToXYTSStream_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="brd_EVMUXDataToXYTSStream_0_0_synth_1" Type="Ft3:Synth" SrcSet="brd_EVMUXDataToXYTSStream_0_0" Part="xc7z045ffg900-1" ConstrsSet="brd_EVMUXDataToXYTSStream_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/brd_EVMUXDataToXYTSStream_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="brd_EVFastCornerStream_0_0_synth_1" Type="Ft3:Synth" SrcSet="brd_EVFastCornerStream_0_0" Part="xc7z045ffg900-1" ConstrsSet="brd_EVFastCornerStream_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/brd_EVFastCornerStream_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -1310,11 +1309,9 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="brd_system_ila_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z045ffg900-1" ConstrsSet="brd_system_ila_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="brd_system_ila_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="brd_EVMUXDataToXYTSStream_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z045ffg900-1" ConstrsSet="brd_EVMUXDataToXYTSStream_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="brd_EVMUXDataToXYTSStream_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1328,7 +1325,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="brd_EVMUXDataToXYTSStream_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z045ffg900-1" ConstrsSet="brd_EVMUXDataToXYTSStream_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="brd_EVMUXDataToXYTSStream_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="brd_EVFastCornerStream_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z045ffg900-1" ConstrsSet="brd_EVFastCornerStream_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="brd_EVFastCornerStream_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
           <Desc>Default settings for Implementation.</Desc>

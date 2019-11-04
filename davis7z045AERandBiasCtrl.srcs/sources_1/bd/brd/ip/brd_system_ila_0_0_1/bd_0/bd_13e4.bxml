@@ -2,11 +2,21 @@
 <Root MajorVersion="0" MinorVersion="35">
   <CompositeFile CompositeFileTopName="bd_13e4" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1572812619"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1572812619"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1572812619"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1572812619"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1572881022"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1572881022"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1572881022"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1572881022"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
+      <File Name="synth\bd_13e4.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+      </File>
+      <File Name="sim\bd_13e4.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
       <File Name="ip\ip_0\bd_13e4_ila_lib_0.xci" Type="IP">
         <Instance HierarchyPath="ila_lib"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -21,16 +31,6 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="synth\bd_13e4.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-      </File>
-      <File Name="sim\bd_13e4.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="bd_13e4_ooc.xdc" Type="XDC">

@@ -31,7 +31,7 @@ entity bd_13e4_wrapper is
     SLOT_3_AXIS_tlast : in STD_LOGIC;
     SLOT_3_AXIS_tready : in STD_LOGIC;
     SLOT_3_AXIS_tvalid : in STD_LOGIC;
-    SLOT_4_AXIS_tdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
+    SLOT_4_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     SLOT_4_AXIS_tlast : in STD_LOGIC;
     SLOT_4_AXIS_tready : in STD_LOGIC;
     SLOT_4_AXIS_tvalid : in STD_LOGIC;
@@ -98,7 +98,7 @@ architecture STRUCTURE of bd_13e4_wrapper is
     SLOT_3_AXIS_tlast : in STD_LOGIC;
     SLOT_3_AXIS_tready : in STD_LOGIC;
     SLOT_3_AXIS_tvalid : in STD_LOGIC;
-    SLOT_4_AXIS_tdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
+    SLOT_4_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     SLOT_4_AXIS_tlast : in STD_LOGIC;
     SLOT_4_AXIS_tready : in STD_LOGIC;
     SLOT_4_AXIS_tvalid : in STD_LOGIC
@@ -128,7 +128,7 @@ bd_13e4_i: component bd_13e4
       SLOT_3_AXIS_tlast => SLOT_3_AXIS_tlast,
       SLOT_3_AXIS_tready => SLOT_3_AXIS_tready,
       SLOT_3_AXIS_tvalid => SLOT_3_AXIS_tvalid,
-      SLOT_4_AXIS_tdata(63 downto 0) => SLOT_4_AXIS_tdata(63 downto 0),
+      SLOT_4_AXIS_tdata(31 downto 0) => SLOT_4_AXIS_tdata(31 downto 0),
       SLOT_4_AXIS_tlast => SLOT_4_AXIS_tlast,
       SLOT_4_AXIS_tready => SLOT_4_AXIS_tready,
       SLOT_4_AXIS_tvalid => SLOT_4_AXIS_tvalid,

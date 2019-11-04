@@ -167,8 +167,8 @@ input wire slot_4_axis_tvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 slot_4_axis TREADY" *)
 input wire slot_4_axis_tready;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 slot_4_axis TDATA" *)
-input wire [63 : 0] slot_4_axis_tdata;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME slot_4_axis, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef" *)
+input wire [31 : 0] slot_4_axis_tdata;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME slot_4_axis, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 slot_4_axis TLAST" *)
 input wire slot_4_axis_tlast;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_slot_0_axis TVALID" *)
@@ -222,8 +222,8 @@ output wire m_slot_4_axis_tvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_slot_4_axis TREADY" *)
 output wire m_slot_4_axis_tready;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_slot_4_axis TDATA" *)
-output wire [63 : 0] m_slot_4_axis_tdata;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_slot_4_axis, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef" *)
+output wire [31 : 0] m_slot_4_axis_tdata;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_slot_4_axis, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_slot_4_axis TLAST" *)
 output wire m_slot_4_axis_tlast;
 
@@ -1478,7 +1478,7 @@ output wire m_slot_4_axis_tlast;
     .C_SLOT_4_AXI_DATA_WIDTH(32),
     .C_SLOT_4_AXI_ID_WIDTH(1),
     .C_SLOT_4_AXI_PROTOCOL("AXI4S"),
-    .C_SLOT_4_AXIS_TDATA_WIDTH(64),
+    .C_SLOT_4_AXIS_TDATA_WIDTH(32),
     .C_SLOT_4_AXIS_TID_WIDTH(0),
     .C_SLOT_4_AXIS_TDEST_WIDTH(0),
     .C_SLOT_4_AXIS_TUSER_WIDTH(0),
@@ -2491,8 +2491,8 @@ output wire m_slot_4_axis_tlast;
     .slot_4_axis_tvalid(slot_4_axis_tvalid),
     .slot_4_axis_tready(slot_4_axis_tready),
     .slot_4_axis_tdata(slot_4_axis_tdata),
-    .slot_4_axis_tstrb(8'B0),
-    .slot_4_axis_tkeep(8'B0),
+    .slot_4_axis_tstrb(4'B0),
+    .slot_4_axis_tkeep(4'B0),
     .slot_4_axis_tlast(slot_4_axis_tlast),
     .slot_4_axis_tid(1'B0),
     .slot_4_axis_tdest(1'B0),

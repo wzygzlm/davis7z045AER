@@ -661,7 +661,7 @@ int main()
     uint32_t configEn = XEventstreamtoconstencntframestream_Get_ctrl_V(&etf_inst);
     uint32_t sliceDuration = XEventstreamtoconstencntframestream_Get_configRegs_V(&etf_inst);
     configEn = 0x11;
-    sliceDuration = 20;
+    sliceDuration = 10;
     XEventstreamtoconstencntframestream_Set_configRegs_V(&etf_inst, sliceDuration);
     XEventstreamtoconstencntframestream_Set_ctrl_V(&etf_inst, configEn);
     XEventstreamtoconstencntframestream_Set_configRegs_V(&etf_inst, sliceDuration);
