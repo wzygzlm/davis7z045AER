@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="E:\PhD_project\vivado_prjs\davisZynq\davis7z045AERandBiasCtrl\davis7z045AERandBiasCtrl.runs\impl_1" key="program_fpga_view_bit_bmm_browse_key"/>
+	<item value="E:\PhD_project\vivado_prjs\davisZynq\davisZynq_Basic_System\davisZynq_Basic_System.sdk\zynqDavisFsbl\Debug" key="zynq_flash_files_selection"/>
 	<item value="E:\PhD_project\vivado_prjs\davisZynq\davis7z045AERandBiasCtrl\davis7z045AERandBiasCtrl.runs\impl_1" key="last_stored_selection"/>
 </section>

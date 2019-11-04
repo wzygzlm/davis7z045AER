@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:hls:EVMUXDataToXYTSStream:1.0
--- IP Revision: 1911022128
+-- IP Revision: 1911032024
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -55,10 +55,12 @@ USE ieee.numeric_std.ALL;
 
 ENTITY brd_EVMUXDataToXYTSStream_0_0 IS
   PORT (
+    dataReg_V_ap_vld : OUT STD_LOGIC;
     xRegReg_V_ap_vld : OUT STD_LOGIC;
     yRegReg_V_ap_vld : OUT STD_LOGIC;
     tsRegReg_V_ap_vld : OUT STD_LOGIC;
-    dataReg_V_ap_vld : OUT STD_LOGIC;
+    polRegReg_V_ap_vld : OUT STD_LOGIC;
+    tsWrapRegReg_V_ap_vld : OUT STD_LOGIC;
     ap_clk : IN STD_LOGIC;
     ap_rst_n : IN STD_LOGIC;
     ap_start : IN STD_LOGIC;
@@ -74,12 +76,17 @@ ENTITY brd_EVMUXDataToXYTSStream_0_0 IS
     xStreamOut_V_V_TVALID : OUT STD_LOGIC;
     xStreamOut_V_V_TREADY : IN STD_LOGIC;
     xStreamOut_V_V_TDATA : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    polStreamOut_V_V_TVALID : OUT STD_LOGIC;
+    polStreamOut_V_V_TREADY : IN STD_LOGIC;
+    polStreamOut_V_V_TDATA : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     eventFIFOIn_V : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     eventFIFODataValid_V : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    dataReg_V : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     xRegReg_V : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     yRegReg_V : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     tsRegReg_V : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
-    dataReg_V : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+    polRegReg_V : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    tsWrapRegReg_V : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
   );
 END brd_EVMUXDataToXYTSStream_0_0;
 
@@ -88,10 +95,12 @@ ARCHITECTURE brd_EVMUXDataToXYTSStream_0_0_arch OF brd_EVMUXDataToXYTSStream_0_0
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF brd_EVMUXDataToXYTSStream_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT EVMUXDataToXYTSStream IS
     PORT (
+      dataReg_V_ap_vld : OUT STD_LOGIC;
       xRegReg_V_ap_vld : OUT STD_LOGIC;
       yRegReg_V_ap_vld : OUT STD_LOGIC;
       tsRegReg_V_ap_vld : OUT STD_LOGIC;
-      dataReg_V_ap_vld : OUT STD_LOGIC;
+      polRegReg_V_ap_vld : OUT STD_LOGIC;
+      tsWrapRegReg_V_ap_vld : OUT STD_LOGIC;
       ap_clk : IN STD_LOGIC;
       ap_rst_n : IN STD_LOGIC;
       ap_start : IN STD_LOGIC;
@@ -107,12 +116,17 @@ ARCHITECTURE brd_EVMUXDataToXYTSStream_0_0_arch OF brd_EVMUXDataToXYTSStream_0_0
       xStreamOut_V_V_TVALID : OUT STD_LOGIC;
       xStreamOut_V_V_TREADY : IN STD_LOGIC;
       xStreamOut_V_V_TDATA : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+      polStreamOut_V_V_TVALID : OUT STD_LOGIC;
+      polStreamOut_V_V_TREADY : IN STD_LOGIC;
+      polStreamOut_V_V_TDATA : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       eventFIFOIn_V : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       eventFIFODataValid_V : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+      dataReg_V : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
       xRegReg_V : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
       yRegReg_V : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
       tsRegReg_V : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
-      dataReg_V : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+      polRegReg_V : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+      tsWrapRegReg_V : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
     );
   END COMPONENT EVMUXDataToXYTSStream;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -120,12 +134,15 @@ ARCHITECTURE brd_EVMUXDataToXYTSStream_0_0_arch OF brd_EVMUXDataToXYTSStream_0_0
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF brd_EVMUXDataToXYTSStream_0_0_arch : ARCHITECTURE IS "brd_EVMUXDataToXYTSStream_0_0,EVMUXDataToXYTSStream,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF brd_EVMUXDataToXYTSStream_0_0_arch: ARCHITECTURE IS "brd_EVMUXDataToXYTSStream_0_0,EVMUXDataToXYTSStream,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=EVMUXDataToXYTSStream,x_ipVersion=1.0,x_ipCoreRevision=1911022128,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
+  ATTRIBUTE CORE_GENERATION_INFO OF brd_EVMUXDataToXYTSStream_0_0_arch: ARCHITECTURE IS "brd_EVMUXDataToXYTSStream_0_0,EVMUXDataToXYTSStream,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=EVMUXDataToXYTSStream,x_ipVersion=1.0,x_ipCoreRevision=1911032024,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF dataReg_V: SIGNAL IS "XIL_INTERFACENAME dataReg_V, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} val" & 
-"ue false}}}}}";
-  ATTRIBUTE X_INTERFACE_INFO OF dataReg_V: SIGNAL IS "xilinx.com:signal:data:1.0 dataReg_V DATA";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF tsWrapRegReg_V: SIGNAL IS "XIL_INTERFACENAME tsWrapRegReg_V, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 48} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}" & 
+"} value false}}}}}";
+  ATTRIBUTE X_INTERFACE_INFO OF tsWrapRegReg_V: SIGNAL IS "xilinx.com:signal:data:1.0 tsWrapRegReg_V DATA";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF polRegReg_V: SIGNAL IS "XIL_INTERFACENAME polRegReg_V, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} va" & 
+"lue false}}}}}";
+  ATTRIBUTE X_INTERFACE_INFO OF polRegReg_V: SIGNAL IS "xilinx.com:signal:data:1.0 polRegReg_V DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF tsRegReg_V: SIGNAL IS "XIL_INTERFACENAME tsRegReg_V, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 64} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} va" & 
 "lue false}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF tsRegReg_V: SIGNAL IS "xilinx.com:signal:data:1.0 tsRegReg_V DATA";
@@ -135,12 +152,20 @@ ARCHITECTURE brd_EVMUXDataToXYTSStream_0_0_arch OF brd_EVMUXDataToXYTSStream_0_0
   ATTRIBUTE X_INTERFACE_PARAMETER OF xRegReg_V: SIGNAL IS "XIL_INTERFACENAME xRegReg_V, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} val" & 
 "ue false}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF xRegReg_V: SIGNAL IS "xilinx.com:signal:data:1.0 xRegReg_V DATA";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF dataReg_V: SIGNAL IS "XIL_INTERFACENAME dataReg_V, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} val" & 
+"ue false}}}}}";
+  ATTRIBUTE X_INTERFACE_INFO OF dataReg_V: SIGNAL IS "xilinx.com:signal:data:1.0 dataReg_V DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF eventFIFODataValid_V: SIGNAL IS "XIL_INTERFACENAME eventFIFODataValid_V, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maxim" & 
 "um {}} value false}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF eventFIFODataValid_V: SIGNAL IS "xilinx.com:signal:data:1.0 eventFIFODataValid_V DATA";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF eventFIFOIn_V: SIGNAL IS "XIL_INTERFACENAME eventFIFOIn_V, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 4} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} " & 
-"value false}}}}}";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF eventFIFOIn_V: SIGNAL IS "XIL_INTERFACENAME eventFIFOIn_V, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}}" & 
+" value false}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF eventFIFOIn_V: SIGNAL IS "xilinx.com:signal:data:1.0 eventFIFOIn_V DATA";
+  ATTRIBUTE X_INTERFACE_INFO OF polStreamOut_V_V_TDATA: SIGNAL IS "xilinx.com:interface:axis:1.0 polStreamOut_V_V TDATA";
+  ATTRIBUTE X_INTERFACE_INFO OF polStreamOut_V_V_TREADY: SIGNAL IS "xilinx.com:interface:axis:1.0 polStreamOut_V_V TREADY";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF polStreamOut_V_V_TVALID: SIGNAL IS "XIL_INTERFACENAME polStreamOut_V_V, TDATA_NUM_BYTES 1, TUSER_WIDTH 0, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}, TDEST_WIDTH 0, TID_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS" & 
+"_TKEEP 0, HAS_TLAST 0, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK0";
+  ATTRIBUTE X_INTERFACE_INFO OF polStreamOut_V_V_TVALID: SIGNAL IS "xilinx.com:interface:axis:1.0 polStreamOut_V_V TVALID";
   ATTRIBUTE X_INTERFACE_INFO OF xStreamOut_V_V_TDATA: SIGNAL IS "xilinx.com:interface:axis:1.0 xStreamOut_V_V TDATA";
   ATTRIBUTE X_INTERFACE_INFO OF xStreamOut_V_V_TREADY: SIGNAL IS "xilinx.com:interface:axis:1.0 xStreamOut_V_V TREADY";
   ATTRIBUTE X_INTERFACE_PARAMETER OF xStreamOut_V_V_TVALID: SIGNAL IS "XIL_INTERFACENAME xStreamOut_V_V, TDATA_NUM_BYTES 2, TUSER_WIDTH 0, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate depende" & 
@@ -168,16 +193,18 @@ ARCHITECTURE brd_EVMUXDataToXYTSStream_0_0_arch OF brd_EVMUXDataToXYTSStream_0_0
   ATTRIBUTE X_INTERFACE_INFO OF ap_start: SIGNAL IS "xilinx.com:interface:acc_handshake:1.0 ap_ctrl start";
   ATTRIBUTE X_INTERFACE_PARAMETER OF ap_rst_n: SIGNAL IS "XIL_INTERFACENAME ap_rst_n, POLARITY ACTIVE_LOW, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {RST {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF ap_rst_n: SIGNAL IS "xilinx.com:signal:reset:1.0 ap_rst_n RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF ap_clk: SIGNAL IS "XIL_INTERFACENAME ap_clk, ASSOCIATED_BUSIF tsStreamOut_V_V:yStreamOut_V_V:xStreamOut_V_V, ASSOCIATED_RESET ap_rst_n, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}, FREQ_HZ 1e+" & 
-"08, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF ap_clk: SIGNAL IS "XIL_INTERFACENAME ap_clk, ASSOCIATED_BUSIF tsStreamOut_V_V:yStreamOut_V_V:xStreamOut_V_V:polStreamOut_V_V, ASSOCIATED_RESET ap_rst_n, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0" & 
+"}}}}, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK0";
   ATTRIBUTE X_INTERFACE_INFO OF ap_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 ap_clk CLK";
 BEGIN
   U0 : EVMUXDataToXYTSStream
     PORT MAP (
+      dataReg_V_ap_vld => dataReg_V_ap_vld,
       xRegReg_V_ap_vld => xRegReg_V_ap_vld,
       yRegReg_V_ap_vld => yRegReg_V_ap_vld,
       tsRegReg_V_ap_vld => tsRegReg_V_ap_vld,
-      dataReg_V_ap_vld => dataReg_V_ap_vld,
+      polRegReg_V_ap_vld => polRegReg_V_ap_vld,
+      tsWrapRegReg_V_ap_vld => tsWrapRegReg_V_ap_vld,
       ap_clk => ap_clk,
       ap_rst_n => ap_rst_n,
       ap_start => ap_start,
@@ -193,11 +220,16 @@ BEGIN
       xStreamOut_V_V_TVALID => xStreamOut_V_V_TVALID,
       xStreamOut_V_V_TREADY => xStreamOut_V_V_TREADY,
       xStreamOut_V_V_TDATA => xStreamOut_V_V_TDATA,
+      polStreamOut_V_V_TVALID => polStreamOut_V_V_TVALID,
+      polStreamOut_V_V_TREADY => polStreamOut_V_V_TREADY,
+      polStreamOut_V_V_TDATA => polStreamOut_V_V_TDATA,
       eventFIFOIn_V => eventFIFOIn_V,
       eventFIFODataValid_V => eventFIFODataValid_V,
+      dataReg_V => dataReg_V,
       xRegReg_V => xRegReg_V,
       yRegReg_V => yRegReg_V,
       tsRegReg_V => tsRegReg_V,
-      dataReg_V => dataReg_V
+      polRegReg_V => polRegReg_V,
+      tsWrapRegReg_V => tsWrapRegReg_V
     );
 END brd_EVMUXDataToXYTSStream_0_0_arch;

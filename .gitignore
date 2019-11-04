@@ -6,8 +6,9 @@
 *.runs
 *.sim
 *.swp
-*.log
+*log
 *.jor
+*history
 *~
 *Debug
 *.str
