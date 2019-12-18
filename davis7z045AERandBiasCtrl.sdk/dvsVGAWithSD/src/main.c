@@ -21,6 +21,8 @@
 #include "ff.h"
 
 #include "xeventstreamtoconstencntframestream.h"
+#include "xevfastcornerstream.h"
+#include "xevmuxdatatoxytsstream.h"
 #include "xgpio.h"
 
 //#include "iic_utils.h"
@@ -30,6 +32,8 @@
 //XV_tpg tpg_inst;
 //XV_tpg_Config *tpg_config;
 XEventstreamtoconstencntframestream etf_inst;
+XEvfastcornerstream evfast_inst;
+XEvmuxdatatoxytsstream evmux_inst;
 XGpio Gpio; /* The Instance of the GPIO Driver */
 
 /************************** Constant Definitions *****************************/
@@ -657,7 +661,7 @@ int main()
     	return(XST_FAILURE);
     }
 
-    // Configure teh ETF
+    // Configure the ETF
     uint32_t configEn = XEventstreamtoconstencntframestream_Get_ctrl_V(&etf_inst);
     uint32_t sliceDuration = XEventstreamtoconstencntframestream_Get_configRegs_V(&etf_inst);
     configEn = 0x11;
@@ -666,6 +670,25 @@ int main()
     XEventstreamtoconstencntframestream_Set_ctrl_V(&etf_inst, configEn);
     XEventstreamtoconstencntframestream_Set_configRegs_V(&etf_inst, sliceDuration);
     XGpio_DiscreteWrite(&Gpio, 1, 0xa116);
+
+    //Initialize the EVFAST
+    Status = XEvfastcornerstream_Initialize(&evfast_inst, XPAR_EVFASTCORNERSTREAM_0_DEVICE_ID);
+    if(Status!= XST_SUCCESS)
+    {
+    	xil_printf("EVFAST configuration failed\r\n");
+    	return(XST_FAILURE);
+    }
+
+    // Configure the EVFAST
+    XEvfastcornerstream_Set_config_V(&evfast_inst, 0);
+
+    //Initialize the EVMUXTOSTREAM
+    Status = XEvmuxdatatoxytsstream_Initialize(&evmux_inst, XPAR_EVMUXDATATOXYTSSTREAM_0_DEVICE_ID);
+    if(Status!= XST_SUCCESS)
+    {
+    	xil_printf("EVFAST configuration failed\r\n");
+    	return(XST_FAILURE);
+    }
 
 	/* Start of VDMA Configuration */
     Xil_Out32 (XPAR_AXI_VDMA_0_BASEADDR + 0x30, 0x8B);
@@ -716,6 +739,13 @@ int main()
 		u32 currentETFConfigStatus = XGpio_DiscreteRead(&Gpio, 2) & 0x01;
 		configEn = (XGpio_DiscreteRead(&Gpio, 1)) >> 4;
 	    XEventstreamtoconstencntframestream_Set_ctrl_V(&etf_inst, configEn);
+
+	    u64 eventsGeneratedNum = XEvmuxdatatoxytsstream_Get_status_colNum(&evmux_inst);
+	    u64 eventsInputToEVFASTNum = XEvfastcornerstream_Get_status_inEventsNum(&evfast_inst);
+	    u64 eventsOutputFromEVFASTNum = XEvfastcornerstream_Get_status_outEventsNum(&evfast_inst);
+	    u64 eventsCornerDetectedEVFASTNum = XEvfastcornerstream_Get_status_cornerEventsNum(&evfast_inst);
+
+
 		if(currentETFConfigStatus != previousETFConfigStatus)
 		{
 			previousETFConfigStatus = currentETFConfigStatus;
@@ -729,7 +759,7 @@ int main()
 					 0,0,0,0,0,0,
 					 0,
 					 0,0,0x64,0x64};
-			xil_printf("Current config switch status is : %d.\r\nLoading new configuration from SD card...\r\n.", currentETFConfigStatus);
+			xil_printf("Current config switch status is : %d.\r\nLoading new configuration from SD card...\r\n", currentETFConfigStatus);
 
 			if(currentETFConfigStatus == 0)
 			{
@@ -762,13 +792,19 @@ int main()
 
 //			dvsSPIWrite(&SpiInstance, 1, 3, ~currentETFConfigStatus);
 
+		    xil_printf("%d events are input, and corner events are : %d.\n\r", (u32)eventsInputToEVFASTNum, (u32)eventsCornerDetectedEVFASTNum);
+		    if(eventsInputToEVFASTNum < eventsGeneratedNum)
+		    {
+		    	xil_printf("%d events are generated, but only %d events are processed. %d events are dropped.\n\r", (u32)eventsGeneratedNum, (u32)eventsInputToEVFASTNum, (u32)(eventsGeneratedNum - eventsInputToEVFASTNum));
+		    }
+
+
 			int RetData;
 			for (int i = 0; i < 13; i++)
 			{
 				dvsSPIRead(&SpiInstance, 1, 80+i, &RetData);
 				xil_printf("Module address : %d \t parameter address: %d \t parameter data: %d.\r\n", 1, 80+i, RetData);
 			}
-
 
 			for (int a = 0; a < 37; a = a + 1 )
 			{

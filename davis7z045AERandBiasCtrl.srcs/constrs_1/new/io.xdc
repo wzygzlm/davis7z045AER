@@ -185,6 +185,55 @@ set_property PACKAGE_PIN U30 [get_ports vid_vsync]
 set_property IOSTANDARD LVCMOS33 [get_ports vid_vsync]
 
 
+################# USB Constraints ####################
+
+set_property LOC AJ15 [ get_ports ULPI_next]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_next]
+
+set_property LOC AK16 [ get_ports ULPI_stop]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_stop]
+
+create_clock -period "16.667" -name ULPI_clk [get_ports "ULPI_clk"]
+
+set_property LOC AC28 [ get_ports ULPI_clk]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_clk]
+
+set_property LOC AK15 [ get_ports ULPI_dir]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_dir]
+
+set_property LOC AH16 [ get_ports ULPI_rst]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_rst]
+
+set_property LOC AJ16 [ get_ports ULPI_data_io[7]]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_data_io[7]]
+
+set_property LOC AJ13 [ get_ports ULPI_data_io[6]]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_data_io[6]]
+
+set_property LOC AJ14 [ get_ports ULPI_data_io[5]]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_data_io[5]]
+
+set_property LOC AJ18 [ get_ports ULPI_data_io[4]]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_data_io[4]]
+
+set_property LOC AH18 [ get_ports ULPI_data_io[3]]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_data_io[3]]
+
+set_property LOC AK12 [ get_ports ULPI_data_io[2]]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_data_io[2]]
+
+set_property LOC AK13 [ get_ports ULPI_data_io[1]]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_data_io[1]]
+
+set_property LOC AA13 [ get_ports ULPI_data_io[0]]
+set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_data_io[0]]
+
+set ulpi_input {ULPI_data* ULPI_dir ULPI_next}
+set ulpi_output {ULPI_data* ULPI_stop}
+set_input_delay -max 6.7 -clock [get_clocks -of_objects [get_pins -hier *ULPI_clk]] $ulpi_input
+set_output_delay -max 7 -clock [get_clocks -of_objects [get_pins -hier *ULPI_clk]] $ulpi_output
+set_max_delay 24 -from [get_ports ULPI_dir] -to [get_ports ULPI_data_io[*]] -datapath_only
+
 set_property PACKAGE_PIN AK16 [get_ports {extIn_V_0[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {extIn_V_0[0]}]
 set_property PULLUP true [get_ports {extIn_V_0[0]}]

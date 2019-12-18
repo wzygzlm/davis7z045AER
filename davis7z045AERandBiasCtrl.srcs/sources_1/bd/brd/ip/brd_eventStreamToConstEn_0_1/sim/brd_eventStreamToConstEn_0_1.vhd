@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:hls:eventStreamToConstEncntFrameStream:1.0
--- IP Revision: 1911041622
+-- IP Revision: 1911051023
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -63,6 +63,7 @@ ENTITY brd_eventStreamToConstEn_0_1 IS
     regY_V_ap_vld : OUT STD_LOGIC;
     polReg_V_ap_vld : OUT STD_LOGIC;
     skipFlgOutput_V_ap_vld : OUT STD_LOGIC;
+    tsReg_V_ap_vld : OUT STD_LOGIC;
     s_axi_config_AWADDR : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
     s_axi_config_AWVALID : IN STD_LOGIC;
     s_axi_config_AWREADY : OUT STD_LOGIC;
@@ -117,7 +118,8 @@ ENTITY brd_eventStreamToConstEn_0_1 IS
     regX_V : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     regY_V : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     polReg_V : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    skipFlgOutput_V : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+    skipFlgOutput_V : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    tsReg_V : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END brd_eventStreamToConstEn_0_1;
 
@@ -138,6 +140,7 @@ ARCHITECTURE brd_eventStreamToConstEn_0_1_arch OF brd_eventStreamToConstEn_0_1 I
       regY_V_ap_vld : OUT STD_LOGIC;
       polReg_V_ap_vld : OUT STD_LOGIC;
       skipFlgOutput_V_ap_vld : OUT STD_LOGIC;
+      tsReg_V_ap_vld : OUT STD_LOGIC;
       s_axi_config_AWADDR : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
       s_axi_config_AWVALID : IN STD_LOGIC;
       s_axi_config_AWREADY : OUT STD_LOGIC;
@@ -192,11 +195,15 @@ ARCHITECTURE brd_eventStreamToConstEn_0_1_arch OF brd_eventStreamToConstEn_0_1 I
       regX_V : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
       regY_V : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
       polReg_V : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-      skipFlgOutput_V : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+      skipFlgOutput_V : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+      tsReg_V : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
     );
   END COMPONENT eventStreamToConstEncntFrameStream;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
+  ATTRIBUTE X_INTERFACE_PARAMETER OF tsReg_V: SIGNAL IS "XIL_INTERFACENAME tsReg_V, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value" & 
+" false}}}}}";
+  ATTRIBUTE X_INTERFACE_INFO OF tsReg_V: SIGNAL IS "xilinx.com:signal:data:1.0 tsReg_V DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF skipFlgOutput_V: SIGNAL IS "XIL_INTERFACENAME skipFlgOutput_V, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}" & 
 "} value false}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF skipFlgOutput_V: SIGNAL IS "xilinx.com:signal:data:1.0 skipFlgOutput_V DATA";
@@ -230,7 +237,7 @@ ARCHITECTURE brd_eventStreamToConstEn_0_1_arch OF brd_eventStreamToConstEn_0_1 I
   ATTRIBUTE X_INTERFACE_INFO OF tsStream_V_V_TDATA: SIGNAL IS "xilinx.com:interface:axis:1.0 tsStream_V_V TDATA";
   ATTRIBUTE X_INTERFACE_INFO OF tsStream_V_V_TREADY: SIGNAL IS "xilinx.com:interface:axis:1.0 tsStream_V_V TREADY";
   ATTRIBUTE X_INTERFACE_PARAMETER OF tsStream_V_V_TVALID: SIGNAL IS "XIL_INTERFACENAME tsStream_V_V, TDATA_NUM_BYTES 4, TUSER_WIDTH 0, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependenc" & 
-"y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 32}, TDEST_WIDTH 0, TID_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 1e+08, PHASE 0.000, CLK_DO" & 
+"y {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 64}, TDEST_WIDTH 0, TID_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 1e+08, PHASE 0.000, CLK_DO" & 
 "MAIN brd_processing_system7_0_0_FCLK_CLK0";
   ATTRIBUTE X_INTERFACE_INFO OF tsStream_V_V_TVALID: SIGNAL IS "xilinx.com:interface:axis:1.0 tsStream_V_V TVALID";
   ATTRIBUTE X_INTERFACE_INFO OF polStream_V_V_TDATA: SIGNAL IS "xilinx.com:interface:axis:1.0 polStream_V_V TDATA";
@@ -309,6 +316,7 @@ BEGIN
       regY_V_ap_vld => regY_V_ap_vld,
       polReg_V_ap_vld => polReg_V_ap_vld,
       skipFlgOutput_V_ap_vld => skipFlgOutput_V_ap_vld,
+      tsReg_V_ap_vld => tsReg_V_ap_vld,
       s_axi_config_AWADDR => s_axi_config_AWADDR,
       s_axi_config_AWVALID => s_axi_config_AWVALID,
       s_axi_config_AWREADY => s_axi_config_AWREADY,
@@ -363,6 +371,7 @@ BEGIN
       regX_V => regX_V,
       regY_V => regY_V,
       polReg_V => polReg_V,
-      skipFlgOutput_V => skipFlgOutput_V
+      skipFlgOutput_V => skipFlgOutput_V,
+      tsReg_V => tsReg_V
     );
 END brd_eventStreamToConstEn_0_1_arch;

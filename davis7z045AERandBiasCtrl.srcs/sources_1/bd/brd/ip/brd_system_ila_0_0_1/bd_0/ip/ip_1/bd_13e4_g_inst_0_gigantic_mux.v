@@ -4388,6 +4388,15 @@ module bd_13e4_g_inst_0_gigantic_mux # (
      assign m_slot_4_axis_tid = slot_4_axis_tid ;
      assign m_slot_4_axis_tkeep = slot_4_axis_tkeep ;
      assign m_slot_4_axis_tdest = slot_4_axis_tdest ;
+     assign m_slot_5_axis_tvalid = slot_5_axis_tvalid ;
+     assign m_slot_5_axis_tready = slot_5_axis_tready ;
+     assign m_slot_5_axis_tdata = slot_5_axis_tdata ;
+     assign m_slot_5_axis_tstrb = slot_5_axis_tstrb ;
+     assign m_slot_5_axis_tlast = slot_5_axis_tlast ;
+     assign m_slot_5_axis_tuser = slot_5_axis_tuser ;
+     assign m_slot_5_axis_tid = slot_5_axis_tid ;
+     assign m_slot_5_axis_tkeep = slot_5_axis_tkeep ;
+     assign m_slot_5_axis_tdest = slot_5_axis_tdest ;
 
     
     

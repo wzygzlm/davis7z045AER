@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="f_open" key="selection"/>
+		<item value="FAST" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="FAST"/>
 			<item value="fgetc"/>
 			<item value="XPAR_EVENTSTREAMTOCONSTEN_0_DEVICE_ID"/>
 			<item value="tpg_config"/>

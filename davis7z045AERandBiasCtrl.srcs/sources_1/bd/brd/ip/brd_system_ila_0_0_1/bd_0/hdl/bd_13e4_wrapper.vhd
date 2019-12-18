@@ -27,7 +27,7 @@ entity bd_13e4_wrapper is
     SLOT_2_AXIS_tstrb : in STD_LOGIC_VECTOR ( 2 downto 0 );
     SLOT_2_AXIS_tuser : in STD_LOGIC_VECTOR ( 1 downto 0 );
     SLOT_2_AXIS_tvalid : in STD_LOGIC;
-    SLOT_3_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    SLOT_3_AXIS_tdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
     SLOT_3_AXIS_tlast : in STD_LOGIC;
     SLOT_3_AXIS_tready : in STD_LOGIC;
     SLOT_3_AXIS_tvalid : in STD_LOGIC;
@@ -35,6 +35,10 @@ entity bd_13e4_wrapper is
     SLOT_4_AXIS_tlast : in STD_LOGIC;
     SLOT_4_AXIS_tready : in STD_LOGIC;
     SLOT_4_AXIS_tvalid : in STD_LOGIC;
+    SLOT_5_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    SLOT_5_AXIS_tlast : in STD_LOGIC;
+    SLOT_5_AXIS_tready : in STD_LOGIC;
+    SLOT_5_AXIS_tvalid : in STD_LOGIC;
     clk : in STD_LOGIC;
     probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe1 : in STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -43,7 +47,10 @@ entity bd_13e4_wrapper is
     probe12 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe13 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe14 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe15 : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    probe15 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe16 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe17 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe18 : in STD_LOGIC_VECTOR ( 31 downto 0 );
     probe2 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe3 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe4 : in STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -75,7 +82,10 @@ architecture STRUCTURE of bd_13e4_wrapper is
     probe12 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe13 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe14 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe15 : in STD_LOGIC_VECTOR ( 47 downto 0 );
+    probe15 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe16 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe17 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe18 : in STD_LOGIC_VECTOR ( 31 downto 0 );
     resetn : in STD_LOGIC;
     SLOT_0_AXIS_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
     SLOT_0_AXIS_tlast : in STD_LOGIC;
@@ -94,14 +104,18 @@ architecture STRUCTURE of bd_13e4_wrapper is
     SLOT_2_AXIS_tstrb : in STD_LOGIC_VECTOR ( 2 downto 0 );
     SLOT_2_AXIS_tuser : in STD_LOGIC_VECTOR ( 1 downto 0 );
     SLOT_2_AXIS_tvalid : in STD_LOGIC;
-    SLOT_3_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    SLOT_3_AXIS_tdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
     SLOT_3_AXIS_tlast : in STD_LOGIC;
     SLOT_3_AXIS_tready : in STD_LOGIC;
     SLOT_3_AXIS_tvalid : in STD_LOGIC;
     SLOT_4_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     SLOT_4_AXIS_tlast : in STD_LOGIC;
     SLOT_4_AXIS_tready : in STD_LOGIC;
-    SLOT_4_AXIS_tvalid : in STD_LOGIC
+    SLOT_4_AXIS_tvalid : in STD_LOGIC;
+    SLOT_5_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    SLOT_5_AXIS_tlast : in STD_LOGIC;
+    SLOT_5_AXIS_tready : in STD_LOGIC;
+    SLOT_5_AXIS_tvalid : in STD_LOGIC
   );
   end component bd_13e4;
 begin
@@ -124,7 +138,7 @@ bd_13e4_i: component bd_13e4
       SLOT_2_AXIS_tstrb(2 downto 0) => SLOT_2_AXIS_tstrb(2 downto 0),
       SLOT_2_AXIS_tuser(1 downto 0) => SLOT_2_AXIS_tuser(1 downto 0),
       SLOT_2_AXIS_tvalid => SLOT_2_AXIS_tvalid,
-      SLOT_3_AXIS_tdata(31 downto 0) => SLOT_3_AXIS_tdata(31 downto 0),
+      SLOT_3_AXIS_tdata(63 downto 0) => SLOT_3_AXIS_tdata(63 downto 0),
       SLOT_3_AXIS_tlast => SLOT_3_AXIS_tlast,
       SLOT_3_AXIS_tready => SLOT_3_AXIS_tready,
       SLOT_3_AXIS_tvalid => SLOT_3_AXIS_tvalid,
@@ -132,6 +146,10 @@ bd_13e4_i: component bd_13e4
       SLOT_4_AXIS_tlast => SLOT_4_AXIS_tlast,
       SLOT_4_AXIS_tready => SLOT_4_AXIS_tready,
       SLOT_4_AXIS_tvalid => SLOT_4_AXIS_tvalid,
+      SLOT_5_AXIS_tdata(31 downto 0) => SLOT_5_AXIS_tdata(31 downto 0),
+      SLOT_5_AXIS_tlast => SLOT_5_AXIS_tlast,
+      SLOT_5_AXIS_tready => SLOT_5_AXIS_tready,
+      SLOT_5_AXIS_tvalid => SLOT_5_AXIS_tvalid,
       clk => clk,
       probe0(0) => probe0(0),
       probe1(15 downto 0) => probe1(15 downto 0),
@@ -140,7 +158,10 @@ bd_13e4_i: component bd_13e4
       probe12(0) => probe12(0),
       probe13(15 downto 0) => probe13(15 downto 0),
       probe14(0) => probe14(0),
-      probe15(47 downto 0) => probe15(47 downto 0),
+      probe15(31 downto 0) => probe15(31 downto 0),
+      probe16(31 downto 0) => probe16(31 downto 0),
+      probe17(31 downto 0) => probe17(31 downto 0),
+      probe18(31 downto 0) => probe18(31 downto 0),
       probe2(15 downto 0) => probe2(15 downto 0),
       probe3(0) => probe3(0),
       probe4(15 downto 0) => probe4(15 downto 0),

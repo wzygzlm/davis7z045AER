@@ -30,6 +30,63 @@
  
  
 /******************************************************************/
+/* Definitions for driver EVABMOFSTREAM */
+#define XPAR_XEVABMOFSTREAM_NUM_INSTANCES 1
+
+/* Definitions for peripheral EVABMOFSTREAM_0 */
+#define XPAR_EVABMOFSTREAM_0_DEVICE_ID 0
+#define XPAR_EVABMOFSTREAM_0_S_AXI_CONFIG_BASEADDR 0x43C20000
+#define XPAR_EVABMOFSTREAM_0_S_AXI_CONFIG_HIGHADDR 0x43C2FFFF
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral EVABMOFSTREAM_0 */
+#define XPAR_XEVABMOFSTREAM_0_DEVICE_ID XPAR_EVABMOFSTREAM_0_DEVICE_ID
+#define XPAR_XEVABMOFSTREAM_0_S_AXI_CONFIG_BASEADDR 0x43C20000
+#define XPAR_XEVABMOFSTREAM_0_S_AXI_CONFIG_HIGHADDR 0x43C2FFFF
+
+
+/******************************************************************/
+
+/* Definitions for driver EVFASTCORNERSTREAM */
+#define XPAR_XEVFASTCORNERSTREAM_NUM_INSTANCES 1
+
+/* Definitions for peripheral EVFASTCORNERSTREAM_0 */
+#define XPAR_EVFASTCORNERSTREAM_0_DEVICE_ID 0
+#define XPAR_EVFASTCORNERSTREAM_0_S_AXI_CONFIG_BASEADDR 0x43C10000
+#define XPAR_EVFASTCORNERSTREAM_0_S_AXI_CONFIG_HIGHADDR 0x43C1FFFF
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral EVFASTCORNERSTREAM_0 */
+#define XPAR_XEVFASTCORNERSTREAM_0_DEVICE_ID XPAR_EVFASTCORNERSTREAM_0_DEVICE_ID
+#define XPAR_XEVFASTCORNERSTREAM_0_S_AXI_CONFIG_BASEADDR 0x43C10000
+#define XPAR_XEVFASTCORNERSTREAM_0_S_AXI_CONFIG_HIGHADDR 0x43C1FFFF
+
+
+/******************************************************************/
+
+/* Definitions for driver EVMUXDATATOXYTSSTREAM */
+#define XPAR_XEVMUXDATATOXYTSSTREAM_NUM_INSTANCES 1
+
+/* Definitions for peripheral EVMUXDATATOXYTSSTREAM_0 */
+#define XPAR_EVMUXDATATOXYTSSTREAM_0_DEVICE_ID 0
+#define XPAR_EVMUXDATATOXYTSSTREAM_0_S_AXI_CONFIG_BASEADDR 0x43C30000
+#define XPAR_EVMUXDATATOXYTSSTREAM_0_S_AXI_CONFIG_HIGHADDR 0x43C3FFFF
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral EVMUXDATATOXYTSSTREAM_0 */
+#define XPAR_XEVMUXDATATOXYTSSTREAM_0_DEVICE_ID XPAR_EVMUXDATATOXYTSSTREAM_0_DEVICE_ID
+#define XPAR_XEVMUXDATATOXYTSSTREAM_0_S_AXI_CONFIG_BASEADDR 0x43C30000
+#define XPAR_XEVMUXDATATOXYTSSTREAM_0_S_AXI_CONFIG_HIGHADDR 0x43C3FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver AXIVDMA */
 #define XPAR_XAXIVDMA_NUM_INSTANCES 1U
 
