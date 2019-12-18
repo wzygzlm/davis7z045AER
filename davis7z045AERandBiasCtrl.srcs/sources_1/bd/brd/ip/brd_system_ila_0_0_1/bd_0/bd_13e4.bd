@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xD24ED6BCD6330E9C" bd:bdsource="SBD" bd:device="xc7z045ffg900-1" bd:isScoped="true" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2018.1" bd:top="bd_13e4" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xD24ED6BC2B566121" bd:bdsource="SBD" bd:device="xc7z045ffg900-1" bd:isScoped="true" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2018.1" bd:top="bd_13e4" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -93,7 +93,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>FREQ_HZ</spirit:name>
-            <spirit:value>1e+08</spirit:value>
+            <spirit:value>100000000</spirit:value>
             <spirit:vendorExtensions>
               <bd:configElementInfos>
                 <bd:configElementInfo bd:valueSource="default"/>
@@ -209,7 +209,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>FREQ_HZ</spirit:name>
-            <spirit:value>1e+08</spirit:value>
+            <spirit:value>100000000</spirit:value>
             <spirit:vendorExtensions>
               <bd:configElementInfos>
                 <bd:configElementInfo bd:valueSource="default"/>
@@ -325,7 +325,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>FREQ_HZ</spirit:name>
-            <spirit:value>1e+08</spirit:value>
+            <spirit:value>100000000</spirit:value>
             <spirit:vendorExtensions>
               <bd:configElementInfos>
                 <bd:configElementInfo bd:valueSource="default"/>
@@ -441,7 +441,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>FREQ_HZ</spirit:name>
-            <spirit:value>1e+08</spirit:value>
+            <spirit:value>100000000</spirit:value>
             <spirit:vendorExtensions>
               <bd:configElementInfos>
                 <bd:configElementInfo bd:valueSource="default"/>
@@ -557,7 +557,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>FREQ_HZ</spirit:name>
-            <spirit:value>1e+08</spirit:value>
+            <spirit:value>100000000</spirit:value>
             <spirit:vendorExtensions>
               <bd:configElementInfos>
                 <bd:configElementInfo bd:valueSource="default"/>
@@ -673,7 +673,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>FREQ_HZ</spirit:name>
-            <spirit:value>1e+08</spirit:value>
+            <spirit:value>100000000</spirit:value>
             <spirit:vendorExtensions>
               <bd:configElementInfos>
                 <bd:configElementInfo bd:valueSource="default"/>
@@ -729,10 +729,10 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>FREQ_HZ</spirit:name>
-            <spirit:value>1e+08</spirit:value>
+            <spirit:value>100000000</spirit:value>
             <spirit:vendorExtensions>
               <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default_prop"/>
+                <bd:configElementInfo bd:valueSource="default"/>
               </bd:configElementInfos>
             </spirit:vendorExtensions>
           </spirit:parameter>

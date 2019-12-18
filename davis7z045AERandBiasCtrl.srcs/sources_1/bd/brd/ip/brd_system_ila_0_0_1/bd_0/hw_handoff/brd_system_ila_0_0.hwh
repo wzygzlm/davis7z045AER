@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Dec 17 09:56:51 2019" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec 18 15:37:48 2019" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z045" NAME="bd_13e4" PACKAGE="ffg900" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT CLKFREQUENCY="1e+08" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ila_lib" PORT="clk"/>
         <CONNECTION INSTANCE="g_inst" PORT="aclk"/>
@@ -151,7 +151,7 @@
       <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
       <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
       <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-      <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
       <PARAMETER NAME="PHASE" VALUE="0.000"/>
       <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
       <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 16}"/>
@@ -171,7 +171,7 @@
       <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
       <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
       <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-      <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
       <PARAMETER NAME="PHASE" VALUE="0.000"/>
       <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
       <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 16}"/>
@@ -191,7 +191,7 @@
       <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
       <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
       <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-      <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
       <PARAMETER NAME="PHASE" VALUE="0.000"/>
       <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
       <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 24 TUSER {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TUSER_WIDTH 2}"/>
@@ -216,7 +216,7 @@
       <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
       <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
       <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-      <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
       <PARAMETER NAME="PHASE" VALUE="0.000"/>
       <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
       <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 64}"/>
@@ -236,7 +236,7 @@
       <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
       <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
       <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-      <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
       <PARAMETER NAME="PHASE" VALUE="0.000"/>
       <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
       <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 8}"/>
@@ -256,7 +256,7 @@
       <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
       <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
       <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-      <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
       <PARAMETER NAME="PHASE" VALUE="0.000"/>
       <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
       <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 8}"/>
@@ -1620,7 +1620,7 @@
         <PARAMETER NAME="EDK_SPECIAL" VALUE="MONITOR"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="1e+08" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
@@ -1815,7 +1815,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -1835,7 +1835,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -1855,7 +1855,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -1880,7 +1880,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -1900,7 +1900,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -1920,7 +1920,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -1940,7 +1940,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -1960,7 +1960,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -1980,7 +1980,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -2005,7 +2005,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -2025,7 +2025,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -2045,7 +2045,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="1e+08"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="brd_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -5198,7 +5198,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="1e+08" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>

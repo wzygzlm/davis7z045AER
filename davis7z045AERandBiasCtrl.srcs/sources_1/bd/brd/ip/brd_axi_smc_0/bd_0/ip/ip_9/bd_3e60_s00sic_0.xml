@@ -374,7 +374,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.FREQ_HZ">1e+08</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.FREQ_HZ">100000000</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -383,7 +383,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ID_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.ID_WIDTH">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.ID_WIDTH">2</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -994,7 +994,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.FREQ_HZ">1e+08</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.FREQ_HZ">100000000</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1003,7 +1003,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ID_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.ID_WIDTH">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.ID_WIDTH">2</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1267,7 +1267,7 @@
           <spirit:name>FREQ_HZ</spirit:name>
           <spirit:displayName>aclk frequency</spirit:displayName>
           <spirit:description>aclk frequency</spirit:description>
-          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.CLK.FREQ_HZ" spirit:minimum="1" spirit:maximum="1000000000" spirit:rangeType="long">1e+08</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.CLK.FREQ_HZ" spirit:minimum="1" spirit:maximum="1000000000" spirit:rangeType="long">100000000</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PHASE</spirit:name>
@@ -1362,11 +1362,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Dec 17 08:56:42 UTC 2019</spirit:value>
+            <spirit:value>Wed Dec 18 14:37:37 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:d09c0c30</spirit:value>
+            <spirit:value>8:e25d8576</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1377,7 +1377,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:d09c0c30</spirit:value>
+            <spirit:value>8:e25d8576</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1393,11 +1393,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Dec 17 08:56:43 UTC 2019</spirit:value>
+            <spirit:value>Wed Dec 18 14:37:40 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:d09c0c30</spirit:value>
+            <spirit:value>8:e25d8576</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1416,11 +1416,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Dec 17 08:56:42 UTC 2019</spirit:value>
+            <spirit:value>Wed Dec 18 14:37:37 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:7aacd490</spirit:value>
+            <spirit:value>8:157d2b77</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1436,11 +1436,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Dec 17 08:56:43 UTC 2019</spirit:value>
+            <spirit:value>Wed Dec 18 14:37:40 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:7aacd490</spirit:value>
+            <spirit:value>8:157d2b77</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1503,7 +1503,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1963,7 +1963,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2078,7 +2078,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2391,7 +2391,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2550,7 +2550,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2920,7 +2920,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3044,7 +3044,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3279,7 +3279,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3493,7 +3493,7 @@
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_MEP_IDENTIFIER_WIDTH</spirit:name>
         <spirit:displayName>C_MEP_IDENTIFER_WIDTH</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MEP_IDENTIFIER_WIDTH" spirit:minimum="0" spirit:maximum="8" spirit:rangeType="long">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MEP_IDENTIFIER_WIDTH" spirit:minimum="0" spirit:maximum="8" spirit:rangeType="long">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_SUPPORTS_NARROW</spirit:name>
@@ -3548,7 +3548,7 @@
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_ID_WIDTH</spirit:name>
         <spirit:displayName>C_ID_WIDTH</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_ID_WIDTH" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_ID_WIDTH" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_WDATA_WIDTH</spirit:name>
@@ -3762,7 +3762,7 @@
     <spirit:parameter>
       <spirit:name>MEP_IDENTIFIER_WIDTH</spirit:name>
       <spirit:displayName>MEP_IDENTIFIER_WIDTH</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MEP_IDENTIFIER_WIDTH" spirit:order="11" spirit:minimum="0" spirit:maximum="1" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MEP_IDENTIFIER_WIDTH" spirit:order="11" spirit:minimum="0" spirit:maximum="2" spirit:rangeType="long">2</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SUPPORTS_NARROW</spirit:name>
@@ -3787,7 +3787,7 @@
     <spirit:parameter>
       <spirit:name>ID_WIDTH</spirit:name>
       <spirit:displayName>ID_WIDTH</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.ID_WIDTH" spirit:order="16" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.ID_WIDTH" spirit:order="16" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">2</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>RDATA_WIDTH</spirit:name>

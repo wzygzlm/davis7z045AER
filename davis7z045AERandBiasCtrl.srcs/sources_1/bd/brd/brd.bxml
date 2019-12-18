@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="35">
   <CompositeFile CompositeFileTopName="brd" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1576573012"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1576573012"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1576573012"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1576573012"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1576679870"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1576679870"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1576679870"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1576679870"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\brd_LEDShifter_0_0\brd_LEDShifter_0_0.xci" Type="IP">
         <Instance HierarchyPath="LEDShifter_0"/>
@@ -225,7 +225,71 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
+      <File Name="ip\brd_axi_usb2_device_0_0\brd_axi_usb2_device_0_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_usb2_device_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\brd_xlconcat_0_0\brd_xlconcat_0_0.xci" Type="IP">
+        <Instance HierarchyPath="xlconcat_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\brd_auto_pc_5\brd_auto_pc_5.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph/m05_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\brd_auto_pc_4\brd_auto_pc_4.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph/m04_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\brd_auto_pc_3\brd_auto_pc_3.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph/m03_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\brd_auto_pc_2\brd_auto_pc_2.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph/m02_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\brd_auto_pc_1\brd_auto_pc_1.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph/m01_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
       <File Name="ip\brd_auto_pc_0\brd_auto_pc_0.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph/m00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\brd_auto_pc_6\brd_auto_pc_6.xci" Type="IP">
         <Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>

@@ -164,6 +164,7 @@ proc create_root_design { parentCell } {
   # Create interface ports
   set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR ]
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
+  set ULPI [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:ulpi_rtl:1.0 ULPI ]
 
   # Create ports
   set ChipBiasAddrSelect_SBO_0 [ create_bd_port -dir O ChipBiasAddrSelect_SBO_0 ]
@@ -186,10 +187,10 @@ proc create_root_design { parentCell } {
   set SyncInSignal_AI_0 [ create_bd_port -dir I SyncInSignal_AI_0 ]
   set SyncOutClock_CO_0 [ create_bd_port -dir O SyncOutClock_CO_0 ]
   set SyncOutSignal_SO_0 [ create_bd_port -dir O SyncOutSignal_SO_0 ]
-  set extIn_V_0 [ create_bd_port -dir I -from 0 -to 0 -type data extIn_V_0 ]
+  set clk_in1_0 [ create_bd_port -dir I -type clk clk_in1_0 ]
   set_property -dict [ list \
-   CONFIG.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}} \
- ] $extIn_V_0
+   CONFIG.FREQ_HZ {60000000} \
+ ] $clk_in1_0
   set led_0 [ create_bd_port -dir O -from 5 -to 0 led_0 ]
   set vid_data [ create_bd_port -dir O -from 23 -to 0 vid_data ]
   set vid_hsync [ create_bd_port -dir O vid_hsync ]
@@ -218,18 +219,27 @@ proc create_root_design { parentCell } {
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
   set_property -dict [ list \
-   CONFIG.C_ALL_INPUTS_2 {1} \
+   CONFIG.C_ALL_INPUTS_2 {0} \
    CONFIG.C_ALL_OUTPUTS {1} \
    CONFIG.C_DOUT_DEFAULT {0x00000006} \
    CONFIG.C_GPIO_WIDTH {32} \
-   CONFIG.C_IS_DUAL {1} \
+   CONFIG.C_INTERRUPT_PRESENT {1} \
+   CONFIG.C_IS_DUAL {0} \
  ] $axi_gpio_0
 
   # Create instance: axi_smc, and set properties
   set axi_smc [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 axi_smc ]
   set_property -dict [ list \
-   CONFIG.NUM_SI {2} \
+   CONFIG.NUM_SI {3} \
  ] $axi_smc
+
+  # Create instance: axi_usb2_device_0, and set properties
+  set axi_usb2_device_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_usb2_device:5.0 axi_usb2_device_0 ]
+  set_property -dict [ list \
+   CONFIG.C_DMA_UA_TRANS_SUPPORT {1} \
+   CONFIG.C_INCLUDE_DMA {1} \
+   CONFIG.C_INCLUDE_USBERR_LOGIC {1} \
+ ] $axi_usb2_device_0
 
   # Create instance: axi_vdma_0, and set properties
   set axi_vdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_vdma:6.3 axi_vdma_0 ]
@@ -491,6 +501,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_INCLUDE_ACP_TRANS_CHECK {0} \
    CONFIG.PCW_IOPLL_CTRL_FBDIV {20} \
    CONFIG.PCW_IO_IO_PLL_FREQMHZ {1000.000} \
+   CONFIG.PCW_IRQ_F2P_INTR {1} \
    CONFIG.PCW_IRQ_F2P_MODE {DIRECT} \
    CONFIG.PCW_MIO_0_DIRECTION {out} \
    CONFIG.PCW_MIO_0_IOTYPE {LVCMOS 3.3V} \
@@ -955,7 +966,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_USE_DMA2 {0} \
    CONFIG.PCW_USE_DMA3 {0} \
    CONFIG.PCW_USE_EXPANDED_IOP {0} \
-   CONFIG.PCW_USE_FABRIC_INTERRUPT {0} \
+   CONFIG.PCW_USE_FABRIC_INTERRUPT {1} \
    CONFIG.PCW_USE_HIGH_OCM {0} \
    CONFIG.PCW_USE_M_AXI_GP0 {1} \
    CONFIG.PCW_USE_M_AXI_GP1 {0} \
@@ -979,7 +990,7 @@ proc create_root_design { parentCell } {
   # Create instance: ps7_0_axi_periph, and set properties
   set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {6} \
+   CONFIG.NUM_MI {7} \
    CONFIG.NUM_SI {1} \
  ] $ps7_0_axi_periph
 
@@ -1063,6 +1074,9 @@ proc create_root_design { parentCell } {
    CONFIG.enable_detection {false} \
  ] $v_tc_0
 
+  # Create instance: xlconcat_0, and set properties
+  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
+
   # Create instance: xlslice_0, and set properties
   set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
 
@@ -1108,7 +1122,9 @@ HDL_ATTRIBUTE.DEBUG {true} \
   connect_bd_intf_net -intf_net EVMUXDataToXYTSStream_0_tsStreamOut_V_V [get_bd_intf_pins EVFastCornerStream_0/tsStreamIn_V_V] [get_bd_intf_pins EVMUXDataToXYTSStream_0/tsStreamOut_V_V]
   connect_bd_intf_net -intf_net EVMUXDataToXYTSStream_0_xStreamOut_V_V [get_bd_intf_pins EVFastCornerStream_0/xStreamIn_V_V] [get_bd_intf_pins EVMUXDataToXYTSStream_0/xStreamOut_V_V]
   connect_bd_intf_net -intf_net EVMUXDataToXYTSStream_0_yStreamOut_V_V [get_bd_intf_pins EVFastCornerStream_0/yStreamIn_V_V] [get_bd_intf_pins EVMUXDataToXYTSStream_0/yStreamOut_V_V]
+  connect_bd_intf_net -intf_net ULPI_0_1 [get_bd_intf_ports ULPI] [get_bd_intf_pins axi_usb2_device_0/ULPI]
   connect_bd_intf_net -intf_net axi_smc_M00_AXI [get_bd_intf_pins axi_smc/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
+  connect_bd_intf_net -intf_net axi_usb2_device_0_M_AXI [get_bd_intf_pins axi_smc/S02_AXI] [get_bd_intf_pins axi_usb2_device_0/M_AXI]
   connect_bd_intf_net -intf_net axi_vdma_0_M_AXIS_MM2S [get_bd_intf_pins axi_vdma_0/M_AXIS_MM2S] [get_bd_intf_pins v_axi4s_vid_out_0/video_in]
   connect_bd_intf_net -intf_net axi_vdma_0_M_AXI_MM2S [get_bd_intf_pins axi_smc/S00_AXI] [get_bd_intf_pins axi_vdma_0/M_AXI_MM2S]
   connect_bd_intf_net -intf_net axi_vdma_0_M_AXI_S2MM [get_bd_intf_pins axi_smc/S01_AXI] [get_bd_intf_pins axi_vdma_0/M_AXI_S2MM]
@@ -1130,6 +1146,7 @@ HDL_ATTRIBUTE.DEBUG {true} \
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M03_AXI [get_bd_intf_pins EVFastCornerStream_0/s_axi_config] [get_bd_intf_pins ps7_0_axi_periph/M03_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M04_AXI [get_bd_intf_pins EVABMOFStream_0/s_axi_config] [get_bd_intf_pins ps7_0_axi_periph/M04_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M05_AXI [get_bd_intf_pins EVMUXDataToXYTSStream_0/s_axi_config] [get_bd_intf_pins ps7_0_axi_periph/M05_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M06_AXI [get_bd_intf_pins axi_usb2_device_0/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M06_AXI]
   connect_bd_intf_net -intf_net v_tc_0_vtiming_out [get_bd_intf_pins v_axi4s_vid_out_0/vtiming_in] [get_bd_intf_pins v_tc_0/vtiming_out]
 
   # Create port connections
@@ -1145,6 +1162,8 @@ HDL_ATTRIBUTE.DEBUG {true} \
   connect_bd_net -net SyncInSignal2_AI_0_1 [get_bd_ports SyncInSignal2_AI_0] [get_bd_pins testAERDVSSM_0/SyncInSignal2_AI]
   connect_bd_net -net SyncInSignal_AI_0_1 [get_bd_ports SyncInSignal_AI_0] [get_bd_pins testAERDVSSM_0/SyncInSignal_AI]
   connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din]
+  connect_bd_net -net axi_gpio_0_ip2intc_irpt [get_bd_pins axi_gpio_0/ip2intc_irpt] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net axi_usb2_device_0_usb_irpt [get_bd_pins axi_usb2_device_0/usb_irpt] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net axis_data_count [get_bd_pins axis_data_fifo_0/axis_data_count] [get_bd_pins system_ila_0/probe15]
   set_property -dict [ list \
 HDL_ATTRIBUTE.DEBUG {true} \
@@ -1166,7 +1185,6 @@ HDL_ATTRIBUTE.DEBUG {true} \
   set_property -dict [ list \
 HDL_ATTRIBUTE.DEBUG {true} \
  ] [get_bd_nets dataReg_V]
-  connect_bd_net -net extIn_V_0_1 [get_bd_ports extIn_V_0] [get_bd_pins axi_gpio_0/gpio2_io_i]
   connect_bd_net -net hCnt_V [get_bd_pins eventStreamToConstEn_0/hCnt_V] [get_bd_pins system_ila_0/probe6]
   set_property -dict [ list \
 HDL_ATTRIBUTE.DEBUG {true} \
@@ -1180,9 +1198,9 @@ HDL_ATTRIBUTE.DEBUG {true} \
 HDL_ATTRIBUTE.DEBUG {true} \
  ] [get_bd_nets polReg_V]
   connect_bd_net -net proc_sys_reset_0_interconnect_aresetn [get_bd_pins proc_sys_reset_0/interconnect_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN]
-  connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins EVABMOFStream_0/ap_rst_n] [get_bd_pins EVFastCornerStream_0/ap_rst_n] [get_bd_pins EVMUXDataToXYTSStream_0/ap_rst_n] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins axi_vdma_0/axi_resetn] [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins axis_data_fifo_1/s_axis_aresetn] [get_bd_pins axis_data_fifo_2/s_axis_aresetn] [get_bd_pins axis_data_fifo_3/s_axis_aresetn] [get_bd_pins eventStreamToConstEn_0/ap_rst_n] [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins system_ila_0/resetn]
+  connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins EVABMOFStream_0/ap_rst_n] [get_bd_pins EVFastCornerStream_0/ap_rst_n] [get_bd_pins EVMUXDataToXYTSStream_0/ap_rst_n] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins axi_usb2_device_0/m_axi_aresetn] [get_bd_pins axi_usb2_device_0/s_axi_aresetn] [get_bd_pins axi_vdma_0/axi_resetn] [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins axis_data_fifo_1/s_axis_aresetn] [get_bd_pins axis_data_fifo_2/s_axis_aresetn] [get_bd_pins axis_data_fifo_3/s_axis_aresetn] [get_bd_pins eventStreamToConstEn_0/ap_rst_n] [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins ps7_0_axi_periph/M06_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins system_ila_0/resetn]
   connect_bd_net -net proc_sys_reset_1_peripheral_aresetn [get_bd_pins proc_sys_reset_1/peripheral_aresetn] [get_bd_pins v_axi4s_vid_out_0/aresetn] [get_bd_pins v_tc_0/resetn]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins EVABMOFStream_0/ap_clk] [get_bd_pins EVFastCornerStream_0/ap_clk] [get_bd_pins EVMUXDataToXYTSStream_0/ap_clk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk] [get_bd_pins axi_vdma_0/s_axis_s2mm_aclk] [get_bd_pins axis_data_fifo_0/s_axis_aclk] [get_bd_pins axis_data_fifo_1/s_axis_aclk] [get_bd_pins axis_data_fifo_2/s_axis_aclk] [get_bd_pins axis_data_fifo_3/s_axis_aclk] [get_bd_pins eventStreamToConstEn_0/ap_clk] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins system_ila_0/clk] [get_bd_pins testAERDVSSM_0/ADCClk_CI] [get_bd_pins testAERDVSSM_0/LogicClk_CI] [get_bd_pins testAERDVSSM_0/USBClock_CI] [get_bd_pins v_axi4s_vid_out_0/aclk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins EVABMOFStream_0/ap_clk] [get_bd_pins EVFastCornerStream_0/ap_clk] [get_bd_pins EVMUXDataToXYTSStream_0/ap_clk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins axi_usb2_device_0/m_axi_aclk] [get_bd_pins axi_usb2_device_0/s_axi_aclk] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk] [get_bd_pins axi_vdma_0/s_axis_s2mm_aclk] [get_bd_pins axis_data_fifo_0/s_axis_aclk] [get_bd_pins axis_data_fifo_1/s_axis_aclk] [get_bd_pins axis_data_fifo_2/s_axis_aclk] [get_bd_pins axis_data_fifo_3/s_axis_aclk] [get_bd_pins eventStreamToConstEn_0/ap_clk] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/M06_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins system_ila_0/clk] [get_bd_pins testAERDVSSM_0/ADCClk_CI] [get_bd_pins testAERDVSSM_0/LogicClk_CI] [get_bd_pins testAERDVSSM_0/USBClock_CI] [get_bd_pins v_axi4s_vid_out_0/aclk]
   connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_pins LEDShifter_0/clk] [get_bd_pins proc_sys_reset_1/slowest_sync_clk] [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_clk] [get_bd_pins v_tc_0/clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins proc_sys_reset_0/ext_reset_in] [get_bd_pins proc_sys_reset_1/ext_reset_in] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
   connect_bd_net -net processing_system7_0_SPI0_MOSI_O [get_bd_pins processing_system7_0/SPI0_MOSI_O] [get_bd_pins testAERDVSSM_0/SPIMOSI_AI]
@@ -1230,6 +1248,7 @@ HDL_ATTRIBUTE.DEBUG {true} \
 HDL_ATTRIBUTE.DEBUG {true} \
  ] [get_bd_nets tsReg_V]
   connect_bd_net -net tsWrapRegReg_V [get_bd_pins EVMUXDataToXYTSStream_0/tsWrapRegReg_V]
+  connect_bd_net -net ulpi_clock_0_1 [get_bd_ports clk_in1_0] [get_bd_pins axi_usb2_device_0/ulpi_clock]
   connect_bd_net -net vCnt_V [get_bd_pins eventStreamToConstEn_0/vCnt_V] [get_bd_pins system_ila_0/probe10]
   set_property -dict [ list \
 HDL_ATTRIBUTE.DEBUG {true} \
@@ -1246,6 +1265,7 @@ HDL_ATTRIBUTE.DEBUG {true} \
   set_property -dict [ list \
 HDL_ATTRIBUTE.DEBUG {true} \
  ] [get_bd_nets xRegReg_V]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins processing_system7_0/IRQ_F2P] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlslice_0_Dout [get_bd_pins testAERDVSSM_0/Reset_RI] [get_bd_pins xlslice_0/Dout]
   connect_bd_net -net xlslice_1_Dout [get_bd_pins EVABMOFStream_0/ap_start] [get_bd_pins LEDShifter_0/rstn] [get_bd_pins xlslice_1/Dout]
   connect_bd_net -net yRegReg_V [get_bd_pins EVMUXDataToXYTSStream_0/yRegReg_V] [get_bd_pins system_ila_0/probe4]
@@ -1254,12 +1274,14 @@ HDL_ATTRIBUTE.DEBUG {true} \
  ] [get_bd_nets yRegReg_V]
 
   # Create address segments
+  create_bd_addr_seg -range 0x20000000 -offset 0x00000000 [get_bd_addr_spaces axi_usb2_device_0/DMA_DATA] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
   create_bd_addr_seg -range 0x20000000 -offset 0x00000000 [get_bd_addr_spaces axi_vdma_0/Data_MM2S] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
   create_bd_addr_seg -range 0x20000000 -offset 0x00000000 [get_bd_addr_spaces axi_vdma_0/Data_S2MM] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
   create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs EVABMOFStream_0/s_axi_config/Reg] SEG_EVABMOFStream_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs EVFastCornerStream_0/s_axi_config/Reg] SEG_EVFastCornerStream_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs EVMUXDataToXYTSStream_0/s_axi_config/Reg] SEG_EVMUXDataToXYTSStream_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x42E00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_usb2_device_0/S_AXI/Reg] SEG_axi_usb2_device_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_vdma_0/S_AXI_LITE/Reg] SEG_axi_vdma_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs eventStreamToConstEn_0/s_axi_config/Reg] SEG_eventStreamToConstEn_0_Reg
 

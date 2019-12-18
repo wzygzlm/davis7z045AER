@@ -160,7 +160,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXIS.FREQ_HZ">1e+08</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXIS.FREQ_HZ">100000000</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -352,7 +352,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXIS.FREQ_HZ">1e+08</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXIS.FREQ_HZ">100000000</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -480,7 +480,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_CLKIF.FREQ_HZ">1e+08</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_CLKIF.FREQ_HZ">100000000</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -703,7 +703,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:d8cf7c6e</spirit:value>
+            <spirit:value>8:284f49df</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -719,11 +719,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Nov 05 13:13:18 UTC 2019</spirit:value>
+            <spirit:value>Wed Dec 18 09:24:43 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:d8cf7c6e</spirit:value>
+            <spirit:value>8:284f49df</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -749,7 +749,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:385c23b1</spirit:value>
+            <spirit:value>8:fd8b78a1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -765,11 +765,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Nov 05 13:13:18 UTC 2019</spirit:value>
+            <spirit:value>Wed Dec 18 09:24:43 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:385c23b1</spirit:value>
+            <spirit:value>8:fd8b78a1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -783,11 +783,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Nov 05 13:17:39 UTC 2019</spirit:value>
+            <spirit:value>Wed Dec 18 09:34:34 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:d8cf7c6e</spirit:value>
+            <spirit:value>8:284f49df</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>

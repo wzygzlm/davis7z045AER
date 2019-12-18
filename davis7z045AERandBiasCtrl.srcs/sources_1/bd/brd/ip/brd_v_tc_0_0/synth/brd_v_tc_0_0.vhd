@@ -228,7 +228,7 @@ ARCHITECTURE brd_v_tc_0_0_arch OF brd_v_tc_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF hsync_out: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_out HSYNC";
   ATTRIBUTE X_INTERFACE_PARAMETER OF clken: SIGNAL IS "XIL_INTERFACENAME clken_intf, POLARITY ACTIVE_LOW";
   ATTRIBUTE X_INTERFACE_INFO OF clken: SIGNAL IS "xilinx.com:signal:clockenable:1.0 clken_intf CE";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF vtiming_in:vtiming_out, ASSOCIATED_RESET resetn, ASSOCIATED_CLKEN clken, FREQ_HZ 4e+07, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK1";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF vtiming_in:vtiming_out, ASSOCIATED_RESET resetn, ASSOCIATED_CLKEN clken, FREQ_HZ 40000000, PHASE 0.000, CLK_DOMAIN brd_processing_system7_0_0_FCLK_CLK1";
   ATTRIBUTE X_INTERFACE_INFO OF clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clk_intf CLK";
 BEGIN
   U0 : v_tc

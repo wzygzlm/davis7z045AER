@@ -350,7 +350,7 @@
 #define XPAR_AXI_GPIO_0_BASEADDR 0x41200000
 #define XPAR_AXI_GPIO_0_HIGHADDR 0x4120FFFF
 #define XPAR_AXI_GPIO_0_DEVICE_ID 0
-#define XPAR_AXI_GPIO_0_INTERRUPT_PRESENT 0
+#define XPAR_AXI_GPIO_0_INTERRUPT_PRESENT 1
 #define XPAR_AXI_GPIO_0_IS_DUAL 1
 
 
@@ -360,7 +360,7 @@
 #define XPAR_GPIO_0_BASEADDR 0x41200000
 #define XPAR_GPIO_0_HIGHADDR 0x4120FFFF
 #define XPAR_GPIO_0_DEVICE_ID XPAR_AXI_GPIO_0_DEVICE_ID
-#define XPAR_GPIO_0_INTERRUPT_PRESENT 0
+#define XPAR_GPIO_0_INTERRUPT_PRESENT 1
 #define XPAR_GPIO_0_IS_DUAL 1
 
 
@@ -422,6 +422,18 @@
 #define XPAR_XNANDPS_0_SMC_BASEADDR 0xE000E000U
 #define XPAR_XNANDPS_0_NAND_WIDTH 8U
 
+
+/******************************************************************/
+
+/* Definitions for Fabric interrupts connected to ps7_scugic_0 */
+#define XPAR_FABRIC_AXI_USB2_DEVICE_0_USB_IRPT_INTR 61U
+#define XPAR_FABRIC_AXI_GPIO_0_IP2INTC_IRPT_INTR 62U
+
+/******************************************************************/
+
+/* Canonical definitions for Fabric interrupts connected to ps7_scugic_0 */
+#define XPAR_FABRIC_USB_0_VEC_ID XPAR_FABRIC_AXI_USB2_DEVICE_0_USB_IRPT_INTR
+#define XPAR_FABRIC_GPIO_0_VEC_ID XPAR_FABRIC_AXI_GPIO_0_IP2INTC_IRPT_INTR
 
 /******************************************************************/
 
@@ -556,6 +568,28 @@
 #define XPAR_XUARTPS_0_HIGHADDR 0xE0000FFF
 #define XPAR_XUARTPS_0_UART_CLK_FREQ_HZ 100000000
 #define XPAR_XUARTPS_0_HAS_MODEM 0
+
+
+/******************************************************************/
+
+/* Definitions for driver USB */
+#define XPAR_XUSB_NUM_INSTANCES 1
+
+/* Definitions for peripheral AXI_USB2_DEVICE_0 */
+#define XPAR_AXI_USB2_DEVICE_0_DEVICE_ID 0
+#define XPAR_AXI_USB2_DEVICE_0_BASEADDR 0x42E00000
+#define XPAR_AXI_USB2_DEVICE_0_INCLUDE_DMA 1
+#define XPAR_AXI_USB2_DEVICE_0_M_AXI_ADDR_WIDTH 32
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral AXI_USB2_DEVICE_0 */
+#define XPAR_USB_0_DEVICE_ID XPAR_AXI_USB2_DEVICE_0_DEVICE_ID
+#define XPAR_USB_0_BASEADDR 0x42E00000
+#define XPAR_USB_0_HIGHADDR 0x42E0FFFF
+#define XPAR_USB_0_INCLUDE_DMA 1
+#define XPAR_USB_0_M_AXI_ADDR_WIDTH 32
 
 
 /******************************************************************/

@@ -71,28 +71,28 @@ create_interface Bias
 set_property INTERFACE Bias [get_ports { ChipBiasLatch_SBO_0 ChipBiasAddrSelect_SBO_0 ChipBiasBitIn_DO_0 ChipBiasClock_CBO_0 ChipBiasDiagSelect_SO_0 ChipBiasEnable_SO_0 }]
 
 set_property PACKAGE_PIN C14 [get_ports DVSAERReset_SBO_0]
-set_property PACKAGE_PIN AK26 [get_ports IMUClock_CZO_0]
-set_property PACKAGE_PIN AJ26 [get_ports IMUData_DZIO_0]
-set_property PACKAGE_PIN AH27 [get_ports IMUFSync_SO_0]
-set_property PACKAGE_PIN AH26 [get_ports IMUInterrupt_AI_0]
-set_property PACKAGE_PIN AK28 [get_ports SPIClock_AI_0]
-set_property PACKAGE_PIN AK27 [get_ports SPIMISO_DZO_0]
-set_property PACKAGE_PIN AJ29 [get_ports SPIMOSI_AI_0]
-set_property PACKAGE_PIN AJ28 [get_ports SPISlaveSelect_ABI_0]
-set_property PACKAGE_PIN AK30 [get_ports SyncInClock_AI_0]
-set_property PACKAGE_PIN AJ30 [get_ports SyncInSignal1_AI_0]
-set_property PACKAGE_PIN AH29 [get_ports SyncInSignal2_AI_0]
-set_property PACKAGE_PIN AH28 [get_ports SyncInSignal_AI_0]
-set_property PACKAGE_PIN AF25 [get_ports SyncOutClock_CO_0]
-set_property PACKAGE_PIN AE25 [get_ports SyncOutSignal_SO_0]
+set_property PACKAGE_PIN B16 [get_ports IMUClock_CZO_0]
+set_property PACKAGE_PIN G17 [get_ports IMUData_DZIO_0]
+set_property PACKAGE_PIN B17 [get_ports IMUFSync_SO_0]
+set_property PACKAGE_PIN H16 [get_ports IMUInterrupt_AI_0]
+set_property PACKAGE_PIN L4 [get_ports SPIClock_AI_0]
+set_property PACKAGE_PIN A2 [get_ports SPIMISO_DZO_0]
+set_property PACKAGE_PIN A3 [get_ports SPIMOSI_AI_0]
+set_property PACKAGE_PIN B1 [get_ports SPISlaveSelect_ABI_0]
+set_property PACKAGE_PIN B2 [get_ports SyncInClock_AI_0]
+set_property PACKAGE_PIN C1 [get_ports SyncInSignal1_AI_0]
+set_property PACKAGE_PIN C2 [get_ports SyncInSignal2_AI_0]
+set_property PACKAGE_PIN A4 [get_ports SyncInSignal_AI_0]
+set_property PACKAGE_PIN A5 [get_ports SyncOutClock_CO_0]
+set_property PACKAGE_PIN B4 [get_ports SyncOutSignal_SO_0]
 
 
-set_property IOSTANDARD LVCMOS18 [get_ports {led_0[5]}]
-set_property IOSTANDARD LVCMOS18 [get_ports {led_0[4]}]
-set_property IOSTANDARD LVCMOS18 [get_ports {led_0[3]}]
-set_property IOSTANDARD LVCMOS18 [get_ports {led_0[2]}]
-set_property IOSTANDARD LVCMOS18 [get_ports {led_0[1]}]
-set_property IOSTANDARD LVCMOS18 [get_ports {led_0[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_0[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_0[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_0[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_0[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_0[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_0[0]}]
 set_property PACKAGE_PIN Y26 [get_ports {led_0[5]}]
 set_property PACKAGE_PIN AB29 [get_ports {led_0[4]}]
 set_property PACKAGE_PIN AB30 [get_ports {led_0[3]}]
@@ -185,6 +185,11 @@ set_property PACKAGE_PIN U30 [get_ports vid_vsync]
 set_property IOSTANDARD LVCMOS33 [get_ports vid_vsync]
 
 
+
+set_property PACKAGE_PIN G1 [get_ports {extIn_V_0[0]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {extIn_V_0[0]}]
+set_property PULLUP true [get_ports {extIn_V_0[0]}]
+
 ################# USB Constraints ####################
 
 set_property LOC AJ15 [ get_ports ULPI_next]
@@ -193,16 +198,24 @@ set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_next]
 set_property LOC AK16 [ get_ports ULPI_stop]
 set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_stop]
 
-create_clock -period "16.667" -name ULPI_clk [get_ports "ULPI_clk"]
+create_clock -period "16.667" -name clk_out1_0 [get_ports "clk_out1_0"]
 
-set_property LOC AC28 [ get_ports ULPI_clk]
-set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_clk]
+set_property LOC AC28 [ get_ports clk_in1_0]
+set_property IOSTANDARD LVCMOS33 [ get_ports clk_in1_0]
+
+create_clock -period "16.667" -name clk_in1_0 [get_ports "clk_in1_0"]
+
+#set_property LOC AC28 [ get_ports ULPI_clk]
+#set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_clk]
 
 set_property LOC AK15 [ get_ports ULPI_dir]
 set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_dir]
 
-set_property LOC AH16 [ get_ports ULPI_rst]
+set_property LOC AH17 [ get_ports ULPI_rst]
 set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_rst]
+
+set_property LOC AH16 [ get_ports ulpiNotReset]
+set_property IOSTANDARD LVCMOS33 [ get_ports ulpiNotReset]
 
 set_property LOC AJ16 [ get_ports ULPI_data_io[7]]
 set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_data_io[7]]
@@ -230,11 +243,15 @@ set_property IOSTANDARD LVCMOS33 [ get_ports ULPI_data_io[0]]
 
 set ulpi_input {ULPI_data* ULPI_dir ULPI_next}
 set ulpi_output {ULPI_data* ULPI_stop}
-set_input_delay -max 6.7 -clock [get_clocks -of_objects [get_pins -hier *ULPI_clk]] $ulpi_input
-set_output_delay -max 7 -clock [get_clocks -of_objects [get_pins -hier *ULPI_clk]] $ulpi_output
-set_max_delay 24 -from [get_ports ULPI_dir] -to [get_ports ULPI_data_io[*]] -datapath_only
+#set_input_delay  -min 0.2 -clock [get_clocks -of_objects [get_pins -hier *clk_in1_0]] $ulpi_input
+#set_input_delay  -max 4.5 -clock [get_clocks -of_objects [get_pins -hier *clk_in1_0]] $ulpi_input
+#set_output_delay -min -6 -clock [get_clocks -of_objects [get_pins -hier *clk_in1_0]] $ulpi_output
+#set_output_delay -max 1 -clock [get_clocks -of_objects [get_pins -hier *clk_in1_0]] $ulpi_output
+#set_multicycle_path -to [get_ports ULPI_data*] 2
+#set_max_delay 24 -from [get_ports ULPI_dir] -to [get_ports ULPI_data_io[*]] -datapath_only
 
-set_property PACKAGE_PIN AK16 [get_ports {extIn_V_0[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {extIn_V_0[0]}]
-set_property PULLUP true [get_ports {extIn_V_0[0]}]
+#set_input_delay  -min 0.2 -clock [get_clocks -of_objects [get_pins -hier *FCLK_CLK0_0]] $ulpi_input
+#set_input_delay  -max 4.5 -clock [get_clocks -of_objects [get_pins -hier *FCLK_CLK0_0]] $ulpi_input
+#set_output_delay -max 4 -clock [get_clocks -of_objects [get_pins -hier *ULPI_clk]] $ulpi_output
+
 
